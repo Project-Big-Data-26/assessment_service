@@ -632,6 +632,2078 @@
       ],
       "pembahasan": "$4.641.000 \\times 1,1 + 1.000.000 = 5.105.100 + 1.000.000 = 6.105.100$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a0ef8fbb50b16280d2965c6",
+        "teks": "Dedi ingin memiliki tabungan Rp13.923.000,00 tepat setelah 4 tahun. Ia menyetor sejumlah uang yang sama pada akhir setiap tahun ke bank yang memberi bunga majemuk 10% per tahun. Besar setoran tiap tahun yang harus ia lakukan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "anuitas_investasi",
+      "alasan_level": "Target medium; variasi konsep anuitas investasi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada akhir setiap tahun disetor Rp400.000,00 selama 6 tahun. Bunga majemuk 10% per tahun. Berapa nilai akumulasi tepat setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$3086244$",
+      "alasan_benar": "Setoran terakhir belum berbunga. Jumlah akhirnya 400000×[1+(1+1/10)+...+(1+1/10)^5]=3086244.",
+      "distraktor": [
+        {
+          "teks": "$3086245$",
+          "alasan": "Pilihan $3086245$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$3086243$",
+          "alasan": "Pilihan $3086243$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$3086246$",
+          "alasan": "Pilihan $3086246$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setoran terakhir belum berbunga. Jumlah akhirnya 400000×[1+(1+1/10)+...+(1+1/10)^5]=3086244.",
+      "catatan": "codex-replenishment:kelas12-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47521eae34ca174c8830313a",
+        "teks": "Bayu berkata, \"Jika lama menabung dilipatduakan, nilai masa depan tabunganku juga menjadi dua kali.\" Bayu menyetor sejumlah yang sama pada akhir setiap tahun dengan bunga majemuk 20% per tahun. Perbandingan nilai masa depan tabungan setelah 4 tahun terhadap setelah 2 tahun adalah ...., sehingga klaim Bayu keliru.",
+        "jawaban": "2,44",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "anuitas_investasi",
+      "alasan_level": "Target medium; variasi konsep anuitas investasi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada akhir setiap tahun disetor Rp900.000,00 selama 7 tahun. Bunga majemuk 2% per tahun. Berapa nilai akumulasi tepat setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1045446100659}{156250}$",
+      "alasan_benar": "Setoran terakhir belum berbunga. Jumlah akhirnya 900000×[1+(1+1/50)+...+(1+1/50)^6]=1045446100659/156250.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1045446256909}{156250}$",
+          "alasan": "Pilihan $\\frac{1045446256909}{156250}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1045445944409}{156250}$",
+          "alasan": "Pilihan $\\frac{1045445944409}{156250}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1045446413159}{156250}$",
+          "alasan": "Pilihan $\\frac{1045446413159}{156250}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setoran terakhir belum berbunga. Jumlah akhirnya 900000×[1+(1+1/50)+...+(1+1/50)^6]=1045446100659/156250.",
+      "catatan": "codex-replenishment:kelas12-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0e38fad7e5cab3807561c42",
+        "teks": "Dewi selalu menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahun dan memasukkannya ke dalam rekening deposito dengan bunga majemuk 5% per tahun. Berapa nilai masa depan tabungan Dewi dalam 3 tahun?",
+        "jawaban": "Rp12.610.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$15400$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $15400$.",
+      "distraktor": [
+        {
+          "teks": "$15401$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15399$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $15400$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a42e632b722b4e144afcd935.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              10000
+            ],
+            [
+              "r",
+              8
+            ],
+            [
+              "n",
+              2
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              5000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 10000], [\"r\", 8], [\"n\", 2], [\"k\", 1], [\"W\", 5000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5355bd358c91d6141dc0065",
+        "teks": "Pak Rudi rutin menabung Rp1.000.000,00 pada akhir setiap bulan di sebuah bank yang memberikan bunga majemuk 2% per bulan. Tentukan nilai masa depan seluruh tabungan Pak Rudi setelah 4 bulan.",
+        "jawaban": "Rp4.121.608,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$157650$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $157650$.",
+      "distraktor": [
+        {
+          "teks": "$157651$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$157649$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$315300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $157650$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/374ad5bd496dc9d0da819bd5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              60000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              2
+            ],
+            [
+              "W",
+              30000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 60000], [\"r\", 5], [\"n\", 3], [\"k\", 2], [\"W\", 30000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ee09b45ea0e08791f2254bbe",
+        "teks": "Seorang pengusaha menabung sejumlah uang di bank dan mendapat bunga majemuk 10% per tahun. Pada akhir setiap tahun selama 3 tahun, ia mengambil Rp2.662.000,00 dari tabungan itu sehingga tabungannya habis tepat setelah pengambilan ketiga. Berapakah uang yang harus ia tabung di awal?",
+        "jawaban": "Rp6.620.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3601408}{25}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{3601408}{25}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3601433}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3601383}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7202816}{25}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{3601408}{25}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/19b0d474bdfce1d5b3ccbd02.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              40000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              4
+            ],
+            [
+              "k",
+              2
+            ],
+            [
+              "W",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 40000], [\"r\", 2], [\"n\", 4], [\"k\", 2], [\"W\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "89a697347539c208ba13ba42",
+        "teks": "Sebuah yayasan ingin memberi beasiswa sebesar Rp2.205.000,00 pada akhir setiap tahun kepada seorang siswa selama 2 tahun. Dana beasiswa disimpan di bank berbunga majemuk 5% per tahun dan habis tepat setelah pemberian kedua. Dana yang harus disimpan yayasan di awal adalah ....",
+        "jawaban": "Rp4.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{298505}{2}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{298505}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{298507}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{298503}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$298505$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{298505}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a93c3e9b3bd7f89bb5aa16ea.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              40000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              4
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 40000], [\"r\", 5], [\"n\", 4], [\"k\", 1], [\"W\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c1383ea9f79933e7f3641c1",
+        "teks": "Pak Doni ingin menerima penghasilan Rp3.000.000,00 pada akhir setiap bulan selama 2 bulan setelah pensiun dari tabungannya. Bank memberi bunga majemuk 24% per tahun yang dihitung tiap bulan (2% per bulan). Besar uang tabungan yang harus ia siapkan adalah ....",
+        "jawaban": "Rp5.824.683,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{125146362}{625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{125146362}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{125146987}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{125145737}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{250292724}{625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{125146362}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a501842d2f72f71f2f6c26cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              40000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 40000], [\"r\", 6], [\"n\", 5], [\"k\", 1], [\"W\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e450daf452783a3a045ecda0",
+        "teks": "Bu Mirna ingin menerima Rp3.630.000,00 pada akhir setiap semester selama 1 tahun dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap semester. Tabungan awal yang harus ia siapkan adalah ....",
+        "jawaban": "Rp6.300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$25808$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $25808$.",
+      "distraktor": [
+        {
+          "teks": "$25809$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25807$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$51616$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $25808$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/648bec18020da2e5b179832f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              10000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              5000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 10000], [\"r\", 4], [\"n\", 3], [\"k\", 1], [\"W\", 5000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "85f79c7b4c34fd610b570a51",
+        "teks": "Rina menabung Rp1.000.000,00 pada akhir setiap bulan ke rekening deposito yang memberikan bunga majemuk 12% per tahun, dihitung tiap bulan. Nilai masa depan tabungannya setelah 3 bulan adalah ....",
+        "jawaban": "Rp3.030.100,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$77500$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $77500$.",
+      "distraktor": [
+        {
+          "teks": "$77501$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77499$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$155000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $77500$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/246ad082fa9f4b7a1711598a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              50000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              2
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              25000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 50000], [\"r\", 10], [\"n\", 2], [\"k\", 1], [\"W\", 25000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e7a3cc762e0826fbff4c646",
+        "teks": "Tia menabung Rp5.000.000,00 pada akhir setiap semester di sebuah bank dengan bunga majemuk 6% per tahun, dihitung tiap semester. Nilai masa depan tabungannya setelah satu setengah tahun adalah ....",
+        "jawaban": "Rp15.454.500,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{58285301}{250}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{58285301}{250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{58285551}{250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{58285051}{250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{58285301}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{58285301}{250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/81b0465de97eb81293abf13e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              50000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              25000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 50000], [\"r\", 2], [\"n\", 5], [\"k\", 1], [\"W\", 25000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59581c8ece0a936d8afbc614",
+        "teks": "Eko menabung Rp2.000.000,00 pada akhir setiap tahun di bank dengan bunga majemuk 10% per tahun. Agar nilai masa depan tabungannya mencapai Rp6.620.000,00, Eko harus menabung selama .... tahun.",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$220800$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $220800$.",
+      "distraktor": [
+        {
+          "teks": "$220801$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$220799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$441600$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $220800$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8acbb9a816becd21b47c8ec2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              2
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 10], [\"n\", 3], [\"k\", 2], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "84dbc6b3454474090cb24bdc",
+        "teks": "Sari menabung Rp5.000.000,00 pada akhir setiap triwulan di bank dengan bunga majemuk 4% per triwulan. Agar nilai masa depan tabungannya mencapai Rp10.200.000,00, Sari harus menabung selama .... triwulan.",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{949276281}{2500}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{949276281}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{949278781}{2500}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{949273781}{2500}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{949276281}{1250}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{949276281}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/7f16e2670324806e63ebe6f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 3], [\"n\", 5], [\"k\", 1], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5501adaca7a070ee0b2b02a",
+        "teks": "Dalam investasi, anuitas adalah ....",
+        "jawaban": "sistem pembayaran atau penerimaan pada periode waktu yang teratur dengan jumlah yang sama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{451065}{2}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{451065}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{451067}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{451063}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$451065$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{451065}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/4fb27a52357c3f0b6beb3d76.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              60000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              4
+            ],
+            [
+              "k",
+              2
+            ],
+            [
+              "W",
+              30000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 60000], [\"r\", 5], [\"n\", 4], [\"k\", 2], [\"W\", 30000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "69b561040b00b78e6bb3aa0a",
+        "teks": "Pak Anto menyetor Rp1.000.000,00 ke tabungan berjangka pada tanggal 1 setiap bulan, yaitu di awal tiap bulan, dengan jumlah yang selalu sama. Jenis anuitas pada penyetoran Pak Anto adalah ....",
+        "jawaban": "anuitas terutang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{2866244}{5}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{2866244}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2866249}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2866239}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5732488}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{2866244}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/20e51c051890a01f0eb996b0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "k",
+              5
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 10], [\"n\", 6], [\"k\", 5], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92d85b665fa3e0d0148f6d1c",
+        "teks": "Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri dengan rasio $(1+i)$. Jika bunga majemuk 8% per tahun, rasio deret tersebut adalah ....",
+        "jawaban": "1,08",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{8438656}{25}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{8438656}{25}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8438681}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8438631}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{16877312}{25}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{8438656}{25}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/86a6e34ac28d3309577c0542.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              12
+            ],
+            [
+              "n",
+              4
+            ],
+            [
+              "k",
+              3
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 12], [\"n\", 4], [\"k\", 3], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5696be872271bcd3c4272d2c",
+        "teks": "Pada konsep bunga majemuk, nilai sekarang ($PV$) menyatakan ....",
+        "jawaban": "besarnya tabungan awal",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$26632$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $26632$.",
+      "distraktor": [
+        {
+          "teks": "$26633$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26631$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $26632$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/33fe7dfdbc4306c3d1a5fbd8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              10000
+            ],
+            [
+              "r",
+              8
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              5000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 10000], [\"r\", 8], [\"n\", 3], [\"k\", 1], [\"W\", 5000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1803ade9d4f456ce31af8f14",
+        "teks": "Hubungan nilai sekarang dan nilai masa depan adalah $FV = PV \\times (1+i)^n$. Jika $PV$ = Rp2.500.000,00, bunga majemuk 4% per tahun, dan $n$ = 2 tahun, maka $FV$ adalah ....",
+        "jawaban": "Rp2.704.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$127520$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $127520$.",
+      "distraktor": [
+        {
+          "teks": "$127521$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$127519$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$255040$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $127520$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/914063d127af6c72b2b31522.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              50000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              2
+            ],
+            [
+              "W",
+              25000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 50000], [\"r\", 2], [\"n\", 3], [\"k\", 2], [\"W\", 25000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca4c70ad1920a12004f9d7a3",
+        "teks": "Bank memberi bunga majemuk 9% per tahun, dan Hana menyetor tabungan tiap triwulan (3 bulan). Suku bunga per triwulan ($i$) yang dipakai adalah ....",
+        "jawaban": "2,25%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1993690793}{31250}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1993690793}{31250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1993722043}{31250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1993659543}{31250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1993690793}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1993690793}{31250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/87e9e35b6baf50fec8687912.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              10000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "k",
+              3
+            ],
+            [
+              "W",
+              5000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 10000], [\"r\", 6], [\"n\", 6], [\"k\", 3], [\"W\", 5000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aa3c07f94e7dfc639c2bf4cc",
+        "teks": "Dika menyetor tabungan anuitas setiap semester selama 4 tahun. Banyak periode setoran ($n$) adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{234702008}{625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{234702008}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{234702633}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{234701383}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{469404016}{625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{234702008}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/88179238ad858e6330058e40.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "k",
+              4
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 2], [\"n\", 5], [\"k\", 4], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb1c8d1b56297aa898f34efe",
+        "teks": "Seseorang menabung sebesar $A$ pada akhir setiap periode dengan suku bunga majemuk $i$ per periode selama $n$ periode. Rumus nilai masa depan ($FV$) tabungannya adalah ....",
+        "jawaban": "$FV = A \\times \\frac{(1+i)^n - 1}{i}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$429844$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $429844$.",
+      "distraktor": [
+        {
+          "teks": "$429845$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$429843$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$859688$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $429844$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/fc146be7cb11aa9e06e01ae5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              80000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 80000], [\"r\", 10], [\"n\", 5], [\"k\", 1], [\"W\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4ec1e6c8f71a2e78d610866",
+        "teks": "Seseorang ingin mengambil uang sebesar $A$ pada akhir setiap periode selama $n$ periode dari tabungan yang berbunga majemuk $i$ per periode. Rumus tabungan awal yang diperlukan ($PV$) adalah ....",
+        "jawaban": "$PV = A \\times \\frac{1-(1+i)^{-n}}{i}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$54944$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $54944$.",
+      "distraktor": [
+        {
+          "teks": "$54945$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54943$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$109888$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $54944$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6c549278a71e54bd8ef7e69e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "D",
+              20000
+            ],
+            [
+              "r",
+              12
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "k",
+              1
+            ],
+            [
+              "W",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"D\", 20000], [\"r\", 12], [\"n\", 3], [\"k\", 1], [\"W\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fca2da892b8a99b5611ae3b6",
+        "teks": "Lani menyetor Rp1.500.000,00 pada akhir tahun pertama dan Rp1.500.000,00 pada akhir tahun kedua ke bank dengan bunga majemuk 8% per tahun. Nilai tabungan Lani tepat setelah setoran kedua adalah ....",
+        "jawaban": "Rp3.120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $80000$; r = $4$; n = $5$; k = $3$; W = $40000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{243776128}{625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{243776128}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{243776753}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{243775503}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{487552256}{625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{243776128}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "278f10a57ed0b86ee035e4a6",
+        "teks": "Dina menghitung nilai masa depan setoran Rp2.000.000,00 pada akhir setiap tahun selama 4 tahun dengan bunga majemuk 10% per tahun. Ia menulis $FV = 2.000.000 \\times \\frac{(1,1)^4}{0,1} = 29.282.000$. Pernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Salah: pembilang seharusnya $(1,1)^4 - 1$, sehingga nilai masa depan yang benar Rp9.282.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $10000$; r = $10$; n = $3$; k = $1$; W = $5000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$27050$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $27050$.",
+      "distraktor": [
+        {
+          "teks": "$27051$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27049$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54100$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $27050$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f34e643892355e43f63da39f",
+        "teks": "Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun. Orang pertama mendapat bunga majemuk 10% per tahun dan orang kedua 20% per tahun. Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga orang kedua (Rp640.000,00) lebih dari dua kali total bunga orang pertama (Rp310.000,00)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $50000$; r = $4$; n = $4$; k = $1$; W = $25000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{921008}{5}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{921008}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{921013}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{921003}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1842016}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{921008}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c916970e8ab3d65426404167",
+        "teks": "Dua skema menabung selama 2 tahun dengan bunga majemuk 20% per tahun. Skema 1: menyetor Rp1.000.000,00 pada akhir setiap semester dengan bunga dihitung tiap semester. Skema 2: menyetor Rp2.000.000,00 pada akhir setiap tahun dengan bunga dihitung tiap tahun. Kesimpulan yang benar adalah ....",
+        "jawaban": "Skema 1 lebih besar, selisih nilai masa depan Rp241.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $60000$; r = $6$; n = $5$; k = $2$; W = $30000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{189059436}{625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{189059436}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{189060061}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{189058811}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{378118872}{625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{189059436}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24b01ef6595c3f99af35bea8",
+        "teks": "Rendi ingin tabungannya paling sedikit Rp10.000.000,00 tepat setelah setoran ke-4. Ia menyetor sejumlah yang sama pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun, dan besar setoran harus kelipatan Rp100.000,00. Setoran tahunan terkecil yang memenuhi adalah ....",
+        "jawaban": "Rp2.200.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $50000$; r = $6$; n = $6$; k = $2$; W = $25000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{991262509}{3125}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{991262509}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{991265634}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{991259384}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1982525018}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{991262509}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cfbc9100185c14c5f23eee86",
+        "teks": "Fira menyetor Rp2.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10% per tahun. Ia ingin nilai masa depan tabungannya lebih dari Rp15.000.000,00 tepat setelah setoran terakhir. Banyak setoran paling sedikit yang diperlukan adalah ....",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $30000$; r = $5$; n = $2$; k = $1$; W = $15000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$45750$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $45750$.",
+      "distraktor": [
+        {
+          "teks": "$45751$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45749$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $45750$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b971243d30a88c167b45089",
+        "teks": "Gita ingin menarik Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis. Untuk mencari tabungan awal ia menghitung $1.210.000 \\times \\frac{(1,1)^2 - 1}{0,1} = 2.541.000$. Pernyataan yang benar adalah ....",
+        "jawaban": "Gita keliru memakai rumus nilai masa depan; tabungan awal yang benar Rp2.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $10000$; r = $8$; n = $2$; k = $1$; W = $5000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$15400$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $15400$.",
+      "distraktor": [
+        {
+          "teks": "$15401$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15399$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $15400$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1832b1cebd5daa2f7602f26d",
+        "teks": "Bu Lia menyimpan Rp3.200.000,00 di bank berbunga majemuk 10% per tahun. Pada akhir setiap tahun, mulai akhir tahun pertama, ia menarik Rp1.000.000,00. Banyak penarikan penuh Rp1.000.000,00 yang dapat ia lakukan paling banyak adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $50000$; r = $2$; n = $5$; k = $2$; W = $25000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{29208976}{125}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{29208976}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29209101}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{29208851}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{58417952}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{29208976}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f9d0cdb1a6a02f8d1407db9",
+        "teks": "Rama menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Sari ingin nilai masa depan tabungannya sama dengan Rama tepat saat setoran terakhir, tetapi hanya menyetor selama 2 tahun di bank yang sama. Setoran tahunan Sari yang harus ia lakukan adalah ....",
+        "jawaban": "Rp2.210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $70000$; r = $12$; n = $6$; k = $1$; W = $35000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{7912207408}{15625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{7912207408}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7912223033}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7912191783}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15824414816}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{7912207408}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c407c07f158fb4c2588a1a9d",
+        "teks": "Hana menyetor Rp500.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 20% per tahun. Ia menghitung nilai masa depan sebagai $500.000 \\times (1,2^4 + 1,2^3 + 1,2^2 + 1,2) = 3.220.800$. Pernyataan yang benar adalah ....",
+        "jawaban": "Hana keliru karena setoran terakhir tidak berbunga; nilai masa depan yang benar Rp2.684.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $10000$; r = $12$; n = $6$; k = $1$; W = $5000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1130315344}{15625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1130315344}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1130330969}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1130299719}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2260630688}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1130315344}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0b5f7e2923d17102b091676",
+        "teks": "Seseorang menarik jumlah yang sama pada akhir setiap tahun selama 3 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis tepat setelah penarikan ketiga. Tepat setelah penarikan pertama, saldo tabungan Rp2.310.000,00. Besar penarikan tiap tahun adalah ....",
+        "jawaban": "Rp1.331.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $70000$; r = $5$; n = $5$; k = $4$; W = $35000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{5600707}{16}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{5600707}{16}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5600723}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5600691}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5600707}{8}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{5600707}{16}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c84e75d72d9764cc3d029e06",
+        "teks": "Dani menyetor Rp1.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10% per tahun, sebanyak $n$ kali. Ia ingin nilai masa depan tabungan tepat setelah setoran terakhir paling sedikit Rp6.000.000,00, sedangkan total uang yang ia setor tidak lebih dari Rp8.000.000,00. Banyak nilai $n$ bulat positif yang memenuhi kedua syarat adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $60000$; r = $3$; n = $2$; k = $1$; W = $30000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$90900$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $90900$.",
+      "distraktor": [
+        {
+          "teks": "$90901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$181800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $90900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c96ddcde625d90408b89b8d6",
+        "teks": "Wulan menyetor Rp1.000.000,00 pada akhir tahun pertama dan akhir tahun kedua ke bank berbunga majemuk 10% per tahun. Setelah itu ia tidak menyetor lagi, melainkan menarik jumlah yang sama pada akhir tahun ketiga dan akhir tahun keempat sehingga tabungan habis tepat setelah penarikan keempat. Besar penarikan tiap tahun adalah ....",
+        "jawaban": "Rp1.210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $20000$; r = $6$; n = $6$; k = $3$; W = $10000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1993690793}{15625}$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1993690793}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1993706418}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1993675168}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3987381586}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $\\frac{1993690793}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9adf1bd913d81a6eebe6774",
+        "teks": "Seorang penjual menawarkan dua pilihan pembayaran: menerima Rp3.300.000,00 tunai sekarang, atau menerima Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun. Suku bunga majemuk yang berlaku 10% per tahun. Kesimpulan yang benar adalah ....",
+        "jawaban": "Pilihan 3 kali penerimaan lebih menguntungkan karena nilai sekarangnya Rp10.000,00 lebih besar daripada tunai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $40000$; r = $2$; n = $3$; k = $2$; W = $20000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$102016$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $102016$.",
+      "distraktor": [
+        {
+          "teks": "$102017$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$102015$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$204032$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $102016$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a923b46657fdcd52cf61ad4d",
+        "teks": "Gilang menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Pernyataan yang benar tentang bunga yang dihasilkan masing-masing setoran sampai akhir tahun ke-4 adalah ....",
+        "jawaban": "Setoran pertama menghasilkan bunga Rp331.000,00, setoran kedua Rp210.000,00, dan setoran keempat tidak menghasilkan bunga",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $30000$; r = $4$; n = $3$; k = $1$; W = $15000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$77424$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $77424$.",
+      "distraktor": [
+        {
+          "teks": "$77425$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77423$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154848$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $77424$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6d6fcf762cd81ffc17266238",
+        "teks": "Seseorang menyimpan Rp3.310.000,00 di bank berbunga majemuk 10% per tahun, lalu menarik Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun hingga tabungan habis. Bunga yang diterima pada tahun pertama lebih besar daripada bunga yang diterima pada tahun ketiga sebesar ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_annuity_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui D = $80000$; r = $12$; n = $2$; k = $1$; W = $40000$. Setoran $D$ dilakukan setiap akhir tahun selama $n$ tahun dengan bunga $r$ persen. Tepat sesudah setoran tahun ke-$k$, ditarik $W$ rupiah. Berapa saldo setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$124800$",
+      "alasan_benar": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $124800$.",
+      "distraktor": [
+        {
+          "teks": "$124801$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$124799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$249600$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung saldo anuitas utuh, lalu kurangkan nilai akhir dari dana yang ditarik lebih awal. Hasilnya $124800$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-medium-bt01-056"
     }
   ],
   "kapasitas_kurang": true,

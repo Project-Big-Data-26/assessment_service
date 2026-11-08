@@ -88,10 +88,32 @@ def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
     for question in questions.values():
         for ref in question.get("image_url") or []:
             assert (source.parent / ref).is_file(), ref
+            if question.get("_visualAssetHashes"):
+                assert digest(source.parent / ref) == question["_visualAssetHashes"][ref], ref
 
 
 def verify_bundle(source: Path, bundle: Path) -> None:
     manifest = load(bundle / "manifest.json")
+    if manifest.get("schemaVersion") == "codex-exercise-sessions-local-v3":
+        from app.services.exercise.session_expansion import verify_publication
+        verify_publication(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-sd-difficulty-review-v2":
+        from scripts.review_sd_difficulty_local import verify
+        verify(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-local-sd-bank-v1":
+        from scripts.generate_sd_bank_local import verify
+        verify(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-targeted-exercise-publication-v2":
+        from scripts.generate_targeted_replenishment import verify
+        verify(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-local-exercise-publication-v1":
+        from scripts.review_replenishment_local import verify_local_publication
+        verify_local_publication(bundle)
+        return
     for info in manifest["sourceFiles"].values():
         assert digest(Path(info["path"])) == info["sha256"], info["path"]
     for name, info in manifest["outputs"].items():

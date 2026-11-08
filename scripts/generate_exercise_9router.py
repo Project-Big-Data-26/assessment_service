@@ -34,6 +34,7 @@ def main() -> int:
                     help="soal BERGAMBAR: gambar diambil dari soal pretest bergambar subbab itu (butuh model vision)")
     ap.add_argument("--model", help="override NINEROUTER_MODEL")
     ap.add_argument("--out", default=C.OUT_ROOT, help="akar keluaran (default output/exercise; untuk uji pakai folder lain)")
+    ap.add_argument("--generation-only", action="store_true", help="Keep new candidates validation_pending; never call a solver")
     a = ap.parse_args()
 
     try:
@@ -45,12 +46,21 @@ def main() -> int:
         settings = NineRouterSettings(**{**settings.__dict__, "model": a.model})
     job = Job(a.book, a.bab, a.subbab.upper(), a.level, a.batch, os.path.abspath(a.out), a.gambar)
     print(f"Job {job.book} bab{job.bab_no} {job.subbab} {job.level} batch{job.batch} model={settings.model}")
-    with NineRouterClient(settings) as client:
-        try:
-            res = generate(job, client)
-        except GenerateError as exc:
-            print(f"[GAGAL] {exc}")
-            return 1
+    from app.services.exercise.workflow import batch_lock, begin_generation, managed
+    from contextlib import nullcontext
+    base = Path(job.path).parent.parent
+    deferred = a.generation_only or managed(base) or not (base / "soal_exercise_db.json").exists()
+    with batch_lock(base) if deferred else nullcontext():
+        if deferred:
+            begin_generation(base, job.book, job.batch)
+        with NineRouterClient(settings) as client:
+            try:
+                res = generate(job, client)
+            except GenerateError as exc:
+                print(f"[GAGAL] konfigurasi/bahan/hasil lokal: {type(exc).__name__}")
+                return 1
+        if deferred:
+            print("validation_pending: candidate saved; export later with --generation-only")
     for e in res.errors:
         print("ERROR  ", e)
     for w in res.warnings:

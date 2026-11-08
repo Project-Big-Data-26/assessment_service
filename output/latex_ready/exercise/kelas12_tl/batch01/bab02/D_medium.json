@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "D",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "optimasi talang air",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan permodelan fungsi luas penampang dari pelat seng, penentuan turunan pertama untuk titik stasioner, dan perhitungan dimensi optimal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah talang air akan dibuat dari selembar pelat seng selebar $48\\text{ cm}$ dengan cara melipat kedua sisi sampingnya tegak lurus ke atas sama panjang. Tentukan ukuran lebar dasar dan tinggi talang air tersebut agar kapasitas penampung airnya maksimum.",
+      "jawaban_benar": "Lebar dasar $24\\text{ cm}$ dan tinggi $12\\text{ cm}$",
+      "alasan_benar": "Misal tinggi lipatan adalah $x\\text{ cm}$, maka lebar dasar talang adalah $(48 - 2x)\\text{ cm}$. Luas penampang $L(x) = x(48 - 2x) = 48x - 2x^2$. Nilai maksimum dicapai saat $L'(x) = 0$, yaitu $48 - 4x = 0 \\implies x = 12\\text{ cm}$. Jadi tinggi talang $12\\text{ cm}$ dan lebar dasarnya $48 - 2(12) = 24\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "Lebar dasar $16\\text{ cm}$ dan tinggi $16\\text{ cm}$",
+          "alasan": "Siswa membagi lebar total seng langsung menjadi 3 bagian yang sama panjang ($48/3 = 16$)."
+        },
+        {
+          "teks": "Lebar dasar $36\\text{ cm}$ dan tinggi $6\\text{ cm}$",
+          "alasan": "Siswa salah menurunkan $2x^2$ menjadi $2x$, sehingga menghasilkan $48 - 2x = 0 \\implies x = 6$ (tinggi $6\\text{ cm}$, dasar $36\\text{ cm}$)."
+        },
+        {
+          "teks": "Lebar dasar $20\\text{ cm}$ dan tinggi $14\\text{ cm}$",
+          "alasan": "Siswa membuat kesalahan dalam memfaktorkan persamaan turunan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi penampang talang adalah $x\\text{ cm}$. Karena seng selebar $48\\text{ cm}$ dilipat pada kedua sisinya, maka panjang dasar talang adalah $(48 - 2x)\\text{ cm}$.\n\nFungsi luas penampang talang:\n$$L(x) = x(48 - 2x) = 48x - 2x^2$$\n\nAgar luas penampang (debit air) maksimum, turunan pertama fungsi luas terhadap $x$ harus bernilai nol:\n$$L'(x) = 48 - 4x = 0$$\n$$4x = 48 \\implies x = 12$$\n\nUkuran talang:\n- Tinggi talang $= x = 12\\text{ cm}$\n- Lebar dasar talang $= 48 - 2(12) = 24\\text{ cm}$\n\nJadi, kapasitas maksimum tercapai saat lebar dasar $24\\text{ cm}$ dan tinggi $12\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "optimasi luas bidang",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan fungsi luas persegi panjang di bawah kurva parabola serta penerapan turunan untuk mencari nilai optimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang dibentuk di atas sumbu-$X$ dan di bawah kurva parabola $y = 27 - x^2$. Dua titik sudut alas persegi panjang terletak pada sumbu-$X$ dan dua titik sudut lainnya terletak pada kurva tersebut. Luas maksimum persegi panjang tersebut adalah ....",
+      "jawaban_benar": "$108\\text{ satuan luas}$",
+      "alasan_benar": "Titik sudut pada kurva adalah $(x, 27 - x^2)$ untuk $x > 0$. Panjang alas persegi panjang adalah $2x$ dan tingginya $y = 27 - x^2$. Luas $L(x) = 2x(27 - x^2) = 54x - 2x^3$. Luas maksimum tercapai saat $L'(x) = 54 - 6x^2 = 0 \\implies x^2 = 9 \\implies x = 3$. Luas maksimum $= 54(3) - 2(3)^3 = 162 - 54 = 108\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$54\\text{ satuan luas}$",
+          "alasan": "Siswa menganggap panjang alas persegi panjang hanya $x$, bukan $2x$, sehingga luas terhitung setengahnya."
+        },
+        {
+          "teks": "$72\\text{ satuan luas}$",
+          "alasan": "Siswa salah menghitung turunan $54x - 2x^3$ menjadi $54 - 3x^2 = 0$ atau salah evaluasi nilai luas."
+        },
+        {
+          "teks": "$162\\text{ satuan luas}$",
+          "alasan": "Siswa hanya menghitung suku pertama $54(3)$ dan lupa mengurangkan dengan $2x^3$."
+        }
+      ],
+      "pembahasan": "Karena kurva simetris terhadap sumbu-$Y$, titik-titik sudut persegi panjang yang berada pada kurva adalah $(-x, 27 - x^2)$ dan $(x, 27 - x^2)$ dengan $x > 0$.\n\nUkuran persegi panjang:\n- Panjang alas $= x - (-x) = 2x$\n- Tinggi $= 27 - x^2$\n\nFungsi luas persegi panjang:\n$$L(x) = 2x(27 - x^2) = 54x - 2x^3$$\n\nSyarat luas maksimum adalah $L'(x) = 0$:\n$$L'(x) = 54 - 6x^2 = 0$$\n$$6x^2 = 54 \\implies x^2 = 9 \\implies x = 3$$\n\nSubstitusikan $x = 3$ ke fungsi luas:\n$$L(3) = 54(3) - 2(3)^3 = 162 - 54 = 108\\text{ satuan luas}$$\n\nJadi, luas maksimum persegi panjang tersebut adalah $108\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 170,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Biaya total produksi x unit barang adalah C ( x ) = x 2 + 10 x + 400"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "optimasi keuntungan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan pembentukan fungsi keuntungan dari selisih pendapatan dan biaya, lalu menentukan nilai optimum menggunakan turunan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Biaya total untuk memproduksi $x$ unit barang dinyatakan oleh fungsi $C(x) = x^2 + 30x + 400$ (dalam ribuan rupiah). Jika setiap unit barang dijual dengan harga Rp90.000,00, keuntungan maksimum yang dapat diperoleh perusahaan tersebut adalah ....",
+      "jawaban_benar": "Rp500.000,00",
+      "alasan_benar": "Pendapatan total $R(x) = 90x$ (dalam ribuan rupiah). Fungsi keuntungan $U(x) = R(x) - C(x) = 90x - (x^2 + 30x + 400) = -x^2 + 60x - 400$. Keuntungan maksimum saat $U'(x) = -2x + 60 = 0 \\implies x = 30$. Nilai keuntungan maksimum $U(30) = -(30)^2 + 60(30) - 400 = -900 + 1800 - 400 = 500$ (ribu rupiah) = Rp500.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp900.000,00",
+          "alasan": "Siswa menghitung nilai $-x^2 + 60x$ pada $x = 30$ namun lupa mengurangkan biaya tetap $400$ ribu rupiah."
+        },
+        {
+          "teks": "Rp450.000,00",
+          "alasan": "Siswa salah menghitung titik puncak atau keliru dalam operasi aritmetika saat substitusi nilai $x$."
+        },
+        {
+          "teks": "Rp300.000,00",
+          "alasan": "Siswa mengira jumlah unit $x = 30$ langsung dikalikan $10$ tanpa evaluasi ke fungsi keuntungan lengkap."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Fungsi biaya total: $C(x) = x^2 + 30x + 400$ (dalam ribuan rupiah)\n- Harga jual per unit: Rp90.000,00 $= 90$ ribu rupiah\n- Fungsi penerimaan total: $R(x) = 90x$ (dalam ribuan rupiah)\n\nFungsi keuntungan perusahaan:\n$$U(x) = R(x) - C(x)$$\n$$U(x) = 90x - (x^2 + 30x + 400) = -x^2 + 60x - 400$$\n\nKeuntungan maksimum tercapai saat turunan pertama bernilai nol ($U'(x) = 0$):\n$$U'(x) = -2x + 60 = 0$$\n$$2x = 60 \\implies x = 30$$\n\nSubstitusikan $x = 30$ ke dalam fungsi keuntungan:\n$$U(30) = -(30)^2 + 60(30) - 400$$\n$$U(30) = -900 + 1800 - 400 = 500\\text{ (ribu rupiah)}$$\n\nKeuntungan maksimum adalah $500 \\times \\text{Rp}1.000,00 = \\text{Rp}500.000,00$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 166,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah kotak dibuat dari selembar karton persegi sepanjang 18 cm dengan cara memotong persegi identik pada keempat pojok karton, kemudian melipat sisi-sisinya ke atas"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "optimasi volume kotak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan permodelan fungsi volume dari manipulasi geometris, diferensiasi suku banyak berderajat tiga, dan eliminasi nilai kritis yang tidak memenuhi syarat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak tanpa tutup dibuat dari selembar karton berbentuk persegi dengan panjang sisi $24\\text{ cm}$. Pada setiap pojok karton dipotong persegi identik berukuran sisi $x\\text{ cm}$, kemudian sisi-sisinya dilipat ke atas. Volume maksimum kotak yang dapat dibuat adalah ....",
+      "jawaban_benar": "$1.024\\text{ cm}^3$",
+      "alasan_benar": "Dimensi kotak: panjang = $24 - 2x$, lebar = $24 - 2x$, tinggi = $x$. Volume $V(x) = x(24 - 2x)^2 = 4x^3 - 96x^2 + 576x$. $V'(x) = 12x^2 - 192x + 576 = 0 \\implies x^2 - 16x + 48 = 0 \\implies (x - 4)(x - 12) = 0$. Karena $0 < x < 12$, nilai yang memenuhi adalah $x = 4\\text{ cm}$. Maka $V(4) = 4(24 - 8)^2 = 4(16)^2 = 4 \\times 256 = 1.024\\text{ cm}^3$.",
+      "distraktor": [
+        {
+          "teks": "$576\\text{ cm}^3$",
+          "alasan": "Siswa salah menentukan akar turunan menjadi $x = 6$, lalu menghitung $V(6) = 6(12)^2 = 864$ atau salah hitung lainnya."
+        },
+        {
+          "teks": "$1.152\\text{ cm}^3$",
+          "alasan": "Siswa salah saat ekspansi kuadrat sehingga menurunkan persamaan $V'(x) = 0$ secara keliru."
+        },
+        {
+          "teks": "$256\\text{ cm}^3$",
+          "alasan": "Siswa hanya menghitung luas alas kotak $(16\\text{ cm} \\times 16\\text{ cm} = 256\\text{ cm}^2)$ dan lupa mengalikannya dengan tinggi kotak $x = 4\\text{ cm}$."
+        }
+      ],
+      "pembahasan": "Karton berbentuk persegi dengan sisi $24\\text{ cm}$. Jika keempat sudutnya dipotong bujur sangkar dengan sisi $x\\text{ cm}$, maka ukuran kotak tanpa tutup adalah:\n- Panjang alas $(p) = 24 - 2x$\n- Lebar alas $(l) = 24 - 2x$\n- Tinggi kotak $(t) = x$\n- Domain fisis: $0 < x < 12$\n\nFungsi volume kotak:\n$$V(x) = p \\cdot l \\cdot t = x(24 - 2x)^2 = x(576 - 96x + 4x^2) = 4x^3 - 96x^2 + 576x$$\n\nSyarat volume maksimum adalah $V'(x) = 0$:\n$$V'(x) = 12x^2 - 192x + 576 = 0$$\nBagi kedua ruas dengan 12:\n$$x^2 - 16x + 48 = 0$$\n$$(x - 4)(x - 12) = 0$$\n$$x = 4 \\quad \\text{atau} \\quad x = 12$$\n\nKarena $x = 12$ menghasilkan ukuran alas $0$, maka nilai yang memenuhi adalah $x = 4\\text{ cm}$.\n\nSubstitusikan $x = 4$ ke rumus volume:\n$$V(4) = 4(24 - 2(4))^2 = 4(16)^2 = 4 \\times 256 = 1.024\\text{ cm}^3$$\n\nJadi, volume maksimum kotak tersebut adalah $1.024\\text{ cm}^3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 172,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah anak panah ditembakkan secara vertikal ke udara dan jaraknya (dalam m) setelah t detik dalam keadaan melayang diberikan oleh s ( t ) = - 16 t 2 + 80 t"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "ekstremum gerak vertikal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan waktu saat kecepatan sesaat nol dari turunan persamaan gerak kemudian menghitung posisi maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah peluru kendali ditembakkan vertikal ke atas dengan persamaan lintasan ketinggian $s(t) = 120t - 5t^2$, dengan $s$ menyatakan tinggi dalam meter dan $t$ menyatakan waktu dalam detik. Ketinggian maksimum yang dapat dicapai peluru kendali tersebut adalah ....",
+      "jawaban_benar": "$720\\text{ meter}$",
+      "alasan_benar": "Tinggi maksimum tercapai saat kecepatan sesaat $v(t) = s'(t) = 0$. $s'(t) = 120 - 10t = 0 \\implies 10t = 120 \\implies t = 12\\text{ detik}$. Ketinggian maksimum $s(12) = 120(12) - 5(12)^2 = 1.440 - 5(144) = 1.440 - 720 = 720\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$360\\text{ meter}$",
+          "alasan": "Siswa salah memasukkan nilai waktu $t = 6$ (membagi dua waktu puncak)."
+        },
+        {
+          "teks": "$1.440\\text{ meter}$",
+          "alasan": "Siswa hanya menghitung suku linear $120 \\times 12$ dan lupa mengurangkan suku perlambatan gravitasi $-5t^2$."
+        },
+        {
+          "teks": "$600\\text{ meter}$",
+          "alasan": "Siswa salah mencari turunan dengan menganggap $s'(t) = 120 - 12t = 0 \\implies t = 10$, sehingga $s(10) = 1200 - 500 = 700$, atau salah hitung aritmetika menghasilkan $600\\text{ meter}$."
+        }
+      ],
+      "pembahasan": "Persamaan lintasan ketinggian peluru: $s(t) = 120t - 5t^2$.\n\nKecepatan sesaat merupakan turunan pertama dari fungsi posisi:\n$$v(t) = s'(t) = 120 - 10t$$\n\nPeluru mencapai tinggi maksimum ketika kecepatannya sama dengan nol ($v(t) = 0$):\n$$120 - 10t = 0$$\n$$10t = 120 \\implies t = 12\\text{ detik}$$\n\nSubstitusikan $t = 12$ ke dalam fungsi ketinggian $s(t)$:\n$$s(12) = 120(12) - 5(12)^2$$\n$$s(12) = 1.440 - 5(144)$$\n$$s(12) = 1.440 - 720 = 720\\text{ meter}$$\n\nJadi, ketinggian maksimum yang dicapai peluru kendali adalah $720\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 172,
+        "bagian": "Uji Kompetensi Bab 2 Bagian C",
+        "nomor": "4",
+        "teks": "Sebuah anak panah ditembakkan secara vertikal ke udara dan jaraknya (dalam m) setelah t detik dalam keadaan melayang diberikan oleh s ( t ) = - 16 t 2 + 80 t .",
+        "jawaban": "100 meter",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "tinggi maksimum proyektil",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan syarat titik stasioner untuk mencari waktu kemudian menghitung ketinggian maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah roket mainan ditembakkan vertikal ke udara dan lintasannya setelah $t$ detik diberikan oleh persamaan $s(t) = 72t - 6t^2$, dengan $s$ dalam meter. Berapakah ketinggian maksimum yang dicapai roket tersebut sebelum mulai jatuh kembali ke tanah?",
+      "jawaban_benar": "$216\\text{ meter}$",
+      "alasan_benar": "Roket mencapai ketinggian maksimum saat kecepatan nol: $s'(t) = 72 - 12t = 0 \\implies t = 6\\text{ s}$. Ketinggian maksimum $s(6) = 72(6) - 6(6^2) = 432 - 216 = 216\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$432\\text{ meter}$",
+          "alasan": "Hanya menghitung nilai suku pertama $72t$ pada saat $t = 6$ dan lupa mengurangkan dengan $6t^2$."
+        },
+        {
+          "teks": "$180\\text{ meter}$",
+          "alasan": "Keliru menentukan waktu puncak menjadi $t = 5$ detik, menghasilkan $s(5) = 360 - 150 = 210$ atau salah hitung aritmetika ke 180."
+        },
+        {
+          "teks": "$72\\text{ meter}$",
+          "alasan": "Menyimpulkan koefisien kecepatan awal $72$ sebagai ketinggian maksimum."
+        }
+      ],
+      "pembahasan": "Fungsi lintasan: $s(t) = 72t - 6t^2$.\n1. Waktu saat mencapai tinggi puncak dicari dengan syarat $v(t) = 0$:\n$$v(t) = s'(t) = 72 - 12t = 0 \\implies 12t = 72 \\implies t = 6\\text{ detik}$$\n2. Substitusikan $t = 6$ ke persamaan $s(t)$:\n$$s(6) = 72(6) - 6(6^2) = 432 - 216 = 216\\text{ meter}$$\nJadi, ketinggian maksimum yang dicapai adalah $216\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 172,
+        "bagian": "Pengayaan",
+        "nomor": "1",
+        "teks": "Bayangkan kamu sedang mengendalikan sebuah drone . Ketinggian drone tersebut di atas tanah (dalam meter) pada setiap waktu t (dalam detik) diberikan oleh fungsi: h ( t ) = 15 t - 2 t 2 .",
+        "jawaban": "3 m/s, drone sedang naik",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan gerak vertikal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan turunan pertama untuk mencari laju sesaat dan menginterpretasikan tanda hasilnya terhadap arah gerak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ketinggian sebuah pesawat tanpa awak (*drone*) di atas permukaan tanah setelah $t$ detik diterbangkan dinyatakan oleh fungsi $h(t) = 28t - 2t^2$ (dengan $h$ dalam meter dan $t$ dalam detik). Berapakah laju perubahan ketinggian *drone* pada saat $t = 8$ detik dan bagaimana arah pergerakannya saat itu?",
+      "jawaban_benar": "$-4\\text{ m/s}$, bergerak turun",
+      "alasan_benar": "Laju perubahan ketinggian adalah $h'(t) = 28 - 4t$. Pada $t = 8$, diperoleh $h'(8) = 28 - 4(8) = -4\\text{ m/s}$. Tanda negatif menyatakan *drone* sedang bergerak turun.",
+      "distraktor": [
+        {
+          "teks": "$4\\text{ m/s}$, bergerak naik",
+          "alasan": "Mengabaikan tanda negatif pada hasil turunan sehingga menyimpulkan *drone* bergerak naik."
+        },
+        {
+          "teks": "$-4\\text{ m/s}$, bergerak naik",
+          "alasan": "Benar menghitung nilai negatif tetapi salah mengartikan makna fisis nilai negatif."
+        },
+        {
+          "teks": "$-20\\text{ m/s}$, bergerak turun",
+          "alasan": "Salah melakukan diferensiasi dengan menganggap $h'(t) = 28 - 6t$ sehingga $28 - 48 = -20$."
+        }
+      ],
+      "pembahasan": "Fungsi ketinggian: $h(t) = 28t - 2t^2$.\n1. Laju perubahan ketinggian diperoleh dari turunan pertama fungsi $h(t)$:\n$$v(t) = h'(t) = 28 - 4t$$\n2. Pada saat $t = 8\\text{ detik}$:\n$$h'(8) = 28 - 4(8) = 28 - 32 = -4\\text{ m/s}$$\nKarena bernilai negatif, arah pergerakan *drone* pada saat itu adalah sedang bergerak turun.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 164,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "penggunaan turunan fungsi untuk memecahkan masalah yang berkaitan dengan titik optimum (nilai maksimum dan nilai minimum)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "minimasi biaya rata-rata",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memodelkan fungsi biaya rata-rata rasional kemudian menentukan titik stasioner minimumnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Biaya total untuk memproduksi $x$ unit suatu komoditas dinyatakan oleh persamaan $C(x) = 2x^2 + 80x + 1.800$ (dalam ribuan rupiah). Agar biaya rata-rata per unit barang menjadi minimum, banyak barang yang harus diproduksi adalah ....",
+      "jawaban_benar": "$30\\text{ unit}$",
+      "alasan_benar": "Fungsi biaya rata-rata $A(x) = \\frac{C(x)}{x} = 2x + 80 + \\frac{1.800}{x}$. Syarat minimum $A'(x) = 2 - \\frac{1.800}{x^2} = 0 \\implies 2x^2 = 1.800 \\implies x^2 = 900 \\implies x = 30$ unit.",
+      "distraktor": [
+        {
+          "teks": "$20\\text{ unit}$",
+          "alasan": "Salah menurunkan fungsi biaya langsung $C'(x) = 4x + 80 = 0$ dan mengambil nilai mutlak dari $x = -20$."
+        },
+        {
+          "teks": "$45\\text{ unit}$",
+          "alasan": "Kesalahan membagi saat menurunkan yaitu mengira $x^2 = \\frac{1.800}{4} = 450$ atau salah hitung kuadrat."
+        },
+        {
+          "teks": "$60\\text{ unit}$",
+          "alasan": "Lupa membagi 1.800 dengan 2 sehingga $x^2 = 1.800$ atau salah faktor dua menjadi $x = 60$."
+        }
+      ],
+      "pembahasan": "1. Fungsi biaya rata-rata per unit ($A(x)$):\n$$A(x) = \\frac{C(x)}{x} = \\frac{2x^2 + 80x + 1.800}{x} = 2x + 80 + 1.800x^{-1}$$\n2. Menentukan nilai stasioner dengan $A'(x) = 0$:\n$$A'(x) = 2 - 1.800x^{-2} = 0$$\n$$2 = \\frac{1.800}{x^2}$$\n$$2x^2 = 1.800 \\iff x^2 = 900$$\n3. Karena jumlah produksi $x > 0$, maka:\n$$x = \\sqrt{900} = 30\\text{ unit}$$\nUji turunan kedua: $A''(x) = \\frac{3.600}{x^3} > 0$ untuk $x = 30$ (titik minimum).\nJadi, biaya rata-rata per unit mencapai minimum saat produksi sebanyak $30\\text{ unit}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 164,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "penggunaan turunan fungsi untuk memecahkan masalah yang berkaitan dengan titik optimum (nilai maksimum dan nilai minimum)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "optimasi kerangka bangun ruang",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyusun fungsi volume satu variabel dari batasan panjang kawat lalu mencari nilai optimumnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kawat sepanjang $120\\text{ cm}$ akan digunakan seluruhnya untuk membuat kerangka sebuah balok tegak dengan alas berbentuk persegi (sisi alas $= x\\text{ cm}$ dan tinggi balok $= t\\text{ cm}$). Volume balok maksimum yang dapat dibentuk dari kawat tersebut adalah ....",
+      "jawaban_benar": "$1.000\\text{ cm}^3$",
+      "alasan_benar": "Keliling kerangka balok beralas persegi: $4x + 4x + 4t = 120 \\implies 2x + t = 30 \\implies t = 30 - 2x$. Volume $V(x) = x^2(30 - 2x) = 30x^2 - 2x^3$. Syarat optimum $V'(x) = 60x - 6x^2 = 0 \\implies 6x(10 - x) = 0 \\implies x = 10\\text{ cm}$. Maka $t = 30 - 2(10) = 10\\text{ cm}$. Volume maksimum $V = 10 \\times 10 \\times 10 = 1.000\\text{ cm}^3$.",
+      "distraktor": [
+        {
+          "teks": "$2.000\\text{ cm}^3$",
+          "alasan": "Menggunakan nilai $t = 20$ karena salah mengeliminasi hubungan keliling menjadi $x + t = 30$."
+        },
+        {
+          "teks": "$750\\text{ cm}^3$",
+          "alasan": "Memilih $x = 5\\text{ cm}$ sehingga volume $V = 5^2 \\times (30 - 10) = 500$ atau salah hitung substitusi."
+        },
+        {
+          "teks": "$1.200\\text{ cm}^3$",
+          "alasan": "Menghitung secara langsung dari pembagian panjang kawat dikali ukuran tanpa optimasi turunan."
+        }
+      ],
+      "pembahasan": "1. Hubungan dimensi balok dengan panjang kawat:\nBalok memiliki 4 rusuk panjang ($x$), 4 rusuk lebar ($x$), dan 4 rusuk tinggi ($t$).\n$$4x + 4x + 4t = 120 \\iff 8x + 4t = 120 \\iff 2x + t = 30 \\iff t = 30 - 2x$$\n2. Fungsi volume balok:\n$$V(x) = x \\cdot x \\cdot t = x^2(30 - 2x) = 30x^2 - 2x^3$$\n3. Syarat volume maksimum ($V'(x) = 0$):\n$$V'(x) = 60x - 6x^2 = 0$$\n$$6x(10 - x) = 0$$\nKarena ukuran sisi $x > 0$, maka $x = 10\\text{ cm}$.\nTinggi balok $t = 30 - 2(10) = 10\\text{ cm}$.\nVolume maksimum balok adalah:\n$$V = 10^2 \\times 10 = 1.000\\text{ cm}^3$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 165,
+        "bagian": "Ayo Mencoba",
+        "nomor": "2.10",
+        "teks": "Sebuah partikel bergerak pada lintasan kurva s = f (t) = t 3 - 6 t 2 + 9 t , dengan s adalah jarak tempuh dalam meter (m) dan t adalah waktu tempuh dalam detik (s). Tentukan panjang lintasan, kecepatan, dan percepatan pada saat t = 0 , t = 1 , dan t = 2 (dalam detik).",
+        "jawaban": "Panjang lintasan 2 m, kecepatan -3 m/s, percepatan 0 m/s^2 pada t = 2",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "dinamika gerak partikel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan turunan kedua untuk mencari nilai t saat percepatan nol, lalu menyubstitusikannya ke turunan pertama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = \\frac{1}{3}t^3 - 4t^2 + 15t$, dengan $s$ dalam meter dan $t$ dalam detik. Kecepatan partikel pada saat percepatannya sama dengan nol adalah ....",
+      "jawaban_benar": "$-1\\text{ m/s}$",
+      "alasan_benar": "Kecepatan $v(t) = s'(t) = t^2 - 8t + 15$. Percepatan $a(t) = v'(t) = 2t - 8$. Nilai $a(t) = 0 \\implies 2t - 8 = 0 \\implies t = 4\\text{ detik}$. Kecepatan saat $t = 4$ adalah $v(4) = 4^2 - 8(4) + 15 = 16 - 32 + 15 = -1\\text{ m/s}$.",
+      "distraktor": [
+        {
+          "teks": "$0\\text{ m/s}$",
+          "alasan": "Siswa keliru menganggap bahwa saat percepatan bernilai nol, kecepatan partikel juga pasti bernilai nol."
+        },
+        {
+          "teks": "$3\\text{ m/s}$",
+          "alasan": "Siswa salah mencari pembuat nol percepatan menjadi $t = 2$, lalu menghitung $v(2) = 4 - 16 + 15 = 3\\text{ m/s}$."
+        },
+        {
+          "teks": "$-5\\text{ m/s}$",
+          "alasan": "Siswa salah menjumlahkan hasil perhitungan $16 - 32 + 15$ menjadi $-5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan persamaan kecepatan sesaat.\n$$v(t) = s'(t) = t^2 - 8t + 15$$\n\nLangkah 2: Menentukan persamaan percepatan sesaat dan mencari waktu $t$ saat $a(t) = 0$.\n$$a(t) = v'(t) = 2t - 8$$\n$$a(t) = 0 \\implies 2t - 8 = 0 \\implies 2t = 8 \\implies t = 4\\text{ detik}$$\n\nLangkah 3: Menghitung kecepatan saat $t = 4\\text{ detik}$.\n$$v(4) = 4^2 - 8(4) + 15 = 16 - 32 + 15 = -1\\text{ m/s}$$\n\nJadi, kecepatan partikel pada saat percepatannya nol adalah $-1\\text{ m/s}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 172,
+        "bagian": "Uji Kompetensi Bab 2 Bagian C",
+        "nomor": "4",
+        "teks": "Sebuah anak panah ditembakkan secara vertikal ke udara dan jaraknya (dalam m) setelah t detik dalam keadaan melayang diberikan oleh s (t) = - 16 t 2 + 80 t .",
+        "jawaban": "Kecepatan setelah 2 detik adalah 16 m/s, tinggi maksimum 100 m, tiba di tanah 5 detik, percepatan -32 m/s^2",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kinematika gerak vertikal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan turunan pertama untuk mencari waktu saat kecepatan tertentu kemudian disubstitusikan ke fungsi ketinggian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah anak panah ditembakkan vertikal ke udara dengan ketinggian setelah $t$ detik memenuhi persamaan $s(t) = 60t - 5t^2$ (jarak $s$ dalam meter). Ketinggian anak panah pada saat kecepatannya $20\\text{ m/s}$ adalah ....",
+      "jawaban_benar": "$160\\text{ meter}$",
+      "alasan_benar": "Kecepatan sesaat $v(t) = s'(t) = 60 - 10t$. Syarat kecepatan $20\\text{ m/s}$: $60 - 10t = 20 \\implies 10t = 40 \\implies t = 4\\text{ detik}$. Ketinggian saat $t = 4$: $s(4) = 60(4) - 5(4^2) = 240 - 80 = 160\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$100\\text{ meter}$",
+          "alasan": "Siswa salah menghitung waktu $t$ dari $60 - 10t = 20$ menjadi $t = 2$, sehingga $s(2) = 120 - 20 = 100\\text{ meter}$."
+        },
+        {
+          "teks": "$180\\text{ meter}$",
+          "alasan": "Siswa menghitung ketinggian maksimum saat $v(t) = 0$ ($t = 6$), yaitu $s(6) = 360 - 180 = 180\\text{ meter}$."
+        },
+        {
+          "teks": "$140\\text{ meter}$",
+          "alasan": "Siswa keliru menghitung $5 \\times 4^2$ menjadi $100$ sehingga diperoleh $240 - 100 = 140\\text{ meter}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi kecepatan sesaat anak panah dengan menurunkan fungsi posisi.\n$$v(t) = s'(t) = 60 - 10t$$\n\nLangkah 2: Menentukan nilai $t$ saat kecepatan $v(t) = 20\\text{ m/s}$.\n$$60 - 10t = 20$$\n$$10t = 40 \\implies t = 4\\text{ detik}$$\n\nLangkah 3: Menghitung ketinggian $s(4)$.\n$$s(4) = 60(4) - 5(4)^2 = 240 - 5(16) = 240 - 80 = 160\\text{ meter}$$\n\nJadi, ketinggian anak panah saat kecepatannya $20\\text{ m/s}$ adalah $160\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "luas maksimum kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan permodelan fungsi luas dari kurva simetris, turunan pertama untuk mencari titik stasioner, dan evaluasi nilai luas maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang dibuat dengan alas berada pada sumbu-$X$ dan simetris terhadap sumbu-$Y$, sedangkan dua titik sudut bagian atasnya terletak pada kurva parabola $y = 54 - 2x^2$ di atas sumbu-$X$. Luas maksimum persegi panjang tersebut adalah ....",
+      "jawaban_benar": "$216\\text{ satuan luas}$",
+      "alasan_benar": "Koordinat titik sudut kanan atas adalah $(x, y) = (x, 54 - 2x^2)$ dengan $x > 0$. Panjang alas $= 2x$ dan tinggi $= 54 - 2x^2$. Luas $L(x) = 2x(54 - 2x^2) = 108x - 4x^3$. Stasioner: $L'(x) = 108 - 12x^2 = 0 \\implies x^2 = 9 \\implies x = 3$. Luas maksimum $L(3) = 108(3) - 4(27) = 324 - 108 = 216\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$108\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengalikan panjang alas dengan $2$, hanya menggunakan panjang alas sebesar $x$ sehingga diperoleh luas separuh yaitu $108$."
+        },
+        {
+          "teks": "$144\\text{ satuan luas}$",
+          "alasan": "Siswa salah mencari turunan $108 - 12x^2 = 0$ menjadi $x^2 = 4 \\implies x = 2$, lalu menghitung $L(2) = 2(2)(54 - 8) = 184$ atau keliru hitung menjadi $144$."
+        },
+        {
+          "teks": "$288\\text{ satuan luas}$",
+          "alasan": "Siswa salah menyubstitusikan nilai $y$ saat $x = 0$ ($y = 54$) dan mengalikannya dengan panjang alas $2x = 6$ sehingga menghasilkan nilai yang salah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi luas persegi panjang.\nKarena persegi panjang simetris terhadap sumbu-$Y$, panjang alas adalah $2x$ dan tingginya adalah $y = 54 - 2x^2$ untuk $x > 0$.\n$$L(x) = 2x \\cdot (54 - 2x^2) = 108x - 4x^3$$\n\nLangkah 2: Menentukan nilai $x$ agar luas maksimum menggunakan $L'(x) = 0$.\n$$L'(x) = 108 - 12x^2 = 0$$\n$$12x^2 = 108$$\n$$x^2 = 9 \\implies x = 3\\quad (\\text{karena } x > 0)$$\n\nLangkah 3: Menghitung luas maksimum.\n$$L(3) = 108(3) - 4(3)^3 = 324 - 4(27) = 324 - 108 = 216\\text{ satuan luas}$$\n\nJadi, luas maksimum persegi panjang tersebut adalah $216\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 164,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "penggunaan turunan fungsi untuk memecahkan masalah yang berkaitan dengan titik optimum (nilai maksimum dan nilai minimum)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "keuntungan maksimum perusahaan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pembentukan fungsi keuntungan dari selisih penerimaan dan biaya, lalu mencari titik optimum menggunakan turunan pertama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah usaha rumahan memproduksi $x$ lusin suvenir. Penerimaan total dari penjualan dinyatakan oleh $R(x) = 140x - x^2$ dan biaya total produksi dinyatakan oleh $C(x) = x^2 + 20x + 200$ (keduanya dalam ribuan rupiah). Jumlah suvenir yang harus diproduksi agar keuntungan mencapai maksimum adalah ....",
+      "jawaban_benar": "$30\\text{ lusin}$",
+      "alasan_benar": "Keuntungan $P(x) = R(x) - C(x) = (140x - x^2) - (x^2 + 20x + 200) = -2x^2 + 120x - 200$. Keuntungan maksimum tercapai saat $P'(x) = 0 \\implies -4x + 120 = 0 \\implies 4x = 120 \\implies x = 30\\text{ lusin}$.",
+      "distraktor": [
+        {
+          "teks": "$60\\text{ lusin}$",
+          "alasan": "Siswa hanya menurunkan fungsi $120x$ tanpa membagi dengan turunan dari koefisien kuadrat $2x^2$ (lupa faktor $2$ dari turunan $-2x^2$)."
+        },
+        {
+          "teks": "$70\\text{ lusin}$",
+          "alasan": "Siswa memaksimumkan fungsi penerimaan $R(x)$ saja dengan menyelesaikan $R'(x) = 140 - 2x = 0 \\implies x = 70$."
+        },
+        {
+          "teks": "$25\\text{ lusin}$",
+          "alasan": "Siswa salah mengurangkan koefisien $x$ menjadi $140 - 20 = 100$, sehingga $-4x + 100 = 0 \\implies x = 25$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi keuntungan $P(x) = R(x) - C(x)$.\n$$P(x) = (140x - x^2) - (x^2 + 20x + 200)$$\n$$P(x) = -2x^2 + 120x - 200$$\n\nLangkah 2: Mencari nilai $x$ agar keuntungan maksimum dengan syarat $P'(x) = 0$.\n$$P'(x) = -4x + 120 = 0$$\n$$4x = 120$$\n$$x = 30$$\n\nJadi, banyak suvenir yang harus diproduksi agar memperoleh keuntungan maksimum adalah $30\\text{ lusin}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 165,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menentukan nilai kecepatan suatu benda, kamu dapat menggunakan konsep turunan pertama suatu fungsi."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "percepatan sudut rotasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan turunan beruntun fungsi trigonometri untuk mencari percepatan sudut sesaat dan mengevaluasinya pada sudut tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Posisi sudut sebuah roda yang berputar dinyatakan oleh fungsi $\\theta(t) = 4t + 2\\cos(2t)$ dengan $\\theta$ dalam radian dan $t$ dalam detik. Besar percepatan sudut roda tersebut pada saat $t = \\frac{\\pi}{2}\\text{ detik}$ adalah ....",
+      "jawaban_benar": "$8\\text{ rad/s}^2$",
+      "alasan_benar": "Kecepatan sudut $\\omega(t) = \\theta'(t) = 4 - 4\\sin(2t)$. Percepatan sudut $\\alpha(t) = \\omega'(t) = -8\\cos(2t)$. Pada saat $t = \\frac{\\pi}{2}$, didapat $\\alpha\\left(\\frac{\\pi}{2}\\right) = -8\\cos\\left(2 \\cdot \\frac{\\pi}{2}\\right) = -8\\cos(\\pi) = -8(-1) = 8\\text{ rad/s}^2$.",
+      "distraktor": [
+        {
+          "teks": "$-8\\text{ rad/s}^2$",
+          "alasan": "Siswa salah mengevaluasi nilai $\\cos(\\pi) = 1$ sehingga $-8(1) = -8$."
+        },
+        {
+          "teks": "$0\\text{ rad/s}^2$",
+          "alasan": "Siswa keliru menganggap $\\cos(\\pi) = 0$ atau menyamakan perhitungan dengan $\\sin(\\pi) = 0$."
+        },
+        {
+          "teks": "$4\\text{ rad/s}^2$",
+          "alasan": "Siswa lupa menerapkan aturan rantai saat menurunkan $2\\cos(2t)$, sehingga turunan keduanya hanya $-2\\cos(2t)$ yang menghasilkan $-2(-1) = 2$ atau keliru menghitung nilai konstanta awal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan kecepatan sudut $\\omega(t)$ dengan mencari turunan pertama $\\theta(t)$.\n$$\\omega(t) = \\theta'(t) = 4 + 2(-\\sin(2t) \\cdot 2) = 4 - 4\\sin(2t)$$\n\nLangkah 2: Menentukan percepatan sudut $\\alpha(t)$ dengan mencari turunan kedua $\\theta(t)$.\n$$\\alpha(t) = \\omega'(t) = -4(\\cos(2t) \\cdot 2) = -8\\cos(2t)$$\n\nLangkah 3: Menghitung percepatan sudut saat $t = \\frac{\\pi}{2}\\text{ detik}$.\n$$\\alpha\\left(\\frac{\\pi}{2}\\right) = -8\\cos\\left(2 \\cdot \\frac{\\pi}{2}\\right) = -8\\cos(\\pi)$$\nKarena $\\cos(\\pi) = -1$, maka:\n$$\\alpha\\left(\\frac{\\pi}{2}\\right) = -8(-1) = 8\\text{ rad/s}^2$$\n\nJadi, besar percepatan sudut roda tersebut adalah $8\\text{ rad/s}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0169-latihan-soal-aplikasi-turunan-fungsi-di-berbagai-bidang-ilmu-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "optimasi luas penampang",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memodelkan fungsi luas penampang dari lebar seng lipat dan mencari luas maksimum menggunakan turunan pertama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah talang air dibuat dari selembar pelat seng berpenampang datar dengan lebar $40\\text{ cm}$. Kedua tepi sisi seng ditekuk tegak lurus ke atas dengan ketinggian yang sama, yaitu $x\\text{ cm}$. Luas penampang maksimum talang air yang terbentuk adalah ....",
+      "jawaban_benar": "$200\\text{ cm}^2$",
+      "alasan_benar": "Lebar alas talang adalah $(40 - 2x)\\text{ cm}$ dan tingginya $x\\text{ cm}$, sehingga luas penampang dinyatakan oleh $L(x) = x(40 - 2x) = 40x - 2x^2$. Nilai stasioner tercapai saat $L'(x) = 0 \\Leftrightarrow 40 - 4x = 0 \\Leftrightarrow x = 10\\text{ cm}$. Luas maksimumnya adalah $L(10) = 40(10) - 2(10)^2 = 400 - 200 = 200\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$100\\text{ cm}^2$",
+          "alasan": "Siswa salah memodelkan lebar alas menjadi $40 - x$ sehingga memperoleh titik balik yang keliru."
+        },
+        {
+          "teks": "$400\\text{ cm}^2$",
+          "alasan": "Siswa mengalikan langsung seluruh lebar seng dengan tinggi optimum ($40 \\times 10$)."
+        },
+        {
+          "teks": "$150\\text{ cm}^2$",
+          "alasan": "Siswa salah menghitung turunan pertama menjadi $40 - 2x = 0$ dan salah menyubstitusikan nilai ke fungsi luas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi tekukan adalah $x\\text{ cm}$. Karena kedua sisi dilipat sebesar $x$, lebar dasar penampang adalah $40 - 2x\\text{ cm}$.\nFungsi luas penampang:\n$$L(x) = (40 - 2x)x = 40x - 2x^2$$\nAgar luas penampang maksimum, turunan pertama sama dengan nol:\n$$L'(x) = 40 - 4x = 0 \\implies 4x = 40 \\implies x = 10$$\nSubstitusikan $x = 10$ ke $L(x)$:\n$$L(10) = 40(10) - 2(10)^2 = 400 - 200 = 200\\text{ cm}^2$$\nJadi, luas penampang maksimumnya adalah $200\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 170,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah perusahaan memproduksi x unit barang dengan fungsi biaya total C ^ x h = 0, 1 x 2 + 50 x + 1 000. (dalam ribuan rupiah)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "biaya marjinal minimum",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis fungsi turunan biaya marjinal dan menentukan nilai minimum dari fungsi marjinal menggunakan turunan kedua.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Biaya total (dalam ribuan rupiah) untuk memproduksi $x$ unit barang ditentukan oleh fungsi $C(x) = x^3 - 12x^2 + 60x + 200$. Biaya marjinal didefinisikan sebagai laju perubahan sesaat biaya total terhadap banyak barang yang diproduksi, $MC(x) = C'(x)$. Nilai biaya marjinal minimum yang dapat dicapai perusahaan adalah ....",
+      "jawaban_benar": "$12$ ribu rupiah per unit",
+      "alasan_benar": "Biaya marjinal adalah $MC(x) = C'(x) = 3x^2 - 24x + 60$. Biaya marjinal mencapai nilai minimum saat turunan pertamanya nol, yaitu $MC'(x) = 6x - 24 = 0 \\Leftrightarrow x = 4$. Nilai minimum tersebut adalah $MC(4) = 3(4)^2 - 24(4) + 60 = 48 - 96 + 60 = 12$ ribu rupiah per unit.",
+      "distraktor": [
+        {
+          "teks": "$4$ ribu rupiah per unit",
+          "alasan": "Siswa menjawab jumlah unit produk ($x = 4$) bukan nilai biaya marjinalnya."
+        },
+        {
+          "teks": "$24$ ribu rupiah per unit",
+          "alasan": "Siswa salah menghitung nilai fungsi stasioner $MC(4)$ menjadi $3(16) - 24 + 0$."
+        },
+        {
+          "teks": "$60$ ribu rupiah per unit",
+          "alasan": "Siswa hanya mengambil konstanta dari fungsi biaya marjinal saat $x = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus fungsi biaya marjinal $MC(x)$:\n$$MC(x) = C'(x) = 3x^2 - 24x + 60$$\n\nLangkah 2: Menentukan nilai $x$ agar $MC(x)$ minimum:\n$$MC'(x) = 6x - 24 = 0 \\implies 6x = 24 \\implies x = 4$$\n\nLangkah 3: Menghitung nilai minimum biaya marjinal pada $x = 4$:\n$$MC(4) = 3(4)^2 - 24(4) + 60 = 3(16) - 96 + 60 = 48 - 96 + 60 = 12$$\nJadi, nilai biaya marjinal minimum adalah $12$ ribu rupiah per unit.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 171,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sejenis bakteri dapat membelah diri karena ada nutrisi untuk berkembang biak. Seorang laboran mengamati kadar nutrisi dalam bakteri tersebut untuk mengetahui laju perkembangbiakannya."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan suhu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan rantai turunan fungsi trigonometri untuk menghitung laju perubahan sesaat pada waktu tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suhu suatu ruangan penyimpan vaksin (dalam $^{\\circ}\\text{C}$) dipantau selama 12 jam dan dimodelkan oleh fungsi $T(t) = 20 + 4\\sin\\left(\\frac{\\pi t}{6}\\right)$, dengan $t$ menyatakan waktu dalam jam setelah pemantauan dimulai ($0 \\le t \\le 12$). Laju perubahan suhu ruangan pada saat $t = 2\\text{ jam}$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}\\pi\\,^{\\circ}\\text{C/jam}$",
+      "alasan_benar": "Turunan dari fungsi suhu adalah $T'(t) = 4 \\cdot \\frac{\\pi}{6}\\cos\\left(\\frac{\\pi t}{6}\\right) = \\frac{2\\pi}{3}\\cos\\left(\\frac{\\pi t}{6}\\right)$. Pada saat $t = 2$, diperoleh $T'(2) = \\frac{2\\pi}{3}\\cos\\left(\\frac{2\\pi}{6}\\right) = \\frac{2\\pi}{3}\\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{2\\pi}{3} \\cdot \\frac{1}{2} = \\frac{1}{3}\\pi\\,^{\\circ}\\text{C/jam}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}\\pi\\,^{\\circ}\\text{C/jam}$",
+          "alasan": "Siswa lupa mengalikan dengan nilai $\\cos(\\pi/3) = 1/2$."
+        },
+        {
+          "teks": "$\\frac{\\sqrt{3}}{3}\\pi\\,^{\\circ}\\text{C/jam}$",
+          "alasan": "Siswa tertukar menggunakan nilai $\\sin(\\pi/3) = \\frac{1}{2}\\sqrt{3}$ alih-alih kosinus."
+        },
+        {
+          "teks": "$2\\,^{\\circ}\\text{C/jam}$",
+          "alasan": "Siswa lupa mengalikan dengan turunan sudut dalam (faktor $\\pi/6$)."
+        }
+      ],
+      "pembahasan": "Fungsi suhu ruangan: $T(t) = 20 + 4\\sin\\left(\\frac{\\pi t}{6}\\right)$.\nLaju perubahan suhu merupakan turunan pertama $T'(t)$ terhadap waktu $t$:\n$$T'(t) = 4 \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}t}\\left[\\sin\\left(\\frac{\\pi t}{6}\\right)\\right] = 4 \\cdot \\frac{\\pi}{6} \\cos\\left(\\frac{\\pi t}{6}\\right) = \\frac{2\\pi}{3}\\cos\\left(\\frac{\\pi t}{6}\\right)$$\nSubstitusikan nilai $t = 2$:\n$$T'(2) = \\frac{2\\pi}{3}\\cos\\left(\\frac{2\\pi}{6}\\right) = \\frac{2\\pi}{3}\\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{2\\pi}{3} \\cdot \\frac{1}{2} = \\frac{1}{3}\\pi\\,^{\\circ}\\text{C/jam}$$\nJadi, laju perubahan suhu ruangan saat $t = 2\\text{ jam}$ adalah $\\frac{1}{3}\\pi\\,^{\\circ}\\text{C/jam}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 166,
+        "bagian": "Contoh Soal 2.15",
+        "nomor": "2.15",
+        "teks": "Sebuah kotak dibuat dari selembar karton persegi sepanjang 18 cm dengan cara memotong persegi identik pada keempat pojok karton, kemudian melipat sisi-sisinya ke atas ( lihat Gambar 2.19). Tentukan ukuran kotak agar volume kotak yang dibuat maksimum.",
+        "jawaban": "panjang 12 cm, lebar 12 cm, dan tinggi 3 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "optimasi dimensi kotak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan fungsi volume kuboid dari lembaran karton, penentuan titik stasioner turunan pertama, dan pengujian batas fisis dimensi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak tanpa tutup dibuat dari selembar karton berbentuk persegi dengan panjang sisi $30\\text{ cm}$. Pembuatan dilakukan dengan cara memotong persegi identik berukuran $x \\times x\\text{ cm}^2$ pada keempat pojok karton, kemudian melipat sisi-sisinya ke atas. Tentukan ukuran kotak (panjang, lebar, dan tinggi) agar volume kotak yang terbentuk bernilai maksimum.",
+      "jawaban_benar": "Panjang $20\\text{ cm}$, lebar $20\\text{ cm}$, dan tinggi $5\\text{ cm}$",
+      "alasan_benar": "Volume kotak adalah $V(x) = x(30 - 2x)^2 = 4x^3 - 120x^2 + 900x$. Turunan pertamanya $V'(x) = 12x^2 - 240x + 900 = 0 \\iff x^2 - 20x + 75 = 0 \\iff (x - 5)(x - 15) = 0$. Karena $0 < x < 15$, maka $x = 5\\text{ cm}$. Sehingga tinggi $= 5\\text{ cm}$, panjang $= 30 - 2(5) = 20\\text{ cm}$, dan lebar $= 20\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "Panjang $10\\text{ cm}$, lebar $10\\text{ cm}$, dan tinggi $10\\text{ cm}$",
+          "alasan": "Siswa salah membagi sisi karton menjadi tiga bagian sama besar ($x = 10\\text{ cm}$)."
+        },
+        {
+          "teks": "Panjang $24\\text{ cm}$, lebar $24\\text{ cm}$, dan tinggi $3\\text{ cm}$",
+          "alasan": "Siswa langsung memakai tinggi $x = 3\\text{ cm}$ dari contoh soal acuan tanpa menghitung turunan fungsi baru."
+        },
+        {
+          "teks": "Panjang $15\\text{ cm}$, lebar $15\\text{ cm}$, dan tinggi $7,5\\text{ cm}$",
+          "alasan": "Siswa mengabaikan faktor kuadrat pada pelipatan dua sisi dan memotong tepat seperempat lebar karton."
+        }
+      ],
+      "pembahasan": "Misalkan $x$ adalah tinggi kotak (panjang sisi persegi pojok yang dipotong).\nDimensi kotak setelah dilipat:\n- Tinggi ($t$) $= x$\n- Panjang ($p$) $= 30 - 2x$\n- Lebar ($l$) $= 30 - 2x$\n\nFungsi volume kotak:\n$$V(x) = p \\cdot l \\cdot t = (30 - 2x)^2 \\cdot x$$\n$$V(x) = (900 - 120x + 4x^2)x = 4x^3 - 120x^2 + 900x$$\n\nSyarat volume stasioner ($V'(x) = 0$):\n$$V'(x) = 12x^2 - 240x + 900 = 0$$\nBagi kedua ruas dengan 12:\n$$x^2 - 20x + 75 = 0$$\n$$(x - 5)(x - 15) = 0$$\n$$x = 5 \\quad \\text{atau} \\quad x = 15$$\n\nKarena panjang sisi harus positif ($30 - 2x > 0 \\implies x < 15$), nilai yang memenuhi adalah $x = 5\\text{ cm}$.\n\nUkuran kotak agar volume maksimum:\n- Panjang $= 30 - 2(5) = 20\\text{ cm}$\n- Lebar $= 30 - 2(5) = 20\\text{ cm}$\n- Tinggi $= 5\\text{ cm}$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 170,
+        "bagian": "Uji Kompetensi Bab 2 Bagian A",
+        "nomor": "18",
+        "teks": "Konsentrasi obat dalam aliran darah pasien setelah _t_ jam disuntikkan diberikan oleh fungsi _C_ ^ _t_ h = 25 _<u>t</u>_ mg/l. Laju perubahan konsentrasi _t_ + 1 obat terhadap waktu pada saat _t_ = 1 jam adalah ....",
+        "jawaban": "6,25 mg/(L·jam)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan konsentrasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan aturan turunan fungsi pecahan aljabar (aturan hasil bagi) dan substitusi nilai waktu tertentu untuk menentukan laju sesaat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Konsentrasi suatu obat dalam aliran darah pasien setelah $t$ jam disuntikkan dimodelkan oleh fungsi $C(t) = \\frac{50t}{t + 4}\\text{ mg/L}$. Laju perubahan konsentrasi obat terhadap waktu pada saat $t = 6\\text{ jam}$ adalah ....",
+      "jawaban_benar": "$2\\text{ mg/(L}\\cdot\\text{jam)}$",
+      "alasan_benar": "Turunan pertama $C'(t) = \\frac{50(t + 4) - 50t(1)}{(t + 4)^2} = \\frac{200}{(t + 4)^2}$. Pada saat $t = 6$, $C'(6) = \\frac{200}{(6 + 4)^2} = \\frac{200}{100} = 2\\text{ mg/(L}\\cdot\\text{jam)}$.",
+      "distraktor": [
+        {
+          "teks": "$3\\text{ mg/(L}\\cdot\\text{jam)}$",
+          "alasan": "Siswa menghitung nilai konsentrasi obat dibagi 10, bukan turunan fungsi: $C(6) = 30$, lalu $30 / 10 = 3$."
+        },
+        {
+          "teks": "$5\\text{ mg/(L}\\cdot\\text{jam)}$",
+          "alasan": "Siswa menghitung laju rata-rata dari awal pemberian obat sampai jam ke-6: $\\frac{C(6)}{6} = \\frac{30}{6} = 5$."
+        },
+        {
+          "teks": "$20\\text{ mg/(L}\\cdot\\text{jam)}$",
+          "alasan": "Siswa lupa mengkuadratkan penyebut pada rumus turunan pembagian: $\\frac{200}{6 + 4} = 20$."
+        }
+      ],
+      "pembahasan": "Laju perubahan konsentrasi obat terhadap waktu dinyatakan oleh turunan pertama fungsi $C(t)$, yaitu $C'(t)$.\n\nMenggunakan aturan turunan bentuk pecahan $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$:\n- $u = 50t \\implies u' = 50$\n- $v = t + 4 \\implies v' = 1$\n\n$$C'(t) = \\frac{50(t + 4) - 50t(1)}{(t + 4)^2}$$\n$$C'(t) = \\frac{50t + 200 - 50t}{(t + 4)^2} = \\frac{200}{(t + 4)^2}$$\n\nSubstitusikan $t = 6\\text{ jam}$:\n$$C'(6) = \\frac{200}{(6 + 4)^2} = \\frac{200}{10^2} = \\frac{200}{100} = 2\\text{ mg/(L}\\cdot\\text{jam)}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-d-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 164,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "penggunaan turunan fungsi untuk memecahkan masalah yang berkaitan dengan titik optimum (nilai maksimum dan nilai minimum)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "minimasi biaya proyek",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah penyelesaian: memodelkan fungsi biaya total proyek terhadap waktu, menentukan titik stasioner dengan turunan pertama, dan menghitung nilai biaya minimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah proyek perbaikan jalan dapat diselesaikan dalam $x$ hari dengan biaya proyek per hari sebesar $\\left(3x - 180 + \\frac{3.000}{x}\\right)$ juta rupiah. Biaya minimum proyek perbaikan jalan tersebut adalah ....",
+      "jawaban_benar": "Rp300.000.000,00",
+      "alasan_benar": "Total biaya proyek adalah $B(x) = x\\left(3x - 180 + \\frac{3.000}{x}\\right) = 3x^2 - 180x + 3.000$ juta rupiah. Nilai minimum tercapai saat $B'(x) = 6x - 180 = 0$, sehingga $x = 30$ hari. Biaya minimumnya adalah $B(30) = 3(30)^2 - 180(30) + 3.000 = 2.700 - 5.400 + 3.000 = 300$ juta rupiah atau Rp300.000.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp450.000.000,00",
+          "alasan": "Siswa melakukan kesalahan perhitungan aritmetika saat menghitung $B(30)$, yaitu menghitung $2.700 - 5.250 + 3.000 = 450$ juta rupiah."
+        },
+        {
+          "teks": "Rp600.000.000,00",
+          "alasan": "Siswa salah memasukkan nilai $x$ menjadi dua kali lipat dari titik stasioner pada perhitungan biaya per hari."
+        },
+        {
+          "teks": "Rp975.000.000,00",
+          "alasan": "Siswa salah menurunkan $3x^2$ menjadi $12x$, sehingga menyelesaikan $12x - 180 = 0$ dan memperoleh $x = 15$ hari dengan biaya $B(15) = 975$ juta rupiah."
+        }
+      ],
+      "pembahasan": "Misalkan $B(x)$ menyatakan total biaya proyek selama $x$ hari.\n$$B(x) = x \\cdot \\left(3x - 180 + \\frac{3.000}{x}\\right) = 3x^2 - 180x + 3.000 \\text{ (dalam juta rupiah)}$$\n\nAgar biaya minimum, turunan pertama $B'(x)$ harus bernilai nol:\n$$B'(x) = 6x - 180 = 0$$\n$$6x = 180 \\implies x = 30$$\n\nSubstitusikan $x = 30$ ke dalam fungsi biaya total $B(x)$:\n$$\\begin{aligned} B(30) &= 3(30)^2 - 180(30) + 3.000 \\\\ &= 3(900) - 5.400 + 3.000 \\\\ &= 2.700 - 5.400 + 3.000 \\\\ &= 300 \\text{ juta rupiah} \\end{aligned}$$\n\nJadi, biaya minimum proyek perbaikan jalan tersebut adalah Rp300.000.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -335,6 +335,859 @@
       "pembahasan": "Bandingkan tiap tahun: 2018 (15 > 13), 2019 (12 < 14), 2020 (14 = 14), 2021 (13 < 15), 2022 (16 < 18). Hanya tahun 2018.",
       "id": "kelas5-b08-c-easy-bt01-010",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bee913fd08d59be3893785e4",
+        "teks": "Dua diagram batang akan dibandingkan untuk melihat data mana yang lebih banyak. Agar perbandingannya tepat, hal yang harus diperhatikan adalah ....",
+        "jawaban": "angka skala pada sumbu tegak kedua diagram sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "diagram_batang",
+      "alasan_level": "Target easy; variasi konsep diagram batang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diagram batang penjualan memuat produk A, B, C dengan tinggi 24, 9, 23 satuan skala. Tiap satuan mewakili 4 barang. Berapa barang terjual untuk produk C?",
+      "jawaban_benar": "$92$",
+      "alasan_benar": "Tinggi produk C = 23 satuan. Jumlahnya 23×4=92.",
+      "distraktor": [
+        {
+          "teks": "$93$",
+          "alasan": "Pilihan $93$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $92$. Periksa kembali langkah diagram batang pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Pilihan $91$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $92$. Periksa kembali langkah diagram batang pada pembahasan."
+        },
+        {
+          "teks": "$94$",
+          "alasan": "Pilihan $94$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $92$. Periksa kembali langkah diagram batang pada pembahasan."
+        }
+      ],
+      "pembahasan": "Tinggi produk C = 23 satuan. Jumlahnya 23×4=92.",
+      "catatan": "codex-replenishment:kelas5-b08-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b08-c-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c55d2cb98b21e0babc3cede5",
+        "teks": "Tabel berikut menunjukkan perolehan medali emas Kontingen Kota Harapan di ajang Pekan Olahraga.\n\n|Tahun Pelaksanaan|Perolehan Medali Emas|\n|---|---|\n|2010|54|\n|2012|61|\n|2014|39|\n|2016|49|\n|2018|70|\n\nPada tahun 2016, Kontingen Kota Harapan juga meraih 36 medali perak dan 52 medali perunggu. Tentukan pecahan yang mewakili banyaknya medali emas dibandingkan dengan keseluruhan medali yang diperoleh di tahun tersebut.",
+        "jawaban": "49/137",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-012",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/8ac89433c7fc7159ced7809f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "9"
+            ],
+            [
+              "B",
+              "10"
+            ],
+            [
+              "C",
+              "13"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"9\"], [\"B\", \"10\"], [\"C\", \"13\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e050b58c6f363400c63958bd",
+        "teks": "SD Mentari mengikuti lomba antarsekolah setiap tahun. Banyak piala juara 1 yang diperoleh dicatat dalam tabel berikut.\n\n|Tahun|Banyak Piala Juara 1|\n|---|---|\n|2018|8|\n|2019|12|\n|2020|5|\n|2021|9|\n|2022|14|\n\nPada tahun 2021, sekolah itu juga mendapat 6 piala juara 2 dan 11 piala juara 3. Pecahan yang menyatakan piala juara 1 dibandingkan seluruh piala pada tahun tersebut adalah ....",
+        "jawaban": "9/26",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/40846f4ca52a8b08769401db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "5"
+            ],
+            [
+              "B",
+              "12"
+            ],
+            [
+              "C",
+              "14"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"5\"], [\"B\", \"12\"], [\"C\", \"14\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a33a806787cf0168946820e1",
+        "teks": "Tabel berikut menunjukkan perolehan medali emas Kontingen Kota Harapan di ajang Pekan Olahraga.\n\n|Tahun Pelaksanaan|Perolehan Medali Emas|\n|---|---|\n|2011|55|\n|2013|82|\n|2015|29|\n|2017|48|\n|2019|71|\n\nDari pelaksanaan Pekan Olahraga periode tahun 2011 sampai 2019, kapan kontingen itu meraih medali emas paling banyak dan kapan meraih medali emas paling sedikit?",
+        "jawaban": "Paling banyak tahun 2013, paling sedikit tahun 2015",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $10$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $10$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/9a1ace4e20b9f911115d5f1d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "10"
+            ],
+            [
+              "B",
+              "10"
+            ],
+            [
+              "C",
+              "8"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"10\"], [\"B\", \"10\"], [\"C\", \"8\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a3eecf327ed997fa88cf1d0d",
+        "teks": "Pak Bajuri memiliki lima kolam lele. Hasil panen setiap kolam dicatat dalam tabel berikut.\n\n|Kolam|Hasil Panen Lele (kg)|\n|---|---|\n|Kolam 1|26|\n|Kolam 2|38|\n|Kolam 3|19|\n|Kolam 4|31|\n|Kolam 5|24|\n\nKolam manakah yang hasil panennya paling banyak dan kolam manakah yang paling sedikit?",
+        "jawaban": "Paling banyak kolam 2, paling sedikit kolam 3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $29$.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $29$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/67e26db46439e7921c87863e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "29"
+            ],
+            [
+              "B",
+              "2"
+            ],
+            [
+              "C",
+              "7"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"29\"], [\"B\", \"2\"], [\"C\", \"7\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3a32de62ede76a49fab2fb0e",
+        "teks": "Pada diagram batang horizontal, batang-batangnya digambar ....",
+        "jawaban": "mendatar ke kanan dari sumbu tegak",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $30$.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $30$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/9fad5ff0c7d06cf8d9e5f6d7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "30"
+            ],
+            [
+              "B",
+              "9"
+            ],
+            [
+              "C",
+              "2"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"30\"], [\"B\", \"9\"], [\"C\", \"2\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12b228034fc1435c616bfb9d",
+        "teks": "Banyak buku bekas yang dikumpulkan empat kelas disajikan dalam diagram batang. Tiap garis pada sumbu tegak mewakili 5 buku. Tinggi batang tiap kelas (dalam banyak garis) adalah sebagai berikut.\n\n|Kelas|Tinggi Batang (garis)|\n|---|---|\n|VA|7|\n|VB|9|\n|VC|4|\n|VD|6|\n\nBerapa buku yang dikumpulkan kelas VB?",
+        "jawaban": "45 buku",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $15$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $15$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/a03da8ce1ff0c1dcfc4f6f5d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "6"
+            ],
+            [
+              "B",
+              "5"
+            ],
+            [
+              "C",
+              "15"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"6\"], [\"B\", \"5\"], [\"C\", \"15\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7697e0a8526df3340891e66",
+        "teks": "Penjualan empat jenis buah di sebuah toko disajikan dalam diagram batang horizontal. Tiap garis pada sumbu mendatar mewakili 4 kg. Panjang batang tiap buah (dalam banyak garis) adalah sebagai berikut.\n\n|Buah|Panjang Batang (garis)|\n|---|---|\n|Apel|6|\n|Jeruk|9|\n|Mangga|5|\n|Salak|3|\n\nBerapa kilogram selisih penjualan buah yang paling banyak terjual dan yang paling sedikit terjual?",
+        "jawaban": "24 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $22$.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $22$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/b2fe96c0cf87bcac8dff515e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "22"
+            ],
+            [
+              "B",
+              "21"
+            ],
+            [
+              "C",
+              "9"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"22\"], [\"B\", \"21\"], [\"C\", \"9\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "22db58760b5ddc58db478c92",
+        "teks": "Pada sebuah diagram batang, sumbu tegaknya diberi angka 0, 20, 40, 60, dan 80. Batang untuk data bernilai 50 harus digambar setinggi ....",
+        "jawaban": "tepat di tengah antara angka 40 dan 60",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/05848f68e7a4e3b5d31b99ff.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "6"
+            ],
+            [
+              "B",
+              "7"
+            ],
+            [
+              "C",
+              "14"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"6\"], [\"B\", \"7\"], [\"C\", \"14\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bee913fd08d59be3893785e4",
+        "teks": "Dua diagram batang akan dibandingkan untuk melihat data mana yang lebih banyak. Agar perbandingannya tepat, hal yang harus diperhatikan adalah ....",
+        "jawaban": "angka skala pada sumbu tegak kedua diagram sama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${23},{11},{12}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $23$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $23$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb3d737ac288b6081ad135dd",
+        "teks": "Banyak siswa kelas V di SD Pelita disajikan dalam diagram batang ganda. Datanya ditulis dalam tabel berikut.\n\n|Tahun|Laki-laki|Perempuan|\n|---|---|---|\n|2018|15|13|\n|2019|12|14|\n|2020|14|14|\n|2021|13|15|\n|2022|16|18|\n\nPada tahun berapa siswa laki-laki lebih banyak daripada siswa perempuan?",
+        "jawaban": "Tahun 2018",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${17},{15},{10}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "311e2f8b8e33c34c34853dfe",
+        "teks": "Banyak tiket yang terjual pada bulan Maret dan April disajikan dalam diagram batang. Angka pada sumbu tegak adalah 200, 220, 240, 260, dan 280 dari bawah ke atas. Sumbu tegak dimulai dari angka 200, bukan 0. Batang Maret setinggi 1 garis di atas angka 200 dan batang April setinggi 4 garis di atas angka 200.\n\nKesimpulan yang tepat tentang tiket yang terjual adalah ....",
+        "jawaban": "April lebih banyak 60 tiket daripada Maret, tetapi bukan 4 kali lipat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${29},{21},{10}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $29$.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $29$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87872caab15b6b05db915509",
+        "teks": "Banyak sampah plastik yang terkumpul di beberapa dusun disajikan dalam diagram batang horizontal. Tiap garis pada sumbu mendatar mewakili 4 kg. Batang Dusun Melati berakhir tepat pada garis ke-7. Rani menjawab: \"Sampah Dusun Melati adalah 7 + 4 = 11 kg.\"\n\nPernyataan yang benar tentang jawaban Rani adalah ....",
+        "jawaban": "salah, seharusnya 7 x 4 = 28 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${13},{4},{7}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4097ac9335dbb65fcdd99882",
+        "teks": "Penjualan beras di sebuah toko selama lima hari adalah 90 kg, 120 kg, 180 kg, 240 kg, dan 300 kg. Dina akan membuat diagram batang vertikal. Sumbu tegaknya paling banyak 10 garis, dan setiap batang harus berakhir tepat pada sebuah garis.\n\nNilai tiap garis pada sumbu tegak yang sesuai adalah ....",
+        "jawaban": "30 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${14},{7},{12}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59773c60a8ab18d6259fa98e",
+        "teks": "Penjualan gula pasir selama lima hari (Senin sampai Jumat) disajikan dalam diagram batang vertikal. Tiap garis pada sumbu tegak mewakili 15 kg. Tinggi batang: Senin 6 garis, Selasa 4 garis, Rabu 7 garis, Kamis 5 garis. Batang hari Jumat tertutup noda dan tidak terbaca. Penjualan selama lima hari itu seluruhnya 465 kg.\n\nBatang hari Jumat seharusnya setinggi ....",
+        "jawaban": "9 garis",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${24},{21},{10}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7920afa5099b42b550a2b3e7",
+        "teks": "Hasil panen jeruk Pak Hasan selama lima tahun disajikan dalam diagram batang. Datanya ditulis dalam tabel berikut.\n\n|Tahun|Hasil Panen (kg)|\n|---|---|\n|2019|120|\n|2020|150|\n|2021|90|\n|2022|180|\n|2023|135|\n\nAyu berkata: \"Hasil panen tahun 2022 adalah dua kali lipat hasil panen tahun 2021.\" Bimo berkata: \"Kenaikan hasil panen terbesar terjadi dari tahun 2020 ke tahun 2021.\"\n\nPernyataan yang dapat diterima adalah ....",
+        "jawaban": "hanya pernyataan Ayu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${9},{13},{12}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $13$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9f59628e93d29d2d4952d930",
+        "teks": "Banyak pengunjung perpustakaan desa dari Januari sampai Juni disajikan dalam diagram batang. Datanya ditulis dalam tabel berikut.\n\n|Bulan|Pengunjung|\n|---|---|\n|Januari|80|\n|Februari|95|\n|Maret|70|\n|April|110|\n|Mei|100|\n|Juni|125|\n\nKesimpulan yang didukung oleh data tersebut adalah ....",
+        "jawaban": "dibanding bulan sebelumnya, pengunjung naik pada 3 bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_data_baca",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Data banyak benda pada kategori A, B, C adalah ${5},{4},{7}$. Berapa banyak pada kategori terbanyak?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan ketiga frekuensi dan ambil yang terbesar Perhitungan dengan data tersebut memberi $7$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-c-easy-bt01-027"
     }
   ]
 }

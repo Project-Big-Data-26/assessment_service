@@ -849,6 +849,1467 @@
       "pembahasan": "Untuk menentukan nilai limit bentuk tak tentu $\\frac{0}{0}$, kalikan pembilang dan penyebut dengan $\\frac{1}{x}$:\n$$\\lim_{x\\to 0}\\dfrac{\\tan 8x + 7x}{\\sin 5x + 4x} = \\lim_{x\\to 0}\\dfrac{\\dfrac{\\tan 8x}{x} + 7}{\\dfrac{\\sin 5x}{x} + 4}$$\n\nBerdasarkan sifat limit fungsi trigonometri:\n$$\\lim_{x\\to 0}\\dfrac{\\tan ax}{x} = a \\implies \\lim_{x\\to 0}\\dfrac{\\tan 8x}{x} = 8$$\n$$\\lim_{x\\to 0}\\dfrac{\\sin bx}{x} = b \\implies \\lim_{x\\to 0}\\dfrac{\\sin 5x}{x} = 5$$\n\nSubstitusikan nilai limit tersebut:\n$$= \\dfrac{8 + 7}{5 + 4} = \\dfrac{15}{9} = \\dfrac{5}{3}$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=4 x^{2} + 4 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=60.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan $61$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $60$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan $59$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $60$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Pilihan $62$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $60$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=60.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=7 x^{2} + 7 x + 6$, hitung $\\lim_{h\\to0}\\frac{f(-3+h)-f(-3)}{h}$.",
+      "jawaban_benar": "$-35$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-35.",
+      "distraktor": [
+        {
+          "teks": "$-34$",
+          "alasan": "Pilihan $-34$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-36$",
+          "alasan": "Pilihan $-36$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-33$",
+          "alasan": "Pilihan $-33$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-35.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef1bb5ca1cb2def8deefab1c",
+        "teks": "Suatu fungsi kuadrat $f(x) = px^2 + qx + r$ melalui titik $(1, 2)$ dan $(2, 7)$. Kemiringan garis tangen (garis singgung) kurva tersebut di titik dengan absis $x = 1$ adalah $3$. Kemiringan garis sekan yang menghubungkan titik pada kurva saat $x = 0$ dan $x = 3$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=2 x^{2} + 6 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(6+h)-f(6)}{h}$.",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=30.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan $31$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan $29$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan $32$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=30.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d12b49515a8b64100b04a5d6",
+        "teks": "Sebuah partikel bergerak sepanjang lintasan lurus dengan fungsi posisi $s(t) = t^3 - 6t^2 + 15t$, dengan $s$ dalam meter dan $t$ dalam detik ($t \\ge 0$). Kecepatan sesaat partikel pada saat $t = 3$ detik diketahui bernilai sama persis dengan kecepatan rata-rata partikel pada selang waktu $1 \\le t \\le k$ detik (dengan $k > 1$ dan $k \\neq 3$). Nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=5 x^{2} + 2 x + 2$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=22.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan $21$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=22.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48a4165e9180d45228dbd416",
+        "teks": "Diketahui suatu fungsi $f(x)$ mempunyai turunan di $x = 2$ dengan nilai $f(2) = 5$ dan $f'(2) = -3$. Nilai dari $\\displaystyle\\lim_{x\\to 2} \\dfrac{x^2 f(2) - 4f(x)}{x - 2}$ adalah ....",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=8 x^{2} + 4 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=36.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=36.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=9 x^{2} + 2 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+      "jawaban_benar": "$128$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=128.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Pilihan $129$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $128$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$127$",
+          "alasan": "Pilihan $127$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $128$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$130$",
+          "alasan": "Pilihan $130$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $128$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=128.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target medium; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=4 x^{2} + 4 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(-1+h)-f(-1)}{h}$.",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-4.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan $-5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-4.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8cab6cb821b68a8fcffee1b3",
+        "teks": "Gunakan sifat-sifat limit fungsi untuk menentukan nilai dari $\\lim_{x\\to 5}(x^2 - 6)$.",
+        "jawaban": "$19$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $49$.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $49$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/493839c82256037da6d537d0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              9
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 9], [\"c\", 9], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62dc87b1c5236af1eb95e2a9",
+        "teks": "Diketahui fungsi $f(x) = \\frac{1}{3}x^2$. Nilai dari $f'(6)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $52$.",
+      "distraktor": [
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $52$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f30ee3105321052adabf208d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "b",
+              4
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"b\", 4], [\"c\", 1], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7c5b1ed3fc59d5bdd1234ad",
+        "teks": "Tentukan nilai dari $\\lim_{x\\to 0}(3x^2 - 7x + 9)$ dengan menerapkan sifat-sifat limit fungsi.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$67$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $67$.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$134$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $67$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/86d3aab36bc2e7c6991a6f7e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 3], [\"c\", 1], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d28d08970ee1610a11cac324",
+        "teks": "Berdasarkan definisi kekontinuan fungsi, suatu fungsi $f(x)$ dikatakan kontinu di titik $x = c$ jika memenuhi tiga syarat. Manakah di antara pernyataan berikut yang merupakan salah satu syarat tersebut?",
+        "jawaban": "$\\lim_{x\\to c} f(x) = f(c)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$75$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $75$.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$150$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $75$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c0e43d38c774b783afc8aeef.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 3], [\"c\", 5], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12864b86e346f35b2dc8d98b",
+        "teks": "Suatu garis sekan menghubungkan titik $P(1, 2)$ dan $R(4, 11)$ pada kurva $f(x)$. Kemiringan (gradien) garis sekan $PR$ tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$57$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $57$.",
+      "distraktor": [
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $57$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/584536fb644d01930ab95efb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              2
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 9], [\"c\", 2], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2cdf902e3c96a21c4b0457b",
+        "teks": "Diketahui fungsi $f(x) = -4x^2$. Nilai dari $f'(-3)$ adalah ....",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$82$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $82$.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$164$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $82$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/e20b92e6326a8c681041f97d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              10
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 10], [\"c\", 1], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ba2e6aad0d4538a0ff4913b3",
+        "teks": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 1}\\sqrt{\\dfrac{y^2+3}{5y+11}}$.",
+        "jawaban": "$\\dfrac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$83$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $83$.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $83$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/6546479ce87f1d078f112de4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 3], [\"c\", 4], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b6e3d40b35aadafb9a1d1dc",
+        "teks": "Diketahui $\\displaystyle\\lim_{x\\to 4} g(x) = 6$. Nilai dari $\\displaystyle\\lim_{x\\to 4} \\left(g(x) \\cdot \\dfrac{5}{\\sqrt{x} + 3}\\right)$ adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $46$.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $46$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a1fbd023255714c4dc8c7e08.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              10
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 10], [\"c\", 8], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d98760acca5d93d0869f47f3",
+        "teks": "Berdasarkan Sifat Limit 1 untuk fungsi konstan, jika $f(x) = 15$ untuk setiap bilangan real $x$, maka nilai dari $\\displaystyle\\lim_{x\\to 8} f(x)$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$73$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $73$.",
+      "distraktor": [
+        {
+          "teks": "$74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$146$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $73$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/342e7950320c296cb7c7bef8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 13], [\"c\", 10], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2090786b914a8f5236048d46",
+        "teks": "Berdasarkan Definisi 2.2 mengenai kontinuitas fungsi, suatu fungsi $f(x)$ dikatakan kontinu pada suatu interval $I$ jika ....",
+        "jawaban": "fungsi tersebut kontinu pada setiap titik di $I$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$82$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $82$.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$164$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $82$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/6a7d0811616ca586a7c53197.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "c",
+              2
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 2], [\"c\", 2], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1c4b4a220d80c65c113d4024",
+        "teks": "Gunakan sifat-sifat limit untuk menyelesaikan masalah berikut. Tentukan nilai dari $\\displaystyle\\lim_{x\\to 4} (2x^2 - 7)$.",
+        "jawaban": "$25$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$109$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $109$.",
+      "distraktor": [
+        {
+          "teks": "$110$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$218$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $109$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/8d1b8c84b9eb68487b161fd7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 11], [\"c\", 4], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bade566925f0ab1a45b4698",
+        "teks": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to 0} (5x^2 - 4x + 8)$ dengan menerapkan sifat-sifat limit fungsi.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$93$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $93$.",
+      "distraktor": [
+        {
+          "teks": "$94$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$186$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $93$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b33d778c83881e355b90fc12.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 9], [\"c\", 1], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7463cfe1a9da19bab975c80c",
+        "teks": "Berdasarkan Sifat Limit 1 untuk fungsi identitas $g(x) = x$, nilai dari $\\displaystyle\\lim_{x\\to -7} x$ adalah ....",
+        "jawaban": "$-7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$61$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $61$.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$122$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $61$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/357aa861b0bd82384e97c1ef.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 7], [\"c\", 5], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4d405563df69382f2ef3032",
+        "teks": "Sebuah garis sekan memotong kurva $f(x)$ di dua titik, yaitu $A(2, 3)$ dan $B(6, 23)$. Kemiringan garis sekan yang melalui kedua titik tersebut adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$83$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $83$.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $83$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/75caa3d646331679153b626a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 13], [\"c\", 8], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e05143bd27fbf99f6ac3183",
+        "teks": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 5}\\sqrt{\\dfrac{y-1}{6y+6}}$.",
+        "jawaban": "$\\dfrac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; b = $9$; c = $4$; t = $6$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $69$.",
+      "distraktor": [
+        {
+          "teks": "$70$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$68$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $69$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1c4495f0b5a79f2559f93dce",
+        "teks": "Diketahui $\\displaystyle\\lim_{x\\to 5} g(x) = 8$. Tentukan nilai dari $\\displaystyle\\lim_{x\\to 5}\\left(g(x)\\cdot\\dfrac{7}{x+9}\\right)$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; b = $8$; c = $2$; t = $3$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$38$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $38$.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $38$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7529309706cf5b46f46c921",
+        "teks": "Tentukan nilai dari $f'(-1)$ untuk fungsi $f(x) = -5x^2$.",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $6$; b = $4$; c = $10$; t = $5$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $64$.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $64$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a03a86277870409fd1274428",
+        "teks": "Matematikawan terkemuka yang meletakkan fondasi aritmetis dan limit yang kokoh pada kalkulus sehingga sering disebut sebagai Bapak Analisis Modern adalah ....",
+        "jawaban": "Karl Theodor Wilhelm Weierstrass",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; b = $10$; c = $6$; t = $2$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$58$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $58$.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $58$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e785a89c4401340ab8da0ddc",
+        "teks": "Berdasarkan Definisi 2.1 mengenai limit fungsi secara intuitif, pernyataan $\\displaystyle\\lim_{x\\to c} f(x) = L$ memiliki arti bahwa ....",
+        "jawaban": "untuk $x$ mendekati $c$ dari kiri dan kanan, maka $f(x)$ mendekati $L$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; b = $3$; c = $11$; t = $7$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$115$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $115$.",
+      "distraktor": [
+        {
+          "teks": "$116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$230$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $115$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a9ebf35e88aa84853e53013",
+        "teks": "Tentukan nilai dari $f'(-6)$ dan $f'(8)$ untuk fungsi $f(x) = \\dfrac{3}{4}x^2$.",
+        "jawaban": "$f'(-6) = -9$ dan $f'(8) = 12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_definition_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $9$; c = $8$; t = $6$. Gunakan definisi turunan untuk $f(x)=ax^2+bx+c$. Tentukan $f^\\prime(t)$.",
+      "jawaban_benar": "$57$",
+      "alasan_benar": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $57$.",
+      "distraktor": [
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kembangkan f(t+h)-f(t), bagi h, ambil limit, kemudian evaluasi koefisien pada t. Hasilnya $57$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-a-medium-bt01-047"
     }
   ]
 }

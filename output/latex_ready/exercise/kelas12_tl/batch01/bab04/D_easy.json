@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "D",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak hipergeometrik sederhana",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi sederhana dalam dua langkah langsung untuk menentukan peluang satu titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 8 butir telur, 2 di antaranya retak. Dika mengambil 2 butir telur sekaligus secara acak. Jika $X$ menyatakan banyak telur retak yang terambil, nilai dari $P(X = 0)$ adalah ....",
+      "jawaban_benar": "$\\frac{15}{28}$",
+      "alasan_benar": "Banyak cara memilih 2 telur dari 8 telur adalah $\\binom{8}{2} = 28$. Kejadian terambil 0 telur retak berarti mengambil 2 telur baik dari 6 telur tidak retak, yaitu $\\binom{6}{2} = 15$. Jadi, $P(X = 0) = \\frac{15}{28}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{28}$",
+          "alasan": "Siswa salah menghitung kombinasi 2 dari 6 sebagai 6."
+        },
+        {
+          "teks": "$\\frac{13}{28}$",
+          "alasan": "Siswa menghitung komplemen dari nilai yang salah."
+        },
+        {
+          "teks": "$\\frac{1}{28}$",
+          "alasan": "Siswa menghitung peluang terambilnya 2 telur retak sekaligus ($P(X=2)$)."
+        }
+      ],
+      "pembahasan": "Banyak anggota ruang sampel memilih 2 dari 8 telur:\n$$n(S) = \\binom{8}{2} = \\frac{8 \\times 7}{2 \\times 1} = 28$$\nKejadian $X = 0$ berarti terambil 0 telur retak dan 2 telur baik dari 6 telur baik:\n$$n(X = 0) = \\binom{2}{0} \\times \\binom{6}{2} = 1 \\times 15 = 15$$\nMaka, nilai peluangnya adalah:\n$$P(X = 0) = \\frac{15}{28}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0264-latihan-soal-fungsi-peluang-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak binomial sederhana",
+      "jumlah_langkah": 2,
+      "alasan_level": "Hanya membutuhkan penentuan ruang sampel kuis dan titik sampel spesifik satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam sebuah kuis singkat, terdapat 4 soal bertipe benar atau salah. Seorang siswa menjawab semua soal secara acak. Jika $X$ menyatakan banyak jawaban benar yang diperoleh siswa tersebut, nilai $P(X = 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{16}$",
+      "alasan_benar": "Total kemungkinan jawaban dari 4 soal adalah $2^4 = 16$. Kejadian semua jawaban benar hanya ada 1 kemungkinan, sehingga $P(X = 4) = \\frac{1}{16}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Siswa salah menganggap ruang sampel 4 soal benar-salah adalah $2 \\times 4 = 8$."
+        },
+        {
+          "teks": "$\\frac{4}{16}$",
+          "alasan": "Siswa mengira ada 4 kemungkinan cara memperoleh semua jawaban benar."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa langsung membagi 1 dengan banyak soal."
+        }
+      ],
+      "pembahasan": "Setiap soal memiliki 2 kemungkinan jawaban (benar atau salah), sehingga untuk 4 soal:\n$$n(S) = 2^4 = 16$$\nKejadian $X = 4$ artinya keempat soal dijawab dengan benar seluruhnya, yang hanya ada 1 kemungkinan:\n$$n(X = 4) = 1$$\nJadi, nilai peluangnya adalah:\n$$P(X = 4) = \\frac{1}{16}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat total peluang",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung nilai parameter tunggal menggunakan sifat dasar total peluang bernilai satu.",
+      "stimulus": "| $X = x$ | 1 | 2 | 3 |\n|---|---|---|---|\n| $P(X = x)$ | 0,2 | $k$ | 0,5 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan distribusi peluang untuk variabel acak diskret $X$. Nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "0,3",
+      "alasan_benar": "Total peluang seluruh nilai variabel acak diskret harus sama dengan 1, sehingga $k = 1 - (0,2 + 0,5) = 0,3$.",
+      "distraktor": [
+        {
+          "teks": "0,7",
+          "alasan": "Siswa hanya menjumlahkan peluang yang diketahui ($0,2 + 0,5$)."
+        },
+        {
+          "teks": "0,4",
+          "alasan": "Siswa salah melakukan pengurangan desimal."
+        },
+        {
+          "teks": "0,1",
+          "alasan": "Siswa salah mengurangkan dari nilai acuan yang keliru."
+        }
+      ],
+      "pembahasan": "Berdasarkan syarat fungsi peluang diskret, jumlah seluruh peluang harus bernilai 1:\n$$\\sum P(X = x) = 1$$\n$$0,2 + k + 0,5 = 1$$\n$$0,7 + k = 1$$\n$$k = 1 - 0,7 = 0,3$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan X adalah variabel acak diskret yang menyatakan kejadian munculnya sisi G (gambar) dalam percobaan acak ini."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "distribusi peluang uang logam",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat ruang sampel pelemparan koin dan menentukan peluang kejadian dasar secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua keping uang logam setimbang dilempar bersamaan satu kali. Jika $X$ menyatakan variabel acak banyaknya sisi angka yang muncul, nilai dari $P(X = 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Ruang sampel pelemparan 2 koin adalah $\\{AA, AG, GA, GG\\}$ dengan $n(S) = 4$. Muncul tepat 1 angka terjadi pada $\\{AG, GA\\}$ sehingga peluangnya $\\frac{2}{4} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa hanya menghitung salah satu kejadian ($AG$ saja)."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Siswa menghitung peluang munculnya paling sedikit 1 angka ($P(X \\ge 1)$)."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah memahami konsep peluang total sebagai peluang kejadian tersebut."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua koin:\n$$S = \\{AA, AG, GA, GG\\} \\implies n(S) = 4$$\nKejadian $X = 1$ (muncul 1 sisi angka):\n$$A = \\{AG, GA\\} \\implies n(A) = 2$$\nMaka diperoleh nilai peluang:\n$$P(X = 1) = \\frac{2}{4} = \\frac{1}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 263,
+        "bagian": "Latihan Soal Fungsi Peluang",
+        "nomor": "2",
+        "teks": "Diketahui:\n\n      - _f_ ^ _x_ h = 6 _<u>x</u>_ , untuk _x_ = 1, 2, 3, * 0, untuk _x_ lainnya \n\n   - a. Tentukan distribusi peluang untuk _X_ . \n\n   - b. Apakah _f_ ^ _x_ h merupakan fungsi peluang dari variabel acak diskret _X_ ? \n\n   - c. Tentukan _P_ ^ _X_ = 2h, _P_ ^ _X_ $ 2h , dan _P_ ^ _X_ 1 3h .",
+        "jawaban": "c. P(X = 2) = 2/6 = 1/3, P(X >= 2) = 5/6, P(X < 3) = 3/6 = 1/2",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai peluang fungsi distribusi diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai variabel acak ke rumus fungsi lalu menjumlahkan dua suku peluang secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi peluang dari suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{x}{15}, & \\text{untuk } x = 4, 5, 6 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 5)$ adalah …",
+      "jawaban_benar": "$\\frac{11}{15}$",
+      "alasan_benar": "$P(X \\ge 5) = f(5) + f(6) = \\frac{5}{15} + \\frac{6}{15} = \\frac{11}{15}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{15}$",
+          "alasan": "Hanya menghitung nilai $P(X = 5)$ tanpa menjumlahkan untuk $x = 6$."
+        },
+        {
+          "teks": "$\\frac{6}{15}$",
+          "alasan": "Hanya menghitung nilai untuk $x = 6$."
+        },
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "Menghitung komplemen yang salah atau hanya menghitung $P(X < 5) = f(4) = \\frac{4}{15}$."
+        }
+      ],
+      "pembahasan": "Nilai variabel acak yang memenuhi $X \\ge 5$ adalah $x = 5$ dan $x = 6$.\n$$P(X \\ge 5) = f(5) + f(6) = \\frac{5}{15} + \\frac{6}{15} = \\frac{11}{15}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak hipergeometrik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung kombinasi sederhana dan membaginya dengan ruang sampel untuk satu titik nilai variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah toples berisi 4 kelereng biru dan 2 kelereng kuning. Dari dalam toples tersebut diambil 2 butir kelereng sekaligus secara acak. Jika variabel acak $Y$ menyatakan banyaknya kelereng kuning yang terambil, nilai dari $P(Y = 2)$ adalah …",
+      "jawaban_benar": "$\\frac{1}{15}$",
+      "alasan_benar": "Banyak cara memilih 2 kelereng kuning dari 2 yang ada adalah $\\binom{2}{2} = 1$. Total cara memilih 2 kelereng dari 6 kelereng adalah $\\binom{6}{2} = 15$. Jadi, $P(Y = 2) = \\frac{1}{15}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{15}$",
+          "alasan": "Menuliskan jumlah kelereng kuning (2) langsung sebagai pembilang."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Menghitung peluang terambilnya 1 kelereng kuning dan 1 kelereng biru: $\\frac{\\binom{2}{1}\\binom{4}{1}}{15} = \\frac{8}{15}$."
+        },
+        {
+          "teks": "$\\frac{6}{15}$",
+          "alasan": "Menghitung peluang terambilnya 0 kelereng kuning: $\\frac{\\binom{4}{2}}{15} = \\frac{6}{15}$."
+        }
+      ],
+      "pembahasan": "Banyak cara memilih 2 kelereng dari total 6 kelereng:\n$$n(S) = \\binom{6}{2} = \\frac{6 \\times 5}{2 \\times 1} = 15$$\nBanyak cara terambil 2 kelereng kuning:\n$$n(Y = 2) = \\binom{2}{2} \\times \\binom{4}{0} = 1 \\times 1 = 1$$\nSehingga peluangnya adalah:\n$$P(Y = 2) = \\frac{1}{15}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 261,
+        "bagian": "Ayo Mencoba 4.4",
+        "nomor": "1",
+        "teks": "1. Pabrik ponsel Sigma mengirim 10 ponsel pintar ke sebuah toko elektronik. Ternyata sebanyak 4 ponsel pintar cacat. Beta membeli 2 ponsel pintar dari toko tersebut secara acak. Tentukan distribusi dan fungsi peluang banyak ponsel pintar yang cacat.",
+        "jawaban": "f(0) = 15/45 = 1/3, f(1) = 24/45 = 8/15, f(2) = 6/45 = 2/15",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang terambil tanpa cacat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi sederhana untuk kasus tidak ada cacat terambil dibagi ruang sampel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak memuat 7 bohlam lampu, dengan 3 di antaranya dalam keadaan rusak. Seorang petugas mengambil 2 bohlam secara acak sekaligus. Jika variabel acak $X$ menyatakan banyak bohlam rusak yang terambil, nilai peluang terambilnya semua bohlam dalam keadaan baik ($P(X = 0)$) adalah …",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Bohlam baik berjumlah $7 - 3 = 4$. $P(X = 0) = \\frac{\\binom{4}{2}\\binom{3}{0}}{\\binom{7}{2}} = \\frac{6}{21} = \\frac{2}{7}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Menghitung peluang kedua bohlam rusak: $\\frac{\\binom{3}{2}}{21} = \\frac{3}{21} = \\frac{1}{7}$."
+        },
+        {
+          "teks": "$\\frac{4}{7}$",
+          "alasan": "Menghitung peluang terambilnya 1 bohlam rusak: $\\frac{\\binom{3}{1}\\binom{4}{1}}{21} = \\frac{12}{21} = \\frac{4}{7}$."
+        },
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Menggunakan rasio langsung banyak bohlam rusak terhadap total tanpa kombinasi."
+        }
+      ],
+      "pembahasan": "Banyak bohlam baik $= 7 - 3 = 4$.\nTotal kemungkinan mengambil 2 bohlam dari 7 bohlam:\n$$n(S) = \\binom{7}{2} = \\frac{7 \\times 6}{2 \\times 1} = 21$$\nBanyak cara mengambil 0 bohlam rusak (keduanya bohlam baik):\n$$n(X = 0) = \\binom{4}{2} = \\frac{4 \\times 3}{2 \\times 1} = 6$$\nPeluang terambil semua baik:\n$$P(X = 0) = \\frac{6}{21} = \\frac{2}{7}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasil kombinasi tersebut kemudian dibagi 8 agar memenuhi sifat fungsi peluang, yaitu / f ^ x h = 1 ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "syarat fungsi peluang diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi konsep dasar syarat sifat fungsi peluang diskret secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $X$ adalah suatu variabel acak diskret dengan nilai-nilai $x$ yang mungkin. Suatu fungsi $f(x)$ sah menjadi fungsi peluang (distribusi peluang) dari $X$ jika memenuhi syarat …",
+      "jawaban_benar": "$f(x) \\ge 0$ untuk setiap $x$, dan $\\sum f(x) = 1$",
+      "alasan_benar": "Sesuai definisi fungsi peluang diskret, setiap nilai peluang harus tak negatif ($f(x) \\ge 0$) dan jumlah total seluruh peluang harus sama dengan 1 ($\\sum f(x) = 1$).",
+      "distraktor": [
+        {
+          "teks": "$f(x) > 0$ untuk setiap $x$, dan $\\sum f(x) = 0$",
+          "alasan": "Keliru menganggap jumlah total peluang bernilai 0."
+        },
+        {
+          "teks": "$f(x) \\le 1$ untuk setiap $x$, dan $\\sum f(x) > 1$",
+          "alasan": "Keliru menganggap jumlah total peluang boleh lebih dari 1."
+        },
+        {
+          "teks": "$f(x) = 1$ untuk setiap $x$, dan $\\sum f(x) = 1$",
+          "alasan": "Menyamakan setiap nilai fungsi harus bernilai 1."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat fungsi peluang untuk variabel acak diskret, fungsi $f(x)$ harus memenuhi dua syarat utama:\n1. $f(x) \\ge 0$ untuk setiap nilai $x$ yang mungkin.\n2. $\\sum f(x) = 1$ (jumlah seluruh peluang adalah 1).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "X = 3 jika hasil (GGG) terjadi sehingga P ^ X = 0h = 8"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "peluang pelemparan uang logam",
+      "jumlah_langkah": 1,
+      "alasan_level": "Satu langkah identifikasi titik sampel dan menentukan peluang pada ruang sampel uang logam.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah uang logam setimbang dilemparkan sebanyak tiga kali. Jika variabel acak $X$ menyatakan banyaknya sisi gambar (G) yang muncul dalam tiga kali pelemparan tersebut, nilai dari $P(X = 3)$ adalah …",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "Ruang sampel pelemparan 3 uang logam memiliki $2^3 = 8$ titik sampel. Kejadian muncul 3 gambar hanya memiliki 1 titik sampel, yaitu $(GGG)$, sehingga peluangnya adalah $\\frac{1}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Keliru menghitung untuk kejadian muncul 1 atau 2 gambar, yaitu $\\binom{3}{1} = \\binom{3}{2} = 3$ cara."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Salah membagi banyak kejadian sukses dengan total lemparan (3)."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Menggunakan peluang muncul gambar pada satu kali lemparan saja."
+        }
+      ],
+      "pembahasan": "Ruang sampel dari 3 pelemparan uang logam adalah:\n$$S = \\{AAA, AAG, AGA, AGG, GAA, GAG, GGA, GGG\\}$$\nBanyaknya titik sampel adalah $n(S) = 8$.\nKejadian $X = 3$ (muncul 3 sisi gambar) hanya terjadi pada hasil $\\{GGG\\}$, sehingga $n(X = 3) = 1$.\n$$P(X = 3) = \\frac{1}{8}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0264-latihan-soal-fungsi-peluang-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial kuis",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi sederhana dan perkalian peluang pada distribusi binomial kuis 3 butir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kuis terdiri dari 3 butir pertanyaan bertipe benar atau salah. Seseorang menjawab seluruh soal secara acak dengan peluang menjawab benar pada tiap soal adalah $\\frac{1}{2}$. Jika variabel acak $X$ menyatakan banyak soal yang dijawab dengan benar, nilai dari $P(X = 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{8}$",
+      "alasan_benar": "Banyaknya cara memilih 2 soal benar dari 3 soal adalah $\\binom{3}{2} = 3$, dan tiap kombinasi memiliki peluang $\\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$, sehingga totalnya $\\frac{3}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{8}$",
+          "alasan": "Keliru menganggap ada 2 cara memilih karena yang dicari adalah 2 jawaban benar."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Hanya menghitung satu kejadian spesifik tanpa memperhitungkan faktor kombinasi $\\binom{3}{2}$."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menghitung perbandingan 2 benar dari total 3 soal tanpa memperhitungkan peluang ruang sampel acak."
+        }
+      ],
+      "pembahasan": "Ruang sampel penulisan jawaban terdiri dari $2^3 = 8$ kemungkinan dengan bobot peluang sama.\nBanyak kombinasi mendapatkan tepat 2 jawaban benar adalah $\\binom{3}{2} = \\frac{3!}{2!1!} = 3$ cara (BBS, BSB, SBB).\nJadi, peluangnya adalah:\n$$P(X = 2) = \\frac{3}{8}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": "Contoh Soal 4.6",
+        "nomor": "4.6",
+        "teks": "Dalam sebuah kotak terdapat 5 bola hijau dan 3 bola kuning. Misalkan diambil 3 bola secara acak. Jika X menyatakan banyak bola kuning yang terambil, tentukan fungsi peluang X.",
+        "jawaban": "f(x) untuk x = 0, 1, 2, 3 berturut-turut adalah 10/56, 30/56, 15/56, 1/56",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang hipergeometrik bola",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi terambilnya 1 bola tertentu dan pembagian dengan ruang sampel total pengambilan 2 bola.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 4 bola merah dan 2 bola putih. Dua bola diambil sekaligus secara acak. Jika variabel acak $X$ menyatakan banyak bola putih yang terambil, nilai peluang $P(X = 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{8}{15}$",
+      "alasan_benar": "Banyak kejadian memilih 1 bola putih dan 1 bola merah adalah $\\binom{2}{1} \\times \\binom{4}{1} = 2 \\times 4 = 8$. Total cara memilih 2 bola dari 6 bola adalah $\\binom{6}{2} = 15$. Jadi, peluangnya $\\frac{8}{15}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{15}$",
+          "alasan": "Hanya menghitung $\\binom{2}{1} = 2$ pada pembilang tanpa mengalikannya dengan cara memilih bola merah."
+        },
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "Hanya menghitung $\\binom{4}{1} = 4$ pada pembilang tanpa mengalikannya dengan cara memilih bola putih."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Keliru membagi banyak bola putih terhadap total bola, yaitu $\\frac{2}{6} = \\frac{1}{3}$."
+        }
+      ],
+      "pembahasan": "Total bola = $4 + 2 = 6$.\nJumlah kemungkinan pengambilan 2 bola dari 6 bola:\n$$n(S) = \\binom{6}{2} = \\frac{6 \\times 5}{2} = 15$$\nKejadian $X = 1$ berarti terambil 1 bola putih dan 1 bola merah:\n$$n(X = 1) = \\binom{2}{1} \\times \\binom{4}{1} = 2 \\times 4 = 8$$\nDengan demikian:\n$$P(X = 1) = \\frac{8}{15}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasil kombinasi tersebut kemudian dibagi 8 agar memenuhi sifat fungsi peluang, yaitu / f ^ x h = 1 ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "penentuan parameter distribusi peluang",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan pemanfaatan sifat dasar bahwa total seluruh nilai peluang diskret harus sama dengan satu.",
+      "stimulus": "| $X = x$ | 0 | 1 | 2 |\n| :--- | :---: | :---: | :---: |\n| $P(X = x)$ | 0,25 | $c$ | 0,35 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan fungsi peluang untuk suatu variabel acak diskret $X$. Nilai $c$ yang memenuhi fungsi peluang tersebut adalah ....",
+      "jawaban_benar": "0,40",
+      "alasan_benar": "Jumlah seluruh peluang harus bernilai 1, sehingga $c = 1 - (0,25 + 0,35) = 1 - 0,60 = 0,40$.",
+      "distraktor": [
+        {
+          "teks": "0,30",
+          "alasan": "Salah menjumlahkan 0,25 dan 0,35 menjadi 0,70 sehingga memperoleh hasil $1 - 0,70 = 0,30$."
+        },
+        {
+          "teks": "0,60",
+          "alasan": "Hanya menjumlahkan peluang yang ada ($0,25 + 0,35$) tanpa mengurangkannya dari 1."
+        },
+        {
+          "teks": "0,50",
+          "alasan": "Mengira nilai tengah distribusi peluang selalu merupakan rata-rata atau setengah dari total."
+        }
+      ],
+      "pembahasan": "Berdasarkan syarat fungsi peluang diskret, jumlah seluruh peluang harus sama dengan 1:\n$$\\sum f(x) = 1$$\n$$P(X = 0) + P(X = 1) + P(X = 2) = 1$$\n$$0,25 + c + 0,35 = 1$$\n$$c + 0,60 = 1$$\n$$c = 0,40$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 260,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilai X yang mungkin adalah 0, 1, 2, 3."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "himpunan nilai variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan mengidentifikasi seluruh nilai yang mungkin dimiliki oleh suatu variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu ulangan harian, seorang siswa mengerjakan 4 butir soal. Jika variabel acak $X$ menyatakan banyak soal yang dijawab salah oleh siswa tersebut, himpunan seluruh nilai yang mungkin untuk variabel acak $X$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2, 3, 4\\}$",
+      "alasan_benar": "Banyaknya jawaban salah yang dapat terjadi berkisar dari tidak ada yang salah (0) sampai semuanya salah (4).",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Lupa menyertakan nilai 0 saat tidak ada jawaban yang salah sama sekali."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Lupa menyertakan nilai maksimum 4 saat seluruh butir soal dijawab salah."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4, 5\\}$",
+          "alasan": "Keliru menganggap banyak kemungkinan nilai sama dengan jumlah soal ditambah satu yang dimulai dari 1."
+        }
+      ],
+      "pembahasan": "Banyaknya soal yang dijawab salah dapat berupa:\n- Tidak ada yang salah sama sekali ($X = 0$)\n- Tepat 1 soal salah ($X = 1$)\n- Tepat 2 soal salah ($X = 2$)\n- Tepat 3 soal salah ($X = 3$)\n- Semua soal salah ($X = 4$)\n\nJadi, himpunan seluruh nilai yang mungkin untuk variabel acak $X$ adalah $\\{0, 1, 2, 3, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 261,
+        "bagian": "Ayo Mencoba 4.4",
+        "nomor": "1",
+        "teks": "Pabrik ponsel Sigma mengirim 10 ponsel pintar ke sebuah toko elektronik. Ternyata sebanyak 4 ponsel pintar cacat. Beta membeli 2 ponsel pintar dari toko tersebut secara acak. Tentukan distribusi dan fungsi peluang banyak ponsel pintar yang cacat.",
+        "jawaban": "y = 0, 1, 2 dengan f(0) = 15/45, f(1) = 24/45, f(2) = 6/45",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak cacat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi sederhana untuk menentukan satu nilai fungsi peluang variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pabrik ponsel Sigma mengirim 7 ponsel pintar ke sebuah toko elektronik, dan ternyata sebanyak 3 ponsel pintar cacat. Beta membeli 3 ponsel pintar dari toko tersebut secara acak. Jika variabel acak $Y$ menyatakan banyak ponsel pintar cacat yang dibeli Beta, nilai peluang $P(Y = 1)$ adalah …",
+      "jawaban_benar": "$\\frac{18}{35}$",
+      "alasan_benar": "Total cara memilih 3 ponsel dari 7 ponsel adalah $\\binom{7}{3} = 35$. Banyak cara memilih 1 ponsel cacat dari 3 ponsel cacat dan 2 ponsel baik dari 4 ponsel baik adalah $\\binom{3}{1} \\times \\binom{4}{2} = 3 \\times 6 = 18$. Jadi, $P(Y = 1) = \\frac{18}{35}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{35}$",
+          "alasan": "Salah menghitung $\\binom{4}{2}$ menjadi 4 sehingga pembilang menjadi $3 \\times 4 = 12$."
+        },
+        {
+          "teks": "$\\frac{9}{35}$",
+          "alasan": "Menghitung $\\binom{3}{1} \\times 3 = 9$ karena salah menentukan jumlah ponsel baik."
+        },
+        {
+          "teks": "$\\frac{1}{35}$",
+          "alasan": "Hanya menghitung peluang untuk 3 ponsel cacat terpilih semua $\\binom{3}{3} = 1$."
+        }
+      ],
+      "pembahasan": "Diketahui total ponsel $n = 7$, ponsel cacat $= 3$, dan ponsel baik $= 4$. Beta membeli $3$ ponsel.\nTotal kemungkinan memilih 3 ponsel:\n$$n(S) = \\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$$\n\nBanyak cara terpilih 1 ponsel cacat ($Y = 1$) dan 2 ponsel baik:\n$$n(Y = 1) = \\binom{3}{1} \\times \\binom{4}{2} = 3 \\times \\frac{4 \\times 3}{2 \\times 1} = 3 \\times 6 = 18$$\n\nSehingga diperoleh nilai peluang:\n$$P(Y = 1) = \\frac{n(Y = 1)}{n(S)} = \\frac{18}{35}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": "Contoh Soal",
+        "nomor": "4.6",
+        "teks": "Dalam sebuah kotak terdapat 5 bola hijau dan 3 bola kuning. Misalkan diambil 3 bola secara acak. Jika X menyatakan banyak bola kuning yang terambil, tentukan fungsi peluang X.",
+        "jawaban": "f(0) = 10/56, f(1) = 30/56, f(2) = 15/56, f(3) = 1/56",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak dua bola",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai fungsi peluang dari suatu kejadian pengambilan bola menggunakan kombinasi dasar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam sebuah kotak terdapat 6 bola hijau dan 4 bola kuning. Dari kotak tersebut diambil 2 bola secara acak sekaligus. Jika variabel acak $X$ menyatakan banyak bola kuning yang terambil, nilai dari $P(X = 2)$ adalah …",
+      "jawaban_benar": "$\\frac{2}{15}$",
+      "alasan_benar": "Banyak cara memilih 2 bola dari 10 bola adalah $\\binom{10}{2} = 45$. Banyak cara memilih 2 bola kuning dari 4 bola kuning adalah $\\binom{4}{2} = 6$. Maka, $P(X = 2) = \\frac{6}{45} = \\frac{2}{15}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "Salah menghitung banyak cara memilih 2 bola kuning sebagai $\\binom{4}{1} \\times 3 = 12$ sehingga $12/45 = 4/15$."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Menghitung peluang terambil tepat 1 bola kuning, yaitu $\\binom{4}{1}\\binom{6}{1}/45 = 24/45 = 8/15$."
+        },
+        {
+          "teks": "$\\frac{1}{15}$",
+          "alasan": "Hanya menghitung 1 kemungkinan dibagi total sampel per kelompok atau salah membagi."
+        }
+      ],
+      "pembahasan": "Jumlah seluruh bola dalam kotak $= 6 + 4 = 10$ bola.\nBanyak cara mengambil 2 bola sekaligus dari 10 bola:\n$$n(S) = \\binom{10}{2} = \\frac{10 \\times 9}{2 \\times 1} = 45$$\n\nKejadian $X = 2$ berarti terambil 2 bola kuning dari 4 bola kuning yang tersedia:\n$$n(X = 2) = \\binom{4}{2} = \\frac{4 \\times 3}{2 \\times 1} = 6$$\n\nMaka nilai peluangnya adalah:\n$$P(X = 2) = \\frac{n(X = 2)}{n(S)} = \\frac{6}{45} = \\frac{2}{15}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak buah",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung peluang variabel acak diskret bernilai 0 dengan aturan kombinasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah keranjang memuat 8 buah mangga, dan 2 di antaranya masih mentah. Pak Made memilih 3 buah mangga secara acak sekaligus. Jika variabel acak $K$ menyatakan banyak mangga mentah yang terpilih, nilai dari $P(K = 0)$ adalah …",
+      "jawaban_benar": "$\\frac{5}{14}$",
+      "alasan_benar": "Total mangga $= 8$ (2 mentah, 6 matang). Memilih 3 mangga menghasilkan $\\binom{8}{3} = 56$ cara. Terpilih 0 mangga mentah berarti ketiga mangga matang, yaitu $\\binom{6}{3} = 20$ cara. Peluangnya $\\frac{20}{56} = \\frac{5}{14}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{14}$",
+          "alasan": "Salah menghitung kombinasi mangga matang menjadi 12 sehingga diperoleh $12/56 = 3/14$."
+        },
+        {
+          "teks": "$\\frac{15}{28}$",
+          "alasan": "Menghitung peluang $P(K = 1)$, yaitu $\\binom{2}{1}\\binom{6}{2}/56 = 30/56 = 15/28$."
+        },
+        {
+          "teks": "$\\frac{9}{14}$",
+          "alasan": "Menghitung komplemen $1 - P(K = 0) = 1 - 5/14 = 9/14$."
+        }
+      ],
+      "pembahasan": "Diketahui total mangga $= 8$, mangga mentah $= 2$, dan mangga matang $= 6$.\nPak Made memilih 3 mangga, sehingga ruang sampel:\n$$n(S) = \\binom{8}{3} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56$$\n\nVariabel acak $K = 0$ artinya tidak ada mangga mentah yang terambil, sehingga ketiganya adalah mangga matang:\n$$n(K = 0) = \\binom{6}{3} = \\frac{6 \\times 5 \\times 4}{3 \\times 2 \\times 1} = 20$$\n\nNilai peluangnya:\n$$P(K = 0) = \\frac{20}{56} = \\frac{5}{14}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang variabel acak kelereng tiga warna",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung peluang variabel acak diskret dari populasi dengan tiga kategori menggunakan kombinasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi 7 bola putih, 1 bola hitam, dan 4 bola merah. Sebanyak 2 bola diambil secara acak sekaligus. Jika variabel acak $M$ menyatakan banyak bola merah yang terambil, nilai peluang $P(M = 1)$ adalah …",
+      "jawaban_benar": "$\\frac{16}{33}$",
+      "alasan_benar": "Total bola $= 7 + 1 + 4 = 12$. Banyak cara memilih 2 bola adalah $\\binom{12}{2} = 66$. Terambil 1 bola merah dan 1 bola bukan merah (dari 8 bola) adalah $\\binom{4}{1} \\times \\binom{8}{1} = 32$. Maka peluangnya $\\frac{32}{66} = \\frac{16}{33}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{33}$",
+          "alasan": "Lupa mengalikan dengan kombinasi bola merah sehingga hanya menghitung $16/66$ atau salah membagi."
+        },
+        {
+          "teks": "$\\frac{1}{11}$",
+          "alasan": "Menghitung peluang terambilnya 2 bola merah ($M = 2$), yaitu $\\binom{4}{2}/66 = 6/66 = 1/11$."
+        },
+        {
+          "teks": "$\\frac{17}{33}$",
+          "alasan": "Menghitung komplemen dari jawaban yang benar, yaitu $1 - 16/33 = 17/33$."
+        }
+      ],
+      "pembahasan": "Total bola dalam kantong adalah $7 + 1 + 4 = 12$ bola.\nBola bukan merah $= 7 + 1 = 8$ bola, dan bola merah $= 4$ bola.\n\nBanyak cara mengambil 2 bola dari 12 bola:\n$$n(S) = \\binom{12}{2} = \\frac{12 \\times 11}{2 \\times 1} = 66$$\n\nBanyak cara terambil 1 bola merah ($M = 1$) dan 1 bola bukan merah:\n$$n(M = 1) = \\binom{4}{1} \\times \\binom{8}{1} = 4 \\times 8 = 32$$\n\nSehingga nilai peluangnya:\n$$P(M = 1) = \\frac{32}{66} = \\frac{16}{33}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang kumulatif distribusi diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung nilai peluang kumulatif diskret langsung dengan menjumlahkan nilai-nilai peluang pada tabel.",
+      "stimulus": "| $X = x$ | 1 | 2 | 3 | 4 |\n| :--- | :---: | :---: | :---: | :---: |\n| $P(X = x)$ | $\\frac{1}{10}$ | $\\frac{2}{10}$ | $\\frac{3}{10}$ | $\\frac{4}{10}$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan distribusi peluang dari suatu variabel acak diskret $X$. Nilai dari $P(X > 2)$ adalah …",
+      "jawaban_benar": "$\\frac{7}{10}$",
+      "alasan_benar": "$P(X > 2) = P(X = 3) + P(X = 4) = \\frac{3}{10} + \\frac{4}{10} = \\frac{7}{10}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{10}$",
+          "alasan": "Menghitung $P(X \\ge 2)$ sehingga menyertakan nilai $P(X = 2)$."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Hanya mengambil nilai $P(X = 3)$ dan mengabaikan $P(X = 4)$."
+        },
+        {
+          "teks": "$\\frac{4}{10}$",
+          "alasan": "Hanya mengambil nilai $P(X = 4)$."
+        }
+      ],
+      "pembahasan": "Berdasarkan tabel distribusi peluang, nilai-nilai $X$ yang memenuhi pertidaksamaan $X > 2$ adalah $x = 3$ dan $x = 4$.\n\nMaka:\n$$P(X > 2) = P(X = 3) + P(X = 4) = \\frac{3}{10} + \\frac{4}{10} = \\frac{7}{10}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "distribusi peluang seragam dadu",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan pengenalan langsung nilai peluang dari sebuah kejadian sederhana pada pelemparan dadu seimbang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah dadu setimbang bersisi enam dilempar satu kali. Jika variabel acak $X$ menyatakan mata dadu yang muncul, yaitu $X \\in \\{1, 2, 3, 4, 5, 6\\}$, nilai dari $P(X = 4)$ adalah …",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Masing-masing dari 6 mata dadu setimbang memiliki peluang muncul yang sama, yaitu $P(X = x) = \\frac{1}{6}$ untuk setiap $x \\in \\{1, 2, 3, 4, 5, 6\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menghitung keliru dengan membagi nilai $x$ dengan jumlah sisi dadu, yaitu $\\frac{4}{6} = \\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Membagi 1 dengan nilai mata dadu yang ditanyakan ($x = 4$)."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menghitung peluang komplemen yaitu peluang muncul selain mata 4 ($P(X \\ne 4)$)."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan sebuah dadu bersisi enam adalah $S = \\{1, 2, 3, 4, 5, 6\\}$ dengan banyak anggota $n(S) = 6$.\nKarena dadu setimbang, setiap mata dadu memiliki kemungkinan yang sama untuk muncul.\nOleh karena itu, fungsi peluangnya adalah:\n$$P(X = x) = \\frac{1}{6}, \\quad \\text{untuk } x = 1, 2, 3, 4, 5, 6$$\nDengan demikian, nilai $P(X = 4) = \\frac{1}{6}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 263,
+        "bagian": "Latihan Soal Fungsi Peluang",
+        "nomor": "2",
+        "teks": "2. Diketahui: - f(x) = x/6 , untuk x = 1, 2, 3, * 0, untuk x lainnya a. Tentukan distribusi peluang untuk X . b. Apakah f(x) merupakan fungsi peluang dari variabel acak diskret X ? c. Tentukan P(X = 2), P(X >= 2) , dan P(X > 3) .",
+        "jawaban": "P(X = 2) = 2/6, P(X >= 2) = 5/6, P(X > 3) = 0",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi fungsi peluang diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Soal memerlukan pemahaman fungsi peluang diskret dan penjumlahan langsung dua nilai peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi peluang dari suatu variabel acak diskret $X$ dinyatakan oleh:\n$$f(x) = \\begin{cases} \\frac{x}{20}, & \\text{untuk } x = 4, 7, 9 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 7)$ adalah ....",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "$P(X \\ge 7) = P(X = 7) + P(X = 9) = \\frac{7}{20} + \\frac{9}{20} = \\frac{16}{20} = \\frac{4}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{20}$",
+          "alasan": "Hanya menghitung nilai $P(X = 7)$ tanpa menjumlahkan dengan nilai $x$ yang lebih besar."
+        },
+        {
+          "teks": "$\\frac{9}{20}$",
+          "alasan": "Mengira tanda pertidaksamaan adalah strictly greater than, $P(X > 7) = P(X = 9) = \\frac{9}{20}$."
+        },
+        {
+          "teks": "$\\frac{11}{20}$",
+          "alasan": "Tertukar menghitung $P(X \\le 7) = P(X = 4) + P(X = 7) = \\frac{4+7}{20} = \\frac{11}{20}$."
+        }
+      ],
+      "pembahasan": "Nilai variabel acak diskret yang memenuhi kondisi $X \\ge 7$ adalah $x = 7$ dan $x = 9$.\nMaka peluangnya adalah:\n$$P(X \\ge 7) = f(7) + f(9) = \\frac{7}{20} + \\frac{9}{20} = \\frac{16}{20} = \\frac{4}{5}$$\nJadi, nilai dari $P(X \\ge 7)$ adalah $\\frac{4}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-13",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat integral tentu",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan penerapan langsung sifat kelinearan integral tentu satu langkah operasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $\\int_1^5 f(x)\\,dx = 8$ dan $\\int_1^5 g(x)\\,dx = 5$. Nilai dari $\\int_1^5 [4f(x) - 2g(x)]\\,dx$ adalah ....",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Berdasarkan sifat kelinearan integral, $\\int_1^5 [4f(x) - 2g(x)]\\,dx = 4\\int_1^5 f(x)\\,dx - 2\\int_1^5 g(x)\\,dx = 4(8) - 2(5) = 32 - 10 = 22$.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Salah menjumlahkan bukan mengurangkan: $32 + 10 = 42$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hanya mengalikan fungsi pertama: $4(8) - 5 = 27$ atau salah hitung koefisien $4(8) - 6 = 26$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Lupa mengalikan koefisien pengali: $(8 - 5) \\times 2 = 6$."
+        }
+      ],
+      "pembahasan": "Menggunakan sifat kelinearan integral tentu:\n$$\\int_1^5 [4f(x) - 2g(x)]\\,dx = 4\\int_1^5 f(x)\\,dx - 2\\int_1^5 g(x)\\,dx$$\nSubstitusikan nilai yang diketahui:\n$$4(8) - 2(5) = 32 - 10 = 22$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 206,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika fungsi F adalah fungsi yang didefinisikan oleh F ( x ) = # a x f ( t ) dt , maka F l ( x ) = f ( x ) ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "teorema dasar kalkulus",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan mengenali bentuk langsung dari Teorema Dasar Kalkulus I.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika fungsi $F(x) = \\int_1^x (t^3 + 5t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+      "jawaban_benar": "$x^3 + 5x$",
+      "alasan_benar": "Berdasarkan Teorema Dasar Kalkulus I, jika $F(x) = \\int_a^x f(t)\\,dt$, maka $F'(x) = f(x)$. Mengganti $t$ dengan $x$ menghasilkan $x^3 + 5x$.",
+      "distraktor": [
+        {
+          "teks": "$3x^2 + 5$",
+          "alasan": "Mendiferensialkan kembali fungsi di dalam integral alih-alih mengambil fungsi aslinya."
+        },
+        {
+          "teks": "$\\frac{1}{4}x^4 + \\frac{5}{2}x^2$",
+          "alasan": "Mengintegralkan fungsi integran alih-alih mengambil fungsi itu sendiri sebagai turunan dari $F(x)$."
+        },
+        {
+          "teks": "$x^3 + 5x - 6$",
+          "alasan": "Mengintegralkan dan menyubstitusikan batas bawah secara parsial lalu menurunkan."
+        }
+      ],
+      "pembahasan": "Menurut Teorema Dasar Kalkulus I:\n$$\\frac{d}{dx}\\left[\\int_a^x f(t)\\,dt\\right] = f(x)$$\nDengan $f(t) = t^3 + 5t$, maka:\n$$F'(x) = x^3 + 5x$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 213,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika fungsi f kontinu dan positif pada interval a <= x <= b , luas kurva yang dibatasi kurva y = f ( x ) , sumbu- x , garis x = a , dan garis x = b dengan f ( x ) >= 0 yang didekati oleh [ a , b ] adalah L = # a b f ( x ) dx ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep luas daerah",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali rumus bentuk integral tentu untuk luas daerah di atas sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bentuk integral tentu yang menyatakan luas daerah bidang datar yang dibatasi oleh kurva $y = x^2 + 2$, sumbu-$x$, garis $x = 1$, dan garis $x = 3$ adalah ....",
+      "jawaban_benar": "$\\int_1^3 (x^2 + 2)\\,dx$",
+      "alasan_benar": "Karena $f(x) = x^2 + 2 > 0$ pada $[1, 3]$, luas daerah di atas sumbu-$x$ dinyatakan dengan $L = \\int_a^b f(x)\\,dx = \\int_1^3 (x^2 + 2)\\,dx$.",
+      "distraktor": [
+        {
+          "teks": "$-\\int_1^3 (x^2 + 2)\\,dx$",
+          "alasan": "Keliru menggunakan rumus untuk daerah di bawah sumbu-x."
+        },
+        {
+          "teks": "$\\int_1^3 (2x)\\,dx$",
+          "alasan": "Menurunkan fungsi integran sebelum menuliskannya ke dalam rumus luas."
+        },
+        {
+          "teks": "$\\int_3^1 (x^2 + 2)\\,dx$",
+          "alasan": "Batas integrasi terbalik antara batas bawah dan batas atas."
+        }
+      ],
+      "pembahasan": "Untuk fungsi kontinu $f(x) \\ge 0$ pada selang tertutup $[a, b]$, luas daerah yang dibatasi oleh $y = f(x)$, sumbu-$x$, serta garis $x = a$ dan $x = b$ dirumuskan sebagai:\n$$L = \\int_a^b f(x)\\,dx$$\nDengan $f(x) = x^2 + 2$, $a = 1$, dan $b = 3$, bentuk integralnya adalah $\\int_1^3 (x^2 + 2)\\,dx$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-13",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat linearitas integral tentu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai integral tentu ke dalam sifat kelinieran integral dua langkah langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $\\int_4^8 f(x)\\,dx = 15$ dan $\\int_4^8 g(x)\\,dx = 6$. Nilai dari $\\int_4^8 [5f(x) - 7g(x)]\\,dx$ adalah ....",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Menggunakan sifat kelinearan: $5\\int_4^8 f(x)\\,dx - 7\\int_4^8 g(x)\\,dx = 5(15) - 7(6) = 75 - 42 = 33$.",
+      "distraktor": [
+        {
+          "teks": "$117$",
+          "alasan": "Siswa salah menjumlahkan kedua suku alih-alih mengurangkannya ($75 + 42$)."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Siswa hanya mengurangkan nilai integral tanpa mengalikannya dengan skalar masing-masing ($15 - 6$)."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Siswa menukar koefisien pengali skalar fungsi ($7 \\times 15 - 5 \\times 6$)."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat kelinieran integral tentu:\n$$\\int_4^8 [5f(x) - 7g(x)]\\,dx = 5\\int_4^8 f(x)\\,dx - 7\\int_4^8 g(x)\\,dx$$\nSubstitusikan nilai integral yang diketahui:\n$$= 5(15) - 7(6) = 75 - 42 = 33$$\nJadi, nilai integral tersebut adalah $33$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu fungsi kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai integral tentu dari fungsi kuadrat monomial tunggal dengan antiturunan langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x^2$ pada interval $[0, 2]$. Nilai dari $\\int_0^2 3x^2\\,dx$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Antiturunan dari $3x^2$ adalah $x^3$, sehingga $\\left[x^3\\right]_0^2 = 2^3 - 0^3 = 8$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Siswa lupa membagi koefisien dengan pangkat baru saat mengintegralkan sehingga memperoleh $3x^3$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Siswa keliru menerapkan turunan alih-alih integral ($6x$ dievaluasi dari 0 sampai 2)."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Siswa mengalikan koefisien dengan batas atas tanpa mengintegralkan fungsi ($3 \\times 2$)."
+        }
+      ],
+      "pembahasan": "Tentukan antiturunan dari $3x^2$:\n$$\\int 3x^2\\,dx = x^3$$\nEvaluasi batas dari $0$ sampai $2$:\n$$\\int_0^2 3x^2\\,dx = \\left[x^3\\right]_0^2 = 2^3 - 0^3 = 8$$\nJadi, nilai dari $\\int_0^2 3x^2\\,dx$ adalah $8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 200,
+        "bagian": "Contoh Soal 3.7",
+        "nomor": "3.7",
+        "teks": "Misalkan terdapat fungsi f ^ x h = x . Tentukan integral tentu dari f ^ x h pada interval 6,0 7@ atau #0 7 x dx .",
+        "jawaban": "49/2",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu fungsi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung integral tentu fungsi berderajat satu dalam dua langkah antiturunan dan evaluasi batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan terdapat fungsi $f(x) = 4x$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 4x\\,dx$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Antiturunan dari $4x$ adalah $2x^2$, dievaluasi pada batas $[0, 3]$ menghasilkan $2(3^2) - 2(0^2) = 18$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Siswa lupa membagi pangkat baru sehingga menggunakan antiturunan $4x^2$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Siswa hanya menyubstitusikan batas atas ke dalam fungsi $f(x) = 4(3)$ tanpa mengintegralkan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa menurunkan fungsi menjadi konstanta 4 alih-alih mengintegralkan."
+        }
+      ],
+      "pembahasan": "Antiturunan dari $f(x) = 4x$ adalah:\n$$F(x) = \\frac{4}{2}x^2 = 2x^2$$\nEvaluasi dari batas bawah $0$ ke batas atas $3$:\n$$\\int_0^3 4x\\,dx = \\left[2x^2\\right]_0^3 = 2(3)^2 - 2(0)^2 = 18 - 0 = 18$$\nJadi, nilai integral tentu tersebut adalah $18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 206,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika fungsi F adalah fungsi yang didefinisikan oleh x F ^ x h = # a f ^ t h dt , maka F l^ x h = f ^ x h ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "teorema dasar kalkulus I",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali dan menerapkan langsung Teorema Dasar Kalkulus I dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_2^x (5t^4 - 2t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+      "jawaban_benar": "$5x^4 - 2x$",
+      "alasan_benar": "Menurut Teorema Dasar Kalkulus I, jika $F(x) = \\int_a^x f(t)\\,dt$, maka $F'(x) = f(x)$.",
+      "distraktor": [
+        {
+          "teks": "$20x^3 - 2$",
+          "alasan": "Siswa menurunkan kembali fungsi $f(x)$ alih-alih cukup mengganti variabelnya."
+        },
+        {
+          "teks": "$x^5 - x^2$",
+          "alasan": "Siswa mencari antiturunan dari fungsi yang ada di dalam integral."
+        },
+        {
+          "teks": "$5x^4 - 2$",
+          "alasan": "Siswa salah saat mengganti variabel $t$ pada suku kedua."
+        }
+      ],
+      "pembahasan": "Teorema Dasar Kalkulus I menyatakan bahwa jika $F(x) = \\int_a^x f(t)\\,dt$, maka:\n$$F'(x) = f(x)$$\nDengan $f(t) = 5t^4 - 2t$, diperoleh:\n$$F'(x) = 5x^4 - 2x$$\nJadi, turunan pertama dari $F(x)$ adalah $5x^4 - 2x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 208,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk semua x di dalam 6 a , b @ , maka b # a f ^ t h dt = F ^ b h - F ^ a h ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "sifat integral tentu batas sama",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat sifat dasar integral tentu ketika batas atas dan batas bawah identik dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\int_5^5 (9x^4 - 3x^2 + 7)\\,dx$ adalah ....",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Jika batas atas dan batas bawah suatu integral tentu bernilai sama, maka nilainya selalu nol karena $F(a) - F(a) = 0$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Siswa keliru menganggap pembagian batas atas dengan batas bawah ($5/5 = 1$)."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa hanya mengambil konstanta dari fungsi integran."
+        },
+        {
+          "teks": "$5.557$",
+          "alasan": "Siswa menghitung nilai fungsi pada $x = 5$ alih-alih mengevaluasi integral."
+        }
+      ],
+      "pembahasan": "Berdasarkan Teorema Dasar Kalkulus II, untuk sebarang fungsi terintegralkan dengan batas atas sama dengan batas bawah ($a = b$):\n$$\\int_a^a f(x)\\,dx = F(a) - F(a) = 0$$\nKarena batas integrasi pada soal adalah dari $5$ ke $5$, maka nilainya adalah $0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu fungsi kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan antiturunan fungsi kuadrat dan substitusi batas selang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x^2 - 2x + 5$ pada interval $[0, 2]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 2]$ atau $\\int_0^2 (3x^2 - 2x + 5)\\,dx$ adalah ....",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Antiturunan dari $3x^2 - 2x + 5$ adalah $x^3 - x^2 + 5x$. Evaluasi pada batas $[0, 2]$ menghasilkan $(2^3 - 2^2 + 5(2)) - 0 = 8 - 4 + 10 = 14$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Siswa lupa membagi koefisien dengan pangkat baru sehingga antiturunan menjadi $3x^3 - 2x^2 + 5x$ yang bernilai $24 - 8 + 10 = 26$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Siswa salah tanda operasi suku kedua menjadi positif sehingga menghitung $8 + 4 + 10 = 22$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Siswa hanya mengevaluasi nilai fungsi asli pada batas atas $f(2) = 3(4) - 2(2) + 5 = 13$ tanpa melakukan integrasi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan antiturunan fungsi.\n$$\\int (3x^2 - 2x + 5)\\,dx = x^3 - x^2 + 5x$$\n\nLangkah 2: Substitusikan batas atas dan batas bawah.\n$$\\left[x^3 - x^2 + 5x\\right]_0^2 = (2^3 - 2^2 + 5(2)) - (0^3 - 0^2 + 5(0)) = (8 - 4 + 10) - 0 = 14$$\n\nJadi, nilai integral tentu tersebut adalah $14$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 210,
+        "bagian": "Contoh Soal 3.10",
+        "nomor": null,
+        "teks": "Tentukan #1 5 ^2 _x_ - 1h _dx_ .",
+        "jawaban": "24",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu fungsi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melakukan integrasi fungsi linear sederhana dan substitusi dua batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\int_2^6 (4x - 3)\\,dx$ adalah ....",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Antiturunan dari $4x - 3$ adalah $2x^2 - 3x$. Evaluasi batas: $(2(6)^2 - 3(6)) - (2(2)^2 - 3(2)) = (72 - 18) - (8 - 6) = 54 - 2 = 52$.",
+      "distraktor": [
+        {
+          "teks": "$56$",
+          "alasan": "Siswa menjumlahkan hasil evaluasi kedua batas alih-alih mengurangkannya ($54 + 2 = 56$)."
+        },
+        {
+          "teks": "$54$",
+          "alasan": "Siswa hanya menghitung nilai antiturunan pada batas atas dan mengabaikan batas bawah."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Siswa lupa membagi koefisien dengan pangkat saat mengintegralkan suku $4x$ sehingga menjadi $4x^2 - 3x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan antiturunan dari $4x - 3$.\n$$\\int (4x - 3)\\,dx = 2x^2 - 3x$$\n\nLangkah 2: Evaluasi pada batas $x = 2$ sampai $x = 6$.\n$$\\left[2x^2 - 3x\\right]_2^6 = (2(6)^2 - 3(6)) - (2(2)^2 - 3(2)) = (72 - 18) - (8 - 6) = 54 - 2 = 52$$\n\nJadi, nilai integral tersebut adalah $52$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": "Latihan Soal Integral Tentu",
+        "nomor": "6",
+        "teks": "Diketahui fungsi f ( x ) = 2 + x pada interval [0, 2] . Tentukan integral tentu dari f ( x ) pada interval [0, 2] atau #0 2 (2 + x) dx .",
+        "jawaban": "6",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu polinomial linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung integral tentu bentuk konstanta ditambah suku berderajat satu secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 5 + 2x$ pada interval $[0, 3]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 3]$ atau $\\int_0^3 (5 + 2x)\\,dx$ adalah ....",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Antiturunan dari $5 + 2x$ adalah $5x + x^2$. Evaluasi batas: $(5(3) + 3^2) - 0 = 15 + 9 = 24$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Siswa tidak membagi pangkat sehingga suku $2x$ diintegralkan menjadi $2x^2$, menghasilkan $15 + 18 = 33$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Siswa hanya menghitung nilai fungsi pada batas atas $f(3) = 5 + 2(3) = 11$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Siswa lupa mengalikan konstanta $5$ dengan variabel $x$ pada antiturunan sehingga menghitung $5 + 3^2 = 14$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan antiturunan fungsi.\n$$\\int (5 + 2x)\\,dx = 5x + x^2$$\n\nLangkah 2: Evaluasi batas interval $[0, 3]$.\n$$\\left[5x + x^2\\right]_0^3 = (5(3) + 3^2) - (5(0) + 0^2) = (15 + 9) - 0 = 24$$\n\nJadi, nilai integral tentu dari $f(x)$ pada interval $[0, 3]$ adalah $24$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 208,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk semua x di dalam [ a , b ] , maka # a b f ( t ) dt = F ( b ) - F ( a ) ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "teorema dasar kalkulus II",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menerapkan rumus Teorema Dasar Kalkulus II secara langsung dengan satu pengurangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $f$ kontinu pada interval tertutup $[1, 4]$ dan $F$ adalah antiturunan dari $f$ sedemikian sehingga $F'(x) = f(x)$. Jika $F(4) = 19$ dan $F(1) = 7$, maka nilai dari $\\int_1^4 f(t)\\,dt$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Berdasarkan Teorema Dasar Kalkulus II, $\\int_1^4 f(t)\\,dt = F(4) - F(1) = 19 - 7 = 12$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Siswa menjumlahkan kedua nilai fungsi antiturunan alih-alih mengurangkannya ($19 + 7 = 26$)."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Siswa terbalik mengurangkan batas bawah dengan batas atas ($F(1) - F(4) = 7 - 19 = -12$)."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Siswa mengalikan selisih antiturunan dengan panjang interval ($3 \\times 12 = 36$)."
+        }
+      ],
+      "pembahasan": "Berdasarkan Teorema Dasar Kalkulus II:\n$$\\int_a^b f(t)\\,dt = F(b) - F(a)$$\n\nDengan $a = 1$ dan $b = 4$:\n$$\\int_1^4 f(t)\\,dt = F(4) - F(1) = 19 - 7 = 12$$\n\nJadi, nilai $\\int_1^4 f(t)\\,dt$ adalah $12$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 213,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika fungsi f kontinu dan positif pada interval a <= x <= b , luas kurva yang dibatasi kurva y = f ( x ) , sumbu- x , garis x = a , dan garis x = b dengan f ( x ) >= 0 yang didekati oleh [ a , b ] adalah"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "hubungan luas daerah dan integral tentu",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan mengenali definisi luas daerah di atas sumbu-x sebagai nilai integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu fungsi $f(x)$ bernilai kontinu dan positif pada interval $[2, 6]$. Jika luas daerah bidang datar yang dibatasi oleh kurva $y = f(x)$, sumbu-$x$, garis $x = 2$, dan garis $x = 6$ adalah $15$ satuan luas, maka nilai dari $\\int_2^6 f(x)\\,dx$ adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Untuk kurva di atas sumbu-$x$ ($f(x) \\ge 0$), nilai luas daerah sama persis dengan nilai integral tentunya yaitu $15$.",
+      "distraktor": [
+        {
+          "teks": "$-15$",
+          "alasan": "Siswa keliru menganggap daerah tersebut berada di bawah sumbu-$x$ sehingga bertanda negatif."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Siswa mengalikan luas dengan panjang interval ($15 \\times (6 - 2) = 60$)."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Siswa salah menduga bahwa luas di atas sumbu-$x$ saling meniadakan menjadi $0$."
+        }
+      ],
+      "pembahasan": "Berdasarkan konsep luas daerah di atas sumbu-$x$:\nJika $f(x) \\ge 0$ pada interval $[a, b]$, maka luas daerahnya dirumuskan dengan:\n$$L = \\int_a^b f(x)\\,dx$$\n\nDiketahui luas $L = 15$ dengan selang $[2, 6]$, maka:\n$$\\int_2^6 f(x)\\,dx = L = 15$$\n\nJadi, nilai integral tentu tersebut adalah $15$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-10",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu polinomial kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan integrasi polinomial sederhana dan substitusi batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x^2 + 6x + 2$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (3x^2 + 6x + 2)\\,dx$ adalah ....",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Antiturunan dari $3x^2 + 6x + 2$ adalah $F(x) = x^3 + 3x^2 + 2x$. Evaluasi batas: $F(3) - F(0) = (27 + 27 + 6) - 0 = 60$.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Lupa mengintegralkan suku konstanta 2 sehingga $2x$ tidak dihitung."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Hanya memasukkan nilai batas atas ke fungsi mula-mula tanpa diintegralkan lebih dahulu."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Salah membagi koefisien saat integrasi sehingga antiturunannya menjadi $3x^3 + 6x^2 + 2x$."
+        }
+      ],
+      "pembahasan": "Integralkan fungsi terhadap $x$:\n$$\\int_0^3 (3x^2 + 6x + 2)\\,dx = \\left[ x^3 + 3x^2 + 2x \\right]_0^3$$\nSubstitusikan batas atas dan batas bawah:\n$$= (3^3 + 3(3^2) + 2(3)) - (0^3 + 3(0^2) + 2(0))$$\n$$= (27 + 27 + 6) - 0 = 60$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi integral tentu dasar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menggunakan antiturunan dasar dan evaluasi batas atas dan bawah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 6x^2 - 2x$ pada interval $[0, 2]$. Nilai dari $\\int_0^2 (6x^2 - 2x)\\,dx$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Antiturunan dari $6x^2 - 2x$ adalah $2x^3 - x^2$. Evaluasi batas: $(2(8) - 4) - 0 = 12$.",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "Salah tanda saat integrasi sehingga menjumlahkan kedua suku: $16 + 4 = 20$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hanya menghitung suku pertama antiturunan $2x^3$ dan mengabaikan suku $-x^2$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Substitusi batas ke dalam fungsi mula-mula: $6(2)^2 - 2(2) = 20$, lalu dikurangi operasi lain secara keliru."
+        }
+      ],
+      "pembahasan": "Hitung integral tentu fungsi:\n$$\\int_0^2 (6x^2 - 2x)\\,dx = \\left[ 2x^3 - x^2 \\right]_0^2$$\n$$= (2(2^3) - 2^2) - 0 = (2(8) - 4) = 16 - 4 = 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 213,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika fungsi f kontinu dan positif pada interval a <= x <= b , luas kurva yang dibatasi kurva y = f ( x ) , sumbu- x , garis x = a , dan garis x = b dengan f ( x ) >= 0 yang didekati oleh [ a , b ] adalah"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi integral tentu luas daerah",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali definisi notasi integral tentu untuk luas kurva di atas sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika fungsi $f$ kontinu dan positif pada interval $a \\le x \\le b$, maka luas daerah $L$ yang dibatasi oleh kurva $y = f(x)$, sumbu-$x$, garis $x = a$, dan garis $x = b$ dirumuskan dengan ....",
+      "jawaban_benar": "$L = \\int_a^b f(x)\\,dx$",
+      "alasan_benar": "Berdasarkan definisi pada buku teks hal 213, luas bidang datar di atas sumbu-$x$ pada interval $[a, b]$ adalah $\\int_a^b f(x)\\,dx$.",
+      "distraktor": [
+        {
+          "teks": "$L = -\\int_a^b f(x)\\,dx$",
+          "alasan": "Tertukar dengan rumus luas daerah yang berada di bawah sumbu-$x$."
+        },
+        {
+          "teks": "$L = \\int_a^b [f'(x)]\\,dx$",
+          "alasan": "Tertukar antara fungsi kontinu $f(x)$ dengan turunannya $f'(x)$."
+        },
+        {
+          "teks": "$L = f(b) - f(a)$",
+          "alasan": "Hanya menghitung selisih nilai fungsi di batas-batasnya tanpa notasi integral."
+        }
+      ],
+      "pembahasan": "Berdasarkan konsep luas daerah di atas sumbu-$x$, jika $f(x) \\ge 0$ dan kontinu pada selang $[a, b]$, maka luas daerahnya dinyatakan oleh integral tentu:\n$$L = \\int_a^b f(x)\\,dx$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan integral polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung integral tentu suku polinomial dengan menerapkan antiturunan dan substitusi batas selang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x^2 - 2x + 7$ pada interval $[1, 5]$. Nilai integral tentu dari $f(x)$ pada interval $[1, 5]$ atau $\\int_1^5 (3x^2 - 2x + 7)\\,dx$ adalah ....",
+      "jawaban_benar": "$128$",
+      "alasan_benar": "Antiturunan dari $3x^2 - 2x + 7$ adalah $F(x) = x^3 - x^2 + 7x$. Menghitung $F(5) - F(1) = (5^3 - 5^2 + 7(5)) - (1^3 - 1^2 + 7(1)) = (125 - 25 + 35) - (1 - 1 + 7) = 135 - 7 = 128$.",
+      "distraktor": [
+        {
+          "teks": "$135$",
+          "alasan": "Hanya menghitung nilai batas atas $F(5)$ tanpa mengurangkan dengan $F(1)$."
+        },
+        {
+          "teks": "$142$",
+          "alasan": "Melakukan penjumlahan batas bukan pengurangan, yaitu $F(5) + F(1) = 135 + 7 = 142$."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Salah mengintegralkan suku linear, menggunakan koefisien $2x^2$ bukan $x^2$."
+        }
+      ],
+      "pembahasan": "Berdasarkan Teorema Dasar Kalkulus II:\n$$\\int_1^5 (3x^2 - 2x + 7)\\,dx = \\left[ x^3 - x^2 + 7x \\right]_1^5$$\nSubstitusikan batas atas dan batas bawah:\n$$= (5^3 - 5^2 + 7(5)) - (1^3 - 1^2 + 7(1))$$\n$$= (125 - 25 + 35) - (1 - 1 + 7)$$\n$$= 135 - 7 = 128$$\nJadi, nilai integral tentu tersebut adalah $128$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": "Latihan Soal Integral Tentu",
+        "nomor": "6",
+        "teks": "Diketahui fungsi _f_ ^ _x_ h = 2 + _x_ pada interval 6,0 2@ . Tentukan integral tentu dari _f_ ^ _x_ h pada interval 6,0 2@ atau #0 ^2 + _x_ h _dx_ .",
+        "jawaban": "6",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "integral tentu fungsi aljabar linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan antiturunan fungsi linear dasar dan evaluasi batas integral.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 6 + 5x$ pada interval $[0, 4]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 4]$ atau $\\int_0^4 (6 + 5x)\\,dx$ adalah ....",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Antiturunan dari $6 + 5x$ adalah $6x + \\frac{5}{2}x^2$. Nilai pada batas $[0, 4]$ adalah $(6(4) + \\frac{5}{2}(4)^2) - 0 = 24 + 40 = 64$.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Lupa membagi dengan pangkat baru pada suku $x$, mengintegralkan $5x$ menjadi $5x$ atau $5x^2$ dibagi 4."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Lupa membagi 2 saat mengintegralkan suku aljabar linear, yaitu $5x^2$ bukan $\\frac{5}{2}x^2$ sehingga $24 + 80 = 104$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hanya menyubstitusikan $x = 4$ ke dalam fungsi awal $f(x) = 6 + 5(4) = 26$ tanpa mengintegralkan."
+        }
+      ],
+      "pembahasan": "Tentukan antiturunan fungsi $f(x) = 6 + 5x$:\n$$F(x) = 6x + \\frac{5}{2}x^2$$\nEvaluasi batas dari $0$ hingga $4$:\n$$\\int_0^4 (6 + 5x)\\,dx = \\left[ 6x + \\frac{5}{2}x^2 \\right]_0^4$$\n$$= \\left( 6(4) + \\frac{5}{2}(4^2) \\right) - \\left( 6(0) + \\frac{5}{2}(0^2) \\right)$$\n$$= (24 + 40) - 0 = 64$$\nJadi, nilai integral tentu fungsi tersebut adalah $64$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-10",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi integral tentu tiga suku",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan antiturunan tiga suku dan substitusi batas atas dan bawah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 6x^2 + 8x + 9$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (6x^2 + 8x + 9)\\,dx$ adalah ....",
+      "jawaban_benar": "$117$",
+      "alasan_benar": "Antiturunan $F(x) = 2x^3 + 4x^2 + 9x$. Menghitung $F(3) - F(0) = (2(27) + 4(9) + 9(3)) - 0 = 54 + 36 + 27 = 117$.",
+      "distraktor": [
+        {
+          "teks": "$87$",
+          "alasan": "Salah menentukan koefisien antiturunan $6x^2$ menjadi $x^3$ sehingga nilainya $27 + 36 + 27 = 90$, atau keliru saat menjumlahkan."
+        },
+        {
+          "teks": "$207$",
+          "alasan": "Lupa membagi koefisien dengan pangkat baru sehingga mengintegralkan menjadi $6x^3 + 8x^2 + 9x$."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Lupa mengintegralkan konstanta $9$, sehingga mengabaikan suku $9x$."
+        }
+      ],
+      "pembahasan": "Tentukan antiturunan fungsi aljabar:\n$$\\int (6x^2 + 8x + 9)\\,dx = 2x^3 + 4x^2 + 9x$$\nHitung nilai integral tentu dari $0$ sampai $3$:\n$$\\left[ 2x^3 + 4x^2 + 9x \\right]_0^3 = (2(3)^3 + 4(3)^2 + 9(3)) - 0$$\n$$= 2(27) + 4(9) + 27$$\n$$= 54 + 36 + 27 = 117$$\nJadi, nilai integral tentu fungsi tersebut adalah $117$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 206,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi f kontinu pada selang tertutup [ a , b ] dan x sebarang bilangan di dalam [ a , b ] . Jika fungsi F adalah fungsi yang didefinisikan oleh F ( x ) = int a x f ( t ) dt , maka F ' ( x ) = f ( x ) ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "turunan fungsi integral akumulasi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengaplikasikan langsung definisi Teorema Dasar Kalkulus I dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_3^x (7t^2 - 4t + 5)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+      "jawaban_benar": "$7x^2 - 4x + 5$",
+      "alasan_benar": "Teorema Dasar Kalkulus I menyatakan jika $F(x) = \\int_a^x f(t)\\,dt$, maka $F'(x) = f(x)$. Mengganti peubah integrasi $t$ dengan $x$ menghasilkan $7x^2 - 4x + 5$.",
+      "distraktor": [
+        {
+          "teks": "$14x - 4$",
+          "alasan": "Menurunkan fungsi di dalam integral terhadap $x$ alih-alih mengambil fungsi aslinya."
+        },
+        {
+          "teks": "$\\frac{7}{3}x^3 - 2x^2 + 5x$",
+          "alasan": "Mengintegralkan fungsi di dalam integral terhadap $x$ tanpa menerapkan konsep turunan dari $F(x)$."
+        },
+        {
+          "teks": "$7x^2 - 4x$",
+          "alasan": "Menganggap turunan dari konstanta $5$ adalah nol saat mengganti variabel."
+        }
+      ],
+      "pembahasan": "Teorema Dasar Kalkulus I menyatakan bahwa jika fungsi $f$ kontinu pada selang tertutup $[a, b]$ dan $F(x) = \\int_a^x f(t)\\,dt$, maka:\n$$F'(x) = f(x)$$\nPada soal, $f(t) = 7t^2 - 4t + 5$ dan batas bawahnya $a = 3$. Oleh karena itu:\n$$F'(x) = 7x^2 - 4x + 5$$\nJadi, turunan pertama fungsi tersebut adalah $7x^2 - 4x + 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

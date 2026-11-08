@@ -12,6 +12,7 @@ progress (publish complete and draft items), meta, status. Live commands require
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 from collections import Counter, defaultdict
 from copy import deepcopy
 from datetime import datetime, timezone
@@ -23,6 +24,8 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
+import time
 
 from dotenv import dotenv_values
 
@@ -40,9 +43,10 @@ from scripts.revalidate_all_grades import complete, run_script
 from scripts.export_revalidation_progress import export_class
 from scripts.build_blind_validation_bundle import source_class_matches
 
-CLASSES = {"kelas5": (5, "regular"), "kelas7": (7, "regular"), "kelas8": (8, "regular"),
+CLASSES = {"kelas5": (5, "regular"), "kelas6": (6, "regular"), "kelas7": (7, "regular"), "kelas8": (8, "regular"),
            "kelas9": (9, "regular"), "kelas10": (10, "regular"), "kelas11": (11, "regular"),
            "kelas11_tl": (11, "tl"), "kelas12": (12, "regular"), "kelas12_tl": (12, "tl")}
+CLASSES = {**{f"kelas{grade}": (grade, "regular") for grade in range(1, 5)}, **CLASSES}
 LEVELS = ("easy", "medium", "hard")
 VALIDATION_PROVIDER = "gemini"
 VALIDATION_NAMESPACE = None
@@ -96,12 +100,29 @@ def validated_source(name: str, batch: str) -> list[dict]:
         raise ValueError("exercise rows have a different grade or track")
     ids = [str(i["_id"]) for i in items]
     assert len(ids) == len(set(ids)), f"duplicate IDs in {name}"
-    assert all(not i.get("image_url") for i in items), "exercise validation expects text-only items"
+    if any(i.get("image_url") for i in items):
+        from app.services.exercise.workflow import managed, safe_asset, verify_generation
+        if not managed(p["exercise"]):
+            raise ValueError("visual validation requires a source-bound generation manifest")
+        verify_generation(p["exercise"])
+        for item in items:
+            if item.get("image_url"):
+                item["_visualAssetHashes"] = {ref: digest(safe_asset(p["exercise"], ref)) for ref in item["image_url"]}
     assert all(i.get("cognitive_level") is None and i.get("jawaban") for i in items)
     meta = load(p["exercise"] / "soal_exercise_meta.json")
     assert set(meta) == set(ids), f"meta/db mismatch in {name}"
     if any(info.get("batch") != int(batch[5:]) or info.get("level_target") not in LEVELS for info in meta.values()):
         raise ValueError("exercise metadata has an invalid batch or target level")
+    from app.services.exercise.workflow import managed
+    is_managed = managed(p["exercise"])
+    has_reference_additions = (p["exercise"] / "reference_replenishment_state.json").exists()
+    if is_managed or has_reference_additions:
+        for item in items:
+            # Keep old paid inputs byte-for-byte compatible. Only the newly
+            # appended candidates receive the blind-input marker.
+            if not is_managed and meta[str(item["_id"])].get("generator") != "codex:reference-parameterized-v1":
+                continue
+            item["_exerciseBlindInput"] = True
     return items
 
 
@@ -109,6 +130,18 @@ def stage_class(name: str, batch: str) -> list[dict]:
     p = paths(name, batch)
     items = validated_source(name, batch)
     p["stage"].mkdir(parents=True, exist_ok=True)
+    from app.services.exercise.workflow import atomic_json, safe_asset, managed
+    if managed(p["exercise"]):
+        atomic_json(p["stage"] / "exercise_batch.json", {"class": name, "batch": batch})
+    for item in items:
+        for ref in item.get("image_url") or []:
+            source = safe_asset(p["exercise"], ref)
+            destination = p["stage"] / ref
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if destination.exists() and digest(destination) != digest(source) and p["checkpoint"].exists():
+                raise ValueError("visual asset changed after a paid checkpoint; use a new batch")
+            if not destination.exists() or digest(destination) != digest(source):
+                shutil.copyfile(source, destination)
     target = p["source"]
     text = json.dumps(items, ensure_ascii=False, indent=2) + "\n"
     if not target.exists() or target.read_text(encoding="utf-8") != text:
@@ -200,6 +233,10 @@ def run_labeler(name: str, batch: str, extra: list[str], max_calls: int, max_out
                 *, stop_on_503: bool = False) -> int:
     grade, track = CLASSES[name]
     p = paths(name, batch)
+    from app.services.exercise.workflow import require_validation
+    require_validation(p["exercise"])
+    if VALIDATION_PROVIDER != "gemini" and p["source"].exists() and any(item.get("image_url") for item in load(p["source"])):
+        raise ValueError("visual validation requires the Gemini vision adapter; text-only fallback is blocked")
     pause = settings_for(VALIDATION_PROVIDER).request_pause_seconds if VALIDATION_PROVIDER == "groq" else 0.5
     if VALIDATION_PROVIDER == "gemini":
         values = dotenv_values(ROOT / ".env")
@@ -448,9 +485,33 @@ def meta_view(name: str, batch: str) -> dict:
             "crosstab": {k: dict(v) for k, v in crosstab.items()}}
 
 
+def copy_publication_file(source, destination):
+    """Replace complete bytes instead of truncating a file mapped by a reader."""
+    destination = Path(destination)
+    if destination.is_dir():
+        destination /= Path(source).name
+    with tempfile.NamedTemporaryFile(dir=destination.parent, prefix=".publish-", suffix=".tmp", delete=False) as handle:
+        temporary = Path(handle.name)
+    try:
+        shutil.copy2(source, temporary)
+        for attempt in range(6):
+            try:
+                os.replace(temporary, destination)
+                return str(destination)
+            except OSError as exc:
+                if getattr(exc, "winerror", None) not in (5, 32, 33, 1224) or attempt == 5:
+                    raise
+                time.sleep(0.1 * 2 ** attempt)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
     grade, _ = CLASSES[name]
     p = paths(name, batch)
+    final_manifest = p["final"] / "manifest.json"
+    if final_manifest.exists() and load(final_manifest).get("schemaVersion") in {"codex-local-exercise-publication-v1", "codex-targeted-exercise-publication-v2", "codex-local-sd-bank-v1", "codex-sd-difficulty-review-v2", "codex-exercise-sessions-local-v3"}:
+        raise ValueError("Local Codex publication must not be overwritten by the AI checkpoint packager")
     checkpoint_bytes = p["checkpoint"].read_bytes()
     checkpoint = json.loads(checkpoint_bytes)
     checkpoint_hash = hashlib.sha256(checkpoint_bytes).hexdigest()
@@ -499,11 +560,11 @@ def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
             verify_bundle(p["source"], bundle)
     if (p["final"] / "manifest.json").exists():
         verify_bundle(p["source"], p["final"])
-    shutil.copytree(bundle, p["final"], dirs_exist_ok=True)
+    shutil.copytree(bundle, p["final"], dirs_exist_ok=True, copy_function=copy_publication_file)
     evidence = p["final"] / "bukti_validasi"
-    shutil.copy2(locked, evidence / "silver_labels.json")
+    copy_publication_file(locked, evidence / "silver_labels.json")
     for filename in ("pilot_audit.json", "PILOT_AUDIT.md"):
-        shutil.copy2(snapshot / "audit" / filename, evidence / filename)
+        copy_publication_file(snapshot / "audit" / filename, evidence / filename)
     progress = export_class(p["source"], locked, p["final"], grade=grade, track=CLASSES[name][1])
     progress["class"] = name
     progress["exerciseBatch"] = batch
@@ -622,6 +683,19 @@ def main() -> int:
     budget = args.max_api_calls
     if live and budget < 1:
         ap.error("max-api-calls must be positive")
+    if live or args.command in ("package", "progress", "extend", "seed"):
+        from app.services.exercise.workflow import batch_lock, require_validation
+        with ExitStack() as stack:
+            for name in sorted(args.classes):
+                stack.enter_context(batch_lock(paths(name, args.batch)["exercise"]))
+                require_validation(paths(name, args.batch)["exercise"])
+            return dispatch(args)
+    return dispatch(args)
+
+
+def dispatch(args):
+    budget = args.max_api_calls
+    live = args.command in ("pilot", "full", "run")
     if args.command in ("run", "progress"):
         for name in args.classes:
             stage_class(name, args.batch)

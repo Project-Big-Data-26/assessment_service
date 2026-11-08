@@ -257,7 +257,8 @@ def build_silver_prompt(item: dict[str, Any], *, grade: int = 1, track: str = "r
     if rubric.education_level in ("SMP", "SMA"):
         context = f"Jenjang sasaran: {rubric.education_level} kelas {grade}.\n{context}"
     options = "\n".join(
-        f"{option['option_id']}. {option['text']} | catatan sumber: {option.get('alasan') or '-'}"
+        (f"{option['option_id']}. {option['text']}" if item.get("_exerciseBlindInput") else
+         f"{option['option_id']}. {option['text']} | catatan sumber: {option.get('alasan') or '-'}")
         for option in item["options"]
     )
     image_note = (
@@ -313,8 +314,15 @@ Soal:
 Pilihan dan catatan ekstraksi:
 {options}
 
-Kunci pada sumber: {item.get('jawaban') or '-'}
+Kunci pada sumber: {'tidak diberikan; selesaikan secara independen dari soal dan opsi' if item.get('_exerciseBlindInput') else item.get('jawaban') or '-'}
 """
+    if item.get("_visualAssetHashes"):
+        prompt += ("\nAUDIT VISUAL EXERCISE: baca gambar sebenarnya, cek keterbacaan, jumlah, skala, label dan "
+            "kesesuaian dengan pertanyaan/opsi. Transkrip hanya fakta visual, tanpa kunci atau pengerjaan. "
+            "Gambar harus memuat informasi yang diperlukan. Jika jelas hanya dekorasi atau informasi "
+            "visual sudah lengkap di teks, catat pada contentConcerns dan gunakan contentStatus=concern. "
+            "Jika visual tidak terbaca atau ambigu, gunakan insufficient_evidence dan abstain. "
+            "Jangan menganggap satu tebakan benar tanpa gambar sebagai bukti gambar tidak diperlukan.\n")
     return prompt
 
 
@@ -407,7 +415,8 @@ class GeminiSilverAdapter:
         prompt_hash = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         contents: list[Any] = [prompt]
         for image_path in image_paths:
-            contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type="image/png"))
+            import mimetypes
+            contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type=mimetypes.guess_type(image_path)[0] or "image/png"))
         started = time.perf_counter()
         response = None
         try:
@@ -501,7 +510,8 @@ class GeminiSilverAdapter:
         prompt_hash = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         contents: list[Any] = [prompt]
         for image_path in image_paths:
-            contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type="image/png"))
+            import mimetypes
+            contents.append(types.Part.from_bytes(data=image_path.read_bytes(), mime_type=mimetypes.guess_type(image_path)[0] or "image/png"))
         started = time.perf_counter()
         response = None
         try:

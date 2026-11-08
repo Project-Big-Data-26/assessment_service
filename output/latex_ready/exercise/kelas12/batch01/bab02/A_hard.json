@@ -1,0 +1,375 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A Bab 2 (Suku Bunga Tunggal) hanya p55-p57 tanpa Latihan bernomor; konsepnya cuma B = M x p% x n, konversi persen tahunan ke bulanan, modal akhir, dan sifat linear. Acuan variasi pretest sudah habis di easy dan medium, sehingga hard 0 variasi. Sudut penalaran yang layak (evaluasi klaim, temukan kesalahan, contoh penyangkal, perancangan, perbandingan skema) habis sekitar 11 soal; lebih dari itu nyaris kembar satu sama lain atau dengan Bab 1 subbab C (bunga tunggal tahunan, cicilan, dua bank).",
+  "soal": [
+    {
+      "id": "kelas12-b02-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 56,
+        "kutipan": "Hitunglah jumlah bunga (B) yang diperoleh dan modal akhir"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan empat simpanan",
+      "alasan_level": "mengubah satuan persen pada empat simpanan berbeda, menghitung empat bunga, lalu membandingkan",
+      "stimulus": null,
+      "pertanyaan": "Empat orang menyimpan uang di koperasi dengan bunga tunggal. Simpanan P: Rp6.000.000,00, bunga 12% per tahun, selama 10 bulan. Simpanan Q: Rp10.000.000,00, bunga 6% per tahun, selama 8 bulan. Simpanan R: Rp4.500.000,00, bunga 15% per tahun, selama 12 bulan. Simpanan S: Rp9.000.000,00, bunga 5% per tahun, selama 9 bulan. Selisih bunga terbesar dan bunga terkecil di antara keempat simpanan adalah ....",
+      "jawaban_benar": "Rp337.500,00",
+      "alasan_benar": "bunga P = 600.000, Q = 400.000, R = 675.000, S = 337.500; terbesar R, terkecil S; selisih = 675.000 - 337.500 = 337.500",
+      "distraktor": [
+        {
+          "teks": "Rp275.000,00",
+          "alasan": "mengira Q yang terkecil (selisih R dan Q), salah menghitung bunga S"
+        },
+        {
+          "teks": "Rp262.500,00",
+          "alasan": "mengira P yang terbesar (selisih P dan S), salah menghitung bunga R"
+        },
+        {
+          "teks": "Rp6.525.000,00",
+          "alasan": "tidak mengubah persen tahunan ke bulanan pada P, Q, dan S"
+        }
+      ],
+      "pembahasan": "P: 6.000.000 x 1% x 10 = 600.000. Q: 10.000.000 x 0,5% x 8 = 400.000. R: 4.500.000 x 15% x 1 = 675.000. S: 9.000.000 x (5%/12) x 9 = 337.500. Selisih terbesar-terkecil = 337.500.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Koperasi simpan pinjam yang sudah dikenal ini, biasanya menggunakan bunga tunggal sebagai metode dalam transaksi pembiayaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengevaluasi tiga skema tarif bunga",
+      "alasan_level": "mengubah tiga satuan tarif ke satuan yang sama lalu menilai pernyataan",
+      "stimulus": null,
+      "pertanyaan": "Tiga koperasi menawarkan bunga tunggal untuk modal dan lama menyimpan yang sama. Koperasi X: 1,2% per bulan. Koperasi Y: 7% per 6 bulan. Koperasi Z: 14,4% per tahun. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Koperasi X dan Z memberi bunga sama besar, sedangkan Koperasi Y memberi bunga lebih kecil",
+      "alasan_benar": "X = 1,2% x 12 = 14,4% per tahun (sama dengan Z); Y = 7% x 2 = 14% per tahun (lebih kecil)",
+      "distraktor": [
+        {
+          "teks": "Koperasi Y paling besar karena 7% lebih besar daripada 1,2% dan 14,4%",
+          "alasan": "membandingkan angka persen tanpa menyamakan satuan waktu"
+        },
+        {
+          "teks": "Koperasi X lebih besar daripada Z karena persentasenya dihitung tiap bulan",
+          "alasan": "mengira tarif per bulan otomatis lebih besar padahal setara 14,4% per tahun"
+        },
+        {
+          "teks": "Koperasi Y dan Z memberi bunga sama besar karena 7% x 2 mendekati 14,4%",
+          "alasan": "membulatkan 14% menjadi 14,4%"
+        }
+      ],
+      "pembahasan": "Samakan ke per tahun: X = 14,4%, Y = 14%, Z = 14,4%. Jadi X = Z > Y.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Pak Bayu menyimpan modalnya selama 8 bulan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan mencari modal awal",
+      "alasan_level": "menemukan bahwa persen bunga dihitung dari modal akhir, lalu menghitung modal awal yang benar",
+      "stimulus": null,
+      "pertanyaan": "Koperasi memberi bunga tunggal 15% per tahun. Setelah 8 bulan, modal akhir Ani adalah Rp11.000.000,00. Seorang siswa mencari modal awal Ani sebagai berikut: persen per bulan = 15% : 12 = 1,25%; bunga 8 bulan = 1,25% x 8 = 10%; modal awal = 11.000.000 - 10% x 11.000.000 = 9.900.000. Pernyataan yang benar tentang penyelesaian siswa tersebut adalah ....",
+      "jawaban_benar": "Kesalahannya: 10% dihitung dari modal akhir padahal harus dari modal awal; modal awal yang benar Rp10.000.000,00",
+      "alasan_benar": "modal akhir = 110% x modal awal, sehingga modal awal = 11.000.000 : 1,1 = 10.000.000",
+      "distraktor": [
+        {
+          "teks": "Kesalahannya: persen per bulan tidak boleh dikali 8; modal awal yang benar Rp10.862.500,00",
+          "alasan": "mengurangkan hanya 1,25% dari modal akhir"
+        },
+        {
+          "teks": "Kesalahannya: modal akhir harus dikali 1,10; modal awal yang benar Rp12.100.000,00",
+          "alasan": "mengalikan modal akhir dengan 1,10 alih-alih membaginya"
+        },
+        {
+          "teks": "Tidak ada kesalahan karena bunga memang dikurangkan dari modal akhir",
+          "alasan": "tidak menyadari bahwa dasar persen bunga tunggal adalah modal awal"
+        }
+      ],
+      "pembahasan": "Bunga 8 bulan = 10% dari modal awal M, sehingga M + 0,1M = 11.000.000, M = 10.000.000. Siswa memakai modal akhir sebagai dasar persen.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Tentukan bersama-sama data yang diketahui dari masing-masing soal, seperti modal awal, persentase bunga, dan lama waktu penyimpanan."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang pasangan persen dan lama",
+      "alasan_level": "merancang pasangan persen tahunan dan lama bulan yang menghasilkan modal akhir tertentu",
+      "stimulus": null,
+      "pertanyaan": "Bu Tika menyimpan Rp15.000.000,00 di koperasi dengan bunga tunggal dan ingin modal akhirnya tepat Rp16.200.000,00 pada akhir masa simpan. Pasangan persentase bunga per tahun dan lama menyimpan yang memenuhi keinginan Bu Tika adalah ....",
+      "jawaban_benar": "12% per tahun selama 8 bulan",
+      "alasan_benar": "bunga yang diinginkan 1.200.000 = 8% dari modal; 12% per tahun = 1% per bulan, sehingga 8 bulan memberi 8%",
+      "distraktor": [
+        {
+          "teks": "12% per tahun selama 12 bulan",
+          "alasan": "bunga 12% dari modal, modal akhir Rp16.800.000,00"
+        },
+        {
+          "teks": "8% per tahun selama 8 bulan",
+          "alasan": "bunga hanya 5,33% dari modal, modal akhir kurang dari yang diinginkan"
+        },
+        {
+          "teks": "9% per tahun selama 10 bulan",
+          "alasan": "bunga 7,5% dari modal, modal akhir Rp16.125.000,00"
+        }
+      ],
+      "pembahasan": "Bunga yang diinginkan 16.200.000 - 15.000.000 = 1.200.000 = 8% x 15.000.000. Dengan p per bulan x n = 8%, pasangan 1% per bulan (12% per tahun) dan 8 bulan memenuhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Koperasi simpan pinjam yang sudah dikenal ini, biasanya menggunakan bunga tunggal sebagai metode dalam transaksi pembiayaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua skema pinjaman",
+      "alasan_level": "menghitung total pengembalian dua skema dengan satuan waktu berbeda lalu membandingkan",
+      "stimulus": null,
+      "pertanyaan": "Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bulan. Skema Y: bunga tunggal 15% per tahun selama 9 bulan. Pernyataan yang benar tentang total yang harus dikembalikan Dian adalah ....",
+      "jawaban_benar": "Skema Y lebih kecil Rp90.000,00 daripada Skema X",
+      "alasan_benar": "X: bunga 12.000.000 x 1,5% x 8 = 1.440.000; Y: 12.000.000 x 1,25% x 9 = 1.350.000; selisih 90.000",
+      "distraktor": [
+        {
+          "teks": "Skema X lebih kecil Rp90.000,00 daripada Skema Y",
+          "alasan": "membalik perbandingan kedua skema"
+        },
+        {
+          "teks": "Skema Y lebih kecil Rp900.000,00 daripada Skema X",
+          "alasan": "salah nilai tempat pada selisih"
+        },
+        {
+          "teks": "Kedua skema sama besar karena hanya satuan waktunya yang berbeda",
+          "alasan": "mengira tarif per bulan dan per tahun otomatis setara tanpa menghitung"
+        }
+      ],
+      "pembahasan": "X: total 13.440.000. Y: persen per bulan 15%/12 = 1,25%, bunga 1.350.000, total 13.350.000. Y lebih murah 90.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "besar bunga dan modal akhir bertambah secara linear sesuai lama waktu penyimpanan, karena bunga tunggal tidak dihitung dari modal yang sudah ditambahkan bunga sebelumnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim modal akhir",
+      "alasan_level": "memeriksa tiap pasangan simpanan terhadap hipotesis dan kesimpulan klaim",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00",
+      "alasan_benar": "modal akhir P = 8.600.000 dan Q = 8.600.000 (sama), tetapi bunga 600.000 dan 1.600.000 (berbeda)",
+      "distraktor": [
+        {
+          "teks": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.200.000,00",
+          "alasan": "modal akhir tidak sama (8.600.000 dan 8.200.000), sehingga hipotesis klaim tidak terpenuhi"
+        },
+        {
+          "teks": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp600.000,00",
+          "alasan": "modal akhir tidak sama dan bunga sama, bukan penyangkal"
+        },
+        {
+          "teks": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00",
+          "alasan": "kedua simpanan identik, klaim justru berlaku"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi hipotesis (modal akhir sama) tetapi melanggar kesimpulan (bunga beda). Hanya pasangan 8.000.000 + 600.000 dan 7.000.000 + 1.600.000 yang memenuhi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "Pak Bayu menyimpan modalnya selama 8 bulan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bunga sama dua simpanan berbeda satuan waktu",
+      "alasan_level": "menyamakan bunga dua simpanan dengan lama dalam bulan dan persen dalam tahun lalu mencari persen yang tidak diketahui",
+      "stimulus": null,
+      "pertanyaan": "Simpanan A: Rp8.000.000,00 dengan bunga tunggal 6% per tahun selama 10 bulan. Simpanan B: Rp5.000.000,00 dengan bunga tunggal selama 1 tahun 3 bulan. Jika bunga yang diterima simpanan A dan B sama besar, persentase bunga tunggal per tahun simpanan B adalah ....",
+      "jawaban_benar": "6,4%",
+      "alasan_benar": "bunga A = 8.000.000 x 0,5% x 10 = 400.000; B: 5.000.000 x p x (15/12) = 400.000, sehingga p = 6,4% per tahun",
+      "distraktor": [
+        {
+          "teks": "8%",
+          "alasan": "mengabaikan 3 bulan, memakai lama 1 tahun"
+        },
+        {
+          "teks": "0,64%",
+          "alasan": "salah nilai tempat persen"
+        },
+        {
+          "teks": "5,12%",
+          "alasan": "membagi dua kali dengan 1,25 (lama 1,25 tahun)"
+        }
+      ],
+      "pembahasan": "Bunga A = 400.000. Lama B = 15 bulan = 1,25 tahun. p = 400.000 : (5.000.000 x 1,25) = 0,064 = 6,4%.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Tentukan bersama-sama data yang diketahui dari masing-masing soal, seperti modal awal, persentase bunga, dan lama waktu penyimpanan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dampak perubahan persen dan lama sekaligus",
+      "alasan_level": "mengalikan dua faktor perubahan (persen dan lama) dengan modal tetap lalu menilai pernyataan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah simpanan berbunga tunggal diubah: modal awal tetap, persentase bunga per tahun dinaikkan 50% dari semula, dan lama menyimpan dikurangi sepertiga dari lama semula. Dibandingkan bunga semula, bunga yang diperoleh sekarang ....",
+      "jawaban_benar": "tetap sama besar",
+      "alasan_benar": "faktor persen 3/2 dan faktor lama 2/3 sehingga bunga baru = 3/2 x 2/3 = 1 kali bunga semula",
+      "distraktor": [
+        {
+          "teks": "naik 1/6 bagian dari bunga semula",
+          "alasan": "menjumlahkan perubahan (+1/2 - 1/3) alih-alih mengalikan faktor"
+        },
+        {
+          "teks": "naik 50% dari bunga semula",
+          "alasan": "mengabaikan pengurangan lama menyimpan"
+        },
+        {
+          "teks": "turun 1/3 dari bunga semula",
+          "alasan": "mengabaikan kenaikan persentase bunga"
+        }
+      ],
+      "pembahasan": "B = M x p% x n sebanding dengan p dan n. Bunga baru = (3/2)(2/3) B = B.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 55,
+        "kutipan": "Bunga tunggal merupakan imbalan yang diberikan oleh koperasi kepada nasabah dalam periode tertentu secara tunggal."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi dampak penarikan bunga",
+      "alasan_level": "menilai bahwa bunga tunggal tetap dihitung dari modal awal baik bunga ditarik maupun dibiarkan",
+      "stimulus": null,
+      "pertanyaan": "Andi dan Budi masing-masing menyimpan Rp10.000.000,00 di koperasi dengan bunga tunggal 1% per bulan selama 12 bulan. Andi menarik bunga setiap akhir bulan, sedangkan Budi tidak pernah menarik apa pun. Pernyataan yang benar tentang total bunga yang diperoleh keduanya adalah ....",
+      "jawaban_benar": "Total bunga Andi dan Budi sama besar, yaitu Rp1.200.000,00",
+      "alasan_benar": "bunga tunggal selalu dihitung dari modal awal Rp10.000.000, jadi 100.000 per bulan x 12 = 1.200.000 untuk keduanya",
+      "distraktor": [
+        {
+          "teks": "Total bunga Budi lebih besar, sekitar Rp1.268.000,00, karena bunga bulan sebelumnya ikut berbunga",
+          "alasan": "mencampur dengan bunga majemuk"
+        },
+        {
+          "teks": "Total bunga Budi hanya Rp1.100.000,00 karena bunga baru dihitung mulai bulan kedua",
+          "alasan": "mengira bunga tidak dihitung pada bulan pertama"
+        },
+        {
+          "teks": "Total bunga Budi hanya Rp100.000,00 karena bunga hanya dihitung satu kali di akhir 12 bulan",
+          "alasan": "mengira bunga tidak bertambah menurut lama menyimpan"
+        }
+      ],
+      "pembahasan": "Dasar perhitungan bunga tunggal selalu modal awal, sehingga menarik atau tidak menarik bunga tidak mengubah total bunga: 10.000.000 x 1% x 12 = 1.200.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 57,
+        "kutipan": "besar bunga dan modal akhir bertambah secara linear sesuai lama waktu penyimpanan, karena bunga tunggal tidak dihitung dari modal yang sudah ditambahkan bunga sebelumnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "uji konsistensi data modal akhir",
+      "alasan_level": "memeriksa kelinearan modal akhir terhadap lama menyimpan pada tiga pengamatan",
+      "stimulus": null,
+      "pertanyaan": "Modal akhir sebuah simpanan berbunga tunggal (tanpa penarikan dan penambahan uang) dicatat pada tiga waktu. Catatan (lama menyimpan, modal akhir) yang mungkin berasal dari satu simpanan tersebut adalah ....",
+      "jawaban_benar": "(5 bulan, Rp8.350.000,00), (10 bulan, Rp8.700.000,00), (20 bulan, Rp9.400.000,00)",
+      "alasan_benar": "kenaikan modal akhir 70.000 per bulan pada ketiga catatan (konstan, linear), sehingga cocok dengan bunga tunggal",
+      "distraktor": [
+        {
+          "teks": "(4 bulan, Rp6.240.000,00), (8 bulan, Rp6.480.000,00), (12 bulan, Rp6.740.000,00)",
+          "alasan": "kenaikan per bulan 60.000 lalu 65.000, tidak linear"
+        },
+        {
+          "teks": "(3 bulan, Rp4.150.000,00), (6 bulan, Rp4.300.000,00), (12 bulan, Rp4.650.000,00)",
+          "alasan": "kenaikan per bulan 50.000 lalu sekitar 58.333, tidak linear"
+        },
+        {
+          "teks": "(2 bulan, Rp7.080.000,00), (6 bulan, Rp7.240.000,00), (9 bulan, Rp7.400.000,00)",
+          "alasan": "kenaikan per bulan 40.000 lalu sekitar 53.333, tidak linear"
+        }
+      ],
+      "pembahasan": "Pada bunga tunggal modal akhir naik tetap tiap bulan. Hanya pilihan pertama yang kenaikannya selalu 70.000 per bulan (modal awal 8.000.000).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 56,
+        "kutipan": "Hitunglah jumlah bunga (B) yang diperoleh dan modal akhir"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "lama maksimum agar bunga tidak melebihi batas",
+      "alasan_level": "mengubah persen ke bulan, membagi batas dengan bunga per bulan, dan membulatkan ke bawah karena batas atas",
+      "stimulus": null,
+      "pertanyaan": "Bu Nia menyimpan Rp8.000.000,00 di koperasi dengan bunga tunggal 9% per tahun. Bunga hanya dihitung untuk bulan penuh dan Bu Nia tidak ingin bunga yang diterima melebihi Rp1.540.000,00. Lama menyimpan terbanyak (dalam bulan penuh) yang masih memenuhi keinginan Bu Nia adalah ... bulan.",
+      "jawaban_benar": "25",
+      "alasan_benar": "bunga per bulan 8.000.000 x 0,75% = 60.000; n <= 1.540.000 : 60.000 = 25,67 sehingga bulan penuh terbanyak 25",
+      "distraktor": [
+        {
+          "teks": "26",
+          "alasan": "membulatkan ke atas; pada 26 bulan bunga Rp1.560.000,00 melebihi batas"
+        },
+        {
+          "teks": "24",
+          "alasan": "mengurangi satu bulan tanpa alasan"
+        },
+        {
+          "teks": "256",
+          "alasan": "salah nilai tempat persen per bulan (0,075%)"
+        }
+      ],
+      "pembahasan": "Bunga per bulan 60.000. Syarat 60.000 n <= 1.540.000 sehingga n <= 25,67; karena batas atas, n terbanyak = 25.",
+      "catatan": null
+    }
+  ]
+}

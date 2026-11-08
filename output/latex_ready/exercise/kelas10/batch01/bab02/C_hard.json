@@ -1,0 +1,250 @@
+{
+  "book": "kelas10",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab C (Bunga) hanya p80-p83 dan hanya berisi bunga tunggal/majemuk dasar serta cicilan Latihan 2.6. Hard bermakna hanya lewat penalaran (klaim tunggal vs majemuk, titik impas, suku bunga dari dua kondisi, perancangan pokok); kombinasi lain akan nyaris kembar dengan easy/medium atau di luar materi (tabungan berkala, anuitas, tabel Eksplorasi 2.8 salah cetak). Hanya 7 soal layak, setara medium atas.",
+  "soal": [
+    {
+      "id": "kelas10-b02-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Dalam perhitungan bunga majemuk, bunga yang didapat dalam periode sebelumnya dimasukkan ke pokok tabungan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim tunggal vs majemuk",
+      "alasan_level": "mengevaluasi klaim umum dengan membandingkan nilai tahun 1 dan 2; kesulitan dari penalaran, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Rani berpendapat bahwa bunga majemuk selalu menghasilkan uang lebih banyak daripada bunga tunggal pada pokok dan suku bunga yang sama. Untuk mengujinya, ia menabung Rp5.000.000,00 dengan suku bunga 6% per tahun, satu tabungan berbunga tunggal dan satu lagi berbunga majemuk. Pernyataan yang benar tentang pendapat Rani adalah ....",
+      "jawaban_benar": "pendapat Rani kurang tepat: setelah 1 tahun nilai keduanya sama, mulai tahun ke-2 bunga majemuk lebih besar Rp18.000,00",
+      "alasan_benar": "tahun 1 sama (5.300.000); tahun 2 tunggal 5.600.000, majemuk 5.618.000, selisih 18.000",
+      "distraktor": [
+        {
+          "teks": "pendapat Rani benar: sejak tahun pertama nilai bunga majemuk lebih besar Rp18.000,00",
+          "alasan": "mengira majemuk sudah berbeda di tahun pertama"
+        },
+        {
+          "teks": "pendapat Rani kurang tepat: setelah 2 tahun nilai keduanya tetap sama karena suku bunga sama",
+          "alasan": "mengira bunga majemuk tidak berpengaruh walau bunga ikut berbunga"
+        },
+        {
+          "teks": "pendapat Rani kurang tepat: setelah 1 tahun nilai keduanya sama, mulai tahun ke-2 bunga majemuk lebih besar Rp300.000,00",
+          "alasan": "arah benar tetapi selisih salah: memakai bunga satu tahun sebagai selisih"
+        }
+      ],
+      "pembahasan": "Tahun 1: keduanya $5.000.000 \\times 1{,}06 = 5.300.000$. Tahun 2: tunggal $5.000.000 + 2 \\times 300.000 = 5.600.000$; majemuk $5.000.000 \\times 1{,}06^2 = 5.618.000$. Selisih $= 18.000$. Klaim 'selalu lebih besar' tidak berlaku pada tahun pertama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "kutipan": "Bunga tunggal adalah bunga yang besarnya hanya ditentukan oleh pokok uangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "titik impas tunggal vs majemuk",
+      "alasan_level": "mencari tahun pertama majemuk melampaui tunggal dengan membandingkan dua barisan; dihitung per tahun",
+      "stimulus": null,
+      "pertanyaan": "Bank A memberi bunga tunggal 12% per tahun, sedangkan Bank B memberi bunga majemuk 10% per tahun. Dua orang menabung pokok yang sama di bank berbeda. Bilangan bulat tahun terkecil agar uang di Bank B lebih banyak daripada di Bank A adalah ....",
+      "jawaban_benar": "5 tahun",
+      "alasan_benar": "faktor A: 1+0,12n; faktor B: 1,1^n. n=4: 1,4641 < 1,48; n=5: 1,61051 > 1,60",
+      "distraktor": [
+        {
+          "teks": "4 tahun",
+          "alasan": "pembulatan: pada tahun ke-4 Bank B (1,4641) masih di bawah Bank A (1,48)"
+        },
+        {
+          "teks": "6 tahun",
+          "alasan": "melewatkan tahun ke-5 yang sudah memenuhi"
+        },
+        {
+          "teks": "10 tahun",
+          "alasan": "menyamakan 100% dengan suku bunga 10% tanpa memperhitungkan bunga atas bunga"
+        }
+      ],
+      "pembahasan": "Dengan pokok $M_0$: Bank A $M_0(1+0{,}12n)$, Bank B $M_0(1{,}1)^n$. $n=4$: $1{,}4641 < 1{,}48$. $n=5$: $1{,}61051 > 1{,}60$. Jadi 5 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Dalam perhitungan bunga majemuk, bunga yang didapat dalam periode sebelumnya dimasukkan ke pokok tabungan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "suku bunga dari selisih tunggal dan majemuk",
+      "alasan_level": "menentukan suku bunga dari dua kondisi (nilai tunggal dan majemuk) tanpa pokok diketahui",
+      "stimulus": null,
+      "pertanyaan": "Dua tabungan dengan pokok dan suku bunga per tahun yang sama. Setelah 2 tahun, tabungan berbunga tunggal bernilai Rp4.400.000,00 dan tabungan berbunga majemuk bernilai Rp4.410.000,00. Suku bunga per tahun kedua tabungan adalah ....",
+      "jawaban_benar": "$5\\%$",
+      "alasan_benar": "selisih = P r^2 = 10.000; bunga tunggal 2 tahun = 2Pr; P(1+2r)=4.400.000 -> P = 4.000.000, r = 5%",
+      "distraktor": [
+        {
+          "teks": "$10\\%$",
+          "alasan": "menganggap bunga dua tahun dibagi pokok sudah suku bunga tahunan (lupa membagi 2)"
+        },
+        {
+          "teks": "$2{,}5\\%$",
+          "alasan": "membagi selisih 10.000 dengan bunga dua tahun 400.000 dan memakai hasilnya sebagai suku bunga"
+        },
+        {
+          "teks": "$0{,}25\\%$",
+          "alasan": "membagi selisih 10.000 dengan pokok 4.000.000"
+        }
+      ],
+      "pembahasan": "Misalkan pokok $P$ dan suku bunga $r$. Selisih $= P r^2 = 10.000$. Tunggal: $P(1+2r)=4.400.000$. Selisih nilai majemuk dan tunggal $Pr^2$, dan bunga tunggal 2 tahun $2Pr$. Dari $P(1+2r)=4.400.000$ dan $Pr^2=10.000$ diperoleh $P=4.000.000$, $r=0{,}05=5\\%$. Cek: $4.000.000 \\times 1{,}05^2 = 4.410.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Dalam perhitungan bunga majemuk, bunga yang didapat dalam periode sebelumnya dimasukkan ke pokok tabungan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah keliru bunga majemuk",
+      "alasan_level": "mengevaluasi langkah hitung berurutan untuk menemukan kesalahan pertama dan nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Dewi menabung Rp2.000.000,00 dengan bunga majemuk 10% per tahun dan menghitung nilai uangnya sebagai berikut. Tahun ke-1: $2.000.000 + 10\\% \\times 2.000.000 = 2.200.000$. Tahun ke-2: $2.200.000 + 10\\% \\times 2.000.000 = 2.400.000$. Tahun ke-3: $2.400.000 + 10\\% \\times 2.400.000 = 2.640.000$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "kesalahan pertama pada tahun ke-2 karena bunga dihitung dari pokok awal; nilai yang benar setelah 3 tahun Rp2.662.000,00",
+      "alasan_benar": "tahun 2 seharusnya 10% x 2.200.000 = 220.000 -> 2.420.000; tahun 3 -> 2.662.000",
+      "distraktor": [
+        {
+          "teks": "kesalahan pertama pada tahun ke-1 karena bunga harus ditambahkan setelah tahun ke-2; nilai yang benar Rp2.662.000,00",
+          "alasan": "mengira langkah pertama salah padahal sudah benar"
+        },
+        {
+          "teks": "kesalahan pertama pada tahun ke-3 karena bunga dihitung dari Rp2.400.000,00; nilai yang benar Rp2.640.000,00",
+          "alasan": "tidak menyadari kesalahan tahun ke-2 dan mengira hasil akhir sudah benar"
+        },
+        {
+          "teks": "kesalahan pertama pada tahun ke-2 karena bunga dihitung dari pokok awal; nilai yang benar setelah 3 tahun Rp2.640.000,00",
+          "alasan": "kesalahan ditemukan benar tetapi nilai akhir tidak dikoreksi"
+        }
+      ],
+      "pembahasan": "Pada bunga majemuk, bunga tahun ke-2 dihitung dari $2.200.000$, yaitu $220.000$, sehingga nilai akhir tahun ke-2 $= 2.420.000$. Tahun ke-3: $2.420.000 \\times 1{,}1 = 2.662.000$ (sama dengan $2.000.000 \\times 1{,}1^3$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Dalam perhitungan bunga majemuk, bunga yang didapat dalam periode sebelumnya dimasukkan ke pokok tabungan."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang pokok agar selisih memenuhi syarat",
+      "alasan_level": "merancang besar pokok dari syarat selisih dua skema; selisih = pokok x kuadrat suku bunga",
+      "stimulus": null,
+      "pertanyaan": "Pak Doni ingin menabung selama 2 tahun dengan suku bunga 10% per tahun. Ia menginginkan nilai uang pada skema bunga majemuk tidak kurang dari Rp1.500.000,00 lebih banyak daripada skema bunga tunggal. Pokok tabungan paling sedikit yang harus ia simpan adalah ....",
+      "jawaban_benar": "Rp150.000.000,00",
+      "alasan_benar": "selisih 2 tahun = P(1,1^2 - 1,2) = 0,01P >= 1.500.000 -> P >= 150.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp15.000.000,00",
+          "alasan": "memakai 10% sebagai pengali selisih (1.500.000 : 0,1)"
+        },
+        {
+          "teks": "Rp7.500.000,00",
+          "alasan": "memakai 20% (bunga dua tahun) sebagai pengali selisih (1.500.000 : 0,2)"
+        },
+        {
+          "teks": "Rp1.500.000.000,00",
+          "alasan": "salah desimal: membagi 1.500.000 dengan 0,001"
+        }
+      ],
+      "pembahasan": "Tunggal: $P(1+2 \\times 0{,}1) = 1{,}2P$. Majemuk: $P(1{,}1)^2 = 1{,}21P$. Selisih $= 0{,}01P \\ge 1.500.000$, sehingga $P \\ge 150.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 83,
+        "kutipan": "Pokok utang yang telah dibayar, tidak dibayarkan lagi bunganya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan skema cicilan pokok tetap dan pelunasan akhir",
+      "alasan_level": "membandingkan total bunga dua skema pinjaman dan menganalisis pola cicilan",
+      "stimulus": null,
+      "pertanyaan": "Bu Yani meminjam Rp6.000.000,00 dengan bunga 5% per tahun selama 3 tahun. Pada skema X, utang dibayar lunas di akhir tahun ke-3 dengan bunga dihitung dari seluruh pokok selama 3 tahun. Pada skema Y, utang dicicil setiap tahun dengan cicilan pokok yang sama besar dan pokok yang sudah dibayar tidak dibayarkan lagi bunganya. Pernyataan yang benar tentang kedua skema adalah ....",
+      "jawaban_benar": "total bunga skema Y lebih kecil Rp300.000,00 daripada skema X, dan cicilan skema Y turun Rp100.000,00 setiap tahun",
+      "alasan_benar": "X: 3 x 300.000 = 900.000; Y: 5% x (6M+4M+2M) = 600.000; cicilan Y 2.300.000; 2.200.000; 2.100.000",
+      "distraktor": [
+        {
+          "teks": "total bunga skema Y sama dengan skema X, dan cicilan skema Y tetap Rp2.200.000,00 setiap tahun",
+          "alasan": "mengira cicilan pokok tetap berarti cicilan total tetap"
+        },
+        {
+          "teks": "total bunga skema Y lebih kecil Rp300.000,00 daripada skema X, dan cicilan skema Y turun Rp300.000,00 setiap tahun",
+          "alasan": "beda cicilan keliru memakai bunga tahun pertama (300.000)"
+        },
+        {
+          "teks": "total bunga skema Y lebih besar Rp300.000,00 daripada skema X, dan cicilan skema Y naik Rp100.000,00 setiap tahun",
+          "alasan": "membalik arah: lupa bahwa sisa pokok dan bunga menurun"
+        }
+      ],
+      "pembahasan": "Skema X: bunga $3 \\times 5\\% \\times 6.000.000 = 900.000$. Skema Y: bunga $5\\% \\times (6.000.000 + 4.000.000 + 2.000.000) = 600.000$. Cicilan Y: $2.300.000$; $2.200.000$; $2.100.000$ (turun $100.000$ setiap tahun).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b02-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "kutipan": "Bunga tunggal adalah bunga yang besarnya hanya ditentukan oleh pokok uangnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membagi modal ke dua bank bunga tunggal",
+      "alasan_level": "merancang pembagian modal dari dua syarat (jumlah modal dan total bunga) pada bunga tunggal; hard bawah",
+      "stimulus": null,
+      "pertanyaan": "Pak Bayu membagi uang Rp20.000.000,00 ke dua bank. Bank P memberi bunga tunggal 4% per tahun dan Bank Q memberi bunga tunggal 6% per tahun. Setelah 2 tahun, jumlah bunga dari kedua bank Rp2.080.000,00. Uang yang ditabung Pak Bayu di Bank Q adalah ....",
+      "jawaban_benar": "Rp12.000.000,00",
+      "alasan_benar": "x di Q: 2 x (0,06x + 0,04(20.000.000 - x)) = 2.080.000 -> 0,02x = 240.000 -> x = 12.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp8.000.000,00",
+          "alasan": "menjawab uang di Bank P (tertukar bank)"
+        },
+        {
+          "teks": "Rp10.400.000,00",
+          "alasan": "membagi total bunga dengan 20% (2 x 5% rata-rata) tanpa memperhitungkan dua suku bunga"
+        },
+        {
+          "teks": "Rp16.000.000,00",
+          "alasan": "salah menyusun persamaan: mengira bunga 1 tahun total 1.040.000 hanya berasal dari Bank Q"
+        }
+      ],
+      "pembahasan": "Misalkan uang di Bank Q $x$. Bunga 2 tahun: $2(0{,}06x + 0{,}04(20.000.000 - x)) = 2.080.000$, sehingga $0{,}02x + 800.000 = 1.040.000$ dan $x = 12.000.000$.",
+      "catatan": null
+    }
+  ]
+}

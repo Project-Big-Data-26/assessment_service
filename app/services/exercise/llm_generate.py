@@ -197,6 +197,8 @@ class Job:
     batch: int = 1
     out_root: str = C.OUT_ROOT
     gambar: bool = False
+    planned_count: Optional[int] = None
+    generated_visuals: bool = False
 
     @property
     def path(self) -> str:
@@ -230,6 +232,10 @@ class _Context:
         self.job = job
         self.book = get_book(job.book)
         self.kuota = C.KUOTA_GAMBAR_MAKS if job.gambar else C.KUOTA_PER_LEVEL[self.book.jenjang]
+        if job.planned_count is not None:
+            if not 1 <= job.planned_count <= 30:
+                raise GenerateError("planned count must be 1..30")
+            self.kuota = job.planned_count
         self.spec = C.LEVEL_SPEC[job.level]
         bab = kurikulum.get(job.book, job.bab_no)
         if not bab:
@@ -247,7 +253,7 @@ class _Context:
         self.target_variasi = round(C.PORSI_VARIASI[job.level] * self.kuota)
         self.rules = _load_rules()
         self.pool_gambar: List[Dict[str, Any]] = []
-        if job.gambar:
+        if job.gambar and not job.generated_visuals:
             self.pool_gambar = _pool_gambar(job)
             if not self.pool_gambar:
                 raise GenerateError(f"subbab {job.subbab} bab {job.bab_no} {job.book} tidak punya soal pretest "
@@ -275,6 +281,25 @@ class _Context:
                gambar_ditawarkan: Optional[List[Dict[str, Any]]] = None) -> str:
         j = self.job
         lo, hi = self.spec["langkah"]
+        if j.generated_visuals:
+            from .visual_assets import VisualSpec
+            return (f"Tulis {need} kandidat soal VISUAL baru untuk kelas {j.book}, bab {self.bab.nama}, "
+                f"subbab {self.subbab_nama}; target {j.level}, bukan label hasil validasi. "
+                f"cognitive_c dalam {self.spec['c']}, langkah {lo}-{hi}. Materi jangan melampaui kelas.\n"
+                + FORMAT + "\nSetiap soal WAJIB menambahkan visual_spec dengan schema berikut:\n"
+                + json.dumps(VisualSpec.model_json_schema(), ensure_ascii=False)
+                + "\nKode merender PNG/SVG dari spesifikasi itu. Jangan menulis path gambar sendiri. "
+                "Spesifikasi hanya fakta tampak, tanpa jawaban atau pembahasan. Label kelompok A/B/C, "
+                "bukan jumlahnya. Gambar harus diperlukan; jangan ulangi data visual di stimulus/pertanyaan. "
+                "Pola harus memiliki aturan yang cukup jelas; jangan membuat jawaban ambigu. "
+                "Gunakan bentuk/jenis gambar hanya jika didukung materi berikut. "
+                "Buat tepat satu jawaban benar dan tiga distraktor berbeda. "
+                "Gunakan acuan buku/pretest yang benar; kutipan harus verbatim.\n"
+                + f"Materi buku:\n{self.materi}\n"
+                + "Acuan pretest:\n" + "\n".join(f"{r.id}: {r.teks}" for r in self.pretest)
+                + "\nKandidat lama, jangan duplikat:\n" + "\n".join(s.pertanyaan for s in accepted)
+                + "\nSoal bank lain, jangan duplikat:\n" + "\n".join(r.teks for r in self.sudah)
+                + "\nMasalah lokal yang harus dihindari:\n" + "\n".join(umpan_balik))
         if j.gambar:
             return self._prompt_gambar(need, accepted, umpan_balik, gambar_ditawarkan or [])
         parts = [
@@ -387,21 +412,19 @@ def _extract_json(text: str) -> Any:
 
 def _write(job: Job, generator: str, soal: List[Soal], kapasitas_kurang: bool = False,
            alasan: Optional[str] = None) -> None:
+    from pathlib import Path
+    from .workflow import managed, load
+    base = Path(job.path).parent.parent
+    if managed(base) and load(base / "generation_state.json").get("phase") != "generating":
+        raise GenerateError("managed candidates are frozen outside the generation phase; use a new batch")
     data = ExerciseFile(book=job.book, bab_no=job.bab_no, subbab=job.subbab, level=job.level,  # type: ignore[arg-type]
                         batch=job.batch, skill_versi=C.SKILL_VERSI, generator=generator,
                         kapasitas_kurang=kapasitas_kurang, alasan_kapasitas=alasan, soal=soal,
                         bergambar=job.gambar)
     os.makedirs(os.path.dirname(job.path), exist_ok=True)
-    tmp = job.path + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(data.model_dump(), f, ensure_ascii=False, indent=2)
-    for percobaan in range(12):
-        try:
-            os.replace(tmp, job.path)
-            return
-        except PermissionError:      # Windows: berkas tujuan sedang dipegang proses lain; tunggu sebentar
-            time.sleep(1 + percobaan)
-    os.replace(tmp, job.path)        # percobaan terakhir; bila tetap gagal, galat naik ke pemanggil
+    from .workflow import atomic_json
+    from app.presentation.latex import normalize_document
+    atomic_json(job.path, normalize_document(data.model_dump(mode="json")))
 
 
 def _log(job: Job, entry: dict) -> None:
@@ -415,6 +438,11 @@ def _next_number(accepted: List[Soal]) -> int:
 
 
 def generate(job: Job, client: NineRouterClient, *, progress=print, umpan_awal: Optional[List[str]] = None) -> Result:
+    from pathlib import Path
+    from .workflow import managed, load
+    base = Path(job.path).parent.parent
+    if managed(base) and load(base / "generation_state.json").get("phase") != "generating":
+        raise GenerateError("generation is frozen; explicitly resume generation or use a new batch")
     started = time.monotonic()
     ctx = _Context(job)
     generator = f"9router:{client.settings.model}"
@@ -440,11 +468,11 @@ def generate(job: Job, client: NineRouterClient, *, progress=print, umpan_awal: 
         remaining = ctx.kuota - len(accepted)
         butuh = max(0, ctx.target_variasi - n_var)          # variasi yang masih diperlukan di level ini
         var_left = min(need, butuh) if need >= remaining else min(need, round(butuh * need / remaining))
-        ditawarkan = ctx.pilih_gambar(accepted) if job.gambar else []
-        if job.gambar and not ditawarkan:
+        ditawarkan = ctx.pilih_gambar(accepted) if job.gambar and not job.generated_visuals else []
+        if job.gambar and not job.generated_visuals and not ditawarkan:
             break                       # semua gambar sudah terpakai penuh
         prompt = ctx.prompt(need, var_left, accepted, umpan, ditawarkan)
-        messages = (_gambar_messages(prompt, ditawarkan, job) if job.gambar
+        messages = (_gambar_messages(prompt, ditawarkan, job) if job.gambar and not job.generated_visuals
                     else [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}])
         res = None
         try:
@@ -467,16 +495,23 @@ def generate(job: Job, client: NineRouterClient, *, progress=print, umpan_awal: 
         n = _next_number(accepted)
         candidates: List[Soal] = []
         umpan = []
-        for item in raw:
+        for item in raw[:need]:
             if not isinstance(item, dict):
                 continue
             item = {**item, "id": f"{job.id_prefix}{n:03d}"}
             try:
+                if job.generated_visuals:
+                    from .visual_assets import render
+                    from pathlib import Path
+                    base = Path(job.path).parent.parent
+                    reference, provenance = render(item.get("visual_spec"), base)
+                    item["gambar"] = [f"exercise_assets/{job.book}/batch{job.batch:02d}/{reference}"]
+                    item["deskripsi_gambar"] = json.dumps(provenance["semanticSpec"], ensure_ascii=False)
                 candidates.append(Soal.model_validate(item))
                 n += 1
-            except ValidationError as exc:
+            except ValueError as exc:
                 umpan.append(f"{_short(str(item.get('pertanyaan', '?')), 70)}: skema: "
-                             f"{'; '.join(e['msg'] for e in exc.errors())[:200]}")
+                             f"{('; '.join(e['msg'] for e in exc.errors()) if isinstance(exc, ValidationError) else str(exc))[:200]}")
         pakai = _acuan_terpakai(accepted)
         tersaring: List[Soal] = []
         for s in candidates:
@@ -488,7 +523,7 @@ def generate(job: Job, client: NineRouterClient, *, progress=print, umpan_awal: 
                     continue
                 pakai[k] = pakai.get(k, 0) + 1
             tersaring.append(s)
-        if job.gambar:
+        if job.gambar and not job.generated_visuals:
             boleh = {g for it in ditawarkan for g in it["gambar"]}
             pakai_g: Dict[str, int] = {}
             for s in accepted:

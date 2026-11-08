@@ -849,6 +849,1449 @@
       "pembahasan": "Berdasarkan definisi komposisi fungsi:\n$$(f \\circ g)(x) = f(g(x))$$\n\nDiketahui $f(x) = x^5$, sehingga:\n$$f(g(x)) = (g(x))^5$$\n\nDari soal diketahui bahwa $(f \\circ g)(x) = (7x + 6)^5$. Dengan menyamakan kedua bentuk tersebut, diperoleh:\n$$(g(x))^5 = (7x + 6)^5$$\n$$g(x) = 7x + 6$$\n\nJadi, rumus fungsi $g(x)$ adalah $7x + 6$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85c7e2630ca551413eb0a22",
+        "teks": "Jika diketahui nilai fungsi $f(7) = 9$, $g(7) = 5$, $f(5) = 8$, dan $g(5) = 4$, maka nilai dari $(f \\cdot g)(7)$ adalah ....",
+        "jawaban": "$45$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11/blueprints.json",
+        "source_sha256": "b87c3824ac7c013033c79a8a39bab612704b72e2326000bed8a0c430b70de5e1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "komposisi_fungsi",
+      "alasan_level": "Target easy; variasi konsep komposisi fungsi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9x+5$ dan $g(x)=6x+8$. Tentukan $(f\\circ g)(-3)$.",
+      "jawaban_benar": "$-85$",
+      "alasan_benar": "g(-3)=-10, kemudian f(g(-3))=9×(-10)+5=-85.",
+      "distraktor": [
+        {
+          "teks": "$-84$",
+          "alasan": "Pilihan $-84$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        },
+        {
+          "teks": "$-86$",
+          "alasan": "Pilihan $-86$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        },
+        {
+          "teks": "$-83$",
+          "alasan": "Pilihan $-83$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        }
+      ],
+      "pembahasan": "g(-3)=-10, kemudian f(g(-3))=9×(-10)+5=-85.",
+      "catatan": "codex-replenishment:kelas11-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11-b01-b-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "039f3f7f4ba82c1c95246374",
+        "teks": "Diketahui beberapa nilai fungsi sebagai berikut:\n$f(4) = 9$, $g(4) = 8$, $f(8) = 15$, dan $g(8) = 14$.\nNilai dari $(f \\circ g)(4)$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$247$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $247$.",
+      "distraktor": [
+        {
+          "teks": "$248$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$246$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$494$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $247$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/100d8c97b97d0a3151416ef1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 7], [\"c\", 3], [\"d\", 12], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "079e176df3b6292e8b6e7068",
+        "teks": "Diketahui fungsi $f(x) = x + 7$ dan $g(x) = \\sqrt{x}$. Rumus fungsi $h(x) = (g \\circ f)(x)$ adalah ....",
+        "jawaban": "$\\sqrt{x + 7}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$293$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $293$.",
+      "distraktor": [
+        {
+          "teks": "$294$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$292$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$586$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $293$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/f9f13a6b267047a278b8d5c4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 11], [\"c\", 5], [\"d\", 12], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e34645b2766effee353d7aa",
+        "teks": "Dua fungsi $f$ dan $g$ dapat dikomposisikan menjadi $(f \\circ g)(x)$ apabila ....",
+        "jawaban": "daerah hasil (range) dari $g$ merupakan himpunan bagian dari daerah asal (domain) $f$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$567$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $567$.",
+      "distraktor": [
+        {
+          "teks": "$568$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$566$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1134$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $567$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/a4a6a0cf34163e5f34f6cc78.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              6
+            ],
+            [
+              "c",
+              7
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 6], [\"c\", 7], [\"d\", 9], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb9a8a3b3ef8147fad4f9640",
+        "teks": "Diketahui fungsi $f(x) = 6x + 5$ dan $g(x) = 2x - 8$. Rumus fungsi $(f + g)(x)$ adalah ....",
+        "jawaban": "$8x - 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$189$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $189$.",
+      "distraktor": [
+        {
+          "teks": "$190$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$188$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$378$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $189$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/4777bccd74e656ba5cb0fc47.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              5
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 9], [\"c\", 5], [\"d\", 5], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e67a1c13ed6f6f324726a80",
+        "teks": "Diketahui beberapa nilai fungsi sebagai berikut: $f(5) = 8$, $g(5) = 4$, $f(4) = 11$, dan $g(4) = 10$. Nilai dari $(f \\cdot g)(5)$ adalah ....",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$349$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $349$.",
+      "distraktor": [
+        {
+          "teks": "$350$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$348$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$698$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $349$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/23d5ad96a4677648efd47d5a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              8
+            ],
+            [
+              "c",
+              6
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 8], [\"c\", 6], [\"d\", 7], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c8c15ea0f1f2087d55b60cb",
+        "teks": "Jika diketahui $f(2) = 5$, $g(2) = 7$, $f(7) = 16$, dan $g(7) = 9$, maka nilai dari $(f \\circ g)(2)$ adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$117$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $117$.",
+      "distraktor": [
+        {
+          "teks": "$118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$234$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $117$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/c59cf786ff537c2263e0a38f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 12], [\"c\", 3], [\"d\", 12], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "66c777a477d84f4bcdc35700",
+        "teks": "Jika $f(4) = 15$, $g(4) = 9$, $f(9) = 20$, dan $g(9) = 18$, maka nilai dari $(f - g)(4)$ adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$193$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $193$.",
+      "distraktor": [
+        {
+          "teks": "$194$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$386$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $193$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/98262478385f4c78c4bedbb3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              6
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 7], [\"c\", 6], [\"d\", 7], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2146bc5a92f54f570477fb83",
+        "teks": "Pernyataan yang tepat mengenai sifat komutatif pada operasi komposisi fungsi adalah ....",
+        "jawaban": "secara umum tidak berlaku, sehingga $(f \\circ g)(x) \\neq (g \\circ f)(x)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $140$.",
+      "distraktor": [
+        {
+          "teks": "$141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $140$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/6da778419fb1956690fa5803.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "c",
+              2
+            ],
+            [
+              "d",
+              5
+            ],
+            [
+              "t",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 2], [\"c\", 2], [\"d\", 5], [\"t\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff9d352c935d07fb19bf4da9",
+        "teks": "Jika diketahui fungsi $g: A \\to B$ dan $f: B \\to C$, maka fungsi komposisi $(f \\circ g)$ merupakan fungsi dari domain .... ke kodomain ....",
+        "jawaban": "$A$ ke $C$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$85$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $85$.",
+      "distraktor": [
+        {
+          "teks": "$86$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $85$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/623a1d1fddc5711964d700e0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "d",
+              11
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 5], [\"c\", 1], [\"d\", 11], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "705a097b1ed40c670e17ed3a",
+        "teks": "Jika diketahui $f(5) = 14$, $g(5) = 11$, $f(11) = 25$, dan $g(11) = 22$, maka nilai dari $(f + g)(5)$ adalah ....",
+        "jawaban": "$25$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $156$.",
+      "distraktor": [
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$312$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $156$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/344cb317a90503c03832d71e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              4
+            ],
+            [
+              "c",
+              6
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 4], [\"c\", 6], [\"d\", 8], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3db0397181d848b98d55e2ff",
+        "teks": "Pada operasi komposisi fungsi, manakah bentuk kesamaan berikut yang menunjukkan berlakunya sifat asosiatif untuk sebarang fungsi $f$, $g$, dan $h$?",
+        "jawaban": "$((f \\circ g) \\circ h)(x) = (f \\circ (g \\circ h))(x)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$504$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $504$.",
+      "distraktor": [
+        {
+          "teks": "$505$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$503$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1008$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $504$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/b9a84e021d6269e21502a419.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              6
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 9], [\"c\", 6], [\"d\", 9], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "280f9fe4f01da3563428cef5",
+        "teks": "Jika fungsi $f(x)$ memiliki domain $D_f$ dan fungsi $g(x)$ memiliki domain $D_g$, maka domain dari fungsi hasil penjumlahan $(f + g)(x)$ adalah ....",
+        "jawaban": "$D_f \\cap D_g$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$131$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $131$.",
+      "distraktor": [
+        {
+          "teks": "$132$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$130$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$262$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $131$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/41085bd2b4e4e1714f94a974.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 5], [\"c\", 4], [\"d\", 6], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85c7e2630ca551413eb0a22",
+        "teks": "Jika diketahui nilai fungsi $f(7) = 9$, $g(7) = 5$, $f(5) = 8$, dan $g(5) = 4$, maka nilai dari $(f \\cdot g)(7)$ adalah ....",
+        "jawaban": "$45$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$254$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $254$.",
+      "distraktor": [
+        {
+          "teks": "$255$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$253$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$508$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $254$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/eef419b475dd2bdecff25287.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 11], [\"c\", 10], [\"d\", 7], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8d7820f31e918ee07771b914",
+        "teks": "Jika diketahui $f(4) = 28$, $g(4) = 7$, $f(7) = 15$, dan $g(7) = 5$, maka nilai dari $(f \\div g)(4)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $156$.",
+      "distraktor": [
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$312$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $156$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/affecd77f0e29c604eab1da9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "d",
+              5
+            ],
+            [
+              "t",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 2], [\"c\", 1], [\"d\", 5], [\"t\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ae7fbf7db4f611670736c0c4",
+        "teks": "Sebuah koperasi sekolah ingin menentukan fungsi sisa hasil usaha (keuntungan) $U(x)$ dari penjualan alat tulis, di mana $P(x)$ menyatakan fungsi penerimaan total dan $B(x)$ menyatakan fungsi beban operasional. Operasi aljabar fungsi yang tepat untuk menentukan fungsi $U(x)$ adalah ....",
+        "jawaban": "pengurangan, yaitu $U(x) = (P - B)(x)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$465$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $465$.",
+      "distraktor": [
+        {
+          "teks": "$466$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$464$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$930$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $465$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11/batch01/assets/312e991517aab0e64d0aa85b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              9
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 9], [\"c\", 9], [\"d\", 12], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9be046ab17aba2c4260db658",
+        "teks": "Sebuah toko pakaian memberikan promo diskon bertingkat. Suatu barang dikenai diskon 40% kemudian dilanjutkan diskon 10%. Jika urutan diskon ditukar menjadi diskon 10% kemudian dilanjutkan diskon 40%, hubungan harga akhir barang pada kedua urutan tersebut adalah ....",
+        "jawaban": "sama besar, karena perkalian faktor pengali diskon bersifat komutatif",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $3$; c = $9$; d = $5$; t = $2$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $72$.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $72$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6bddbf85e8c270cad4d9565f",
+        "teks": "Jika fungsi $f(x)$ memiliki daerah asal (domain) $D_f$ dan fungsi $g(x)$ memiliki daerah asal $D_g$, maka daerah asal dari fungsi hasil perkalian $(f \\cdot g)(x)$ adalah ....",
+        "jawaban": "$D_f \\cap D_g$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $7$; c = $6$; d = $11$; t = $4$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$147$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $147$.",
+      "distraktor": [
+        {
+          "teks": "$148$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$146$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$294$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $147$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dee5e44d33e9c797615b75b5",
+        "teks": "Jika diketahui fungsi $f(x) = x - 5$ dan $g(x) = \\sqrt{x}$, maka rumus fungsi $h(x) = g(f(x))$ adalah ....",
+        "jawaban": "$\\sqrt{x - 5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; b = $5$; c = $6$; d = $4$; t = $7$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$373$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $373$.",
+      "distraktor": [
+        {
+          "teks": "$374$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$372$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$746$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $373$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c103632b5d91439c5edb9a52",
+        "teks": "Jika fungsi $f(x)$ memiliki daerah asal (domain) $D_f$ dan fungsi $g(x)$ memiliki daerah asal $D_g$, maka daerah asal dari fungsi hasil pengurangan $(f - g)(x)$ adalah ....",
+        "jawaban": "$D_f \\cap D_g$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; b = $12$; c = $4$; d = $2$; t = $7$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$282$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $282$.",
+      "distraktor": [
+        {
+          "teks": "$283$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$281$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$564$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $282$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4bf96e013f26c40260f14e82",
+        "teks": "Diketahui hasil dari $(f \\circ g)(x) = (7x + 6)^5$ dan $f(x) = x^5$. Rumus fungsi $g(x)$ yang memenuhi adalah ....",
+        "jawaban": "$7x + 6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; b = $10$; c = $2$; d = $12$; t = $9$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $250$.",
+      "distraktor": [
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $250$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e24cb6793cb4ccd4d59cf69",
+        "teks": "Sebuah pusat perbelanjaan memberikan dua pilihan promo akhir pekan untuk pembelian barang dengan harga awal di atas Rp60.000,00:\n- **Pilihan A**: Diskon 30% terlebih dahulu, kemudian dilanjutkan dengan potongan voucer sebesar Rp60.000,00.\n- **Pilihan B**: Potongan voucer sebesar Rp60.000,00 terlebih dahulu, kemudian dilanjutkan dengan diskon 30%.\n\nBerdasarkan konsep komposisi fungsi, manakah pernyataan berikut yang paling tepat mengenai perbandingan kedua promo tersebut?",
+        "jawaban": "Pilihan A selalu lebih murah Rp18.000,00 dibandingkan Pilihan B untuk setiap harga barang.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $5$; c = $5$; d = $10$; t = $3$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$105$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $105$.",
+      "distraktor": [
+        {
+          "teks": "$106$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$210$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $105$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a82bd68c0545aaf4af23eed",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{16 - x^2}$ dan $g(x) = 2x + c$. Agar fungsi komposisi $(f \\circ g)(x)$ dapat terdefinisi untuk seluruh bilangan real $x$ pada interval tertutup $[-1, 3]$, maka nilai konstanta $c$ yang memenuhi adalah ....",
+        "jawaban": "$c = -2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; b = $9$; c = $10$; d = $6$; t = $7$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$921$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $921$.",
+      "distraktor": [
+        {
+          "teks": "$922$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$920$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1842$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $921$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1fde06a42dd478545878b6b",
+        "teks": "Meskipun secara umum komposisi fungsi tidak bersifat komutatif, dua fungsi tertentu dapat memenuhi sifat komutatif $(f \\circ g)(x) = (g \\circ f)(x)$ untuk seluruh $x \\in \\mathbb{R}$. Diketahui fungsi linear $f(x) = 3x - 8$ dan $g(x) = -3x + n$. Nilai konstanta $n$ agar kedua fungsi tersebut saling komutatif adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11.json",
+        "source_sha256": "f64be75c46b152aaeeace6c0e86c97b1275b90d62966ae6ebb239b4bc70b77f0"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_composition_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; b = $9$; c = $4$; d = $11$; t = $9$. Untuk $f(x)=ax+b$ dan $g(x)=cx+d$, tentukan $(f\\circ g)(t)$.",
+      "jawaban_benar": "$103$",
+      "alasan_benar": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $103$.",
+      "distraktor": [
+        {
+          "teks": "$104$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$206$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung g(t), kemudian gunakan hasil itu sebagai masukan f. Hasilnya $103$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11-b01-b-easy-bt01-044"
     }
   ]
 }

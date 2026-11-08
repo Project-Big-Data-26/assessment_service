@@ -681,6 +681,1244 @@
       "pembahasan": "Daerah berada di kuadran pertama, sehingga batas kirinya adalah perpotongan kurva dengan sumbu-$x$, yaitu $x = 0$, dan batas kanannya adalah garis $x = 3$.\n\nLuas daerah dinyatakan oleh integral tentu:\n$$L = \\int_{0}^{3} x\\sqrt{x^2 + 16}\\,dx$$\n\nGunakan metode substitusi:\nMisalkan $u = x^2 + 16$, sehingga $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,du$.\nUbah batas integrasi:\n- Untuk $x = 0 \\implies u = 0^2 + 16 = 16$\n- Untuk $x = 3 \\implies u = 3^2 + 16 = 25$\n\nSubstitusikan ke dalam integral:\n$$L = \\int_{16}^{25} \\frac{1}{2} u^{1/2}\\,du = \\frac{1}{2} \\left[ \\frac{2}{3}u^{3/2} \\right]_{16}^{25} = \\frac{1}{3} \\left[ u^{3/2} \\right]_{16}^{25}$$\n$$L = \\frac{1}{3} \\left( 25^{3/2} - 16^{3/2} \\right) = \\frac{1}{3} \\left( 125 - 64 \\right) = \\frac{61}{3}$$\n\nJadi, luas daerah tersebut adalah $\\frac{61}{3}\\text{ satuan luas}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bf83cebb09bba6939299a3e",
+        "teks": "Sebuah pabrik mengoperasikan mesin baru. Laju penghematan biaya operasional dinyatakan oleh fungsi $f(t) = 6.000t + 3.000$ (rupiah per tahun), sedangkan laju biaya pemeliharaan mesin bertambah menurut fungsi $g(t) = 2.000t + 1.000$ (rupiah per tahun), dengan $t$ menyatakan waktu pemakaian dalam tahun. Total keuntungan finansial bersih kumulatif mesin tersebut mencapai Rp60.000,00 setelah beroperasi selama ....",
+        "jawaban": "$5\\text{ tahun}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 5 x^{2} + 20 x$ dan sumbu x pada $0\\le x\\le 4$.",
+      "jawaban_benar": "$\\frac{160}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 5 x^{2} + 20 x$ dari 0 sampai 4; hasilnya 160/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{163}{3}$",
+          "alasan": "Pilihan $\\frac{163}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{160}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{157}{3}$",
+          "alasan": "Pilihan $\\frac{157}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{160}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{166}{3}$",
+          "alasan": "Pilihan $\\frac{166}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{160}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 5 x^{2} + 20 x$ dari 0 sampai 4; hasilnya 160/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-c-medium-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2925f328994a50e9cc4028be",
+        "teks": "Laju perubahan luas permukaan suatu luka pada pasien berkurang secara bertahap dan dimodelkan oleh persamaan laju $\\frac{dA}{dt} = -k(6 - t)\\text{ cm}^2/\\text{hari}$ untuk rentang waktu $0 \\le t \\le 6$, dengan $t$ menyatakan waktu dalam hari sejak perawatan intensif dimulai dan $k$ adalah konstanta positif. Diketahui luas luka pada saat awal perawatan ($t = 0$) adalah $26\\text{ cm}^2$, dan setelah $2\\text{ hari}$ perlakuan luas luka berkurang menjadi $16\\text{ cm}^2$. Luas luka yang tersisa pada saat laju penyembuhan mencapai nol adalah ....",
+        "jawaban": "$8\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 2 x^{2} + 16 x$ dan sumbu x pada $0\\le x\\le 8$.",
+      "jawaban_benar": "$\\frac{512}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 16 x$ dari 0 sampai 8; hasilnya 512/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{515}{3}$",
+          "alasan": "Pilihan $\\frac{515}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{512}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{509}{3}$",
+          "alasan": "Pilihan $\\frac{509}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{512}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{518}{3}$",
+          "alasan": "Pilihan $\\frac{518}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{512}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 16 x$ dari 0 sampai 8; hasilnya 512/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-c-medium-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea5017743ab2cedc4cdb288c",
+        "teks": "Sebuah pegas memiliki panjang alami $20\\text{ cm}$. Sebuah gaya sebesar $30\\text{ N}$ diperlukan untuk menahan pegas saat direntangkan hingga panjangnya menjadi $25\\text{ cm}$. Usaha yang diperlukan untuk meregangkan pegas tersebut dari panjang $25\\text{ cm}$ menjadi $30\\text{ cm}$ adalah ....",
+        "jawaban": "$2,25\\text{ Joule}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 4 x^{2} + 28 x$ dan sumbu x pada $0\\le x\\le 7$.",
+      "jawaban_benar": "$\\frac{686}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 4 x^{2} + 28 x$ dari 0 sampai 7; hasilnya 686/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{689}{3}$",
+          "alasan": "Pilihan $\\frac{689}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{686}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{683}{3}$",
+          "alasan": "Pilihan $\\frac{683}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{686}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{692}{3}$",
+          "alasan": "Pilihan $\\frac{692}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{686}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 4 x^{2} + 28 x$ dari 0 sampai 7; hasilnya 686/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-c-medium-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77558caceef5570882b34967",
+        "teks": "Dua buah pegas, yaitu pegas A dan pegas B, mula-mula berada pada panjang alaminya masing-masing. Sebuah gaya sebesar $60\\text{ N}$ diperlukan untuk menahan pegas A tetap teregang sejauh $0,1\\text{ m}$ dari panjang alaminya. Pegas B kemudian diregangkan sejauh $0,4\\text{ m}$ dari panjang alaminya dan menghasilkan usaha yang sama besar dengan usaha untuk meregangkan pegas A sejauh $0,2\\text{ m}$ dari panjang alaminya. Nilai konstanta dari pegas B adalah ....",
+        "jawaban": "$150\\text{ N/m}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 2 x^{2} + 10 x$ dan sumbu x pada $0\\le x\\le 5$.",
+      "jawaban_benar": "$\\frac{125}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 10 x$ dari 0 sampai 5; hasilnya 125/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{128}{3}$",
+          "alasan": "Pilihan $\\frac{128}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{125}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{122}{3}$",
+          "alasan": "Pilihan $\\frac{122}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{125}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{131}{3}$",
+          "alasan": "Pilihan $\\frac{131}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{125}{3}$. Periksa kembali langkah luas daerah integral pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 10 x$ dari 0 sampai 5; hasilnya 125/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1f63de621e4d23f710a4841",
+        "teks": "Kecepatan penghematan biaya operasional suatu mesin produksi dinyatakan dengan fungsi $f(t) = 6.000t + 2.000$ (dalam rupiah per tahun), dengan $t$ menyatakan lama pemakaian dalam tahun untuk $0 \\le t \\le 5$. Berapa jumlah penghematan biaya operasional yang diperoleh selama 3 tahun pertama?",
+        "jawaban": "Rp33.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{14641}{6}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{14641}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14647}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{14635}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{14641}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{14641}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7ada6f6425dbdf85728ef7a6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "L",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"L\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dde6135b9a8bed584832ce6c",
+        "teks": "Seorang pengendara sepeda mencatat bahwa kecepatannya (dalam km/jam) mengikuti fungsi $v(t) = -4t + 24$, dengan $t$ menyatakan waktu dalam jam sejak mulai bersepeda. Jika pengendara berhenti pada saat $t = 6$ jam, berapakah total jarak yang telah ditempuh selama 6 jam tersebut?",
+        "jawaban": "72 km",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{27}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{27}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b495ae6a6067559474ae9cb7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "L",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"L\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8c7b782ee44b19eef3c5808",
+        "teks": "Sebuah peti ditarik di atas lantai mendatar sehingga bekerja gaya sebesar $F(x) = 3x^2 + 4x$ (dalam Newton), dengan $x$ menyatakan posisi peti dalam meter dari titik asal. Besar usaha yang dilakukan oleh gaya tersebut untuk memindahkan peti dari posisi $x = 0$ meter hingga $x = 2$ meter adalah ....",
+        "jawaban": "$16\\text{ Joule}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{4394}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{4394}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4397}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4391}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8788}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{4394}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1200fb84bf2b6b75844f3d9e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "L",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"L\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "00604961bc4d6ca010eab6fa",
+        "teks": "Bentuk integral tentu yang menyatakan luas daerah di bawah kurva $f(x) = 2x + 5$ yang dibatasi oleh sumbu-$x$, garis $x = 1$, dan garis $x = 4$ adalah ....",
+        "jawaban": "$\\int_{1}^{4} (2x + 5)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/56ac04bf52ce9facae89a98e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "L",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"L\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e50857a1967221c705249785",
+        "teks": "Laju alir air yang masuk ke dalam sebuah tangki penampungan dinyatakan dengan fungsi $r(t) = 4t + 3$ (dalam liter per menit), dengan $t$ adalah waktu dalam menit sejak pengisian dimulai. Berapa total volume air yang telah masuk ke dalam tangki selama 3 menit pertama?",
+        "jawaban": "$27\\text{ liter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $96$.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $96$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/577939a9c96d2d8e847e5eba.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "L",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"L\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08c2d85122bc14e4e8a6e5bf",
+        "teks": "Laju konsumsi minyak goreng suatu gerai kuliner dinyatakan dengan fungsi $f'(x) = 6x + 5$ (dalam liter per hari), dengan $x$ adalah waktu dalam hari. Total konsumsi minyak goreng dari hari ke-1 hingga hari ke-3 adalah ....",
+        "jawaban": "34 liter",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$972$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $972$.",
+      "distraktor": [
+        {
+          "teks": "$973$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$971$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1944$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $972$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/102e4d7dd2c11e691edae44c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "L",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"L\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d28647b4ece67cac738ac39",
+        "teks": "Laju inflasi bulanan suatu daerah dimodelkan dengan fungsi $i(t) = 0,4t + 3$, dengan $t$ menyatakan waktu dalam bulan dan $i(t)$ dalam persen per bulan. Total inflasi kumulatif selama 5 bulan pertama ($t = 0$ hingga $t = 5$) adalah ....",
+        "jawaban": "$20\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{28}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{28}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{56}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{28}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a59bc8c83a80be4e6d5d0f31.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "L",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"L\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70f69946b0fc1f5d941852bd",
+        "teks": "Sebuah benda bergerak pada garis lurus dan dipengaruhi oleh gaya $F(x) = 5x + 4$ (dalam satuan Newton), dengan $x$ menyatakan posisi benda dalam meter. Bentuk integral tentu yang menyatakan usaha yang dilakukan oleh gaya tersebut untuk memindahkan benda dari $x = 2\\text{ m}$ ke $x = 6\\text{ m}$ adalah ....",
+        "jawaban": "$\\int_{2}^{6} (5x + 4)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{125}{2}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{125}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{127}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{123}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$125$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{125}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a275a4c8c60d84904b9996a8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "L",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"L\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce92c3fe177812a3595f15e6",
+        "teks": "Fungsi $r(t)$ menyatakan laju pertambahan volume air (dalam liter/menit) yang dialirkan ke dalam tangki penampungan, dengan $t$ menyatakan waktu dalam menit. Luas daerah di bawah kurva $y = r(t)$ pada selang waktu $[0, 10]$ merepresentasikan ....",
+        "jawaban": "total volume air yang masuk ke tangki selama 10 menit pertama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$2304$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $2304$.",
+      "distraktor": [
+        {
+          "teks": "$2305$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2303$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4608$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $2304$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9028d2f58ebc944bd18a371b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "L",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"L\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b58a16ad77e1f45d945794b",
+        "teks": "Laju perakitan komputer tablet di sebuah pabrik dinyatakan dengan fungsi $f(t) = 4.000t + 2.000$ (unit per tahun), dengan $t$ adalah waktu dalam tahun sejak pabrik beroperasi ($0 \\le t \\le 5$). Jumlah total komputer tablet yang dirakit selama 3 tahun pertama adalah ....",
+        "jawaban": "$24.000\\text{ unit}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$1000$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $1000$.",
+      "distraktor": [
+        {
+          "teks": "$1001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $1000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ccaf2f54e038a20ec5e12df1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "L",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"L\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "156a43c3bbefe90681a05cfd",
+        "teks": "Laju pengisian bahan bakar minyak ke dalam tangki penampungan dinyatakan dengan fungsi $v(t) = 6t^2 + 6t + 4$ (liter per jam), dengan $t$ menyatakan waktu dalam jam sejak pengisian dimulai. Total bahan bakar yang dialirkan ke dalam tangki selama 2 jam pertama adalah ....",
+        "jawaban": "$36\\text{ liter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{24167}{6}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{24167}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{24173}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{24161}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{24167}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{24167}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c7e17803e6ee579c4d5da5bd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "L",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"L\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d4fe5e54ba6a83cbf75919a",
+        "teks": "Sebuah panel kaca hias dirancang menyerupai bidang datar di bawah kurva $y = 8 - 2x^2$, di atas sumbu-$x$, serta dibatasi oleh garis $x = -1$ dan garis $x = 1$. Luas permukaan panel kaca tersebut adalah ....",
+        "jawaban": "$\\frac{44}{3}\\text{ satuan luas}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{2197}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{2197}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2200}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2194}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4394}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{2197}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9b2b382a8c5e9d1c7fb29555.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "L",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"L\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e331c6140781e707c3ba34e",
+        "teks": "Sebuah pegas memerlukan gaya sebesar $F(x) = 80x$ Newton untuk meregangkannya sejauh $x$ meter dari panjang alaminya. Besar usaha yang diperlukan untuk meregangkan pegas tersebut dari posisi alami $x = 0$ meter hingga $x = 0,5$ meter adalah ....",
+        "jawaban": "$10\\text{ Joule}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $144$.",
+      "distraktor": [
+        {
+          "teks": "$145$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$143$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$288$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $144$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/dca6de75c606ed5a144f3948.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "L",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"L\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c8ce7dfe41573b1d925d11e2",
+        "teks": "Jika suatu fungsi kontinu $y = f(x)$ bernilai nonpositif ($f(x) \\le 0$) pada interval tertutup $[a, b]$, maka luas daerah $L$ yang dibatasi oleh kurva tersebut, sumbu-$x$, serta garis $x = a$ dan garis $x = b$ dirumuskan dengan ....",
+        "jawaban": "$L = -\\int_{a}^{b} f(x)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{686}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{686}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{689}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{683}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1372}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{686}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/54fa65f26a8e223b43b498e2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "L",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"L\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "108c2d91671309756bc55c5b",
+        "teks": "Laju pertumbuhan tinggi suatu bibit tanaman dinyatakan oleh fungsi $f'(t) = 8t$ (dalam cm per hari), dengan $t$ menyatakan waktu dalam hari. Jika tinggi awal bibit tersebut saat $t = 0$ adalah $5\\text{ cm}$, tinggi tanaman tersebut setelah $3\\text{ hari}$ adalah ....",
+        "jawaban": "$41\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; L = $9$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{2673}{2}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{2673}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2675}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2671}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2673$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{2673}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "40cceede80721ead6ed71564",
+        "teks": "Sebuah partikel bergerak di sepanjang sumbu-$x$ dan dipengaruhi oleh gaya $F(x) = 8x - 4$ (dalam satuan Newton), dengan $x$ menyatakan posisi partikel dalam meter. Besar usaha yang dilakukan gaya tersebut untuk memindahkan partikel dari posisi $x = 1\\text{ meter}$ ke posisi $x = 3\\text{ meter}$ adalah ....",
+        "jawaban": "$24\\text{ Joule}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; L = $11$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{1331}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{1331}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1334}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1328}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2662}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{1331}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd6439c9b47da8d078a34014",
+        "teks": "Luas daerah di kuadran pertama yang dibatasi oleh kurva $f(x) = 4x + 1$, sumbu-$x$, sumbu-$y$, dan garis $x = 2$ adalah ....",
+        "jawaban": "$10\\text{ satuan luas}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; L = $7$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{1715}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{1715}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1718}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1712}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3430}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{1715}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "40540a9b8c651210c7a08fee",
+        "teks": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi $f(x) = x - 8$, sumbu-$x$, garis $x = 5$, dan garis $x = 7$.",
+        "jawaban": "$4\\text{ satuan luas}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; L = $5$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $250$.",
+      "distraktor": [
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $250$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf95690485ba9738a7bdfe8a",
+        "teks": "Laju penghematan biaya operasional sebuah mesin pabrik dinyatakan oleh fungsi $f(x) = 6.000x + 8.000$ (dalam rupiah per tahun), dengan $x$ menyatakan lama waktu pemakaian mesin dalam tahun ($0 \\le x \\le 9$). Berapa jumlah total penghematan biaya operasional mesin tersebut selama 2 tahun pertama?",
+        "jawaban": "Rp28.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; L = $2$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{40}{3}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{40}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{37}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{80}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{40}{3}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d3b21337a61054b2351b039",
+        "teks": "Sebuah kendaraan uji bergerak dengan kecepatan yang memenuhi fungsi $v(t) = -6t + 24$ (dalam km/jam), dengan $t$ menyatakan waktu tempuh dalam jam. Kendaraan berhenti tepat saat kecepatannya nol pada $t = 4$. Berapakah jarak total yang ditempuh kendaraan tersebut selama 4 jam perjalanan?",
+        "jawaban": "$48\\text{ km}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_integral_area_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; L = $13$. Kurva $y=ax(L-x)$ dengan a positif membatasi daerah dengan sumbu x pada $[0,L]$. Tentukan luas daerahnya.",
+      "jawaban_benar": "$\\frac{6591}{2}$",
+      "alasan_benar": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{6591}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6593}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6589}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6591$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pastikan kurva tidak negatif pada interval, kembangkan polinomial, lalu integralkan terhadap kedua batas. Hasilnya $\\frac{6591}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-c-medium-bt01-040"
     }
   ]
 }

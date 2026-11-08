@@ -849,6 +849,3546 @@
       "pembahasan": "1. Menentukan konstanta $k$:\n$$\\int_{-\\infty}^{\\infty} f(x)\\,dx = \\int_0^2 k(2x - x^2)\\,dx = 1$$\n$$k \\left[ x^2 - \\frac{1}{3}x^3 \\right]_0^2 = k \\left( 4 - \\frac{8}{3} \\right) = \\frac{4}{3}k = 1 \\implies k = \\frac{3}{4}$$\n\n2. Menentukan median $m$:\nKarena fungsi $f(x) = \\frac{3}{4}(2x - x^2)$ simetris terhadap $x = 1$ pada interval $[0, 2]$, maka $m = 1$, sehingga $P(X \\ge 1) = \\frac{1}{2}$.\n\n3. Menghitung $P(X \\ge 1{,}5)$:\n$$P(X \\ge 1{,}5) = \\int_{1{,}5}^2 \\frac{3}{4}(2x - x^2)\\,dx = \\frac{3}{4} \\left[ x^2 - \\frac{1}{3}x^3 \\right]_{\\frac{3}{2}}^2$$\n$$= \\frac{3}{4} \\left[ \\left(4 - \\frac{8}{3}\\right) - \\left(\\frac{9}{4} - \\frac{9}{8}\\right) \\right] = \\frac{3}{4} \\left( \\frac{4}{3} - \\frac{9}{8} \\right) = \\frac{3}{4} \\left( \\frac{5}{24} \\right) = \\frac{5}{32}$$\n\n4. Menghitung peluang bersyarat:\n$$P(X \\ge 1{,}5 \\mid X \\ge 1) = \\frac{P(X \\ge 1{,}5 \\cap X \\ge 1)}{P(X \\ge 1)} = \\frac{P(X \\ge 1{,}5)}{P(X \\ge 1)} = \\frac{\\frac{5}{32}}{\\frac{1}{2}} = \\frac{5}{16}$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20e822a6abe31956ee338fc5",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang berbentuk linear:\n$$f(x) = \\begin{cases} ax + b, & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika diketahui bahwa $P(X < 1) = \\frac{1}{3}$, maka nilai dari $P\\left(X > \\frac{3}{2}\\right)$ adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<3)$.",
+      "jawaban_benar": "$\\frac{9}{100}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/100 dx=9/100=9/100.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{109}{100}$",
+          "alasan": "Nilai $\\frac{109}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{91}{100}$",
+          "alasan": "Nilai $- \\frac{91}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{209}{100}$",
+          "alasan": "Nilai $\\frac{209}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/100 dx=9/100=9/100.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c285cfd2fc975c2b4605128",
+        "teks": "Seorang pengunjung kafe memanfaatkan fasilitas akses internet yang dibatasi paling lama 5 jam per sesi. Misalkan $W$ menyatakan variabel acak kontinu untuk durasi pemakaian internet (dalam jam) dengan fungsi densitas peluang $f(w) = \\frac{1}{5}$ untuk $0 \\le w \\le 5$, dan $f(w) = 0$ untuk nilai $w$ lainnya. Peluang pengunjung tersebut memakai internet selama antara 1 jam hingga 3,5 jam adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<6)$.",
+      "jawaban_benar": "$\\frac{9}{16}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<6)=∫₀^6 2x/64 dx=36/64=9/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{16}$",
+          "alasan": "Nilai $\\frac{25}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{7}{16}$",
+          "alasan": "Nilai $- \\frac{7}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{41}{16}$",
+          "alasan": "Nilai $\\frac{41}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<6)=∫₀^6 2x/64 dx=36/64=9/16.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec7b7ce60f28251190c541ff",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} 2 - 2x, & 0 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P\\left(X \\le \\frac{1}{2}\\right)$ adalah ....",
+        "jawaban": "$\\frac{3}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/81$ untuk $0\\le x\\le 9$ dan nol di luar interval. Tentukan $P(X<1)$.",
+      "jawaban_benar": "$\\frac{1}{81}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/81 dx=1/81=1/81.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{82}{81}$",
+          "alasan": "Nilai $\\frac{82}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{80}{81}$",
+          "alasan": "Nilai $- \\frac{80}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{163}{81}$",
+          "alasan": "Nilai $\\frac{163}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/81 dx=1/81=1/81.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea2fbf46d4cb1efa33b2521b",
+        "teks": "Uji ketahanan baterai suatu gawai dilakukan paling lama 10 jam. Durasi pengujian dinyatakan oleh variabel acak kontinu $T$ (dalam jam) dengan fungsi densitas peluang seragam $f(t) = \\frac{1}{10}$ untuk $0 \\le t \\le 10$, dan $f(t) = 0$ untuk nilai lainnya. Berapa peluang uji ketahanan berlangsung selama 7 jam atau lebih?",
+        "jawaban": "$\\frac{3}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<2)$.",
+      "jawaban_benar": "$\\frac{1}{25}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/100 dx=4/100=1/25.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{26}{25}$",
+          "alasan": "Nilai $\\frac{26}{25}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{24}{25}$",
+          "alasan": "Nilai $- \\frac{24}{25}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{51}{25}$",
+          "alasan": "Nilai $\\frac{51}{25}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/100 dx=4/100=1/25.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "30506cf0de92fa0524e09d56",
+        "teks": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ didefinisikan sebagai:\n$$F(x) = \\begin{cases} 0, & x < 0 \\\\ \\frac{x^2 + 2x}{8}, & 0 \\le x \\le 2 \\\\ 1, & x > 2 \\end{cases}$$\nTentukan nilai dari $P(X \\ge 1)$.",
+        "jawaban": "$\\frac{5}{8}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/121$ untuk $0\\le x\\le 11$ dan nol di luar interval. Tentukan $P(X<5)$.",
+      "jawaban_benar": "$\\frac{25}{121}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/121 dx=25/121=25/121.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{146}{121}$",
+          "alasan": "Nilai $\\frac{146}{121}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{96}{121}$",
+          "alasan": "Nilai $- \\frac{96}{121}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{267}{121}$",
+          "alasan": "Nilai $\\frac{267}{121}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/121 dx=25/121=25/121.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a3d85fd9c578d4e8c9f0efda",
+        "teks": "Dalam masa perawatan mesin, sebuah kompresor industri dioperasikan tidak lebih dari $360$ menit per siklus, dengan durasi $X$ (dalam menit) memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{360}, & 0 \\le x \\le 360 \\\\ 0, & x < 0 \\text{ atau } x > 360 \\end{cases}$$\nSuatu selang waktu $[180 - k, 180 + k]$ dirancang sedemikian sehingga peluang durasi operasi mesin berada dalam rentang tersebut tepat bernilai $\\frac{2}{3}$. Nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$120$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/16$ untuk $0\\le x\\le 4$ dan nol di luar interval. Tentukan $P(X<3)$.",
+      "jawaban_benar": "$\\frac{9}{16}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/16 dx=9/16=9/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{16}$",
+          "alasan": "Nilai $\\frac{25}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{7}{16}$",
+          "alasan": "Nilai $- \\frac{7}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{41}{16}$",
+          "alasan": "Nilai $\\frac{41}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/16 dx=9/16=9/16.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "26d4014f08253467d94ae5ae",
+        "teks": "Seorang pianis melakukan latihan teknik setiap malam selama 2 jam, dari pukul 19.00—21.00. Ia mencatat durasi pemanasan jari setiap sesi latihan dalam satuan menit. Berdasarkan pengamatan, durasi pemanasan tersebut berdistribusi merata dari 15 menit hingga 45 menit. Jika $X$ menyatakan variabel acak kontinu untuk durasi pemanasan jari (dalam menit), peluang pianis tersebut melakukan pemanasan dalam rentang 21 menit hingga 33 menit adalah ....",
+        "jawaban": "$\\frac{2}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<9)$.",
+      "jawaban_benar": "$\\frac{81}{100}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<9)=∫₀^9 2x/100 dx=81/100=81/100.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{181}{100}$",
+          "alasan": "Nilai $\\frac{181}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{19}{100}$",
+          "alasan": "Nilai $- \\frac{19}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{281}{100}$",
+          "alasan": "Nilai $\\frac{281}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<9)=∫₀^9 2x/100 dx=81/100=81/100.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0137326ab94e36014c3b54ce",
+        "teks": "Berdasarkan representasi grafisnya, fungsi peluang dari suatu variabel acak kontinu disajikan dalam bentuk ....",
+        "jawaban": "kurva kontinu tanpa titik-titik diskret",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/81$ untuk $0\\le x\\le 9$ dan nol di luar interval. Tentukan $P(X<5)$.",
+      "jawaban_benar": "$\\frac{25}{81}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/81 dx=25/81=25/81.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{106}{81}$",
+          "alasan": "Nilai $\\frac{106}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{56}{81}$",
+          "alasan": "Nilai $- \\frac{56}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{187}{81}$",
+          "alasan": "Nilai $\\frac{187}{81}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/81 dx=25/81=25/81.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "164a50146c9aa8d27c8981ae",
+        "teks": "Seorang atlet panahan berlatih memanah selama 2 jam setiap pagi, dari pukul 07.00—09.00. Ia mencatat durasi fokus membidik sebelum melepaskan anak panah setiap sesi dalam satuan detik. Berdasarkan catatan, durasi fokus tersebut tersebar merata dari 10 detik hingga 50 detik. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi fokus membidik (dalam detik). Peluang atlet tersebut fokus membidik dalam rentang waktu dari 18 detik hingga 42 detik adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/49$ untuk $0\\le x\\le 7$ dan nol di luar interval. Tentukan $P(X<4)$.",
+      "jawaban_benar": "$\\frac{16}{49}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<4)=∫₀^4 2x/49 dx=16/49=16/49.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65}{49}$",
+          "alasan": "Nilai $\\frac{65}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{33}{49}$",
+          "alasan": "Nilai $- \\frac{33}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{114}{49}$",
+          "alasan": "Nilai $\\frac{114}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<4)=∫₀^4 2x/49 dx=16/49=16/49.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39a98ae0b471af5af2cf4ea8",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{3}{4}(1 - x^2), & -1 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nPeluang bahwa nilai $X$ berada pada rentang yang memenuhi pertidaksamaan $|X| \\le \\frac{1}{2}$ adalah ....",
+        "jawaban": "$\\frac{11}{16}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/16$ untuk $0\\le x\\le 4$ dan nol di luar interval. Tentukan $P(X<2)$.",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/16 dx=4/16=1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Nilai $\\frac{5}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{3}{4}$",
+          "alasan": "Nilai $- \\frac{3}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Nilai $\\frac{9}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/16 dx=4/16=1/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5261bee5e95c7848caf86e7",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi peluang sepotong yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} ax, & 0 \\le x < 2 \\\\ b, & 2 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nAgar fungsi $f(x)$ kontinu pada interval $[0, 4]$ dan merupakan fungsi densitas peluang yang sah, nilai dari $P(1 \\le X \\le 3)$ adalah ....",
+        "jawaban": "$\\frac{7}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/36$ untuk $0\\le x\\le 6$ dan nol di luar interval. Tentukan $P(X<4)$.",
+      "jawaban_benar": "$\\frac{4}{9}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<4)=∫₀^4 2x/36 dx=16/36=4/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{9}$",
+          "alasan": "Nilai $\\frac{13}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{5}{9}$",
+          "alasan": "Nilai $- \\frac{5}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{22}{9}$",
+          "alasan": "Nilai $\\frac{22}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<4)=∫₀^4 2x/36 dx=16/36=4/9.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e76fb34d695968347b8aa316",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{3}{2}(1 - x^2), & 0 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika peristiwa $A$ didefinisikan sebagai kejadian saat $X \\le \\frac{1}{2}$ dan peristiwa $B$ adalah kejadian saat $\\frac{1}{3} \\le X \\le \\frac{2}{3}$, maka nilai peluang gabungan $P(A \\cup B)$ adalah ....",
+        "jawaban": "$\\frac{23}{27}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<7)$.",
+      "jawaban_benar": "$\\frac{49}{100}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/100 dx=49/100=49/100.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{149}{100}$",
+          "alasan": "Nilai $\\frac{149}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{51}{100}$",
+          "alasan": "Nilai $- \\frac{51}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{249}{100}$",
+          "alasan": "Nilai $\\frac{249}{100}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/100 dx=49/100=49/100.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "182c767ef5cefdbb117f31d9",
+        "teks": "Dalam masa pembatasan kunjungan, suatu galeri seni hanya beroperasi selama 300 menit, yaitu mulai pukul 10.00 hingga pukul 15.00. Pengunjung tidak diperbolehkan berada di dalam galeri sebelum pukul 10.00 dan harus meninggalkan galeri paling lambat pukul 15.00. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam galeri (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan $f(x)=\\begin{cases}\\frac{1}{300}, & 0 \\le x \\le 300\\\\ 0, & x<0 \\text{ atau } x>300\\end{cases}$. Peluang seorang pengunjung berada di dalam galeri pada rentang waktu antara 60 dan 120 menit adalah ....",
+        "jawaban": "$\\frac{1}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/144$ untuk $0\\le x\\le 12$ dan nol di luar interval. Tentukan $P(X<10)$.",
+      "jawaban_benar": "$\\frac{25}{36}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<10)=∫₀^10 2x/144 dx=100/144=25/36.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{36}$",
+          "alasan": "Nilai $\\frac{61}{36}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{11}{36}$",
+          "alasan": "Nilai $- \\frac{11}{36}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{97}{36}$",
+          "alasan": "Nilai $\\frac{97}{36}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<10)=∫₀^10 2x/144 dx=100/144=25/36.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c285cfd2fc975c2b4605128",
+        "teks": "Seorang pengunjung kafe memanfaatkan fasilitas akses internet yang dibatasi paling lama 5 jam per sesi. Misalkan $W$ menyatakan variabel acak kontinu untuk durasi pemakaian internet (dalam jam) dengan fungsi densitas peluang $f(w) = \\frac{1}{5}$ untuk $0 \\le w \\le 5$, dan $f(w) = 0$ untuk nilai $w$ lainnya. Peluang pengunjung tersebut memakai internet selama antara 1 jam hingga 3,5 jam adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/81$ untuk $0\\le x\\le 9$ dan nol di luar interval. Tentukan $P(X<3)$.",
+      "jawaban_benar": "$\\frac{1}{9}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/81 dx=9/81=1/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{9}$",
+          "alasan": "Nilai $\\frac{10}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8}{9}$",
+          "alasan": "Nilai $- \\frac{8}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{19}{9}$",
+          "alasan": "Nilai $\\frac{19}{9}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/81 dx=9/81=1/9.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0642a5399d24647e2b391d8",
+        "teks": "Sebuah laboratorium komputer dibuka untuk sesi praktikum mandiri dengan durasi paling lama 6 jam. Misalkan $Y$ menyatakan waktu praktikum seorang mahasiswa (dalam jam) dengan fungsi densitas peluang $f(y) = \\frac{1}{6}$ untuk $0 \\le y \\le 6$ dan $f(y) = 0$ untuk nilai lainnya. Peluang seorang mahasiswa melakukan praktikum selama 4 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<1)$.",
+      "jawaban_benar": "$\\frac{1}{64}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/64 dx=1/64=1/64.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65}{64}$",
+          "alasan": "Nilai $\\frac{65}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{63}{64}$",
+          "alasan": "Nilai $- \\frac{63}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{129}{64}$",
+          "alasan": "Nilai $\\frac{129}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/64 dx=1/64=1/64.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a53e47f694c050758f9d04cd",
+        "teks": "Waktu penguraian suatu zat aktif di dalam tubuh (dalam jam) dimodelkan oleh variabel acak kontinu $X$ dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{k}{(x+1)^2}, & 0 \\le x \\le 3 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nPeluang bahwa zat aktif tersebut terurai dalam rentang waktu $1$ hingga $3$ jam adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/36$ untuk $0\\le x\\le 6$ dan nol di luar interval. Tentukan $P(X<3)$.",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/36 dx=9/36=1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Nilai $\\frac{5}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{3}{4}$",
+          "alasan": "Nilai $- \\frac{3}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Nilai $\\frac{9}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/36 dx=9/36=1/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "81a3791e648e01128195bea1",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} c(4-x), & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(1 \\le X \\le 3)$ adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<2)$.",
+      "jawaban_benar": "$\\frac{1}{16}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/64 dx=4/64=1/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{16}$",
+          "alasan": "Nilai $\\frac{17}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{15}{16}$",
+          "alasan": "Nilai $- \\frac{15}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{33}{16}$",
+          "alasan": "Nilai $\\frac{33}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<2)=∫₀^2 2x/64 dx=4/64=1/16.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f842a8dd72a5c9cdf1e21e67",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} c(4-x), & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika $k$ adalah suatu konstanta yang memenuhi $P(X > k) = \\frac{1}{4}$, maka nilai dari peluang bersyarat $P(X \\ge 1 \\mid X \\le k)$ adalah ....",
+        "jawaban": "$\\frac{5}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<5)$.",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/100 dx=25/100=1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Nilai $\\frac{5}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{3}{4}$",
+          "alasan": "Nilai $- \\frac{3}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Nilai $\\frac{9}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/100 dx=25/100=1/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea2fbf46d4cb1efa33b2521b",
+        "teks": "Uji ketahanan baterai suatu gawai dilakukan paling lama 10 jam. Durasi pengujian dinyatakan oleh variabel acak kontinu $T$ (dalam jam) dengan fungsi densitas peluang seragam $f(t) = \\frac{1}{10}$ untuk $0 \\le t \\le 10$, dan $f(t) = 0$ untuk nilai lainnya. Berapa peluang uji ketahanan berlangsung selama 7 jam atau lebih?",
+        "jawaban": "$\\frac{3}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/49$ untuk $0\\le x\\le 7$ dan nol di luar interval. Tentukan $P(X<1)$.",
+      "jawaban_benar": "$\\frac{1}{49}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/49 dx=1/49=1/49.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{50}{49}$",
+          "alasan": "Nilai $\\frac{50}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{48}{49}$",
+          "alasan": "Nilai $- \\frac{48}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{99}{49}$",
+          "alasan": "Nilai $\\frac{99}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<1)=∫₀^1 2x/49 dx=1/49=1/49.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "595607c7e6ac6a360317fe7a",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} k(2x - x^2), & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika $m$ adalah median dari $X$ (nilai sedemikian sehingga $P(X \\le m) = 0{,}5$), maka nilai dari $P(X \\ge 1{,}5 \\mid X \\ge m)$ adalah ....",
+        "jawaban": "$\\frac{5}{16}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target hard; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/49$ untuk $0\\le x\\le 7$ dan nol di luar interval. Tentukan $P(X<3)$.",
+      "jawaban_benar": "$\\frac{9}{49}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/49 dx=9/49=9/49.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{58}{49}$",
+          "alasan": "Nilai $\\frac{58}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{40}{49}$",
+          "alasan": "Nilai $- \\frac{40}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{107}{49}$",
+          "alasan": "Nilai $\\frac{107}{49}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<3)=∫₀^3 2x/49 dx=9/49=9/49.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "164a50146c9aa8d27c8981ae",
+        "teks": "Seorang atlet panahan berlatih memanah selama 2 jam setiap pagi, dari pukul 07.00—09.00. Ia mencatat durasi fokus membidik sebelum melepaskan anak panah setiap sesi dalam satuan detik. Berdasarkan catatan, durasi fokus tersebut tersebar merata dari 10 detik hingga 50 detik. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi fokus membidik (dalam detik). Peluang atlet tersebut fokus membidik dalam rentang waktu dari 18 detik hingga 42 detik adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{99}{17}$. Tentukan $P(4<X<7)$.",
+      "jawaban_benar": "$\\frac{61}{153}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=99/17. Diperoleh a=10/459, b=2/153; integralkan ax+b antara 4 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{92}{153}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{3721}{23409}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{61}{153}$."
+        },
+        {
+          "teks": "$\\frac{61}{306}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=99/17. Diperoleh a=10/459, b=2/153; integralkan ax+b antara 4 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e200c6ab6c96fb6fb8849f6d",
+        "teks": "Fungsi distribusi peluang yang menggambarkan sebaran nilai dari suatu variabel acak kontinu secara matematis disebut sebagai ....",
+        "jawaban": "fungsi densitas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 6$ dan nol di luar interval. Diketahui $E(X)=\\frac{7}{2}$. Tentukan $P(1<X<5)$.",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=7/2. Diperoleh a=1/36, b=1/12; integralkan ax+b antara 1 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=7/2. Diperoleh a=1/36, b=1/12; integralkan ax+b antara 1 dan 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b75c05a5a8c69330f0d7f6ba",
+        "teks": "Diketahui $X$ adalah variabel acak kontinu dengan fungsi densitas peluang $f(x)$. Peluang bahwa $X$ berada pada selang $a$ hingga $b$, yaitu $P(a \\le X \\le b)$, secara matematis dinyatakan oleh ....",
+        "jawaban": "$\\int_{a}^{b} f(x)\\,dx$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{369}{64}$. Tentukan $P(3<X<7)$.",
+      "jawaban_benar": "$\\frac{35}{72}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=369/64. Diperoleh a=1/48, b=5/288; integralkan ax+b antara 3 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{72}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1225}{5184}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{35}{72}$."
+        },
+        {
+          "teks": "$\\frac{35}{144}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=369/64. Diperoleh a=1/48, b=5/288; integralkan ax+b antara 3 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0d033ba464bcd466eedcbef1",
+        "teks": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<5)$.",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{387}{68}$. Tentukan $P(1<X<7)$.",
+      "jawaban_benar": "$\\frac{31}{51}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=387/68. Diperoleh a=1/51, b=7/306; integralkan ax+b antara 1 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{20}{51}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{961}{2601}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{31}{51}$."
+        },
+        {
+          "teks": "$\\frac{31}{102}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=387/68. Diperoleh a=1/51, b=7/306; integralkan ax+b antara 1 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d21267402a9ac2e7a8dfc90d",
+        "teks": "Seorang atlet renang mencatat waktu latihan fisik tambahan yang tersebar merata dari 15 menit hingga 75 menit. Jika durasi latihan dinyatakan oleh variabel acak kontinu $X$, peluang atlet tersebut berlatih dalam rentang waktu antara 25 menit hingga 65 menit adalah ....",
+        "jawaban": "$\\frac{2}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{63}{11}$. Tentukan $P(2<X<8)$.",
+      "jawaban_benar": "$\\frac{8}{11}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=63/11. Diperoleh a=2/99, b=2/99; integralkan ax+b antara 2 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{11}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{64}{121}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{8}{11}$."
+        },
+        {
+          "teks": "$\\frac{4}{11}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=63/11. Diperoleh a=2/99, b=2/99; integralkan ax+b antara 2 dan 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "164a50146c9aa8d27c8981ae",
+        "teks": "Seorang atlet panahan berlatih memanah selama 2 jam setiap pagi, dari pukul 07.00—09.00. Ia mencatat durasi fokus membidik sebelum melepaskan anak panah setiap sesi dalam satuan detik. Berdasarkan catatan, durasi fokus tersebut tersebar merata dari 10 detik hingga 50 detik. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi fokus membidik (dalam detik). Peluang atlet tersebut fokus membidik dalam rentang waktu dari 18 detik hingga 42 detik adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 5$ dan nol di luar interval. Diketahui $E(X)=\\frac{305}{102}$. Tentukan $P(3<X<4)$.",
+      "jawaban_benar": "$\\frac{21}{85}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=305/102. Diperoleh a=4/85, b=7/85; integralkan ax+b antara 3 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{64}{85}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{441}{7225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{21}{85}$."
+        },
+        {
+          "teks": "$\\frac{21}{170}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=305/102. Diperoleh a=4/85, b=7/85; integralkan ax+b antara 3 dan 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7babfddb4731774dd41416c5",
+        "teks": "Densitas X adalah $f(x)=2x/121$ untuk $0\\le x\\le 11$ dan nol di luar interval. Tentukan $P(X<5)$.",
+        "jawaban": "$\\frac{25}{121}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 7$ dan nol di luar interval. Diketahui $E(X)=\\frac{49}{12}$. Tentukan $P(5<X<6)$.",
+      "jawaban_benar": "$\\frac{9}{49}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=49/12. Diperoleh a=1/49, b=1/14; integralkan ax+b antara 5 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{40}{49}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{81}{2401}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{9}{49}$."
+        },
+        {
+          "teks": "$\\frac{9}{98}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=49/12. Diperoleh a=1/49, b=1/14; integralkan ax+b antara 5 dan 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36840e63b9a30f9295abcd6b",
+        "teks": "Densitas X adalah $f(x)=2x/36$ untuk $0\\le x\\le 6$ dan nol di luar interval. Tentukan $P(X<4)$.",
+        "jawaban": "$\\frac{4}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=\\frac{76}{15}$. Tentukan $P(6<X<7)$.",
+      "jawaban_benar": "$\\frac{3}{16}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=76/15. Diperoleh a=1/40, b=1/40; integralkan ax+b antara 6 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{16}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{9}{256}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3}{16}$."
+        },
+        {
+          "teks": "$\\frac{3}{32}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=76/15. Diperoleh a=1/40, b=1/40; integralkan ax+b antara 6 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b7c9976e37b7f4f1ca0e008",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=1$ dan $x=6$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{2x+1}{40}$, dan bernilai $0$ untuk nilai $x$ lainnya. Jika diketahui $P(X \\ge k) = \\frac{11}{20}$, nilai batas $k$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=5$. Tentukan $P(6<X<7)$.",
+      "jawaban_benar": "$\\frac{47}{256}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=5. Diperoleh a=3/128, b=1/32; integralkan ax+b antara 6 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{209}{256}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{2209}{65536}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{47}{256}$."
+        },
+        {
+          "teks": "$\\frac{47}{512}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=5. Diperoleh a=3/128, b=1/32; integralkan ax+b antara 6 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f148c56718a5f940f6b2a78d",
+        "teks": "Densitas X adalah $f(x)=2x/100$ untuk $0\\le x\\le 10$ dan nol di luar interval. Tentukan $P(X<9)$.",
+        "jawaban": "$\\frac{81}{100}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=\\frac{164}{33}$. Tentukan $P(4<X<7)$.",
+      "jawaban_benar": "$\\frac{21}{44}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 4 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{44}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{441}{1936}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{21}{44}$."
+        },
+        {
+          "teks": "$\\frac{21}{88}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 4 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e200c6ab6c96fb6fb8849f6d",
+        "teks": "Fungsi distribusi peluang yang menggambarkan sebaran nilai dari suatu variabel acak kontinu secara matematis disebut sebagai ....",
+        "jawaban": "fungsi densitas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 5$ dan nol di luar interval. Diketahui $E(X)=\\frac{145}{48}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=145/48. Diperoleh a=1/20, b=3/40; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{25}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{5}$."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=145/48. Diperoleh a=1/20, b=3/40; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1dd7ca497f91ed531549d309",
+        "teks": "Densitas X adalah $f(x)=2x/81$ untuk $0\\le x\\le 9$ dan nol di luar interval. Tentukan $P(X<1)$.",
+        "jawaban": "$\\frac{1}{81}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{63}{11}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{5}{99}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=63/11. Diperoleh a=2/99, b=2/99; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{94}{99}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{25}{9801}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{5}{99}$."
+        },
+        {
+          "teks": "$\\frac{5}{198}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=63/11. Diperoleh a=2/99, b=2/99; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0137326ab94e36014c3b54ce",
+        "teks": "Berdasarkan representasi grafisnya, fungsi peluang dari suatu variabel acak kontinu disajikan dalam bentuk ....",
+        "jawaban": "kurva kontinu tanpa titik-titik diskret",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=\\frac{140}{27}$. Tentukan $P(4<X<7)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=140/27. Diperoleh a=1/36, b=1/72; integralkan ax+b antara 4 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=140/27. Diperoleh a=1/36, b=1/72; integralkan ax+b antara 4 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5d3274bcb15aea1e48959af",
+        "teks": "Densitas X adalah $f(x)=2x/36$ untuk $0\\le x\\le 6$ dan nol di luar interval. Tentukan $P(X<3)$.",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 6$ dan nol di luar interval. Diketahui $E(X)=\\frac{27}{7}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{2}{21}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=27/7. Diperoleh a=1/21, b=1/42; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{21}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{21}$."
+        },
+        {
+          "teks": "$\\frac{1}{21}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=27/7. Diperoleh a=1/21, b=1/42; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72341b68c0dd19d63fb4d128",
+        "teks": "Densitas X adalah $f(x)=2x/144$ untuk $0\\le x\\le 12$ dan nol di luar interval. Tentukan $P(X<10)$.",
+        "jawaban": "$\\frac{25}{36}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 10$ dan nol di luar interval. Diketahui $E(X)=\\frac{105}{16}$. Tentukan $P(2<X<7)$.",
+      "jawaban_benar": "$\\frac{29}{64}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=105/16. Diperoleh a=3/160, b=1/160; integralkan ax+b antara 2 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{35}{64}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{841}{4096}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{29}{64}$."
+        },
+        {
+          "teks": "$\\frac{29}{128}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=105/16. Diperoleh a=3/160, b=1/160; integralkan ax+b antara 2 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a4e39430a826775cfa3c16",
+        "teks": "Pada grafik fungsi densitas peluang $f(x)$ dari suatu variabel acak kontinu $X$, luas daerah di bawah kurva yang dibatasi oleh garis $x = a$ dan $x = b$ serta sumbu-$x$ merepresentasikan ....",
+        "jawaban": "peluang variabel acak bernilai pada interval $a \\le X \\le b$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=\\frac{100}{21}$. Tentukan $P(3<X<7)$.",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=100/21. Diperoleh a=1/56, b=3/56; integralkan ax+b antara 3 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{4}{7}$."
+        },
+        {
+          "teks": "$\\frac{2}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=100/21. Diperoleh a=1/56, b=3/56; integralkan ax+b antara 3 dan 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72341b68c0dd19d63fb4d128",
+        "teks": "Densitas X adalah $f(x)=2x/144$ untuk $0\\le x\\le 12$ dan nol di luar interval. Tentukan $P(X<10)$.",
+        "jawaban": "$\\frac{25}{36}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 10$ dan nol di luar interval. Diketahui $E(X)=\\frac{25}{4}$. Tentukan $P(2<X<8)$.",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=25/4. Diperoleh a=3/200, b=1/40; integralkan ax+b antara 2 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3}{5}$."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=25/4. Diperoleh a=3/200, b=1/40; integralkan ax+b antara 2 dan 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72341b68c0dd19d63fb4d128",
+        "teks": "Densitas X adalah $f(x)=2x/144$ untuk $0\\le x\\le 12$ dan nol di luar interval. Tentukan $P(X<10)$.",
+        "jawaban": "$\\frac{25}{36}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 10$ dan nol di luar interval. Diketahui $E(X)=\\frac{145}{24}$. Tentukan $P(7<X<9)$.",
+      "jawaban_benar": "$\\frac{11}{40}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=145/24. Diperoleh a=1/80, b=3/80; integralkan ax+b antara 7 dan 9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{40}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{1600}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{40}$."
+        },
+        {
+          "teks": "$\\frac{11}{80}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=145/24. Diperoleh a=1/80, b=3/80; integralkan ax+b antara 7 dan 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d08c7b3d19bef3d35fff9c40",
+        "teks": "Pada variabel acak kontinu, peluang suatu kejadian dalam suatu selang nilai tertentu dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 7$ dan nol di luar interval. Diketahui $E(X)=\\frac{140}{33}$. Tentukan $P(5<X<6)$.",
+      "jawaban_benar": "$\\frac{15}{77}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=140/33. Diperoleh a=2/77, b=4/77; integralkan ax+b antara 5 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{62}{77}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{225}{5929}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{15}{77}$."
+        },
+        {
+          "teks": "$\\frac{15}{154}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=140/33. Diperoleh a=2/77, b=4/77; integralkan ax+b antara 5 dan 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e00cd5ba4faffe3206865783",
+        "teks": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ didefinisikan sebagai:\n$$F(x) = \\begin{cases} 0, & x < 2 \\\\ c(x-2)^2, & 2 \\le x \\le 6 \\\\ 1, & x > 6 \\end{cases}$$\nJika diketahui $P(X > k) = \\frac{7}{16}$ untuk nilai $2 \\le k \\le 6$, maka nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 5$ dan nol di luar interval. Diketahui $E(X)=\\frac{355}{117}$. Tentukan $P(1<X<4)$.",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=355/117. Diperoleh a=2/39, b=14/195; integralkan ax+b antara 1 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3}{5}$."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=355/117. Diperoleh a=2/39, b=14/195; integralkan ax+b antara 1 dan 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-e-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "182c767ef5cefdbb117f31d9",
+        "teks": "Dalam masa pembatasan kunjungan, suatu galeri seni hanya beroperasi selama 300 menit, yaitu mulai pukul 10.00 hingga pukul 15.00. Pengunjung tidak diperbolehkan berada di dalam galeri sebelum pukul 10.00 dan harus meninggalkan galeri paling lambat pukul 15.00. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam galeri (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan $f(x)=\\begin{cases}\\frac{1}{300}, & 0 \\le x \\le 300\\\\ 0, & x<0 \\text{ atau } x>300\\end{cases}$. Peluang seorang pengunjung berada di dalam galeri pada rentang waktu antara 60 dan 120 menit adalah ....",
+        "jawaban": "$\\frac{1}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{94}{39}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{11}{52}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=94/39. Diperoleh a=1/13, b=5/52; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{41}{52}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{121}{2704}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 451/2704 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11}{104}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=94/39. Diperoleh a=1/13, b=5/52; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7dfa78fdb15269d6258ecb05",
+        "teks": "Waktu pengisian daya baterai sebuah perangkat hingga penuh dinyatakan sebagai variabel acak kontinu $T$ (dalam menit) dengan fungsi densitas peluang:\n$$f(t)=\\begin{cases}\\frac{1}{80}, & 0 \\le t \\le 80\\\\ 0, & \\text{untuk } t \\text{ lainnya}\\end{cases}$$\nPeluang pengisian daya berlangsung dalam rentang waktu antara 20 dan 60 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{15}{4}$. Tentukan $P(1<X<4)$.",
+      "jawaban_benar": "$\\frac{7}{16}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=15/4. Diperoleh a=1/24, b=1/24; integralkan ax+b antara 1 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{49}{256}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 63/256 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{32}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=15/4. Diperoleh a=1/24, b=1/24; integralkan ax+b antara 1 dan 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0642a5399d24647e2b391d8",
+        "teks": "Sebuah laboratorium komputer dibuka untuk sesi praktikum mandiri dengan durasi paling lama 6 jam. Misalkan $Y$ menyatakan waktu praktikum seorang mahasiswa (dalam jam) dengan fungsi densitas peluang $f(y) = \\frac{1}{6}$ untuk $0 \\le y \\le 6$ dan $f(y) = 0$ untuk nilai lainnya. Peluang seorang mahasiswa melakukan praktikum selama 4 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{18}{7}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{11}{56}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=18/7. Diperoleh a=3/28, b=1/28; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{45}{56}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{121}{3136}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 495/3136 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11}{112}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=18/7. Diperoleh a=3/28, b=1/28; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e289217c133d74a71e0c51f",
+        "teks": "Jika $X$ merupakan variabel acak kontinu dengan fungsi densitas peluang $f(x)$, maka untuk sembarang nilai konstanta real $c$, nilai dari $P(X = c)$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{25}{4}$. Tentukan $P(7<X<8)$.",
+      "jawaban_benar": "$\\frac{11}{80}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=25/4. Diperoleh a=3/200, b=1/40; integralkan ax+b antara 7 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{69}{80}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{121}{6400}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 759/6400 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11}{160}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=25/4. Diperoleh a=3/200, b=1/40; integralkan ax+b antara 7 dan 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b75c05a5a8c69330f0d7f6ba",
+        "teks": "Diketahui $X$ adalah variabel acak kontinu dengan fungsi densitas peluang $f(x)$. Peluang bahwa $X$ berada pada selang $a$ hingga $b$, yaitu $P(a \\le X \\le b)$, secara matematis dinyatakan oleh ....",
+        "jawaban": "$\\int_{a}^{b} f(x)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{560}{87}$. Tentukan $P(7<X<8)$.",
+      "jawaban_benar": "$\\frac{83}{580}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=560/87. Diperoleh a=1/58, b=2/145; integralkan ax+b antara 7 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{497}{580}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{6889}{336400}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 41251/336400 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{83}{1160}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=560/87. Diperoleh a=1/58, b=2/145; integralkan ax+b antara 7 dan 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62a5df3d2bc8178d429d3cc4",
+        "teks": "Sebuah wahana permainan buka selama 240 menit setiap sesi. Misalkan $X$ adalah variabel acak yang menyatakan lama waktu seorang pengunjung berada di wahana (dalam menit) dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{240}, & 0 \\le x \\le 240 \\\\ 0, & x < 0 \\text{ atau } x > 240 \\end{cases}$$\nPeluang seorang pengunjung berada di wahana tersebut pada rentang waktu antara 40 dan 160 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{65}{21}$. Tentukan $P(1<X<3)$.",
+      "jawaban_benar": "$\\frac{12}{35}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=65/21. Diperoleh a=2/35, b=2/35; integralkan ax+b antara 1 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{35}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{144}{1225}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 276/1225 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6}{35}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=65/21. Diperoleh a=2/35, b=2/35; integralkan ax+b antara 1 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2eec49fcbb25dc4c0ab62d7",
+        "teks": "Sebuah mesin pendingin beroperasi secara otomatis selama 120 menit dalam satu siklus kerja. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi kerja mesin (dalam menit) dengan fungsi densitas:\n$$f(x) = \\begin{cases} \\frac{1}{120}, & 0 \\le x \\le 120 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nPeluang mesin beroperasi dalam rentang waktu antara 45 menit dan 85 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{85}{29}$. Tentukan $P(3<X<4)$.",
+      "jawaban_benar": "$\\frac{7}{29}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=85/29. Diperoleh a=6/145, b=14/145; integralkan ax+b antara 3 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{22}{29}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{49}{841}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 154/841 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{58}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=85/29. Diperoleh a=6/145, b=14/145; integralkan ax+b antara 3 dan 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5634fed32896d5f329e0daf",
+        "teks": "Sebuah ruang laboratorium disewa maksimal selama 8 jam dalam sehari. Waktu penggunaan laboratorium dinyatakan oleh variabel acak kontinu $Y$ (dalam jam) dengan fungsi densitas:\n$$f(y) = \\begin{cases} \\frac{1}{8}, & 0 \\le y \\le 8 \\\\ 0, & \\text{untuk } y \\text{ lainnya} \\end{cases}$$\nPeluang laboratorium tersebut digunakan selama 6 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{99}{17}$. Tentukan $P(4<X<6)$.",
+      "jawaban_benar": "$\\frac{112}{459}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=99/17. Diperoleh a=10/459, b=2/153; integralkan ax+b antara 4 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{347}{459}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{12544}{210681}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 38864/210681 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{56}{459}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=99/17. Diperoleh a=10/459, b=2/153; integralkan ax+b antara 4 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb5088d052d6c0cc8656bc14",
+        "teks": "Perhitungan nilai peluang untuk suatu variabel acak kontinu tidak ditentukan berdasarkan nilai tunggal, melainkan dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas pada suatu interval nilai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{135}{22}$. Tentukan $P(3<X<5)$.",
+      "jawaban_benar": "$\\frac{19}{110}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=135/22. Diperoleh a=3/220, b=7/220; integralkan ax+b antara 3 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{91}{110}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{361}{12100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1729/12100 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{220}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=135/22. Diperoleh a=3/220, b=7/220; integralkan ax+b antara 3 dan 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-069",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e200c6ab6c96fb6fb8849f6d",
+        "teks": "Fungsi distribusi peluang yang menggambarkan sebaran nilai dari suatu variabel acak kontinu secara matematis disebut sebagai ....",
+        "jawaban": "fungsi densitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{616}{141}$. Tentukan $P(2<X<6)$.",
+      "jawaban_benar": "$\\frac{208}{329}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=616/141. Diperoleh a=10/329, b=12/329; integralkan ax+b antara 2 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{121}{329}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{43264}{108241}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 25168/108241 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{104}{329}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=616/141. Diperoleh a=10/329, b=12/329; integralkan ax+b antara 2 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-070",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3c7127f12d07b1d99ea8671",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=2$ dan $x=6$, memiliki fungsi densitas peluang $f(x)=\\frac{x}{16}$. Nilai dari $P(X < 4)$ adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{259}{60}$. Tentukan $P(2<X<6)$.",
+      "jawaban_benar": "$\\frac{22}{35}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=259/60. Diperoleh a=1/35, b=3/70; integralkan ax+b antara 2 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{35}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{484}{1225}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 286/1225 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11}{35}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=259/60. Diperoleh a=1/35, b=3/70; integralkan ax+b antara 2 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-071",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ad111d49fd01dc2c1728a59",
+        "teks": "Seorang teknisi melakukan kalibrasi alat sensor dengan waktu pengerjaan yang tersebar merata dari 10 menit hingga 70 menit. Misalkan $X$ menyatakan waktu kalibrasi (dalam menit) dengan fungsi densitas peluang $f(x) = \\frac{1}{60}$ untuk $10 \\le x \\le 70$, dan $f(x)=0$ untuk nilai lainnya.\n\nBerdasarkan stimulus tersebut, tentukan peluang teknisi menyelesaikan kalibrasi dalam rentang waktu dari 25 menit hingga 55 menit.",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{164}{33}$. Tentukan $P(1<X<6)$.",
+      "jawaban_benar": "$\\frac{25}{44}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 1 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{44}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{625}{1936}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 475/1936 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{88}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 1 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-072",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85544a0703175d962c47d08",
+        "teks": "Distribusi peluang dari suatu variabel acak kontinu tidak dapat disajikan dalam bentuk tabel distribusi peluang diskret karena ....",
+        "jawaban": "nilai-nilai variabel acak kontinu berada pada suatu selang yang tak terhingga banyaknya",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{12}{5}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{23}{80}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=12/5. Diperoleh a=3/40, b=1/10; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{80}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{529}{6400}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1311/6400 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{23}{160}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=12/5. Diperoleh a=3/40, b=1/10; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-073",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a4e39430a826775cfa3c16",
+        "teks": "Pada grafik fungsi densitas peluang $f(x)$ dari suatu variabel acak kontinu $X$, luas daerah di bawah kurva yang dibatasi oleh garis $x = a$ dan $x = b$ serta sumbu-$x$ merepresentasikan ....",
+        "jawaban": "peluang variabel acak bernilai pada interval $a \\le X \\le b$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{305}{102}$. Tentukan $P(1<X<4)$.",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=305/102. Diperoleh a=4/85, b=7/85; integralkan ax+b antara 1 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/25 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=305/102. Diperoleh a=4/85, b=7/85; integralkan ax+b antara 1 dan 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-074",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "234a84a610c6e374bc05c1cc",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=0$ dan $x=6$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{x+1}{24}$. Nilai dari $P(X < 2)$ adalah ....",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{530}{81}$. Tentukan $P(4<X<8)$.",
+      "jawaban_benar": "$\\frac{64}{135}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=530/81. Diperoleh a=1/54, b=1/135; integralkan ax+b antara 4 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{71}{135}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4096}{18225}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4544/18225 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{32}{135}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=530/81. Diperoleh a=1/54, b=1/135; integralkan ax+b antara 4 dan 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-075",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a02771365039a94cba775a16",
+        "teks": "Seorang pekerja magang mencatat durasi fokus kerja harian yang tersebar secara merata antara 30 menit hingga 150 menit. Jika $X$ menyatakan durasi waktu fokus tersebut (dalam menit), peluang pekerja tersebut fokus dalam rentang 50 menit hingga 90 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{164}{33}$. Tentukan $P(3<X<7)$.",
+      "jawaban_benar": "$\\frac{13}{22}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 3 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{22}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{169}{484}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 117/484 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{44}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=164/33. Diperoleh a=1/44, b=3/88; integralkan ax+b antara 3 dan 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-076",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d21267402a9ac2e7a8dfc90d",
+        "teks": "Seorang atlet renang mencatat waktu latihan fisik tambahan yang tersebar merata dari 15 menit hingga 75 menit. Jika durasi latihan dinyatakan oleh variabel acak kontinu $X$, peluang atlet tersebut berlatih dalam rentang waktu antara 25 menit hingga 65 menit adalah ....",
+        "jawaban": "$\\frac{2}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{44}{9}$. Tentukan $P(3<X<7)$.",
+      "jawaban_benar": "$\\frac{7}{12}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=44/9. Diperoleh a=1/48, b=1/24; integralkan ax+b antara 3 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{49}{144}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 35/144 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=44/9. Diperoleh a=1/48, b=1/24; integralkan ax+b antara 3 dan 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-077",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0137326ab94e36014c3b54ce",
+        "teks": "Berdasarkan representasi grafisnya, fungsi peluang dari suatu variabel acak kontinu disajikan dalam bentuk ....",
+        "jawaban": "kurva kontinu tanpa titik-titik diskret",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{76}{15}$. Tentukan $P(1<X<7)$.",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=76/15. Diperoleh a=1/40, b=1/40; integralkan ax+b antara 1 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/16 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=76/15. Diperoleh a=1/40, b=1/40; integralkan ax+b antara 1 dan 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-078",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d08c7b3d19bef3d35fff9c40",
+        "teks": "Pada variabel acak kontinu, peluang suatu kejadian dalam suatu selang nilai tertentu dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{356}{69}$. Tentukan $P(5<X<6)$.",
+      "jawaban_benar": "$\\frac{61}{368}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=356/69. Diperoleh a=5/184, b=3/184; integralkan ax+b antara 5 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{307}{368}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3721}{135424}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 18727/135424 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{61}{736}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=356/69. Diperoleh a=5/184, b=3/184; integralkan ax+b antara 5 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-079",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8f424773b3b47440d11deba",
+        "teks": "Seorang siswa mengikuti sesi bimbingan belajar mandiri selama 3 jam setiap sore, dari pukul 09.00—12.00. Ia mencatat waktu efektif belajar setiap hari dalam satuan menit. Berdasarkan pengamatan, waktu efektif tersebut tersebar merata dari 50 menit hingga 150 menit. Misalkan $X$ adalah variabel acak kontinu yang menyatakan lama waktu efektif belajar (dalam menit). Peluang bahwa siswa tersebut belajar efektif dalam rentang waktu dari 75 menit hingga 110 menit adalah ....",
+        "jawaban": "$\\frac{7}{20}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{119}{27}$. Tentukan $P(4<X<6)$.",
+      "jawaban_benar": "$\\frac{8}{21}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=119/27. Diperoleh a=2/63, b=2/63; integralkan ax+b antara 4 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{21}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{64}{441}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 104/441 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4}{21}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=119/27. Diperoleh a=2/63, b=2/63; integralkan ax+b antara 4 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-080",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b7c9976e37b7f4f1ca0e008",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=1$ dan $x=6$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{2x+1}{40}$, dan bernilai $0$ untuk nilai $x$ lainnya. Jika diketahui $P(X \\ge k) = \\frac{11}{20}$, nilai batas $k$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{7}{3}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{9}{32}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=7/3. Diperoleh a=1/16, b=1/8; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{32}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{81}{1024}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 207/1024 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9}{64}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=7/3. Diperoleh a=1/16, b=1/8; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-081",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0725fdf27d54ec3e7db82ca",
+        "teks": "Seorang teknisi menguji ketahanan baterai gawai dalam rentang waktu 60 menit hingga 240 menit. Misalkan $T$ adalah variabel acak kontinu yang menyatakan durasi waktu layar menyala (dalam menit) dengan fungsi densitas peluang:\n$$f(t) = \\begin{cases} \\frac{1}{180}, & 60 \\le t \\le 240 \\\\ 0, & t < 60 \\text{ atau } t > 240 \\end{cases}$$\nJika diketahui gawai tersebut telah menyala selama minimal 120 menit, peluang bahwa gawai tersebut mati sebelum mencapai 180 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{82}{33}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{13}{44}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=82/33. Diperoleh a=1/11, b=3/44; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{44}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{169}{1936}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 403/1936 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{88}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=82/33. Diperoleh a=1/11, b=3/44; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-082",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5261bee5e95c7848caf86e7",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi peluang sepotong yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} ax, & 0 \\le x < 2 \\\\ b, & 2 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nAgar fungsi $f(x)$ kontinu pada interval $[0, 4]$ dan merupakan fungsi densitas peluang yang sah, nilai dari $P(1 \\le X \\le 3)$ adalah ....",
+        "jawaban": "$\\frac{7}{12}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{19}{5}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{1}{10}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=19/5. Diperoleh a=2/45, b=1/30; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{10}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/100 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{20}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=19/5. Diperoleh a=2/45, b=1/30; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-083",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e00cd5ba4faffe3206865783",
+        "teks": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ didefinisikan sebagai:\n$$F(x) = \\begin{cases} 0, & x < 2 \\\\ c(x-2)^2, & 2 \\le x \\le 6 \\\\ 1, & x > 6 \\end{cases}$$\nJika diketahui $P(X > k) = \\frac{7}{16}$ untuk nilai $2 \\le k \\le 6$, maka nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{445}{69}$. Tentukan $P(4<X<8)$.",
+      "jawaban_benar": "$\\frac{54}{115}$",
+      "alasan_benar": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=445/69. Diperoleh a=2/115, b=3/230; integralkan ax+b antara 4 dan 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{115}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2916}{13225}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3294/13225 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{27}{115}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 100/2 a+10b=1. Integral x f(x) memberi 1000/3 a+100/2 b=445/69. Diperoleh a=2/115, b=3/230; integralkan ax+b antara 4 dan 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-084",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51236606641a2933f50d3a6d",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang berbentuk kurva segitiga simetris:\n$$f(x) = \\begin{cases} c x, & 0 \\le x \\le 2 \\\\ c(4 - x), & 2 < x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai peluang bahwa simpangan nilai $X$ terhadap nilai tengah $2$ tidak lebih dari $1$ satuan, yaitu $P(|X - 2| \\le 1)$, adalah ....",
+        "jawaban": "$\\frac{3}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{35}{8}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{4}{49}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=35/8. Diperoleh a=3/98, b=1/28; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{45}{49}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{2401}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 180/2401 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{49}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=35/8. Diperoleh a=3/98, b=1/28; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-085",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f82d9af1958c683b6dc81c43",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=2$ dan $x=8$, dinyatakan dengan fungsi densitas peluang $f(x)=\\frac{2x+3}{78}$, dan bernilai $0$ untuk nilai $x$ lainnya. Nilai dari peluang $P(X^2 - 9X + 18 < 0)$ adalah ....",
+        "jawaban": "$\\frac{6}{13}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{35}{8}$. Tentukan $P(3<X<5)$.",
+      "jawaban_benar": "$\\frac{31}{98}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=35/8. Diperoleh a=3/98, b=1/28; integralkan ax+b antara 3 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{67}{98}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{961}{9604}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2077/9604 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{196}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=35/8. Diperoleh a=3/98, b=1/28; integralkan ax+b antara 3 dan 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-086",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31f1439f67e8a3cbaed4d733",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang simetris berbentuk:\n$$f(x) = \\begin{cases} k(x-1), & 1 \\le x < 3 \\\\ k(5-x), & 3 \\le x \\le 5 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari peluang bersyarat $P(X > 2 \\mid X < 4)$ adalah ....",
+        "jawaban": "$\\frac{6}{7}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{161}{39}$. Tentukan $P(5<X<6)$.",
+      "jawaban_benar": "$\\frac{17}{91}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=161/39. Diperoleh a=2/91, b=6/91; integralkan ax+b antara 5 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{74}{91}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{289}{8281}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1258/8281 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17}{182}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=161/39. Diperoleh a=2/91, b=6/91; integralkan ax+b antara 5 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-087",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14c57ea91b51703d55996fd8",
+        "teks": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ dinyatakan oleh:\n$$F(x) = \\begin{cases} 0, & x < 0 \\\\ ax^2 + bx, & 0 \\le x \\le 2 \\\\ 1, & x > 2 \\end{cases}$$\nJika diketahui $P(X \\le 1) = \\frac{3}{8}$, maka nilai fungsi densitas peluang $f(x)$ pada saat $x = 1,5$ adalah ....",
+        "jawaban": "$\\frac{5}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{50}{21}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=50/21. Diperoleh a=1/14, b=3/28; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 10/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=50/21. Diperoleh a=1/14, b=3/28; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-088",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f842a8dd72a5c9cdf1e21e67",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} c(4-x), & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika $k$ adalah suatu konstanta yang memenuhi $P(X > k) = \\frac{1}{4}$, maka nilai dari peluang bersyarat $P(X \\ge 1 \\mid X \\le k)$ adalah ....",
+        "jawaban": "$\\frac{5}{12}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le T_1$ dan nol di luar interval. Diketahui $E(X)=\\frac{172}{33}$. Tentukan $P(2<X<7)$.",
+      "jawaban_benar": "$\\frac{245}{352}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=172/33. Diperoleh a=5/176, b=1/88; integralkan ax+b antara 2 dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{107}{352}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{60025}{123904}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 26215/123904 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{245}{704}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=172/33. Diperoleh a=5/176, b=1/88; integralkan ax+b antara 2 dan 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-089",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e76fb34d695968347b8aa316",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{3}{2}(1 - x^2), & 0 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika peristiwa $A$ didefinisikan sebagai kejadian saat $X \\le \\frac{1}{2}$ dan peristiwa $B$ adalah kejadian saat $\\frac{1}{3} \\le X \\le \\frac{2}{3}$, maka nilai peluang gabungan $P(A \\cup B)$ adalah ....",
+        "jawaban": "$\\frac{23}{27}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 6$ dan nol di luar interval. Diketahui $E(X)=\\frac{93}{25}$. Tentukan $P(3<X<5)$.",
+      "jawaban_benar": "$\\frac{31}{75}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=93/25. Diperoleh a=1/25, b=7/150; integralkan ax+b antara 3 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{44}{75}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{961}{5625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1364/5625 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{150}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=93/25. Diperoleh a=1/25, b=7/150; integralkan ax+b antara 3 dan 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-090"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a370da00fd267ddf9af2039f",
+        "teks": "Seorang pengrajin keramik melakukan proses pembakaran tungku setiap hari. Waktu pembakaran efektif (dalam menit) menyebar merata dan dimodelkan oleh variabel acak kontinu $X$ pada interval $50 \\le x \\le 250$ dengan fungsi densitas peluang seragam. Jika diketahui pembakaran telah berlangsung setidaknya selama $100$ menit, berapakah peluang pembakaran tersebut akan selesai dalam waktu tidak lebih dari $190$ menit?",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 4$ dan nol di luar interval. Diketahui $E(X)=\\frac{38}{15}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=38/15. Diperoleh a=1/10, b=1/20; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/25 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=38/15. Diperoleh a=1/10, b=1/20; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-091"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a3d85fd9c578d4e8c9f0efda",
+        "teks": "Dalam masa perawatan mesin, sebuah kompresor industri dioperasikan tidak lebih dari $360$ menit per siklus, dengan durasi $X$ (dalam menit) memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{360}, & 0 \\le x \\le 360 \\\\ 0, & x < 0 \\text{ atau } x > 360 \\end{cases}$$\nSuatu selang waktu $[180 - k, 180 + k]$ dirancang sedemikian sehingga peluang durasi operasi mesin berada dalam rentang tersebut tepat bernilai $\\frac{2}{3}$. Nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$120$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 8$ dan nol di luar interval. Diketahui $E(X)=\\frac{44}{9}$. Tentukan $P(2<X<4)$.",
+      "jawaban_benar": "$\\frac{5}{24}$",
+      "alasan_benar": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=44/9. Diperoleh a=1/48, b=1/24; integralkan ax+b antara 2 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{24}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{25}{576}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 95/576 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{48}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 64/2 a+8b=1. Integral x f(x) memberi 512/3 a+64/2 b=44/9. Diperoleh a=1/48, b=1/24; integralkan ax+b antara 2 dan 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-092"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ad2c7bf5080f7c6f128540c",
+        "teks": "Variabel acak kontinu $X$ menyatakan waktu tunggu (dalam jam) di suatu antrean dan memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{4}x^3, & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai peluang bersyarat bahwa $X$ bernilai lebih dari $1$ jam, jika diketahui $X$ bernilai tidak lebih dari $\\sqrt{3}$ jam, yaitu $P(X > 1 \\mid X \\le \\sqrt{3})$, adalah ....",
+        "jawaban": "$\\frac{8}{9}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 6$ dan nol di luar interval. Diketahui $E(X)=\\frac{63}{17}$. Tentukan $P(2<X<5)$.",
+      "jawaban_benar": "$\\frac{19}{34}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=63/17. Diperoleh a=2/51, b=5/102; integralkan ax+b antara 2 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{34}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{361}{1156}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 285/1156 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{68}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=63/17. Diperoleh a=2/51, b=5/102; integralkan ax+b antara 2 dan 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-093"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b518662dc78e05cfc9e39045",
+        "teks": "Sebuah stasiun pengisian kendaraan listrik melayani pengisian daya baterai dengan durasi paling lama $120$ menit per sesi. Pengemudi tidak dapat memulai pengisian sebelum pukul 13.00 dan wajib melepaskan soket daya paling lambat pukul 15.00. Waktu pengisian daya baterai (dalam menit) dimodelkan oleh variabel acak kontinu $X$ dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{120}, & 0 \\le x \\le 120 \\\\ 0, & x < 0 \\text{ atau } x > 120 \\end{cases}$$\nJika diketahui suatu kendaraan telah mengisi daya lebih dari $40$ menit, berapakah peluang kendaraan tersebut menyelesaikan pengisian daya dalam waktu tidak lebih dari $90$ menit?",
+        "jawaban": "$\\frac{5}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 7$ dan nol di luar interval. Diketahui $E(X)=\\frac{161}{39}$. Tentukan $P(2<X<3)$.",
+      "jawaban_benar": "$\\frac{11}{91}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=161/39. Diperoleh a=2/91, b=6/91; integralkan ax+b antara 2 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{80}{91}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{121}{8281}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 880/8281 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11}{182}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=161/39. Diperoleh a=2/91, b=6/91; integralkan ax+b antara 2 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-094"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20e822a6abe31956ee338fc5",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang berbentuk linear:\n$$f(x) = \\begin{cases} ax + b, & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika diketahui bahwa $P(X < 1) = \\frac{1}{3}$, maka nilai dari $P\\left(X > \\frac{3}{2}\\right)$ adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 6$ dan nol di luar interval. Diketahui $E(X)=\\frac{93}{25}$. Tentukan $P(2<X<5)$.",
+      "jawaban_benar": "$\\frac{14}{25}$",
+      "alasan_benar": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=93/25. Diperoleh a=1/25, b=7/150; integralkan ax+b antara 2 dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{25}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{196}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 154/625 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{25}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 36/2 a+6b=1. Integral x f(x) memberi 216/3 a+36/2 b=93/25. Diperoleh a=1/25, b=7/150; integralkan ax+b antara 2 dan 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-095"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39a98ae0b471af5af2cf4ea8",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{3}{4}(1 - x^2), & -1 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nPeluang bahwa nilai $X$ berada pada rentang yang memenuhi pertidaksamaan $|X| \\le \\frac{1}{2}$ adalah ....",
+        "jawaban": "$\\frac{11}{16}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 4$ dan nol di luar interval. Diketahui $E(X)=\\frac{34}{15}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{9}{40}$",
+      "alasan_benar": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=34/15. Diperoleh a=1/20, b=3/20; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{40}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{81}{1600}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 279/1600 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9}{80}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 16/2 a+4b=1. Integral x f(x) memberi 64/3 a+16/2 b=34/15. Diperoleh a=1/20, b=3/20; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-096"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a53e47f694c050758f9d04cd",
+        "teks": "Waktu penguraian suatu zat aktif di dalam tubuh (dalam jam) dimodelkan oleh variabel acak kontinu $X$ dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{k}{(x+1)^2}, & 0 \\le x \\le 3 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nPeluang bahwa zat aktif tersebut terurai dalam rentang waktu $1$ hingga $3$ jam adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 5$ dan nol di luar interval. Diketahui $E(X)=\\frac{115}{36}$. Tentukan $P(3<X<4)$.",
+      "jawaban_benar": "$\\frac{4}{15}$",
+      "alasan_benar": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=115/36. Diperoleh a=1/15, b=1/30; integralkan ax+b antara 3 dan 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{15}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{225}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 44/225 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{15}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 25/2 a+5b=1. Integral x f(x) memberi 125/3 a+25/2 b=115/36. Diperoleh a=1/15, b=1/30; integralkan ax+b antara 3 dan 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-097"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6bda0083c97c4c261b86da1",
+        "teks": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ didefinisikan sebagai:\n$$F(x) = \\begin{cases} 0, & x < 0 \\\\ c(4x - x^2), & 0 \\le x \\le 2 \\\\ 1, & x > 2 \\end{cases}$$\nNilai dari peluang bersyarat $P(X \\ge 1 \\mid X \\le 1{,}5)$ adalah ....",
+        "jawaban": "$\\frac{1}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 7$ dan nol di luar interval. Diketahui $E(X)=\\frac{217}{48}$. Tentukan $P(5<X<6)$.",
+      "jawaban_benar": "$\\frac{3}{14}$",
+      "alasan_benar": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=217/48. Diperoleh a=1/28, b=1/56; integralkan ax+b antara 5 dan 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{14}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{196}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 33/196 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{28}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 49/2 a+7b=1. Integral x f(x) memberi 343/3 a+49/2 b=217/48. Diperoleh a=1/28, b=1/56; integralkan ax+b antara 5 dan 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-098"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f1c45a3b46341eff4be245e2",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} k(x + 1), & 0 \\le x \\le 2 \\\\ k(5 - x), & 2 < x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(|X - 2| \\le 1)$ adalah ....",
+        "jawaban": "$\\frac{5}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{279}{50}$. Tentukan $P(1<X<2)$.",
+      "jawaban_benar": "$\\frac{13}{225}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=279/50. Diperoleh a=4/225, b=7/225; integralkan ax+b antara 1 dan 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{212}{225}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{169}{50625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2756/50625 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{450}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=279/50. Diperoleh a=4/225, b=7/225; integralkan ax+b antara 1 dan 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-099"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "595607c7e6ac6a360317fe7a",
+        "teks": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} k(2x - x^2), & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika $m$ adalah median dari $X$ (nilai sedemikian sehingga $P(X \\le m) = 0{,}5$), maka nilai dari $P(X \\ge 1{,}5 \\mid X \\ge m)$ adalah ....",
+        "jawaban": "$\\frac{5}{16}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_densitas_parameter_ganda",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X berbentuk $f(x)=ax+b$ pada $0\\le x\\le 9$ dan nol di luar interval. Diketahui $E(X)=\\frac{225}{41}$. Tentukan $P(1<X<3)$.",
+      "jawaban_benar": "$\\frac{52}{369}$",
+      "alasan_benar": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=225/41. Diperoleh a=2/123, b=14/369; integralkan ax+b antara 1 dan 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{317}{369}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2704}{136161}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 16484/136161 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{26}{369}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Integral densitas memberi 81/2 a+9b=1. Integral x f(x) memberi 729/3 a+81/2 b=225/41. Diperoleh a=2/123, b=14/369; integralkan ax+b antara 1 dan 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-hard-bt01-100"
     }
   ]
 }

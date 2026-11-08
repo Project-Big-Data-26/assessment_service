@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import List, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+from .visual_assets import VisualSpec
 
 Level = Literal["easy", "medium", "hard"]
 Kognitif = Literal["C1", "C2", "C3", "C4", "C5", "C6"]
@@ -31,7 +32,7 @@ class Acuan(_Strict):
     orisinal: sumber "siswa"/"guru" -> `halaman` + `kutipan` (potongan VERBATIM materi
               buku yang menjadi dasar soal; harus memuat konsep/rumus yang diuji).
     """
-    sumber: Literal["pretest", "siswa", "guru"]
+    sumber: Literal["pretest", "siswa", "guru", "exercise_validated", "pretest_validated"]
     id: Optional[str] = None
     halaman: Optional[int] = None
     bagian: Optional[str] = None
@@ -39,6 +40,8 @@ class Acuan(_Strict):
     teks: Optional[str] = None
     jawaban: Optional[str] = None
     kutipan: Optional[str] = None
+    snapshot: Optional[str] = None
+    source_sha256: Optional[str] = None
 
 
 class Soal(_Strict):
@@ -57,6 +60,7 @@ class Soal(_Strict):
     # deskripsi_gambar = fakta yang dibaca generator dari gambar (angka, label, bentuk); TIDAK diberikan ke solver.
     gambar: List[str] = []
     deskripsi_gambar: Optional[str] = Field(None, min_length=10)
+    visual_spec: Optional[VisualSpec] = None
     pertanyaan: str = Field(min_length=3)
     jawaban_benar: str = Field(min_length=1)
     alasan_benar: str = Field(min_length=3)
@@ -74,18 +78,22 @@ class Soal(_Strict):
             raise ValueError("soal bergambar wajib mengisi deskripsi_gambar")
         if self.deskripsi_gambar and not self.gambar:
             raise ValueError("deskripsi_gambar diisi tetapi gambar kosong")
+        if self.visual_spec and not self.gambar:
+            raise ValueError("visual_spec requires a rendered image")
         if self.tipe_generate == "variasi":
             if self.variasi_cara is None:
                 raise ValueError("variasi wajib mengisi variasi_cara ('angka' atau 'konteks')")
-            if a.sumber == "pretest":
+            if a.sumber in ("pretest", "exercise_validated", "pretest_validated"):
                 if not a.id:
                     raise ValueError("acuan pretest wajib punya id")
+                if a.sumber.endswith("_validated") and not (a.snapshot and a.source_sha256 and a.teks and a.jawaban):
+                    raise ValueError("validated reference requires frozen snapshot, hash, original text and key")
             elif not (a.halaman and a.teks and a.jawaban):
                 raise ValueError("acuan siswa/guru untuk variasi wajib halaman + teks + jawaban")
         else:
             if self.variasi_cara is not None:
                 raise ValueError("orisinal tidak boleh punya variasi_cara")
-            if a.sumber == "pretest" or not (a.halaman and a.kutipan):
+            if a.sumber in ("pretest", "exercise_validated", "pretest_validated") or not (a.halaman and a.kutipan):
                 raise ValueError("acuan orisinal wajib sumber siswa/guru + halaman + kutipan materi")
         return self
 

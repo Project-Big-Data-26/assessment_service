@@ -1,686 +1,2738 @@
 {
- "book": "kelas12",
- "bab_no": 1,
- "subbab": "A",
- "level": "easy",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "id": "kelas12-b01-a-easy-bt01-001",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0028-latihan-1-1-1a"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "dua suku berikutnya aritmetika",
-   "alasan_level": "menemukan beda tetap lalu meneruskan dua suku, satu langkah langsung",
-   "stimulus": null,
-   "pertanyaan": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: 45, 41, 37, 33, ..., ...",
-   "jawaban_benar": "29, 25",
-   "alasan_benar": "beda tetap $-4$, sehingga suku berikutnya $33-4=29$ dan $29-4=25$",
-   "distraktor": [
+  "book": "kelas12",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "29, 24",
-     "alasan": "salah menghitung pengurangan pada suku kedua"
+      "id": "kelas12-b01-a-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0028-latihan-1-1-1a"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "dua suku berikutnya aritmetika",
+      "alasan_level": "menemukan beda tetap lalu meneruskan dua suku, satu langkah langsung",
+      "stimulus": null,
+      "pertanyaan": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: 45, 41, 37, 33, ..., ...",
+      "jawaban_benar": "29, 25",
+      "alasan_benar": "beda tetap $-4$, sehingga suku berikutnya $33-4=29$ dan $29-4=25$",
+      "distraktor": [
+        {
+          "teks": "29, 24",
+          "alasan": "salah menghitung pengurangan pada suku kedua"
+        },
+        {
+          "teks": "37, 41",
+          "alasan": "mengira barisan bertambah 4 (arah dibalik)"
+        },
+        {
+          "teks": "25, 21",
+          "alasan": "melompati satu suku sehingga mulai dari 25"
+        }
+      ],
+      "pembahasan": "Selisih tiap suku berurutan $-4$. Suku ke-5 = 29, suku ke-6 = 25.",
+      "catatan": null,
+      "variasi_cara": "angka"
     },
     {
-     "teks": "37, 41",
-     "alasan": "mengira barisan bertambah 4 (arah dibalik)"
+      "id": "kelas12-b01-a-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0028-latihan-1-1-1c"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "dua suku berikutnya aritmetika",
+      "alasan_level": "barisan bilangan negatif dengan beda positif, satu langkah langsung",
+      "stimulus": null,
+      "pertanyaan": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: -30, -24, -18, ..., ...",
+      "jawaban_benar": "-12, -6",
+      "alasan_benar": "beda tetap $+6$, sehingga $-18+6=-12$ dan $-12+6=-6$",
+      "distraktor": [
+        {
+          "teks": "-12, -7",
+          "alasan": "salah menghitung pada suku kedua"
+        },
+        {
+          "teks": "-36, -42",
+          "alasan": "membalik tanda beda sehingga barisan turun"
+        },
+        {
+          "teks": "-6, 0",
+          "alasan": "melompati satu suku"
+        }
+      ],
+      "pembahasan": "Beda = $-24-(-30)=6$. Dua suku berikutnya -12 dan -6.",
+      "catatan": null,
+      "variasi_cara": "angka"
     },
     {
-     "teks": "25, 21",
-     "alasan": "melompati satu suku sehingga mulai dari 25"
+      "id": "kelas12-b01-a-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0028-latihan-1-1-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "suku ke-n aritmetika",
+      "alasan_level": "mencari beda lalu memakai rumus $U_n=a+(n-1)b$",
+      "stimulus": null,
+      "pertanyaan": "Tentukan suku ke-50 dari barisan berikut: 5, 12, 19, 26, ...",
+      "jawaban_benar": "348",
+      "alasan_benar": "$b=7$, $U_{50}=5+49\\times 7=348$",
+      "distraktor": [
+        {
+          "teks": "355",
+          "alasan": "memakai $n$ bukan $n-1$: $5+50\\times 7$"
+        },
+        {
+          "teks": "343",
+          "alasan": "lupa menambahkan suku pertama: $49\\times 7$"
+        },
+        {
+          "teks": "341",
+          "alasan": "memakai $n-2$: $5+48\\times 7$"
+        }
+      ],
+      "pembahasan": "$b=12-5=7$. $U_{50}=a+49b=5+343=348$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0029-latihan-1-1-5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita aritmetika",
+      "alasan_level": "soal cerita dengan pola bertambah teratur, mencari beda lalu suku ke-12",
+      "stimulus": null,
+      "pertanyaan": "Bayu berlatih lari setiap pagi. Pada hari pertama ia berlari 6 putaran, hari kedua 11 putaran, dan hari ketiga 16 putaran. Banyak putaran yang ia lakukan setiap hari selalu bertambah secara teratur dengan pola yang sama. Latihan berlangsung hingga hari ke-12. Berapa banyak putaran yang dilakukan Bayu pada hari ke-12?",
+      "jawaban_benar": "61",
+      "alasan_benar": "$b=5$, $U_{12}=6+11\\times 5=61$",
+      "distraktor": [
+        {
+          "teks": "66",
+          "alasan": "memakai $n$ bukan $n-1$: $6+12\\times 5$"
+        },
+        {
+          "teks": "56",
+          "alasan": "memakai $n-2$ kali beda"
+        },
+        {
+          "teks": "55",
+          "alasan": "lupa menambah suku pertama: $11\\times 5$"
+        }
+      ],
+      "pembahasan": "Beda 5. $U_{12}=a+11b=6+55=61$ putaran.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0036-latihan-1-2-1b"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "dua suku berikutnya geometri",
+      "alasan_level": "mengenali rasio tetap pada barisan menurun, satu langkah langsung",
+      "stimulus": null,
+      "pertanyaan": "Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 625, 125, 25, ..., ...",
+      "jawaban_benar": "5, 1",
+      "alasan_benar": "rasio $\\frac{1}{5}$: $25\\times\\frac{1}{5}=5$, $5\\times\\frac{1}{5}=1$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$, $\\frac{1}{25}$",
+          "alasan": "mengira suku berikutnya langsung memakai rasio dari 1"
+        },
+        {
+          "teks": "5, 0",
+          "alasan": "mengira barisan berkurang dengan selisih tetap"
+        },
+        {
+          "teks": "-75, -175",
+          "alasan": "memperlakukan barisan sebagai aritmetika dengan beda $-100$"
+        }
+      ],
+      "pembahasan": "Rasio = $125:625=\\frac{1}{5}$. Dua suku berikutnya 5 dan 1.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0036-latihan-1-2-3"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "suku ke-n geometri",
+      "alasan_level": "mencari rasio lalu memakai rumus $U_n=ar^{n-1}$",
+      "stimulus": null,
+      "pertanyaan": "Tentukan suku ke-9 dari barisan 5, 10, 20, 40, ...",
+      "jawaban_benar": "1.280",
+      "alasan_benar": "$r=2$, $U_9=5\\times 2^{8}=1.280$",
+      "distraktor": [
+        {
+          "teks": "2.560",
+          "alasan": "memakai pangkat $n$ bukan $n-1$: $5\\times 2^9$"
+        },
+        {
+          "teks": "640",
+          "alasan": "memakai pangkat $n-2$: $5\\times 2^7$"
+        },
+        {
+          "teks": "85",
+          "alasan": "menganggap barisan aritmetika dengan beda 10"
+        }
+      ],
+      "pembahasan": "$r=10:5=2$. $U_9=ar^{8}=5\\times 256=1.280$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0036-latihan-1-2-5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita geometri",
+      "alasan_level": "pola penggandaan 4 kali tiap hari, menentukan suku ke-5",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengirim pesan undangan kepada 4 orang temannya pada hari pertama. Setiap hari berikutnya, tiap penerima baru meneruskan undangan itu kepada 4 orang lain yang belum pernah menerimanya. Berapa banyak orang yang baru menerima undangan pada hari ke-5?",
+      "jawaban_benar": "1.024",
+      "alasan_benar": "$U_n=4^n$, jadi $U_5=4^5=1.024$",
+      "distraktor": [
+        {
+          "teks": "256",
+          "alasan": "memakai $4^4$ (pangkat $n-1$)"
+        },
+        {
+          "teks": "20",
+          "alasan": "mengalikan $4\\times 5$"
+        },
+        {
+          "teks": "1.364",
+          "alasan": "menjumlahkan semua penerima dari hari 1 sampai 5, padahal ditanya yang baru pada hari ke-5"
+        }
+      ],
+      "pembahasan": "Hari 1: 4, hari 2: 16, ..., hari ke-5: $4^5=1.024$ orang.",
+      "catatan": null,
+      "variasi_cara": "konteks"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "bagian": "Contoh 1.3",
+        "nomor": "1",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 3 dan rasionya adalah 2. Tuliskan lima suku pertama dari barisan tersebut.",
+        "jawaban": "3, 6, 12, 24, 48"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "menulis suku awal geometri",
+      "alasan_level": "mengalikan suku sebelumnya dengan rasio secara berulang",
+      "stimulus": null,
+      "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 7 dan rasionya adalah 3. Tuliskan empat suku pertama dari barisan tersebut.",
+      "jawaban_benar": "7, 21, 63, 189",
+      "alasan_benar": "kalikan suku sebelumnya dengan 3",
+      "distraktor": [
+        {
+          "teks": "7, 10, 13, 16",
+          "alasan": "menambah 3 (dikira aritmetika)"
+        },
+        {
+          "teks": "7, 21, 147, 1.029",
+          "alasan": "mengalikan dengan 7 pada suku berikutnya setelah suku kedua"
+        },
+        {
+          "teks": "21, 63, 189, 567",
+          "alasan": "mulai dari suku kedua, suku pertama dilewati"
+        }
+      ],
+      "pembahasan": "$U_1=7$, $U_2=21$, $U_3=63$, $U_4=189$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Contoh 1.4",
+        "nomor": "1",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 20 dan nilai suku ke-4 adalah 540. Tentukan rasio dari barisan tersebut.",
+        "jawaban": "3"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rasio dari a dan Un",
+      "alasan_level": "memakai $U_4=ar^3$ lalu menarik akar pangkat tiga",
+      "stimulus": null,
+      "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 5 dan nilai suku ke-4 adalah 320. Tentukan rasio dari barisan tersebut.",
+      "jawaban_benar": "4",
+      "alasan_benar": "$5r^3=320$, $r^3=64$, $r=4$",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "menarik akar pangkat dua dari 64"
+        },
+        {
+          "teks": "16",
+          "alasan": "membagi 64 dengan 4 alih-alih menarik akar pangkat tiga"
+        },
+        {
+          "teks": "64",
+          "alasan": "berhenti pada $r^3=64$ tanpa menarik akar"
+        }
+      ],
+      "pembahasan": "$U_4=ar^3$ sehingga $r^3=320:5=64$ dan $r=4$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "bagian": "Contoh 1.2",
+        "nomor": "a",
+        "teks": "Diketahui bahwa pada bulan ke-5, uang tabungan Dina sebesar Rp70.000,00, sedangkan pada bulan ke-9 uang tabungannya menjadi Rp90.000,00.",
+        "jawaban": "Rp5.000,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "beda dari dua suku",
+      "alasan_level": "menghitung beda dari dua suku yang diketahui: selisih nilai dibagi selisih urutan",
+      "stimulus": null,
+      "pertanyaan": "Rudi menabung di koperasi sekolah dan uang tabungannya setiap bulan bertambah dengan selisih yang tetap. Diketahui bahwa pada bulan ke-3 tabungan Rudi sebesar Rp45.000,00, sedangkan pada bulan ke-8 tabungannya menjadi Rp95.000,00. Berapakah selisih kenaikan tabungan Rudi setiap bulan?",
+      "jawaban_benar": "Rp10.000,00",
+      "alasan_benar": "$b=\\frac{95.000-45.000}{8-3}=10.000$",
+      "distraktor": [
+        {
+          "teks": "Rp12.500,00",
+          "alasan": "membagi dengan $8-3-1=4$"
+        },
+        {
+          "teks": "Rp50.000,00",
+          "alasan": "hanya mengurangkan, lupa membagi dengan selisih bulan"
+        },
+        {
+          "teks": "Rp15.000,00",
+          "alasan": "membagi tabungan bulan ke-3 dengan 3"
+        }
+      ],
+      "pembahasan": "$U_8-U_3=5b=50.000$ sehingga $b=10.000$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0029-latihan-1-1-4a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "tabel pola tetap",
+      "alasan_level": "menyadari pola tambah tetap pada tabel lalu menghitung total pada minggu ke-15",
+      "stimulus": "Setiap minggu, Pak Joko mengumpulkan 7 kg kertas bekas untuk didaur ulang. Jumlah total kertas yang telah dikumpulkan dicatat oleh petugas bank sampah. Data pencatatan disajikan pada tabel berikut.\n\n|Minggu ke-|Kertas yang dikumpulkan (kg)|Total terkumpul (kg)|\n|---|---|---|\n|2|7|14|\n|3|7|21|\n|4|7|28|",
+      "pertanyaan": "Berapa total kilogram kertas bekas yang tercatat pada minggu ke-15?",
+      "jawaban_benar": "105",
+      "alasan_benar": "tiap minggu bertambah 7 kg sehingga minggu ke-15 total $7\\times 15=105$",
+      "distraktor": [
+        {
+          "teks": "98",
+          "alasan": "memakai 14 minggu ($n-1$)"
+        },
+        {
+          "teks": "22",
+          "alasan": "menjumlahkan 7 dan 15"
+        },
+        {
+          "teks": "112",
+          "alasan": "memakai 16 minggu ($n+1$)"
+        }
+      ],
+      "pembahasan": "Kolom total bertambah 7 setiap minggu: $7\\times 15=105$ kg.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Contoh 1.4",
+        "nomor": "1",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 20 dan nilai suku ke-4 adalah 540. Tentukan rasio dari barisan tersebut.",
+        "jawaban": "3"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rasio dari a dan Un",
+      "alasan_level": "memakai $U_4=ar^3$ dengan hasil rasio pecahan",
+      "stimulus": null,
+      "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 162 dan nilai suku ke-4 adalah 48. Tentukan rasio dari barisan tersebut.",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "$162r^3=48$, $r^3=\\frac{8}{27}$, $r=\\frac{2}{3}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{27}$",
+          "alasan": "berhenti pada $r^3$ tanpa menarik akar"
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "membalik pembagian (suku pertama dibagi suku ke-4)"
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "memakai pangkat dua sehingga memperoleh $r^2$"
+        }
+      ],
+      "pembahasan": "$r^3=48:162=\\frac{8}{27}$ sehingga $r=\\frac{2}{3}$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "mengenali barisan aritmetika",
+      "alasan_level": "mengenali barisan dengan selisih tetap, tanpa perhitungan panjang",
+      "stimulus": null,
+      "pertanyaan": "Di antara barisan bilangan berikut, yang merupakan barisan aritmetika adalah ....",
+      "jawaban_benar": "7, 12, 17, 22, ...",
+      "alasan_benar": "selisih tiap dua suku berurutan selalu 5",
+      "distraktor": [
+        {
+          "teks": "2, 6, 18, 54, ...",
+          "alasan": "rasio tetap sehingga geometri, bukan aritmetika"
+        },
+        {
+          "teks": "1, 4, 9, 16, ...",
+          "alasan": "selisihnya 3, 5, 7 (tidak tetap)"
+        },
+        {
+          "teks": "3, 5, 8, 12, ...",
+          "alasan": "selisihnya 2, 3, 4 (tidak tetap)"
+        }
+      ],
+      "pembahasan": "Barisan aritmetika memiliki beda tetap. Hanya 7, 12, 17, 22 yang selisihnya selalu 5.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rumus Un aritmetika",
+      "alasan_level": "mencari beda lalu menyusun rumus $U_n=a+(n-1)b$",
+      "stimulus": null,
+      "pertanyaan": "Rumus suku ke-$n$ dari barisan aritmetika 6, 10, 14, 18, ... adalah ....",
+      "jawaban_benar": "$U_n = 4n + 2$",
+      "alasan_benar": "$a=6$, $b=4$: $U_n=6+(n-1)4=4n+2$",
+      "distraktor": [
+        {
+          "teks": "$U_n = 4n + 6$",
+          "alasan": "lupa mengurangi 1 pada $n-1$"
+        },
+        {
+          "teks": "$U_n = 6n + 4$",
+          "alasan": "suku pertama dan beda tertukar"
+        },
+        {
+          "teks": "$U_n = 4n + 10$",
+          "alasan": "memakai $(n+1)$ alih-alih $(n-1)$"
+        }
+      ],
+      "pembahasan": "$a=6$, $b=4$. $U_n=6+4(n-1)=4n+2$. Cek: $U_1=6$, $U_4=18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rasio barisan geometri",
+      "alasan_level": "membagi dua suku berurutan pada barisan dengan tanda berganti",
+      "stimulus": null,
+      "pertanyaan": "Rasio dari barisan geometri 2, -6, 18, -54, ... adalah ....",
+      "jawaban_benar": "-3",
+      "alasan_benar": "$r=\\frac{-6}{2}=-3$",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "mengabaikan tanda negatif"
+        },
+        {
+          "teks": "-8",
+          "alasan": "mengurangkan suku kedua dengan suku pertama (beda, bukan rasio)"
+        },
+        {
+          "teks": "$-\\frac{1}{3}$",
+          "alasan": "membalik pembagian: suku pertama dibagi suku kedua"
+        }
+      ],
+      "pembahasan": "Rasio = suku kedua : suku pertama = $-6:2=-3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "beda barisan aritmetika",
+      "alasan_level": "menghitung selisih dua suku berurutan yang hasilnya negatif",
+      "stimulus": null,
+      "pertanyaan": "Beda dari barisan aritmetika 40, 34, 28, 22, ... adalah ....",
+      "jawaban_benar": "-6",
+      "alasan_benar": "$b=34-40=-6$",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "lupa tanda negatif"
+        },
+        {
+          "teks": "-12",
+          "alasan": "menghitung selisih suku pertama dan ketiga"
+        },
+        {
+          "teks": "-34",
+          "alasan": "mengambil suku kedua sebagai beda"
+        }
+      ],
+      "pembahasan": "Beda = suku kedua - suku pertama = $34-40=-6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "suku ke-n geometri",
+      "alasan_level": "memakai rumus $U_n=ar^{n-1}$ dengan rasio pecahan",
+      "stimulus": null,
+      "pertanyaan": "Suku pertama suatu barisan geometri adalah 81 dan rasionya $\\frac{1}{3}$. Suku ke-5 barisan tersebut adalah ....",
+      "jawaban_benar": "1",
+      "alasan_benar": "$U_5=81\\times\\left(\\frac{1}{3}\\right)^4=1$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "memakai pangkat 5 bukan 4"
+        },
+        {
+          "teks": "27",
+          "alasan": "ini suku ke-2, bukan suku ke-5"
+        },
+        {
+          "teks": "$\\frac{1}{81}$",
+          "alasan": "lupa mengalikan dengan suku pertama"
+        }
+      ],
+      "pembahasan": "$U_5=ar^4=81\\times\\frac{1}{81}=1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pernyataan benar tentang barisan",
+      "alasan_level": "memahami bahwa barisan konstan memenuhi definisi aritmetika (beda 0) dan geometri (rasio 1)",
+      "stimulus": null,
+      "pertanyaan": "Diketahui barisan bilangan 5, 5, 5, 5, .... Pernyataan yang benar tentang barisan tersebut adalah ....",
+      "jawaban_benar": "Barisan aritmetika dengan beda 0 sekaligus barisan geometri dengan rasio 1",
+      "alasan_benar": "selisih dua suku berurutan selalu 0 dan hasil bagi dua suku berurutan selalu 1",
+      "distraktor": [
+        {
+          "teks": "Bukan barisan aritmetika karena sukunya tidak bertambah",
+          "alasan": "mengira beda harus tidak nol"
+        },
+        {
+          "teks": "Barisan geometri dengan rasio 0",
+          "alasan": "salah mengira rasio sama dengan beda"
+        },
+        {
+          "teks": "Barisan aritmetika dengan beda 5",
+          "alasan": "mengira beda sama dengan nilai sukunya"
+        }
+      ],
+      "pembahasan": "$5-5=0$ sehingga beda 0 dan $5:5=1$ sehingga rasio 1.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 21,
+        "kutipan": "Jika kamu menemukan susunan kursi berikut,  dapatkah kamu menentukan dengan tepat berapa banyak kursi pada kotak terakhir?"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita aritmetika",
+      "alasan_level": "soal cerita susunan kursi, mencari suku ke-9 dengan beda tetap",
+      "stimulus": null,
+      "pertanyaan": "Pada sebuah aula, baris pertama terdapat 12 kursi dan setiap baris berikutnya bertambah 4 kursi dari baris sebelumnya. Banyak kursi pada baris ke-9 adalah ....",
+      "jawaban_benar": "44",
+      "alasan_benar": "$U_9=12+8\\times 4=44$",
+      "distraktor": [
+        {
+          "teks": "48",
+          "alasan": "memakai $9\\times 4$ ditambah 12 (n bukan n-1)"
+        },
+        {
+          "teks": "36",
+          "alasan": "lupa menambahkan suku pertama dan hanya $9\\times 4$"
+        },
+        {
+          "teks": "40",
+          "alasan": "memakai $n-2$: $12+7\\times 4$"
+        }
+      ],
+      "pembahasan": "$a=12$, $b=4$, $U_9=a+8b=12+32=44$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-a-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pada tahap berikutnya, setiap partisi kembali dibagi menjadi dua bagian yang sama besar."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "cerita geometri",
+      "alasan_level": "pola penggandaan partisi, menentukan suku ke-6 barisan geometri rasio 2",
+      "stimulus": null,
+      "pertanyaan": "Sebuah blok memori dibagi menjadi 2 partisi yang sama besar pada tahap ke-1. Pada tahap berikutnya, setiap partisi kembali dibagi menjadi dua bagian yang sama besar. Banyak partisi yang terbentuk setelah tahap ke-6 adalah ....",
+      "jawaban_benar": "64",
+      "alasan_benar": "$U_n=2^n$, sehingga $U_6=2^6=64$",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "mengalikan $2\\times 6$"
+        },
+        {
+          "teks": "32",
+          "alasan": "memakai $2^5$ (tahap ke-5)"
+        },
+        {
+          "teks": "128",
+          "alasan": "memakai $2^7$"
+        }
+      ],
+      "pembahasan": "Tahap 1: 2, tahap 2: 4, tahap 3: 8, ..., tahap 6: $2^6=64$.",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6b7252f63ce15b774a718e65",
+        "teks": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: 45, 41, 37, 33, ..., ...",
+        "jawaban": "29, 25",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $70$.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $70$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/7beb930879abc8f103ce0c47.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"d\", 6], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5fe2e457392d91dadac1c142",
+        "teks": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: -30, -24, -18, ..., ...",
+        "jawaban": "-12, -6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $50$.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $50$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f5ef3ba5047bbcb814402be3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "d",
+              4
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"d\", 4], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6c512ce02a40420fa0706c9",
+        "teks": "Tentukan suku ke-50 dari barisan berikut: 5, 12, 19, 26, ...",
+        "jawaban": "348",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $20$.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $20$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/16012e840623176194e44983.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"d\", 6], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9183e92ea381cd6b1873734a",
+        "teks": "Bayu berlatih lari setiap pagi. Pada hari pertama ia berlari 6 putaran, hari kedua 11 putaran, dan hari ketiga 16 putaran. Banyak putaran yang ia lakukan setiap hari selalu bertambah secara teratur dengan pola yang sama. Latihan berlangsung hingga hari ke-12. Berapa banyak putaran yang dilakukan Bayu pada hari ke-12?",
+        "jawaban": "61",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $39$.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $39$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/70ba83df6d4ffc77559338e2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"d\", 9], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb02ea83d1ae7d18a343e43e",
+        "teks": "Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 625, 125, 25, ..., ...",
+        "jawaban": "5, 1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $78$.",
+      "distraktor": [
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $78$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/1a0cc138210002330657a657.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "n",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"d\", 9], [\"n\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "35448ff8dc6a2f2fa737c082",
+        "teks": "Tentukan suku ke-9 dari barisan 5, 10, 20, 40, ...",
+        "jawaban": "1.280",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$57$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $57$.",
+      "distraktor": [
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $57$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6a42a9b6395ac3123b89ed48.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "d",
+              10
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"d\", 10], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f11c6e2e54ef6384a2f38b2b",
+        "teks": "Seorang siswa mengirim pesan undangan kepada 4 orang temannya pada hari pertama. Setiap hari berikutnya, tiap penerima baru meneruskan undangan itu kepada 4 orang lain yang belum pernah menerimanya. Berapa banyak orang yang baru menerima undangan pada hari ke-5?",
+        "jawaban": "1.024",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $30$.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $30$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9e874538d4236338586a2952.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"d\", 8], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ded890ae79395649c693de1b",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 7 dan rasionya adalah 3. Tuliskan empat suku pertama dari barisan tersebut.",
+        "jawaban": "7, 21, 63, 189",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $45$.",
+      "distraktor": [
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $45$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3bcb3215dc3532f2d774345b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"d\", 7], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e60a39d085c1cd14fffd21f8",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 5 dan nilai suku ke-4 adalah 320. Tentukan rasio dari barisan tersebut.",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/cdcd16baee9e8925109020f8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "d",
+              3
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"d\", 3], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "95badad67fb424d92ba03773",
+        "teks": "Rudi menabung di koperasi sekolah dan uang tabungannya setiap bulan bertambah dengan selisih yang tetap. Diketahui bahwa pada bulan ke-3 tabungan Rudi sebesar Rp45.000,00, sedangkan pada bulan ke-8 tabungannya menjadi Rp95.000,00. Berapakah selisih kenaikan tabungan Rudi setiap bulan?",
+        "jawaban": "Rp10.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/995fd9a7c32911c77e70195a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "d",
+              4
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"d\", 4], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e33da9a24d9ee44849733b7a",
+        "teks": "Setiap minggu, Pak Joko mengumpulkan 7 kg kertas bekas untuk didaur ulang. Jumlah total kertas yang telah dikumpulkan dicatat oleh petugas bank sampah. Data pencatatan disajikan pada tabel berikut.\n\n|Minggu ke-|Kertas yang dikumpulkan (kg)|Total terkumpul (kg)|\n|---|---|---|\n|2|7|14|\n|3|7|21|\n|4|7|28|\n\nBerapa total kilogram kertas bekas yang tercatat pada minggu ke-15?",
+        "jawaban": "105",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$59$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $59$.",
+      "distraktor": [
+        {
+          "teks": "$60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $59$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f3392f9b6b4c7ec0365e8aef.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "n",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"d\", 7], [\"n\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d5a511f164f55c7677e27c3f",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 162 dan nilai suku ke-4 adalah 48. Tentukan rasio dari barisan tersebut.",
+        "jawaban": "$\\frac{2}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$53$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $53$.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$106$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $53$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/e5ce262323861e08d3a4bd44.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "d",
+              4
+            ],
+            [
+              "n",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"d\", 4], [\"n\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "763dfb03600b4d09a1724c3d",
+        "teks": "Di antara barisan bilangan berikut, yang merupakan barisan aritmetika adalah ....",
+        "jawaban": "7, 12, 17, 22, ...",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $27$.",
+      "distraktor": [
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $27$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/cf96e11acb4a30ee13db3364.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "d",
+              4
+            ],
+            [
+              "n",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"d\", 4], [\"n\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e715eb192e24039a0304a00",
+        "teks": "Rumus suku ke-$n$ dari barisan aritmetika 6, 10, 14, 18, ... adalah ....",
+        "jawaban": "$U_n = 4n + 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$66$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $66$.",
+      "distraktor": [
+        {
+          "teks": "$67$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$132$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $66$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6494b36cc3801533dff48a2e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"d\", 8], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4f28a7f903a7fdb3a5f44065",
+        "teks": "Rasio dari barisan geometri 2, -6, 18, -54, ... adalah ....",
+        "jawaban": "-3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $29$.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $29$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/568f887ae3ca0a51fda9dfc0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "d",
+              4
+            ],
+            [
+              "n",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"d\", 4], [\"n\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fed55278ba3a295f41963691",
+        "teks": "Beda dari barisan aritmetika 40, 34, 28, 22, ... adalah ....",
+        "jawaban": "-6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $42$.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $42$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/7963b33b9462a39e7dd7c495.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"d\", 8], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a136b81dd3d716d7742514f6",
+        "teks": "Suku pertama suatu barisan geometri adalah 81 dan rasionya $\\frac{1}{3}$. Suku ke-5 barisan tersebut adalah ....",
+        "jawaban": "1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $70$.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $70$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a64496e11275960278413f88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "n",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"d\", 7], [\"n\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c09bfbae113c3dc90ebc5a5e",
+        "teks": "Diketahui barisan bilangan 5, 5, 5, 5, .... Pernyataan yang benar tentang barisan tersebut adalah ....",
+        "jawaban": "Barisan aritmetika dengan beda 0 sekaligus barisan geometri dengan rasio 1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $52$.",
+      "distraktor": [
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $52$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d776335fd75b472c670ae4c0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "d",
+              5
+            ],
+            [
+              "n",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"d\", 5], [\"n\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f0b2cde1d5df23dd28654944",
+        "teks": "Pada sebuah aula, baris pertama terdapat 12 kursi dan setiap baris berikutnya bertambah 4 kursi dari baris sebelumnya. Banyak kursi pada baris ke-9 adalah ....",
+        "jawaban": "44",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $25$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $25$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f371cde6d2d53a82f7617411.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"d\", 6], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "397eeac9b733276177237ac0",
+        "teks": "Sebuah blok memori dibagi menjadi 2 partisi yang sama besar pada tahap ke-1. Pada tahap berikutnya, setiap partisi kembali dibagi menjadi dua bagian yang sama besar. Banyak partisi yang terbentuk setelah tahap ke-6 adalah ....",
+        "jawaban": "64",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $44$.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $44$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d52ae481c6977099157be6cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "d",
+              3
+            ],
+            [
+              "n",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"d\", 3], [\"n\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "150878cbace8f193c87122b3",
+        "teks": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio lebih dari 1, setiap suku selalu lebih besar daripada suku sebelumnya. Barisan berikut yang dapat menjadi contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$-4, -12, -36, -108, \\ldots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $96$.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $96$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/309a0777e1ae1503ffed9000.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"d\", 9], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54eea17c53d202be76ab67b2",
+        "teks": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio antara 0 dan 1, nilai suku-sukunya selalu semakin kecil. Pasangan suku pertama $a$ dan rasio $r$ yang membuktikan bahwa pernyataan tersebut salah adalah ....",
+        "jawaban": "$a=-48$ dan $r=\\frac{1}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; d = $12$; n = $5$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$53$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $53$.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$106$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $53$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "10c11ae1744e44cdf04660ed",
+        "teks": "Seorang siswa menentukan suku ke-20 barisan aritmetika $7, 11, 15, 19, \\ldots$ dengan cara berikut: beda $b=11-7=4$, kemudian $U_{20}=a+20b=7+20\\times4=87$. Pernyataan yang tepat tentang penyelesaian tersebut adalah ....",
+        "jawaban": "Rumus yang dipakai salah, seharusnya $a+(n-1)b$ sehingga $U_{20}=83$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; d = $3$; n = $7$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $26$.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $26$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76d797e6f6c7c73e7bf6139e",
+        "teks": "Pada barisan geometri diketahui $U_2=12$ dan $U_5=96$. Seorang siswa menghitung rasio dengan $r=\\frac{96-12}{5-2}=28$. Koreksi yang benar terhadap penyelesaian tersebut adalah ....",
+        "jawaban": "$r^3=\\frac{96}{12}=8$ sehingga $r=2$ dan $a=6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $6$; d = $5$; n = $11$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $56$.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $56$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d398b325b19715ae2c2720a",
+        "teks": "Tiga bilangan $x$, $x+2$, dan $4x$ berturut-turut membentuk barisan geometri yang semua sukunya positif. Jumlah ketiga bilangan tersebut adalah ....",
+        "jawaban": "14",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; d = $4$; n = $11$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $47$.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$94$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $47$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ece44de5972746fc68f79d81",
+        "teks": "Tiga bilangan berturut-turut membentuk barisan aritmetika naik. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Bilangan terkecil di antara ketiganya adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; d = $5$; n = $7$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $41$.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $41$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0f3c450fa4a0f23e0520c797",
+        "teks": "Sebuah barisan geometri bersuku pertama 2 dan rasio bilangan bulat positif. Agar suku ke-4 berada di antara 100 dan 200, rasio yang harus dipilih adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; d = $2$; n = $5$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c8a1f0e62626a722cc40b15b",
+        "teks": "Barisan aritmetika $3, 13, 23, \\ldots$ dan barisan geometri $3, 6, 12, \\ldots$ keduanya berawal dari 3. Mulai suku ke berapa, untuk pertama kalinya suku barisan geometri lebih besar daripada suku barisan aritmetika yang bernomor sama?",
+        "jawaban": "suku ke-5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; d = $6$; n = $3$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f2d23f2cfbe00c7d3d31d9",
+        "teks": "Pada barisan geometri dengan suku pertama $-3$ dan rasio $-2$, seorang siswa menduga suku ke-10 bernilai negatif karena suku pertamanya negatif. Pernyataan yang benar tentang suku ke-10 adalah ....",
+        "jawaban": "dugaan itu salah; $U_{10}=1.536$ (positif)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; d = $4$; n = $5$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "50622171e7a6e852cbbc889c",
+        "teks": "Suatu barisan aritmetika memiliki suku ke-4 sama dengan 19. Semua suku dan beda barisan itu adalah bilangan bulat, dan suku pertamanya bilangan asli (bilangan bulat positif). Nilai beda terbesar yang mungkin adalah ....",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; d = $8$; n = $10$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $77$.",
+      "distraktor": [
+        {
+          "teks": "$78$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $77$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e604d60772217c26d0b2c",
+        "teks": "Suatu barisan geometri memiliki suku ke-3 sama dengan 144. Suku pertama dan rasionya adalah bilangan bulat positif, dan rasionya lebih dari 1. Banyak barisan berbeda yang memenuhi adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; d = $8$; n = $12$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$92$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $92$.",
+      "distraktor": [
+        {
+          "teks": "$93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $92$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e8899a84cd67557d3495668",
+        "teks": "Setiap suku suatu barisan geometri diubah dengan satu operasi. Operasi yang pasti menghasilkan barisan geometri lagi, untuk sembarang barisan geometri awal, adalah ....",
+        "jawaban": "setiap suku dikalikan $-3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; d = $6$; n = $9$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2780b99a48ac95bf99ebff2",
+        "teks": "Pada barisan aritmetika diketahui $U_4+U_{11}=58$. Seorang siswa berpendapat nilai $U_6+U_9$ tidak dapat ditentukan karena suku pertama dan beda tidak diketahui. Pernyataan yang benar adalah ....",
+        "jawaban": "$U_6+U_9=58$, sebab $4+11=6+9$ sehingga $U_4+U_{11}=2a+13b=U_6+U_9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; d = $12$; n = $8$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $88$.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $88$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc9e8258c4282102bc88ca8b",
+        "teks": "Pada barisan geometri bersuku positif diketahui $U_2\\times U_8=144$. Nilai $U_5$ adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; d = $9$; n = $9$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$82$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $82$.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$164$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $82$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7aabe27a3fd051b0e2e4c60",
+        "teks": "Dua perusahaan menawarkan gaji. Perusahaan P: gaji tahun pertama Rp4.000.000,00 per bulan dan naik Rp300.000,00 setiap tahun. Perusahaan Q: gaji tahun pertama Rp3.000.000,00 per bulan dan naik 10% dari gaji tahun sebelumnya setiap tahun. Pada tahun ke berapa gaji Q untuk pertama kalinya lebih besar daripada gaji P?",
+        "jawaban": "tahun ke-9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; d = $11$; n = $5$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $48$.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $48$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e954c37f7dd58a583cf0d09",
+        "teks": "Sebuah bola dijatuhkan dari ketinggian 5 m. Setiap kali memantul, bola mencapai $\\frac{3}{5}$ dari ketinggian pantulan sebelumnya (pantulan pertama mencapai $\\frac{3}{5}$ dari 5 m). Pantulan ke berapa yang untuk pertama kalinya mencapai ketinggian kurang dari 1 m?",
+        "jawaban": "pantulan ke-4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; d = $5$; n = $4$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "801e414001892cd0aac4e611",
+        "teks": "Diberikan dua barisan aritmetika: $5, 9, 13, 17, \\ldots$ dan $3, 10, 17, 24, \\ldots$. Bilangan ketiga yang muncul pada kedua barisan (terurut dari yang terkecil) adalah ....",
+        "jawaban": "73",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; d = $10$; n = $12$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$121$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $121$.",
+      "distraktor": [
+        {
+          "teks": "$122$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $121$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c71898c141ad186fa19f749",
+        "teks": "Seorang siswa menyatakan bahwa barisan $3, 8, 15, 24, \\ldots$ adalah barisan aritmetika karena suku-sukunya terus bertambah. Tanggapan yang tepat adalah ....",
+        "jawaban": "Pernyataan salah karena selisihnya 5, 7, 9 tidak tetap; bila selisih bertambah 2 setiap kali, suku berikutnya 35",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; d = $4$; n = $12$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78033a7ca687d1fdccdc67b3",
+        "teks": "Di antara bilangan 5 dan 80 disisipkan tiga bilangan positif sehingga kelima bilangan itu membentuk barisan geometri. Jumlah ketiga bilangan yang disisipkan adalah ....",
+        "jawaban": "70",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_arithmetic_term_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; d = $6$; n = $9$. Barisan aritmetika mempunyai suku pertama $a$ dan beda $d$. Tentukan suku ke-$n$.",
+      "jawaban_benar": "$59$",
+      "alasan_benar": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $59$.",
+      "distraktor": [
+        {
+          "teks": "$60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gunakan rumus suku ke-n barisan aritmetika. Hasilnya $59$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-a-easy-bt01-059"
     }
-   ],
-   "pembahasan": "Selisih tiap suku berurutan $-4$. Suku ke-5 = 29, suku ke-6 = 25.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-002",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0028-latihan-1-1-1c"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "dua suku berikutnya aritmetika",
-   "alasan_level": "barisan bilangan negatif dengan beda positif, satu langkah langsung",
-   "stimulus": null,
-   "pertanyaan": "Tuliskan dua suku berikutnya dari barisan bilangan berikut: -30, -24, -18, ..., ...",
-   "jawaban_benar": "-12, -6",
-   "alasan_benar": "beda tetap $+6$, sehingga $-18+6=-12$ dan $-12+6=-6$",
-   "distraktor": [
-    {
-     "teks": "-12, -7",
-     "alasan": "salah menghitung pada suku kedua"
-    },
-    {
-     "teks": "-36, -42",
-     "alasan": "membalik tanda beda sehingga barisan turun"
-    },
-    {
-     "teks": "-6, 0",
-     "alasan": "melompati satu suku"
-    }
-   ],
-   "pembahasan": "Beda = $-24-(-30)=6$. Dua suku berikutnya -12 dan -6.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-003",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0028-latihan-1-1-2"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "suku ke-n aritmetika",
-   "alasan_level": "mencari beda lalu memakai rumus $U_n=a+(n-1)b$",
-   "stimulus": null,
-   "pertanyaan": "Tentukan suku ke-50 dari barisan berikut: 5, 12, 19, 26, ...",
-   "jawaban_benar": "348",
-   "alasan_benar": "$b=7$, $U_{50}=5+49\\times 7=348$",
-   "distraktor": [
-    {
-     "teks": "355",
-     "alasan": "memakai $n$ bukan $n-1$: $5+50\\times 7$"
-    },
-    {
-     "teks": "343",
-     "alasan": "lupa menambahkan suku pertama: $49\\times 7$"
-    },
-    {
-     "teks": "341",
-     "alasan": "memakai $n-2$: $5+48\\times 7$"
-    }
-   ],
-   "pembahasan": "$b=12-5=7$. $U_{50}=a+49b=5+343=348$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-004",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0029-latihan-1-1-5"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "cerita aritmetika",
-   "alasan_level": "soal cerita dengan pola bertambah teratur, mencari beda lalu suku ke-12",
-   "stimulus": null,
-   "pertanyaan": "Bayu berlatih lari setiap pagi. Pada hari pertama ia berlari 6 putaran, hari kedua 11 putaran, dan hari ketiga 16 putaran. Banyak putaran yang ia lakukan setiap hari selalu bertambah secara teratur dengan pola yang sama. Latihan berlangsung hingga hari ke-12. Berapa banyak putaran yang dilakukan Bayu pada hari ke-12?",
-   "jawaban_benar": "61",
-   "alasan_benar": "$b=5$, $U_{12}=6+11\\times 5=61$",
-   "distraktor": [
-    {
-     "teks": "66",
-     "alasan": "memakai $n$ bukan $n-1$: $6+12\\times 5$"
-    },
-    {
-     "teks": "56",
-     "alasan": "memakai $n-2$ kali beda"
-    },
-    {
-     "teks": "55",
-     "alasan": "lupa menambah suku pertama: $11\\times 5$"
-    }
-   ],
-   "pembahasan": "Beda 5. $U_{12}=a+11b=6+55=61$ putaran.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-005",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0036-latihan-1-2-1b"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "dua suku berikutnya geometri",
-   "alasan_level": "mengenali rasio tetap pada barisan menurun, satu langkah langsung",
-   "stimulus": null,
-   "pertanyaan": "Tentukan dua suku berikutnya dari barisan bilangan berikut ini: 625, 125, 25, ..., ...",
-   "jawaban_benar": "5, 1",
-   "alasan_benar": "rasio $\\frac{1}{5}$: $25\\times\\frac{1}{5}=5$, $5\\times\\frac{1}{5}=1$",
-   "distraktor": [
-    {
-     "teks": "$\\frac{1}{5}$, $\\frac{1}{25}$",
-     "alasan": "mengira suku berikutnya langsung memakai rasio dari 1"
-    },
-    {
-     "teks": "5, 0",
-     "alasan": "mengira barisan berkurang dengan selisih tetap"
-    },
-    {
-     "teks": "-75, -175",
-     "alasan": "memperlakukan barisan sebagai aritmetika dengan beda $-100$"
-    }
-   ],
-   "pembahasan": "Rasio = $125:625=\\frac{1}{5}$. Dua suku berikutnya 5 dan 1.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-006",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0036-latihan-1-2-3"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "suku ke-n geometri",
-   "alasan_level": "mencari rasio lalu memakai rumus $U_n=ar^{n-1}$",
-   "stimulus": null,
-   "pertanyaan": "Tentukan suku ke-9 dari barisan 5, 10, 20, 40, ...",
-   "jawaban_benar": "1.280",
-   "alasan_benar": "$r=2$, $U_9=5\\times 2^{8}=1.280$",
-   "distraktor": [
-    {
-     "teks": "2.560",
-     "alasan": "memakai pangkat $n$ bukan $n-1$: $5\\times 2^9$"
-    },
-    {
-     "teks": "640",
-     "alasan": "memakai pangkat $n-2$: $5\\times 2^7$"
-    },
-    {
-     "teks": "85",
-     "alasan": "menganggap barisan aritmetika dengan beda 10"
-    }
-   ],
-   "pembahasan": "$r=10:5=2$. $U_9=ar^{8}=5\\times 256=1.280$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-007",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0036-latihan-1-2-5"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "cerita geometri",
-   "alasan_level": "pola penggandaan 4 kali tiap hari, menentukan suku ke-5",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa mengirim pesan undangan kepada 4 orang temannya pada hari pertama. Setiap hari berikutnya, tiap penerima baru meneruskan undangan itu kepada 4 orang lain yang belum pernah menerimanya. Berapa banyak orang yang baru menerima undangan pada hari ke-5?",
-   "jawaban_benar": "1.024",
-   "alasan_benar": "$U_n=4^n$, jadi $U_5=4^5=1.024$",
-   "distraktor": [
-    {
-     "teks": "256",
-     "alasan": "memakai $4^4$ (pangkat $n-1$)"
-    },
-    {
-     "teks": "20",
-     "alasan": "mengalikan $4\\times 5$"
-    },
-    {
-     "teks": "1.364",
-     "alasan": "menjumlahkan semua penerima dari hari 1 sampai 5, padahal ditanya yang baru pada hari ke-5"
-    }
-   ],
-   "pembahasan": "Hari 1: 4, hari 2: 16, ..., hari ke-5: $4^5=1.024$ orang.",
-   "catatan": null,
-   "variasi_cara": "konteks"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-008",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 31,
-    "bagian": "Contoh 1.3",
-    "nomor": "1",
-    "teks": "Suku pertama dari suatu barisan geometri adalah 3 dan rasionya adalah 2. Tuliskan lima suku pertama dari barisan tersebut.",
-    "jawaban": "3, 6, 12, 24, 48"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "menulis suku awal geometri",
-   "alasan_level": "mengalikan suku sebelumnya dengan rasio secara berulang",
-   "stimulus": null,
-   "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 7 dan rasionya adalah 3. Tuliskan empat suku pertama dari barisan tersebut.",
-   "jawaban_benar": "7, 21, 63, 189",
-   "alasan_benar": "kalikan suku sebelumnya dengan 3",
-   "distraktor": [
-    {
-     "teks": "7, 10, 13, 16",
-     "alasan": "menambah 3 (dikira aritmetika)"
-    },
-    {
-     "teks": "7, 21, 147, 1.029",
-     "alasan": "mengalikan dengan 7 pada suku berikutnya setelah suku kedua"
-    },
-    {
-     "teks": "21, 63, 189, 567",
-     "alasan": "mulai dari suku kedua, suku pertama dilewati"
-    }
-   ],
-   "pembahasan": "$U_1=7$, $U_2=21$, $U_3=63$, $U_4=189$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-009",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 33,
-    "bagian": "Contoh 1.4",
-    "nomor": "1",
-    "teks": "Suku pertama dari suatu barisan geometri adalah 20 dan nilai suku ke-4 adalah 540. Tentukan rasio dari barisan tersebut.",
-    "jawaban": "3"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "rasio dari a dan Un",
-   "alasan_level": "memakai $U_4=ar^3$ lalu menarik akar pangkat tiga",
-   "stimulus": null,
-   "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 5 dan nilai suku ke-4 adalah 320. Tentukan rasio dari barisan tersebut.",
-   "jawaban_benar": "4",
-   "alasan_benar": "$5r^3=320$, $r^3=64$, $r=4$",
-   "distraktor": [
-    {
-     "teks": "8",
-     "alasan": "menarik akar pangkat dua dari 64"
-    },
-    {
-     "teks": "16",
-     "alasan": "membagi 64 dengan 4 alih-alih menarik akar pangkat tiga"
-    },
-    {
-     "teks": "64",
-     "alasan": "berhenti pada $r^3=64$ tanpa menarik akar"
-    }
-   ],
-   "pembahasan": "$U_4=ar^3$ sehingga $r^3=320:5=64$ dan $r=4$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-010",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 27,
-    "bagian": "Contoh 1.2",
-    "nomor": "a",
-    "teks": "Diketahui bahwa pada bulan ke-5, uang tabungan Dina sebesar Rp70.000,00, sedangkan pada bulan ke-9 uang tabungannya menjadi Rp90.000,00.",
-    "jawaban": "Rp5.000,00"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "beda dari dua suku",
-   "alasan_level": "menghitung beda dari dua suku yang diketahui: selisih nilai dibagi selisih urutan",
-   "stimulus": null,
-   "pertanyaan": "Rudi menabung di koperasi sekolah dan uang tabungannya setiap bulan bertambah dengan selisih yang tetap. Diketahui bahwa pada bulan ke-3 tabungan Rudi sebesar Rp45.000,00, sedangkan pada bulan ke-8 tabungannya menjadi Rp95.000,00. Berapakah selisih kenaikan tabungan Rudi setiap bulan?",
-   "jawaban_benar": "Rp10.000,00",
-   "alasan_benar": "$b=\\frac{95.000-45.000}{8-3}=10.000$",
-   "distraktor": [
-    {
-     "teks": "Rp12.500,00",
-     "alasan": "membagi dengan $8-3-1=4$"
-    },
-    {
-     "teks": "Rp50.000,00",
-     "alasan": "hanya mengurangkan, lupa membagi dengan selisih bulan"
-    },
-    {
-     "teks": "Rp15.000,00",
-     "alasan": "membagi tabungan bulan ke-3 dengan 3"
-    }
-   ],
-   "pembahasan": "$U_8-U_3=5b=50.000$ sehingga $b=10.000$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-011",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0029-latihan-1-1-4a"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "tabel pola tetap",
-   "alasan_level": "menyadari pola tambah tetap pada tabel lalu menghitung total pada minggu ke-15",
-   "stimulus": "Setiap minggu, Pak Joko mengumpulkan 7 kg kertas bekas untuk didaur ulang. Jumlah total kertas yang telah dikumpulkan dicatat oleh petugas bank sampah. Data pencatatan disajikan pada tabel berikut.\n\n|Minggu ke-|Kertas yang dikumpulkan (kg)|Total terkumpul (kg)|\n|---|---|---|\n|2|7|14|\n|3|7|21|\n|4|7|28|",
-   "pertanyaan": "Berapa total kilogram kertas bekas yang tercatat pada minggu ke-15?",
-   "jawaban_benar": "105",
-   "alasan_benar": "tiap minggu bertambah 7 kg sehingga minggu ke-15 total $7\\times 15=105$",
-   "distraktor": [
-    {
-     "teks": "98",
-     "alasan": "memakai 14 minggu ($n-1$)"
-    },
-    {
-     "teks": "22",
-     "alasan": "menjumlahkan 7 dan 15"
-    },
-    {
-     "teks": "112",
-     "alasan": "memakai 16 minggu ($n+1$)"
-    }
-   ],
-   "pembahasan": "Kolom total bertambah 7 setiap minggu: $7\\times 15=105$ kg.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-012",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 33,
-    "bagian": "Contoh 1.4",
-    "nomor": "1",
-    "teks": "Suku pertama dari suatu barisan geometri adalah 20 dan nilai suku ke-4 adalah 540. Tentukan rasio dari barisan tersebut.",
-    "jawaban": "3"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "rasio dari a dan Un",
-   "alasan_level": "memakai $U_4=ar^3$ dengan hasil rasio pecahan",
-   "stimulus": null,
-   "pertanyaan": "Suku pertama dari suatu barisan geometri adalah 162 dan nilai suku ke-4 adalah 48. Tentukan rasio dari barisan tersebut.",
-   "jawaban_benar": "$\\frac{2}{3}$",
-   "alasan_benar": "$162r^3=48$, $r^3=\\frac{8}{27}$, $r=\\frac{2}{3}$",
-   "distraktor": [
-    {
-     "teks": "$\\frac{8}{27}$",
-     "alasan": "berhenti pada $r^3$ tanpa menarik akar"
-    },
-    {
-     "teks": "$\\frac{3}{2}$",
-     "alasan": "membalik pembagian (suku pertama dibagi suku ke-4)"
-    },
-    {
-     "teks": "$\\frac{4}{9}$",
-     "alasan": "memakai pangkat dua sehingga memperoleh $r^2$"
-    }
-   ],
-   "pembahasan": "$r^3=48:162=\\frac{8}{27}$ sehingga $r=\\frac{2}{3}$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-013",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 23,
-    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "mengenali barisan aritmetika",
-   "alasan_level": "mengenali barisan dengan selisih tetap, tanpa perhitungan panjang",
-   "stimulus": null,
-   "pertanyaan": "Di antara barisan bilangan berikut, yang merupakan barisan aritmetika adalah ....",
-   "jawaban_benar": "7, 12, 17, 22, ...",
-   "alasan_benar": "selisih tiap dua suku berurutan selalu 5",
-   "distraktor": [
-    {
-     "teks": "2, 6, 18, 54, ...",
-     "alasan": "rasio tetap sehingga geometri, bukan aritmetika"
-    },
-    {
-     "teks": "1, 4, 9, 16, ...",
-     "alasan": "selisihnya 3, 5, 7 (tidak tetap)"
-    },
-    {
-     "teks": "3, 5, 8, 12, ...",
-     "alasan": "selisihnya 2, 3, 4 (tidak tetap)"
-    }
-   ],
-   "pembahasan": "Barisan aritmetika memiliki beda tetap. Hanya 7, 12, 17, 22 yang selisihnya selalu 5.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-014",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 26,
-    "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "rumus Un aritmetika",
-   "alasan_level": "mencari beda lalu menyusun rumus $U_n=a+(n-1)b$",
-   "stimulus": null,
-   "pertanyaan": "Rumus suku ke-$n$ dari barisan aritmetika 6, 10, 14, 18, ... adalah ....",
-   "jawaban_benar": "$U_n = 4n + 2$",
-   "alasan_benar": "$a=6$, $b=4$: $U_n=6+(n-1)4=4n+2$",
-   "distraktor": [
-    {
-     "teks": "$U_n = 4n + 6$",
-     "alasan": "lupa mengurangi 1 pada $n-1$"
-    },
-    {
-     "teks": "$U_n = 6n + 4$",
-     "alasan": "suku pertama dan beda tertukar"
-    },
-    {
-     "teks": "$U_n = 4n + 10$",
-     "alasan": "memakai $(n+1)$ alih-alih $(n-1)$"
-    }
-   ],
-   "pembahasan": "$a=6$, $b=4$. $U_n=6+4(n-1)=4n+2$. Cek: $U_1=6$, $U_4=18$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-015",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 31,
-    "kutipan": "Suatu barisan dengan rasio antara dua suku berurutan selalu tetap atau konstan disebut barisan geometri."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "rasio barisan geometri",
-   "alasan_level": "membagi dua suku berurutan pada barisan dengan tanda berganti",
-   "stimulus": null,
-   "pertanyaan": "Rasio dari barisan geometri 2, -6, 18, -54, ... adalah ....",
-   "jawaban_benar": "-3",
-   "alasan_benar": "$r=\\frac{-6}{2}=-3$",
-   "distraktor": [
-    {
-     "teks": "3",
-     "alasan": "mengabaikan tanda negatif"
-    },
-    {
-     "teks": "-8",
-     "alasan": "mengurangkan suku kedua dengan suku pertama (beda, bukan rasio)"
-    },
-    {
-     "teks": "$-\\frac{1}{3}$",
-     "alasan": "membalik pembagian: suku pertama dibagi suku kedua"
-    }
-   ],
-   "pembahasan": "Rasio = suku kedua : suku pertama = $-6:2=-3$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-016",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 23,
-    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "beda barisan aritmetika",
-   "alasan_level": "menghitung selisih dua suku berurutan yang hasilnya negatif",
-   "stimulus": null,
-   "pertanyaan": "Beda dari barisan aritmetika 40, 34, 28, 22, ... adalah ....",
-   "jawaban_benar": "-6",
-   "alasan_benar": "$b=34-40=-6$",
-   "distraktor": [
-    {
-     "teks": "6",
-     "alasan": "lupa tanda negatif"
-    },
-    {
-     "teks": "-12",
-     "alasan": "menghitung selisih suku pertama dan ketiga"
-    },
-    {
-     "teks": "-34",
-     "alasan": "mengambil suku kedua sebagai beda"
-    }
-   ],
-   "pembahasan": "Beda = suku kedua - suku pertama = $34-40=-6$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-017",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 26,
-    "kutipan": "Terlebih dahulu suku ke-3 dan suku ke-6 dinyatakan dalam bentuk rumus umum seperti berikut."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "suku ke-n geometri",
-   "alasan_level": "memakai rumus $U_n=ar^{n-1}$ dengan rasio pecahan",
-   "stimulus": null,
-   "pertanyaan": "Suku pertama suatu barisan geometri adalah 81 dan rasionya $\\frac{1}{3}$. Suku ke-5 barisan tersebut adalah ....",
-   "jawaban_benar": "1",
-   "alasan_benar": "$U_5=81\\times\\left(\\frac{1}{3}\\right)^4=1$",
-   "distraktor": [
-    {
-     "teks": "$\\frac{1}{3}$",
-     "alasan": "memakai pangkat 5 bukan 4"
-    },
-    {
-     "teks": "27",
-     "alasan": "ini suku ke-2, bukan suku ke-5"
-    },
-    {
-     "teks": "$\\frac{1}{81}$",
-     "alasan": "lupa mengalikan dengan suku pertama"
-    }
-   ],
-   "pembahasan": "$U_5=ar^4=81\\times\\frac{1}{81}=1$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-018",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 23,
-    "kutipan": "Ternyata beda atau selisih antara dua suku yang berdekatan selalu sama, sehingga dapat dikatakan bahwa"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "pernyataan benar tentang barisan",
-   "alasan_level": "memahami bahwa barisan konstan memenuhi definisi aritmetika (beda 0) dan geometri (rasio 1)",
-   "stimulus": null,
-   "pertanyaan": "Diketahui barisan bilangan 5, 5, 5, 5, .... Pernyataan yang benar tentang barisan tersebut adalah ....",
-   "jawaban_benar": "Barisan aritmetika dengan beda 0 sekaligus barisan geometri dengan rasio 1",
-   "alasan_benar": "selisih dua suku berurutan selalu 0 dan hasil bagi dua suku berurutan selalu 1",
-   "distraktor": [
-    {
-     "teks": "Bukan barisan aritmetika karena sukunya tidak bertambah",
-     "alasan": "mengira beda harus tidak nol"
-    },
-    {
-     "teks": "Barisan geometri dengan rasio 0",
-     "alasan": "salah mengira rasio sama dengan beda"
-    },
-    {
-     "teks": "Barisan aritmetika dengan beda 5",
-     "alasan": "mengira beda sama dengan nilai sukunya"
-    }
-   ],
-   "pembahasan": "$5-5=0$ sehingga beda 0 dan $5:5=1$ sehingga rasio 1.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-019",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 21,
-    "kutipan": "Jika kamu menemukan susunan kursi berikut,  dapatkah kamu menentukan dengan tepat berapa banyak kursi pada kotak terakhir?"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "cerita aritmetika",
-   "alasan_level": "soal cerita susunan kursi, mencari suku ke-9 dengan beda tetap",
-   "stimulus": null,
-   "pertanyaan": "Pada sebuah aula, baris pertama terdapat 12 kursi dan setiap baris berikutnya bertambah 4 kursi dari baris sebelumnya. Banyak kursi pada baris ke-9 adalah ....",
-   "jawaban_benar": "44",
-   "alasan_benar": "$U_9=12+8\\times 4=44$",
-   "distraktor": [
-    {
-     "teks": "48",
-     "alasan": "memakai $9\\times 4$ ditambah 12 (n bukan n-1)"
-    },
-    {
-     "teks": "36",
-     "alasan": "lupa menambahkan suku pertama dan hanya $9\\times 4$"
-    },
-    {
-     "teks": "40",
-     "alasan": "memakai $n-2$: $12+7\\times 4$"
-    }
-   ],
-   "pembahasan": "$a=12$, $b=4$, $U_9=a+8b=12+32=44$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-a-easy-bt01-020",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 30,
-    "kutipan": "Pada tahap berikutnya, setiap partisi kembali dibagi menjadi dua bagian yang sama besar."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "cerita geometri",
-   "alasan_level": "pola penggandaan partisi, menentukan suku ke-6 barisan geometri rasio 2",
-   "stimulus": null,
-   "pertanyaan": "Sebuah blok memori dibagi menjadi 2 partisi yang sama besar pada tahap ke-1. Pada tahap berikutnya, setiap partisi kembali dibagi menjadi dua bagian yang sama besar. Banyak partisi yang terbentuk setelah tahap ke-6 adalah ....",
-   "jawaban_benar": "64",
-   "alasan_benar": "$U_n=2^n$, sehingga $U_6=2^6=64$",
-   "distraktor": [
-    {
-     "teks": "12",
-     "alasan": "mengalikan $2\\times 6$"
-    },
-    {
-     "teks": "32",
-     "alasan": "memakai $2^5$ (tahap ke-5)"
-    },
-    {
-     "teks": "128",
-     "alasan": "memakai $2^7$"
-    }
-   ],
-   "pembahasan": "Tahap 1: 2, tahap 2: 4, tahap 3: 8, ..., tahap 6: $2^6=64$.",
-   "catatan": null
-  }
- ]
+  ]
 }

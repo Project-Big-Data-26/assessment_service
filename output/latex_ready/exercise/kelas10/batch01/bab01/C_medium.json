@@ -1,0 +1,710 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b01-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "bagian": "Contoh 4",
+        "nomor": "1",
+        "teks": "Dua jam kemudian jumlah bakteri sudah mencapai 32.000 bakteri. Berapakah jumlah bakteri setelah 10 jam?",
+        "jawaban": "2.048.000 bakteri"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari dua data",
+      "alasan_level": "menentukan bilangan pokok dan nilai awal dari dua data, lalu menghitung nilai fungsi pada fase lain",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni bakteri membelah dengan faktor pengali tetap setiap jam. Pada akhir jam ke-1 terdapat 600 bakteri dan pada akhir jam ke-3 terdapat 5.400 bakteri. Banyak bakteri pada akhir jam ke-6 adalah ....",
+      "jawaban_benar": "$145.800$ bakteri",
+      "alasan_benar": "$a^{2}=5400/600=9$ sehingga $a=3$ dan $n=600/3=200$; $f(6)=200\\cdot3^{6}=145.800$",
+      "distraktor": [
+        {
+          "teks": "$48.600$ bakteri",
+          "alasan": "menghitung untuk jam ke-5, yaitu $600\\cdot3^{4}$"
+        },
+        {
+          "teks": "$12.600$ bakteri",
+          "alasan": "memakai pertambahan tetap (linear) $2.400$ per jam"
+        },
+        {
+          "teks": "$437.400$ bakteri",
+          "alasan": "menganggap 600 sebagai nilai awal: $600\\cdot3^{6}$"
+        }
+      ],
+      "pembahasan": "Dari $f(1)=600$ dan $f(3)=5400$: $a^{2}=9$, $a=3$, $n=200$. Jadi $f(6)=200\\cdot729=145.800$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "bagian": "Contoh 4",
+        "nomor": "1",
+        "teks": "Dua jam kemudian jumlah bakteri sudah mencapai 32.000 bakteri. Berapakah jumlah bakteri setelah 10 jam?",
+        "jawaban": "2.048.000 bakteri"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari dua data",
+      "alasan_level": "mencari faktor pengali harian dari dua data lalu menghitung nilai pada hari lain",
+      "stimulus": null,
+      "pertanyaan": "Populasi lalat buah di sebuah laboratorium bertambah menurut faktor pengali tetap tiap hari. Pada hari ke-2 tercatat 80 ekor dan pada hari ke-4 tercatat 1.280 ekor. Populasi lalat buah pada hari ke-5 adalah ....",
+      "jawaban_benar": "$5.120$ ekor",
+      "alasan_benar": "$a^{2}=1280/80=16$ sehingga $a=4$; hari ke-5 adalah $1280\\cdot4=5120$",
+      "distraktor": [
+        {
+          "teks": "$1.880$ ekor",
+          "alasan": "memakai pertambahan tetap $600$ ekor per hari (linear)"
+        },
+        {
+          "teks": "$20.480$ ekor",
+          "alasan": "memakai faktor 16 (untuk 2 hari) sebagai faktor satu hari"
+        },
+        {
+          "teks": "$2.560$ ekor",
+          "alasan": "memakai faktor pengali 2 alih-alih 4"
+        }
+      ],
+      "pembahasan": "Faktor harian $a=4$ sehingga hari ke-5 adalah $1280\\cdot4=5120$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Latihan 2.2",
+        "nomor": "2",
+        "teks": "Pada tahun 2015 kasus positif HIV-AIDS berjumlah sekitar 36 juta jiwa. Jumlah ini meningkat rata-rata 2% setiap tahun dari tahun 2010 hingga 2015.",
+        "jawaban": "sekitar 39,7 juta jiwa pada tahun 2020"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pertumbuhan majemuk",
+      "alasan_level": "menerapkan faktor $1{,}25$ selama tiga tahun dengan pemangkatan",
+      "stimulus": null,
+      "pertanyaan": "Pada tahun 2021 jumlah kasus suatu penyakit di sebuah provinsi adalah 40.000 jiwa. Jumlah kasus diprediksi meningkat secara eksponen sebesar 25% setiap tahun. Jumlah kasus pada tahun 2024 adalah ....",
+      "jawaban_benar": "$78.125$ jiwa",
+      "alasan_benar": "$40.000\\cdot(1{,}25)^{3}=40.000\\cdot1{,}953125=78.125$",
+      "distraktor": [
+        {
+          "teks": "$70.000$ jiwa",
+          "alasan": "menambah 25% dari nilai awal tiga kali (pertumbuhan linear)"
+        },
+        {
+          "teks": "$62.500$ jiwa",
+          "alasan": "hanya menghitung 2 tahun"
+        },
+        {
+          "teks": "$150.000$ jiwa",
+          "alasan": "mengalikan faktor $1{,}25\\times3=3{,}75$"
+        }
+      ],
+      "pembahasan": "Dari 2021 ke 2024 ada 3 tahun: $40.000\\to50.000\\to62.500\\to78.125$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Latihan 2.2",
+        "nomor": "2",
+        "teks": "Pada tahun 2015 kasus positif HIV-AIDS berjumlah sekitar 36 juta jiwa. Jumlah ini meningkat rata-rata 2% setiap tahun dari tahun 2010 hingga 2015.",
+        "jawaban": "sekitar 39,7 juta jiwa pada tahun 2020"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pertumbuhan majemuk",
+      "alasan_level": "menghitung nilai setelah tiga periode pertumbuhan 10% lalu mencari selisih terhadap nilai awal",
+      "stimulus": null,
+      "pertanyaan": "Harga sebuah rumah saat ini Rp500.000.000 dan diperkirakan naik secara eksponen 10% setiap tahun. Kenaikan harga rumah tersebut setelah 3 tahun dari sekarang adalah ....",
+      "jawaban_benar": "Rp165.500.000",
+      "alasan_benar": "$500\\,\\text{juta}\\cdot(1{,}1)^{3}=665{,}5\\,\\text{juta}$, selisih terhadap harga awal $165{,}5$ juta",
+      "distraktor": [
+        {
+          "teks": "Rp150.000.000",
+          "alasan": "menambah 10% dari harga awal tiga kali (linear)"
+        },
+        {
+          "teks": "Rp665.500.000",
+          "alasan": "menjawab harga akhir, bukan kenaikannya"
+        },
+        {
+          "teks": "Rp105.000.000",
+          "alasan": "hanya menghitung kenaikan 2 tahun"
+        }
+      ],
+      "pembahasan": "Harga: $500\\to550\\to605\\to665{,}5$ juta; kenaikan $=665{,}5-500=165{,}5$ juta.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "bagian": "Latihan 2.3",
+        "nomor": "2",
+        "teks": "Massa suatu zat radioaktif adalah 0,3 kg pada pukul 10 pagi.",
+        "jawaban": "$0{,}3\\cdot(0{,}85)^{8}\\approx 0{,}082$ kg"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluruhan majemuk",
+      "alasan_level": "menerapkan faktor sisa $0{,}8$ selama tiga jam",
+      "stimulus": null,
+      "pertanyaan": "Massa suatu zat radioaktif adalah 5 kg. Tingkat peluruhan zat tersebut adalah 20% setiap jam. Massa zat radioaktif tersebut 3 jam kemudian adalah ....",
+      "jawaban_benar": "$2{,}56$ kg",
+      "alasan_benar": "$5\\cdot(0{,}8)^{3}=5\\cdot0{,}512=2{,}56$",
+      "distraktor": [
+        {
+          "teks": "$2$ kg",
+          "alasan": "mengurangi 20% dari massa awal tiga kali (peluruhan linear)"
+        },
+        {
+          "teks": "$0{,}04$ kg",
+          "alasan": "memakai faktor $0{,}2$ sebagai bilangan pokok"
+        },
+        {
+          "teks": "$3{,}2$ kg",
+          "alasan": "hanya menghitung 2 jam"
+        }
+      ],
+      "pembahasan": "Faktor sisa $0{,}8$: $5\\to4\\to3{,}2\\to2{,}56$ kg.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "bagian": "Latihan 2.3",
+        "nomor": "2",
+        "teks": "Massa suatu zat radioaktif adalah 0,3 kg pada pukul 10 pagi.",
+        "jawaban": "$0{,}3\\cdot(0{,}85)^{8}\\approx 0{,}082$ kg"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluruhan majemuk",
+      "alasan_level": "menghitung nilai setelah tiga periode penyusutan 25% lalu mencari besar penyusutan total",
+      "stimulus": null,
+      "pertanyaan": "Sebuah mobil dibeli seharga Rp160.000.000 dan nilainya menyusut secara eksponen 25% setiap tahun. Besar penyusutan nilai mobil tersebut setelah 3 tahun adalah ....",
+      "jawaban_benar": "Rp92.500.000",
+      "alasan_benar": "nilai setelah 3 tahun $160\\cdot(0{,}75)^{3}=67{,}5$ juta, sehingga penyusutan $160-67{,}5=92{,}5$ juta",
+      "distraktor": [
+        {
+          "teks": "Rp67.500.000",
+          "alasan": "menjawab nilai akhir, bukan penyusutannya"
+        },
+        {
+          "teks": "Rp120.000.000",
+          "alasan": "mengurangi 25% dari nilai awal tiga kali (linear)"
+        },
+        {
+          "teks": "Rp40.000.000",
+          "alasan": "hanya menghitung penyusutan tahun pertama"
+        }
+      ],
+      "pembahasan": "Nilai: $160\\to120\\to90\\to67{,}5$ juta; penyusutan total $92{,}5$ juta.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "bagian": "Ayo, Berpikir Kreatif",
+        "nomor": "1",
+        "teks": "Prediksilah, berapa jam yang dibutuhkan sehingga dosis obat tersebut masih ada di dalam tubuh pasien kurang dari 0,1 mikrogram.",
+        "jawaban": "9 jam"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "waktu mencapai target",
+      "alasan_level": "mencari banyak jam minimum dari peluruhan setengah dengan membandingkan nilai berurutan",
+      "stimulus": null,
+      "pertanyaan": "Dosis obat sebesar 300 mikrogram disuntikkan kepada seorang pasien. Setiap jam, setengah dosis yang ada di dalam tubuh akan luruh dan dikeluarkan. Paling sedikit berapa jam diperlukan agar dosis yang tersisa kurang dari 5 mikrogram?",
+      "jawaban_benar": "$6$ jam",
+      "alasan_benar": "$300\\cdot(\\tfrac12)^{x}<5$ berarti $2^{x}>60$; $2^{5}=32$ belum cukup, $2^{6}=64$ cukup",
+      "distraktor": [
+        {
+          "teks": "$5$ jam",
+          "alasan": "memilih $2^{5}=32$ padahal dosis masih $9{,}375$ mikrogram"
+        },
+        {
+          "teks": "$7$ jam",
+          "alasan": "benar kurang dari 5 mikrogram tetapi bukan yang paling sedikit"
+        },
+        {
+          "teks": "$4$ jam",
+          "alasan": "dosis masih $18{,}75$ mikrogram"
+        }
+      ],
+      "pembahasan": "Dosis: 150, 75, 37,5, 18,75, 9,375, 4,6875. Pertama kali kurang dari 5 pada jam ke-6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "bagian": "Ayo, Berpikir Kreatif",
+        "nomor": "1",
+        "teks": "Prediksilah, berapa jam yang dibutuhkan sehingga dosis obat tersebut masih ada di dalam tubuh pasien kurang dari 0,1 mikrogram.",
+        "jawaban": "9 jam"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "waktu mencapai target",
+      "alasan_level": "mencari banyak jam minimum agar populasi yang berlipat dua tiap jam melebihi target",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni ragi berjumlah 5 sel pada awal pengamatan dan menjadi dua kali lipat setiap jam. Paling sedikit berapa jam diperlukan agar jumlah sel lebih dari 1.000?",
+      "jawaban_benar": "$8$ jam",
+      "alasan_benar": "$5\\cdot2^{x}>1000$ berarti $2^{x}>200$; $2^{7}=128$ belum cukup, $2^{8}=256$ cukup",
+      "distraktor": [
+        {
+          "teks": "$7$ jam",
+          "alasan": "jumlah sel baru $640$, belum melebihi 1.000"
+        },
+        {
+          "teks": "$9$ jam",
+          "alasan": "memang lebih dari 1.000 tetapi bukan yang paling sedikit"
+        },
+        {
+          "teks": "$6$ jam",
+          "alasan": "jumlah sel baru $320$"
+        }
+      ],
+      "pembahasan": "Jumlah sel: 10, 20, 40, 80, 160, 320, 640, 1.280. Terpenuhi pada jam ke-8.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "bagian": "Ayo, Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Jika banyak bakteri di awal adalah 50, 100 dan 200, bagaimana kamu memodelkan pertumbuhan bakteri tersebut?",
+        "jawaban": "$f(x)=50\\cdot2^{x}$, $f(x)=100\\cdot2^{x}$, dan $f(x)=200\\cdot2^{x}$"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah beberapa model",
+      "alasan_level": "menyusun tiga model dengan nilai awal berbeda lalu menjumlahkan nilainya setelah 2 jam",
+      "stimulus": null,
+      "pertanyaan": "Tiga koloni bakteri masing-masing berawal dari 6, 18, dan 54 sel. Setiap jam, jumlah sel pada tiap koloni menjadi tiga kali lipat. Jumlah seluruh sel dari ketiga koloni setelah 2 jam adalah ....",
+      "jawaban_benar": "$702$ sel",
+      "alasan_benar": "model $f(x)=n\\cdot3^{x}$, sehingga $(6+18+54)\\cdot3^{2}=78\\cdot9=702$",
+      "distraktor": [
+        {
+          "teks": "$234$ sel",
+          "alasan": "hanya menghitung 1 jam"
+        },
+        {
+          "teks": "$468$ sel",
+          "alasan": "mengalikan dengan $3\\cdot2=6$ alih-alih memangkatkan"
+        },
+        {
+          "teks": "$156$ sel",
+          "alasan": "mengalikan dengan 2 alih-alih $3^{2}$"
+        }
+      ],
+      "pembahasan": "Jumlah awal $78$, pada $x=2$ menjadi $78\\cdot9=702$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Latihan 2.2",
+        "nomor": "1c",
+        "teks": "Prediksi berapa banyaknya bakteri setelah 3 dan 4 jam pertama.",
+        "jawaban": "204.800 dan 3.276.800 bakteri"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "selisih nilai fungsi",
+      "alasan_level": "menghitung dua nilai fungsi pada fase berbeda lalu mencari selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Sebuah koloni berawal dari 5 bakteri. Setiap 10 menit, tiap bakteri membelah menjadi tiga. Pertambahan banyak bakteri antara menit ke-30 dan menit ke-50 adalah ....",
+      "jawaban_benar": "$1.080$ bakteri",
+      "alasan_benar": "menit ke-30 adalah fase 3: $5\\cdot3^{3}=135$; menit ke-50 adalah fase 5: $5\\cdot3^{5}=1215$; selisih $1080$",
+      "distraktor": [
+        {
+          "teks": "$1.215$ bakteri",
+          "alasan": "menjawab banyak bakteri menit ke-50, bukan selisihnya"
+        },
+        {
+          "teks": "$216$ bakteri",
+          "alasan": "lupa mengalikan dengan 5 bakteri awal"
+        },
+        {
+          "teks": "$405$ bakteri",
+          "alasan": "menghitung nilai untuk fase 4 saja"
+        }
+      ],
+      "pembahasan": "$f(x)=5\\cdot3^{x}$; $f(5)-f(3)=1215-135=1080$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "terlebih dahulu untuk mengetahui banyak bakteri yang dihasilkan ketika sebuah bakteri membelah dalam 1 jam"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari dua data",
+      "alasan_level": "menentukan $a$ lalu $n$ dari dua nilai fungsi, kemudian menghitung nilai pada $x=4$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=n\\cdot a^{x}$ dengan $a>0$. Jika $f(1)=6$ dan $f(3)=54$, nilai $f(4)$ adalah ....",
+      "jawaban_benar": "$162$",
+      "alasan_benar": "$a^{2}=54/6=9$ sehingga $a=3$, $n=2$; $f(4)=2\\cdot3^{4}=162$",
+      "distraktor": [
+        {
+          "teks": "$108$",
+          "alasan": "menganggap nilai hanya naik dua kali dari $f(3)$"
+        },
+        {
+          "teks": "$486$",
+          "alasan": "memakai $a=9$ sebagai faktor satu langkah: $54\\cdot9$"
+        },
+        {
+          "teks": "$78$",
+          "alasan": "memakai pertambahan tetap $24$ per langkah (linear)"
+        }
+      ],
+      "pembahasan": "$f(3)/f(1)=a^{2}=9$, $a=3$; $n=6/3=2$; $f(4)=2\\cdot81=162$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari tabel",
+      "alasan_level": "menentukan rasio dari nilai berurutan lalu nilai awal $n$ pada tabel yang tidak dimulai dari $x=0$",
+      "stimulus": "| $x$ | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|\n| $f(x)$ | 36 | 108 | 324 | 972 |",
+      "pertanyaan": "Perhatikan tabel berikut. Fungsi eksponensial $f(x)=n\\cdot a^{x}$ yang sesuai dengan tabel adalah ....",
+      "jawaban_benar": "$f(x) = 4\\cdot3^{x}$",
+      "alasan_benar": "rasio $108/36=3$ sehingga $a=3$; dari $f(2)=n\\cdot9=36$ diperoleh $n=4$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 36\\cdot3^{x}$",
+          "alasan": "memakai nilai $f(2)$ sebagai nilai awal"
+        },
+        {
+          "teks": "$f(x) = 12\\cdot3^{x}$",
+          "alasan": "menghitung $n=36/3$, lupa memangkatkan $a$ dengan 2"
+        },
+        {
+          "teks": "$f(x) = 3\\cdot4^{x}$",
+          "alasan": "menukar nilai awal dan bilangan pokok"
+        }
+      ],
+      "pembahasan": "Cek: $4\\cdot27=108$, $4\\cdot81=324$, $4\\cdot243=972$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "pertumbuhan bakteri di mana pada fase-fase selanjutnya bakteri tentu akan semakin banyak jumlahnya"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "waktu mencapai target",
+      "alasan_level": "menyelesaikan persamaan eksponen $4\\cdot3^{x}=324$ lalu mengonversi fase ke satuan hari",
+      "stimulus": null,
+      "pertanyaan": "Populasi jamur pada awal pengamatan adalah 4 satuan dan menjadi tiga kali lipat setiap 3 hari. Populasi jamur tepat 324 satuan setelah ... hari.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "$4\\cdot3^{x}=324$ berarti $3^{x}=81=3^{4}$, $x=4$ fase; $4\\times3=12$ hari",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "tidak mengubah banyak fase menjadi hari"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "membagi 81 dengan 3 lalu menganggapnya hari"
+        },
+        {
+          "teks": "$81$",
+          "alasan": "menganggap $3^{x}=81$ memberi $x=81$"
+        }
+      ],
+      "pembahasan": "$3^{x}=81$ memberi $x=4$ fase; tiap fase 3 hari sehingga 12 hari.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi eksponensial juga menggambarkan penurunan secara konsisten pada periode waktu tertentu."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "waktu mencapai target",
+      "alasan_level": "menyelesaikan $1600\\cdot(\\tfrac12)^{x}=25$ lalu mengonversi fase ke jam",
+      "stimulus": null,
+      "pertanyaan": "Massa suatu zat adalah 1.600 gram dan massanya menjadi setengah kali setiap 3 jam. Massa zat tersebut tepat 25 gram setelah ... jam.",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "$(\\tfrac12)^{x}=25/1600=\\tfrac1{64}$ sehingga $x=6$ fase; $6\\times3=18$ jam",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "tidak mengubah banyak fase menjadi jam"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "mengira $2^{4}=64$ sehingga 4 fase"
+        },
+        {
+          "teks": "$64$",
+          "alasan": "menganggap $2^{x}=64$ memberi $x=64$"
+        }
+      ],
+      "pembahasan": "$2^{x}=64$ sehingga $x=6$ fase, atau $18$ jam.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan dua model",
+      "alasan_level": "menyamakan dua model eksponensial dengan bilangan pokok berbeda lalu menyederhanakan menjadi $2^{x}=4$",
+      "stimulus": null,
+      "pertanyaan": "Banyak sel koloni A dimodelkan $A(x)=200\\cdot2^{x}$ dan koloni B dimodelkan $B(x)=50\\cdot4^{x}$ dengan $x$ banyak jam. Kedua koloni sama banyak pada $x=$ ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$50\\cdot4^{x}=200\\cdot2^{x}$ berarti $\\frac{4^{x}}{2^{x}}=2^{x}=4$ sehingga $x=2$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "menganggap hasil $2^{x}=4$ sebagai nilai $x$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "pada $x=1$ nilainya $400$ untuk A dan $200$ untuk B"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "pada $x=3$ nilainya $1600$ untuk A dan $3200$ untuk B"
+        }
+      ],
+      "pembahasan": "Pada $x=2$: $A=800$ dan $B=50\\cdot16=800$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "bertambah secara eksponen pada peningkatan 2% setiap tahun"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persentase dari data",
+      "alasan_level": "mencari faktor tahunan dari dua nilai lalu mengubahnya menjadi persentase pertumbuhan",
+      "stimulus": null,
+      "pertanyaan": "Nilai sebuah investasi Rp5.000.000 menjadi Rp7.200.000 setelah 2 tahun. Jika pertumbuhannya eksponen dengan persentase tetap setiap tahun, persentase pertumbuhan tahunannya adalah ....",
+      "jawaban_benar": "$20\\%$",
+      "alasan_benar": "$a^{2}=7,2/5=1{,}44$ sehingga $a=1{,}2$, yaitu naik $20\\%$ per tahun",
+      "distraktor": [
+        {
+          "teks": "$22\\%$",
+          "alasan": "membagi kenaikan total $44\\%$ dengan 2 (pertumbuhan linear)"
+        },
+        {
+          "teks": "$44\\%$",
+          "alasan": "memakai kenaikan total 2 tahun sebagai kenaikan tahunan"
+        },
+        {
+          "teks": "$120\\%$",
+          "alasan": "menjawab faktor $1{,}2$ sebagai persentase tanpa mengurangi 1"
+        }
+      ],
+      "pembahasan": "Faktor tahunan $\\sqrt{1{,}44}=1{,}2$ sehingga pertumbuhan $20\\%$ per tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai fungsi eksponen negatif",
+      "alasan_level": "menghitung dua nilai fungsi, satu dengan pangkat negatif, lalu menjumlahkannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=81\\left(\\frac{1}{3}\\right)^{x}$. Nilai $f(2)+f(-1)$ adalah ....",
+      "jawaban_benar": "$252$",
+      "alasan_benar": "$f(2)=81\\cdot\\frac19=9$, $f(-1)=81\\cdot3=243$, jumlahnya $252$",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "mengira $\\left(\\frac13\\right)^{-1}=\\frac13$ sehingga $f(-1)=27$"
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "mengira $\\left(\\frac13\\right)^{-1}=-\\frac13$ sehingga $f(-1)=-27$"
+        },
+        {
+          "teks": "$243$",
+          "alasan": "hanya menghitung $f(-1)$"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac13\\right)^{-1}=3$, jadi $f(-1)=243$; $f(2)=9$; jumlah $252$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat parameter",
+      "alasan_level": "menggabungkan syarat pertumbuhan $a>1$ dengan bentuk $a=2k-5$ lalu mencari bilangan bulat terkecil",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=(2k-5)^{x}$ merupakan fungsi pertumbuhan eksponensial. Bilangan bulat $k$ terkecil yang memenuhi adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "pertumbuhan jika $2k-5>1$ sehingga $k>3$; bilangan bulat terkecil $4$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "pada $k=3$ bilangan pokok $1$ sehingga fungsi konstan"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "pada $k=2$ bilangan pokok $-1$ sehingga bukan fungsi eksponensial"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "memenuhi tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "$2k-5>1\\Rightarrow k>3$, sehingga $k=4$ (bilangan pokok $3$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi peluruhan eksponen dapat dituliskan sebagai"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tafsir model",
+      "alasan_level": "menafsirkan bilangan pokok $0{,}85$ sebagai penurunan $15\\%$ dan menghitung nilai setelah 2 tahun",
+      "stimulus": null,
+      "pertanyaan": "Nilai sebuah mesin (dalam juta rupiah) dimodelkan dengan $f(x)=240\\,(0{,}85)^{x}$ dengan $x$ banyak tahun sejak dibeli. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "nilai mesin turun $15\\%$ setiap tahun dan setelah 2 tahun bernilai Rp173,4 juta",
+      "alasan_benar": "$0{,}85=1-0{,}15$ sehingga turun $15\\%$ per tahun; $f(2)=240\\cdot0{,}7225=173{,}4$",
+      "distraktor": [
+        {
+          "teks": "nilai mesin turun $15\\%$ setiap tahun dan setelah 2 tahun bernilai Rp168 juta",
+          "alasan": "memakai penurunan tetap $36$ juta per tahun (linear)"
+        },
+        {
+          "teks": "nilai mesin turun $85\\%$ setiap tahun dan setelah 2 tahun bernilai Rp5,4 juta",
+          "alasan": "menyamakan faktor $0{,}85$ dengan penurunan $85\\%$"
+        },
+        {
+          "teks": "nilai mesin naik $15\\%$ setiap tahun dan setelah 2 tahun bernilai Rp317,4 juta",
+          "alasan": "mengira bilangan pokok $0{,}85$ menunjukkan kenaikan"
+        }
+      ],
+      "pembahasan": "Faktor $0{,}85$ berarti tersisa $85\\%$ atau turun $15\\%$; $f(2)=240\\cdot0{,}7225=173{,}4$ juta.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "Sebuah bola basket dijatuhkan dari ketinggian 3 meter."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "peluruhan berulang (pantulan)",
+      "alasan_level": "memodelkan tinggi pantulan sebagai $5\\cdot(\\tfrac25)^{x}$ lalu menghitung pantulan ke-3",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bola dijatuhkan dari ketinggian 5 meter. Setiap kali memantul, bola mencapai $\\frac{2}{5}$ dari tinggi pantulan sebelumnya (pantulan pertama mencapai $\\frac{2}{5}$ dari 5 meter). Tinggi pantulan ke-3 adalah ....",
+      "jawaban_benar": "$0{,}32$ meter",
+      "alasan_benar": "$5\\cdot\\left(\\frac25\\right)^{3}=5\\cdot\\frac{8}{125}=0{,}32$",
+      "distraktor": [
+        {
+          "teks": "$0{,}8$ meter",
+          "alasan": "menghitung pantulan ke-2"
+        },
+        {
+          "teks": "$1{,}2$ meter",
+          "alasan": "menghitung $3\\cdot\\frac25$ (mengalikan banyak pantulan)"
+        },
+        {
+          "teks": "$0{,}064$ meter",
+          "alasan": "memangkatkan $\\frac25$ tanpa mengalikan tinggi awal 5"
+        }
+      ],
+      "pembahasan": "Tinggi: $2\\to0{,}8\\to0{,}32$ meter.",
+      "catatan": null
+    }
+  ]
+}

@@ -696,6 +696,2811 @@
       ],
       "pembahasan": "Distributif: $(A + B)(A + B) = A(A + B) + B(A + B) = A^2 + AB + BA + B^2$. Karena $AB$ dan $BA$ umumnya tidak sama, kedua suku tidak boleh digabung menjadi $2AB$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a4744f80c7185fe46a61ab3",
+        "teks": "Matriks $A$, $B$, dan $C$ berordo $2 \\times 2$ dengan $AB = \\begin{pmatrix}4 & -3 \\\\ 7 & 2\\end{pmatrix}$ dan $AC = \\begin{pmatrix}1 & 5 \\\\ -2 & 6\\end{pmatrix}$. Matriks $A(B - C)$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}3 & -8 \\\\ 9 & -4\\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}2 & 2\\\\8 & 5\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}5 & 8\\\\2 & 2\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 2×8+2×2=20.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan $21$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan $22$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 2×8+2×2=20.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2768a1dbfc37b42d7ed4e22",
+        "teks": "Sebuah peternakan memasok telur, susu, dan madu ke Toko I dan Toko II. Banyak barang (kemasan) dinyatakan oleh matriks $P = \\begin{pmatrix}30 & 25 \\\\ 18 & 40 \\\\ 12 & 16\\end{pmatrix}$ dengan baris berturut-turut telur, susu, dan madu, serta kolom berturut-turut Toko I dan Toko II. Harga per kemasan (ribu rupiah) untuk telur, susu, dan madu berturut-turut adalah 22, 15, dan 60. Matriks baris pendapatan (dalam ribu rupiah) untuk Toko I dan Toko II berturut-turut adalah ....",
+        "jawaban": "$\\begin{pmatrix}1650 & 2110\\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}9 & 4\\\\6 & 2\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}2 & 6\\\\4 & 9\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 9×6+4×9=90.",
+      "distraktor": [
+        {
+          "teks": "$91$",
+          "alasan": "Pilihan $91$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan $89$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Pilihan $92$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 9×6+4×9=90.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a4744f80c7185fe46a61ab3",
+        "teks": "Matriks $A$, $B$, dan $C$ berordo $2 \\times 2$ dengan $AB = \\begin{pmatrix}4 & -3 \\\\ 7 & 2\\end{pmatrix}$ dan $AC = \\begin{pmatrix}1 & 5 \\\\ -2 & 6\\end{pmatrix}$. Matriks $A(B - C)$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}3 & -8 \\\\ 9 & -4\\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}8 & 4\\\\3 & 2\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}2 & 3\\\\4 & 8\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 8×3+4×8=56.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan $57$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan $55$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Pilihan $58$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 8×3+4×8=56.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "98024154a6211080df8020d6",
+        "teks": "Matriks $A = \\begin{pmatrix}3 & -9 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = O$. Nilai $x$ adalah ....",
+        "jawaban": "$-3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}8 & 7\\\\8 & 3\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}3 & 8\\\\7 & 8\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 8×8+7×8=120.",
+      "distraktor": [
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan $121$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan $119$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$122$",
+          "alasan": "Pilihan $122$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 8×8+7×8=120.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2768a1dbfc37b42d7ed4e22",
+        "teks": "Sebuah peternakan memasok telur, susu, dan madu ke Toko I dan Toko II. Banyak barang (kemasan) dinyatakan oleh matriks $P = \\begin{pmatrix}30 & 25 \\\\ 18 & 40 \\\\ 12 & 16\\end{pmatrix}$ dengan baris berturut-turut telur, susu, dan madu, serta kolom berturut-turut Toko I dan Toko II. Harga per kemasan (ribu rupiah) untuk telur, susu, dan madu berturut-turut adalah 22, 15, dan 60. Matriks baris pendapatan (dalam ribu rupiah) untuk Toko I dan Toko II berturut-turut adalah ....",
+        "jawaban": "$\\begin{pmatrix}1650 & 2110\\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}8 & 3\\\\4 & 3\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}3 & 4\\\\3 & 8\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 8×4+3×8=56.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan $57$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan $55$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Pilihan $58$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $56$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 8×4+3×8=56.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c570816d38711fed4c4f3b24",
+        "teks": "Dua cabang usaha memiliki karyawan tetap dan karyawan paruh waktu yang dinyatakan oleh matriks $A = \\begin{pmatrix}300 & 90 \\\\ 260 & 110\\end{pmatrix}$ (baris: cabang I dan II; kolom: tetap dan paruh waktu). Gaji per hari (ribu rupiah) dinyatakan oleh $B = \\begin{pmatrix}175 \\\\ 60\\end{pmatrix}$. Dana gaji per hari untuk cabang II adalah ....",
+        "jawaban": "Rp52.100.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}9 & 3\\\\8 & 2\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}2 & 8\\\\3 & 9\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$99$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 9×8+3×9=99.",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "Pilihan $100$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $99$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Pilihan $98$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $99$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan $101$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $99$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 9×8+3×9=99.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "161e52bccf0c00f8222eeb77",
+        "teks": "Matriks $A = \\begin{pmatrix}3 & -6 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = A$. Nilai $x$ adalah ....",
+        "jawaban": "$-2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}8 & 8\\\\5 & 2\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}2 & 5\\\\8 & 8\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$104$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 8×5+8×8=104.",
+      "distraktor": [
+        {
+          "teks": "$105$",
+          "alasan": "Pilihan $105$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $104$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$103$",
+          "alasan": "Pilihan $103$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $104$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$106$",
+          "alasan": "Pilihan $106$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $104$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 8×5+8×8=104.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2768a1dbfc37b42d7ed4e22",
+        "teks": "Sebuah peternakan memasok telur, susu, dan madu ke Toko I dan Toko II. Banyak barang (kemasan) dinyatakan oleh matriks $P = \\begin{pmatrix}30 & 25 \\\\ 18 & 40 \\\\ 12 & 16\\end{pmatrix}$ dengan baris berturut-turut telur, susu, dan madu, serta kolom berturut-turut Toko I dan Toko II. Harga per kemasan (ribu rupiah) untuk telur, susu, dan madu berturut-turut adalah 22, 15, dan 60. Matriks baris pendapatan (dalam ribu rupiah) untuk Toko I dan Toko II berturut-turut adalah ....",
+        "jawaban": "$\\begin{pmatrix}1650 & 2110\\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perkalian_matriks",
+      "alasan_level": "Target medium; variasi konsep perkalian matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A=\\left[\\begin{matrix}5 & 2\\\\4 & 5\\end{matrix}\\right]$ dan $B=\\left[\\begin{matrix}5 & 4\\\\2 & 5\\end{matrix}\\right]$. Tentukan elemen baris 1 kolom 2 dari $AB$.",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Kalikan baris pertama A dengan kolom kedua B: 5×4+2×5=30.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan $31$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan $29$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan $32$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $30$. Periksa kembali langkah perkalian matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan baris pertama A dengan kolom kedua B: 5×4+2×5=30.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-d-medium-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "af420cdf1df65e2a17fa52fb",
+        "teks": "Matriks $P$ berordo $p \\times q$ dan $h$ adalah suatu skalar. Pernyataan yang benar mengenai matriks $hP$ adalah ....",
+        "jawaban": "$hP$ berordo $p \\times q$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1980$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1980$.",
+      "distraktor": [
+        {
+          "teks": "$1981$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1979$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3960$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1980$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/b39464dec2b4cf2460d7615d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              10
+            ],
+            [
+              "e",
+              2
+            ],
+            [
+              "f",
+              5
+            ],
+            [
+              "g",
+              9
+            ],
+            [
+              "h",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"b\", 12], [\"c\", 3], [\"d\", 10], [\"e\", 2], [\"f\", 5], [\"g\", 9], [\"h\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "784560674e904e2e29c35b53",
+        "teks": "Matriks $M$ berordo $4 \\times 3$ dikalikan dengan skalar $5$ sehingga diperoleh matriks $5M$. Banyak elemen pada matriks $5M$ adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$318$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $318$.",
+      "distraktor": [
+        {
+          "teks": "$319$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$317$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$636$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $318$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/bd43902e6755167d7c26b445.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              6
+            ],
+            [
+              "c",
+              11
+            ],
+            [
+              "d",
+              5
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              2
+            ],
+            [
+              "h",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 6], [\"c\", 11], [\"d\", 5], [\"e\", 3], [\"f\", 4], [\"g\", 2], [\"h\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "092945fd68df6d3d5dedf5d3",
+        "teks": "Diketahui $A$ matriks nol berordo $2 \\times 2$ dan $B = \\begin{pmatrix}7 & -4 \\\\ 5 & 9\\end{pmatrix}$. Hasil perkalian $AB$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}0 & 0 \\\\ 0 & 0\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$975$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $975$.",
+      "distraktor": [
+        {
+          "teks": "$976$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$974$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1950$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $975$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6d034fab97a70f05561b0b8e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              10
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              9
+            ],
+            [
+              "h",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"b\", 12], [\"c\", 3], [\"d\", 10], [\"e\", 3], [\"f\", 7], [\"g\", 9], [\"h\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c2b717e4b926ea082bbffc03",
+        "teks": "Misalkan $O$ matriks nol berordo $3 \\times 3$ dan $C$ sembarang matriks berordo $3 \\times 3$. Pernyataan yang benar adalah ....",
+        "jawaban": "$CO = O$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$650$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $650$.",
+      "distraktor": [
+        {
+          "teks": "$651$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$649$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $650$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/bb526f6fbbbf82525dd5ddd0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "e",
+              2
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              8
+            ],
+            [
+              "h",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 11], [\"c\", 8], [\"d\", 8], [\"e\", 2], [\"f\", 7], [\"g\", 8], [\"h\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7908637c795c913bdc24e61",
+        "teks": "Matriks bukan nol berordo $2 \\times 2$ berikut yang memenuhi $AA = A$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$579$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $579$.",
+      "distraktor": [
+        {
+          "teks": "$580$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$578$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1158$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $579$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/cc021b3339013d769e93b19d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              3
+            ],
+            [
+              "e",
+              7
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              3
+            ],
+            [
+              "h",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 12], [\"c\", 5], [\"d\", 3], [\"e\", 7], [\"f\", 4], [\"g\", 3], [\"h\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a09d2ea220f172612b4db01",
+        "teks": "Diketahui $A = \\begin{pmatrix}1 & 0 \\\\ 0 & 0\\end{pmatrix}$. Pernyataan yang benar adalah ....",
+        "jawaban": "$A$ bukan matriks nol dan $AA = A$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1944$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1944$.",
+      "distraktor": [
+        {
+          "teks": "$1945$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1943$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3888$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1944$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ba4ecfe0040b2ab06e601702.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "e",
+              8
+            ],
+            [
+              "f",
+              6
+            ],
+            [
+              "g",
+              5
+            ],
+            [
+              "h",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 12], [\"c\", 8], [\"d\", 8], [\"e\", 8], [\"f\", 6], [\"g\", 5], [\"h\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff7f85b23aa8e4518bd878dd",
+        "teks": "Pernyataan yang benar tentang perkalian dua matriks $A$ dan $B$ yang berordo $2 \\times 2$ adalah ....",
+        "jawaban": "Ada pasangan $A$ dan $B$ sehingga $AB \\neq BA$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$730$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $730$.",
+      "distraktor": [
+        {
+          "teks": "$731$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$729$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1460$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $730$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c285c9c64a347e2bf6154c0f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "e",
+              6
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              2
+            ],
+            [
+              "h",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 7], [\"c\", 4], [\"d\", 6], [\"e\", 6], [\"f\", 4], [\"g\", 2], [\"h\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39515aba73eab3e428217d94",
+        "teks": "Sebuah bengkel memiliki $6$ montir tetap dan $4$ montir paruh waktu. Gaji per hari montir tetap Rp150.000,00 dan montir paruh waktu Rp90.000,00. Gaji dalam ribu rupiah dinyatakan oleh matriks $\\begin{pmatrix}6 & 4\\end{pmatrix}\\begin{pmatrix}150 \\\\ 90\\end{pmatrix}$. Total gaji yang harus dibayar bengkel per hari adalah ....",
+        "jawaban": "Rp1.260.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1440$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1440$.",
+      "distraktor": [
+        {
+          "teks": "$1441$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1439$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2880$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1440$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c956ba1ccf9d2e50218ea95c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              8
+            ],
+            [
+              "c",
+              6
+            ],
+            [
+              "d",
+              2
+            ],
+            [
+              "e",
+              5
+            ],
+            [
+              "f",
+              5
+            ],
+            [
+              "g",
+              9
+            ],
+            [
+              "h",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 8], [\"c\", 6], [\"d\", 2], [\"e\", 5], [\"f\", 5], [\"g\", 9], [\"h\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c570816d38711fed4c4f3b24",
+        "teks": "Dua cabang usaha memiliki karyawan tetap dan karyawan paruh waktu yang dinyatakan oleh matriks $A = \\begin{pmatrix}300 & 90 \\\\ 260 & 110\\end{pmatrix}$ (baris: cabang I dan II; kolom: tetap dan paruh waktu). Gaji per hari (ribu rupiah) dinyatakan oleh $B = \\begin{pmatrix}175 \\\\ 60\\end{pmatrix}$. Dana gaji per hari untuk cabang II adalah ....",
+        "jawaban": "Rp52.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$428$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $428$.",
+      "distraktor": [
+        {
+          "teks": "$429$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$427$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$856$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $428$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/3159a10ba2760249d46ffa3b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "d",
+              2
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              8
+            ],
+            [
+              "g",
+              8
+            ],
+            [
+              "h",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 3], [\"c\", 10], [\"d\", 2], [\"e\", 3], [\"f\", 8], [\"g\", 8], [\"h\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eab14272b1eb1388ea8e0de1",
+        "teks": "Sebuah toko roti menjual roti tawar, roti manis, dan roti keju. Banyak roti yang terjual dinyatakan oleh $\\begin{pmatrix}14 & 9 & 11\\end{pmatrix}$ dan harga per buah (ribu rupiah) oleh $\\begin{pmatrix}25 \\\\ 35 \\\\ 18\\end{pmatrix}$. Pendapatan toko jika semua roti terjual adalah ....",
+        "jawaban": "Rp863.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1214$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1214$.",
+      "distraktor": [
+        {
+          "teks": "$1215$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1213$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2428$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1214$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/683a4acc3e199d82e1329367.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              11
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              6
+            ],
+            [
+              "h",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 7], [\"c\", 11], [\"d\", 12], [\"e\", 3], [\"f\", 7], [\"g\", 6], [\"h\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "edf3835a47c48a07494c606f",
+        "teks": "Matriks tabungan tiga anggota koperasi (dalam rupiah) adalah $\\begin{pmatrix}1500000 \\\\ 2800000 \\\\ 5000000\\end{pmatrix}$. Jika suku bunga tunggal $8\\%$ per tahun, matriks besarnya bunga setelah satu tahun (dalam rupiah) adalah ....",
+        "jawaban": "$\\begin{pmatrix}120000 \\\\ 224000 \\\\ 400000\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$648$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $648$.",
+      "distraktor": [
+        {
+          "teks": "$649$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$647$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1296$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $648$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7821b3dd643fcff70f684896.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "d",
+              2
+            ],
+            [
+              "e",
+              8
+            ],
+            [
+              "f",
+              6
+            ],
+            [
+              "g",
+              6
+            ],
+            [
+              "h",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 3], [\"c\", 4], [\"d\", 2], [\"e\", 8], [\"f\", 6], [\"g\", 6], [\"h\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ffd60ee202aa37088a639aaa",
+        "teks": "Matriks $A$ berordo $3 \\times 2$ dan matriks $B$ berordo $2 \\times 5$. Ordo matriks $AB$ adalah ....",
+        "jawaban": "$3 \\times 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$274$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $274$.",
+      "distraktor": [
+        {
+          "teks": "$275$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$273$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$548$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $274$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/e9a798198414ce5cf17728c5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "e",
+              2
+            ],
+            [
+              "f",
+              6
+            ],
+            [
+              "g",
+              4
+            ],
+            [
+              "h",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"b\", 5], [\"c\", 3], [\"d\", 12], [\"e\", 2], [\"f\", 6], [\"g\", 4], [\"h\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "23ed83ac30f273d592b6c84d",
+        "teks": "Matriks $P$ berordo $2 \\times 3$. Agar hasil kali $PQ$ terdefinisi, ordo matriks $Q$ yang mungkin adalah ....",
+        "jawaban": "$3 \\times 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$510$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $510$.",
+      "distraktor": [
+        {
+          "teks": "$511$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$509$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1020$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $510$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7a81b47aaa3c38b6015ae9ae.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              4
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              10
+            ],
+            [
+              "e",
+              6
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              2
+            ],
+            [
+              "h",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 4], [\"c\", 5], [\"d\", 10], [\"e\", 6], [\"f\", 7], [\"g\", 2], [\"h\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1606ddba4b92692fd7204a12",
+        "teks": "Matriks $A$ berordo $4 \\times 2$ dan matriks $B$ berordo $3 \\times 4$. Pernyataan yang benar adalah ....",
+        "jawaban": "$BA$ terdefinisi dan berordo $3 \\times 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$648$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $648$.",
+      "distraktor": [
+        {
+          "teks": "$649$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$647$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1296$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $648$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/f61862b371f4fea4ae93e204.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "d",
+              12
+            ],
+            [
+              "e",
+              4
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              7
+            ],
+            [
+              "h",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 3], [\"c\", 3], [\"d\", 12], [\"e\", 4], [\"f\", 4], [\"g\", 7], [\"h\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7f33df16bb1903fa8fee189",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & -1 \\\\ 3 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}5 & 0 \\\\ -2 & 6\\end{pmatrix}$. Elemen baris ke-2 kolom ke-1 pada $AB$ adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$432$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $432$.",
+      "distraktor": [
+        {
+          "teks": "$433$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$431$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$864$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $432$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d807870ff1a9ecc03fd9c2a3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "e",
+              8
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              3
+            ],
+            [
+              "h",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 3], [\"c\", 5], [\"d\", 7], [\"e\", 8], [\"f\", 4], [\"g\", 3], [\"h\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9206bbb9ecd9cee1b53109c1",
+        "teks": "Diketahui $A = \\begin{pmatrix}4 & -2 \\\\ 1 & 6\\end{pmatrix}$. Matriks $-3A$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}-12 & 6 \\\\ -3 & -18\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$582$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $582$.",
+      "distraktor": [
+        {
+          "teks": "$583$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$581$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1164$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $582$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6da3accbe8193fc2b41779e9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              6
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              10
+            ],
+            [
+              "e",
+              4
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              8
+            ],
+            [
+              "h",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 6], [\"c\", 5], [\"d\", 10], [\"e\", 4], [\"f\", 7], [\"g\", 8], [\"h\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b68699876fbeac3efdf3ef16",
+        "teks": "Diketahui $A = \\begin{pmatrix}1 & -2 \\\\ 4 & 3\\end{pmatrix}$. Matriks $2(3A)$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}6 & -12 \\\\ 24 & 18\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$663$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $663$.",
+      "distraktor": [
+        {
+          "teks": "$664$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$662$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1326$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $663$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ebead8222d9c76486b0e8c85.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              2
+            ],
+            [
+              "d",
+              7
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              4
+            ],
+            [
+              "g",
+              8
+            ],
+            [
+              "h",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"b\", 9], [\"c\", 2], [\"d\", 7], [\"e\", 3], [\"f\", 4], [\"g\", 8], [\"h\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "159c6bb388f1eee5b36b245e",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & 1 \\\\ -1 & 3\\end{pmatrix}$ dan $B = \\begin{pmatrix}4 & -2 \\\\ 0 & 5\\end{pmatrix}$. Matriks $AB$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}8 & 1 \\\\ -4 & 17\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$976$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $976$.",
+      "distraktor": [
+        {
+          "teks": "$977$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$975$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1952$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $976$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/380c790a9da19ac94aaaf5e9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "c",
+              1
+            ],
+            [
+              "d",
+              9
+            ],
+            [
+              "e",
+              5
+            ],
+            [
+              "f",
+              6
+            ],
+            [
+              "g",
+              2
+            ],
+            [
+              "h",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"b\", 13], [\"c\", 1], [\"d\", 9], [\"e\", 5], [\"f\", 6], [\"g\", 2], [\"h\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3a6127a737598e3a077157da",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & -3 \\\\ 5 & 7\\end{pmatrix}$ dan $I$ matriks identitas berordo $2 \\times 2$. Matriks $AI$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}2 & -3 \\\\ 5 & 7\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$966$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $966$.",
+      "distraktor": [
+        {
+          "teks": "$967$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$965$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1932$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $966$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/815b8657aadc3d074e8d9c6c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              10
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "e",
+              8
+            ],
+            [
+              "f",
+              8
+            ],
+            [
+              "g",
+              3
+            ],
+            [
+              "h",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 10], [\"c\", 10], [\"d\", 8], [\"e\", 8], [\"f\", 8], [\"g\", 3], [\"h\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7bd3c0911b7c0fe31655d13",
+        "teks": "Matriks $A$ berordo $3 \\times 2$. Hasil $0 \\cdot A$ adalah ....",
+        "jawaban": "Matriks nol berordo $3 \\times 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$246$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $246$.",
+      "distraktor": [
+        {
+          "teks": "$247$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$492$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $246$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7037c02728fc6775337074fe.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              5
+            ],
+            [
+              "d",
+              6
+            ],
+            [
+              "e",
+              3
+            ],
+            [
+              "f",
+              3
+            ],
+            [
+              "g",
+              3
+            ],
+            [
+              "h",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 3], [\"c\", 5], [\"d\", 6], [\"e\", 3], [\"f\", 3], [\"g\", 3], [\"h\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20c5f524f1b12c70324839c7",
+        "teks": "Seorang siswa menyatakan bahwa jika $AB = O$ maka $A = O$ atau $B = O$. Diketahui $A = \\begin{pmatrix}2 & 4 \\\\ 1 & 2\\end{pmatrix}$ dan $B = \\begin{pmatrix}6 & -2 \\\\ -3 & 1\\end{pmatrix}$. Pernyataan yang benar tentang $A$ dan $B$ adalah ....",
+        "jawaban": "$AB = O$ padahal $A \\neq O$ dan $B \\neq O$, tetapi $BA \\neq O$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$2449$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $2449$.",
+      "distraktor": [
+        {
+          "teks": "$2450$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2448$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4898$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $2449$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/977cf61e1b026ee01851883e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "d",
+              8
+            ],
+            [
+              "e",
+              5
+            ],
+            [
+              "f",
+              7
+            ],
+            [
+              "g",
+              9
+            ],
+            [
+              "h",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 9], [\"c\", 10], [\"d\", 8], [\"e\", 5], [\"f\", 7], [\"g\", 9], [\"h\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "315ed1a21d696e94e4e91ba7",
+        "teks": "Seorang siswa menyimpulkan bahwa $AB = AC$ berarti $B = C$ karena $A$ boleh dicoret. Diketahui $A = \\begin{pmatrix}1 & 2 \\\\ 2 & 4\\end{pmatrix}$, $B = \\begin{pmatrix}3 & 6 \\\\ 3 & -1\\end{pmatrix}$, dan $C = \\begin{pmatrix}1 & 0 \\\\ 4 & 2\\end{pmatrix}$. Pernyataan yang benar adalah ....",
+        "jawaban": "$AB = AC$ walaupun $B \\neq C$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $2$; c = $5$; d = $5$; e = $8$; f = $7$; g = $3$; h = $4$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$244$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $244$.",
+      "distraktor": [
+        {
+          "teks": "$245$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$243$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$488$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $244$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "874b7a2f1ff665f6ff8d70be",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & 1 \\\\ 3 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}1 & 5 \\\\ 2 & 3\\end{pmatrix}$. Seorang siswa menyatakan $(A-B)^2 = A^2 - 2AB + B^2$. Matriks $(A-B)^2 - (A^2 - 2AB + B^2)$ sebenarnya sama dengan ....",
+        "jawaban": "$\\begin{pmatrix}-13 & -8 \\\\ -2 & 13\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; b = $3$; c = $7$; d = $9$; e = $4$; f = $4$; g = $9$; h = $3$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1224$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1224$.",
+      "distraktor": [
+        {
+          "teks": "$1225$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1223$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2448$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1224$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d920eb3d3291a299d9e14723",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & 5 \\\\ 3 & x\\end{pmatrix}$ dan $B = \\begin{pmatrix}7 & 10 \\\\ 6 & 9\\end{pmatrix}$. Nilai $x$ yang membuat $AB = BA$ adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $4$; c = $3$; d = $6$; e = $2$; f = $3$; g = $9$; h = $8$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$393$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $393$.",
+      "distraktor": [
+        {
+          "teks": "$394$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$392$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$786$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $393$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef79f3762293bb71c4ca90cf",
+        "teks": "Diketahui $A = \\begin{pmatrix}1 & 7 \\\\ 0 & 1\\end{pmatrix}$. Elemen baris 1 kolom 2 dari $A^{12}$ adalah ....",
+        "jawaban": "$84$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $6$; b = $13$; c = $3$; d = $11$; e = $3$; f = $3$; g = $2$; h = $9$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1059$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1059$.",
+      "distraktor": [
+        {
+          "teks": "$1060$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1058$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2118$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1059$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0737547ae3e3acfbdfd22019",
+        "teks": "Diketahui $A = \\begin{pmatrix}0 & 1 \\\\ -1 & 0\\end{pmatrix}$. Jumlah semua elemen matriks $A^{2026}$ adalah ....",
+        "jawaban": "$-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; b = $12$; c = $6$; d = $5$; e = $5$; f = $7$; g = $6$; h = $8$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1640$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1640$.",
+      "distraktor": [
+        {
+          "teks": "$1641$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1639$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1640$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "161e52bccf0c00f8222eeb77",
+        "teks": "Matriks $A = \\begin{pmatrix}3 & -6 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = A$. Nilai $x$ adalah ....",
+        "jawaban": "$-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; b = $2$; c = $11$; d = $10$; e = $2$; f = $6$; g = $7$; h = $2$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$537$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $537$.",
+      "distraktor": [
+        {
+          "teks": "$538$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$536$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1074$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $537$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "98024154a6211080df8020d6",
+        "teks": "Matriks $A = \\begin{pmatrix}3 & -9 \\\\ 1 & x\\end{pmatrix}$ memenuhi $AA = O$. Nilai $x$ adalah ....",
+        "jawaban": "$-3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $6$; b = $13$; c = $1$; d = $12$; e = $7$; f = $3$; g = $7$; h = $6$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1345$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1345$.",
+      "distraktor": [
+        {
+          "teks": "$1346$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1344$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2690$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1345$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1980dd55042d466faf047a73",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & 6 \\\\ 1 & 3\\end{pmatrix}$. Matriks $B$ yang bukan matriks nol dan memenuhi $AB = O$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}3 & -6 \\\\ -1 & 2\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $10$; c = $10$; d = $3$; e = $5$; f = $8$; g = $2$; h = $6$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$846$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $846$.",
+      "distraktor": [
+        {
+          "teks": "$847$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$845$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1692$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $846$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53f83b74fb0a1cd1776b0f6b",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & -1 \\\\ 3 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}5 & 1 \\\\ -2 & 6\\end{pmatrix}$. Seorang siswa menuliskan $AB = \\begin{pmatrix}12 & 8 \\\\ 7 & 27\\end{pmatrix}$ dan hanya satu elemen yang salah. Elemen yang salah beserta nilai yang benar adalah ....",
+        "jawaban": "baris 1 kolom 2, seharusnya $-4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $6$; c = $6$; d = $9$; e = $3$; f = $6$; g = $3$; h = $9$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1467$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1467$.",
+      "distraktor": [
+        {
+          "teks": "$1468$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1466$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2934$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1467$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "753235bba60f693a75e0f193",
+        "teks": "Diketahui $A = \\begin{pmatrix}3 & 1 \\\\ 2 & 4\\end{pmatrix}$ dan $B = \\begin{pmatrix}1 & -2 \\\\ 5 & 0\\end{pmatrix}$. Seorang siswa menuliskan $AB = \\begin{pmatrix}-1 & -7 \\\\ 15 & 5\\end{pmatrix}$. Kesalahan siswa dan jumlah semua elemen $AB$ yang benar adalah ....",
+        "jawaban": "siswa menghitung $BA$ (urutan tertukar); jumlahnya $20$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $11$; c = $5$; d = $9$; e = $2$; f = $7$; g = $5$; h = $3$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$549$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $549$.",
+      "distraktor": [
+        {
+          "teks": "$550$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$548$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1098$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $549$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4cd076a00320f587ac33dd03",
+        "teks": "Banyak perkalian bilangan untuk mengalikan matriks berordo $m \\times n$ dengan $n \\times p$ adalah $m \\cdot n \\cdot p$. Matriks $A$ berordo $10 \\times 2$, $B$ berordo $2 \\times 10$, dan $C$ berordo $10 \\times 1$. Hasil $ABC$ sama saja, tetapi selisih banyak perkalian bilangan antara cara $(AB)C$ dan cara $A(BC)$ adalah ....",
+        "jawaban": "$260$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $9$; c = $4$; d = $10$; e = $7$; f = $5$; g = $7$; h = $5$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$900$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $900$.",
+      "distraktor": [
+        {
+          "teks": "$901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6ab1934b5b30416ccf89775d",
+        "teks": "Banyak perkalian bilangan untuk mengalikan matriks berordo $m \\times n$ dengan $n \\times p$ adalah $m \\cdot n \\cdot p$. Matriks $A$ berordo $3 \\times 40$, $B$ berordo $40 \\times 2$, dan $C$ berordo $2 \\times 50$. Banyak perkalian bilangan paling sedikit untuk memperoleh $ABC$ dengan memilih salah satu pengelompokan adalah ....",
+        "jawaban": "$540$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; b = $12$; c = $5$; d = $9$; e = $8$; f = $7$; g = $7$; h = $2$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1370$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1370$.",
+      "distraktor": [
+        {
+          "teks": "$1371$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1369$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2740$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1370$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "123e4528c06c909e1a39b611",
+        "teks": "Matriks $A$ bukan matriks nol dan memenuhi $AA = A$, sedangkan $I$ matriks identitas seordo dengan $A$. Untuk $B = 2A - I$, hasil $B^2$ sama dengan ....",
+        "jawaban": "$I$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; b = $7$; c = $6$; d = $12$; e = $2$; f = $4$; g = $7$; h = $8$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1012$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1012$.",
+      "distraktor": [
+        {
+          "teks": "$1013$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1011$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2024$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1012$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "26fcce227cbeb739dba99eaa",
+        "teks": "Diketahui $A = \\begin{pmatrix}2 & 3 \\\\ 4 & 1\\end{pmatrix}$ dan $I$ matriks identitas ordo $2 \\times 2$. Jika $A^2 = pA + qI$, nilai $q - p$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $6$; b = $2$; c = $10$; d = $12$; e = $7$; f = $3$; g = $3$; h = $3$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$456$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $456$.",
+      "distraktor": [
+        {
+          "teks": "$457$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$455$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$912$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $456$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc9cddbc320f636aa295a91f",
+        "teks": "Matriks $A$, $B$, $C$ semuanya persegi seordo. Pernyataan yang selalu benar adalah ....",
+        "jawaban": "$(A + B)C = AC + BC$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; b = $3$; c = $8$; d = $12$; e = $7$; f = $7$; g = $3$; h = $2$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$201$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $201$.",
+      "distraktor": [
+        {
+          "teks": "$202$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$200$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$402$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $201$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4695c27392142a5db7f2c4b6",
+        "teks": "Matriks $A$ dan $B$ persegi seordo, dan $I$ matriks identitas seordo. Pernyataan yang selalu benar adalah ....",
+        "jawaban": "$(A + I)(A - I) = A^2 - I$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $4$; c = $6$; d = $10$; e = $8$; f = $8$; g = $9$; h = $2$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$574$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $574$.",
+      "distraktor": [
+        {
+          "teks": "$575$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$573$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1148$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $574$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac1fab4f9af53aea4c941f62",
+        "teks": "Diketahui $P = \\begin{pmatrix}50 & 21 \\\\ 12 & 63\\end{pmatrix}$ dan $Q = \\begin{pmatrix}6 & 9 \\\\ -4 & 7\\end{pmatrix}$. Matriks $X$ berordo $2 \\times 2$ yang memenuhi $P - 4X = 5Q$ adalah ....",
+        "jawaban": "$\\begin{pmatrix}5 & -6 \\\\ 8 & 7\\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; b = $3$; c = $10$; d = $8$; e = $7$; f = $6$; g = $8$; h = $4$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1248$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1248$.",
+      "distraktor": [
+        {
+          "teks": "$1249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1247$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2496$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1248$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-066"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d7221e98976f376077153be8",
+        "teks": "Diketahui $A = \\begin{pmatrix}17 & -11 & -9 \\\\ 25 & 18 & -35\\end{pmatrix}$ dan $B = \\begin{pmatrix}6 & -3 & 8 \\\\ -5 & 4 & 5\\end{pmatrix}$. Jika $X$ memenuhi $5X - A = 3B$, jumlah semua elemen matriks $X$ adalah ....",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $2$; c = $10$; d = $9$; e = $3$; f = $5$; g = $5$; h = $2$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$798$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $798$.",
+      "distraktor": [
+        {
+          "teks": "$799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$797$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1596$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $798$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-067"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6091556224652f1805d058a3",
+        "teks": "Diketahui $\begin{pmatrix}x+5 & 7 \\ 6 & -8\\end{pmatrix}\begin{pmatrix}8 & 0 \\ 5 & y-6\\end{pmatrix} = \begin{pmatrix}35 & 14 \\ 8 & -16\\end{pmatrix}$. Nilai $x - 2y$ adalah ....",
+        "jawaban": "-21",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_matrix_product_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $9$; c = $1$; d = $10$; e = $8$; f = $6$; g = $6$; h = $4$. Baris pertama A adalah $(a,b)$, matriks B adalah $\\begin{pmatrix}c&d\\\\e&f\\end{pmatrix}$, dan kolom pertama C adalah $(g,h)^T$. Tentukan elemen $(1,1)$ dari $ABC$.",
+      "jawaban_benar": "$1154$",
+      "alasan_benar": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1154$.",
+      "distraktor": [
+        {
+          "teks": "$1155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1153$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2308$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung kolom pertama BC, lalu kalikan dengan baris pertama A. Hasilnya $1154$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b01-d-medium-bt01-068"
     }
   ]
 }

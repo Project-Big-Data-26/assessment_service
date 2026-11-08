@@ -1,714 +1,2941 @@
 {
- "book": "kelas11_tl",
- "bab_no": 2,
- "subbab": "E",
- "level": "easy",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas11_tl-b02-p0106-latihan-e-4a"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menguji identitas dengan nilai variabel",
-   "alasan_level": "menguji satu nilai variabel pada kedua ruas lalu menyimpulkan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $5(x-2)^2 = (5x-10)^2$",
-   "jawaban_benar": "Bukan identitas, karena untuk $x=3$ ruas kiri bernilai 5 sedangkan ruas kanan bernilai 25",
-   "alasan_benar": "Untuk $x=3$: ruas kiri $5(1)^2=5$, ruas kanan $(15-10)^2=25$; ada satu nilai yang membuat kedua ruas tidak sama.",
-   "distraktor": [
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "E",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "Identitas, karena untuk $x=2$ kedua ruas sama-sama bernilai 0",
-     "alasan": "hanya menguji satu nilai yang kebetulan cocok lalu menyimpulkan berlaku untuk semua $x$"
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b02-p0106-latihan-e-4a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menguji identitas dengan nilai variabel",
+      "alasan_level": "menguji satu nilai variabel pada kedua ruas lalu menyimpulkan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $5(x-2)^2 = (5x-10)^2$",
+      "jawaban_benar": "Bukan identitas, karena untuk $x=3$ ruas kiri bernilai 5 sedangkan ruas kanan bernilai 25",
+      "alasan_benar": "Untuk $x=3$: ruas kiri $5(1)^2=5$, ruas kanan $(15-10)^2=25$; ada satu nilai yang membuat kedua ruas tidak sama.",
+      "distraktor": [
+        {
+          "teks": "Identitas, karena untuk $x=2$ kedua ruas sama-sama bernilai 0",
+          "alasan": "hanya menguji satu nilai yang kebetulan cocok lalu menyimpulkan berlaku untuk semua $x$"
+        },
+        {
+          "teks": "Identitas, karena kedua ruas sama-sama berbentuk kuadrat",
+          "alasan": "bentuk yang mirip dikira otomatis identik"
+        },
+        {
+          "teks": "Bukan identitas, karena untuk $x=3$ kedua ruas sama-sama bernilai 25",
+          "alasan": "salah hitung ruas kiri: lupa mengalikan 5 dengan kuadrat $(x-2)$ yang bernilai 1"
+        }
+      ],
+      "pembahasan": "Uji $x=3$: kiri $5(3-2)^2=5$, kanan $(5\\cdot3-10)^2=25$. Karena $5\\neq25$, persamaan bukan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-001"
     },
     {
-     "teks": "Identitas, karena kedua ruas sama-sama berbentuk kuadrat",
-     "alasan": "bentuk yang mirip dikira otomatis identik"
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b02-p0106-latihan-e-4a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menguji identitas dengan penjabaran",
+      "alasan_level": "menjabarkan kuadrat binomial lalu mengalikan konstanta, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $8(x+4)^2 = 8x^2 + 64x + 128$",
+      "jawaban_benar": "Identitas, karena ruas kiri dijabarkan menjadi $8x^2 + 64x + 128$",
+      "alasan_benar": "$8(x+4)^2 = 8(x^2+8x+16) = 8x^2+64x+128$, sama dengan ruas kanan untuk setiap $x$.",
+      "distraktor": [
+        {
+          "teks": "Bukan identitas, karena untuk $x=0$ ruas kiri bernilai 128 sedangkan ruas kanan bernilai 0",
+          "alasan": "salah hitung ruas kanan: untuk $x=0$ ruas kanan bernilai 128"
+        },
+        {
+          "teks": "Bukan identitas, karena pangkat tertinggi kedua ruas berbeda",
+          "alasan": "salah membaca pangkat; kedua ruas sama-sama berpangkat 2"
+        },
+        {
+          "teks": "Bukan identitas, karena suku tengah ruas kanan seharusnya $32x$",
+          "alasan": "salah menghitung suku tengah: $8\\cdot2\\cdot4x=64x$, bukan $32x$"
+        }
+      ],
+      "pembahasan": "$(x+4)^2=x^2+8x+16$, dikalikan 8 menjadi $8x^2+64x+128$ sehingga kedua ruas identik.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-002"
     },
     {
-     "teks": "Bukan identitas, karena untuk $x=3$ kedua ruas sama-sama bernilai 25",
-     "alasan": "salah hitung ruas kiri: lupa mengalikan 5 dengan kuadrat $(x-2)$ yang bernilai 1"
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "bagian": "Contoh 2.13",
+        "nomor": "2",
+        "teks": "(2 a – 5)(2 a + 5) = 4 a 2 – 20 a + 25",
+        "jawaban": "Bukan identitas (a = 0: -25 dan 25)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai kedua ruas pada nilai variabel",
+      "alasan_level": "mensubstitusi satu nilai variabel ke kedua ruas lalu menghitung, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Diberikan persamaan polinomial $(6b-7)(6b+7) = 36b^2 - 84b + 49$. Jika dipilih $b=0$, nilai ruas kiri dan nilai ruas kanan berturut-turut adalah ....",
+      "jawaban_benar": "$-49$ dan $49$",
+      "alasan_benar": "ruas kiri $(0-7)(0+7)=-49$; ruas kanan $0-0+49=49$.",
+      "distraktor": [
+        {
+          "teks": "$49$ dan $49$",
+          "alasan": "salah tanda: $(-7)(7)$ dianggap bernilai positif"
+        },
+        {
+          "teks": "$-49$ dan $-49$",
+          "alasan": "ruas kanan dianggap ikut negatif karena tertukar tanda dengan ruas kiri"
+        },
+        {
+          "teks": "$49$ dan $-49$",
+          "alasan": "kedua nilai tertukar tempat"
+        }
+      ],
+      "pembahasan": "Substitusi $b=0$: kiri $(-7)(7)=-49$, kanan $49$. Karena berbeda, persamaan itu bukan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-003"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "bagian": "Contoh 2.13",
+        "nomor": "1",
+        "teks": "(2 x 2 – y 2 ) 2 = 4 x 4 – 4 x 2 y 2 + y 4",
+        "jawaban": "Identitas polinomial"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menguji identitas dengan penjabaran",
+      "alasan_level": "menjabarkan kuadrat selisih dan membandingkan suku tengah, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Diberikan persamaan polinomial $(5u^2 - 3v)^2 = 25u^4 - 15u^2v + 9v^2$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Bukan identitas, karena suku tengah seharusnya $-30u^2v$",
+      "alasan_benar": "$(5u^2-3v)^2 = 25u^4 - 2(5u^2)(3v) + 9v^2 = 25u^4 - 30u^2v + 9v^2$.",
+      "distraktor": [
+        {
+          "teks": "Identitas, karena suku pertama dan suku ketiga sudah benar",
+          "alasan": "hanya memeriksa dua suku dari tiga suku"
+        },
+        {
+          "teks": "Bukan identitas, karena suku pertama seharusnya $25u^2$",
+          "alasan": "salah pangkat: $(5u^2)^2=25u^4$"
+        },
+        {
+          "teks": "Bukan identitas, karena suku ketiga seharusnya $9v$",
+          "alasan": "salah pangkat: $(3v)^2=9v^2$"
+        }
+      ],
+      "pembahasan": "Penjabaran benar adalah $25u^4-30u^2v+9v^2$; suku tengah pada soal $-15u^2v$ berbeda, sehingga bukan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-004"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Mari Mencoba 2.13",
+        "nomor": "1",
+        "teks": "(2 m – 3) 3 = 8 m 3 – 27",
+        "jawaban": "Bukan identitas"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menguji identitas dengan penjabaran",
+      "alasan_level": "menjabarkan pangkat tiga binomial memakai Sifat 2.6 nomor 6 lalu membandingkan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Diberikan persamaan polinomial $(t+4)^3 = t^3 + 12t^2 + 48t + 64$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Identitas, karena $(t+4)^3 = t^3 + 3\\cdot4\\,t^2 + 3\\cdot16\\,t + 64$",
+      "alasan_benar": "$(t+4)^3 = t^3 + 3t^2(4) + 3t(4^2) + 4^3 = t^3+12t^2+48t+64$.",
+      "distraktor": [
+        {
+          "teks": "Bukan identitas, karena suku tengahnya seharusnya $4t^2 + 16t$",
+          "alasan": "mengira koefisien tidak mengandung faktor 3"
+        },
+        {
+          "teks": "Bukan identitas, karena $(t+4)^3 = t^3 + 64$",
+          "alasan": "mengira pangkat tiga hanya memangkatkan tiap suku"
+        },
+        {
+          "teks": "Bukan identitas, karena suku konstanta seharusnya $12$",
+          "alasan": "mengira konstanta $4\\cdot3$ bukan $4^3$"
+        }
+      ],
+      "pembahasan": "Sifat 2.6 nomor 6 memberi $(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=t$, $b=4$: hasilnya persis ruas kanan.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-005"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Mari Mencoba 2.13",
+        "nomor": "1",
+        "teks": "(2 m – 3) 3 = 8 m 3 – 27",
+        "jawaban": "Bukan identitas"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "melengkapi koefisien identitas",
+      "alasan_level": "menjabarkan $(m+5)^3$ lalu membaca koefisien $m^2$, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Agar persamaan $(m+5)^3 = m^3 + km^2 + 75m + 125$ merupakan identitas polinomial, nilai $k$ adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "$(m+5)^3 = m^3 + 3(5)m^2 + 3(25)m + 125$, sehingga $k = 15$ (suku $75m$ dan $125$ cocok).",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "mengambil $b$ saja tanpa faktor 3"
+        },
+        {
+          "teks": "$25$",
+          "alasan": "mengambil $b^2$ saja tanpa faktor 3"
+        },
+        {
+          "teks": "$75$",
+          "alasan": "tertukar dengan koefisien suku $m$"
+        }
+      ],
+      "pembahasan": "Koefisien $m^2$ pada $(m+5)^3$ adalah $3\\cdot5=15$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-006"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Mari Mencoba 2.13",
+        "nomor": "2",
+        "teks": "(2 x – 3) 2 + 5 = 4 x 2 – 12 x + 14",
+        "jawaban": "Identitas polinomial"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menguji identitas dengan penjabaran",
+      "alasan_level": "menjabarkan ruas kiri, menambah konstanta, dan membandingkan dengan ruas kanan",
+      "stimulus": null,
+      "pertanyaan": "Diberikan persamaan polinomial $(8y-9)^2 + 4 = 64y^2 - 144y + 84$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai 85 sedangkan ruas kanan bernilai 84",
+      "alasan_benar": "ruas kiri dijabarkan menjadi $64y^2-144y+85$, sedangkan ruas kanan berkonstanta 84; untuk $y=0$: $81+4=85\\neq84$.",
+      "distraktor": [
+        {
+          "teks": "Identitas, karena $(8y-9)^2 = 64y^2 - 144y + 81$ sama dengan ruas kanan",
+          "alasan": "lupa bahwa ruas kiri masih ditambah 4 dan konstanta 81 + 4 = 85, bukan 84"
+        },
+        {
+          "teks": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai $-77$ sedangkan ruas kanan bernilai 84",
+          "alasan": "salah hitung: $(-9)^2$ ditulis $-81$ lalu ditambah 4"
+        },
+        {
+          "teks": "Bukan identitas, karena suku $-144y$ seharusnya $-72y$",
+          "alasan": "lupa mengalikan 2 pada suku tengah $2\\cdot8\\cdot9$ dengan benar"
+        }
+      ],
+      "pembahasan": "Ruas kiri $=64y^2-144y+81+4=64y^2-144y+85$. Konstanta 85 tidak sama dengan 84, jadi bukan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-007"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 105,
+        "bagian": "Contoh 2.14",
+        "nomor": "2.14",
+        "teks": "Faktorkan (3 x – 1) 2 – 25.",
+        "jawaban": "(3x + 4)(3x - 6)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "faktorisasi dengan identitas",
+      "alasan_level": "mengenali selisih dua kuadrat lalu menerapkan identitas 1 dan menyederhanakan faktor, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Faktorkan $(5x-2)^2 - 49$.",
+      "jawaban_benar": "$(5x+5)(5x-9)$",
+      "alasan_benar": "selisih kuadrat dengan $a=5x-2$ dan $b=7$: $(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
+      "distraktor": [
+        {
+          "teks": "$(5x-5)(5x+9)$",
+          "alasan": "salah tanda saat menggabungkan $-2$ dengan $\\pm7$"
+        },
+        {
+          "teks": "$(5x-7)(5x+7)$",
+          "alasan": "mengabaikan suku $-2$ di dalam kuadrat"
+        },
+        {
+          "teks": "$(5x-51)(5x+47)$",
+          "alasan": "memakai 49 sebagai $b$ bukan 7 lalu menggabungkan dengan $-2$"
+        }
+      ],
+      "pembahasan": "$(5x-2)^2-7^2=(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-008"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "bagian": "Mari Mencoba 2.14",
+        "nomor": "2.14",
+        "teks": "Faktorkan 4 x 2 + 12 x y + 9 y 2 .",
+        "jawaban": "(2x + 3y)^2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "faktorisasi dengan identitas",
+      "alasan_level": "mengenali bentuk kuadrat sempurna lalu memakai identitas 2, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Faktorkan $16x^2 + 40xy + 25y^2$.",
+      "jawaban_benar": "$(4x+5y)^2$",
+      "alasan_benar": "$16x^2=(4x)^2$, $25y^2=(5y)^2$, dan $2(4x)(5y)=40xy$, jadi bentuknya $(4x+5y)^2$.",
+      "distraktor": [
+        {
+          "teks": "$(4x+5y)(4x-5y)$",
+          "alasan": "tertukar dengan identitas selisih dua kuadrat"
+        },
+        {
+          "teks": "$(16x+25y)^2$",
+          "alasan": "lupa menarik akar koefisien kuadrat"
+        },
+        {
+          "teks": "$(4x+10y)^2$",
+          "alasan": "salah menentukan $b$: memakai $40/4$ sebagai $b$"
+        }
+      ],
+      "pembahasan": "Bentuk $a^2+2ab+b^2$ dengan $a=4x$ dan $b=5y$, jadi $(4x+5y)^2$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 107,
+        "bagian": "Latihan E",
+        "nomor": "5",
+        "teks": "Jika ( x 2 + x – 6)( x – 4) = P ( x ) · ( x + 3) adalah identitas, tentukan polinomial P ( x ).",
+        "jawaban": "(x - 2)(x - 4) = x^2 - 6x + 8"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari polinomial dari identitas",
+      "alasan_level": "memfaktorkan kuadrat lalu mencoret faktor yang sama pada kedua ruas, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Jika $(x^2+2x-15)(x-7) = P(x)\\cdot(x+5)$ adalah identitas, polinomial $P(x)$ adalah ....",
+      "jawaban_benar": "$x^2-10x+21$",
+      "alasan_benar": "$x^2+2x-15=(x+5)(x-3)$, sehingga $P(x)=(x-3)(x-7)=x^2-10x+21$.",
+      "distraktor": [
+        {
+          "teks": "$x^2+10x+21$",
+          "alasan": "salah tanda saat menjabarkan $(x-3)(x-7)$"
+        },
+        {
+          "teks": "$x^2-4x-21$",
+          "alasan": "memakai faktor $(x+3)(x-7)$ karena tanda faktor kuadrat terbalik"
+        },
+        {
+          "teks": "$x^2+2x-15$",
+          "alasan": "hanya mengambil faktor kuadrat dan melupakan faktor $(x-7)$"
+        }
+      ],
+      "pembahasan": "Faktorkan $x^2+2x-15=(x+5)(x-3)$, bagi kedua ruas dengan $(x+5)$: $P(x)=(x-3)(x-7)$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "bagian": "Latihan E Pemahaman Konsep",
+        "nomor": "1",
+        "teks": "Benar atau salah? Semua persamaan polinomial merupakan identitas polinomial.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep identitas polinomial",
+      "alasan_level": "memahami bahwa identitas harus berlaku untuk semua nilai variabel, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang persamaan polinomial dan identitas polinomial adalah ....",
+      "jawaban_benar": "Persamaan $x + 1 = 4$ bukan identitas, karena hanya benar untuk $x=3$",
+      "alasan_benar": "identitas harus benar untuk setiap nilai variabel, sedangkan $x+1=4$ hanya benar saat $x=3$.",
+      "distraktor": [
+        {
+          "teks": "Persamaan $x + 1 = 4$ merupakan identitas, karena ada nilai $x$ yang memenuhinya",
+          "alasan": "satu nilai pemenuh dikira cukup untuk menjadi identitas"
+        },
+        {
+          "teks": "Persamaan $x + 1 = x + 1$ bukan identitas, karena memuat variabel",
+          "alasan": "mengira persamaan bervariabel tidak mungkin identitas"
+        },
+        {
+          "teks": "Setiap persamaan polinomial pasti merupakan identitas polinomial",
+          "alasan": "menyamakan persamaan polinomial dengan identitas"
+        }
+      ],
+      "pembahasan": "Identitas polinomial benar untuk semua nilai variabel. $x+1=4$ salah untuk $x=0$, jadi bukan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 106,
+        "bagian": "Latihan E Pemahaman Konsep",
+        "nomor": "2",
+        "teks": "Benar atau salah? Jika ada satu saja nilai variabel yang tidak memenuhi suatu persamaan polinomial, maka persamaan polinomial tersebut bukanlah identitas polinomial.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep identitas polinomial",
+      "alasan_level": "mengenali cara cukup untuk menunjukkan bukan identitas, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Cara yang cukup untuk menunjukkan bahwa suatu persamaan polinomial bukan identitas polinomial adalah ....",
+      "jawaban_benar": "menemukan satu nilai variabel yang membuat ruas kiri tidak sama dengan ruas kanan",
+      "alasan_benar": "satu contoh penyangkal sudah cukup untuk membuktikan persamaan tidak berlaku untuk semua nilai variabel.",
+      "distraktor": [
+        {
+          "teks": "menemukan satu nilai variabel yang membuat kedua ruas bernilai sama",
+          "alasan": "satu contoh yang cocok dikira bukti bukan identitas"
+        },
+        {
+          "teks": "memeriksa bahwa kedua ruas bernilai sama untuk satu nilai variabel tertentu",
+          "alasan": "menjadikan satu nilai cocok sebagai bukti identitas"
+        },
+        {
+          "teks": "menunjukkan bahwa kedua ruas memiliki derajat yang sama",
+          "alasan": "derajat sama tidak menjamin kedua ruas identik"
+        }
+      ],
+      "pembahasan": "Untuk membuktikan bukan identitas cukup satu nilai variabel yang membuat kedua ruas berbeda.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 108,
+        "bagian": "Uji Kompetensi Bab 2",
+        "nomor": "3",
+        "teks": "Persamaan 4 a 2 – 1 = (2 a + 1)(2 a – 1) merupakan identitas polinomial.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mengenali identitas selisih kuadrat",
+      "alasan_level": "mengenali bentuk selisih dua kuadrat pada ruas kiri dan kanan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Diberikan persamaan $49n^2 - 36 = (7n+6)(7n-6)$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Identitas, karena $49n^2-36=(7n)^2-6^2$ sesuai bentuk $a^2-b^2=(a+b)(a-b)$",
+      "alasan_benar": "$(7n+6)(7n-6)=49n^2-36$ untuk setiap $n$.",
+      "distraktor": [
+        {
+          "teks": "Bukan identitas, karena $(7n+6)(7n-6)=49n^2-84n-36$",
+          "alasan": "salah menjabarkan: suku tengah dianggap tidak saling meniadakan"
+        },
+        {
+          "teks": "Bukan identitas, karena seharusnya $49n^2-36=(7n-6)^2$",
+          "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
+        },
+        {
+          "teks": "Bukan identitas, karena $49n^2-36=(7n)^2+6^2$",
+          "alasan": "salah tanda: selisih kuadrat dianggap jumlah kuadrat"
+        }
+      ],
+      "pembahasan": "$(7n+6)(7n-6)=(7n)^2-6^2=49n^2-36$, sehingga merupakan identitas.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-013"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "mengingat rumus identitas",
+      "alasan_level": "mengingat rumus jumlah pangkat tiga dari Sifat 2.6, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Bentuk faktor dari $a^3 + b^3$ yang merupakan identitas polinomial adalah ....",
+      "jawaban_benar": "$(a+b)(a^2-ab+b^2)$",
+      "alasan_benar": "identitas jumlah pangkat tiga: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
+      "distraktor": [
+        {
+          "teks": "$(a+b)(a^2+ab+b^2)$",
+          "alasan": "suku tengah bertanda positif, tertukar dengan identitas selisih pangkat tiga"
+        },
+        {
+          "teks": "$(a+b)^3$",
+          "alasan": "mengira jumlah pangkat tiga sama dengan pangkat tiga dari jumlah"
+        },
+        {
+          "teks": "$(a-b)(a^2-ab+b^2)$",
+          "alasan": "faktor linear bertanda negatif, tertukar dengan identitas selisih pangkat tiga"
+        }
+      ],
+      "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-014"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mengingat rumus identitas",
+      "alasan_level": "memakai rumus $(a+b)^3$ lalu menghitung koefisien suku $x$, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Pada hasil penjabaran $(x+2)^3$, koefisien dari $x$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "$(x+2)^3=x^3+6x^2+12x+8$, koefisien $x$ adalah $3\\cdot2^2=12$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengambil koefisien $x^2$ yaitu $3\\cdot2$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "mengambil $b^2$ tanpa faktor 3"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengambil suku konstanta $2^3$"
+        }
+      ],
+      "pembahasan": "$(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=x$, $b=2$: suku $x$ adalah $3x\\cdot4=12x$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-015"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "mengenali bentuk identitas",
+      "alasan_level": "mengenali identitas yang benar di antara bentuk-bentuk serupa, satu langkah",
+      "stimulus": null,
+      "pertanyaan": "Persamaan polinomial berikut yang merupakan identitas polinomial adalah ....",
+      "jawaban_benar": "$(a-b)^2 = a^2 - 2ab + b^2$",
+      "alasan_benar": "identitas kuadrat selisih dua suku (Sifat 2.6 nomor 3).",
+      "distraktor": [
+        {
+          "teks": "$(a+b)^2 = a^2 + b^2$",
+          "alasan": "melupakan suku tengah $2ab$"
+        },
+        {
+          "teks": "$a^2 - b^2 = (a-b)^2$",
+          "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
+        },
+        {
+          "teks": "$(a+b)^3 = a^3 + b^3$",
+          "alasan": "mengira pangkat tiga jumlah hanya memangkatkan tiap suku"
+        }
+      ],
+      "pembahasan": "Hanya $(a-b)^2=a^2-2ab+b^2$ yang berlaku untuk semua $a$ dan $b$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-016"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "penerapan identitas pada bilangan",
+      "alasan_level": "memakai $a^2-b^2=(a+b)(a-b)$ pada bilangan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
+      "jawaban_benar": "$400$",
+      "alasan_benar": "$101^2-99^2=(101+99)(101-99)=200\\cdot2=400$.",
+      "distraktor": [
+        {
+          "teks": "$200$",
+          "alasan": "hanya mengambil faktor $(a+b)$"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "hanya mengambil faktor $(a-b)$"
+        },
+        {
+          "teks": "$800$",
+          "alasan": "mengalikan hasil dengan 2 sekali lagi"
+        }
+      ],
+      "pembahasan": "$(101+99)(101-99)=200\\cdot2=400$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-017"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Persamaan seperti ini disebut identitas polinomial"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "melengkapi koefisien identitas",
+      "alasan_level": "memakai identitas kuadrat selisih untuk menentukan konstanta, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Agar persamaan $x^2 - 14x + k = (x-7)^2$ merupakan identitas polinomial, nilai $k$ adalah ....",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "$(x-7)^2=x^2-14x+49$, sehingga $k=49$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "mengambil $b$ bukan $b^2$"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "menyamakan konstanta dengan koefisien suku $x$"
+        },
+        {
+          "teks": "$-49$",
+          "alasan": "salah tanda: kuadrat selalu positif"
+        }
+      ],
+      "pembahasan": "Konstanta $b^2=7^2=49$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-018"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 103,
+        "kutipan": "Berapa pun bilangan yang dipilih, kamu selalu akan mendapatkan 10."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "penerapan numerik identitas",
+      "alasan_level": "memodelkan langkah sulap menjadi bentuk aljabar lalu menyederhanakan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Seorang pesulap meminta penonton memilih sebuah bilangan $n$, mengalikan $(n+4)$ dengan $(n-4)$, menambahkan 20, lalu mengurangi hasilnya dengan $n^2$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$(n+4)(n-4)+20-n^2=n^2-16+20-n^2=4$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "menganggap $(n+4)(n-4)=n^2+16$"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "lupa menambahkan 20"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "mengabaikan hasil kali $(n+4)(n-4)$"
+        }
+      ],
+      "pembahasan": "$(n+4)(n-4)=n^2-16$, ditambah 20 menjadi $n^2+4$, dikurangi $n^2$ menjadi 4.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-019"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyederhanakan dengan identitas",
+      "alasan_level": "mengenali bentuk jumlah pangkat tiga dan menyederhanakan, dua langkah",
+      "stimulus": null,
+      "pertanyaan": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+      "jawaban_benar": "$x^3 + 27$",
+      "alasan_benar": "identitas jumlah pangkat tiga dengan $b=3$: $(x+3)(x^2-3x+9)=x^3+3^3$.",
+      "distraktor": [
+        {
+          "teks": "$x^3 - 27$",
+          "alasan": "salah tanda: memakai identitas selisih pangkat tiga"
+        },
+        {
+          "teks": "$x^3 + 9$",
+          "alasan": "menghitung $3^3$ sebagai $3\\cdot3$"
+        },
+        {
+          "teks": "$x^3 + 81$",
+          "alasan": "menghitung $3^3$ sebagai $9\\cdot9$"
+        }
+      ],
+      "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$ dengan $a=x$, $b=3$.",
+      "catatan": null,
+      "id": "kelas11_tl-b02-e-easy-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b2c3cf762e5bd2ef069f092",
+        "teks": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
+        "jawaban": "$400$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target easy; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+3)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×3²=90.",
+      "distraktor": [
+        {
+          "teks": "$91$",
+          "alasan": "Pilihan $91$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan $89$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Pilihan $92$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $90$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×3²=90.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a99b9af7ecc420e0b36ea810",
+        "teks": "Persamaan polinomial berikut yang merupakan identitas polinomial adalah ....",
+        "jawaban": "$(a-b)^2 = a^2 - 2ab + b^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target easy; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+6)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$108$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×6²=108.",
+      "distraktor": [
+        {
+          "teks": "$109$",
+          "alasan": "Pilihan $109$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $108$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$107$",
+          "alasan": "Pilihan $107$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $108$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Pilihan $110$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $108$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×6²=108.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6fcf48b8ab74edfc07e37d58",
+        "teks": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+        "jawaban": "$x^3 + 27$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target easy; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+7)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$490$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×7²=490.",
+      "distraktor": [
+        {
+          "teks": "$491$",
+          "alasan": "Pilihan $491$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $490$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$489$",
+          "alasan": "Pilihan $489$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $490$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$492$",
+          "alasan": "Pilihan $492$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $490$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×7²=490.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d92ab95db2a5fecd51937bdf",
+        "teks": "Diberikan persamaan polinomial $(t+4)^3 = t^3 + 12t^2 + 48t + 64$. Pernyataan yang benar adalah ....",
+        "jawaban": "Identitas, karena $(t+4)^3 = t^3 + 3\\cdot4\\,t^2 + 3\\cdot16\\,t + 64$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_identitas_koefisien_awal",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dalam $(x+2)^4$, berapa koefisien $x^3$?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×2=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×2=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "433793a5038265fe065b4d9a",
+        "teks": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $5(x-2)^2 = (5x-10)^2$",
+        "jawaban": "Bukan identitas, karena untuk $x=3$ ruas kiri bernilai 5 sedangkan ruas kanan bernilai 25",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_identitas_koefisien_awal",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dalam $(x+5)^4$, berapa koefisien $x^3$?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×5=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×5=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "af67b9d41e80da24faf7b34f",
+        "teks": "Agar persamaan $(m+5)^3 = m^3 + km^2 + 75m + 125$ merupakan identitas polinomial, nilai $k$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_identitas_koefisien_awal",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dalam $(x+6)^4$, berapa koefisien $x^3$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×6=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dari 4 faktor: koefisien 4×6=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "433793a5038265fe065b4d9a",
+        "teks": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $5(x-2)^2 = (5x-10)^2$",
+        "jawaban": "Bukan identitas, karena untuk $x=3$ ruas kiri bernilai 5 sedangkan ruas kanan bernilai 25",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $40$.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $40$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a80f146ff8cf81d0ab6adb5b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87c2955dd6188adab35a8915",
+        "teks": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $8(x+4)^2 = 8x^2 + 64x + 128$",
+        "jawaban": "Identitas, karena ruas kiri dijabarkan menjadi $8x^2 + 64x + 128$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $64$.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $64$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/412cb10755abe25b03ac7fa8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bdc4672b1c0b5d02fbbf7bbd",
+        "teks": "Diberikan persamaan polinomial $(5u^2 - 3v)^2 = 25u^4 - 15u^2v + 9v^2$. Pernyataan yang benar adalah ....",
+        "jawaban": "Bukan identitas, karena suku tengah seharusnya $-30u^2v$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/53762e9a3fc3c8c36b6fedb9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d92ab95db2a5fecd51937bdf",
+        "teks": "Diberikan persamaan polinomial $(t+4)^3 = t^3 + 12t^2 + 48t + 64$. Pernyataan yang benar adalah ....",
+        "jawaban": "Identitas, karena $(t+4)^3 = t^3 + 3\\cdot4\\,t^2 + 3\\cdot16\\,t + 64$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/34e7bd291dd5905a3ca4a88d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "af67b9d41e80da24faf7b34f",
+        "teks": "Agar persamaan $(m+5)^3 = m^3 + km^2 + 75m + 125$ merupakan identitas polinomial, nilai $k$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $49$.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $49$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/06e6f9e2fa20f4bd94cdafe7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "n",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"n\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78cfb9513aee3647aacee5c1",
+        "teks": "Diberikan persamaan polinomial $(8y-9)^2 + 4 = 64y^2 - 144y + 84$. Pernyataan yang benar adalah ....",
+        "jawaban": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai 85 sedangkan ruas kanan bernilai 84",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/2570bee514c2a793a6755269.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d8153bc18a8d5a142abd7e7",
+        "teks": "Faktorkan $(5x-2)^2 - 49$.",
+        "jawaban": "$(5x+5)(5x-9)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/e5a59ab0e40f4caa1933dff9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54d8038a47a69abc1b1a41ab",
+        "teks": "Faktorkan $16x^2 + 40xy + 25y^2$.",
+        "jawaban": "$(4x+5y)^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6c986eb6cab054695ebfc0ab.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d46f702e20ceeb6d437d4e3c",
+        "teks": "Jika $(x^2+2x-15)(x-7) = P(x)\\cdot(x+5)$ adalah identitas, polinomial $P(x)$ adalah ....",
+        "jawaban": "$x^2-10x+21$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $63$.",
+      "distraktor": [
+        {
+          "teks": "$64$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $63$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7cfac89896429eccf5374f6e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "n",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"n\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "742ceb3f0b0346be681a3e6b",
+        "teks": "Pernyataan yang benar tentang persamaan polinomial dan identitas polinomial adalah ....",
+        "jawaban": "Persamaan $x + 1 = 4$ bukan identitas, karena hanya benar untuk $x=3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6949c0cf2e956479f1123f5c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "n",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"n\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3e0a843da036a05130ddcf49",
+        "teks": "Cara yang cukup untuk menunjukkan bahwa suatu persamaan polinomial bukan identitas polinomial adalah ....",
+        "jawaban": "menemukan satu nilai variabel yang membuat ruas kiri tidak sama dengan ruas kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $6$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $6$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d8026dcd455222bda03288d1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7fea5fcce40a8ea4ba1da295",
+        "teks": "Diberikan persamaan $49n^2 - 36 = (7n+6)(7n-6)$. Pernyataan yang benar adalah ....",
+        "jawaban": "Identitas, karena $49n^2-36=(7n)^2-6^2$ sesuai bentuk $a^2-b^2=(a+b)(a-b)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/36ff3e793b4bab57a019b1c1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e597b6634db78a43fd69054a",
+        "teks": "Bentuk faktor dari $a^3 + b^3$ yang merupakan identitas polinomial adalah ....",
+        "jawaban": "$(a+b)(a^2-ab+b^2)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d6dcef68661e1345fba4e430.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c63e835fd78b84eac3c5c99f",
+        "teks": "Pada hasil penjabaran $(x+2)^3$, koefisien dari $x$ adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $30$.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $30$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/1e12511ead407036ece3b77b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a99b9af7ecc420e0b36ea810",
+        "teks": "Persamaan polinomial berikut yang merupakan identitas polinomial adalah ....",
+        "jawaban": "$(a-b)^2 = a^2 - 2ab + b^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/1ba7fb59099668e6d1d0b68f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b2c3cf762e5bd2ef069f092",
+        "teks": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
+        "jawaban": "$400$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $80$.",
+      "distraktor": [
+        {
+          "teks": "$81$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$160$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $80$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a08176818ef043fa0b4f3878.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f785be4636c35fc09f82b82",
+        "teks": "Agar persamaan $x^2 - 14x + k = (x-7)^2$ merupakan identitas polinomial, nilai $k$ adalah ....",
+        "jawaban": "$49$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/658d720ed5b7e98e64bf6613.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "348ceecb90c400b23f17842d",
+        "teks": "Seorang pesulap meminta penonton memilih sebuah bilangan $n$, mengalikan $(n+4)$ dengan $(n-4)$, menambahkan 20, lalu mengurangi hasilnya dengan $n^2$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $32$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $32$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a5ff1b3e555bf26e80434a6a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6fcf48b8ab74edfc07e37d58",
+        "teks": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+        "jawaban": "$x^3 + 27$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $10$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $10$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/5150968f7610b21eaeb6f9e7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "n",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"n\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff96a05c1966ef24dc67a78b",
+        "teks": "Tiga bilangan $a^2-b^2$, $2ab$, dan $a^2+b^2$ dengan $a>b$ selalu merupakan panjang sisi segitiga siku-siku dengan sisi miring $a^2+b^2$. Pesulap ingin segitiga siku-siku dengan sisi miring tepat 65 satuan, dengan $a$ dan $b$ bilangan asli, $a>b$. Nilai terbesar yang mungkin untuk $a+b$ adalah ....",
+        "jawaban": "$11$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/959bf1f389ecd806b403c8ec.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea06790efb5512658f7c0fcb",
+        "teks": "Jika $a$ dan $b$ bilangan real positif dengan $a>b$, empat siswa memberi argumen bahwa $a^2-b^2$, $2ab$, dan $a^2+b^2$ adalah panjang sisi segitiga siku-siku. Argumen yang sahih dan benar adalah ....",
+        "jawaban": "Identitas $(a^2-b^2)^2+(2ab)^2=(a^2+b^2)^2$ berlaku untuk semua $a>b>0$, sisi miringnya $a^2+b^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ce5b6ff9e547e1db3fa5f263.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7399a0c5030779d9d7cf5d1",
+        "teks": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+        "jawaban": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; n = $7$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $77$.",
+      "distraktor": [
+        {
+          "teks": "$78$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $77$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8db5254033a908a496ffa49",
+        "teks": "Pernyataan berikut yang merupakan identitas polinomial (benar untuk semua bilangan real $a$ dan $b$) adalah ....",
+        "jawaban": "$(a-b)^3=a^3-b^3-3ab(a-b)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; n = $8$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87828dac5de56ee936356680",
+        "teks": "Rudi menguji persamaan $x^3+2x=3x^2$ dengan $x=0$, $x=1$, dan $x=2$; ketiganya benar, sehingga ia menyimpulkan persamaan itu identitas polinomial. Bilangan bulat positif terkecil yang menunjukkan kesimpulan Rudi keliru adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; n = $6$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $42$.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $42$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; n = $5$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $35$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $35$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5023b881a24c91525317832b",
+        "teks": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+        "jawaban": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; n = $8$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $64$.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $64$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20f176caa337685fd51b5f71",
+        "teks": "Faktorkan $9(2x-5)^2 - 64$.",
+        "jawaban": "$(6x-7)(6x-23)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; n = $3$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9c29157aa7a05062149609a3",
+        "teks": "Faktorkan $25a^6 + 40a^3b^3 + 16b^6$.",
+        "jawaban": "$(5a^3+4b^3)^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; n = $4$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4383703992ab541bf45f9481",
+        "teks": "Diberikan persamaan polinomial $(2p - q + 3r)^2 = 4p^2 + q^2 + 9r^2 - 4pq + 12pr + 6qr$. Pernyataan yang benar adalah ....",
+        "jawaban": "Bukan identitas, karena suku $qr$ seharusnya $-6qr$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; n = $5$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $45$.",
+      "distraktor": [
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $45$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; n = $3$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca802b7d3ebdc3f2feb90c5f",
+        "teks": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $64(x-5)^3 = (4x-20)^3$",
+        "jawaban": "Identitas, karena $(4x-20)^3=(4(x-5))^3=64(x-5)^3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; n = $3$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7affaeb6a324972d5541688",
+        "teks": "Jika $(x^3-125)(x+7) = P(x)\\cdot(x^2+5x+25)$ adalah identitas, polinomial $P(x)$ adalah ....",
+        "jawaban": "$x^2+2x-35$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; n = $5$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c50426db19918819f9238c69",
+        "teks": "Seorang pesulap meminta penonton memilih bilangan $n$ yang tidak nol, lalu mengkuadratkan jumlah $n$ dan 5, mengurangi hasilnya dengan kuadrat selisih $n$ dan 5, kemudian membagi hasilnya dengan $n$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
+        "jawaban": "$20$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; n = $7$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $84$.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $84$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54d918961f25c9f521c98c7c",
+        "teks": "Seorang pesulap meminta penonton memilih bilangan bulat $n$, memangkatkan tiga jumlah $n$ dan 1, mengurangi hasilnya dengan pangkat tiga selisih $n$ dan 1, lalu mengurangi lagi dengan $6n^2$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; n = $8$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $80$.",
+      "distraktor": [
+        {
+          "teks": "$81$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$160$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $80$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "641f6764454d944be672dba5",
+        "teks": "Jika $(px+q)^3 = 8x^3 + 36x^2 + rx + 27$ adalah identitas polinomial dengan $p$ dan $q$ bilangan real positif, nilai $p+q+r$ adalah ....",
+        "jawaban": "$59$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; n = $7$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d695de2dac64ab8135f8d1b6",
+        "teks": "Bentuk faktor dari $4x^2 - 12x + 9 - 25y^2$ adalah ....",
+        "jawaban": "$(2x-3+5y)(2x-3-5y)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; n = $4$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9372304ea490f01980d39d61",
+        "teks": "Dengan memakai identitas $a^3+b^3=(a+b)(a^2-ab+b^2)$, nilai dari $\\dfrac{51^3+49^3}{51^2-51\\cdot49+49^2}$ adalah ....",
+        "jawaban": "$100$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; n = $3$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $30$.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $30$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a6a06c81d26485a5b736a09",
+        "teks": "Untuk $x\\neq3$ dan $x\\neq-3$, bentuk paling sederhana dari $\\dfrac{x^3-27}{x^2-9}$ adalah ....",
+        "jawaban": "$\\dfrac{x^2+3x+9}{x+3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; n = $7$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $70$.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $70$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ced784604897425140ae9750",
+        "teks": "Dimas menyatakan bahwa $(a+b)^2-(a-b)^2=2ab$ merupakan identitas polinomial. Pernyataan yang tepat tentang klaim Dimas adalah ....",
+        "jawaban": "Keliru, karena ruas kiri sama dengan $4ab$, sehingga $a=b=1$ memberi 4 lawan 2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $5$; n = $5$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $25$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $25$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04af2b9ce89c496c5a1daf1c",
+        "teks": "Jika $a$ dan $b$ bilangan real dengan $a-b=4$ dan $ab=12$, nilai $a^3-b^3$ adalah ....",
+        "jawaban": "$208$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_polynomial_identity_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; n = $5$. Dalam identitas $(x+a)^n$, berapa koefisien $x^{n-1}$?",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $40$.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Pilih satu faktor konstanta dan x dari seluruh faktor lainnya. Hasilnya $40$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-e-easy-bt01-066"
     }
-   ],
-   "pembahasan": "Uji $x=3$: kiri $5(3-2)^2=5$, kanan $(5\\cdot3-10)^2=25$. Karena $5\\neq25$, persamaan bukan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-001"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas11_tl-b02-p0106-latihan-e-4a"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menguji identitas dengan penjabaran",
-   "alasan_level": "menjabarkan kuadrat binomial lalu mengalikan konstanta, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Apakah persamaan polinomial berikut merupakan identitas polinomial atau bukan? $8(x+4)^2 = 8x^2 + 64x + 128$",
-   "jawaban_benar": "Identitas, karena ruas kiri dijabarkan menjadi $8x^2 + 64x + 128$",
-   "alasan_benar": "$8(x+4)^2 = 8(x^2+8x+16) = 8x^2+64x+128$, sama dengan ruas kanan untuk setiap $x$.",
-   "distraktor": [
-    {
-     "teks": "Bukan identitas, karena untuk $x=0$ ruas kiri bernilai 128 sedangkan ruas kanan bernilai 0",
-     "alasan": "salah hitung ruas kanan: untuk $x=0$ ruas kanan bernilai 128"
-    },
-    {
-     "teks": "Bukan identitas, karena pangkat tertinggi kedua ruas berbeda",
-     "alasan": "salah membaca pangkat; kedua ruas sama-sama berpangkat 2"
-    },
-    {
-     "teks": "Bukan identitas, karena suku tengah ruas kanan seharusnya $32x$",
-     "alasan": "salah menghitung suku tengah: $8\\cdot2\\cdot4x=64x$, bukan $32x$"
-    }
-   ],
-   "pembahasan": "$(x+4)^2=x^2+8x+16$, dikalikan 8 menjadi $8x^2+64x+128$ sehingga kedua ruas identik.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-002"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "bagian": "Contoh 2.13",
-    "nomor": "2",
-    "teks": "(2 a – 5)(2 a + 5) = 4 a 2 – 20 a + 25",
-    "jawaban": "Bukan identitas (a = 0: -25 dan 25)"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "nilai kedua ruas pada nilai variabel",
-   "alasan_level": "mensubstitusi satu nilai variabel ke kedua ruas lalu menghitung, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Diberikan persamaan polinomial $(6b-7)(6b+7) = 36b^2 - 84b + 49$. Jika dipilih $b=0$, nilai ruas kiri dan nilai ruas kanan berturut-turut adalah ....",
-   "jawaban_benar": "$-49$ dan $49$",
-   "alasan_benar": "ruas kiri $(0-7)(0+7)=-49$; ruas kanan $0-0+49=49$.",
-   "distraktor": [
-    {
-     "teks": "$49$ dan $49$",
-     "alasan": "salah tanda: $(-7)(7)$ dianggap bernilai positif"
-    },
-    {
-     "teks": "$-49$ dan $-49$",
-     "alasan": "ruas kanan dianggap ikut negatif karena tertukar tanda dengan ruas kiri"
-    },
-    {
-     "teks": "$49$ dan $-49$",
-     "alasan": "kedua nilai tertukar tempat"
-    }
-   ],
-   "pembahasan": "Substitusi $b=0$: kiri $(-7)(7)=-49$, kanan $49$. Karena berbeda, persamaan itu bukan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-003"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "bagian": "Contoh 2.13",
-    "nomor": "1",
-    "teks": "(2 x 2 – y 2 ) 2 = 4 x 4 – 4 x 2 y 2 + y 4",
-    "jawaban": "Identitas polinomial"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menguji identitas dengan penjabaran",
-   "alasan_level": "menjabarkan kuadrat selisih dan membandingkan suku tengah, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Diberikan persamaan polinomial $(5u^2 - 3v)^2 = 25u^4 - 15u^2v + 9v^2$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Bukan identitas, karena suku tengah seharusnya $-30u^2v$",
-   "alasan_benar": "$(5u^2-3v)^2 = 25u^4 - 2(5u^2)(3v) + 9v^2 = 25u^4 - 30u^2v + 9v^2$.",
-   "distraktor": [
-    {
-     "teks": "Identitas, karena suku pertama dan suku ketiga sudah benar",
-     "alasan": "hanya memeriksa dua suku dari tiga suku"
-    },
-    {
-     "teks": "Bukan identitas, karena suku pertama seharusnya $25u^2$",
-     "alasan": "salah pangkat: $(5u^2)^2=25u^4$"
-    },
-    {
-     "teks": "Bukan identitas, karena suku ketiga seharusnya $9v$",
-     "alasan": "salah pangkat: $(3v)^2=9v^2$"
-    }
-   ],
-   "pembahasan": "Penjabaran benar adalah $25u^4-30u^2v+9v^2$; suku tengah pada soal $-15u^2v$ berbeda, sehingga bukan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-004"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 105,
-    "bagian": "Mari Mencoba 2.13",
-    "nomor": "1",
-    "teks": "(2 m – 3) 3 = 8 m 3 – 27",
-    "jawaban": "Bukan identitas"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menguji identitas dengan penjabaran",
-   "alasan_level": "menjabarkan pangkat tiga binomial memakai Sifat 2.6 nomor 6 lalu membandingkan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Diberikan persamaan polinomial $(t+4)^3 = t^3 + 12t^2 + 48t + 64$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Identitas, karena $(t+4)^3 = t^3 + 3\\cdot4\\,t^2 + 3\\cdot16\\,t + 64$",
-   "alasan_benar": "$(t+4)^3 = t^3 + 3t^2(4) + 3t(4^2) + 4^3 = t^3+12t^2+48t+64$.",
-   "distraktor": [
-    {
-     "teks": "Bukan identitas, karena suku tengahnya seharusnya $4t^2 + 16t$",
-     "alasan": "mengira koefisien tidak mengandung faktor 3"
-    },
-    {
-     "teks": "Bukan identitas, karena $(t+4)^3 = t^3 + 64$",
-     "alasan": "mengira pangkat tiga hanya memangkatkan tiap suku"
-    },
-    {
-     "teks": "Bukan identitas, karena suku konstanta seharusnya $12$",
-     "alasan": "mengira konstanta $4\\cdot3$ bukan $4^3$"
-    }
-   ],
-   "pembahasan": "Sifat 2.6 nomor 6 memberi $(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=t$, $b=4$: hasilnya persis ruas kanan.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-005"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 105,
-    "bagian": "Mari Mencoba 2.13",
-    "nomor": "1",
-    "teks": "(2 m – 3) 3 = 8 m 3 – 27",
-    "jawaban": "Bukan identitas"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "melengkapi koefisien identitas",
-   "alasan_level": "menjabarkan $(m+5)^3$ lalu membaca koefisien $m^2$, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Agar persamaan $(m+5)^3 = m^3 + km^2 + 75m + 125$ merupakan identitas polinomial, nilai $k$ adalah ....",
-   "jawaban_benar": "$15$",
-   "alasan_benar": "$(m+5)^3 = m^3 + 3(5)m^2 + 3(25)m + 125$, sehingga $k = 15$ (suku $75m$ dan $125$ cocok).",
-   "distraktor": [
-    {
-     "teks": "$5$",
-     "alasan": "mengambil $b$ saja tanpa faktor 3"
-    },
-    {
-     "teks": "$25$",
-     "alasan": "mengambil $b^2$ saja tanpa faktor 3"
-    },
-    {
-     "teks": "$75$",
-     "alasan": "tertukar dengan koefisien suku $m$"
-    }
-   ],
-   "pembahasan": "Koefisien $m^2$ pada $(m+5)^3$ adalah $3\\cdot5=15$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-006"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 105,
-    "bagian": "Mari Mencoba 2.13",
-    "nomor": "2",
-    "teks": "(2 x – 3) 2 + 5 = 4 x 2 – 12 x + 14",
-    "jawaban": "Identitas polinomial"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menguji identitas dengan penjabaran",
-   "alasan_level": "menjabarkan ruas kiri, menambah konstanta, dan membandingkan dengan ruas kanan",
-   "stimulus": null,
-   "pertanyaan": "Diberikan persamaan polinomial $(8y-9)^2 + 4 = 64y^2 - 144y + 84$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai 85 sedangkan ruas kanan bernilai 84",
-   "alasan_benar": "ruas kiri dijabarkan menjadi $64y^2-144y+85$, sedangkan ruas kanan berkonstanta 84; untuk $y=0$: $81+4=85\\neq84$.",
-   "distraktor": [
-    {
-     "teks": "Identitas, karena $(8y-9)^2 = 64y^2 - 144y + 81$ sama dengan ruas kanan",
-     "alasan": "lupa bahwa ruas kiri masih ditambah 4 dan konstanta 81 + 4 = 85, bukan 84"
-    },
-    {
-     "teks": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai $-77$ sedangkan ruas kanan bernilai 84",
-     "alasan": "salah hitung: $(-9)^2$ ditulis $-81$ lalu ditambah 4"
-    },
-    {
-     "teks": "Bukan identitas, karena suku $-144y$ seharusnya $-72y$",
-     "alasan": "lupa mengalikan 2 pada suku tengah $2\\cdot8\\cdot9$ dengan benar"
-    }
-   ],
-   "pembahasan": "Ruas kiri $=64y^2-144y+81+4=64y^2-144y+85$. Konstanta 85 tidak sama dengan 84, jadi bukan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-007"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 105,
-    "bagian": "Contoh 2.14",
-    "nomor": "2.14",
-    "teks": "Faktorkan (3 x – 1) 2 – 25.",
-    "jawaban": "(3x + 4)(3x - 6)"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "faktorisasi dengan identitas",
-   "alasan_level": "mengenali selisih dua kuadrat lalu menerapkan identitas 1 dan menyederhanakan faktor, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Faktorkan $(5x-2)^2 - 49$.",
-   "jawaban_benar": "$(5x+5)(5x-9)$",
-   "alasan_benar": "selisih kuadrat dengan $a=5x-2$ dan $b=7$: $(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
-   "distraktor": [
-    {
-     "teks": "$(5x-5)(5x+9)$",
-     "alasan": "salah tanda saat menggabungkan $-2$ dengan $\\pm7$"
-    },
-    {
-     "teks": "$(5x-7)(5x+7)$",
-     "alasan": "mengabaikan suku $-2$ di dalam kuadrat"
-    },
-    {
-     "teks": "$(5x-51)(5x+47)$",
-     "alasan": "memakai 49 sebagai $b$ bukan 7 lalu menggabungkan dengan $-2$"
-    }
-   ],
-   "pembahasan": "$(5x-2)^2-7^2=(5x-2+7)(5x-2-7)=(5x+5)(5x-9)$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-008"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 106,
-    "bagian": "Mari Mencoba 2.14",
-    "nomor": "2.14",
-    "teks": "Faktorkan 4 x 2 + 12 x y + 9 y 2 .",
-    "jawaban": "(2x + 3y)^2"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "faktorisasi dengan identitas",
-   "alasan_level": "mengenali bentuk kuadrat sempurna lalu memakai identitas 2, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Faktorkan $16x^2 + 40xy + 25y^2$.",
-   "jawaban_benar": "$(4x+5y)^2$",
-   "alasan_benar": "$16x^2=(4x)^2$, $25y^2=(5y)^2$, dan $2(4x)(5y)=40xy$, jadi bentuknya $(4x+5y)^2$.",
-   "distraktor": [
-    {
-     "teks": "$(4x+5y)(4x-5y)$",
-     "alasan": "tertukar dengan identitas selisih dua kuadrat"
-    },
-    {
-     "teks": "$(16x+25y)^2$",
-     "alasan": "lupa menarik akar koefisien kuadrat"
-    },
-    {
-     "teks": "$(4x+10y)^2$",
-     "alasan": "salah menentukan $b$: memakai $40/4$ sebagai $b$"
-    }
-   ],
-   "pembahasan": "Bentuk $a^2+2ab+b^2$ dengan $a=4x$ dan $b=5y$, jadi $(4x+5y)^2$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-009"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 107,
-    "bagian": "Latihan E",
-    "nomor": "5",
-    "teks": "Jika ( x 2 + x – 6)( x – 4) = P ( x ) · ( x + 3) adalah identitas, tentukan polinomial P ( x ).",
-    "jawaban": "(x - 2)(x - 4) = x^2 - 6x + 8"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "mencari polinomial dari identitas",
-   "alasan_level": "memfaktorkan kuadrat lalu mencoret faktor yang sama pada kedua ruas, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Jika $(x^2+2x-15)(x-7) = P(x)\\cdot(x+5)$ adalah identitas, polinomial $P(x)$ adalah ....",
-   "jawaban_benar": "$x^2-10x+21$",
-   "alasan_benar": "$x^2+2x-15=(x+5)(x-3)$, sehingga $P(x)=(x-3)(x-7)=x^2-10x+21$.",
-   "distraktor": [
-    {
-     "teks": "$x^2+10x+21$",
-     "alasan": "salah tanda saat menjabarkan $(x-3)(x-7)$"
-    },
-    {
-     "teks": "$x^2-4x-21$",
-     "alasan": "memakai faktor $(x+3)(x-7)$ karena tanda faktor kuadrat terbalik"
-    },
-    {
-     "teks": "$x^2+2x-15$",
-     "alasan": "hanya mengambil faktor kuadrat dan melupakan faktor $(x-7)$"
-    }
-   ],
-   "pembahasan": "Faktorkan $x^2+2x-15=(x+5)(x-3)$, bagi kedua ruas dengan $(x+5)$: $P(x)=(x-3)(x-7)$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-010"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 106,
-    "bagian": "Latihan E Pemahaman Konsep",
-    "nomor": "1",
-    "teks": "Benar atau salah? Semua persamaan polinomial merupakan identitas polinomial.",
-    "jawaban": "Salah"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "konsep identitas polinomial",
-   "alasan_level": "memahami bahwa identitas harus berlaku untuk semua nilai variabel, satu langkah",
-   "stimulus": null,
-   "pertanyaan": "Pernyataan yang benar tentang persamaan polinomial dan identitas polinomial adalah ....",
-   "jawaban_benar": "Persamaan $x + 1 = 4$ bukan identitas, karena hanya benar untuk $x=3$",
-   "alasan_benar": "identitas harus benar untuk setiap nilai variabel, sedangkan $x+1=4$ hanya benar saat $x=3$.",
-   "distraktor": [
-    {
-     "teks": "Persamaan $x + 1 = 4$ merupakan identitas, karena ada nilai $x$ yang memenuhinya",
-     "alasan": "satu nilai pemenuh dikira cukup untuk menjadi identitas"
-    },
-    {
-     "teks": "Persamaan $x + 1 = x + 1$ bukan identitas, karena memuat variabel",
-     "alasan": "mengira persamaan bervariabel tidak mungkin identitas"
-    },
-    {
-     "teks": "Setiap persamaan polinomial pasti merupakan identitas polinomial",
-     "alasan": "menyamakan persamaan polinomial dengan identitas"
-    }
-   ],
-   "pembahasan": "Identitas polinomial benar untuk semua nilai variabel. $x+1=4$ salah untuk $x=0$, jadi bukan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-011"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 106,
-    "bagian": "Latihan E Pemahaman Konsep",
-    "nomor": "2",
-    "teks": "Benar atau salah? Jika ada satu saja nilai variabel yang tidak memenuhi suatu persamaan polinomial, maka persamaan polinomial tersebut bukanlah identitas polinomial.",
-    "jawaban": "Benar"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "konsep identitas polinomial",
-   "alasan_level": "mengenali cara cukup untuk menunjukkan bukan identitas, satu langkah",
-   "stimulus": null,
-   "pertanyaan": "Cara yang cukup untuk menunjukkan bahwa suatu persamaan polinomial bukan identitas polinomial adalah ....",
-   "jawaban_benar": "menemukan satu nilai variabel yang membuat ruas kiri tidak sama dengan ruas kanan",
-   "alasan_benar": "satu contoh penyangkal sudah cukup untuk membuktikan persamaan tidak berlaku untuk semua nilai variabel.",
-   "distraktor": [
-    {
-     "teks": "menemukan satu nilai variabel yang membuat kedua ruas bernilai sama",
-     "alasan": "satu contoh yang cocok dikira bukti bukan identitas"
-    },
-    {
-     "teks": "memeriksa bahwa kedua ruas bernilai sama untuk satu nilai variabel tertentu",
-     "alasan": "menjadikan satu nilai cocok sebagai bukti identitas"
-    },
-    {
-     "teks": "menunjukkan bahwa kedua ruas memiliki derajat yang sama",
-     "alasan": "derajat sama tidak menjamin kedua ruas identik"
-    }
-   ],
-   "pembahasan": "Untuk membuktikan bukan identitas cukup satu nilai variabel yang membuat kedua ruas berbeda.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-012"
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 108,
-    "bagian": "Uji Kompetensi Bab 2",
-    "nomor": "3",
-    "teks": "Persamaan 4 a 2 – 1 = (2 a + 1)(2 a – 1) merupakan identitas polinomial.",
-    "jawaban": "Benar"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "mengenali identitas selisih kuadrat",
-   "alasan_level": "mengenali bentuk selisih dua kuadrat pada ruas kiri dan kanan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Diberikan persamaan $49n^2 - 36 = (7n+6)(7n-6)$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Identitas, karena $49n^2-36=(7n)^2-6^2$ sesuai bentuk $a^2-b^2=(a+b)(a-b)$",
-   "alasan_benar": "$(7n+6)(7n-6)=49n^2-36$ untuk setiap $n$.",
-   "distraktor": [
-    {
-     "teks": "Bukan identitas, karena $(7n+6)(7n-6)=49n^2-84n-36$",
-     "alasan": "salah menjabarkan: suku tengah dianggap tidak saling meniadakan"
-    },
-    {
-     "teks": "Bukan identitas, karena seharusnya $49n^2-36=(7n-6)^2$",
-     "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
-    },
-    {
-     "teks": "Bukan identitas, karena $49n^2-36=(7n)^2+6^2$",
-     "alasan": "salah tanda: selisih kuadrat dianggap jumlah kuadrat"
-    }
-   ],
-   "pembahasan": "$(7n+6)(7n-6)=(7n)^2-6^2=49n^2-36$, sehingga merupakan identitas.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-013"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Berikut ini beberapa identitas polinomial."
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "mengingat rumus identitas",
-   "alasan_level": "mengingat rumus jumlah pangkat tiga dari Sifat 2.6, satu langkah",
-   "stimulus": null,
-   "pertanyaan": "Bentuk faktor dari $a^3 + b^3$ yang merupakan identitas polinomial adalah ....",
-   "jawaban_benar": "$(a+b)(a^2-ab+b^2)$",
-   "alasan_benar": "identitas jumlah pangkat tiga: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
-   "distraktor": [
-    {
-     "teks": "$(a+b)(a^2+ab+b^2)$",
-     "alasan": "suku tengah bertanda positif, tertukar dengan identitas selisih pangkat tiga"
-    },
-    {
-     "teks": "$(a+b)^3$",
-     "alasan": "mengira jumlah pangkat tiga sama dengan pangkat tiga dari jumlah"
-    },
-    {
-     "teks": "$(a-b)(a^2-ab+b^2)$",
-     "alasan": "faktor linear bertanda negatif, tertukar dengan identitas selisih pangkat tiga"
-    }
-   ],
-   "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-014"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Berikut ini beberapa identitas polinomial."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "mengingat rumus identitas",
-   "alasan_level": "memakai rumus $(a+b)^3$ lalu menghitung koefisien suku $x$, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Pada hasil penjabaran $(x+2)^3$, koefisien dari $x$ adalah ....",
-   "jawaban_benar": "$12$",
-   "alasan_benar": "$(x+2)^3=x^3+6x^2+12x+8$, koefisien $x$ adalah $3\\cdot2^2=12$.",
-   "distraktor": [
-    {
-     "teks": "$6$",
-     "alasan": "mengambil koefisien $x^2$ yaitu $3\\cdot2$"
-    },
-    {
-     "teks": "$4$",
-     "alasan": "mengambil $b^2$ tanpa faktor 3"
-    },
-    {
-     "teks": "$8$",
-     "alasan": "mengambil suku konstanta $2^3$"
-    }
-   ],
-   "pembahasan": "$(a+b)^3=a^3+3a^2b+3ab^2+b^3$ dengan $a=x$, $b=2$: suku $x$ adalah $3x\\cdot4=12x$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-015"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Berikut ini beberapa identitas polinomial."
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "mengenali bentuk identitas",
-   "alasan_level": "mengenali identitas yang benar di antara bentuk-bentuk serupa, satu langkah",
-   "stimulus": null,
-   "pertanyaan": "Persamaan polinomial berikut yang merupakan identitas polinomial adalah ....",
-   "jawaban_benar": "$(a-b)^2 = a^2 - 2ab + b^2$",
-   "alasan_benar": "identitas kuadrat selisih dua suku (Sifat 2.6 nomor 3).",
-   "distraktor": [
-    {
-     "teks": "$(a+b)^2 = a^2 + b^2$",
-     "alasan": "melupakan suku tengah $2ab$"
-    },
-    {
-     "teks": "$a^2 - b^2 = (a-b)^2$",
-     "alasan": "menyamakan selisih kuadrat dengan kuadrat selisih"
-    },
-    {
-     "teks": "$(a+b)^3 = a^3 + b^3$",
-     "alasan": "mengira pangkat tiga jumlah hanya memangkatkan tiap suku"
-    }
-   ],
-   "pembahasan": "Hanya $(a-b)^2=a^2-2ab+b^2$ yang berlaku untuk semua $a$ dan $b$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-016"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Berikut ini beberapa identitas polinomial."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "penerapan identitas pada bilangan",
-   "alasan_level": "memakai $a^2-b^2=(a+b)(a-b)$ pada bilangan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
-   "jawaban_benar": "$400$",
-   "alasan_benar": "$101^2-99^2=(101+99)(101-99)=200\\cdot2=400$.",
-   "distraktor": [
-    {
-     "teks": "$200$",
-     "alasan": "hanya mengambil faktor $(a+b)$"
-    },
-    {
-     "teks": "$2$",
-     "alasan": "hanya mengambil faktor $(a-b)$"
-    },
-    {
-     "teks": "$800$",
-     "alasan": "mengalikan hasil dengan 2 sekali lagi"
-    }
-   ],
-   "pembahasan": "$(101+99)(101-99)=200\\cdot2=400$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-017"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Persamaan seperti ini disebut identitas polinomial"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "melengkapi koefisien identitas",
-   "alasan_level": "memakai identitas kuadrat selisih untuk menentukan konstanta, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Agar persamaan $x^2 - 14x + k = (x-7)^2$ merupakan identitas polinomial, nilai $k$ adalah ....",
-   "jawaban_benar": "$49$",
-   "alasan_benar": "$(x-7)^2=x^2-14x+49$, sehingga $k=49$.",
-   "distraktor": [
-    {
-     "teks": "$7$",
-     "alasan": "mengambil $b$ bukan $b^2$"
-    },
-    {
-     "teks": "$14$",
-     "alasan": "menyamakan konstanta dengan koefisien suku $x$"
-    },
-    {
-     "teks": "$-49$",
-     "alasan": "salah tanda: kuadrat selalu positif"
-    }
-   ],
-   "pembahasan": "Konstanta $b^2=7^2=49$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-018"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 103,
-    "kutipan": "Berapa pun bilangan yang dipilih, kamu selalu akan mendapatkan 10."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "penerapan numerik identitas",
-   "alasan_level": "memodelkan langkah sulap menjadi bentuk aljabar lalu menyederhanakan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Seorang pesulap meminta penonton memilih sebuah bilangan $n$, mengalikan $(n+4)$ dengan $(n-4)$, menambahkan 20, lalu mengurangi hasilnya dengan $n^2$. Berapa pun $n$ yang dipilih, hasil akhirnya selalu ....",
-   "jawaban_benar": "$4$",
-   "alasan_benar": "$(n+4)(n-4)+20-n^2=n^2-16+20-n^2=4$.",
-   "distraktor": [
-    {
-     "teks": "$36$",
-     "alasan": "menganggap $(n+4)(n-4)=n^2+16$"
-    },
-    {
-     "teks": "$16$",
-     "alasan": "lupa menambahkan 20"
-    },
-    {
-     "teks": "$20$",
-     "alasan": "mengabaikan hasil kali $(n+4)(n-4)$"
-    }
-   ],
-   "pembahasan": "$(n+4)(n-4)=n^2-16$, ditambah 20 menjadi $n^2+4$, dikurangi $n^2$ menjadi 4.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-019"
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 104,
-    "kutipan": "Berikut ini beberapa identitas polinomial."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "menyederhanakan dengan identitas",
-   "alasan_level": "mengenali bentuk jumlah pangkat tiga dan menyederhanakan, dua langkah",
-   "stimulus": null,
-   "pertanyaan": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
-   "jawaban_benar": "$x^3 + 27$",
-   "alasan_benar": "identitas jumlah pangkat tiga dengan $b=3$: $(x+3)(x^2-3x+9)=x^3+3^3$.",
-   "distraktor": [
-    {
-     "teks": "$x^3 - 27$",
-     "alasan": "salah tanda: memakai identitas selisih pangkat tiga"
-    },
-    {
-     "teks": "$x^3 + 9$",
-     "alasan": "menghitung $3^3$ sebagai $3\\cdot3$"
-    },
-    {
-     "teks": "$x^3 + 81$",
-     "alasan": "menghitung $3^3$ sebagai $9\\cdot9$"
-    }
-   ],
-   "pembahasan": "Sifat 2.6 nomor 4: $a^3+b^3=(a+b)(a^2-ab+b^2)$ dengan $a=x$, $b=3$.",
-   "catatan": null,
-   "id": "kelas11_tl-b02-e-easy-bt01-020"
-  }
- ]
+  ]
 }

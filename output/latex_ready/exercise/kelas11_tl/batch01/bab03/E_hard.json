@@ -1,0 +1,386 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "E",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Aturan Kosinus hanya satu subbab tipis; setelah soal hitung langsung dan variasi acuan habis (Latihan E no.7 ambigu), hanya 11 soal penalaran (C5) yang layak tanpa soal kembar berangka beda.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim jenis segitiga",
+      "alasan_level": "mengevaluasi klaim umum lalu mencari contoh penyangkal dengan menguji tiga sudut tiap kandidat; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $a^2 + b^2 > c^2$ pada suatu segitiga dengan sisi $a$, $b$, $c$, maka segitiga itu pasti lancip.\" Segitiga yang merupakan contoh penyangkal klaim tersebut adalah segitiga dengan ....",
+      "jawaban_benar": "$a = 4$, $b = 8$, $c = 5$",
+      "alasan_benar": "$4^2 + 8^2 = 80 > 25 = 5^2$ (premis terpenuhi), tetapi $b^2 = 64 > 4^2 + 5^2 = 41$ sehingga sudut $B$ tumpul; jadi bukan lancip",
+      "distraktor": [
+        {
+          "teks": "$a = 6$, $b = 7$, $c = 8$",
+          "alasan": "premis terpenuhi tetapi ketiga sudutnya lancip (64 < 85, 49 < 100, 36 < 113), bukan penyangkal"
+        },
+        {
+          "teks": "$a = 5$, $b = 12$, $c = 13$",
+          "alasan": "premis tidak terpenuhi ($25 + 144 = 169$ sama dengan $c^2$), segitiga siku-siku; bukan penyangkal"
+        },
+        {
+          "teks": "$a = 5$, $b = 6$, $c = 10$",
+          "alasan": "premis tidak terpenuhi ($25 + 36 = 61 < 100$); segitiga tumpul tetapi tidak menyangkal klaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi premis $a^2 + b^2 > c^2$ namun tidak lancip. Hanya $a=4, b=8, c=5$: $80 > 25$ tetapi $\\cos B = \\frac{16 + 25 - 64}{40} < 0$, jadi $B$ tumpul. Syarat $a^2+b^2>c^2$ hanya menjamin sudut $C$ lancip.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "banyak nilai bulat agar segitiga tumpul (dua kasus)",
+      "alasan_level": "menyusun dua kasus (sisi $k$ terpanjang atau sisi 9 terpanjang) dengan syarat ketaksamaan segitiga; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi sebuah segitiga panjangnya $6$ cm dan $9$ cm, sedangkan sisi ketiga $k$ cm dengan $k$ bilangan bulat. Banyak nilai $k$ sehingga segitiga tersebut ada dan tumpul adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "tumpul di sudut hadapan $k$: $k^2 > 117$ dan $k < 15$ memberi $k = 11, 12, 13, 14$ (4 nilai); tumpul di sudut hadapan 9: $81 > 36 + k^2$ dan $k > 3$ memberi $k = 4, 5, 6$ (3 nilai); total 7",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "hanya meninjau kasus $k$ sebagai sisi terpanjang"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "hanya meninjau kasus sisi 9 sebagai sisi terpanjang"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "menghitung semua $k$ yang membentuk segitiga ($3 < k < 15$) tanpa syarat tumpul"
+        }
+      ],
+      "pembahasan": "Syarat ada: $3 < k < 15$. Tumpul bila sisi terpanjang kuadratnya melebihi jumlah kuadrat dua sisi lain. Kasus $k$ terpanjang: $k^2 > 6^2 + 9^2 = 117$ sehingga $k = 11..14$. Kasus 9 terpanjang: $9^2 > 6^2 + k^2$ sehingga $k^2 < 45$, $k = 4,5,6$. Total $4 + 3 = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang segitiga memenuhi dua syarat",
+      "alasan_level": "merancang: memilih rancangan yang memenuhi dua syarat sekaligus (sisi ketiga bulat dan segitiga tumpul) setelah menguji semua rancangan; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Seorang perancang ingin membuat bingkai segitiga yang sisi ketiganya berukuran bilangan bulat (dalam cm) dan segitiganya tumpul. Rancangan dua sisi dan sudut apit yang memenuhi kedua syarat itu adalah ....",
+      "jawaban_benar": "dua sisi $3$ dan $5$ dengan sudut apit $120^{\\circ}$",
+      "alasan_benar": "$c^2 = 9 + 25 - 30\\cos 120^{\\circ} = 49$ sehingga $c = 7$ (bulat) dan sudut apit $120^{\\circ}$ tumpul",
+      "distraktor": [
+        {
+          "teks": "dua sisi $5$ dan $8$ dengan sudut apit $60^{\\circ}$",
+          "alasan": "sisi ketiga $7$ bulat, tetapi $49 < 25 + 64$ dan seluruh sudut lancip (hanya memenuhi satu syarat)"
+        },
+        {
+          "teks": "dua sisi $6$ dan $8$ dengan sudut apit $90^{\\circ}$",
+          "alasan": "sisi ketiga $10$ bulat, tetapi sudut apitnya siku-siku, bukan tumpul"
+        },
+        {
+          "teks": "dua sisi $4$ dan $6$ dengan sudut apit $120^{\\circ}$",
+          "alasan": "segitiga tumpul tetapi $c^2 = 16 + 36 + 24 = 76$ sehingga $c = 2\\sqrt{19}$ tidak bulat"
+        }
+      ],
+      "pembahasan": "Hitung sisi ketiga tiap rancangan dengan $c^2 = p^2 + q^2 - 2pq\\cos\\theta$ lalu uji jenis segitiga. Hanya rancangan $3$, $5$, $120^{\\circ}$ yang memberi $c = 7$ dan tumpul.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Aturan Sinus tidak dapat digunakan untuk menyelesaikan sembarang permasalahan segitiga."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memilih metode (aturan sinus atau kosinus) dari data",
+      "alasan_level": "mengevaluasi data yang diketahui untuk menentukan metode awal yang tepat; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$, empat kelompok data berikut diketahui (sisi dalam cm). Kelompok data yang membuat aturan sinus tidak dapat langsung dipakai dan penyelesaian harus dimulai dengan aturan kosinus adalah ....",
+      "jawaban_benar": "$a = 9$, $b = 6$, dan $\\angle C = 50^{\\circ}$",
+      "alasan_benar": "sudut $C$ diketahui tetapi sisi $c$ yang berhadapan dengannya tidak, dan tidak ada pasangan sisi-sudut berhadapan yang lengkap; dua sisi mengapit sudut $C$ sehingga aturan kosinus langsung dipakai untuk $c$",
+      "distraktor": [
+        {
+          "teks": "$\\angle A = 40^{\\circ}$, $\\angle B = 65^{\\circ}$, dan $a = 8$",
+          "alasan": "ada pasangan $a$ dan $\\angle A$ berhadapan sehingga aturan sinus langsung bisa dipakai"
+        },
+        {
+          "teks": "$a = 9$, $b = 6$, dan $\\angle A = 50^{\\circ}$",
+          "alasan": "ada pasangan $a$ dan $\\angle A$ berhadapan sehingga aturan sinus langsung bisa dipakai"
+        },
+        {
+          "teks": "$\\angle A = 30^{\\circ}$, $\\angle B = 70^{\\circ}$, dan $c = 12$",
+          "alasan": "sudut $C = 80^{\\circ}$ langsung diperoleh dan $c$ berhadapan dengannya sehingga aturan sinus dipakai; aturan kosinus tidak bisa karena hanya satu sisi diketahui"
+        }
+      ],
+      "pembahasan": "Aturan sinus butuh satu pasangan sisi dan sudut berhadapan yang lengkap. Pada $a=9$, $b=6$, $C=50^{\\circ}$ tidak ada pasangan itu, namun dua sisi dan sudut apitnya ada, sehingga $c^2 = a^2 + b^2 - 2ab\\cos C$ dipakai lebih dulu.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan: faktor 2 pada aturan kosinus",
+      "alasan_level": "mengevaluasi pekerjaan siswa terhadap rumus yang benar, menemukan kesalahan, lalu mengoreksi hasilnya; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Dina menghitung sisi $a$ pada segitiga $ABC$ dengan $b = 6$, $c = 10$, dan $\\angle A = 60^{\\circ}$. Langkahnya: $a^2 = 6^2 + 10^2 - 6 \\cdot 10 \\cdot \\cos 60^{\\circ} = 136 - 30 = 106$, sehingga $a = \\sqrt{106}$. Pernyataan yang benar tentang pekerjaan Dina adalah ....",
+      "jawaban_benar": "Dina lupa faktor $2$ pada suku $2bc\\cos A$; seharusnya $a = 2\\sqrt{19}$",
+      "alasan_benar": "suku ketiga seharusnya $2 \\cdot 6 \\cdot 10 \\cdot \\frac{1}{2} = 60$, sehingga $a^2 = 136 - 60 = 76$ dan $a = 2\\sqrt{19}$",
+      "distraktor": [
+        {
+          "teks": "Pekerjaan Dina sudah benar sehingga $a = \\sqrt{106}$",
+          "alasan": "menganggap rumus tanpa faktor 2 benar"
+        },
+        {
+          "teks": "Dina salah tanda; seharusnya $a^2 = 136 + 60$ sehingga $a = 14$",
+          "alasan": "mengira suku $2bc\\cos A$ ditambah, padahal dikurangi"
+        },
+        {
+          "teks": "Dina salah memakai kosinus; seharusnya $a = \\sqrt{136 - 60\\sqrt{3}}$",
+          "alasan": "mengira $\\sin 60^{\\circ}$ yang dipakai pada aturan kosinus"
+        }
+      ],
+      "pembahasan": "Aturan kosinus: $a^2 = b^2 + c^2 - 2bc\\cos A = 36 + 100 - 120 \\cdot \\frac{1}{2} = 76$, jadi $a = 2\\sqrt{19}$. Dina kehilangan faktor $2$ sehingga mendapat $\\sqrt{106}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Aturan Sinus tidak dapat digunakan untuk menyelesaikan sembarang permasalahan segitiga."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi hasil aturan sinus (sudut ganda)",
+      "alasan_level": "mengevaluasi kesimpulan dari aturan sinus yang bisa menghasilkan dua sudut; perlu aturan kosinus untuk menentukan tumpul atau lancip; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Rudi menentukan sudut terbesar $\\theta$ (di hadapan sisi terpanjang) pada segitiga bersisi $11$, $24$, dan $31$ cm. Dengan aturan sinus ia mendapat $\\sin\\theta = \\frac{\\sqrt{3}}{2}$, lalu menyimpulkan $\\theta = 60^{\\circ}$ karena kalkulatornya menampilkan nilai itu. Pernyataan yang benar tentang kesimpulan Rudi adalah ....",
+      "jawaban_benar": "Tidak tepat; $\\theta = 120^{\\circ}$ karena $\\cos\\theta = -\\frac{1}{2}$",
+      "alasan_benar": "$\\cos\\theta = \\frac{11^2 + 24^2 - 31^2}{2 \\cdot 11 \\cdot 24} = -\\frac{1}{2}$ sehingga $\\theta = 120^{\\circ}$ (tumpul), yang juga memenuhi $\\sin\\theta = \\frac{\\sqrt{3}}{2}$",
+      "distraktor": [
+        {
+          "teks": "Tepat; $\\theta = 60^{\\circ}$ karena sudut terbesar pasti lancip",
+          "alasan": "mengabaikan bahwa $\\sin\\theta$ sama untuk $\\theta$ dan $180^{\\circ} - \\theta$"
+        },
+        {
+          "teks": "Tidak tepat; $\\theta = 150^{\\circ}$ karena $\\cos\\theta = -\\frac{\\sqrt{3}}{2}$",
+          "alasan": "salah menghitung nilai kosinus (menukar nilai sinus dan kosinus)"
+        },
+        {
+          "teks": "Tidak tepat; $\\theta = 30^{\\circ}$ karena $\\cos\\theta = \\frac{1}{2}$",
+          "alasan": "salah tanda pada pembilang kosinus dan salah sudut"
+        }
+      ],
+      "pembahasan": "$\\sin\\theta=\\frac{\\sqrt3}{2}$ dipenuhi oleh $60^{\\circ}$ dan $120^{\\circ}$. Aturan kosinus: $\\cos\\theta=\\frac{121+576-961}{528}=-\\frac12$, sehingga $\\theta=120^{\\circ}$ (kuadrat sisi terpanjang $961 > 697$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menentukan jenis segitiga dari dua syarat aljabar",
+      "alasan_level": "menggabungkan aturan kosinus dengan syarat jumlah sisi untuk menyimpulkan bentuk segitiga; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ dengan sisi $a$, $b$, $c$ berlaku $a^2 = b^2 + c^2 - bc$ dan $b + c = 2a$. Segitiga $ABC$ pasti ....",
+      "jawaban_benar": "sama sisi",
+      "alasan_benar": "$\\cos A = \\frac{1}{2}$ sehingga $A = 60^{\\circ}$; dari $b + c = 2a$ dan $a^2 = (b+c)^2 - 3bc$ diperoleh $bc = a^2$ sehingga $b = c = a$",
+      "distraktor": [
+        {
+          "teks": "sama kaki dengan sudut puncak $120^{\\circ}$",
+          "alasan": "mengira $\\cos A = -\\frac{1}{2}$ karena ada tanda minus pada rumus"
+        },
+        {
+          "teks": "siku-siku di $A$",
+          "alasan": "mengira $a^2 = b^2 + c^2$ meski ada suku $-bc$"
+        },
+        {
+          "teks": "sama kaki dengan $b = c \\neq a$",
+          "alasan": "menduga $b = c$ tanpa memeriksa nilai $a$; padahal $a = b = c$"
+        }
+      ],
+      "pembahasan": "$a^2 = b^2 + c^2 - 2bc\\cos A$ dibandingkan dengan $a^2 = b^2 + c^2 - bc$ memberi $\\cos A = \\frac12$. Substitusi $b + c = 2a$: $a^2 = 4a^2 - 3bc$ sehingga $bc = a^2$. Maka $b$ dan $c$ akar $t^2 - 2at + a^2 = 0$, yaitu $b = c = a$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "banyak segitiga dari dua sisi dan sudut tak apit",
+      "alasan_level": "memakai aturan kosinus sebagai persamaan kuadrat pada $c$ dan menganalisis banyak akar positif; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle A = 30^{\\circ}$, $b = 8$, dan $a$ bilangan bulat positif. Dengan aturan kosinus $a^2 = b^2 + c^2 - 2bc\\cos A$ sebagai persamaan dalam $c$, banyak nilai $a$ sehingga terdapat tepat dua segitiga $ABC$ yang berbeda adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$c^2 - 8\\sqrt{3}c + 64 - a^2 = 0$ punya dua akar positif berbeda bila diskriminan $4a^2 - 64 > 0$ dan $64 - a^2 > 0$, yaitu $4 < a < 8$ sehingga $a = 5, 6, 7$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "ikut menghitung $a = 4$ (diskriminan nol, hanya satu segitiga siku-siku)"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "ikut menghitung $a = 4$ dan $a = 8$ yang masing-masing hanya memberi satu segitiga"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "salah batas: mengira $a = 7$ tidak memberi dua segitiga"
+        }
+      ],
+      "pembahasan": "Persamaan kuadrat $c^2 - 8\\sqrt{3}c + (64 - a^2) = 0$ memiliki diskriminan $192 - 4(64 - a^2) = 4a^2 - 64$ dan hasil kali akar $64 - a^2$. Dua akar positif berbeda butuh $a > 4$ dan $a < 8$. Nilai bulatnya $5, 6, 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "jumlah nilai parameter agar segitiga lancip (sisi aljabar)",
+      "alasan_level": "menentukan selang parameter dengan memeriksa sisi terpanjang yang berganti (10 atau $x+4$) dan syarat ada segitiga; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Sisi-sisi sebuah segitiga panjangnya $10$, $x$, dan $x + 4$ (dalam cm) dengan $x$ bilangan bulat positif. Jumlah semua nilai $x$ sehingga segitiga tersebut ada dan ketiga sudutnya lancip adalah ....",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "ada bila $x > 3$; lancip bila $(x+4)^2 < 100 + x^2$ ($x < 10{,}5$) dan $100 < x^2 + (x+4)^2$ ($x > -2 + \\sqrt{46} \\approx 4{,}78$); jadi $x = 5, \\dots, 10$ dan jumlahnya $45$",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "hanya memakai syarat ada segitiga ($x = 4, \\dots, 10$) padahal $x = 4$ memberi sudut tumpul"
+        },
+        {
+          "teks": "$35$",
+          "alasan": "membatasi $x < 10$ sehingga $x = 10$ (sisi $10, 10, 14$ yang lancip) tertinggal"
+        },
+        {
+          "teks": "$56$",
+          "alasan": "memasukkan $x = 11$ yang memberi sisi $10, 11, 15$ dan sudut tumpul"
+        }
+      ],
+      "pembahasan": "Untuk tiap $x$ uji sisi terpanjang. $x=4$: sisi $10,4,8$, $100 > 80$ tumpul. $x = 5..10$ lancip (misal $x=10$: $196 < 200$). $x = 11$: $225 > 221$ tumpul. Jumlah $5+6+7+8+9+10 = 45$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengevaluasi kelayakan data ukur dengan nilai kosinus",
+      "alasan_level": "mengevaluasi data ukur terhadap batas nilai kosinus dari aturan kosinus; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Empat kelompok pengukur melaporkan panjang sisi sebuah lahan segitiga (dalam meter). Jika aturan kosinus dipakai untuk menghitung ketiga sudutnya, hasil pengukuran yang menghasilkan nilai kosinus kurang dari $-1$ sehingga datanya tidak mungkin adalah ....",
+      "jawaban_benar": "$6$, $7$, dan $15$",
+      "alasan_benar": "$\\cos C = \\frac{6^2 + 7^2 - 15^2}{2 \\cdot 6 \\cdot 7} = -\\frac{140}{84} = -\\frac{5}{3} < -1$, tidak ada sudut seperti itu",
+      "distraktor": [
+        {
+          "teks": "$5$, $7$, dan $10$",
+          "alasan": "$\\cos$ sudut terbesar $= -\\frac{13}{35}$, masih dalam $[-1, 1]$ sehingga data mungkin"
+        },
+        {
+          "teks": "$8$, $9$, dan $16$",
+          "alasan": "$\\cos$ sudut terbesar $= -\\frac{37}{48}$, masih dalam $[-1, 1]$ sehingga data mungkin"
+        },
+        {
+          "teks": "$6$, $10$, dan $15$",
+          "alasan": "$\\cos$ sudut terbesar $= -\\frac{89}{120}$, masih dalam $[-1, 1]$ sehingga data mungkin"
+        }
+      ],
+      "pembahasan": "Hitung kosinus sudut di hadapan sisi terpanjang. Hanya $6,7,15$ menghasilkan $-\\frac{5}{3} < -1$ (karena $6 + 7 < 15$). Pada tiga data lain nilainya antara $-1$ dan $0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-e-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "Untuk sembarang segitiga ABC (perhatikan kembali Gambar 3.48), berlaku"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesalahan penalaran: sisi uji bukan terpanjang",
+      "alasan_level": "mengevaluasi penalaran siswa yang menguji sisi yang salah dan menemukan kesimpulan yang keliru; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Budi menyelidiki jenis segitiga bersisi $7$ cm, $9$ cm, dan $12$ cm. Ia menulis: \"Karena $9^2 = 81 < 7^2 + 12^2 = 193$, maka sudut di hadapan sisi $9$ lancip, sehingga segitiga ini lancip.\" Pernyataan yang benar tentang kesimpulan Budi adalah ....",
+      "jawaban_benar": "Keliru; sudut di hadapan sisi terpanjang tumpul karena $12^2 = 144 > 7^2 + 9^2 = 130$",
+      "alasan_benar": "sudut di hadapan sisi $9$ memang lancip, tetapi jenis segitiga ditentukan sudut terbesar (hadapan sisi $12$), dan $144 > 130$ sehingga sudutnya tumpul",
+      "distraktor": [
+        {
+          "teks": "Benar; ketiga sudut lancip karena $9^2 < 7^2 + 12^2$",
+          "alasan": "menyimpulkan semua sudut dari satu sudut saja"
+        },
+        {
+          "teks": "Keliru; segitiga siku-siku karena $12^2$ hampir sama dengan $7^2 + 9^2$",
+          "alasan": "menganggap selisih kecil berarti siku-siku, padahal 144 tidak sama dengan 130"
+        },
+        {
+          "teks": "Keliru; harus menguji sisi terpendek $7$, dan $7^2 < 9^2 + 12^2$ sehingga segitiga lancip",
+          "alasan": "menguji sisi terpendek yang tidak menentukan sehingga kesimpulan tetap keliru"
+        }
+      ],
+      "pembahasan": "Segitiga lancip hanya bila sudut terbesar lancip. Sudut terbesar ada di hadapan sisi $12$: $\\cos = \\frac{49 + 81 - 144}{126} = -\\frac{1}{9} < 0$, tumpul. Budi menguji sisi yang bukan terpanjang.",
+      "catatan": null
+    }
+  ]
+}

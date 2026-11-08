@@ -1,318 +1,2884 @@
 {
- "book": "kelas11_tl",
- "bab_no": 2,
- "subbab": "A",
- "level": "hard",
- "batch": 1,
- "skill_versi": "v1",
- "kapasitas_kurang": true,
- "alasan_kapasitas": "Materi subbab A tipis (definisi, derajat, koefisien utama, nilai fungsi, perilaku ujung, pemodelan). Hanya 9 soal hard yang benar-benar bernalar (evaluasi klaim, temukan kesalahan, penyangkal, rancang); sisanya hanya hitung langsung atau mengulang pola easy/medium sehingga tidak dipaksa.",
- "soal": [
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-001",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 67,
-    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 3,
-   "jenis_soal": "contoh penyangkal klaim derajat jumlah",
-   "alasan_level": "mengevaluasi klaim umum dengan memeriksa empat pasangan polinomial untuk menemukan contoh penyangkal",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa menyatakan: \"Jika $P(x)$ dan $Q(x)$ sama-sama berderajat 4, maka $P(x) + Q(x)$ pasti berderajat 4.\" Pasangan $P(x)$ dan $Q(x)$ berikut, yang keduanya berderajat 4, yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
-   "jawaban_benar": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -7x^4 + 3x^2 - 5$",
-   "alasan_benar": "Jumlahnya $3x^2 - 2x - 4$ berderajat 2, bukan 4, sehingga klaim tidak selalu berlaku.",
-   "distraktor": [
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab A tipis (definisi, derajat, koefisien utama, nilai fungsi, perilaku ujung, pemodelan). Hanya 9 soal hard yang benar-benar bernalar (evaluasi klaim, temukan kesalahan, penyangkal, rancang); sisanya hanya hitung langsung atau mengulang pola easy/medium sehingga tidak dipaksa.",
+  "soal": [
     {
-     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -4x^4 + x^2 - 5$",
-     "alasan": "koefisien utama berlawanan tanda dianggap cukup; jumlahnya $3x^4 + \\dots$ tetap berderajat 4"
+      "id": "kelas11_tl-b02-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim derajat jumlah",
+      "alasan_level": "mengevaluasi klaim umum dengan memeriksa empat pasangan polinomial untuk menemukan contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan: \"Jika $P(x)$ dan $Q(x)$ sama-sama berderajat 4, maka $P(x) + Q(x)$ pasti berderajat 4.\" Pasangan $P(x)$ dan $Q(x)$ berikut, yang keduanya berderajat 4, yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+      "jawaban_benar": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -7x^4 + 3x^2 - 5$",
+      "alasan_benar": "Jumlahnya $3x^2 - 2x - 4$ berderajat 2, bukan 4, sehingga klaim tidak selalu berlaku.",
+      "distraktor": [
+        {
+          "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -4x^4 + x^2 - 5$",
+          "alasan": "koefisien utama berlawanan tanda dianggap cukup; jumlahnya $3x^4 + \\dots$ tetap berderajat 4"
+        },
+        {
+          "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 7x^4 + 3x^2 - 5$",
+          "alasan": "mengira koefisien utama yang sama membuat suku $x^4$ hilang; padahal jumlahnya $14x^4 + \\dots$"
+        },
+        {
+          "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 5x^4 - x^3 + 2$",
+          "alasan": "menganggap suku berderajat 3 ikut menurunkan derajat jumlah; jumlahnya $12x^4 + \\dots$"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus menghilangkan suku $x^4$: koefisien utamanya berlawanan tepat. $7x^4 + (-7x^4) = 0$, sisanya $3x^2 - 2x - 4$ berderajat 2.",
+      "catatan": null
     },
     {
-     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 7x^4 + 3x^2 - 5$",
-     "alasan": "mengira koefisien utama yang sama membuat suku $x^4$ hilang; padahal jumlahnya $14x^4 + \\dots$"
+      "id": "kelas11_tl-b02-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "batas derajat hasil operasi",
+      "alasan_level": "mengevaluasi nilai-nilai derajat yang mungkin dengan membuat contoh untuk tiap nilai dan menolak satu nilai yang mustahil",
+      "stimulus": null,
+      "pertanyaan": "Misalkan $P(x)$ dan $Q(x)$ polinomial yang masing-masing berderajat 6, dan $P(x) + Q(x)$ bukan polinomial nol. Nilai berikut yang TIDAK mungkin menjadi derajat $P(x) + Q(x)$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Derajat jumlah tidak pernah melebihi derajat tertinggi kedua polinomial, yaitu 6.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mungkin, mis. $x^6 + 1$ dan $x^6 + x$ berjumlah derajat 6"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "mungkin, mis. $x^6 + x^4$ dan $-x^6 + 3$ berjumlah $x^4 + 3$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mungkin, mis. $x^6 + x$ dan $-x^6 + 2x$ berjumlah $3x$"
+        }
+      ],
+      "pembahasan": "Suku berderajat di atas 6 tidak ada pada $P$ maupun $Q$, jadi derajat jumlah paling besar 6. Nilai 6, 4, dan 1 dapat dicapai dengan contoh yang sesuai, sedangkan 7 mustahil.",
+      "catatan": null
     },
     {
-     "teks": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = 5x^4 - x^3 + 2$",
-     "alasan": "menganggap suku berderajat 3 ikut menurunkan derajat jumlah; jumlahnya $12x^4 + \\dots$"
+      "id": "kelas11_tl-b02-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan perilaku ujung",
+      "alasan_level": "mengevaluasi langkah penyelesaian siswa dan menemukan letak kesalahan tanda pada suku utama berpangkat genap",
+      "stimulus": null,
+      "pertanyaan": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
+      "jawaban_benar": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
+      "alasan_benar": "$(2-x)^2 = x^2 - 4x + 4$ bersuku utama $x^2$ (kuadrat menghilangkan tanda negatif). Suku utama $f$ adalah $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$, derajat genap dan koefisien negatif.",
+      "distraktor": [
+        {
+          "teks": "Langkah (3) salah: derajat genap dengan koefisien utama positif membuat kedua ujung turun",
+          "alasan": "terbalik: koefisien utama positif pada derajat genap justru membuat kedua ujung naik"
+        },
+        {
+          "teks": "Langkah (2) salah: $x^3 \\cdot (-x^2) \\cdot (-3x)$ bernilai negatif sehingga suku utamanya $-3x^6$",
+          "alasan": "salah mengalikan tanda: dua faktor negatif menghasilkan hasil kali positif"
+        },
+        {
+          "teks": "Tidak ada kesalahan; kedua ujung grafik $f$ memang naik",
+          "alasan": "tidak memeriksa suku utama $(2-x)^2$ yang sebenarnya $x^2$"
+        }
+      ],
+      "pembahasan": "Jabarkan suku utama $(2-x)^2$: $x^2$. Maka suku utama $f$ = $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$ (derajat genap, koefisien negatif), kedua ujung turun. Kesalahan Dina ada pada langkah (1).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 67,
+        "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim derajat selisih",
+      "alasan_level": "mengevaluasi klaim derajat dengan menemukan bahwa suku berderajat tertinggi saling meniadakan lalu mencari suku tertinggi yang tersisa",
+      "stimulus": null,
+      "pertanyaan": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
+      "jawaban_benar": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
+      "alasan_benar": "$(x^3+2)^4 = x^{12} + 8x^9 + 24x^6 + 32x^3 + 16$ dan $(x^4-1)^3 = x^{12} - 3x^8 + 3x^4 - 1$. Selisihnya $8x^9 + 3x^8 + \\dots$, suku tertinggi $8x^9$.",
+      "distraktor": [
+        {
+          "teks": "Benar; selisih dua polinomial berderajat 12 selalu berderajat 12",
+          "alasan": "tidak memeriksa bahwa koefisien $x^{12}$ kedua polinomial sama sehingga hilang"
+        },
+        {
+          "teks": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 8",
+          "alasan": "mengambil $3x^8$ dari polinomial kedua dan mengabaikan suku $8x^9$"
+        },
+        {
+          "teks": "Salah; derajat selisih adalah $12 - 12 = 0$",
+          "alasan": "mengurangkan derajat kedua polinomial, padahal yang hilang hanya suku $x^{12}$"
+        }
+      ],
+      "pembahasan": "Suku $x^{12}$ hilang. Suku berikutnya $8x^9$ dari polinomial pertama (polinomial kedua tidak punya $x^9$), jadi derajat 9.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi dua nilai parameter",
+      "alasan_level": "mengevaluasi dua nilai parameter hasil substitusi titik terhadap syarat ujung grafik pada koefisien utama",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x) = (k - 1)x^4 + k^2x^2 - 7$ memenuhi $f(2) = 25$, sehingga $k = 2$ atau $k = -6$. Jika grafik $f$ juga mengarah ke bawah di kedua ujungnya, pernyataan yang benar adalah ....",
+      "jawaban_benar": "Hanya $k = -6$ yang memenuhi karena koefisien utama $k - 1 = -7$ negatif",
+      "alasan_benar": "Derajat 4 genap, kedua ujung turun bila $k - 1 < 0$. Untuk $k=2$: $1 > 0$ (naik, gugur). Untuk $k=-6$: $-7 < 0$ (turun, memenuhi).",
+      "distraktor": [
+        {
+          "teks": "Hanya $k = 2$ yang memenuhi karena koefisien utama $k - 1 = 1$ positif",
+          "alasan": "membalik kriteria: koefisien utama positif membuat kedua ujung naik"
+        },
+        {
+          "teks": "Kedua nilai $k$ memenuhi karena derajat 4 genap",
+          "alasan": "hanya memeriksa derajat, tidak tanda koefisien utama"
+        },
+        {
+          "teks": "Hanya $k = -6$ yang memenuhi karena suku $k^2x^2$ bernilai positif",
+          "alasan": "memakai suku $k^2x^2$ (bukan suku utama) sebagai penentu ujung"
+        }
+      ],
+      "pembahasan": "Ujung kedua-duanya turun jika derajat genap dan koefisien utama negatif: $k-1<0$. $k=-6$ memberikan $-7$, $k=2$ memberikan $1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 69,
+        "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang polinomial memenuhi syarat",
+      "alasan_level": "memeriksa empat rancangan polinomial terhadap empat syarat sekaligus (derajat, tanda koefisien utama, dua nilai fungsi)",
+      "stimulus": null,
+      "pertanyaan": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
+      "jawaban_benar": "$P(x) = 2x^5 + x^3 + 3x - 2$",
+      "alasan_benar": "Derajat 5, koefisien utama 2 positif, $P(0) = -2$, $P(1) = 2 + 1 + 3 - 2 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$P(x) = 2x^5 + x^3 - x + 2$",
+          "alasan": "$P(0) = 2$, bukan $-2$ (konstanta tertukar tanda)"
+        },
+        {
+          "teks": "$P(x) = -2x^5 + 8x - 2$",
+          "alasan": "koefisien utama $-2$ negatif, padahal harus positif"
+        },
+        {
+          "teks": "$P(x) = 2x^6 + 4x - 2$",
+          "alasan": "derajatnya 6, bukan 5"
+        }
+      ],
+      "pembahasan": "Periksa tiap syarat: hanya $2x^5 + x^3 + 3x - 2$ yang memenuhi keempatnya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang polinomial memenuhi syarat",
+      "alasan_level": "memeriksa rancangan polinomial berderajat 3 terhadap syarat arah ujung dan dua nilai fungsi",
+      "stimulus": null,
+      "pertanyaan": "Sebuah fungsi polinomial $P(x)$ dirancang agar berderajat 3, grafiknya naik di ujung kiri dan turun di ujung kanan, $P(0) = 4$, dan $P(2) = 0$. Fungsi yang memenuhi semua syarat itu adalah ....",
+      "jawaban_benar": "$P(x) = -x^3 + x^2 + 4$",
+      "alasan_benar": "Suku utama $-x^3$ (derajat ganjil, koefisien negatif) memberi kiri naik dan kanan turun; $P(0) = 4$; $P(2) = -8 + 4 + 4 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$P(x) = x^3 - 3x^2 + 4$",
+          "alasan": "koefisien utama positif sehingga ujung kiri turun dan kanan naik (terbalik)"
+        },
+        {
+          "teks": "$P(x) = -x^3 + 3x^2 - 4$",
+          "alasan": "$P(0) = -4$, bukan $4$"
+        },
+        {
+          "teks": "$P(x) = -x^3 + 2x^2 + 4$",
+          "alasan": "$P(2) = -8 + 8 + 4 = 4$, bukan $0$"
+        }
+      ],
+      "pembahasan": "Cek arah ujung dari suku utama, lalu $P(0)$ dan $P(2)$. Hanya $-x^3 + x^2 + 4$ yang memenuhi ketiganya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 75,
+        "kutipan": "kandang tersebut sebagai fungsi terhadap"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan model fungsi",
+      "alasan_level": "mengevaluasi model volume buatan siswa dan menemukan kesalahan ukuran alas akibat pemotongan dua sisi",
+      "stimulus": null,
+      "pertanyaan": "Selembar karton berbentuk persegi bersisi 36 cm digunting pada keempat pojoknya berupa persegi kecil bersisi $x$ cm, lalu sisi-sisinya dilipat sehingga terbentuk kotak tanpa tutup. Rita menulis volume kotak sebagai $V(x) = x(36 - x)^2$. Pernyataan yang benar tentang model Rita adalah ....",
+      "jawaban_benar": "Salah; sisi alas adalah $36 - 2x$ sehingga $V(x) = x(36 - 2x)^2$",
+      "alasan_benar": "Dari tiap sisi karton terpotong dua pojok sehingga sisi alas $36 - 2x$ dan tinggi $x$. Volume $V(x) = x(36-2x)^2 = 4x^3 - 144x^2 + 1.296x$.",
+      "distraktor": [
+        {
+          "teks": "Salah; tinggi kotak $2x$ sehingga $V(x) = 2x(36 - 2x)^2$",
+          "alasan": "mengira tinggi lipatan dua kali sisi pojok"
+        },
+        {
+          "teks": "Salah; $V(x) = x(36 - x)(36 - 2x)$ karena panjang dan lebar alas berbeda",
+          "alasan": "mengira panjang dan lebar alas berbeda padahal karton persegi"
+        },
+        {
+          "teks": "Benar; sisi alas adalah $36 - x$ karena hanya satu pojok yang digunting",
+          "alasan": "tidak menyadari bahwa tiap sisi kehilangan dua potongan $x$"
+        }
+      ],
+      "pembahasan": "Tiap sisi 36 cm kehilangan $x$ di kedua ujungnya, sisi alas $36 - 2x$. Maka $V(x) = x(36-2x)^2$, polinomial derajat 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 71,
+        "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi sifat ujung hasil operasi",
+      "alasan_level": "mengevaluasi sifat ujung jumlah dan hasil kali dua fungsi dengan menalar tanda dan paritas derajat suku utama",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi polinomial $f$ dan $g$ keduanya turun di ujung kiri maupun ujung kanan. Pernyataan yang pasti benar tentang $f + g$ dan $f \\cdot g$ adalah ....",
+      "jawaban_benar": "$f + g$ turun di kedua ujung dan $f \\cdot g$ naik di kedua ujung",
+      "alasan_benar": "Keduanya berderajat genap dengan koefisien utama negatif. Suku utama $f+g$ bertanda negatif berderajat genap (turun-turun); suku utama $f \\cdot g$ hasil kali dua bilangan negatif, positif, berderajat genap (naik-naik).",
+      "distraktor": [
+        {
+          "teks": "$f + g$ dan $f \\cdot g$ keduanya turun di kedua ujung",
+          "alasan": "mengira hasil kali mempertahankan tanda negatif"
+        },
+        {
+          "teks": "$f + g$ naik di kedua ujung dan $f \\cdot g$ turun di kedua ujung",
+          "alasan": "menukar sifat jumlah dan hasil kali"
+        },
+        {
+          "teks": "$f + g$ dan $f \\cdot g$ keduanya naik di kedua ujung",
+          "alasan": "mengira jumlah dua fungsi bertanda negatif menjadi positif"
+        }
+      ],
+      "pembahasan": "Contoh $f = -3x^2 + x$, $g = -2x^4 + 5$: jumlah bersuku utama $-2x^4$, hasil kali bersuku utama $6x^6$. Sifat ini berlaku umum.",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5da43f372641a68dd173b63d",
+        "teks": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
+        "jawaban": "$P(x) = 2x^5 + x^3 + 3x - 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=3 x^{5} + 4 x^{4} + 7$. Tentukan $P(3)$.",
+      "jawaban_benar": "$1060$",
+      "alasan_benar": "Substitusi x=3: P(3)=1060.",
+      "distraktor": [
+        {
+          "teks": "$1061$",
+          "alasan": "Pilihan $1061$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1060$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$1059$",
+          "alasan": "Pilihan $1059$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1060$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$1062$",
+          "alasan": "Pilihan $1062$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1060$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=3: P(3)=1060.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e7450b2759746cd009b4110",
+        "teks": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
+        "jawaban": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=3 x^{6} + 4 x^{5} + 6$. Tentukan $P(-2)$.",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Substitusi x=-2: P(-2)=70.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan $71$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $70$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$69$",
+          "alasan": "Pilihan $69$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $70$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Pilihan $72$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $70$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=-2: P(-2)=70.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d35237f9fcae4ab61cee456",
+        "teks": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=6 x^{3} + 9 x^{2} + 3$. Tentukan $P(-3)$.",
+      "jawaban_benar": "$-78$",
+      "alasan_benar": "Substitusi x=-3: P(-3)=-78.",
+      "distraktor": [
+        {
+          "teks": "$-77$",
+          "alasan": "Pilihan $-77$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-78$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-79$",
+          "alasan": "Pilihan $-79$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-78$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-76$",
+          "alasan": "Pilihan $-76$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-78$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=-3: P(-3)=-78.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e7450b2759746cd009b4110",
+        "teks": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
+        "jawaban": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=7 x^{4} + 8 x^{3} + 9$. Tentukan $P(-1)$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Substitusi x=-1: P(-1)=8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=-1: P(-1)=8.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d9f491f048ddd721d31cedaf",
+        "teks": "Kawat sepanjang 120 cm dipakai sebagai kerangka kotak berbentuk balok dengan alas dan tutup persegi bersisi $x$ cm dan tinggi $y$ cm (8 rusuk sepanjang $x$ dan 4 rusuk sepanjang $y$). Volume kotak $V(x) = x^2(30 - 2x)$. Daerah asal $V$ yang sesuai dengan keadaan kotak tersebut adalah ....",
+        "jawaban": "$0 < x < 15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=7 x^{4} + 5 x^{3} + 7$. Tentukan $P(6)$.",
+      "jawaban_benar": "$10159$",
+      "alasan_benar": "Substitusi x=6: P(6)=10159.",
+      "distraktor": [
+        {
+          "teks": "$10160$",
+          "alasan": "Pilihan $10160$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10159$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$10158$",
+          "alasan": "Pilihan $10158$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10159$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$10161$",
+          "alasan": "Pilihan $10161$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10159$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=6: P(6)=10159.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811f68beb413254d8ebd8ecb",
+        "teks": "Seorang siswa menyatakan: \"Jika $P(x)$ dan $Q(x)$ sama-sama berderajat 4, maka $P(x) + Q(x)$ pasti berderajat 4.\" Pasangan $P(x)$ dan $Q(x)$ berikut, yang keduanya berderajat 4, yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -7x^4 + 3x^2 - 5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=7 x^{4} + 4 x^{3} + 9$. Tentukan $P(0)$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Substitusi x=0: P(0)=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=0: P(0)=9.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d35237f9fcae4ab61cee456",
+        "teks": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=5 x^{5} + 8 x^{4} + 2$. Tentukan $P(0)$.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Substitusi x=0: P(0)=2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=0: P(0)=2.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8a179dfe3f700b43bbbd727d",
+        "teks": "Dalam sebuah turnamen voli yang diikuti $x$ tim, setiap dua tim bertemu enam kali, dan ditambah 9 pertandingan eksibisi. Banyak seluruh pertandingan dinyatakan sebagai $f(x) = ax^2 + bx + c$. Nilai $a$, $b$, dan $c$ berturut-turut adalah ....",
+        "jawaban": "$3$, $-3$, dan $9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=3 x^{5} + 7 x^{4} + 6$. Tentukan $P(-3)$.",
+      "jawaban_benar": "$-156$",
+      "alasan_benar": "Substitusi x=-3: P(-3)=-156.",
+      "distraktor": [
+        {
+          "teks": "$-155$",
+          "alasan": "Pilihan $-155$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-156$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-157$",
+          "alasan": "Pilihan $-157$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-156$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-154$",
+          "alasan": "Pilihan $-154$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-156$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=-3: P(-3)=-156.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5da43f372641a68dd173b63d",
+        "teks": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
+        "jawaban": "$P(x) = 2x^5 + x^3 + 3x - 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep evaluasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)=3 x^{3} + 2 x^{2} + 7$. Tentukan $P(-2)$.",
+      "jawaban_benar": "$-9$",
+      "alasan_benar": "Substitusi x=-2: P(-2)=-9.",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan $-8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Pilihan $-10$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "Pilihan $-7$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-9$. Periksa kembali langkah evaluasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Substitusi x=-2: P(-2)=-9.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "661d424ed53f6da584151980",
+        "teks": "Tanpa menjabarkan, derajat polinomial $(x^3 - 4)^8 (x^6 + 7)^5$ adalah ....",
+        "jawaban": "$54$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=6$, $P(1)=-22$, dan $P(3)=-54$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-58$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=4, b=-32. Lengkapi kuadrat: P(x)=4(x-4)²+(-58). Karena a>0, nilai minimum -58.",
+      "distraktor": [
+        {
+          "teks": "$-59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-58$."
+        },
+        {
+          "teks": "$-57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-58$."
+        },
+        {
+          "teks": "$-116$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=4, b=-32. Lengkapi kuadrat: P(x)=4(x-4)²+(-58). Karena a>0, nilai minimum -58.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6a1fcb1fd2dd90be3026c88",
+        "teks": "Selembar karton berbentuk persegi bersisi 36 cm digunting pada keempat pojoknya berupa persegi kecil bersisi $x$ cm, lalu sisi-sisinya dilipat sehingga terbentuk kotak tanpa tutup. Rita menulis volume kotak sebagai $V(x) = x(36 - x)^2$. Pernyataan yang benar tentang model Rita adalah ....",
+        "jawaban": "Salah; sisi alas adalah $36 - 2x$ sehingga $V(x) = x(36 - 2x)^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=4$, $P(1)=-11$, dan $P(3)=-23$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-23$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=3, b=-18. Lengkapi kuadrat: P(x)=3(x-3)²+(-23). Karena a>0, nilai minimum -23.",
+      "distraktor": [
+        {
+          "teks": "$-24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-23$."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-23$."
+        },
+        {
+          "teks": "$-46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=3, b=-18. Lengkapi kuadrat: P(x)=3(x-3)²+(-23). Karena a>0, nilai minimum -23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62ffd7adda03f76251ffd169",
+        "teks": "Perilaku ujung grafik $f(x) = -4x^6 + 5x^2 - 9$ adalah ....",
+        "jawaban": "Turun di ujung kiri dan turun di ujung kanan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=1$, $P(1)=-104$, dan $P(3)=-272$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-447$",
+      "alasan_benar": "Tiga nilai menentukan c=1, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-447). Karena a>0, nilai minimum -447.",
+      "distraktor": [
+        {
+          "teks": "$-448$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-447$."
+        },
+        {
+          "teks": "$-446$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-447$."
+        },
+        {
+          "teks": "$-894$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=1, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-447). Karena a>0, nilai minimum -447.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "661d424ed53f6da584151980",
+        "teks": "Tanpa menjabarkan, derajat polinomial $(x^3 - 4)^8 (x^6 + 7)^5$ adalah ....",
+        "jawaban": "$54$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-42$, dan $P(3)=-98$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-105$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=7, b=-56. Lengkapi kuadrat: P(x)=7(x-4)²+(-105). Karena a>0, nilai minimum -105.",
+      "distraktor": [
+        {
+          "teks": "$-106$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-105$."
+        },
+        {
+          "teks": "$-104$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-105$."
+        },
+        {
+          "teks": "$-210$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=7, b=-56. Lengkapi kuadrat: P(x)=7(x-4)²+(-105). Karena a>0, nilai minimum -105.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65e6c6e11f6e6ee553311323",
+        "teks": "Derajat polinomial $3x^2y^4 + x^3y - 5xy^2$ adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-72$, dan $P(3)=-192$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-317$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=5, b=-80. Lengkapi kuadrat: P(x)=5(x-8)²+(-317). Karena a>0, nilai minimum -317.",
+      "distraktor": [
+        {
+          "teks": "$-318$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-317$."
+        },
+        {
+          "teks": "$-316$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-317$."
+        },
+        {
+          "teks": "$-634$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=5, b=-80. Lengkapi kuadrat: P(x)=5(x-8)²+(-317). Karena a>0, nilai minimum -317.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d9f491f048ddd721d31cedaf",
+        "teks": "Kawat sepanjang 120 cm dipakai sebagai kerangka kotak berbentuk balok dengan alas dan tutup persegi bersisi $x$ cm dan tinggi $y$ cm (8 rusuk sepanjang $x$ dan 4 rusuk sepanjang $y$). Volume kotak $V(x) = x^2(30 - 2x)$. Daerah asal $V$ yang sesuai dengan keadaan kotak tersebut adalah ....",
+        "jawaban": "$0 < x < 15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-32$, dan $P(3)=-72$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-77$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=5, b=-40. Lengkapi kuadrat: P(x)=5(x-4)²+(-77). Karena a>0, nilai minimum -77.",
+      "distraktor": [
+        {
+          "teks": "$-78$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-77$."
+        },
+        {
+          "teks": "$-76$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-77$."
+        },
+        {
+          "teks": "$-154$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=5, b=-40. Lengkapi kuadrat: P(x)=5(x-4)²+(-77). Karena a>0, nilai minimum -77.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "843eacadab61cdf7b085410d",
+        "teks": "Polinomial $P(x)=3 x^{3} + 2 x^{2} + 7$. Tentukan $P(-2)$.",
+        "jawaban": "$-9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=5$, $P(1)=-85$, dan $P(3)=-229$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-379$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=6, b=-96. Lengkapi kuadrat: P(x)=6(x-8)²+(-379). Karena a>0, nilai minimum -379.",
+      "distraktor": [
+        {
+          "teks": "$-380$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-379$."
+        },
+        {
+          "teks": "$-378$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-379$."
+        },
+        {
+          "teks": "$-758$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=6, b=-96. Lengkapi kuadrat: P(x)=6(x-8)²+(-379). Karena a>0, nilai minimum -379.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7473f0b6ef54aecca8594ccb",
+        "teks": "Polinomial $P(x)=3 x^{5} + 7 x^{4} + 6$. Tentukan $P(-3)$.",
+        "jawaban": "$-156$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-26$, dan $P(3)=-74$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-101$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-101). Karena a>0, nilai minimum -101.",
+      "distraktor": [
+        {
+          "teks": "$-102$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-101$."
+        },
+        {
+          "teks": "$-100$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-101$."
+        },
+        {
+          "teks": "$-202$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-101). Karena a>0, nilai minimum -101.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d20f499a11e70ea2a003cafe",
+        "teks": "Grafik fungsi $f(x) = 2x^3 + kx^2 - 5x + 1$ melalui titik $(-2, 15)$. Nilai $k$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=4$, $P(1)=-6$, dan $P(3)=-14$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-14$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=2, b=-12. Lengkapi kuadrat: P(x)=2(x-3)²+(-14). Karena a>0, nilai minimum -14.",
+      "distraktor": [
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-14$."
+        },
+        {
+          "teks": "$-13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-14$."
+        },
+        {
+          "teks": "$-28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=2, b=-12. Lengkapi kuadrat: P(x)=2(x-3)²+(-14). Karena a>0, nilai minimum -14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6ed841e1a6d5b15265c05116",
+        "teks": "Perilaku ujung fungsi polinomial $f(x) = 6x^4 - 9x^3 + 3$ adalah ....",
+        "jawaban": "Naik di ujung kiri dan naik di ujung kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-T_1$, dan $P(3)=-27$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-29$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=2, b=-16. Lengkapi kuadrat: P(x)=2(x-4)²+(-29). Karena a>0, nilai minimum -29.",
+      "distraktor": [
+        {
+          "teks": "$-30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-58$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=2, b=-16. Lengkapi kuadrat: P(x)=2(x-4)²+(-29). Karena a>0, nilai minimum -29.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d47115933cfbdeccc4d7cb2",
+        "teks": "Perilaku ujung grafik fungsi polinomial $g(x) = 8x^5 - 6x^3 + 9$ adalah ....",
+        "jawaban": "Turun di ujung kiri dan naik di ujung kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-47$, dan $P(3)=-127$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-191$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=4, b=-56. Lengkapi kuadrat: P(x)=4(x-7)²+(-191). Karena a>0, nilai minimum -191.",
+      "distraktor": [
+        {
+          "teks": "$-192$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-190$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-382$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=4, b=-56. Lengkapi kuadrat: P(x)=4(x-7)²+(-191). Karena a>0, nilai minimum -191.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e421e829a089c42469a852be",
+        "teks": "$x^8 - 15x^5 + 7x^3 - 9$\n\nCari derajat polinomial berikut.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-26$, dan $P(3)=-74$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-101$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-101). Karena a>0, nilai minimum -101.",
+      "distraktor": [
+        {
+          "teks": "$-102$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-100$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-202$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-101). Karena a>0, nilai minimum -101.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "69976c1fbc49376fc9255d74",
+        "teks": "$9 + 4x^5 - 6x^{11} + 8x^7$\n\nCari derajat polinomial berikut.",
+        "jawaban": "$11$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-21$, dan $P(3)=-61$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-93$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=2, b=-28. Lengkapi kuadrat: P(x)=2(x-7)²+(-93). Karena a>0, nilai minimum -93.",
+      "distraktor": [
+        {
+          "teks": "$-94$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-92$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-186$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=2, b=-28. Lengkapi kuadrat: P(x)=2(x-7)²+(-93). Karena a>0, nilai minimum -93.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f5893922a0339a9bbdba0bb",
+        "teks": "Bentuk aljabar yang merupakan polinomial adalah ....",
+        "jawaban": "$2,5x^2 - 1,8x + 4,6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=2$, $P(1)=-T_1$, dan $P(3)=-103$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-123$",
+      "alasan_benar": "Tiga nilai menentukan c=2, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-123). Karena a>0, nilai minimum -123.",
+      "distraktor": [
+        {
+          "teks": "$-124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-122$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-246$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=2, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-123). Karena a>0, nilai minimum -123.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/af95235df3c6ec52e84ae3ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              43
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 43]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c21c9e0d5192e17ebbedb430",
+        "teks": "Grafik $f(x) = 5x^2 - 8x + 9$ melalui titik $(-1, k)$. Nilai $k$ adalah ....",
+        "jawaban": "$22$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-19$, dan $P(3)=-39$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-39$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=5, b=-30. Lengkapi kuadrat: P(x)=5(x-3)²+(-39). Karena a>0, nilai minimum -39.",
+      "distraktor": [
+        {
+          "teks": "$-40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-78$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=5, b=-30. Lengkapi kuadrat: P(x)=5(x-3)²+(-39). Karena a>0, nilai minimum -39.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b803639ce3010942a4c00924",
+        "teks": "Grafik $h(x) = 6x^3 - 7x + 5$ melalui titik $(2, m)$. Nilai $m$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-28$, dan $P(3)=-56$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-56$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=7, b=-42. Lengkapi kuadrat: P(x)=7(x-3)²+(-56). Karena a>0, nilai minimum -56.",
+      "distraktor": [
+        {
+          "teks": "$-57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=7, b=-42. Lengkapi kuadrat: P(x)=7(x-3)²+(-56). Karena a>0, nilai minimum -56.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eee85e2af5b5432de7f1077e",
+        "teks": "Cari derajat polinomial $7x^3y^2 - 4xy^5z + 9$.",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=2$, $P(1)=-T_1$, dan $P(3)=-133$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-178$",
+      "alasan_benar": "Tiga nilai menentukan c=2, a=5, b=-60. Lengkapi kuadrat: P(x)=5(x-6)²+(-178). Karena a>0, nilai minimum -178.",
+      "distraktor": [
+        {
+          "teks": "$-179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-356$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=2, a=5, b=-60. Lengkapi kuadrat: P(x)=5(x-6)²+(-178). Karena a>0, nilai minimum -178.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a982500596a99f0449160f61.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              53
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 53]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0a84a7f17fc5068d7dc3f83",
+        "teks": "Tentukan derajat polinomial $4x^5 - 20x^3 + 7x - 13$.",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-61$, dan $P(3)=-157$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-211$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=6, b=-72. Lengkapi kuadrat: P(x)=6(x-6)²+(-211). Karena a>0, nilai minimum -211.",
+      "distraktor": [
+        {
+          "teks": "$-212$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-210$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-422$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=6, b=-72. Lengkapi kuadrat: P(x)=6(x-6)²+(-211). Karena a>0, nilai minimum -211.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d80569d2cfdfbbbd42413c1",
+        "teks": "Tentukan derajat $6,5x^4y^3z^2 - 2,4xy^3z^2 + 8,1$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-70$, dan $P(3)=-182$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-245$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=7, b=-84. Lengkapi kuadrat: P(x)=7(x-6)²+(-245). Karena a>0, nilai minimum -245.",
+      "distraktor": [
+        {
+          "teks": "$-246$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-244$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-490$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=7, b=-84. Lengkapi kuadrat: P(x)=7(x-6)²+(-245). Karena a>0, nilai minimum -245.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62ffd7adda03f76251ffd169",
+        "teks": "Perilaku ujung grafik $f(x) = -4x^6 + 5x^2 - 9$ adalah ....",
+        "jawaban": "Turun di ujung kiri dan turun di ujung kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-59$, dan $P(3)=-159$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-239$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=5, b=-70. Lengkapi kuadrat: P(x)=5(x-7)²+(-239). Karena a>0, nilai minimum -239.",
+      "distraktor": [
+        {
+          "teks": "$-240$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-238$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-478$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=5, b=-70. Lengkapi kuadrat: P(x)=5(x-7)²+(-239). Karena a>0, nilai minimum -239.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "635d37878c16fca75937882b",
+        "teks": "Sebuah liga terdiri atas 7 tim. Setiap dua tim bertanding dua kali (kandang dan tandang). Jumlah seluruh pertandingan dalam liga tersebut adalah ....",
+        "jawaban": "$42$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-29$, dan $P(3)=-77$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-104$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-104). Karena a>0, nilai minimum -104.",
+      "distraktor": [
+        {
+          "teks": "$-105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-103$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-208$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=3, b=-36. Lengkapi kuadrat: P(x)=3(x-6)²+(-104). Karena a>0, nilai minimum -104.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ad3c416e66b71e394faf543f",
+        "teks": "Bentuk aljabar berikut yang merupakan monomial adalah ....",
+        "jawaban": "$-7x^3y$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=2$, $P(1)=-T_1$, dan $P(3)=-61$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-61$",
+      "alasan_benar": "Tiga nilai menentukan c=2, a=7, b=-42. Lengkapi kuadrat: P(x)=7(x-3)²+(-61). Karena a>0, nilai minimum -61.",
+      "distraktor": [
+        {
+          "teks": "$-62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-122$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=2, a=7, b=-42. Lengkapi kuadrat: P(x)=7(x-3)²+(-61). Karena a>0, nilai minimum -61.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a9f52242a4233a63c0bf7fa4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              33
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 33]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a8dddadc7d60ae28046cf1c",
+        "teks": "Koefisien dari monomial $-9x^2y^3$ adalah ....",
+        "jawaban": "$-9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-45$, dan $P(3)=-101$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-108$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=7, b=-56. Lengkapi kuadrat: P(x)=7(x-4)²+(-108). Karena a>0, nilai minimum -108.",
+      "distraktor": [
+        {
+          "teks": "$-109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-216$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=7, b=-56. Lengkapi kuadrat: P(x)=7(x-4)²+(-108). Karena a>0, nilai minimum -108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "98ecc086540ec9f99a60c522",
+        "teks": "Suku konstanta dari polinomial $4x^3 - 7x^2 + 3x - 12$ adalah ....",
+        "jawaban": "$-12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-T_1$, dan $P(3)=-33$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-33$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=4, b=-24. Lengkapi kuadrat: P(x)=4(x-3)²+(-33). Karena a>0, nilai minimum -33.",
+      "distraktor": [
+        {
+          "teks": "$-34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-66$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=4, b=-24. Lengkapi kuadrat: P(x)=4(x-3)²+(-33). Karena a>0, nilai minimum -33.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/b9eb914a511b800719588d84.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              17
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 17]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec94fa153a6e01f9b7f64472",
+        "teks": "Derajat monomial $-4m^3n^5r^2$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-55$, dan $P(3)=-151$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-251$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=4, b=-64. Lengkapi kuadrat: P(x)=4(x-8)²+(-251). Karena a>0, nilai minimum -251.",
+      "distraktor": [
+        {
+          "teks": "$-252$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-250$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-502$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=4, b=-64. Lengkapi kuadrat: P(x)=4(x-8)²+(-251). Karena a>0, nilai minimum -251.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65e6c6e11f6e6ee553311323",
+        "teks": "Derajat polinomial $3x^2y^4 + x^3y - 5xy^2$ adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-T_1$, dan $P(3)=-39$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-47$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=2, b=-20. Lengkapi kuadrat: P(x)=2(x-5)²+(-47). Karena a>0, nilai minimum -47.",
+      "distraktor": [
+        {
+          "teks": "$-48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-94$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=2, b=-20. Lengkapi kuadrat: P(x)=2(x-5)²+(-47). Karena a>0, nilai minimum -47.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "755c0cf7ac52d2d9ebceba58",
+        "teks": "Koefisien utama dari polinomial $P(x) = 3x - 8x^4 + 5x^2 + 1$ adalah ....",
+        "jawaban": "$-8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-T_1$, dan $P(3)=-270$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-445$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-445). Karena a>0, nilai minimum -445.",
+      "distraktor": [
+        {
+          "teks": "$-446$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-444$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-890$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-445). Karena a>0, nilai minimum -445.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/29a9665ce27816adf5e0fbd1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              102
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 102]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36a42f8cbcf401c791973a45",
+        "teks": "Jika $g(x) = x^3 - 4x^2 + 6$, nilai $g(3)$ adalah ....",
+        "jawaban": "$-3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-16$, dan $P(3)=-40$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-43$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=3, b=-24. Lengkapi kuadrat: P(x)=3(x-4)²+(-43). Karena a>0, nilai minimum -43.",
+      "distraktor": [
+        {
+          "teks": "$-44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-86$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=3, b=-24. Lengkapi kuadrat: P(x)=3(x-4)²+(-43). Karena a>0, nilai minimum -43.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67f1f289d157ec676ab9d73e",
+        "teks": "Fungsi polinomial yang grafiknya mengarah ke kiri bawah dan ke kanan bawah adalah ....",
+        "jawaban": "$f(x) = -2x^4 + 9x^3 + 1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=2$, $P(1)=-T_1$, dan $P(3)=-34$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-34$",
+      "alasan_benar": "Tiga nilai menentukan c=2, a=4, b=-24. Lengkapi kuadrat: P(x)=4(x-3)²+(-34). Karena a>0, nilai minimum -34.",
+      "distraktor": [
+        {
+          "teks": "$-35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-68$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=2, a=4, b=-24. Lengkapi kuadrat: P(x)=4(x-3)²+(-34). Karena a>0, nilai minimum -34.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c9a1de6d9f060ebe437d24a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              18
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 18]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811f68beb413254d8ebd8ecb",
+        "teks": "Seorang siswa menyatakan: \"Jika $P(x)$ dan $Q(x)$ sama-sama berderajat 4, maka $P(x) + Q(x)$ pasti berderajat 4.\" Pasangan $P(x)$ dan $Q(x)$ berikut, yang keduanya berderajat 4, yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$P(x) = 7x^4 - 2x + 1$ dan $Q(x) = -7x^4 + 3x^2 - 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=T_1$, $P(1)=-73$, dan $P(3)=-185$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-248$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=7, b=-84. Lengkapi kuadrat: P(x)=7(x-6)²+(-248). Karena a>0, nilai minimum -248.",
+      "distraktor": [
+        {
+          "teks": "$-249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-247$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-496$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=7, b=-84. Lengkapi kuadrat: P(x)=7(x-6)²+(-248). Karena a>0, nilai minimum -248.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "547db1a4eaf5206ffaef5abc",
+        "teks": "Misalkan $P(x)$ dan $Q(x)$ polinomial yang masing-masing berderajat 6, dan $P(x) + Q(x)$ bukan polinomial nol. Nilai berikut yang TIDAK mungkin menjadi derajat $P(x) + Q(x)$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=1$, $P(1)=-44$, dan $P(3)=-104$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-124$",
+      "alasan_benar": "Tiga nilai menentukan c=1, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-124). Karena a>0, nilai minimum -124.",
+      "distraktor": [
+        {
+          "teks": "$-125$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-123$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-248$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=1, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-124). Karena a>0, nilai minimum -124.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d35237f9fcae4ab61cee456",
+        "teks": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=5$, $P(1)=-39$, dan $P(3)=-103$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-139$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-139). Karena a>0, nilai minimum -139.",
+      "distraktor": [
+        {
+          "teks": "$-140$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-138$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-278$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-139). Karena a>0, nilai minimum -139.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e7450b2759746cd009b4110",
+        "teks": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
+        "jawaban": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-47$, dan $P(3)=-119$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-143$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=6, b=-60. Lengkapi kuadrat: P(x)=6(x-5)²+(-143). Karena a>0, nilai minimum -143.",
+      "distraktor": [
+        {
+          "teks": "$-144$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-142$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-286$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=6, b=-60. Lengkapi kuadrat: P(x)=6(x-5)²+(-143). Karena a>0, nilai minimum -143.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a2fa0f5a7166bfa9320d5ef",
+        "teks": "Fungsi $f(x) = (k - 1)x^4 + k^2x^2 - 7$ memenuhi $f(2) = 25$, sehingga $k = 2$ atau $k = -6$. Jika grafik $f$ juga mengarah ke bawah di kedua ujungnya, pernyataan yang benar adalah ....",
+        "jawaban": "Hanya $k = -6$ yang memenuhi karena koefisien utama $k - 1 = -7$ negatif",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-18$, dan $P(3)=-38$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-38$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=5, b=-30. Lengkapi kuadrat: P(x)=5(x-3)²+(-38). Karena a>0, nilai minimum -38.",
+      "distraktor": [
+        {
+          "teks": "$-39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-76$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=5, b=-30. Lengkapi kuadrat: P(x)=5(x-3)²+(-38). Karena a>0, nilai minimum -38.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5da43f372641a68dd173b63d",
+        "teks": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
+        "jawaban": "$P(x) = 2x^5 + x^3 + 3x - 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-56$, dan $P(3)=-140$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-168$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=7, b=-70. Lengkapi kuadrat: P(x)=7(x-5)²+(-168). Karena a>0, nilai minimum -168.",
+      "distraktor": [
+        {
+          "teks": "$-169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-336$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=7, b=-70. Lengkapi kuadrat: P(x)=7(x-5)²+(-168). Karena a>0, nilai minimum -168.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "437f218ff1bba1b5b1f4cbe2",
+        "teks": "Sebuah fungsi polinomial $P(x)$ dirancang agar berderajat 3, grafiknya naik di ujung kiri dan turun di ujung kanan, $P(0) = 4$, dan $P(2) = 0$. Fungsi yang memenuhi semua syarat itu adalah ....",
+        "jawaban": "$P(x) = -x^3 + x^2 + 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=6$, $P(1)=-38$, dan $P(3)=-102$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-138$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-138). Karena a>0, nilai minimum -138.",
+      "distraktor": [
+        {
+          "teks": "$-139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-276$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-138). Karena a>0, nilai minimum -138.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6a1fcb1fd2dd90be3026c88",
+        "teks": "Selembar karton berbentuk persegi bersisi 36 cm digunting pada keempat pojoknya berupa persegi kecil bersisi $x$ cm, lalu sisi-sisinya dilipat sehingga terbentuk kotak tanpa tutup. Rita menulis volume kotak sebagai $V(x) = x(36 - x)^2$. Pernyataan yang benar tentang model Rita adalah ....",
+        "jawaban": "Salah; sisi alas adalah $36 - 2x$ sehingga $V(x) = x(36 - 2x)^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=5$, $P(1)=-100$, dan $P(3)=-268$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-443$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-443). Karena a>0, nilai minimum -443.",
+      "distraktor": [
+        {
+          "teks": "$-444$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-442$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-886$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=7, b=-112. Lengkapi kuadrat: P(x)=7(x-8)²+(-443). Karena a>0, nilai minimum -443.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "861d8b3bf960b4f8de3dfcae",
+        "teks": "Grafik fungsi polinomial $f$ dan $g$ keduanya turun di ujung kiri maupun ujung kanan. Pernyataan yang pasti benar tentang $f + g$ dan $f \\cdot g$ adalah ....",
+        "jawaban": "$f + g$ turun di kedua ujung dan $f \\cdot g$ naik di kedua ujung",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=1$, $P(1)=-43$, dan $P(3)=-107$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-143$",
+      "alasan_benar": "Tiga nilai menentukan c=1, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-143). Karena a>0, nilai minimum -143.",
+      "distraktor": [
+        {
+          "teks": "$-144$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-142$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-286$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=1, a=4, b=-48. Lengkapi kuadrat: P(x)=4(x-6)²+(-143). Karena a>0, nilai minimum -143.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a51e766165e5f030c9b7862a",
+        "teks": "Tanpa menjabarkan, derajat polinomial $(8x^9 - 3)^4 (9x^4 + 4)^7$ adalah ....",
+        "jawaban": "$64$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=6$, $P(1)=-39$, dan $P(3)=-99$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-119$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-119). Karena a>0, nilai minimum -119.",
+      "distraktor": [
+        {
+          "teks": "$-120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-238$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=5, b=-50. Lengkapi kuadrat: P(x)=5(x-5)²+(-119). Karena a>0, nilai minimum -119.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "661d424ed53f6da584151980",
+        "teks": "Tanpa menjabarkan, derajat polinomial $(x^3 - 4)^8 (x^6 + 7)^5$ adalah ....",
+        "jawaban": "$54$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=3$, $P(1)=-12$, dan $P(3)=-24$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-24$",
+      "alasan_benar": "Tiga nilai menentukan c=3, a=3, b=-18. Lengkapi kuadrat: P(x)=3(x-3)²+(-24). Karena a>0, nilai minimum -24.",
+      "distraktor": [
+        {
+          "teks": "$-25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=3, a=3, b=-18. Lengkapi kuadrat: P(x)=3(x-3)²+(-24). Karena a>0, nilai minimum -24.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "01be57bd68c5087a84962eec",
+        "teks": "Tanpa menjabarkan, derajat polinomial $(7 - 9x^3)^4 (2 - x^5)^3 (8 + x^2)^5$ adalah ....",
+        "jawaban": "$37$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=2$, $P(1)=-43$, dan $P(3)=-115$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-190$",
+      "alasan_benar": "Tiga nilai menentukan c=2, a=3, b=-48. Lengkapi kuadrat: P(x)=3(x-8)²+(-190). Karena a>0, nilai minimum -190.",
+      "distraktor": [
+        {
+          "teks": "$-191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-189$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-380$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=2, a=3, b=-48. Lengkapi kuadrat: P(x)=3(x-8)²+(-190). Karena a>0, nilai minimum -190.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f38e4550d3281944c37a0242",
+        "teks": "Perilaku ujung fungsi polinomial $f(x) = 6x^3 - x^{10} + 9x^5 - 12$ adalah ....",
+        "jawaban": "Turun di ujung kiri dan turun di ujung kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=5$, $P(1)=-30$, dan $P(3)=-70$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-75$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=5, b=-40. Lengkapi kuadrat: P(x)=5(x-4)²+(-75). Karena a>0, nilai minimum -75.",
+      "distraktor": [
+        {
+          "teks": "$-76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-150$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=5, b=-40. Lengkapi kuadrat: P(x)=5(x-4)²+(-75). Karena a>0, nilai minimum -75.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c4ca2a47d49f84bcf0c21b46",
+        "teks": "Dalam sebuah pertemuan hadir $x$ orang. Setiap dua orang berjabat tangan tepat satu kali. Fungsi yang menyatakan banyak jabat tangan seluruhnya adalah ....",
+        "jawaban": "$f(x) = \\frac{1}{2}x^2 - \\frac{1}{2}x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=1$, $P(1)=-54$, dan $P(3)=-134$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-179$",
+      "alasan_benar": "Tiga nilai menentukan c=1, a=5, b=-60. Lengkapi kuadrat: P(x)=5(x-6)²+(-179). Karena a>0, nilai minimum -179.",
+      "distraktor": [
+        {
+          "teks": "$-180$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-178$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-358$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=1, a=5, b=-60. Lengkapi kuadrat: P(x)=5(x-6)²+(-179). Karena a>0, nilai minimum -179.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8a179dfe3f700b43bbbd727d",
+        "teks": "Dalam sebuah turnamen voli yang diikuti $x$ tim, setiap dua tim bertemu enam kali, dan ditambah 9 pertandingan eksibisi. Banyak seluruh pertandingan dinyatakan sebagai $f(x) = ax^2 + bx + c$. Nilai $a$, $b$, dan $c$ berturut-turut adalah ....",
+        "jawaban": "$3$, $-3$, dan $9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=7$, $P(1)=-38$, dan $P(3)=-110$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-185$",
+      "alasan_benar": "Tiga nilai menentukan c=7, a=3, b=-48. Lengkapi kuadrat: P(x)=3(x-8)²+(-185). Karena a>0, nilai minimum -185.",
+      "distraktor": [
+        {
+          "teks": "$-186$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-184$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-370$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=7, a=3, b=-48. Lengkapi kuadrat: P(x)=3(x-8)²+(-185). Karena a>0, nilai minimum -185.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ebf08978c736562c83080b2a",
+        "teks": "Koefisien utama polinomial $P(x) = (2x^3 - 1)^2 (3x^2 + 4)^3$ adalah ....",
+        "jawaban": "$108$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=6$, $P(1)=-30$, dan $P(3)=-78$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-94$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=4, b=-40. Lengkapi kuadrat: P(x)=4(x-5)²+(-94). Karena a>0, nilai minimum -94.",
+      "distraktor": [
+        {
+          "teks": "$-95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-188$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=4, b=-40. Lengkapi kuadrat: P(x)=4(x-5)²+(-94). Karena a>0, nilai minimum -94.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dee604636ee03a8207d58a6f",
+        "teks": "Biaya produksi $x$ unit barang (dalam ribu rupiah) dinyatakan dengan fungsi polinomial $C(x) = 2x^3 - 30x^2 + 150x + 400$. Biaya untuk memproduksi 6 unit barang adalah ....",
+        "jawaban": "Rp652.000",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=5$, $P(1)=-9$, dan $P(3)=-25$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-27$",
+      "alasan_benar": "Tiga nilai menentukan c=5, a=2, b=-16. Lengkapi kuadrat: P(x)=2(x-4)²+(-27). Karena a>0, nilai minimum -27.",
+      "distraktor": [
+        {
+          "teks": "$-28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-54$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=5, a=2, b=-16. Lengkapi kuadrat: P(x)=2(x-4)²+(-27). Karena a>0, nilai minimum -27.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d20f499a11e70ea2a003cafe",
+        "teks": "Grafik fungsi $f(x) = 2x^3 + kx^2 - 5x + 1$ melalui titik $(-2, 15)$. Nilai $k$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=1$, $P(1)=-38$, dan $P(3)=-98$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-146$",
+      "alasan_benar": "Tiga nilai menentukan c=1, a=3, b=-42. Lengkapi kuadrat: P(x)=3(x-7)²+(-146). Karena a>0, nilai minimum -146.",
+      "distraktor": [
+        {
+          "teks": "$-147$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-145$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-292$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=1, a=3, b=-42. Lengkapi kuadrat: P(x)=3(x-7)²+(-146). Karena a>0, nilai minimum -146.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "043240d89953e771f64c3a2b",
+        "teks": "Bentuk aljabar $6x^{2m-9} + 4x^2 - 1$ merupakan polinomial jika pangkat $2m - 9$ adalah bilangan cacah. Nilai bilangan bulat $m$ terkecil yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=6$, $P(1)=-84$, dan $P(3)=-228$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-378$",
+      "alasan_benar": "Tiga nilai menentukan c=6, a=6, b=-96. Lengkapi kuadrat: P(x)=6(x-8)²+(-378). Karena a>0, nilai minimum -378.",
+      "distraktor": [
+        {
+          "teks": "$-379$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-377$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-756$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=6, a=6, b=-96. Lengkapi kuadrat: P(x)=6(x-8)²+(-378). Karena a>0, nilai minimum -378.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-066"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6d74200a2b4f77a8f9fa5833",
+        "teks": "Derajat polinomial $(x^a - 2)^4 (x^3 + 5)^6$ adalah 38. Nilai $a$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_polinomial_rekonstruksi_minimum",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Polinomial kuadrat $P(x)=ax^2+bx+c$ memenuhi $P(0)=4$, $P(1)=-38$, dan $P(3)=-86$. Tentukan nilai minimum P pada bilangan real.",
+      "jawaban_benar": "$-92$",
+      "alasan_benar": "Tiga nilai menentukan c=4, a=6, b=-48. Lengkapi kuadrat: P(x)=6(x-4)²+(-92). Karena a>0, nilai minimum -92.",
+      "distraktor": [
+        {
+          "teks": "$-93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga nilai menentukan c=4, a=6, b=-48. Lengkapi kuadrat: P(x)=6(x-4)²+(-92). Karena a>0, nilai minimum -92.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-a-hard-bt01-067"
     }
-   ],
-   "pembahasan": "Contoh penyangkal harus menghilangkan suku $x^4$: koefisien utamanya berlawanan tepat. $7x^4 + (-7x^4) = 0$, sisanya $3x^2 - 2x - 4$ berderajat 2.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-002",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 67,
-    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 3,
-   "jenis_soal": "batas derajat hasil operasi",
-   "alasan_level": "mengevaluasi nilai-nilai derajat yang mungkin dengan membuat contoh untuk tiap nilai dan menolak satu nilai yang mustahil",
-   "stimulus": null,
-   "pertanyaan": "Misalkan $P(x)$ dan $Q(x)$ polinomial yang masing-masing berderajat 6, dan $P(x) + Q(x)$ bukan polinomial nol. Nilai berikut yang TIDAK mungkin menjadi derajat $P(x) + Q(x)$ adalah ....",
-   "jawaban_benar": "$7$",
-   "alasan_benar": "Derajat jumlah tidak pernah melebihi derajat tertinggi kedua polinomial, yaitu 6.",
-   "distraktor": [
-    {
-     "teks": "$6$",
-     "alasan": "mungkin, mis. $x^6 + 1$ dan $x^6 + x$ berjumlah derajat 6"
-    },
-    {
-     "teks": "$4$",
-     "alasan": "mungkin, mis. $x^6 + x^4$ dan $-x^6 + 3$ berjumlah $x^4 + 3$"
-    },
-    {
-     "teks": "$1$",
-     "alasan": "mungkin, mis. $x^6 + x$ dan $-x^6 + 2x$ berjumlah $3x$"
-    }
-   ],
-   "pembahasan": "Suku berderajat di atas 6 tidak ada pada $P$ maupun $Q$, jadi derajat jumlah paling besar 6. Nilai 6, 4, dan 1 dapat dicapai dengan contoh yang sesuai, sedangkan 7 mustahil.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-003",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 71,
-    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "temukan kesalahan perilaku ujung",
-   "alasan_level": "mengevaluasi langkah penyelesaian siswa dan menemukan letak kesalahan tanda pada suku utama berpangkat genap",
-   "stimulus": null,
-   "pertanyaan": "Dina menentukan perilaku ujung grafik $f(x) = x^3(2 - x)^2(1 - 3x)$ dengan langkah berikut.\n(1) Suku utama tiap faktor: $x^3$, $-x^2$ (dari $(2-x)^2$), dan $-3x$.\n(2) Suku utama $f$ adalah $x^3 \\cdot (-x^2) \\cdot (-3x) = 3x^6$.\n(3) Derajat 6 genap dan koefisien utama positif, jadi kedua ujung grafik naik.\nPernyataan yang benar tentang pekerjaan Dina adalah ....",
-   "jawaban_benar": "Langkah (1) salah: suku utama $(2-x)^2$ adalah $x^2$, sehingga suku utama $f$ adalah $-3x^6$ dan kedua ujung turun",
-   "alasan_benar": "$(2-x)^2 = x^2 - 4x + 4$ bersuku utama $x^2$ (kuadrat menghilangkan tanda negatif). Suku utama $f$ adalah $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$, derajat genap dan koefisien negatif.",
-   "distraktor": [
-    {
-     "teks": "Langkah (3) salah: derajat genap dengan koefisien utama positif membuat kedua ujung turun",
-     "alasan": "terbalik: koefisien utama positif pada derajat genap justru membuat kedua ujung naik"
-    },
-    {
-     "teks": "Langkah (2) salah: $x^3 \\cdot (-x^2) \\cdot (-3x)$ bernilai negatif sehingga suku utamanya $-3x^6$",
-     "alasan": "salah mengalikan tanda: dua faktor negatif menghasilkan hasil kali positif"
-    },
-    {
-     "teks": "Tidak ada kesalahan; kedua ujung grafik $f$ memang naik",
-     "alasan": "tidak memeriksa suku utama $(2-x)^2$ yang sebenarnya $x^2$"
-    }
-   ],
-   "pembahasan": "Jabarkan suku utama $(2-x)^2$: $x^2$. Maka suku utama $f$ = $x^3 \\cdot x^2 \\cdot (-3x) = -3x^6$ (derajat genap, koefisien negatif), kedua ujung turun. Kesalahan Dina ada pada langkah (1).",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-004",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 67,
-    "kutipan": "Derajat suatu polinomial adalah derajat tertinggi suku-sukunya."
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 5,
-   "jenis_soal": "evaluasi klaim derajat selisih",
-   "alasan_level": "mengevaluasi klaim derajat dengan menemukan bahwa suku berderajat tertinggi saling meniadakan lalu mencari suku tertinggi yang tersisa",
-   "stimulus": null,
-   "pertanyaan": "Rani menyatakan bahwa polinomial $(x^3 + 2)^4 - (x^4 - 1)^3$ berderajat 12 karena kedua suku berderajat 12. Pernyataan yang benar tentang klaim Rani adalah ....",
-   "jawaban_benar": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 9",
-   "alasan_benar": "$(x^3+2)^4 = x^{12} + 8x^9 + 24x^6 + 32x^3 + 16$ dan $(x^4-1)^3 = x^{12} - 3x^8 + 3x^4 - 1$. Selisihnya $8x^9 + 3x^8 + \\dots$, suku tertinggi $8x^9$.",
-   "distraktor": [
-    {
-     "teks": "Benar; selisih dua polinomial berderajat 12 selalu berderajat 12",
-     "alasan": "tidak memeriksa bahwa koefisien $x^{12}$ kedua polinomial sama sehingga hilang"
-    },
-    {
-     "teks": "Salah; suku $x^{12}$ saling meniadakan dan derajat sebenarnya 8",
-     "alasan": "mengambil $3x^8$ dari polinomial kedua dan mengabaikan suku $8x^9$"
-    },
-    {
-     "teks": "Salah; derajat selisih adalah $12 - 12 = 0$",
-     "alasan": "mengurangkan derajat kedua polinomial, padahal yang hilang hanya suku $x^{12}$"
-    }
-   ],
-   "pembahasan": "Suku $x^{12}$ hilang. Suku berikutnya $8x^9$ dari polinomial pertama (polinomial kedua tidak punya $x^9$), jadi derajat 9.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-005",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 69,
-    "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 5,
-   "jenis_soal": "evaluasi dua nilai parameter",
-   "alasan_level": "mengevaluasi dua nilai parameter hasil substitusi titik terhadap syarat ujung grafik pada koefisien utama",
-   "stimulus": null,
-   "pertanyaan": "Fungsi $f(x) = (k - 1)x^4 + k^2x^2 - 7$ memenuhi $f(2) = 25$, sehingga $k = 2$ atau $k = -6$. Jika grafik $f$ juga mengarah ke bawah di kedua ujungnya, pernyataan yang benar adalah ....",
-   "jawaban_benar": "Hanya $k = -6$ yang memenuhi karena koefisien utama $k - 1 = -7$ negatif",
-   "alasan_benar": "Derajat 4 genap, kedua ujung turun bila $k - 1 < 0$. Untuk $k=2$: $1 > 0$ (naik, gugur). Untuk $k=-6$: $-7 < 0$ (turun, memenuhi).",
-   "distraktor": [
-    {
-     "teks": "Hanya $k = 2$ yang memenuhi karena koefisien utama $k - 1 = 1$ positif",
-     "alasan": "membalik kriteria: koefisien utama positif membuat kedua ujung naik"
-    },
-    {
-     "teks": "Kedua nilai $k$ memenuhi karena derajat 4 genap",
-     "alasan": "hanya memeriksa derajat, tidak tanda koefisien utama"
-    },
-    {
-     "teks": "Hanya $k = -6$ yang memenuhi karena suku $k^2x^2$ bernilai positif",
-     "alasan": "memakai suku $k^2x^2$ (bukan suku utama) sebagai penentu ujung"
-    }
-   ],
-   "pembahasan": "Ujung kedua-duanya turun jika derajat genap dan koefisien utama negatif: $k-1<0$. $k=-6$ memberikan $-7$, $k=2$ memberikan $1$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-006",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 69,
-    "kutipan": "Koefisien suku utama tersebut dinamakan koefisien utama."
-   },
-   "cognitive_c": "C6",
-   "jumlah_langkah": 4,
-   "jenis_soal": "merancang polinomial memenuhi syarat",
-   "alasan_level": "memeriksa empat rancangan polinomial terhadap empat syarat sekaligus (derajat, tanda koefisien utama, dua nilai fungsi)",
-   "stimulus": null,
-   "pertanyaan": "Sebuah polinomial $P(x)$ dirancang agar berderajat 5, berkoefisien utama positif, $P(0) = -2$, dan $P(1) = 4$. Polinomial yang memenuhi semua syarat itu adalah ....",
-   "jawaban_benar": "$P(x) = 2x^5 + x^3 + 3x - 2$",
-   "alasan_benar": "Derajat 5, koefisien utama 2 positif, $P(0) = -2$, $P(1) = 2 + 1 + 3 - 2 = 4$.",
-   "distraktor": [
-    {
-     "teks": "$P(x) = 2x^5 + x^3 - x + 2$",
-     "alasan": "$P(0) = 2$, bukan $-2$ (konstanta tertukar tanda)"
-    },
-    {
-     "teks": "$P(x) = -2x^5 + 8x - 2$",
-     "alasan": "koefisien utama $-2$ negatif, padahal harus positif"
-    },
-    {
-     "teks": "$P(x) = 2x^6 + 4x - 2$",
-     "alasan": "derajatnya 6, bukan 5"
-    }
-   ],
-   "pembahasan": "Periksa tiap syarat: hanya $2x^5 + x^3 + 3x - 2$ yang memenuhi keempatnya.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-007",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 71,
-    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
-   },
-   "cognitive_c": "C6",
-   "jumlah_langkah": 5,
-   "jenis_soal": "merancang polinomial memenuhi syarat",
-   "alasan_level": "memeriksa rancangan polinomial berderajat 3 terhadap syarat arah ujung dan dua nilai fungsi",
-   "stimulus": null,
-   "pertanyaan": "Sebuah fungsi polinomial $P(x)$ dirancang agar berderajat 3, grafiknya naik di ujung kiri dan turun di ujung kanan, $P(0) = 4$, dan $P(2) = 0$. Fungsi yang memenuhi semua syarat itu adalah ....",
-   "jawaban_benar": "$P(x) = -x^3 + x^2 + 4$",
-   "alasan_benar": "Suku utama $-x^3$ (derajat ganjil, koefisien negatif) memberi kiri naik dan kanan turun; $P(0) = 4$; $P(2) = -8 + 4 + 4 = 0$.",
-   "distraktor": [
-    {
-     "teks": "$P(x) = x^3 - 3x^2 + 4$",
-     "alasan": "koefisien utama positif sehingga ujung kiri turun dan kanan naik (terbalik)"
-    },
-    {
-     "teks": "$P(x) = -x^3 + 3x^2 - 4$",
-     "alasan": "$P(0) = -4$, bukan $4$"
-    },
-    {
-     "teks": "$P(x) = -x^3 + 2x^2 + 4$",
-     "alasan": "$P(2) = -8 + 8 + 4 = 4$, bukan $0$"
-    }
-   ],
-   "pembahasan": "Cek arah ujung dari suku utama, lalu $P(0)$ dan $P(2)$. Hanya $-x^3 + x^2 + 4$ yang memenuhi ketiganya.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-008",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 75,
-    "kutipan": "kandang tersebut sebagai fungsi terhadap"
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "temukan kesalahan model fungsi",
-   "alasan_level": "mengevaluasi model volume buatan siswa dan menemukan kesalahan ukuran alas akibat pemotongan dua sisi",
-   "stimulus": null,
-   "pertanyaan": "Selembar karton berbentuk persegi bersisi 36 cm digunting pada keempat pojoknya berupa persegi kecil bersisi $x$ cm, lalu sisi-sisinya dilipat sehingga terbentuk kotak tanpa tutup. Rita menulis volume kotak sebagai $V(x) = x(36 - x)^2$. Pernyataan yang benar tentang model Rita adalah ....",
-   "jawaban_benar": "Salah; sisi alas adalah $36 - 2x$ sehingga $V(x) = x(36 - 2x)^2$",
-   "alasan_benar": "Dari tiap sisi karton terpotong dua pojok sehingga sisi alas $36 - 2x$ dan tinggi $x$. Volume $V(x) = x(36-2x)^2 = 4x^3 - 144x^2 + 1.296x$.",
-   "distraktor": [
-    {
-     "teks": "Salah; tinggi kotak $2x$ sehingga $V(x) = 2x(36 - 2x)^2$",
-     "alasan": "mengira tinggi lipatan dua kali sisi pojok"
-    },
-    {
-     "teks": "Salah; $V(x) = x(36 - x)(36 - 2x)$ karena panjang dan lebar alas berbeda",
-     "alasan": "mengira panjang dan lebar alas berbeda padahal karton persegi"
-    },
-    {
-     "teks": "Benar; sisi alas adalah $36 - x$ karena hanya satu pojok yang digunting",
-     "alasan": "tidak menyadari bahwa tiap sisi kehilangan dua potongan $x$"
-    }
-   ],
-   "pembahasan": "Tiap sisi 36 cm kehilangan $x$ di kedua ujungnya, sisi alas $36 - 2x$. Maka $V(x) = x(36-2x)^2$, polinomial derajat 3.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-a-hard-bt01-009",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 71,
-    "kutipan": "Perilaku ujung dari grafik fungsi polinomial ditentukan oleh suku utamanya"
-   },
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "evaluasi sifat ujung hasil operasi",
-   "alasan_level": "mengevaluasi sifat ujung jumlah dan hasil kali dua fungsi dengan menalar tanda dan paritas derajat suku utama",
-   "stimulus": null,
-   "pertanyaan": "Grafik fungsi polinomial $f$ dan $g$ keduanya turun di ujung kiri maupun ujung kanan. Pernyataan yang pasti benar tentang $f + g$ dan $f \\cdot g$ adalah ....",
-   "jawaban_benar": "$f + g$ turun di kedua ujung dan $f \\cdot g$ naik di kedua ujung",
-   "alasan_benar": "Keduanya berderajat genap dengan koefisien utama negatif. Suku utama $f+g$ bertanda negatif berderajat genap (turun-turun); suku utama $f \\cdot g$ hasil kali dua bilangan negatif, positif, berderajat genap (naik-naik).",
-   "distraktor": [
-    {
-     "teks": "$f + g$ dan $f \\cdot g$ keduanya turun di kedua ujung",
-     "alasan": "mengira hasil kali mempertahankan tanda negatif"
-    },
-    {
-     "teks": "$f + g$ naik di kedua ujung dan $f \\cdot g$ turun di kedua ujung",
-     "alasan": "menukar sifat jumlah dan hasil kali"
-    },
-    {
-     "teks": "$f + g$ dan $f \\cdot g$ keduanya naik di kedua ujung",
-     "alasan": "mengira jumlah dua fungsi bertanda negatif menjadi positif"
-    }
-   ],
-   "pembahasan": "Contoh $f = -3x^2 + x$, $g = -2x^4 + 5$: jumlah bersuku utama $-2x^4$, hasil kali bersuku utama $6x^6$. Sifat ini berlaku umum.",
-   "catatan": null
-  }
- ]
+  ]
 }

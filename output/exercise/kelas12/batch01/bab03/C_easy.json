@@ -1,702 +1,3151 @@
 {
- "book": "kelas12",
- "bab_no": 3,
- "subbab": "C",
- "level": "easy",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "id": "kelas12-b03-c-easy-bt01-001",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b03-p0129-latihan-3-3-2"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi langsung pada soal pemilihan tanpa urutan",
-   "stimulus": null,
-   "pertanyaan": "Pak Doni sebagai guru pembimbing Olimpiade Fisika meminta 9 siswa untuk membuat masing-masing satu soal fisika. Setelah semua soal terkumpul, Pak Doni akan memilih 4 soal terbaik untuk dibahas dalam diskusi kelompok. Berapa banyak cara berbeda Pak Doni dapat memilih 4 soal dari 9 soal yang tersedia?",
-   "jawaban_benar": "126 cara",
-   "alasan_benar": "memilih 4 dari 9 tanpa memperhatikan urutan: $C(9,4) = 126$",
-   "distraktor": [
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "3.024 cara",
-     "alasan": "memakai permutasi $P(9,4)$ padahal urutan pemilihan tidak diperhatikan"
+      "id": "kelas12-b03-c-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0129-latihan-3-3-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi langsung pada soal pemilihan tanpa urutan",
+      "stimulus": null,
+      "pertanyaan": "Pak Doni sebagai guru pembimbing Olimpiade Fisika meminta 9 siswa untuk membuat masing-masing satu soal fisika. Setelah semua soal terkumpul, Pak Doni akan memilih 4 soal terbaik untuk dibahas dalam diskusi kelompok. Berapa banyak cara berbeda Pak Doni dapat memilih 4 soal dari 9 soal yang tersedia?",
+      "jawaban_benar": "126 cara",
+      "alasan_benar": "memilih 4 dari 9 tanpa memperhatikan urutan: $C(9,4) = 126$",
+      "distraktor": [
+        {
+          "teks": "3.024 cara",
+          "alasan": "memakai permutasi $P(9,4)$ padahal urutan pemilihan tidak diperhatikan"
+        },
+        {
+          "teks": "84 cara",
+          "alasan": "memakai $C(9,3)$, salah menentukan banyak soal yang dipilih"
+        },
+        {
+          "teks": "36 cara",
+          "alasan": "mengalikan 9 dengan 4 tanpa memakai rumus kombinasi"
+        }
+      ],
+      "pembahasan": "Urutan soal tidak diperhatikan, sehingga $C(9,4) = \\frac{9!}{5!\\,4!} = \\frac{9 \\times 8 \\times 7 \\times 6}{24} = 126$.",
+      "catatan": null,
+      "variasi_cara": "angka"
     },
     {
-     "teks": "84 cara",
-     "alasan": "memakai $C(9,3)$, salah menentukan banyak soal yang dipilih"
+      "id": "kelas12-b03-c-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0129-latihan-3-3-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi pada konteks lomba, tanpa langkah tambahan",
+      "stimulus": null,
+      "pertanyaan": "Bu Sinta sebagai pembina klub Kimia meminta 12 anggota klub untuk menulis masing-masing satu usulan judul penelitian. Bu Sinta akan memilih 3 judul terbaik untuk diajukan ke sekolah. Berapa banyak cara berbeda Bu Sinta dapat memilih 3 judul dari 12 judul yang tersedia?",
+      "jawaban_benar": "220 cara",
+      "alasan_benar": "memilih 3 dari 12 tanpa memperhatikan urutan: $C(12,3) = 220$",
+      "distraktor": [
+        {
+          "teks": "1.320 cara",
+          "alasan": "memakai permutasi $P(12,3)$ padahal urutan judul tidak diperhatikan"
+        },
+        {
+          "teks": "660 cara",
+          "alasan": "membagi $P(12,3)$ dengan 2, bukan dengan $3!$"
+        },
+        {
+          "teks": "36 cara",
+          "alasan": "mengalikan 12 dengan 3 tanpa memakai rumus kombinasi"
+        }
+      ],
+      "pembahasan": "$C(12,3) = \\frac{12 \\times 11 \\times 10}{3!} = \\frac{1320}{6} = 220$.",
+      "catatan": null,
+      "variasi_cara": "angka"
     },
     {
-     "teks": "36 cara",
-     "alasan": "mengalikan 9 dengan 4 tanpa memakai rumus kombinasi"
+      "id": "kelas12-b03-c-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0130-latihan-3-3-5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi pada pemilihan unsur desain",
+      "stimulus": null,
+      "pertanyaan": "Dina adalah perancang kerajinan yang akan memadukan manik-manik pada gelang. Terdapat 8 jenis manik-manik berwarna merah, kuning, biru, hijau, putih, ungu, jingga, dan cokelat. Jika Dina hanya memadukan empat warna manik-manik pada satu gelang dan susunan warnanya tidak dibedakan, berapa banyak paduan warna yang dapat dihasilkan?",
+      "jawaban_benar": "70 cara",
+      "alasan_benar": "memilih 4 dari 8 warna tanpa memperhatikan urutan: $C(8,4) = 70$",
+      "distraktor": [
+        {
+          "teks": "1.680 cara",
+          "alasan": "memakai permutasi $P(8,4)$ padahal susunan tidak dibedakan"
+        },
+        {
+          "teks": "56 cara",
+          "alasan": "memakai $C(8,3)$, salah menentukan banyak warna yang dipilih"
+        },
+        {
+          "teks": "32 cara",
+          "alasan": "mengalikan 8 dengan 4 tanpa memakai rumus kombinasi"
+        }
+      ],
+      "pembahasan": "$C(8,4) = \\frac{8 \\times 7 \\times 6 \\times 5}{4!} = \\frac{1680}{24} = 70$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0130-latihan-3-3-5"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi dengan dua unsur yang dipilih",
+      "stimulus": null,
+      "pertanyaan": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
+      "jawaban_benar": "15 cara",
+      "alasan_benar": "memilih 2 dari 6 warna tanpa memperhatikan urutan: $C(6,2) = 15$",
+      "distraktor": [
+        {
+          "teks": "30 cara",
+          "alasan": "memakai permutasi $P(6,2)$ padahal urutan pencampuran tidak diperhatikan"
+        },
+        {
+          "teks": "12 cara",
+          "alasan": "mengalikan 6 dengan 2 tanpa memakai rumus kombinasi"
+        },
+        {
+          "teks": "20 cara",
+          "alasan": "memakai $C(6,3)$, salah menentukan banyak warna yang dicampur"
+        }
+      ],
+      "pembahasan": "$C(6,2) = \\frac{6 \\times 5}{2!} = 15$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "bagian": "Contoh 3.10",
+        "nomor": "3.10",
+        "teks": "SMA Abisatya akan memilih 4 dari 10 siswa untuk menjadi perwakilan sekolah dalam lomba debat antarsekolah. Keempat siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "210 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi pada pemilihan tim tanpa peran khusus",
+      "stimulus": null,
+      "pertanyaan": "SMA Cendekia akan memilih 3 dari 11 siswa untuk menjadi perwakilan sekolah dalam lomba cerdas cermat. Ketiga siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+      "jawaban_benar": "165 cara",
+      "alasan_benar": "memilih 3 dari 11 tanpa peran khusus: $C(11,3) = 165$",
+      "distraktor": [
+        {
+          "teks": "990 cara",
+          "alasan": "memakai permutasi $P(11,3)$ padahal tidak ada peran khusus"
+        },
+        {
+          "teks": "33 cara",
+          "alasan": "mengalikan 11 dengan 3"
+        },
+        {
+          "teks": "55 cara",
+          "alasan": "memakai $C(11,2)$, salah menentukan banyak siswa yang dipilih"
+        }
+      ],
+      "pembahasan": "$C(11,3) = \\frac{11 \\times 10 \\times 9}{3!} = \\frac{990}{6} = 165$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "bagian": "Contoh 3.10",
+        "nomor": "3.10",
+        "teks": "SMA Abisatya akan memilih 4 dari 10 siswa untuk menjadi perwakilan sekolah dalam lomba debat antarsekolah. Keempat siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "210 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
+      "alasan_level": "satu penerapan rumus kombinasi dengan dua objek terpilih",
+      "stimulus": null,
+      "pertanyaan": "SMA Nusantara akan memilih 2 dari 14 siswa untuk menjadi perwakilan sekolah dalam lomba pidato antarsekolah. Kedua siswa akan mewakili sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+      "jawaban_benar": "91 cara",
+      "alasan_benar": "memilih 2 dari 14 tanpa peran khusus: $C(14,2) = 91$",
+      "distraktor": [
+        {
+          "teks": "182 cara",
+          "alasan": "memakai permutasi $P(14,2)$ padahal tidak ada peran khusus"
+        },
+        {
+          "teks": "28 cara",
+          "alasan": "mengalikan 14 dengan 2"
+        },
+        {
+          "teks": "364 cara",
+          "alasan": "memakai $C(14,3)$, salah menentukan banyak siswa yang dipilih"
+        }
+      ],
+      "pembahasan": "$C(14,2) = \\frac{14 \\times 13}{2!} = 91$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "bagian": "Contoh 3.11",
+        "nomor": "3.11",
+        "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
+        "jawaban": "700 susunan"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi dua kelompok",
+      "alasan_level": "dua kombinasi independen yang dikalikan, tiap kombinasi satu rumus langsung",
+      "stimulus": null,
+      "pertanyaan": "Sekolah memiliki 5 guru laki-laki dan 4 guru perempuan. Kepala sekolah akan memilih 3 guru laki-laki dan 2 guru perempuan sebagai panitia ujian. Berapa banyak susunan panitia yang mungkin terbentuk?",
+      "jawaban_benar": "60 susunan",
+      "alasan_benar": "$C(5,3) \\times C(4,2) = 10 \\times 6 = 60$",
+      "distraktor": [
+        {
+          "teks": "16 susunan",
+          "alasan": "menjumlahkan $C(5,3) + C(4,2)$, bukan mengalikan"
+        },
+        {
+          "teks": "126 susunan",
+          "alasan": "memilih 5 dari 9 guru tanpa memperhatikan jenis kelamin: $C(9,5)$"
+        },
+        {
+          "teks": "720 susunan",
+          "alasan": "memakai permutasi pada kedua kelompok: $P(5,3) \\times P(4,2)$"
+        }
+      ],
+      "pembahasan": "Laki-laki: $C(5,3) = 10$; perempuan: $C(4,2) = 6$. Karena kedua pilihan terjadi bersama, hasilnya $10 \\times 6 = 60$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "bagian": "Contoh 3.11",
+        "nomor": "3.11",
+        "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
+        "jawaban": "700 susunan"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi dua kelompok",
+      "alasan_level": "dua kombinasi independen yang dikalikan, tiap kombinasi satu rumus langsung",
+      "stimulus": null,
+      "pertanyaan": "Klub drama beranggotakan 8 siswa putra dan 5 siswa putri. Untuk sebuah pementasan dipilih 2 siswa putra dan 3 siswa putri sebagai pemeran. Berapa banyak susunan pemeran yang dapat dibentuk?",
+      "jawaban_benar": "280 susunan",
+      "alasan_benar": "$C(8,2) \\times C(5,3) = 28 \\times 10 = 280$",
+      "distraktor": [
+        {
+          "teks": "38 susunan",
+          "alasan": "menjumlahkan $C(8,2) + C(5,3)$, bukan mengalikan"
+        },
+        {
+          "teks": "1.287 susunan",
+          "alasan": "memilih 5 dari 13 anggota tanpa memperhatikan putra dan putri: $C(13,5)$"
+        },
+        {
+          "teks": "560 susunan",
+          "alasan": "menukar banyak yang dipilih: $C(8,3) \\times C(5,2)$"
+        }
+      ],
+      "pembahasan": "Putra: $C(8,2) = 28$; putri: $C(5,3) = 10$. Hasilnya $28 \\times 10 = 280$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 124,
+        "bagian": "Ayo, Bereksplorasi",
+        "nomor": "3.7",
+        "teks": "Pelatih merekomendasikan kepada Ahmad untuk mengonsumsi empat buah dalam sehari. Jika terdapat empat buah dari setiap jenis buah dalam keranjang yang disediakan, berapa banyak cara Ahmad memilih empat buah yang dapat dikonsumsi?",
+        "jawaban": "15 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi berulang",
+      "alasan_level": "mengenali kombinasi berulang lalu satu rumus $C(n+r-1,r)$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko roti menyediakan roti cokelat, roti keju, dan roti kacang, masing-masing sebanyak enam potong. Seorang pembeli akan memilih lima potong roti, dan jenis yang sama boleh dipilih lebih dari satu potong. Berapa banyak cara pembeli memilih lima potong roti tersebut?",
+      "jawaban_benar": "21 cara",
+      "alasan_benar": "kombinasi berulang dengan $n = 3$ jenis dan $r = 5$: $C(3+5-1,5) = C(7,5) = 21$",
+      "distraktor": [
+        {
+          "teks": "56 cara",
+          "alasan": "memakai $C(n+r,r) = C(8,5)$, lupa mengurangi 1"
+        },
+        {
+          "teks": "243 cara",
+          "alasan": "menghitung $3^5$ seolah urutan pengambilan diperhatikan"
+        },
+        {
+          "teks": "10 cara",
+          "alasan": "memakai $C(5,3)$, yaitu kombinasi tanpa pengulangan"
+        }
+      ],
+      "pembahasan": "Dengan pengulangan, banyak cara $= C(n+r-1,r) = C(3+5-1,5) = C(7,5) = 21$.",
+      "catatan": null,
+      "variasi_cara": "konteks"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 124,
+        "bagian": "Ayo, Bereksplorasi",
+        "nomor": "3.7",
+        "teks": "Pelatih merekomendasikan kepada Ahmad untuk mengonsumsi empat buah dalam sehari. Jika terdapat empat buah dari setiap jenis buah dalam keranjang yang disediakan, berapa banyak cara Ahmad memilih empat buah yang dapat dikonsumsi?",
+        "jawaban": "15 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi berulang",
+      "alasan_level": "mengenali kombinasi berulang lalu satu rumus $C(n+r-1,r)$",
+      "stimulus": null,
+      "pertanyaan": "Kedai es krim menawarkan rasa vanila, cokelat, stroberi, dan durian dengan persediaan yang melimpah. Seorang anak akan memesan tiga skop es krim dalam satu cup, dan rasa yang sama boleh dipesan lebih dari satu skop. Berapa banyak komposisi rasa yang mungkin dipesan?",
+      "jawaban_benar": "20 cara",
+      "alasan_benar": "kombinasi berulang dengan $n = 4$ rasa dan $r = 3$: $C(4+3-1,3) = C(6,3) = 20$",
+      "distraktor": [
+        {
+          "teks": "64 cara",
+          "alasan": "menghitung $4^3$ seolah urutan skop diperhatikan"
+        },
+        {
+          "teks": "4 cara",
+          "alasan": "memakai $C(4,3)$, yaitu kombinasi tanpa pengulangan"
+        },
+        {
+          "teks": "35 cara",
+          "alasan": "memakai $C(n+r,r) = C(7,3)$, lupa mengurangi 1"
+        }
+      ],
+      "pembahasan": "$C(n+r-1,r) = C(4+3-1,3) = C(6,3) = 20$.",
+      "catatan": null,
+      "variasi_cara": "konteks"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 127,
+        "bagian": "Contoh 3.13",
+        "nomor": "3.13",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan x 1 + x 2 + x 3 + x 4 = 7.",
+        "jawaban": "120"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak solusi persamaan bulat non-negatif",
+      "alasan_level": "satu penerapan teorema Stars and Bars untuk menghitung solusi persamaan",
+      "stimulus": null,
+      "pertanyaan": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 9$.",
+      "jawaban_benar": "55",
+      "alasan_benar": "$n = 9$, $k = 3$ variabel: $C(9+3-1,9) = C(11,9) = 55$",
+      "distraktor": [
+        {
+          "teks": "220",
+          "alasan": "memakai $C(n+k,n) = C(12,9)$, lupa mengurangi 1"
+        },
+        {
+          "teks": "84",
+          "alasan": "memakai $C(9,3)$, yaitu kombinasi tanpa pengulangan"
+        },
+        {
+          "teks": "27",
+          "alasan": "mengalikan 9 dengan 3"
+        }
+      ],
+      "pembahasan": "Banyak solusi $= C(n+k-1,n) = C(11,9) = \\frac{11 \\times 10}{2} = 55$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 127,
+        "bagian": "Contoh 3.13",
+        "nomor": "3.13",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan x 1 + x 2 + x 3 + x 4 = 7.",
+        "jawaban": "120"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "banyak solusi persamaan bulat non-negatif",
+      "alasan_level": "satu penerapan teorema Stars and Bars dengan empat variabel",
+      "stimulus": null,
+      "pertanyaan": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $p + q + r + s = 6$.",
+      "jawaban_benar": "84",
+      "alasan_benar": "$n = 6$, $k = 4$ variabel: $C(6+4-1,6) = C(9,6) = 84$",
+      "distraktor": [
+        {
+          "teks": "210",
+          "alasan": "memakai $C(n+k,n) = C(10,6)$, lupa mengurangi 1"
+        },
+        {
+          "teks": "126",
+          "alasan": "memakai $C(9,4)$, salah menentukan bilangan bawah"
+        },
+        {
+          "teks": "24",
+          "alasan": "mengalikan 6 dengan 4"
+        }
+      ],
+      "pembahasan": "Banyak solusi $= C(9,6) = \\frac{9 \\times 8 \\times 7}{3!} = 84$.",
+      "catatan": null,
+      "variasi_cara": "angka"
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 121,
+        "kutipan": "Kombinasi adalah susunan dari suatu objek tertentu yang tidak memperhatikan urutan."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "definisi kombinasi",
+      "alasan_level": "mengingat definisi kombinasi",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang tepat tentang kombinasi adalah ....",
+      "jawaban_benar": "susunan objek yang tidak memperhatikan urutan",
+      "alasan_benar": "definisi kombinasi pada buku: urutan tidak diperhatikan",
+      "distraktor": [
+        {
+          "teks": "susunan objek yang memperhatikan urutan",
+          "alasan": "tertukar dengan definisi permutasi"
+        },
+        {
+          "teks": "susunan objek yang urutan penulisannya dibedakan sehingga A-B berbeda dari B-A",
+          "alasan": "mengira pasangan yang urutannya terbalik dihitung sebagai dua kombinasi"
+        },
+        {
+          "teks": "susunan yang selalu memuat seluruh objek yang tersedia",
+          "alasan": "mengira kombinasi harus memakai semua objek"
+        }
+      ],
+      "pembahasan": "Kombinasi adalah susunan objek yang tidak memperhatikan urutan, misalnya kombinasi kata DOA sama dengan ADO.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "membedakan kombinasi dan permutasi",
+      "alasan_level": "mengenali situasi yang memakai kombinasi",
+      "stimulus": null,
+      "pertanyaan": "Di antara situasi berikut, situasi yang diselesaikan dengan konsep kombinasi adalah ....",
+      "jawaban_benar": "memilih 3 anggota panitia dari 8 siswa tanpa pembagian jabatan",
+      "alasan_benar": "tanpa jabatan, urutan pemilihan tidak membedakan hasil",
+      "distraktor": [
+        {
+          "teks": "memilih ketua, sekretaris, dan bendahara dari 8 siswa",
+          "alasan": "jabatan berbeda sehingga urutan penting (permutasi)"
+        },
+        {
+          "teks": "menentukan juara 1, 2, dan 3 dari 8 peserta lomba",
+          "alasan": "peringkat berbeda sehingga urutan penting (permutasi)"
+        },
+        {
+          "teks": "menyusun kode PIN 3 angka berbeda dari 8 angka yang tersedia",
+          "alasan": "urutan angka pada kode menentukan hasil (permutasi)"
+        }
+      ],
+      "pembahasan": "Kombinasi dipakai bila urutan tidak memengaruhi hasil. Hanya pemilihan anggota panitia tanpa jabatan yang memenuhi syarat itu.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 121,
+        "kutipan": "Banyak kombinasi 2 objek dari 5 objek yang dinotasikan"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "menghitung nilai $C(n,r)$",
+      "alasan_level": "menghitung nilai kombinasi langsung dengan rumus",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $C(9,2)$ adalah ....",
+      "jawaban_benar": "36",
+      "alasan_benar": "$C(9,2) = \\frac{9!}{7!\\,2!} = 36$",
+      "distraktor": [
+        {
+          "teks": "72",
+          "alasan": "memakai permutasi $P(9,2)$, lupa membagi dengan $2!$"
+        },
+        {
+          "teks": "18",
+          "alasan": "mengalikan 9 dengan 2"
+        },
+        {
+          "teks": "81",
+          "alasan": "menghitung $9^2$"
+        }
+      ],
+      "pembahasan": "$C(9,2) = \\frac{9 \\times 8}{2 \\times 1} = 36$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "kutipan": "Fakta berikutnya untuk bilangan bulat non-negatif"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat nilai $C(n,r)$ khusus",
+      "alasan_level": "memakai sifat $C(n,n)=1$ dan $C(n,1)=n$",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $C(15,15) + C(15,1)$ adalah ....",
+      "jawaban_benar": "16",
+      "alasan_benar": "$C(15,15) = 1$ dan $C(15,1) = 15$, jumlahnya 16",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "mengira $C(15,15) = 0$"
+        },
+        {
+          "teks": "30",
+          "alasan": "mengira $C(15,15) = 15$"
+        },
+        {
+          "teks": "1",
+          "alasan": "hanya menghitung $C(15,15)$ dan melewatkan $C(15,1)$"
+        }
+      ],
+      "pembahasan": "Sifat: $C(n,n) = 1$ dan $C(n,1) = n$. Jadi $1 + 15 = 16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 121,
+        "kutipan": "Banyak susunannya yang sama dari setiap pasangan 2 objek adalah 2!"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "hubungan permutasi dan kombinasi",
+      "alasan_level": "memakai hubungan $C = P / k!$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(8,3) = 336$. Nilai $C(8,3)$ adalah ....",
+      "jawaban_benar": "56",
+      "alasan_benar": "$C(8,3) = \\frac{P(8,3)}{3!} = \\frac{336}{6} = 56$",
+      "distraktor": [
+        {
+          "teks": "336",
+          "alasan": "mengira kombinasi sama dengan permutasi"
+        },
+        {
+          "teks": "168",
+          "alasan": "membagi dengan 2, bukan dengan $3!$"
+        },
+        {
+          "teks": "112",
+          "alasan": "membagi dengan 3, bukan dengan $3!$"
+        }
+      ],
+      "pembahasan": "Tiap kombinasi 3 objek muncul sebanyak $3! = 6$ kali dalam permutasi, sehingga $C(8,3) = 336 : 6 = 56$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 126,
+        "kutipan": "Jika lebih dari satu bola yang mungkin ada di setiap kotak (tidak ada batasan jumlah bola), maka jumlah cara mendapatkan bola"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi berulang (bola dan kotak)",
+      "alasan_level": "mengenali pembagian benda identik lalu memakai rumus pengulangan",
+      "stimulus": null,
+      "pertanyaan": "Enam permen yang identik akan dibagikan kepada tiga orang anak, dan setiap anak boleh menerima berapa pun permen, termasuk tidak menerima sama sekali. Banyak cara membagikan permen tersebut adalah ....",
+      "jawaban_benar": "28 cara",
+      "alasan_benar": "$C(r+n-1,r)$ dengan $r = 6$ permen dan $n = 3$ anak: $C(8,6) = 28$",
+      "distraktor": [
+        {
+          "teks": "56 cara",
+          "alasan": "memakai $C(9,6)$, menambah 3 bukannya mengurangi 1"
+        },
+        {
+          "teks": "20 cara",
+          "alasan": "memakai $C(6,3)$, yaitu kombinasi tanpa pengulangan"
+        },
+        {
+          "teks": "729 cara",
+          "alasan": "menghitung $3^6$ seolah permen dibedakan"
+        }
+      ],
+      "pembahasan": "Permen identik, anak berbeda, tanpa batas: $C(6+3-1,6) = C(8,6) = \\frac{8 \\times 7}{2} = 28$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 121,
+        "kutipan": "Kasus di atas disebut sebagai kombinasi."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pemodelan jabat tangan",
+      "alasan_level": "memodelkan pasangan tak berurutan sebagai kombinasi",
+      "stimulus": null,
+      "pertanyaan": "Dalam sebuah pertemuan hadir 12 orang. Setiap dua orang saling berjabat tangan tepat satu kali. Banyak jabat tangan yang terjadi adalah ....",
+      "jawaban_benar": "66 kali",
+      "alasan_benar": "jabat tangan A-B sama dengan B-A, jadi $C(12,2) = 66$",
+      "distraktor": [
+        {
+          "teks": "132 kali",
+          "alasan": "memakai $P(12,2)$ sehingga tiap pasangan dihitung dua kali"
+        },
+        {
+          "teks": "24 kali",
+          "alasan": "mengalikan 12 dengan 2"
+        },
+        {
+          "teks": "144 kali",
+          "alasan": "menghitung $12^2$"
+        }
+      ],
+      "pembahasan": "Setiap jabat tangan melibatkan 2 orang tanpa memperhatikan urutan: $C(12,2) = \\frac{12 \\times 11}{2} = 66$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-c-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 122,
+        "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "memilih soal wajib",
+      "alasan_level": "satu penerapan rumus kombinasi pada pemilihan soal ujian",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu ujian terdapat 10 soal, dan peserta wajib mengerjakan 8 soal pilihannya sendiri. Banyak cara peserta memilih 8 soal tersebut adalah ....",
+      "jawaban_benar": "45 cara",
+      "alasan_benar": "memilih 8 dari 10 soal: $C(10,8) = 45$",
+      "distraktor": [
+        {
+          "teks": "1.814.400 cara",
+          "alasan": "memakai permutasi $P(10,8)$ padahal urutan soal tidak diperhatikan"
+        },
+        {
+          "teks": "80 cara",
+          "alasan": "mengalikan 10 dengan 8"
+        },
+        {
+          "teks": "90 cara",
+          "alasan": "mengalikan 10 dengan 9 tanpa membagi"
+        }
+      ],
+      "pembahasan": "$C(10,8) = C(10,2) = \\frac{10 \\times 9}{2} = 45$.",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc4c5d53bca171de1a3a41aa",
+        "teks": "SMA Nusantara akan memilih 2 dari 14 siswa untuk menjadi perwakilan sekolah dalam lomba pidato antarsekolah. Kedua siswa akan mewakili sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "91 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 siswa putra dan 7 siswa putri dipilih tim 4 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$1694$",
+      "alasan_benar": "Jumlah semua tim C(16,4) dikurangi tim seluruhnya putra C(9,4), diperoleh 1694.",
+      "distraktor": [
+        {
+          "teks": "$1695$",
+          "alasan": "Pilihan $1695$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1694$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1693$",
+          "alasan": "Pilihan $1693$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1694$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1696$",
+          "alasan": "Pilihan $1696$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1694$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(16,4) dikurangi tim seluruhnya putra C(9,4), diperoleh 1694.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f219dd3c0bf55a3bb454134a",
+        "teks": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
+        "jawaban": "15 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 siswa putra dan 4 siswa putri dipilih tim 5 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$441$",
+      "alasan_benar": "Jumlah semua tim C(11,5) dikurangi tim seluruhnya putra C(7,5), diperoleh 441.",
+      "distraktor": [
+        {
+          "teks": "$442$",
+          "alasan": "Pilihan $442$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $441$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$440$",
+          "alasan": "Pilihan $440$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $441$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$443$",
+          "alasan": "Pilihan $443$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $441$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(11,5) dikurangi tim seluruhnya putra C(7,5), diperoleh 441.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d90ea4fb3c8a45fe9e297056",
+        "teks": "Pernyataan yang tepat tentang kombinasi adalah ....",
+        "jawaban": "susunan objek yang tidak memperhatikan urutan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 siswa putra dan 4 siswa putri dipilih tim 5 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$1750$",
+      "alasan_benar": "Jumlah semua tim C(14,5) dikurangi tim seluruhnya putra C(10,5), diperoleh 1750.",
+      "distraktor": [
+        {
+          "teks": "$1751$",
+          "alasan": "Pilihan $1751$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1750$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1749$",
+          "alasan": "Pilihan $1749$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1750$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1752$",
+          "alasan": "Pilihan $1752$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1750$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(14,5) dikurangi tim seluruhnya putra C(10,5), diperoleh 1750.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d90ea4fb3c8a45fe9e297056",
+        "teks": "Pernyataan yang tepat tentang kombinasi adalah ....",
+        "jawaban": "susunan objek yang tidak memperhatikan urutan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 11 siswa putra dan 7 siswa putri dipilih tim 5 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$8106$",
+      "alasan_benar": "Jumlah semua tim C(18,5) dikurangi tim seluruhnya putra C(11,5), diperoleh 8106.",
+      "distraktor": [
+        {
+          "teks": "$8107$",
+          "alasan": "Pilihan $8107$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8106$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$8105$",
+          "alasan": "Pilihan $8105$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8106$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$8108$",
+          "alasan": "Pilihan $8108$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8106$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(18,5) dikurangi tim seluruhnya putra C(11,5), diperoleh 8106.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c712b703f29ab546ba81302a",
+        "teks": "Di antara situasi berikut, situasi yang diselesaikan dengan konsep kombinasi adalah ....",
+        "jawaban": "memilih 3 anggota panitia dari 8 siswa tanpa pembagian jabatan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 siswa putra dan 6 siswa putri dipilih tim 5 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$786$",
+      "alasan_benar": "Jumlah semua tim C(12,5) dikurangi tim seluruhnya putra C(6,5), diperoleh 786.",
+      "distraktor": [
+        {
+          "teks": "$787$",
+          "alasan": "Pilihan $787$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $786$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$785$",
+          "alasan": "Pilihan $785$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $786$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$788$",
+          "alasan": "Pilihan $788$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $786$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(12,5) dikurangi tim seluruhnya putra C(6,5), diperoleh 786.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f219dd3c0bf55a3bb454134a",
+        "teks": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
+        "jawaban": "15 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kombinasi_bersyarat",
+      "alasan_level": "Target easy; variasi konsep kombinasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 12 siswa putra dan 4 siswa putri dipilih tim 4 orang. Berapa tim yang memuat sedikitnya satu putri?",
+      "jawaban_benar": "$1325$",
+      "alasan_benar": "Jumlah semua tim C(16,4) dikurangi tim seluruhnya putra C(12,4), diperoleh 1325.",
+      "distraktor": [
+        {
+          "teks": "$1326$",
+          "alasan": "Pilihan $1326$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1325$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1324$",
+          "alasan": "Pilihan $1324$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1325$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$1327$",
+          "alasan": "Pilihan $1327$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1325$. Periksa kembali langkah kombinasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah semua tim C(16,4) dikurangi tim seluruhnya putra C(12,4), diperoleh 1325.",
+      "catatan": "codex-replenishment:kelas12-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-c-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c675d6a3bf84008a1c20ce8",
+        "teks": "Diketahui $n$ bilangan bulat dengan $n \\geq 3$ dan $C(n,3) = 2 \\times C(n,2)$. Nilai $n$ adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 13 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Tanpa urutan gunakan C(13,2)=78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(13,2)=78.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "15199527b2ec78c190093003",
+        "teks": "Sebuah kotak berisi 6 bola merah, 4 bola putih, dan 3 bola biru; semua bola dapat dibedakan. Diambil 4 bola sekaligus. Banyak cara pengambilan yang terdiri atas 2 bola merah, 1 bola putih, dan 1 bola biru adalah ....",
+        "jawaban": "180 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Tanpa urutan gunakan C(10,2)=45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(10,2)=45.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a0e6c1d35503bdc5fc273b1",
+        "teks": "Dari 6 putra dan 4 putri dibentuk panitia beranggotakan 5 orang dengan paling banyak 2 putri. Ekspresi yang tepat untuk menyatakan banyak panitia adalah ....",
+        "jawaban": "$C(6,5) + C(4,1) \\times C(6,4) + C(4,2) \\times C(6,3)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 11 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$55$",
+      "alasan_benar": "Tanpa urutan gunakan C(11,2)=55.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $55$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $55$."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(11,2)=55.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72c2ddcda51c829df109cd62",
+        "teks": "Banyak diagonal sebuah segi-$n$ sama dengan banyak pasangan titik sudut dikurangi banyak sisi, yaitu $C(n,2)-n$. Jika sebuah segi-$n$ memiliki 35 diagonal, nilai $n$ adalah ....",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Tanpa urutan gunakan C(9,2)=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(9,2)=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9bc8953f774c22cc5b826e5",
+        "teks": "Nilai dari $C(9,2)$ adalah ....",
+        "jawaban": "36",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 14 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$91$",
+      "alasan_benar": "Tanpa urutan gunakan C(14,2)=91.",
+      "distraktor": [
+        {
+          "teks": "$90$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $91$."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $91$."
+        },
+        {
+          "teks": "$182$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(14,2)=91.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9919592df30d7f6a30e931a5",
+        "teks": "Dari 6 putra dan 5 putri akan dibentuk panitia beranggotakan 4 orang. Banyak panitia yang dapat dibentuk jika panitia memuat paling sedikit 2 putri adalah ....",
+        "jawaban": "215 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kombinasi_pasangan",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Dari 12 peserta berbeda dipilih dua anggota tim tanpa jabatan. Berapa cara memilih?",
+      "jawaban_benar": "$66$",
+      "alasan_benar": "Tanpa urutan gunakan C(12,2)=66.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $66$."
+        },
+        {
+          "teks": "$67$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $66$."
+        },
+        {
+          "teks": "$132$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tanpa urutan gunakan C(12,2)=66.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-easy-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bacdc036db4eea7c2b3e4396",
+        "teks": "Pak Doni sebagai guru pembimbing Olimpiade Fisika meminta 9 siswa untuk membuat masing-masing satu soal fisika. Setelah semua soal terkumpul, Pak Doni akan memilih 4 soal terbaik untuk dibahas dalam diskusi kelompok. Berapa banyak cara berbeda Pak Doni dapat memilih 4 soal dari 9 soal yang tersedia?",
+        "jawaban": "126 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$11628$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $11628$.",
+      "distraktor": [
+        {
+          "teks": "$11629$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11627$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23256$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $11628$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/446d5ecbfeef8637f88de7e0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              19
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 19], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ad0f92a2fa73070f78da50",
+        "teks": "Bu Sinta sebagai pembina klub Kimia meminta 12 anggota klub untuk menulis masing-masing satu usulan judul penelitian. Bu Sinta akan memilih 3 judul terbaik untuk diajukan ke sekolah. Berapa banyak cara berbeda Bu Sinta dapat memilih 3 judul dari 12 judul yang tersedia?",
+        "jawaban": "220 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$475020$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $475020$.",
+      "distraktor": [
+        {
+          "teks": "$475021$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$475019$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$950040$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $475020$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/4b982924202a423f637010cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              29
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 29], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f8fd8a8e035505c9026c2e8",
+        "teks": "Dina adalah perancang kerajinan yang akan memadukan manik-manik pada gelang. Terdapat 8 jenis manik-manik berwarna merah, kuning, biru, hijau, putih, ungu, jingga, dan cokelat. Jika Dina hanya memadukan empat warna manik-manik pada satu gelang dan susunan warnanya tidak dibedakan, berapa banyak paduan warna yang dapat dihasilkan?",
+        "jawaban": "70 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$462$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $462$.",
+      "distraktor": [
+        {
+          "teks": "$463$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$924$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $462$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/470532da5a38a4afc82fa57a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              11
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 11], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f219dd3c0bf55a3bb454134a",
+        "teks": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
+        "jawaban": "15 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$378$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $378$.",
+      "distraktor": [
+        {
+          "teks": "$379$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$377$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$756$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $378$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/59c2d55c2e8f3734012ce9a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              28
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 28], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "22aea833d03290e7b8c23651",
+        "teks": "SMA Cendekia akan memilih 3 dari 11 siswa untuk menjadi perwakilan sekolah dalam lomba cerdas cermat. Ketiga siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "165 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$406$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $406$.",
+      "distraktor": [
+        {
+          "teks": "$407$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$405$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$812$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $406$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/52583f2489d0575da551f46e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              29
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 29], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc4c5d53bca171de1a3a41aa",
+        "teks": "SMA Nusantara akan memilih 2 dari 14 siswa untuk menjadi perwakilan sekolah dalam lomba pidato antarsekolah. Kedua siswa akan mewakili sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "91 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$14950$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $14950$.",
+      "distraktor": [
+        {
+          "teks": "$14951$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14949$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29900$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $14950$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2b920acd98854afa187ac9ba.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              26
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 26], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "feba36f6e11d696771f303a4",
+        "teks": "Sekolah memiliki 5 guru laki-laki dan 4 guru perempuan. Kepala sekolah akan memilih 3 guru laki-laki dan 2 guru perempuan sebagai panitia ujian. Berapa banyak susunan panitia yang mungkin terbentuk?",
+        "jawaban": "60 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$286$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $286$.",
+      "distraktor": [
+        {
+          "teks": "$287$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$285$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$572$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $286$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b87e21d0a1a185cd90a26718.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              13
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 13], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dbbdb31fdc094e149770091f",
+        "teks": "Klub drama beranggotakan 8 siswa putra dan 5 siswa putri. Untuk sebuah pementasan dipilih 2 siswa putra dan 3 siswa putri sebagai pemeran. Berapa banyak susunan pemeran yang dapat dibentuk?",
+        "jawaban": "280 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$27405$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $27405$.",
+      "distraktor": [
+        {
+          "teks": "$27406$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27404$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54810$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $27405$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6d19523a1603e8f3e27d9e29.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              30
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 30], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d64178f68fedd1e8b6d4c5f",
+        "teks": "Sebuah toko roti menyediakan roti cokelat, roti keju, dan roti kacang, masing-masing sebanyak enam potong. Seorang pembeli akan memilih lima potong roti, dan jenis yang sama boleh dipilih lebih dari satu potong. Berapa banyak cara pembeli memilih lima potong roti tersebut?",
+        "jawaban": "21 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$680$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $680$.",
+      "distraktor": [
+        {
+          "teks": "$681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $680$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/c9c98dc51ee8496f743855d0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              17
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 17], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9075c5660d33ef35189fabce",
+        "teks": "Kedai es krim menawarkan rasa vanila, cokelat, stroberi, dan durian dengan persediaan yang melimpah. Seorang anak akan memesan tiga skop es krim dalam satu cup, dan rasa yang sama boleh dipesan lebih dari satu skop. Berapa banyak komposisi rasa yang mungkin dipesan?",
+        "jawaban": "20 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$20349$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $20349$.",
+      "distraktor": [
+        {
+          "teks": "$20350$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20348$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40698$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $20349$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a1b1ff56eab872587cdc7646.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              21
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 21], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9938a5f12b4ec70f92c3738",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 9$.",
+        "jawaban": "55",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$74613$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $74613$.",
+      "distraktor": [
+        {
+          "teks": "$74614$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74612$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$149226$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $74613$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0b4ce677199bbeb62b97010e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              22
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 22], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2bdab6420f50fbeb4291593",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $p + q + r + s = 6$.",
+        "jawaban": "84",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $120$.",
+      "distraktor": [
+        {
+          "teks": "$121$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$240$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $120$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8886d4ce1a1ee1bb1702913b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              10
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 10], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d90ea4fb3c8a45fe9e297056",
+        "teks": "Pernyataan yang tepat tentang kombinasi adalah ....",
+        "jawaban": "susunan objek yang tidak memperhatikan urutan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$15504$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $15504$.",
+      "distraktor": [
+        {
+          "teks": "$15505$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15503$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31008$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $15504$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/5da996a4daf7e7106c27223c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              20
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 20], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c712b703f29ab546ba81302a",
+        "teks": "Di antara situasi berikut, situasi yang diselesaikan dengan konsep kombinasi adalah ....",
+        "jawaban": "memilih 3 anggota panitia dari 8 siswa tanpa pembagian jabatan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$27132$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $27132$.",
+      "distraktor": [
+        {
+          "teks": "$27133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $27132$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b5f8e0257c5fd68abe903ee8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              19
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 19], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9bc8953f774c22cc5b826e5",
+        "teks": "Nilai dari $C(9,2)$ adalah ....",
+        "jawaban": "36",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$969$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $969$.",
+      "distraktor": [
+        {
+          "teks": "$970$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$968$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1938$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $969$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6d9f8bec17565cf60e45953a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              19
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 19], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0aebc8110c47ecd5caee1886",
+        "teks": "Nilai dari $C(15,15) + C(15,1)$ adalah ....",
+        "jawaban": "16",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$171$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $171$.",
+      "distraktor": [
+        {
+          "teks": "$172$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$342$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $171$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b0e89da6945d182f302943c3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              19
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 19], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f7c6dbe2303953acc76b85d",
+        "teks": "Diketahui $P(8,3) = 336$. Nilai $C(8,3)$ adalah ....",
+        "jawaban": "56",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$252$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $252$.",
+      "distraktor": [
+        {
+          "teks": "$253$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$504$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $252$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/1b773740939603af0f3ba271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              10
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 10], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "58f6b4ebb23f22ec272c7474",
+        "teks": "Enam permen yang identik akan dibagikan kepada tiga orang anak, dan setiap anak boleh menerima berapa pun permen, termasuk tidak menerima sama sekali. Banyak cara membagikan permen tersebut adalah ....",
+        "jawaban": "28 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $84$.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $84$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-050",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/524af9346bae0ff74424f6e3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              9
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 9], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86d7f9795348641ea23681fe",
+        "teks": "Dalam sebuah pertemuan hadir 12 orang. Setiap dua orang saling berjabat tangan tepat satu kali. Banyak jabat tangan yang terjadi adalah ....",
+        "jawaban": "66 kali",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$210$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $210$.",
+      "distraktor": [
+        {
+          "teks": "$211$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$209$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$420$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $210$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-051",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/da8c3e6333aacf50edaafd66.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              10
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 10], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c44af1f668492d2275479e0d",
+        "teks": "Pada suatu ujian terdapat 10 soal, dan peserta wajib mengerjakan 8 soal pilihannya sendiri. Banyak cara peserta memilih 8 soal tersebut adalah ....",
+        "jawaban": "45 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$42504$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $42504$.",
+      "distraktor": [
+        {
+          "teks": "$42505$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42503$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$85008$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $42504$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-052",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/aa97253aaa8082bb55498fdc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              24
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 24], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "631d66f80e9babeddb600039",
+        "teks": "Dewi menghitung banyak cara memilih 3 pengurus dari 7 siswa tanpa pembagian jabatan dengan $\\frac{P(7,3)}{2!} = 105$. Pernyataan yang benar mengenai hitungan Dewi adalah ....",
+        "jawaban": "Salah; pembagi seharusnya $3!$, sehingga banyak caranya 35",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$3003$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $3003$.",
+      "distraktor": [
+        {
+          "teks": "$3004$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6006$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $3003$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-053",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2ce016b73775d7574a396765.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "n",
+              14
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"n\", 14], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cd6263d37a09391676765da6",
+        "teks": "Dari 6 siswa putra dan 3 siswa putri dibentuk tim beranggotakan 4 orang dengan paling sedikit 1 putri. Andi menghitung $3 \\times C(8,3) = 168$ (memilih 1 putri dahulu, lalu 3 orang dari 8 sisanya). Hitungan Andi melebihi banyak tim yang sebenarnya sebesar ....",
+        "jawaban": "57 tim",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $27$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$351$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $351$.",
+      "distraktor": [
+        {
+          "teks": "$352$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$350$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$702$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $351$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "09f97440aa257ad3fc7dbe41",
+        "teks": "Banyak solusi bilangan cacah $x$ dari $C(25, x+4) = C(25, 2x-3)$ menghasilkan dua nilai $x$. Jumlah semua nilai $x$ yang memenuhi adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $10$; k = $4$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$210$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $210$.",
+      "distraktor": [
+        {
+          "teks": "$211$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$209$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$420$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $210$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a0e6c1d35503bdc5fc273b1",
+        "teks": "Dari 6 putra dan 4 putri dibentuk panitia beranggotakan 5 orang dengan paling banyak 2 putri. Ekspresi yang tepat untuk menyatakan banyak panitia adalah ....",
+        "jawaban": "$C(6,5) + C(4,1) \\times C(6,4) + C(4,2) \\times C(6,3)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $27$; k = $3$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$2925$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $2925$.",
+      "distraktor": [
+        {
+          "teks": "$2926$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2924$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5850$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $2925$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "393f77e603988c4cb8f9efe9",
+        "teks": "Dari 10 siswa akan dibentuk tim beranggotakan 5 orang. Fani wajib menjadi anggota, dan $k$ siswa lain tidak boleh menjadi anggota. Agar banyak tim yang dapat dibentuk tepat 35, nilai $k$ adalah ....",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $24$; k = $4$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$10626$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $10626$.",
+      "distraktor": [
+        {
+          "teks": "$10627$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10625$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21252$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $10626$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef621073122b467e7f0f567c",
+        "teks": "Banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 10$ dengan syarat $a \\leq 5$ adalah ....",
+        "jawaban": "51",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $29$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$118755$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $118755$.",
+      "distraktor": [
+        {
+          "teks": "$118756$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118754$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$237510$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $118755$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "168dfb6519a36a64a36df19d",
+        "teks": "Sebuah panitia beranggotakan 5 orang dipilih dari 4 guru, 3 siswa, dan 3 alumni dengan syarat setiap kelompok terwakili paling sedikit satu orang. Rani menghitung $4 \\times 3 \\times 3 \\times C(7,2) = 756$ (satu wakil tiap kelompok, lalu 2 orang dari 7 sisanya), tetapi hasil itu terlalu besar. Banyak panitia yang sebenarnya adalah ....",
+        "jawaban": "204 panitia",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $19$; k = $4$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$3876$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $3876$.",
+      "distraktor": [
+        {
+          "teks": "$3877$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3875$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7752$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $3876$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7931a7ebcf27b76a6de627d",
+        "teks": "Delapan pemain tenis meja dibagi menjadi 4 pasangan latihan. Pasangan-pasangan tersebut tidak diberi nama atau nomor, sehingga yang dibedakan hanya siapa dipasangkan dengan siapa. Banyak cara pembagian pasangan adalah ....",
+        "jawaban": "105 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $24$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$42504$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $42504$.",
+      "distraktor": [
+        {
+          "teks": "$42505$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42503$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$85008$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $42504$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cbb692c4de9bdc414d7c134c",
+        "teks": "Banyak solusi bilangan bulat non-negatif dari pertidaksamaan $a + b + c \\leq 9$ adalah ....",
+        "jawaban": "220",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $16$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$4368$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $4368$.",
+      "distraktor": [
+        {
+          "teks": "$4369$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4367$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8736$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $4368$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0cc72ceb81d26a793ac4302",
+        "teks": "Diketahui $n$ bilangan bulat positif dengan $P(n,2) - C(n,2) = 45$. Nilai $C(n,4)$ adalah ....",
+        "jawaban": "210",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $18$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$153$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $153$.",
+      "distraktor": [
+        {
+          "teks": "$154$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$152$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$306$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $153$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f2655780af3751ca273e386e",
+        "teks": "Seorang siswa mengklaim: \"untuk bilangan bulat $0 \\leq r < s \\leq 10$, selalu berlaku $C(10,r) < C(10,s)$.\" Pasangan $(r,s)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$r = 5$ dan $s = 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $11$; k = $3$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$165$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $165$.",
+      "distraktor": [
+        {
+          "teks": "$166$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$164$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$330$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $165$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72c2ddcda51c829df109cd62",
+        "teks": "Banyak diagonal sebuah segi-$n$ sama dengan banyak pasangan titik sudut dikurangi banyak sisi, yaitu $C(n,2)-n$. Jika sebuah segi-$n$ memiliki 35 diagonal, nilai $n$ adalah ....",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $28$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$378$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $378$.",
+      "distraktor": [
+        {
+          "teks": "$379$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$377$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$756$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $378$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a1c0b63c5dae0727c61fe4a8",
+        "teks": "Pada suatu ujian terdapat 12 soal. Peserta harus memilih 7 soal untuk dikerjakan, dengan syarat memilih paling sedikit 3 soal dari 5 soal nomor pertama. Banyak cara peserta memilih ketujuh soal adalah ....",
+        "jawaban": "546 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $22$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$231$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $231$.",
+      "distraktor": [
+        {
+          "teks": "$232$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$230$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$462$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $231$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e794a264d29097fd6a339620",
+        "teks": "Sebuah toko menyediakan 8 rasa permen dengan persediaan setiap rasa melimpah. Pembeli memilih 4 permen. Selisih antara banyak komposisi pilihan jika rasa yang sama boleh dipilih berulang dan banyak komposisi jika setiap rasa harus berbeda adalah ....",
+        "jawaban": "260",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $30$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$142506$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $142506$.",
+      "distraktor": [
+        {
+          "teks": "$142507$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$142505$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$285012$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $142506$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-066"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6baaf50528e28afb8f7b93b",
+        "teks": "Sebuah panitia beranggotakan $r$ orang akan dipilih dari 15 siswa, dengan $r$ bilangan genap. Nilai $r$ yang membuat banyak panitia yang mungkin terbentuk paling besar adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $28$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$98280$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $98280$.",
+      "distraktor": [
+        {
+          "teks": "$98281$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98279$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$196560$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $98280$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-067"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0b581e3eb79b2494ead104b2",
+        "teks": "Diketahui $n$ bilangan bulat dengan $n \\geq 2$ dan $C(n,2) + C(n+1,2) = 169$. Nilai $n$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $17$; k = $3$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$680$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $680$.",
+      "distraktor": [
+        {
+          "teks": "$681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $680$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-068"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "284a0b74e1f02f7b98b9e708",
+        "teks": "Pengurus Palang Merah Remaja SMA Nusa Bangsa akan mengirim relawan untuk kegiatan donor darah. Berdasarkan anggota yang aktif, terdapat 9 putra dan 8 putri, tetapi yang dipilih sebagai relawan adalah 5 putra dan 2 putri. Berapa banyak susunan relawan yang dapat terbentuk?",
+        "jawaban": "3.528 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $9$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-069"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04bc54f9b0e648e106948906",
+        "teks": "Seorang guru memiliki 7 pensil identik dan 3 penghapus identik untuk dibagikan kepada 3 siswa. Setiap siswa boleh menerima lebih dari satu pensil atau penghapus, bahkan boleh tidak menerima sama sekali. Berapa banyak cara pembagian kedua jenis alat tulis tersebut?",
+        "jawaban": "360 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $17$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$136$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $136$.",
+      "distraktor": [
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$272$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $136$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-070"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "224d2943f45544a7e33a5623",
+        "teks": "Sebuah toko donat menyediakan 5 rasa donat, yaitu cokelat, keju, stroberi, kopi, dan pandan, dengan persediaan setiap rasa lebih dari 6 buah. Seorang pembeli akan memilih 6 donat untuk satu kotak, dan rasa yang sama boleh dipilih lebih dari satu kali. Berapa banyak komposisi rasa yang mungkin dalam kotak tersebut?",
+        "jawaban": "210 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $27$; k = $5$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$80730$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $80730$.",
+      "distraktor": [
+        {
+          "teks": "$80731$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$80729$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$161460$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $80730$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-071"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b15d37e2dd8e8259b0edc5f4",
+        "teks": "Bu Ratna meminta 11 siswa untuk menulis masing-masing satu soal Fisika. Dari 11 soal yang terkumpul, Bu Ratna akan memilih 6 soal untuk ujian tengah semester, dan soal buatan Dimas sudah pasti dipilih. Berapa banyak cara berbeda Bu Ratna dapat memilih keenam soal tersebut?",
+        "jawaban": "252 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_combination_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui n = $30$; k = $2$. Dari $n$ peserta dipilih $k$ anggota tim tanpa jabatan. Berapa tim yang mungkin?",
+      "jawaban_benar": "$435$",
+      "alasan_benar": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $435$.",
+      "distraktor": [
+        {
+          "teks": "$436$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$434$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$870$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota tim tidak diurutkan, sehingga gunakan kombinasi. Hasilnya $435$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-easy-bt01-072"
     }
-   ],
-   "pembahasan": "Urutan soal tidak diperhatikan, sehingga $C(9,4) = \\frac{9!}{5!\\,4!} = \\frac{9 \\times 8 \\times 7 \\times 6}{24} = 126$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-002",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b03-p0129-latihan-3-3-2"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi pada konteks lomba, tanpa langkah tambahan",
-   "stimulus": null,
-   "pertanyaan": "Bu Sinta sebagai pembina klub Kimia meminta 12 anggota klub untuk menulis masing-masing satu usulan judul penelitian. Bu Sinta akan memilih 3 judul terbaik untuk diajukan ke sekolah. Berapa banyak cara berbeda Bu Sinta dapat memilih 3 judul dari 12 judul yang tersedia?",
-   "jawaban_benar": "220 cara",
-   "alasan_benar": "memilih 3 dari 12 tanpa memperhatikan urutan: $C(12,3) = 220$",
-   "distraktor": [
-    {
-     "teks": "1.320 cara",
-     "alasan": "memakai permutasi $P(12,3)$ padahal urutan judul tidak diperhatikan"
-    },
-    {
-     "teks": "660 cara",
-     "alasan": "membagi $P(12,3)$ dengan 2, bukan dengan $3!$"
-    },
-    {
-     "teks": "36 cara",
-     "alasan": "mengalikan 12 dengan 3 tanpa memakai rumus kombinasi"
-    }
-   ],
-   "pembahasan": "$C(12,3) = \\frac{12 \\times 11 \\times 10}{3!} = \\frac{1320}{6} = 220$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-003",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b03-p0130-latihan-3-3-5"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi pada pemilihan unsur desain",
-   "stimulus": null,
-   "pertanyaan": "Dina adalah perancang kerajinan yang akan memadukan manik-manik pada gelang. Terdapat 8 jenis manik-manik berwarna merah, kuning, biru, hijau, putih, ungu, jingga, dan cokelat. Jika Dina hanya memadukan empat warna manik-manik pada satu gelang dan susunan warnanya tidak dibedakan, berapa banyak paduan warna yang dapat dihasilkan?",
-   "jawaban_benar": "70 cara",
-   "alasan_benar": "memilih 4 dari 8 warna tanpa memperhatikan urutan: $C(8,4) = 70$",
-   "distraktor": [
-    {
-     "teks": "1.680 cara",
-     "alasan": "memakai permutasi $P(8,4)$ padahal susunan tidak dibedakan"
-    },
-    {
-     "teks": "56 cara",
-     "alasan": "memakai $C(8,3)$, salah menentukan banyak warna yang dipilih"
-    },
-    {
-     "teks": "32 cara",
-     "alasan": "mengalikan 8 dengan 4 tanpa memakai rumus kombinasi"
-    }
-   ],
-   "pembahasan": "$C(8,4) = \\frac{8 \\times 7 \\times 6 \\times 5}{4!} = \\frac{1680}{24} = 70$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-004",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b03-p0130-latihan-3-3-5"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi dengan dua unsur yang dipilih",
-   "stimulus": null,
-   "pertanyaan": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
-   "jawaban_benar": "15 cara",
-   "alasan_benar": "memilih 2 dari 6 warna tanpa memperhatikan urutan: $C(6,2) = 15$",
-   "distraktor": [
-    {
-     "teks": "30 cara",
-     "alasan": "memakai permutasi $P(6,2)$ padahal urutan pencampuran tidak diperhatikan"
-    },
-    {
-     "teks": "12 cara",
-     "alasan": "mengalikan 6 dengan 2 tanpa memakai rumus kombinasi"
-    },
-    {
-     "teks": "20 cara",
-     "alasan": "memakai $C(6,3)$, salah menentukan banyak warna yang dicampur"
-    }
-   ],
-   "pembahasan": "$C(6,2) = \\frac{6 \\times 5}{2!} = 15$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-005",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "bagian": "Contoh 3.10",
-    "nomor": "3.10",
-    "teks": "SMA Abisatya akan memilih 4 dari 10 siswa untuk menjadi perwakilan sekolah dalam lomba debat antarsekolah. Keempat siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
-    "jawaban": "210 cara"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi pada pemilihan tim tanpa peran khusus",
-   "stimulus": null,
-   "pertanyaan": "SMA Cendekia akan memilih 3 dari 11 siswa untuk menjadi perwakilan sekolah dalam lomba cerdas cermat. Ketiga siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
-   "jawaban_benar": "165 cara",
-   "alasan_benar": "memilih 3 dari 11 tanpa peran khusus: $C(11,3) = 165$",
-   "distraktor": [
-    {
-     "teks": "990 cara",
-     "alasan": "memakai permutasi $P(11,3)$ padahal tidak ada peran khusus"
-    },
-    {
-     "teks": "33 cara",
-     "alasan": "mengalikan 11 dengan 3"
-    },
-    {
-     "teks": "55 cara",
-     "alasan": "memakai $C(11,2)$, salah menentukan banyak siswa yang dipilih"
-    }
-   ],
-   "pembahasan": "$C(11,3) = \\frac{11 \\times 10 \\times 9}{3!} = \\frac{990}{6} = 165$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-006",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "bagian": "Contoh 3.10",
-    "nomor": "3.10",
-    "teks": "SMA Abisatya akan memilih 4 dari 10 siswa untuk menjadi perwakilan sekolah dalam lomba debat antarsekolah. Keempat siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
-    "jawaban": "210 cara"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "hitung banyak pilihan (kombinasi dasar)",
-   "alasan_level": "satu penerapan rumus kombinasi dengan dua objek terpilih",
-   "stimulus": null,
-   "pertanyaan": "SMA Nusantara akan memilih 2 dari 14 siswa untuk menjadi perwakilan sekolah dalam lomba pidato antarsekolah. Kedua siswa akan mewakili sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
-   "jawaban_benar": "91 cara",
-   "alasan_benar": "memilih 2 dari 14 tanpa peran khusus: $C(14,2) = 91$",
-   "distraktor": [
-    {
-     "teks": "182 cara",
-     "alasan": "memakai permutasi $P(14,2)$ padahal tidak ada peran khusus"
-    },
-    {
-     "teks": "28 cara",
-     "alasan": "mengalikan 14 dengan 2"
-    },
-    {
-     "teks": "364 cara",
-     "alasan": "memakai $C(14,3)$, salah menentukan banyak siswa yang dipilih"
-    }
-   ],
-   "pembahasan": "$C(14,2) = \\frac{14 \\times 13}{2!} = 91$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-007",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "bagian": "Contoh 3.11",
-    "nomor": "3.11",
-    "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
-    "jawaban": "700 susunan"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "kombinasi dua kelompok",
-   "alasan_level": "dua kombinasi independen yang dikalikan, tiap kombinasi satu rumus langsung",
-   "stimulus": null,
-   "pertanyaan": "Sekolah memiliki 5 guru laki-laki dan 4 guru perempuan. Kepala sekolah akan memilih 3 guru laki-laki dan 2 guru perempuan sebagai panitia ujian. Berapa banyak susunan panitia yang mungkin terbentuk?",
-   "jawaban_benar": "60 susunan",
-   "alasan_benar": "$C(5,3) \\times C(4,2) = 10 \\times 6 = 60$",
-   "distraktor": [
-    {
-     "teks": "16 susunan",
-     "alasan": "menjumlahkan $C(5,3) + C(4,2)$, bukan mengalikan"
-    },
-    {
-     "teks": "126 susunan",
-     "alasan": "memilih 5 dari 9 guru tanpa memperhatikan jenis kelamin: $C(9,5)$"
-    },
-    {
-     "teks": "720 susunan",
-     "alasan": "memakai permutasi pada kedua kelompok: $P(5,3) \\times P(4,2)$"
-    }
-   ],
-   "pembahasan": "Laki-laki: $C(5,3) = 10$; perempuan: $C(4,2) = 6$. Karena kedua pilihan terjadi bersama, hasilnya $10 \\times 6 = 60$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-008",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "bagian": "Contoh 3.11",
-    "nomor": "3.11",
-    "teks": "terdapat 7 siswa dan 6 siswi, tetapi yang dipilih oleh sekolah sebagai duta antikekerasan dan bullying adalah 4 siswa dan 3 siswi. Berapa banyak susunan siswa/i yang menjadi duta?",
-    "jawaban": "700 susunan"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "kombinasi dua kelompok",
-   "alasan_level": "dua kombinasi independen yang dikalikan, tiap kombinasi satu rumus langsung",
-   "stimulus": null,
-   "pertanyaan": "Klub drama beranggotakan 8 siswa putra dan 5 siswa putri. Untuk sebuah pementasan dipilih 2 siswa putra dan 3 siswa putri sebagai pemeran. Berapa banyak susunan pemeran yang dapat dibentuk?",
-   "jawaban_benar": "280 susunan",
-   "alasan_benar": "$C(8,2) \\times C(5,3) = 28 \\times 10 = 280$",
-   "distraktor": [
-    {
-     "teks": "38 susunan",
-     "alasan": "menjumlahkan $C(8,2) + C(5,3)$, bukan mengalikan"
-    },
-    {
-     "teks": "1.287 susunan",
-     "alasan": "memilih 5 dari 13 anggota tanpa memperhatikan putra dan putri: $C(13,5)$"
-    },
-    {
-     "teks": "560 susunan",
-     "alasan": "menukar banyak yang dipilih: $C(8,3) \\times C(5,2)$"
-    }
-   ],
-   "pembahasan": "Putra: $C(8,2) = 28$; putri: $C(5,3) = 10$. Hasilnya $28 \\times 10 = 280$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-009",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 124,
-    "bagian": "Ayo, Bereksplorasi",
-    "nomor": "3.7",
-    "teks": "Pelatih merekomendasikan kepada Ahmad untuk mengonsumsi empat buah dalam sehari. Jika terdapat empat buah dari setiap jenis buah dalam keranjang yang disediakan, berapa banyak cara Ahmad memilih empat buah yang dapat dikonsumsi?",
-    "jawaban": "15 cara"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "kombinasi berulang",
-   "alasan_level": "mengenali kombinasi berulang lalu satu rumus $C(n+r-1,r)$",
-   "stimulus": null,
-   "pertanyaan": "Sebuah toko roti menyediakan roti cokelat, roti keju, dan roti kacang, masing-masing sebanyak enam potong. Seorang pembeli akan memilih lima potong roti, dan jenis yang sama boleh dipilih lebih dari satu potong. Berapa banyak cara pembeli memilih lima potong roti tersebut?",
-   "jawaban_benar": "21 cara",
-   "alasan_benar": "kombinasi berulang dengan $n = 3$ jenis dan $r = 5$: $C(3+5-1,5) = C(7,5) = 21$",
-   "distraktor": [
-    {
-     "teks": "56 cara",
-     "alasan": "memakai $C(n+r,r) = C(8,5)$, lupa mengurangi 1"
-    },
-    {
-     "teks": "243 cara",
-     "alasan": "menghitung $3^5$ seolah urutan pengambilan diperhatikan"
-    },
-    {
-     "teks": "10 cara",
-     "alasan": "memakai $C(5,3)$, yaitu kombinasi tanpa pengulangan"
-    }
-   ],
-   "pembahasan": "Dengan pengulangan, banyak cara $= C(n+r-1,r) = C(3+5-1,5) = C(7,5) = 21$.",
-   "catatan": null,
-   "variasi_cara": "konteks"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-010",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 124,
-    "bagian": "Ayo, Bereksplorasi",
-    "nomor": "3.7",
-    "teks": "Pelatih merekomendasikan kepada Ahmad untuk mengonsumsi empat buah dalam sehari. Jika terdapat empat buah dari setiap jenis buah dalam keranjang yang disediakan, berapa banyak cara Ahmad memilih empat buah yang dapat dikonsumsi?",
-    "jawaban": "15 cara"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "kombinasi berulang",
-   "alasan_level": "mengenali kombinasi berulang lalu satu rumus $C(n+r-1,r)$",
-   "stimulus": null,
-   "pertanyaan": "Kedai es krim menawarkan rasa vanila, cokelat, stroberi, dan durian dengan persediaan yang melimpah. Seorang anak akan memesan tiga skop es krim dalam satu cup, dan rasa yang sama boleh dipesan lebih dari satu skop. Berapa banyak komposisi rasa yang mungkin dipesan?",
-   "jawaban_benar": "20 cara",
-   "alasan_benar": "kombinasi berulang dengan $n = 4$ rasa dan $r = 3$: $C(4+3-1,3) = C(6,3) = 20$",
-   "distraktor": [
-    {
-     "teks": "64 cara",
-     "alasan": "menghitung $4^3$ seolah urutan skop diperhatikan"
-    },
-    {
-     "teks": "4 cara",
-     "alasan": "memakai $C(4,3)$, yaitu kombinasi tanpa pengulangan"
-    },
-    {
-     "teks": "35 cara",
-     "alasan": "memakai $C(n+r,r) = C(7,3)$, lupa mengurangi 1"
-    }
-   ],
-   "pembahasan": "$C(n+r-1,r) = C(4+3-1,3) = C(6,3) = 20$.",
-   "catatan": null,
-   "variasi_cara": "konteks"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-011",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 127,
-    "bagian": "Contoh 3.13",
-    "nomor": "3.13",
-    "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan x 1 + x 2 + x 3 + x 4 = 7.",
-    "jawaban": "120"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "banyak solusi persamaan bulat non-negatif",
-   "alasan_level": "satu penerapan teorema Stars and Bars untuk menghitung solusi persamaan",
-   "stimulus": null,
-   "pertanyaan": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 9$.",
-   "jawaban_benar": "55",
-   "alasan_benar": "$n = 9$, $k = 3$ variabel: $C(9+3-1,9) = C(11,9) = 55$",
-   "distraktor": [
-    {
-     "teks": "220",
-     "alasan": "memakai $C(n+k,n) = C(12,9)$, lupa mengurangi 1"
-    },
-    {
-     "teks": "84",
-     "alasan": "memakai $C(9,3)$, yaitu kombinasi tanpa pengulangan"
-    },
-    {
-     "teks": "27",
-     "alasan": "mengalikan 9 dengan 3"
-    }
-   ],
-   "pembahasan": "Banyak solusi $= C(n+k-1,n) = C(11,9) = \\frac{11 \\times 10}{2} = 55$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-012",
-   "tipe_generate": "variasi",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 127,
-    "bagian": "Contoh 3.13",
-    "nomor": "3.13",
-    "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan x 1 + x 2 + x 3 + x 4 = 7.",
-    "jawaban": "120"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "banyak solusi persamaan bulat non-negatif",
-   "alasan_level": "satu penerapan teorema Stars and Bars dengan empat variabel",
-   "stimulus": null,
-   "pertanyaan": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $p + q + r + s = 6$.",
-   "jawaban_benar": "84",
-   "alasan_benar": "$n = 6$, $k = 4$ variabel: $C(6+4-1,6) = C(9,6) = 84$",
-   "distraktor": [
-    {
-     "teks": "210",
-     "alasan": "memakai $C(n+k,n) = C(10,6)$, lupa mengurangi 1"
-    },
-    {
-     "teks": "126",
-     "alasan": "memakai $C(9,4)$, salah menentukan bilangan bawah"
-    },
-    {
-     "teks": "24",
-     "alasan": "mengalikan 6 dengan 4"
-    }
-   ],
-   "pembahasan": "Banyak solusi $= C(9,6) = \\frac{9 \\times 8 \\times 7}{3!} = 84$.",
-   "catatan": null,
-   "variasi_cara": "angka"
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-013",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 121,
-    "kutipan": "Kombinasi adalah susunan dari suatu objek tertentu yang tidak memperhatikan urutan."
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "definisi kombinasi",
-   "alasan_level": "mengingat definisi kombinasi",
-   "stimulus": null,
-   "pertanyaan": "Pernyataan yang tepat tentang kombinasi adalah ....",
-   "jawaban_benar": "susunan objek yang tidak memperhatikan urutan",
-   "alasan_benar": "definisi kombinasi pada buku: urutan tidak diperhatikan",
-   "distraktor": [
-    {
-     "teks": "susunan objek yang memperhatikan urutan",
-     "alasan": "tertukar dengan definisi permutasi"
-    },
-    {
-     "teks": "susunan objek yang urutan penulisannya dibedakan sehingga A-B berbeda dari B-A",
-     "alasan": "mengira pasangan yang urutannya terbalik dihitung sebagai dua kombinasi"
-    },
-    {
-     "teks": "susunan yang selalu memuat seluruh objek yang tersedia",
-     "alasan": "mengira kombinasi harus memakai semua objek"
-    }
-   ],
-   "pembahasan": "Kombinasi adalah susunan objek yang tidak memperhatikan urutan, misalnya kombinasi kata DOA sama dengan ADO.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-014",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "membedakan kombinasi dan permutasi",
-   "alasan_level": "mengenali situasi yang memakai kombinasi",
-   "stimulus": null,
-   "pertanyaan": "Di antara situasi berikut, situasi yang diselesaikan dengan konsep kombinasi adalah ....",
-   "jawaban_benar": "memilih 3 anggota panitia dari 8 siswa tanpa pembagian jabatan",
-   "alasan_benar": "tanpa jabatan, urutan pemilihan tidak membedakan hasil",
-   "distraktor": [
-    {
-     "teks": "memilih ketua, sekretaris, dan bendahara dari 8 siswa",
-     "alasan": "jabatan berbeda sehingga urutan penting (permutasi)"
-    },
-    {
-     "teks": "menentukan juara 1, 2, dan 3 dari 8 peserta lomba",
-     "alasan": "peringkat berbeda sehingga urutan penting (permutasi)"
-    },
-    {
-     "teks": "menyusun kode PIN 3 angka berbeda dari 8 angka yang tersedia",
-     "alasan": "urutan angka pada kode menentukan hasil (permutasi)"
-    }
-   ],
-   "pembahasan": "Kombinasi dipakai bila urutan tidak memengaruhi hasil. Hanya pemilihan anggota panitia tanpa jabatan yang memenuhi syarat itu.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-015",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 121,
-    "kutipan": "Banyak kombinasi 2 objek dari 5 objek yang dinotasikan"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 1,
-   "jenis_soal": "menghitung nilai $C(n,r)$",
-   "alasan_level": "menghitung nilai kombinasi langsung dengan rumus",
-   "stimulus": null,
-   "pertanyaan": "Nilai dari $C(9,2)$ adalah ....",
-   "jawaban_benar": "36",
-   "alasan_benar": "$C(9,2) = \\frac{9!}{7!\\,2!} = 36$",
-   "distraktor": [
-    {
-     "teks": "72",
-     "alasan": "memakai permutasi $P(9,2)$, lupa membagi dengan $2!$"
-    },
-    {
-     "teks": "18",
-     "alasan": "mengalikan 9 dengan 2"
-    },
-    {
-     "teks": "81",
-     "alasan": "menghitung $9^2$"
-    }
-   ],
-   "pembahasan": "$C(9,2) = \\frac{9 \\times 8}{2 \\times 1} = 36$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-016",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "kutipan": "Fakta berikutnya untuk bilangan bulat non-negatif"
-   },
-   "cognitive_c": "C1",
-   "jumlah_langkah": 2,
-   "jenis_soal": "sifat nilai $C(n,r)$ khusus",
-   "alasan_level": "memakai sifat $C(n,n)=1$ dan $C(n,1)=n$",
-   "stimulus": null,
-   "pertanyaan": "Nilai dari $C(15,15) + C(15,1)$ adalah ....",
-   "jawaban_benar": "16",
-   "alasan_benar": "$C(15,15) = 1$ dan $C(15,1) = 15$, jumlahnya 16",
-   "distraktor": [
-    {
-     "teks": "15",
-     "alasan": "mengira $C(15,15) = 0$"
-    },
-    {
-     "teks": "30",
-     "alasan": "mengira $C(15,15) = 15$"
-    },
-    {
-     "teks": "1",
-     "alasan": "hanya menghitung $C(15,15)$ dan melewatkan $C(15,1)$"
-    }
-   ],
-   "pembahasan": "Sifat: $C(n,n) = 1$ dan $C(n,1) = n$. Jadi $1 + 15 = 16$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-017",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 121,
-    "kutipan": "Banyak susunannya yang sama dari setiap pasangan 2 objek adalah 2!"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "hubungan permutasi dan kombinasi",
-   "alasan_level": "memakai hubungan $C = P / k!$",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $P(8,3) = 336$. Nilai $C(8,3)$ adalah ....",
-   "jawaban_benar": "56",
-   "alasan_benar": "$C(8,3) = \\frac{P(8,3)}{3!} = \\frac{336}{6} = 56$",
-   "distraktor": [
-    {
-     "teks": "336",
-     "alasan": "mengira kombinasi sama dengan permutasi"
-    },
-    {
-     "teks": "168",
-     "alasan": "membagi dengan 2, bukan dengan $3!$"
-    },
-    {
-     "teks": "112",
-     "alasan": "membagi dengan 3, bukan dengan $3!$"
-    }
-   ],
-   "pembahasan": "Tiap kombinasi 3 objek muncul sebanyak $3! = 6$ kali dalam permutasi, sehingga $C(8,3) = 336 : 6 = 56$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-018",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 126,
-    "kutipan": "Jika lebih dari satu bola yang mungkin ada di setiap kotak (tidak ada batasan jumlah bola), maka jumlah cara mendapatkan bola"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 2,
-   "jenis_soal": "kombinasi berulang (bola dan kotak)",
-   "alasan_level": "mengenali pembagian benda identik lalu memakai rumus pengulangan",
-   "stimulus": null,
-   "pertanyaan": "Enam permen yang identik akan dibagikan kepada tiga orang anak, dan setiap anak boleh menerima berapa pun permen, termasuk tidak menerima sama sekali. Banyak cara membagikan permen tersebut adalah ....",
-   "jawaban_benar": "28 cara",
-   "alasan_benar": "$C(r+n-1,r)$ dengan $r = 6$ permen dan $n = 3$ anak: $C(8,6) = 28$",
-   "distraktor": [
-    {
-     "teks": "56 cara",
-     "alasan": "memakai $C(9,6)$, menambah 3 bukannya mengurangi 1"
-    },
-    {
-     "teks": "20 cara",
-     "alasan": "memakai $C(6,3)$, yaitu kombinasi tanpa pengulangan"
-    },
-    {
-     "teks": "729 cara",
-     "alasan": "menghitung $3^6$ seolah permen dibedakan"
-    }
-   ],
-   "pembahasan": "Permen identik, anak berbeda, tanpa batas: $C(6+3-1,6) = C(8,6) = \\frac{8 \\times 7}{2} = 28$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-019",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 121,
-    "kutipan": "Kasus di atas disebut sebagai kombinasi."
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "pemodelan jabat tangan",
-   "alasan_level": "memodelkan pasangan tak berurutan sebagai kombinasi",
-   "stimulus": null,
-   "pertanyaan": "Dalam sebuah pertemuan hadir 12 orang. Setiap dua orang saling berjabat tangan tepat satu kali. Banyak jabat tangan yang terjadi adalah ....",
-   "jawaban_benar": "66 kali",
-   "alasan_benar": "jabat tangan A-B sama dengan B-A, jadi $C(12,2) = 66$",
-   "distraktor": [
-    {
-     "teks": "132 kali",
-     "alasan": "memakai $P(12,2)$ sehingga tiap pasangan dihitung dua kali"
-    },
-    {
-     "teks": "24 kali",
-     "alasan": "mengalikan 12 dengan 2"
-    },
-    {
-     "teks": "144 kali",
-     "alasan": "menghitung $12^2$"
-    }
-   ],
-   "pembahasan": "Setiap jabat tangan melibatkan 2 orang tanpa memperhatikan urutan: $C(12,2) = \\frac{12 \\times 11}{2} = 66$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b03-c-easy-bt01-020",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 122,
-    "kutipan": "Karena peran 4 siswa tersebut tidak dipengaruhi urutan, maka menggunakan konsep kombinasi"
-   },
-   "cognitive_c": "C2",
-   "jumlah_langkah": 1,
-   "jenis_soal": "memilih soal wajib",
-   "alasan_level": "satu penerapan rumus kombinasi pada pemilihan soal ujian",
-   "stimulus": null,
-   "pertanyaan": "Pada suatu ujian terdapat 10 soal, dan peserta wajib mengerjakan 8 soal pilihannya sendiri. Banyak cara peserta memilih 8 soal tersebut adalah ....",
-   "jawaban_benar": "45 cara",
-   "alasan_benar": "memilih 8 dari 10 soal: $C(10,8) = 45$",
-   "distraktor": [
-    {
-     "teks": "1.814.400 cara",
-     "alasan": "memakai permutasi $P(10,8)$ padahal urutan soal tidak diperhatikan"
-    },
-    {
-     "teks": "80 cara",
-     "alasan": "mengalikan 10 dengan 8"
-    },
-    {
-     "teks": "90 cara",
-     "alasan": "mengalikan 10 dengan 9 tanpa membagi"
-    }
-   ],
-   "pembahasan": "$C(10,8) = C(10,2) = \\frac{10 \\times 9}{2} = 45$.",
-   "catatan": null
-  }
- ]
+  ]
 }

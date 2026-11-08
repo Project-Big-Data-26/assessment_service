@@ -639,6 +639,1900 @@
       "pembahasan": "Misalkan sisi-sisi segitiga siku-siku tersebut adalah $a$, $b$, dan $c$ dengan $a < b < c$ ($c$ adalah hipotenusa).\n\n1. Diketahui $c - b = 2 \\iff c = b + 2$.\n2. Keliling segitiga:\n   $a + b + c = 84$\n   $a + b + (b + 2) = 84$\n   $a + 2b = 82 \\iff 2b = 82 - a$.\n3. Berdasarkan Teorema Pythagoras:\n   $a^2 + b^2 = c^2$\n   $a^2 = c^2 - b^2$\n   $a^2 = (b + 2)^2 - b^2$\n   $a^2 = 4b + 4$\n4. Kalikan hubungan $a^2 = 4b + 4$ dengan $2$ lalu substitusikan $2b$:\n   $a^2 = 2(2b) + 4$\n   $a^2 = 2(82 - a) + 4$\n   $a^2 = 164 - 2a + 4$\n   $a^2 + 2a - 168 = 0$\n   $(a + 14)(a - 12) = 0$\n   Karena panjang sisi harus bernilai positif, maka $a = 12\\text{ m}$.\n5. Menentukan nilai $b$ dan $c$:\n   $2b = 82 - 12 = 70 \\iff b = 35\\text{ m}$.\n   $c = 35 + 2 = 37\\text{ m}$.\n   (Ketiga bilangan $12, 35, 37$ merupakan tripel Pythagoras karena $12^2 + 35^2 = 144 + 1.225 = 1.369 = 37^2$).\n6. Evaluasi setiap pernyataan:\n   - Pernyataan (1): Hipotenusa $c = 37\\text{ m}$ (Benar).\n   - Pernyataan (2): Sisi siku-siku terpendek $a = 12\\text{ m}$ (Salah, bukan $14\\text{ m}$).\n   - Pernyataan (3): $\\text{Luas} = \\frac{1}{2} \\times a \\times b = \\frac{1}{2} \\times 12 \\times 35 = 210\\text{ m}^2$ (Benar).\n   - Pernyataan (4): Selisih kedua sisi siku-siku $= 35 - 12 = 23\\text{ m}$ (Salah, bukan $21\\text{ m}$).\n\nJadi, pernyataan yang benar adalah (1) dan (3).",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0710541dd23a1136ec6752",
+        "teks": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+        "jawaban": "$462\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 3 dan 4. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "√(3²+4²)=√25=5.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(3²+4²)=√25=5.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53cdfeafeb48bb51864adb2f",
+        "teks": "Tiga bilangan $(x - 1)$, $x$, dan $(x + 1)$ dengan $x > 1$ membentuk tripel Pythagoras. Nilai $x$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 28 dan 96. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "√(28²+96²)=√10000=100.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan $101$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan $99$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Pilihan $102$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(28²+96²)=√10000=100.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0710541dd23a1136ec6752",
+        "teks": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+        "jawaban": "$462\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 16 dan 30. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "√(16²+30²)=√1156=34.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(16²+30²)=√1156=34.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c68b340a3836c2409d4c7d46",
+        "teks": "Berdasarkan aturan pembentukan tripel Pythagoras dengan sisi terpendek berupa bilangan ganjil $S$, panjang sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa adalah $H = M + 1$. Suatu segitiga siku-siku dibentuk mengikuti aturan tersebut. Jika jumlah keliling segitiga dan panjang sisi terpendeknya sama dengan $63\\text{ cm}$, maka panjang hipotenusa segitiga tersebut adalah ....",
+        "jawaban": "$25\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 8 dan 15. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "√(8²+15²)=√289=17.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan $18$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(8²+15²)=√289=17.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93f565824b028445903441c3",
+        "teks": "Sebuah segitiga memiliki panjang sisi-sisi berturut-turut $x\\text{ cm}$, $(x + 3)\\text{ cm}$, dan $15\\text{ cm}$, dengan $15\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan syarat ketaksamaan panjang sisi segitiga, berapakah banyak nilai bilangan bulat $x$ yang mungkin agar segitiga tersebut terbentuk dan merupakan segitiga tumpul?",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 10 dan 24. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "√(10²+24²)=√676=26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan $28$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(10²+24²)=√676=26.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a55185dff2181b15b84b90da",
+        "teks": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 5 dan 12. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "√(5²+12²)=√169=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah tripel pythagoras pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(5²+12²)=√169=13.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "09aef0125a22a3a74c505111",
+        "teks": "Sebuah tiang pemancar sinyal ditegakkan tegak lurus di atas permukaan tanah datar. Kawat pancang dipasang dari puncak tiang ke sebuah patok di tanah. Jika panjang kawat pancang adalah $15\\text{ meter}$ dan jarak patok ke pangkal tiang adalah $9\\text{ meter}$, berapakah tinggi tiang pemancar sinyal tersebut?",
+        "jawaban": "$12\\text{ meter}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 8 cm dan hipotenusa 40 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$102$",
+      "alasan_benar": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 2 cm: 102.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $102$."
+        },
+        {
+          "teks": "$103$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $102$."
+        },
+        {
+          "teks": "$204$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 2 cm: 102.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a55185dff2181b15b84b90da",
+        "teks": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 7 cm dan hipotenusa 35 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 4 cm: 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 4 cm: 96.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5c7cb16485478d0e0d709482",
+        "teks": "Diketahui rumus salah satu sisi tegak pembentuk tripel Pythagoras adalah $p^2 - q^2$. Jika dipilih nilai $p = 4$ dan $q = 1$, maka panjang sisi tegak tersebut adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 12 cm dan hipotenusa 60 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 7 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$165$",
+      "alasan_benar": "Kaki kecil x, besar x+12. Pythagoras x²+(x+12)²=3600 memberi akar positif x=36; kaki lain 48. Keliling 144. Tambahkan tiga tumpang tindih 7 cm: 165.",
+      "distraktor": [
+        {
+          "teks": "$164$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $165$."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $165$."
+        },
+        {
+          "teks": "$330$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+12. Pythagoras x²+(x+12)²=3600 memberi akar positif x=36; kaki lain 48. Keliling 144. Tambahkan tiga tumpang tindih 7 cm: 165.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c53207c60df46d385efd1bbe",
+        "teks": "Rani ingin memastikan apakah sebidang tanah segitiga di halaman sekolahnya berbentuk segitiga siku-siku. Setelah diukur, panjang sisi-sisi tanah tersebut berturut-turut adalah $7\\text{ meter}$, $24\\text{ meter}$, dan $25\\text{ meter}$. Kesimpulan yang tepat mengenai bentuk tanah tersebut adalah ....",
+        "jawaban": "berbentuk segitiga siku-siku karena $25^2 = 7^2 + 24^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 6 cm dan hipotenusa 30 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 4 cm: 84.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 4 cm: 84.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c53207c60df46d385efd1bbe",
+        "teks": "Rani ingin memastikan apakah sebidang tanah segitiga di halaman sekolahnya berbentuk segitiga siku-siku. Setelah diukur, panjang sisi-sisi tanah tersebut berturut-turut adalah $7\\text{ meter}$, $24\\text{ meter}$, dan $25\\text{ meter}$. Kesimpulan yang tepat mengenai bentuk tanah tersebut adalah ....",
+        "jawaban": "berbentuk segitiga siku-siku karena $25^2 = 7^2 + 24^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 3 cm dan hipotenusa 15 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$51$",
+      "alasan_benar": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 5 cm: 51.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51$."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51$."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 5 cm: 51.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2288b12a987d433eb6d461c3",
+        "teks": "Pak Haris memiliki beberapa set bilah kayu untuk membuat rangka penopang segitiga siku-siku. Di antara kelompok panjang bilah kayu berikut, manakah yang dapat membentuk segitiga siku-siku (tripel Pythagoras)?",
+        "jawaban": "$9\\text{ cm}, 40\\text{ cm}, 41\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 10 cm dan hipotenusa 50 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 7 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$141$",
+      "alasan_benar": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 7 cm: 141.",
+      "distraktor": [
+        {
+          "teks": "$140$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $141$."
+        },
+        {
+          "teks": "$142$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $141$."
+        },
+        {
+          "teks": "$282$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 7 cm: 141.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b02-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7360a72c3ac74c6ee7aa9e99",
+        "teks": "Sebuah tangga dengan panjang 10 meter disandarkan pada dinding tembok. Jika jarak ujung bawah tangga ke dinding adalah 6 meter, tinggi dinding yang dicapai oleh ujung atas tangga adalah ....",
+        "jawaban": "8 meter",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 45 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$117$",
+      "alasan_benar": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 3 cm: 117.",
+      "distraktor": [
+        {
+          "teks": "$116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$234$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 3 cm: 117.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9636ff1c0780ed88bdfa7dee",
+        "teks": "Tiga bilangan asli $a$, $b$, dan $c$ dengan urutan $a < b < c$ disebut sebagai tripel Pythagoras jika memenuhi hubungan ....",
+        "jawaban": "$c^2 = a^2 + b^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 15 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 2 cm: 42.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 2 cm: 42.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac6f68c297f1ec8758e8ebfa",
+        "teks": "Rumus pembentuk tripel Pythagoras menyatakan bahwa jika $p$ dan $q$ adalah bilangan asli dengan $p > q$, maka panjang sisi hipotenusa segitiga adalah $p^2 + q^2$. Jika dipilih nilai $p = 4$ dan $q = 1$, maka panjang hipotenusa yang dihasilkan adalah ....",
+        "jawaban": "17",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 45 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$123$",
+      "alasan_benar": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 5 cm: 123.",
+      "distraktor": [
+        {
+          "teks": "$122$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$246$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 5 cm: 123.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "923c3bee41eea1416420be0d",
+        "teks": "Seorang perajin kayu ingin membuat bingkai segitiga yang tepat siku-siku. Kelompok panjang sisi kayu berikut yang dapat membentuk segitiga siku-siku adalah ....",
+        "jawaban": "$5\\text{ cm}, 12\\text{ cm}, 13\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 40 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$105$",
+      "alasan_benar": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 3 cm: 105.",
+      "distraktor": [
+        {
+          "teks": "$104$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$106$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$210$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 3 cm: 105.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c53207c60df46d385efd1bbe",
+        "teks": "Rani ingin memastikan apakah sebidang tanah segitiga di halaman sekolahnya berbentuk segitiga siku-siku. Setelah diukur, panjang sisi-sisi tanah tersebut berturut-turut adalah $7\\text{ meter}$, $24\\text{ meter}$, dan $25\\text{ meter}$. Kesimpulan yang tepat mengenai bentuk tanah tersebut adalah ....",
+        "jawaban": "berbentuk segitiga siku-siku karena $25^2 = 7^2 + 24^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 55 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$147$",
+      "alasan_benar": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 5 cm: 147.",
+      "distraktor": [
+        {
+          "teks": "$146$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$148$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$294$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 5 cm: 147.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7aeb1def8d2717979c4e3c9",
+        "teks": "Kusen jendela dibuat dengan tinggi $15\\text{ cm}$ dan panjang $20\\text{ cm}$. Tukang mengukur panjang salah satu diagonalnya adalah $25\\text{ cm}$. Apakah sudut pada sudut kusen jendela tersebut tepat siku-siku?",
+        "jawaban": "Ya, karena $15^2 + 20^2 = 25^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki 4 cm dan hipotenusa $T_1$ cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 4 cm: 60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 4 cm: 60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/5de06487ee6f656ea886637c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              20
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 20]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "03232ab27a169775fb760e5a",
+        "teks": "Kelompok bilangan $(3, 4, 5)$ merupakan tripel Pythagoras. Jika setiap bilangan dikalikan dengan $3$, maka kelompok bilangan baru yang terbentuk adalah ....",
+        "jawaban": "$(9, 12, 15)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 40 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 6 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$114$",
+      "alasan_benar": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 6 cm: 114.",
+      "distraktor": [
+        {
+          "teks": "$113$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$115$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$228$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 6 cm: 114.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5c7cb16485478d0e0d709482",
+        "teks": "Diketahui rumus salah satu sisi tegak pembentuk tripel Pythagoras adalah $p^2 - q^2$. Jika dipilih nilai $p = 4$ dan $q = 1$, maka panjang sisi tegak tersebut adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki 6 cm dan hipotenusa $T_1$ cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 6 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 6 cm: 90.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$180$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 6 cm: 90.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/fb81c959c7e9f85028a1727f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              30
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 30]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a47bb377e9dbd2fa2623f1fe",
+        "teks": "Pak Budi membuat kolam ikan berbentuk segitiga dengan ukuran panjang sisi-sisinya $9\\text{ m}$, $12\\text{ m}$, dan $15\\text{ m}$. Apakah kolam ikan tersebut berbentuk segitiga siku-siku?",
+        "jawaban": "Ya, karena $9^2 + 12^2 = 15^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 40 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$108$",
+      "alasan_benar": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 4 cm: 108.",
+      "distraktor": [
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$216$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 4 cm: 108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccf2d3242014e3cd9317fc25",
+        "teks": "Sebuah layang-layang tersangkut di atas dahan pohon tegak lurus terhadap tanah. Edo berdiri pada jarak mendatar $12\\text{ meter}$ dari pangkal pohon. Jika jarak pandang langsung dari Edo ke layang-layang adalah $13\\text{ meter}$, tinggi posisi layang-layang dari permukaan tanah adalah ....",
+        "jawaban": "$5\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 60 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Kaki kecil x, besar x+12. Pythagoras x²+(x+12)²=3600 memberi akar positif x=36; kaki lain 48. Keliling 144. Tambahkan tiga tumpang tindih 2 cm: 150.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+12. Pythagoras x²+(x+12)²=3600 memberi akar positif x=36; kaki lain 48. Keliling 144. Tambahkan tiga tumpang tindih 2 cm: 150.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c6eeb0613870967df2897d8",
+        "teks": "Kusen pintu dibuat dengan ukuran lebar $24\\text{ cm}$ dan tinggi $32\\text{ cm}$. Tukang mengukur panjang salah satu diagonalnya adalah $40\\text{ cm}$. Apakah sudut kusen pintu tersebut benar-benar membentuk siku-siku?",
+        "jawaban": "Ya, karena $24^2 + 32^2 = 40^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 30 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 2 cm: 78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 2 cm: 78.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7889ec1f1e00f7810758764",
+        "teks": "Berdasarkan aturan pembentukan tripel Pythagoras untuk sisi terpendek ganjil $S$, panjang sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$. Jika dipilih sisi terpendek $S = 5$, maka nilai panjang sisi tegak $M$ adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 45 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$114$",
+      "alasan_benar": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 2 cm: 114.",
+      "distraktor": [
+        {
+          "teks": "$113$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$115$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$228$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 2 cm: 114.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9881803b1ad22f0d7d18c56b",
+        "teks": "Seorang tukang kayu memiliki beberapa kelompok bilah kayu dengan ukuran tertentu. Kelompok panjang bilah kayu berikut yang tepat membentuk segitiga siku-siku karena merupakan tripel Pythagoras adalah ....",
+        "jawaban": "$8\\text{ cm}, 15\\text{ cm}, 17\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 55 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 6 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 6 cm: 150.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 6 cm: 150.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28a0563553a8ffbdd08710ea",
+        "teks": "Sebuah taman bunga berbentuk segitiga memiliki panjang sisi masing-masing $7\\text{ m}$, $24\\text{ m}$, dan $25\\text{ m}$. Berdasarkan kebalikan Teorema Pythagoras, jenis segitiga taman bunga tersebut adalah ....",
+        "jawaban": "segitiga siku-siku",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 20 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$57$",
+      "alasan_benar": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 3 cm: 57.",
+      "distraktor": [
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 3 cm: 57.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2e93fd184fd3b2ebf70edbd6",
+        "teks": "Pada pembentukan tripel Pythagoras dari dua bilangan asli $p$ dan $q$ ($p > q$), salah satu sisi siku-siku dinyatakan dengan bentuk $2pq$. Jika dipilih nilai $p = 5$ dan $q = 2$, maka panjang sisi siku-siku tersebut adalah ....",
+        "jawaban": "$20$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki 3 cm dan hipotenusa $T_1$ cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 3 cm: 45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 3 cm: 45.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c68b340a3836c2409d4c7d46",
+        "teks": "Berdasarkan aturan pembentukan tripel Pythagoras dengan sisi terpendek berupa bilangan ganjil $S$, panjang sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa adalah $H = M + 1$. Suatu segitiga siku-siku dibentuk mengikuti aturan tersebut. Jika jumlah keliling segitiga dan panjang sisi terpendeknya sama dengan $63\\text{ cm}$, maka panjang hipotenusa segitiga tersebut adalah ....",
+        "jawaban": "$25\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 55 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$141$",
+      "alasan_benar": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 3 cm: 141.",
+      "distraktor": [
+        {
+          "teks": "$140$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$142$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$282$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 3 cm: 141.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "589a0ff8286c5f1ef7463427",
+        "teks": "Tiga sisi sebuah segitiga dinyatakan berturut-turut oleh $(x - 2)\\text{ cm}$, $(x + 5)\\text{ cm}$, dan $(x + 7)\\text{ cm}$, dengan $(x + 7)\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan ketaksamaan segitiga, agar segitiga tersebut merupakan segitiga tumpul, banyaknya nilai $x$ bilangan bulat yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Segitiga siku-siku memiliki selisih kedua kaki $T_1$ cm dan hipotenusa 55 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$138$",
+      "alasan_benar": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 2 cm: 138.",
+      "distraktor": [
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$276$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 2 cm: 138.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas8/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c826871e556292511b6d2d2",
+        "teks": "Dua buah segitiga siku-siku yang tidak kongruen memiliki keliling yang sama, yaitu $60\\text{ cm}$. Jika panjang setiap sisi dari kedua segitiga tersebut merupakan bilangan bulat yang membentuk tripel Pythagoras, maka selisih luas antara kedua segitiga tersebut adalah ....",
+        "jawaban": "$30\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 5 cm dan hipotenusa 25 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 6 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Kaki kecil x, besar x+5. Pythagoras x²+(x+5)²=625 memberi akar positif x=15; kaki lain 20. Keliling 60. Tambahkan tiga tumpang tindih 6 cm: 78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+5. Pythagoras x²+(x+5)²=625 memberi akar positif x=15; kaki lain 20. Keliling 60. Tambahkan tiga tumpang tindih 6 cm: 78.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48228eab3ecd1c0f47c167db",
+        "teks": "Titik $D$, $G$, dan $E$ terletak segaris mendatar dengan $G$ berada di antara $D$ dan $E$. Garis tegak lurus ditarik dari $G$ ke titik $F$ di atas garis $DE$. Diketahui panjang $DG = 9\\text{ cm}$, $GE = 16\\text{ cm}$, dan $FG = 12\\text{ cm}$. Berdasarkan kebalikan Teorema Pythagoras, jenis $\\triangle DEF$ dan hubungan antarsisi yang benar adalah ....",
+        "jawaban": "segitiga siku-siku di $F$ karena $DE^2 = DF^2 + EF^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 6 cm dan hipotenusa 30 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$87$",
+      "alasan_benar": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 5 cm: 87.",
+      "distraktor": [
+        {
+          "teks": "$86$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$174$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 5 cm: 87.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93cd8bfa3ad7ede2c3564a46",
+        "teks": "Sebuah drone pemantau melayang diam di atas sebuah gedung. Pengamat $A$ berada di lantai dasar tepat di bawah lintasan vertikal drone. Pengamat $B$ berdiri di tanah berjarak horizontal $36\\text{ meter}$ dari pengamat $A$. Jarak pandang langsung dari pengamat $B$ ke drone adalah $45\\text{ meter}$. Jika seorang teknisi lain berada di atap gedung yang tingginya $12\\text{ meter}$ tepat tegak lurus di atas pengamat $A$, jarak vertikal dari drone ke teknisi di atap gedung tersebut adalah ....",
+        "jawaban": "$15\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 2 cm dan hipotenusa 10 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Kaki kecil x, besar x+2. Pythagoras x²+(x+2)²=100 memberi akar positif x=6; kaki lain 8. Keliling 24. Tambahkan tiga tumpang tindih 3 cm: 33.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+2. Pythagoras x²+(x+2)²=100 memberi akar positif x=6; kaki lain 8. Keliling 24. Tambahkan tiga tumpang tindih 3 cm: 33.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0308ab8efb27321271c4b1ab",
+        "teks": "Sebuah segitiga siku-siku dibentuk menggunakan rumus tripel Pythagoras dengan panjang sisi $(p^2 - q^2)$, $2pq$, dan hipotenusa $(p^2 + q^2)$, di mana $p$ dan $q$ adalah bilangan asli dengan $p > q$. Jika keliling segitiga tersebut adalah $90\\text{ cm}$ dan diketahui $p = 9 - q$, maka luas segitiga siku-siku tersebut adalah ....",
+        "jawaban": "$180\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 7 cm dan hipotenusa 35 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 7 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$105$",
+      "alasan_benar": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 7 cm: 105.",
+      "distraktor": [
+        {
+          "teks": "$104$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$106$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$210$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 7 cm: 105.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8c03f85964efcbfbd938e7a",
+        "teks": "Metode Pak Ahmad menyatakan bahwa jika sisi terpendek segitiga siku-siku adalah bilangan ganjil $S$, maka sisi tegak lainnya adalah $M = \\frac{S^2 - 1}{2}$ dan hipotenusanya adalah $c = \\frac{S^2 + 1}{2}$. Seorang perancang ingin membuat rangka segitiga siku-siku dengan ketentuan metode tersebut sedemikian sehingga keliling segitiga tepat sama dengan hasil kali sisi terpendek $S$ dengan suatu bilangan bulat $k$. Jika $S = 13$, berapakah nilai keliling rangka segitiga tersebut?",
+        "jawaban": "$182\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 10 cm dan hipotenusa 50 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 5 cm: 135.",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$136$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 5 cm: 135.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7517c316cd4e3bd6b2616767",
+        "teks": "Empat orang siswa menguji kelompok panjang sisi suatu segitiga untuk menentukan jenisnya dengan membandingkan kuadrat sisi terpanjang terhadap jumlah kuadrat dua sisi lainnya. Berikut adalah pernyataan mereka:\n- Andi: Segitiga dengan sisi $8\\text{ cm}$, $15\\text{ cm}$, dan $18\\text{ cm}$ adalah segitiga lancip karena $18^2 < 8^2 + 15^2$.\n- Budi: Segitiga dengan sisi $11\\text{ cm}$, $24\\text{ cm}$, dan $26\\text{ cm}$ adalah segitiga tumpul karena $26^2 > 11^2 + 24^2$.\n- Citra: Segitiga dengan sisi $12\\text{ cm}$, $16\\text{ cm}$, dan $21\\text{ cm}$ adalah segitiga tumpul karena $21^2 > 12^2 + 16^2$.\n- Dedi: Segitiga dengan sisi $15\\text{ cm}$, $20\\text{ cm}$, dan $25\\text{ cm}$ adalah segitiga lancip karena $25^2 < 15^2 + 20^2$.\n\nSiswa yang membuat analisis dan kesimpulan yang tepat adalah ....",
+        "jawaban": "Citra",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 4 cm dan hipotenusa 20 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 5 cm: 63.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 5 cm: 63.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bae40b5652caa22a7d1e0bb2",
+        "teks": "Sebuah segitiga siku-siku dibentuk menggunakan rumus tripel Pythagoras dengan panjang hipotenusa $(p^2 + q^2)\\text{ cm}$ serta sisi-sisi siku-siku $(p^2 - q^2)\\text{ cm}$ dan $2pq\\text{ cm}$, di mana $p$ dan $q$ adalah bilangan asli ($p > q$). Jika panjang hipotenusa segitiga tersebut adalah $65\\text{ cm}$ dan diketahui nilai $p + q = 11$, berapakah luas segitiga siku-siku tersebut?",
+        "jawaban": "$924\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 8 cm dan hipotenusa 40 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$108$",
+      "alasan_benar": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 4 cm: 108.",
+      "distraktor": [
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$216$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 4 cm: 108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0710541dd23a1136ec6752",
+        "teks": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+        "jawaban": "$462\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 2 cm dan hipotenusa 10 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 5 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Kaki kecil x, besar x+2. Pythagoras x²+(x+2)²=100 memberi akar positif x=6; kaki lain 8. Keliling 24. Tambahkan tiga tumpang tindih 5 cm: 39.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+2. Pythagoras x²+(x+2)²=100 memberi akar positif x=6; kaki lain 8. Keliling 24. Tambahkan tiga tumpang tindih 5 cm: 39.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93f565824b028445903441c3",
+        "teks": "Sebuah segitiga memiliki panjang sisi-sisi berturut-turut $x\\text{ cm}$, $(x + 3)\\text{ cm}$, dan $15\\text{ cm}$, dengan $15\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan syarat ketaksamaan panjang sisi segitiga, berapakah banyak nilai bilangan bulat $x$ yang mungkin agar segitiga tersebut terbentuk dan merupakan segitiga tumpul?",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 5 cm dan hipotenusa 25 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Kaki kecil x, besar x+5. Pythagoras x²+(x+5)²=625 memberi akar positif x=15; kaki lain 20. Keliling 60. Tambahkan tiga tumpang tindih 3 cm: 69.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+5. Pythagoras x²+(x+5)²=625 memberi akar positif x=15; kaki lain 20. Keliling 60. Tambahkan tiga tumpang tindih 3 cm: 69.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "104719a3192dacf380079077",
+        "teks": "Sebuah kusen jendela direncanakan berbentuk persegi panjang dengan ukuran tinggi $36\\text{ cm}$ dan panjang $77\\text{ cm}$. Tukang kayu mengukur panjang salah satu diagonal kusen tersebut dan memperoleh hasil $85\\text{ cm}$. Apakah kusen jendela tersebut sudah benar-benar berbentuk persegi panjang?",
+        "jawaban": "Ya, benar-benar persegi panjang karena $36^2 + 77^2 = 85^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 10 cm dan hipotenusa 50 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$129$",
+      "alasan_benar": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 3 cm: 129.",
+      "distraktor": [
+        {
+          "teks": "$128$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$130$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$258$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 3 cm: 129.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e5a278d13e498f4558caf5f",
+        "teks": "Sebuah segitiga siku-siku dibentuk dari rumus tripel Pythagoras dengan panjang hipotenusa $(p^2 + q^2)\\text{ cm}$ dan sisi-sisi siku-siku $(p^2 - q^2)\\text{ cm}$ serta $2pq\\text{ cm}$, di mana $p$ dan $q$ adalah bilangan asli dengan $p > q$. Jika nilai numerik luas segitiga tersebut tepat sama dengan $3$ kali nilai numerik kelilingnya, berapakah panjang hipotenusa terpendek yang mungkin dari segitiga-segitiga tersebut?",
+        "jawaban": "$29\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 11 cm dan hipotenusa 55 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 2 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$138$",
+      "alasan_benar": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 2 cm: 138.",
+      "distraktor": [
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$276$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 2 cm: 138.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "956e3b4e85edf41f98f3ad92",
+        "teks": "Banyaknya segitiga siku-siku berbeda (tidak saling kongruen) dengan panjang semua sisinya merupakan bilangan asli dan memiliki salah satu panjang sisi siku-siku tepat $28\\text{ cm}$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 4 cm dan hipotenusa 20 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 3 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$57$",
+      "alasan_benar": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 3 cm: 57.",
+      "distraktor": [
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 3 cm: 57.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a55185dff2181b15b84b90da",
+        "teks": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pythagoras_dimensi_pita",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga siku-siku memiliki selisih kedua kaki 10 cm dan hipotenusa 50 cm. Pada setiap sisi segitiga dipasang pita, tetapi pada tiap sudut dua ujung pita bertumpuk sepanjang 4 cm per sudut. Berapa total panjang pita sebelum ditumpangkan?",
+      "jawaban_benar": "$132$",
+      "alasan_benar": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 4 cm: 132.",
+      "distraktor": [
+        {
+          "teks": "$131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 4 cm: 132.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b02-b-hard-bt01-057"
     }
   ]
 }

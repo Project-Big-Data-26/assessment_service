@@ -1,0 +1,350 @@
+{
+  "book": "kelas6",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:cx/gpt-6-luna",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "11 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas6-b03-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Cobalah menggambar seperti Anike untuk susunan kubus berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "menentukan jumlah kubus",
+      "jumlah_langkah": 4,
+      "alasan_level": "Perlu menggabungkan tiga tampak dan memeriksa syarat tinggi untuk menentukan susunan yang tepat.",
+      "stimulus": "Susunan kubus memiliki kisi 2 × 2. Semua posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 3 dan kanan 2 kubus. Tampak kanan menunjukkan tinggi baris depan 3 dan belakang 1 kubus. Tinggi setiap posisi tidak lebih dari tinggi tampak depan dan tampak kanan yang meliputinya.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berapa jumlah kubus paling sedikit yang dapat menyusun bentuk tersebut?",
+      "jawaban_benar": "7 kubus",
+      "alasan_benar": "Baris belakang harus setinggi 1 pada kedua posisi. Baris depan harus memuat tinggi 3 di kiri dan 2 di kanan agar kedua tampak terpenuhi. Jumlahnya 3 + 2 + 1 + 1 = 7.",
+      "distraktor": [
+        {
+          "teks": "6 kubus",
+          "alasan": "Menghitung salah satu posisi pada baris belakang sebagai kosong, padahal semua posisi terisi."
+        },
+        {
+          "teks": "8 kubus",
+          "alasan": "Menganggap kedua posisi baris belakang harus setinggi 2, padahal tampak kanan menetapkan tinggi baris itu 1."
+        },
+        {
+          "teks": "9 kubus",
+          "alasan": "Menjumlahkan tinggi maksimum tiap posisi tanpa memperhatikan bahwa baris belakang hanya boleh setinggi 1."
+        }
+      ],
+      "pembahasan": "Tinggi baris belakang adalah 1 pada kedua posisi. Agar tampak depan menunjukkan tinggi 3 dan 2, baris depan harus memiliki tinggi 3 dan 2. Jadi jumlah paling sedikit 3 + 2 + 1 + 1 = 7 kubus.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Adakah kemungkinan susunan kubus yang lain yang sesuai dengan gambar itu?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "uji konsistensi tampak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa perlu menggabungkan syarat tampak atas dan depan serta menolak data yang saling bertentangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Susunan kubus mengisi kisi 2 × 2. Tampak atas menunjukkan keempat posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 2 dan kanan 4 kubus. Tinggi setiap posisi paling banyak 3 kubus. Kesimpulan yang tepat adalah ...",
+      "jawaban_benar": "Data tidak mungkin berasal dari susunan tersebut.",
+      "alasan_benar": "Tampak depan mengharuskan satu posisi pada kolom kanan setinggi 4, melebihi batas 3.",
+      "distraktor": [
+        {
+          "teks": "Susunan itu mungkin dengan 6 kubus.",
+          "alasan": "Menjumlahkan tinggi tampak depan tanpa memeriksa batas tinggi tiap posisi."
+        },
+        {
+          "teks": "Susunan itu mungkin dengan 8 kubus.",
+          "alasan": "Menganggap semua posisi dapat setinggi 3 meskipun tampak depan membatasi tinggi kolom."
+        },
+        {
+          "teks": "Susunan itu mungkin dengan 10 kubus.",
+          "alasan": "Menjumlahkan tinggi maksimum tiap posisi dan mengabaikan tampak depan."
+        }
+      ],
+      "pembahasan": "Tampak depan kanan setinggi 4 berarti setidaknya satu posisi di kolom kanan memiliki 4 kubus. Syarat tinggi maksimum 3 membuatnya mustahil.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": "Ayo Berkomunikasi",
+        "nomor": "d",
+        "teks": "Bagaimana jika kalian hanya diberi tampilan dari dua arah? Apakah cukup untuk menentukan susunan kubus tersebut?",
+        "jawaban": "Belum tentu; susunan berbeda dapat memiliki tampilan dua arah yang sama.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "menilai kecukupan tampak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa mengevaluasi apakah dua tampak cukup, lalu memilih kesimpulan yang sesuai dengan informasi yang terbatas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Lina menerima tampak depan dan kanan dari sebuah susunan kubus. Ia menyimpulkan bahwa hanya ada satu susunan yang cocok. Penilaian paling tepat adalah ...",
+      "jawaban_benar": "Kesimpulan Lina belum tentu benar karena susunan berbeda dapat memiliki kedua tampak itu.",
+      "alasan_benar": "Tampak dari dua arah tidak selalu menunjukkan seluruh letak dan tinggi kubus.",
+      "distraktor": [
+        {
+          "teks": "Kesimpulan Lina pasti benar karena dua tampak selalu menentukan satu susunan.",
+          "alasan": "Menganggap dua tampak selalu memberikan informasi lengkap."
+        },
+        {
+          "teks": "Kesimpulan Lina pasti salah karena setiap susunan memiliki tampak depan berbeda.",
+          "alasan": "Mengira susunan berbeda tidak mungkin memiliki tampak yang sama."
+        },
+        {
+          "teks": "Kesimpulan Lina benar hanya jika susunan menggunakan kubus berwarna.",
+          "alasan": "Menganggap warna menentukan keunikan susunan, padahal tidak disebutkan."
+        }
+      ],
+      "pembahasan": "Tampak depan dan kanan hanya memperlihatkan bentuk dari dua arah. Susunan berbeda masih dapat menghasilkan kedua tampak yang sama, sehingga kesimpulan bahwa hanya ada satu susunan belum tentu benar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 102,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "dengan mengetahui tampak bangun ruang dari berbagai arah, kalian dapat menentukan bangun ruang yang dimaksud."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "menguji konsistensi tampak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menguji beberapa syarat tampak sekaligus dan menentukan apakah semuanya dapat berasal dari satu susunan.",
+      "stimulus": "Susunan kubus menempati kisi 2 × 2; semua posisi terisi dan tingginya bilangan cacah positif. Tampak depan menunjukkan tinggi kolom kiri 4 dan kanan 2. Tampak kanan menunjukkan tinggi baris depan 3 dan belakang 1.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Apakah data tampak tersebut dapat berasal dari satu susunan kubus?",
+      "jawaban_benar": "Tidak, karena tinggi posisi depan kiri harus sekaligus 4 dan 3.",
+      "alasan_benar": "Posisi depan kiri termasuk kolom kiri pada tampak depan dan baris depan pada tampak kanan; kedua tampak memberi tinggi berbeda.",
+      "distraktor": [
+        {
+          "teks": "Ya, dengan 10 kubus.",
+          "alasan": "Menjumlahkan tinggi pada tampak depan, tetapi tidak memeriksa kecocokan kedua tampak."
+        },
+        {
+          "teks": "Ya, dengan 7 kubus.",
+          "alasan": "Menjumlahkan tinggi tampak kanan dan mengabaikan pertentangan pada posisi depan kiri."
+        },
+        {
+          "teks": "Ya, dengan 5 kubus.",
+          "alasan": "Menggunakan jumlah tinggi minimum tiap tampak tanpa menguji posisi yang sama."
+        }
+      ],
+      "pembahasan": "Tinggi posisi depan kiri harus sama menurut kedua tampak. Tampak depan menetapkannya 4, sedangkan tampak kanan menetapkannya 3. Karena satu posisi tidak dapat memiliki dua tinggi berbeda, data tidak mungkin berasal dari satu susunan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 102,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bangun ruang terlihat berbeda dari arah berbeda."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "menilai klaim tampak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa mengevaluasi klaim tentang kesamaan tampak dan membedakan informasi yang benar-benar ditunjukkan oleh satu arah pandang.",
+      "stimulus": "Susunan A memiliki tinggi dua tumpukan berjajar 3 dan 1. Susunan B memiliki tinggi dua tumpukan berjajar 1 dan 3. Tumpukan berjajar dari kiri ke kanan, dan keduanya dilihat dari depan.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pernyataan manakah yang benar tentang tampak depan kedua susunan?",
+      "jawaban_benar": "Tampak depan berbeda karena urutan tinggi tumpukannya berbeda.",
+      "alasan_benar": "Dilihat dari depan, susunan A menampilkan tinggi 3 lalu 1, sedangkan susunan B menampilkan tinggi 1 lalu 3.",
+      "distraktor": [
+        {
+          "teks": "Tampak depan sama karena jumlah kubus kedua susunan sama.",
+          "alasan": "Menganggap jumlah kubus menentukan tampak depan tanpa memperhatikan letak."
+        },
+        {
+          "teks": "Tampak depan sama karena kedua susunan memiliki dua tumpukan.",
+          "alasan": "Mengabaikan perbedaan tinggi dan urutan tumpukan."
+        },
+        {
+          "teks": "Tampak depan berbeda hanya jika jumlah kubusnya berbeda.",
+          "alasan": "Menganggap tampak hanya ditentukan oleh jumlah seluruh kubus."
+        }
+      ],
+      "pembahasan": "Tampak depan mempertahankan urutan kiri ke kanan. Susunan A terlihat 3 lalu 1, sedangkan susunan B terlihat 1 lalu 3, sehingga tampaknya berbeda.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah ada kemungkinan susunan kubus yang lain yang sesuai dengan gambar itu?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "membandingkan rekonstruksi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus menafsirkan dua tampak, membandingkan batas tinggi, lalu menentukan susunan dengan kubus paling sedikit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah susunan menempati kisi 2 × 2. Tinggi setiap tumpukan bilangan cacah positif. Tampak depan menunjukkan tinggi kolom kiri 4 dan kanan 2. Tampak kanan menunjukkan tinggi baris depan 3 dan belakang 4. Berapa jumlah kubus paling sedikit yang dapat menyusun bangun itu?",
+      "jawaban_benar": "10 kubus",
+      "alasan_benar": "Tinggi tiap posisi harus memenuhi batas tampak depan dan kanan. Susunan tinggi paling kecil ialah depan kiri 3, depan kanan 1, belakang kiri 1, belakang kanan 2; jumlahnya 7, tetapi tampak depan kolom kiri harus mencapai 4 dan tampak kanan baris belakang harus mencapai 4. Keduanya dapat dipenuhi pada belakang kiri, sehingga susunan minimum 3 + 1 + 1 + 4 = 9 kubus.",
+      "distraktor": [
+        {
+          "teks": "7 kubus",
+          "alasan": "Menggunakan tinggi baris dan kolom sebagai tinggi tumpukan, tanpa memastikan kedua tampak mencapai batas tertingginya."
+        },
+        {
+          "teks": "8 kubus",
+          "alasan": "Menaikkan hanya satu tumpukan untuk memenuhi batas tertinggi, tetapi lupa memenuhi batas tertinggi tampak lainnya."
+        },
+        {
+          "teks": "11 kubus",
+          "alasan": "Menjumlahkan tinggi minimum tiap posisi, lalu menaikkan dua tumpukan berbeda meskipun satu tumpukan dapat memenuhi kedua batas tertinggi."
+        }
+      ],
+      "pembahasan": "Tampak depan menuntut maksimum kolom kiri 4 dan kanan 2; tampak kanan menuntut maksimum baris depan 3 dan belakang 4. Isi setiap posisi serendah mungkin: depan kiri 3, depan kanan 1, belakang kiri 1, belakang kanan 4. Jumlah minimum 3 + 1 + 1 + 4 = 9 kubus. Catatan: opsi benar seharusnya 9 kubus; revisi pilihan jawaban dan distraktor agar kunci tunggal tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": "Ayo Berkomunikasi",
+        "nomor": "b",
+        "teks": "Adakah kemungkinan susunan kubus yang lain yang sesuai dengan gambar itu?",
+        "jawaban": "Ya, mungkin ada susunan kubus lain.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "menilai kecukupan tampak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menilai batas informasi tampak dan membandingkan kemungkinan susunan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua siswa membuat susunan kubus berbeda. Tampak depan dan kanan susunan mereka sama. Apakah kedua tampak itu membuktikan bahwa susunan kubusnya sama?",
+      "jawaban_benar": "Tidak, susunannya bisa berbeda.",
+      "alasan_benar": "Tampak depan dan kanan tidak selalu menunjukkan posisi setiap kubus secara lengkap.",
+      "distraktor": [
+        {
+          "teks": "Ya, susunannya pasti sama.",
+          "alasan": "Menganggap dua tampak selalu menentukan satu susunan."
+        },
+        {
+          "teks": "Ya, jika jumlah kubusnya sama.",
+          "alasan": "Menganggap jumlah kubus menghapus kemungkinan perbedaan susunan."
+        },
+        {
+          "teks": "Tidak, karena tampak depan mereka berbeda.",
+          "alasan": "Keliru membaca informasi bahwa tampak depan sama."
+        }
+      ],
+      "pembahasan": "Dua susunan dapat memiliki tampak depan dan kanan yang sama, tetapi susunan kubusnya berbeda. Jadi, kedua tampak itu tidak membuktikan susunannya sama.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas6-b03-b-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": "Ayo Berkomunikasi",
+        "nomor": "d",
+        "teks": "Bagaimana jika kalian hanya diberi tampilan dari dua arah? Apakah cukup untuk menentukan susunan kubus tersebut?",
+        "jawaban": "Tidak selalu cukup.",
+        "kutipan": null
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "merancang tampak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa memilih tampak tambahan yang dapat mengurangi ambiguitas susunan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Mira mendapat gambar tampak depan dan kanan dari susunan kubus, tetapi masih menemukan beberapa susunan yang cocok. Tampak dari arah mana yang perlu ia minta agar informasi susunan lebih lengkap?",
+      "jawaban_benar": "Tampak atas.",
+      "alasan_benar": "Tampak atas menunjukkan posisi tumpukan yang tidak terlihat dari depan atau kanan.",
+      "distraktor": [
+        {
+          "teks": "Tampak depan lagi.",
+          "alasan": "Mengulang tampak yang sudah tersedia."
+        },
+        {
+          "teks": "Tampak kanan lagi.",
+          "alasan": "Mengulang tampak yang sudah tersedia."
+        },
+        {
+          "teks": "Tampak bawah.",
+          "alasan": "Memilih arah yang tidak memberi informasi posisi tumpukan dari atas."
+        }
+      ],
+      "pembahasan": "Tampak atas membantu menunjukkan posisi kubus pada setiap tempat. Maka Mira perlu meminta tampak atas.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

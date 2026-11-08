@@ -335,6 +335,1040 @@
       ],
       "pembahasan": "n = 6 x k. Karena 6 = 2 x 3, n = 2 x (3k) = 3 x (2k), jadi 2 dan 3 faktor n. Contoh n = 6 atau 18 membantah ketiga pilihan lain.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b270725510f9980698e06549",
+        "teks": "Bilangan terbesar yang kurang dari 50 dan mempunyai tepat 3 faktor adalah ....",
+        "jawaban": "49",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "faktor_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep faktor dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebanyak 72 kartu dibagi ke beberapa kotak, tiap kotak sama banyak dan tanpa sisa. Jumlah kotak paling sedikit 2. Ada berapa pilihan jumlah kotak?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Jumlah kotak merupakan faktor 72 yang minimal 2: [2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72]. Ada 11 pilihan.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah faktor dengan syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah faktor dengan syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah faktor dengan syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah kotak merupakan faktor 72 yang minimal 2: [2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72]. Ada 11 pilihan.",
+      "catatan": "codex-replenishment:kelas5-b02-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b02-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e79e88cc464277e4aeabc3f",
+        "teks": "Bilangan berikut yang memiliki 6 dan 8 sebagai faktornya adalah ....",
+        "jawaban": "48",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 112 jeruk dan 112 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 2 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$112$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 112/2+112/2=112.",
+      "distraktor": [
+        {
+          "teks": "$111$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $112$."
+        },
+        {
+          "teks": "$113$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $112$."
+        },
+        {
+          "teks": "$224$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 112/2+112/2=112.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-c-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6ce2be2f3fd480b339c422f",
+        "teks": "Faktor-faktor dari 28 adalah ....",
+        "jawaban": "1, 2, 4, 7, 14, dan 28",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 52 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 8 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$143$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 8. Kandidat [1]; terbesar 1. Isi per kantong 91/1+52/1=143.",
+      "distraktor": [
+        {
+          "teks": "$142$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$286$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 8. Kandidat [1]; terbesar 1. Isi per kantong 91/1+52/1=143.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/9cdb3fd8f28592466b922ef6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              91
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 91]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "605ecc6268c16c0e8474a0d1",
+        "teks": "Dengan cara yang sama seperti mencari faktor dari 12, faktor-faktor dari 45 adalah ....",
+        "jawaban": "1, 3, 5, 9, 15, dan 45",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 30 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 5 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 5]; terbesar 5. Isi per kantong 25/5+30/5=11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 5]; terbesar 5. Isi per kantong 25/5+30/5=11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/95a895cd8e2867d01f9b2c98.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              25
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 25]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a14b4d5445e1ca33e840e691",
+        "teks": "Pak Budi memotong seutas tali sepanjang 40 meter menjadi beberapa potong yang sama panjang dan tidak ada tali yang tersisa. Panjang setiap potong yang mungkin (dalam meter) adalah ....",
+        "jawaban": "1, 2, 4, 5, 8, 10, 20, dan 40",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 45 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 4 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1]; terbesar 1. Isi per kantong 25/1+45/1=70.",
+      "distraktor": [
+        {
+          "teks": "$69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1]; terbesar 1. Isi per kantong 25/1+45/1=70.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/95a895cd8e2867d01f9b2c98.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              25
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 25]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd549bc6c3ff21ef7a43e4f9",
+        "teks": "Ibu menata 32 kue ke dalam beberapa kotak. Setiap kotak berisi kue sama banyak dan semua kue habis. Banyak kue dalam satu kotak yang mungkin adalah ....",
+        "jawaban": "1, 2, 4, 8, 16, dan 32",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 80 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 7 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 2, 4, 5]; terbesar 5. Isi per kantong 20/5+80/5=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 2, 4, 5]; terbesar 5. Isi per kantong 20/5+80/5=20.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/5de06487ee6f656ea886637c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              20
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 20]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14c62c9f750393f3398dc8d6",
+        "teks": "Faktor-faktor dari 75 adalah ....",
+        "jawaban": "1, 3, 5, 15, 25, dan 75",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 42 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 2 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 36/2+42/2=39.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 36/2+42/2=39.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e3d38bee0eb414faf2f3e574",
+        "teks": "Dengan cara yang sama, faktor-faktor dari 56 adalah ....",
+        "jawaban": "1, 2, 4, 7, 8, 14, 28, dan 56",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 104 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 5 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$143$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1]; terbesar 1. Isi per kantong 39/1+104/1=143.",
+      "distraktor": [
+        {
+          "teks": "$142$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$286$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1]; terbesar 1. Isi per kantong 39/1+104/1=143.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/bf054672a8512b92bf03b0a3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              39
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 39]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "adb65fddb93a7f1fcc613b0a",
+        "teks": "Bilangan berikut yang merupakan faktor dari 42 adalah ....",
+        "jawaban": "14",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 20 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 10 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 10. Kandidat [1, 2, 4, 5, 10]; terbesar 10. Isi per kantong 80/10+20/10=10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 10. Kandidat [1, 2, 4, 5, 10]; terbesar 10. Isi per kantong 80/10+20/10=10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/db30e1aec49f165c4c3912cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              80
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 80]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4826c04281547651b40f75b4",
+        "teks": "Faktor-faktor dari 40 saling berpasangan. Faktor 5 berpasangan dengan faktor ...., karena 5 x .... = 40.",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 112 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 7 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 42/7+112/7=22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 42/7+112/7=22.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/846d23dc8e232f5dde8a9ce7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              42
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 42]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "56347250efa66c88cd26c04b",
+        "teks": "Bilangan cacah yang dapat membagi suatu bilangan tanpa sisa disebut ....",
+        "jawaban": "faktor",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 22 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 6 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 6. Kandidat [1]; terbesar 1. Isi per kantong 55/1+22/1=77.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 6. Kandidat [1]; terbesar 1. Isi per kantong 55/1+22/1=77.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/3dfb0827a7b4af933166c527.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              55
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 55]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07ff75b0bc1dc510ff7165f3",
+        "teks": "Banyak faktor dari 20 adalah ....",
+        "jawaban": "6 faktor",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 10 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 3 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 3. Kandidat [1]; terbesar 1. Isi per kantong 35/1+10/1=45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 3. Kandidat [1]; terbesar 1. Isi per kantong 35/1+10/1=45.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/c2c74d3d5dc3b2934a0580b4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              35
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 35]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ceedf9bf48abf651ba85e9e2",
+        "teks": "Dani menulis faktor dari 60 sebagai 1, 2, 3, 4, 5, 6, 10, 15, 20, 30, dan 60. Daftar Dani kurang satu faktor. Faktor yang terlewat adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Ada $T_1$ jeruk dan 36 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 4 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 8/4+36/4=11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 8/4+36/4=11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b270725510f9980698e06549",
+        "teks": "Bilangan terbesar yang kurang dari 50 dan mempunyai tepat 3 faktor adalah ....",
+        "jawaban": "49",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 32 jeruk dan 40 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 6 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 6. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 32/4+40/4=18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 6. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 32/4+40/4=18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d75da2b3c5f2e6be7e1863c",
+        "teks": "Pernyataan yang benar adalah ....",
+        "jawaban": "Setiap faktor dari 24 juga faktor dari 48",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 40 jeruk dan 32 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 5 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 40/4+32/4=18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 2, 4]; terbesar 4. Isi per kantong 40/4+32/4=18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b333aee7161a2d786f3e334e",
+        "teks": "Panitia menata 36 kursi dalam beberapa baris. Setiap baris berisi kursi sama banyak dan tidak ada kursi tersisa. Banyak baris paling sedikit 3 dan banyak kursi tiap baris juga paling sedikit 3. Banyak rancangan susunan yang berbeda adalah ....",
+        "jawaban": "5 rancangan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 42 jeruk dan 84 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 4 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1, 2, 3]; terbesar 3. Isi per kantong 42/3+84/3=42.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 4. Kandidat [1, 2, 3]; terbesar 3. Isi per kantong 42/3+84/3=42.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "df83c600114db3575e690ca9",
+        "teks": "Dua faktor dari 60 jika dikalikan hasilnya 60, dan selisih kedua faktor itu 4. Jumlah kedua faktor itu adalah ....",
+        "jawaban": "16",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 63 jeruk dan 36 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 2 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$99$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1]; terbesar 1. Isi per kantong 63/1+36/1=99.",
+      "distraktor": [
+        {
+          "teks": "$98$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$198$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1]; terbesar 1. Isi per kantong 63/1+36/1=99.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39a6c37410d32a0c4d5cd75d",
+        "teks": "Di antara bilangan 31 sampai 39, ada satu bilangan yang banyak faktornya ganjil. Bilangan itu adalah ....",
+        "jawaban": "36",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 70 jeruk dan 56 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 11 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 11. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 70/7+56/7=18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 11. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 70/7+56/7=18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cabd679f49b95e6956251d64",
+        "teks": "Rina berkata, bilangan 91 hanya punya faktor 1 dan 91 karena 91 tidak habis dibagi 2, 3, dan 5. Faktor lain yang membuktikan Rina salah adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 48 jeruk dan 12 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 5 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 2, 3, 4]; terbesar 4. Isi per kantong 48/4+12/4=15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 5. Kandidat [1, 2, 3, 4]; terbesar 4. Isi per kantong 48/4+12/4=15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9fa800e40737cb60e33161e7",
+        "teks": "Sebuah bilangan lebih dari 20 dan kurang dari 30. Bilangan itu mempunyai tepat 4 faktor, dan jumlah semua faktornya 32. Bilangan itu adalah ....",
+        "jawaban": "21",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 98 jeruk dan 84 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 9 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 9. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 98/7+84/7=26.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 9. Kandidat [1, 2, 7]; terbesar 7. Isi per kantong 98/7+84/7=26.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9c0a52a017673573a1637373",
+        "teks": "Bilangan n mempunyai faktor 6. Pernyataan yang pasti benar tentang n adalah ....",
+        "jawaban": "2 dan 3 juga faktor dari n",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 55 jeruk dan 22 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 3 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 3. Kandidat [1]; terbesar 1. Isi per kantong 55/1+22/1=77.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 3. Kandidat [1]; terbesar 1. Isi per kantong 55/1+22/1=77.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f801e948192ccde4fea27c7a",
+        "teks": "Ayah memotong seutas pita sepanjang 60 cm menjadi potongan yang sama panjang tanpa sisa. Panjang tiap potongan adalah bilangan cacah cm, lebih dari 5 cm dan kurang dari 30 cm. Panjang potongan yang mungkin (dalam cm) adalah ....",
+        "jawaban": "6, 10, 12, 15, dan 20",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Ada 21 jeruk dan 42 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 7 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 3, 7]; terbesar 7. Isi per kantong 21/7+42/7=9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 7. Kandidat [1, 3, 7]; terbesar 7. Isi per kantong 21/7+42/7=9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b02-c-hard-bt01-032"
     }
   ]
 }

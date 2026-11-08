@@ -335,6 +335,896 @@
       "id": "kelas5-b01-b-easy-bt01-010",
       "stimulus": null,
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce8e6b0e1d08bcd7526a3f30",
+        "teks": "Harga enam mainan di sebuah toko: Rp59.900,00, Rp60.000,00, Rp60.100,00, Rp56.999,00, Rp65.000,00, dan Rp9.999,00. Banyak mainan yang harganya kurang dari Rp60.000,00 adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "membandingkan_bilangan",
+      "alasan_level": "Target easy; variasi konsep membandingkan bilangan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Empat bilangan adalah 86.700; 87.357; 87.114; 87.304. Bilangan terbesar adalah ....",
+      "jawaban_benar": "$87357$",
+      "alasan_benar": "Bandingkan digit dari nilai tempat tertinggi. Urutan naiknya [86700, 87114, 87304, 87357]; yang terbesar 87357.",
+      "distraktor": [
+        {
+          "teks": "$87358$",
+          "alasan": "Pilihan $87358$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $87357$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        },
+        {
+          "teks": "$87356$",
+          "alasan": "Pilihan $87356$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $87357$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        },
+        {
+          "teks": "$87359$",
+          "alasan": "Pilihan $87359$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $87357$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit dari nilai tempat tertinggi. Urutan naiknya [86700, 87114, 87304, 87357]; yang terbesar 87357.",
+      "catatan": "codex-replenishment:kelas5-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b01-b-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31b2bfda9f00db99554380a7",
+        "teks": "Tia membandingkan 40.906 dan 40.960. Ia berkata, \"40.906 lebih besar karena angka satuannya 6 lebih besar daripada 0.\" Penilaian yang benar atas ucapan Tia adalah ....",
+        "jawaban": "Salah, karena angka pertama yang berbeda ada pada puluhan (0 < 6), sehingga 40.906 < 40.960",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "membandingkan_bilangan",
+      "alasan_level": "Target easy; variasi konsep membandingkan bilangan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Empat bilangan adalah 69.884; 70.248; 69.795; 70.417. Bilangan terbesar adalah ....",
+      "jawaban_benar": "$70417$",
+      "alasan_benar": "Bandingkan digit dari nilai tempat tertinggi. Urutan naiknya [69795, 69884, 70248, 70417]; yang terbesar 70417.",
+      "distraktor": [
+        {
+          "teks": "$70418$",
+          "alasan": "Pilihan $70418$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $70417$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        },
+        {
+          "teks": "$70416$",
+          "alasan": "Pilihan $70416$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $70417$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        },
+        {
+          "teks": "$70419$",
+          "alasan": "Pilihan $70419$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $70417$. Periksa kembali langkah membandingkan bilangan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit dari nilai tempat tertinggi. Urutan naiknya [69795, 69884, 70248, 70417]; yang terbesar 70417.",
+      "catatan": "codex-replenishment:kelas5-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b01-b-easy-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3876c483f69a49bf5516aa9b",
+        "teks": "Bandingkan bilangan berikut dan temukan bilangan yang nilainya lebih kecil.\n\na. 71.254 dan 69.874\n\nb. 45.632 dan 45.362\n\nc. 20.918 dan 29.108\n\nBilangan yang nilainya lebih kecil pada a, b, dan c berturut-turut adalah ....",
+        "jawaban": "69.874, 45.362, dan 20.918",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$89257$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $89257$.",
+      "distraktor": [
+        {
+          "teks": "$89258$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$89256$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$89259$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $89257$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/ea67c3ea39a504024d395a2d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "26223"
+            ],
+            [
+              "B",
+              "89257"
+            ],
+            [
+              "C",
+              "71939"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"26223\"], [\"B\", \"89257\"], [\"C\", \"71939\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ef7e43323027e0944c82991",
+        "teks": "Banyak penduduk empat desa: Desa Sari 36.480 orang, Desa Mekar 36.048 orang, Desa Jaya 63.408 orang, dan Desa Tirta 36.840 orang. Desa yang penduduknya paling sedikit adalah ....",
+        "jawaban": "Desa Mekar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$92212$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $92212$.",
+      "distraktor": [
+        {
+          "teks": "$92213$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92211$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92214$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $92212$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/935c70cd90239afd6bbb5d4f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "78134"
+            ],
+            [
+              "B",
+              "92212"
+            ],
+            [
+              "C",
+              "71219"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"78134\"], [\"B\", \"92212\"], [\"C\", \"71219\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c284d88da1784ff4d373829",
+        "teks": "Pernyataan berikut yang benar adalah ....",
+        "jawaban": "93.405 > 93.045",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$87263$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $87263$.",
+      "distraktor": [
+        {
+          "teks": "$87264$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87262$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87265$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $87263$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/43d8199f64412a8ca339fb9b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "30276"
+            ],
+            [
+              "B",
+              "27986"
+            ],
+            [
+              "C",
+              "87263"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"30276\"], [\"B\", \"27986\"], [\"C\", \"87263\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4cfacd93378036868ea29892",
+        "teks": "Bilangan yang tepat untuk mengisi titik-titik pada barisan 24.250, 25.250, ...., ...., 28.250 adalah ....",
+        "jawaban": "26.250 dan 27.250",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$84502$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $84502$.",
+      "distraktor": [
+        {
+          "teks": "$84503$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84501$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84504$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $84502$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/e0484a14ad0eed9522e27450.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "46845"
+            ],
+            [
+              "B",
+              "79461"
+            ],
+            [
+              "C",
+              "84502"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"46845\"], [\"B\", \"79461\"], [\"C\", \"84502\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25e511c93afbfc8fa5448b6d",
+        "teks": "Bilangan yang tepat untuk mengisi titik-titik pada barisan ...., 40.000, 55.000, .... adalah ....",
+        "jawaban": "25.000 dan 70.000",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$42512$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $42512$.",
+      "distraktor": [
+        {
+          "teks": "$42513$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42511$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42514$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $42512$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/ce1afde0940e04e7f68a9f0a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "24492"
+            ],
+            [
+              "B",
+              "42512"
+            ],
+            [
+              "C",
+              "16588"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"24492\"], [\"B\", \"42512\"], [\"C\", \"16588\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e29b3f12b6d1eac402684e82",
+        "teks": "Bilangan yang tepat untuk mengisi titik-titik pada barisan 63.200, ...., 63.400, ...., 63.600 adalah ....",
+        "jawaban": "63.300 dan 63.500",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$57591$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $57591$.",
+      "distraktor": [
+        {
+          "teks": "$57592$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57590$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57593$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $57591$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/d9c6bbae947cf74015c1592d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "52478"
+            ],
+            [
+              "B",
+              "57591"
+            ],
+            [
+              "C",
+              "45389"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"52478\"], [\"B\", \"57591\"], [\"C\", \"45389\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "41b5853eba43224120e6bc9e",
+        "teks": "Harga empat papan dakon: P Rp48.750,00, Q Rp48.570,00, R Rp47.850,00, dan S Rp84.570,00. Urutan papan dari harga yang paling murah ke paling mahal adalah ....",
+        "jawaban": "R, Q, P, S",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$99242$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $99242$.",
+      "distraktor": [
+        {
+          "teks": "$99243$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$99241$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$99244$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $99242$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/fbb545dbbe4cdc8c9a36fd69.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "99242"
+            ],
+            [
+              "B",
+              "11672"
+            ],
+            [
+              "C",
+              "65358"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"99242\"], [\"B\", \"11672\"], [\"C\", \"65358\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2f6f8e5c5e9a4a7f18e75aa0",
+        "teks": "Bilangan 29.640, 92.460, 29.460, dan 92.640 diurutkan dari yang terbesar ke terkecil. Urutan yang benar adalah ....",
+        "jawaban": "92.640, 92.460, 29.640, 29.460",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Manakah bilangan terbesar di antara $A,B,C$?",
+      "jawaban_benar": "$45619$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $45619$.",
+      "distraktor": [
+        {
+          "teks": "$45620$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45618$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45621$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $45619$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/2a1e640899a4da61c910e05e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "31084"
+            ],
+            [
+              "B",
+              "34709"
+            ],
+            [
+              "C",
+              "45619"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"31084\"], [\"B\", \"34709\"], [\"C\", \"45619\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3a63e98340a28011d2088b7",
+        "teks": "Lukas membawa uang Rp59.000,00. Harga empat papan dakon: a Rp54.800,00, b Rp58.450,00, c Rp61.200,00, dan d Rp58.540,00. Papan dakon termahal yang uangnya cukup untuk dibeli Lukas adalah ....",
+        "jawaban": "Papan d, Rp58.540,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${50628},{57646},{78863}$?",
+      "jawaban_benar": "$78863$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $78863$.",
+      "distraktor": [
+        {
+          "teks": "$78864$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78862$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78865$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $78863$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0db548e34a3ded582c570f18",
+        "teks": "Dua bilangan 47.320 dan 47.230 dibandingkan dari kiri ke kanan. Angka yang pertama kali berbeda terdapat pada nilai tempat ....",
+        "jawaban": "ratusan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${86492},{35388},{10854}$?",
+      "jawaban_benar": "$86492$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $86492$.",
+      "distraktor": [
+        {
+          "teks": "$86493$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86491$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86494$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $86492$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466d375d99ffb675e31ce388",
+        "teks": "Dina mengurutkan empat bilangan dari yang terkecil ke terbesar: 25.843, 52.384, 52.348, 52.438. Urutan Dina belum benar. Agar urutannya benar, dua bilangan yang harus saling ditukar tempatnya adalah ....",
+        "jawaban": "52.384 dan 52.348",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${38318},{72899},{60319}$?",
+      "jawaban_benar": "$72899$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $72899$.",
+      "distraktor": [
+        {
+          "teks": "$72900$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72898$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $72899$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac437a8e8c6fa8498e3dfcfe",
+        "teks": "Beni berkata, \"Bilangan lima angka yang angka satuannya 9 selalu lebih besar daripada bilangan lima angka yang angka satuannya 1.\" Penilaian yang benar atas ucapan Beni adalah ....",
+        "jawaban": "Salah, karena yang menentukan adalah nilai tempat terbesar yang berbeda; contohnya 19.999 lebih kecil daripada 20.001",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${22636},{82578},{21194}$?",
+      "jawaban_benar": "$82578$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $82578$.",
+      "distraktor": [
+        {
+          "teks": "$82579$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82577$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82580$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $82578$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c815b591c59aedf8b0234cc",
+        "teks": "Lima kartu angka 4, 5, 6, 7, dan 8 masing-masing dipakai tepat satu kali untuk membentuk bilangan lima angka. Banyak bilangan yang lebih besar dari 45.000 dan lebih kecil dari 47.000 adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${27852},{23010},{48477}$?",
+      "jawaban_benar": "$48477$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $48477$.",
+      "distraktor": [
+        {
+          "teks": "$48478$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48476$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48479$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $48477$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6443dd3cd1b1ebc68401b6d5",
+        "teks": "Sebuah nomor kode terdiri atas lima angka dan memenuhi syarat: lebih besar daripada 57.300, lebih kecil daripada 57.400, angka puluhannya 6, kelima angkanya berbeda semua, dan angka satuannya genap. Nomor kode terbesar yang memenuhi syarat adalah ....",
+        "jawaban": "57.368",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${29173},{81664},{49964}$?",
+      "jawaban_benar": "$81664$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $81664$.",
+      "distraktor": [
+        {
+          "teks": "$81665$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81663$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81666$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $81664$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76dae81706da83b6e8a267df",
+        "teks": "Harga empat papan dakon: a Rp56.560,00, b Rp65.750,00, c Rp57.000,00, dan d Rp75.360,00. Lukas membawa uang Rp57.000,00 dan boleh membeli papan yang harganya sama dengan atau kurang dari uangnya. Papan dakon yang boleh dibeli Lukas adalah ....",
+        "jawaban": "papan a dan papan c",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${88132},{26943},{83297}$?",
+      "jawaban_benar": "$88132$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $88132$.",
+      "distraktor": [
+        {
+          "teks": "$88133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88134$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $88132$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "004dca7e2b53cfd3d0d17e24",
+        "teks": "Pada barisan dengan beda tetap berikut, tepat satu bilangan salah ditulis: 38.250, 39.750, 41.250, 42.850, 44.250. Bilangan yang salah dan nilai yang seharusnya adalah ....",
+        "jawaban": "42.850 seharusnya 42.750",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s5_banding",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Manakah bilangan terbesar di antara ${75571},{19798},{31143}$?",
+      "jawaban_benar": "$75571$",
+      "alasan_benar": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $75571$.",
+      "distraktor": [
+        {
+          "teks": "$75572$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$75570$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$75573$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bandingkan digit mulai nilai tempat terbesar Perhitungan dengan data tersebut memberi $75571$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b01-b-easy-bt01-028"
     }
   ]
 }

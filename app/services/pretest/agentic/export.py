@@ -97,6 +97,8 @@ def export_book(key: str) -> dict:
     for r in records:
         summary[r["status"]] = summary.get(r["status"], 0) + 1
     out = os.path.join(book.out_dir(), "soal_pretest.json")
+    from app.presentation.latex import normalize_document
+    records = normalize_document(records)
     with open(out, "w", encoding="utf-8") as f:
         json.dump({"pipeline_version": PIPELINE_VERSION, "book": key, "summary": summary, "items": records},
                   f, ensure_ascii=False, indent=2)

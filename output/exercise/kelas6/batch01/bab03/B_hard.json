@@ -345,6 +345,1191 @@
       "pembahasan": "Tampak atas membantu menunjukkan posisi kubus pada setiap tempat. Maka Mira perlu meminta tampak atas.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb242a99154441662b4a59b0",
+        "teks": "Doni hanya menerima gambar tampak depan sebuah bangunan dari kubus. Kesimpulan apa yang tepat?",
+        "jawaban": "Tampak depan saja belum tentu menentukan susunan kubus dengan pasti",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (5,4); tampak samping memberi maksimum tiap baris (5,3). Diketahui b=4. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Karena b=4<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=4<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b198b772d51ab61ccccc752f",
+        "teks": "Saat sebuah balok diputar, mengapa bentuk tampaknya dapat berubah?",
+        "jawaban": "Sisi balok yang terlihat berubah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,1); tampak samping memberi maksimum tiap baris (4,1). Diketahui b=1. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "686938656ac00e8ee35c03cd",
+        "teks": "Susunan kubus memiliki dua posisi berjajar. Tampak atas menunjukkan kedua posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 4 kubus dan kanan 2 kubus. Berapa tinggi kolom kiri jika tampak kanan menunjukkan tinggi 4 kubus?",
+        "jawaban": "4 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,3); tampak samping memberi maksimum tiap baris (4,3). Diketahui b=3. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Karena b=3<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=3<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a72b4490bd9509d73d8f729",
+        "teks": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 5, 1, dan 5 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,1); tampak samping memberi maksimum tiap baris (4,2). Diketahui b=1. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 2, sehingga c atau d harus 2; untuk minimum, pilih satu sel setinggi 2, yang lain 1, selama batas kolom dipenuhi. Total minimum 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 2, sehingga c atau d harus 2; untuk minimum, pilih satu sel setinggi 2, yang lain 1, selama batas kolom dipenuhi. Total minimum 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "251dbd679b354e00c5bc9c9d",
+        "teks": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 1, 2, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (5,2); tampak samping memberi maksimum tiap baris (5,1). Diketahui b=2. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Karena b=2<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=2<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b3e9d3d4addea734d0d8930b",
+        "teks": "Pada sebuah dadu, jumlah mata pada setiap pasangan sisi yang berlawanan adalah 9. Satu sisi memiliki 5 mata. Berapa mata pada sisi yang berlawanan?",
+        "jawaban": "4 mata dadu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 5 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 3 dan baris kedua 5. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "113ef7c2b5c851ac530feb8a",
+        "teks": "Sebuah kubus bernomor memiliki jumlah angka 10 pada setiap pasangan sisi yang berlawanan. Jika satu sisi bernomor 6, berapa angka pada sisi yang berlawanan?",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 6 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 1 dan baris kedua 6. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $11$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $11$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "256464237d84c9cc3767c4c3",
+        "teks": "Mengapa sebuah kubus dapat terlihat berbeda saat dilihat dari arah yang berbeda?",
+        "jawaban": "Bagian sisi yang terlihat dapat berbeda",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 8 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 8. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1fc511637ac2e09652d0af3",
+        "teks": "Informasi apa yang membantu kita menentukan bangun ruang dari gambar tampak?",
+        "jawaban": "Tampilan bangun dari berbagai arah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 6 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 3 dan baris kedua 6. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $13$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $13$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "384443c55cda668b5862610a",
+        "teks": "Dua susunan kubus dapat memiliki tampilan depan dan kanan yang sama. Apakah kedua tampilan itu pasti menentukan satu susunan saja?",
+        "jawaban": "Tidak, susunan lain masih mungkin",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 4 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 4. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e5e4d11acd319aa792e2e34e",
+        "teks": "Rani membuat gambar tampak sebuah susunan kubus dari depan, kanan, dan atas. Apa kegunaan gambar tampak tersebut?",
+        "jawaban": "Membantu mengetahui bentuk susunan kubus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 5 dan kolom kedua 1. Tampak samping menunjukkan maksimum baris pertama $T_1$ dan baris kedua 5. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb242a99154441662b4a59b0",
+        "teks": "Doni hanya menerima gambar tampak depan sebuah bangunan dari kubus. Kesimpulan apa yang tepat?",
+        "jawaban": "Tampak depan saja belum tentu menentukan susunan kubus dengan pasti",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 7 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 4 dan baris kedua 7. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07227a864998aae6d2a58917",
+        "teks": "Dua kelompok membuat susunan kubus berbeda, tetapi gambar tampak depan dan kanan keduanya sama. Apa yang dapat disimpulkan?",
+        "jawaban": "Susunannya dapat berbeda meskipun kedua tampak itu sama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 7 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 3 dan baris kedua 7. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6ad3203a407b9c9b12fcdd38",
+        "teks": "Sebuah petunjuk hanya menunjukkan tampak depan dan atas dari susunan kubus. Pernyataan mana yang benar?",
+        "jawaban": "Susunan kubusnya belum tentu dapat ditentukan dengan pasti",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 4 dan kolom kedua 2. Tampak samping menunjukkan maksimum baris pertama $T_1$ dan baris kedua 4. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b198b772d51ab61ccccc752f",
+        "teks": "Saat sebuah balok diputar, mengapa bentuk tampaknya dapat berubah?",
+        "jawaban": "Sisi balok yang terlihat berubah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 7 dan kolom kedua 1. Tampak samping menunjukkan maksimum baris pertama $T_1$ dan baris kedua 7. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $13$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $13$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0954cec56a4c7c886b0fff62",
+        "teks": "Susunan kubus memiliki kisi 2 × 2. Semua posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 3 dan kanan 2 kubus. Tampak kanan menunjukkan tinggi baris depan 3 dan belakang 1 kubus. Tinggi setiap posisi tidak lebih dari tinggi tampak depan dan tampak kanan yang meliputinya.\n\nBerapa jumlah kubus paling sedikit yang dapat menyusun bentuk tersebut?",
+        "jawaban": "7 kubus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 8 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 3 dan baris kedua 8. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c878056c17669efdfa01dc1",
+        "teks": "Susunan kubus mengisi kisi 2 × 2. Tampak atas menunjukkan keempat posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 2 dan kanan 4 kubus. Tinggi setiap posisi paling banyak 3 kubus. Kesimpulan yang tepat adalah ...",
+        "jawaban": "Data tidak mungkin berasal dari susunan tersebut.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 7 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 7. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e53695849c886c59bf4a4d0",
+        "teks": "Lina menerima tampak depan dan kanan dari sebuah susunan kubus. Ia menyimpulkan bahwa hanya ada satu susunan yang cocok. Penilaian paling tepat adalah ...",
+        "jawaban": "Kesimpulan Lina belum tentu benar karena susunan berbeda dapat memiliki kedua tampak itu.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 6 dan kolom kedua $T_1$. Tampak samping menunjukkan maksimum baris pertama 4 dan baris kedua 6. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $15$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $15$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7dd295980ee584a1209f624",
+        "teks": "Susunan kubus menempati kisi 2 × 2; semua posisi terisi dan tingginya bilangan cacah positif. Tampak depan menunjukkan tinggi kolom kiri 4 dan kanan 2. Tampak kanan menunjukkan tinggi baris depan 3 dan belakang 1.\n\nApakah data tampak tersebut dapat berasal dari satu susunan kubus?",
+        "jawaban": "Tidak, karena tinggi posisi depan kiri harus sekaligus 4 dan 3.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 3 dan kolom kedua 1. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 3. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $6$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $6$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb6d2858bca2e19d9091c00c",
+        "teks": "Susunan A memiliki tinggi dua tumpukan berjajar 3 dan 1. Susunan B memiliki tinggi dua tumpukan berjajar 1 dan 3. Tumpukan berjajar dari kiri ke kanan, dan keduanya dilihat dari depan.\n\nPernyataan manakah yang benar tentang tampak depan kedua susunan?",
+        "jawaban": "Tampak depan berbeda karena urutan tinggi tumpukannya berbeda.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 8 dan kolom kedua 4. Tampak samping menunjukkan maksimum baris pertama 5 dan baris kedua 8. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "351b3482bfbf76f725c5f1d5",
+        "teks": "Dua siswa membuat susunan kubus berbeda. Tampak depan dan kanan susunan mereka sama. Apakah kedua tampak itu membuktikan bahwa susunan kubusnya sama?",
+        "jawaban": "Tidak, susunannya bisa berbeda.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 7 dan kolom kedua 2. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 7. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "135086c41b0b95ee47f0e9b2",
+        "teks": "Mira mendapat gambar tampak depan dan kanan dari susunan kubus, tetapi masih menemukan beberapa susunan yang cocok. Tampak dari arah mana yang perlu ia minta agar informasi susunan lebih lengkap?",
+        "jawaban": "Tampak atas.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 6 dan kolom kedua 2. Tampak samping menunjukkan maksimum baris pertama 4 dan baris kedua 6. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e10c1b83d904f6d9362e82ee",
+        "teks": "Pada kubus permainan, jumlah angka pada setiap pasangan sisi yang berlawanan adalah 12. Sisi yang berlawanan dengan sisi bernomor 5 memiliki angka berapa?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 6 dan kolom kedua 2. Tampak samping menunjukkan maksimum baris pertama 1 dan baris kedua 6. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff7ec17d0a80228a1bcf4461",
+        "teks": "Sebuah kubus pajangan memiliki angka pada sisi-sisinya. Jumlah angka pada setiap pasangan sisi yang berlawanan adalah 15. Jika satu sisi bernomor 6, berapa angka pada sisi yang berlawanan?",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 4 dan kolom kedua 1. Tampak samping menunjukkan maksimum baris pertama 2 dan baris kedua 4. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $7$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d67e932cc48669deba88dfa4",
+        "teks": "Sebuah kubus memiliki sisi depan merah, sisi kanan biru, dan sisi atas kuning. Saat kubus diputar sehingga sisi biru menghadap depan, apa yang terlihat dari arah depan?",
+        "jawaban": "Sisi biru",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_spasial_dua_tampak_minimum",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Empat menara kubus disusun pada petak 2×2. Tampak depan menunjukkan tinggi maksimum kolom pertama 3 dan kolom kedua 2. Tampak samping menunjukkan maksimum baris pertama 1 dan baris kedua 3. Menara boleh kosong. Berapa jumlah kubus paling sedikit yang memenuhi kedua tampak?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $6$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setiap tinggi menara dibatasi maksimum baris dan kolom. Cari susunan yang memenuhi kedua tampak dengan jumlah tinggi sekecil mungkin Hasilnya $6$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-b-hard-bt01-033"
     }
   ]
 }

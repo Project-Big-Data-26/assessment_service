@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan perkalian aljabar trigonometri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan langsung rumus turunan hasil kali dua fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = (4x^2 + 7)\\sin x$.",
+      "jawaban_benar": "$y' = 8x\\sin x + (4x^2 + 7)\\cos x$",
+      "alasan_benar": "Menggunakan aturan perkalian $(uv)' = u'v + uv'$, dengan $u = 4x^2 + 7 \\implies u' = 8x$ dan $v = \\sin x \\implies v' = \\cos x$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 8x\\cos x$",
+          "alasan": "Hanya mengalikan turunan masing-masing faktor tanpa menerapkan aturan perkalian turunan."
+        },
+        {
+          "teks": "$y' = 8x\\sin x - (4x^2 + 7)\\cos x$",
+          "alasan": "Salah menggunakan tanda operasi pengurangan pada aturan hasil kali."
+        },
+        {
+          "teks": "$y' = 8x\\cos x + (4x^2 + 7)\\sin x$",
+          "alasan": "Tertukar pasangan fungsi asli dengan turunannya pada aturan perkalian."
+        }
+      ],
+      "pembahasan": "Misalkan $u(x) = 4x^2 + 7$ sehingga $u'(x) = 8x$, dan $v(x) = \\sin x$ sehingga $v'(x) = \\cos x$.\nBerdasarkan aturan turunan perkalian dua fungsi:\n$$y' = u'(x)v(x) + u(x)v'(x)$$\n$$y' = 8x\\sin x + (4x^2 + 7)\\cos x$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Ayo Mencoba 2.5",
+        "nomor": "1",
+        "teks": "Dengan menggunakan Sifat Turunan a x pada y = 8 x , diperoleh",
+        "jawaban": "y' = 8^x ln 8",
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "turunan fungsi eksponen dasar",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan penerapan satu langkah rumus turunan fungsi eksponensial basis sebarang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = 6^x$.",
+      "jawaban_benar": "$y' = 6^x \\ln 6$",
+      "alasan_benar": "Berdasarkan sifat turunan fungsi eksponensial $a^x$, turunannya adalah $a^x \\ln a$.",
+      "distraktor": [
+        {
+          "teks": "$y' = x \\cdot 6^{x-1}$",
+          "alasan": "Salah menerapkan aturan pangkat fungsi aljabar pada fungsi eksponen."
+        },
+        {
+          "teks": "$y' = \\dfrac{6^x}{\\ln 6}$",
+          "alasan": "Membagi dengan logaritma natural bukan mengalikannya."
+        },
+        {
+          "teks": "$y' = 6^x$",
+          "alasan": "Mengira turunan basis sebarang sama seperti turunan basis natural e."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat turunan fungsi eksponensial dengan basis $a > 0$ dan $a \\ne 1$:\n$$\\frac{d}{dx}(a^x) = a^x \\ln a$$\nUntuk $y = 6^x$, diperoleh:\n$$y' = 6^x \\ln 6$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi eksponen rantai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan aturan rantai sederhana pada fungsi eksponensial berpangkat akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x+5}}$.",
+      "jawaban_benar": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$",
+      "alasan_benar": "Menurunkan fungsi eksponen luar dikalikan dengan turunan fungsi pangkat $\\frac{1}{2\\sqrt{x+5}}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = e^{\\sqrt{x+5}}$",
+          "alasan": "Lupa mengalikan dengan turunan fungsi pangkat di dalamnya."
+        },
+        {
+          "teks": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{\\sqrt{x+5}}$",
+          "alasan": "Lupa mengikutsertakan penyebut 2 dari rumus turunan akar kuadrat."
+        },
+        {
+          "teks": "$y' = 2\\sqrt{x+5}\\,e^{\\sqrt{x+5}}$",
+          "alasan": "Terbalik mengalikan dengan turunan akar bukannya membagi."
+        }
+      ],
+      "pembahasan": "Misalkan $u = \\sqrt{x+5} = (x+5)^{\\frac{1}{2}}$, maka $u' = \\frac{1}{2\\sqrt{x+5}}$.\nBerdasarkan aturan rantai untuk $y = e^u$:\n$$y' = e^u \\cdot u' = e^{\\sqrt{x+5}} \\cdot \\frac{1}{2\\sqrt{x+5}} = \\frac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "STT 2: _f_ ^ _x_ h = tan _x_ , maka _f_ l^ _x_ h = sec2 _x_ ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi trigonometri tangen",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan dua operasi turunan dasar untuk fungsi tangen dan fungsi linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 4\\tan x - 7x$.",
+      "jawaban_benar": "$f'(x) = 4\\sec^2 x - 7$",
+      "alasan_benar": "Menerapkan sifat turunan tangen $\\frac{d}{dx}(\\tan x) = \\sec^2 x$ dan turunan aljabar linier $\\frac{d}{dx}(-7x) = -7$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 4\\sec^2 x$",
+          "alasan": "Lupa menurunkan suku aljabar linier $-7x$."
+        },
+        {
+          "teks": "$f'(x) = 4\\sec x\\tan x - 7$",
+          "alasan": "Tertukar dengan rumus turunan fungsi sekan."
+        },
+        {
+          "teks": "$f'(x) = -4\\csc^2 x - 7$",
+          "alasan": "Tertukar dengan rumus turunan fungsi kotangen."
+        }
+      ],
+      "pembahasan": "Gunakan sifat kelipatan konstan dan turunan pengurangan fungsi:\n$$f'(x) = 4 \\cdot \\frac{d}{dx}(\\tan x) - \\frac{d}{dx}(7x)$$\nKarena $\\frac{d}{dx}(\\tan x) = \\sec^2 x$ dan $\\frac{d}{dx}(7x) = 7$, maka:\n$$f'(x) = 4\\sec^2 x - 7$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan _f_ ( _x_ ) = _c_ adalah fungsi yang kontinu di _R_ , maka _f_ l ( _x_ ) = 0 ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan kombinasi aljabar trigonometri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat penjumlahan/pengurangan turunan polinomial, trigonometri dasar, dan konstanta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 6x^3 - 8\\cos x + 15$.",
+      "jawaban_benar": "$f'(x) = 18x^2 + 8\\sin x$",
+      "alasan_benar": "Menurunkan suku polinomial menjadi $18x^2$, kosinus menjadi $-\\sin x$ sehingga $-8(-\\sin x) = +8\\sin x$, dan turunan konstanta 15 adalah 0.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 18x^2 - 8\\sin x$",
+          "alasan": "Lupa bahwa turunan dari $\\cos x$ menghasilkan tanda negatif."
+        },
+        {
+          "teks": "$f'(x) = 18x^2 + 8\\sin x + 15$",
+          "alasan": "Turunan konstanta tidak dijadikan nol melainkan tetap ditulis."
+        },
+        {
+          "teks": "$f'(x) = 18x^2 - 8\\cos x$",
+          "alasan": "Tidak menurunkan fungsi kosinus trigonometri."
+        }
+      ],
+      "pembahasan": "Turunkan setiap suku fungsi secara terpisah:\n- Turunan dari $6x^3$ adalah $6 \\cdot 3x^2 = 18x^2$.\n- Turunan dari $-8\\cos x$ adalah $-8(-\\sin x) = 8\\sin x$.\n- Turunan dari konstanta $15$ adalah $0$.\nJadi, $f'(x) = 18x^2 + 8\\sin x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Ayo Mencoba 2.5",
+        "nomor": "2",
+        "teks": "Dengan menggunakan Sifat Turunan e f ( x ) pada y = e 8 x , diperoleh",
+        "jawaban": "y' = 8e^{8x}",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan eksponen linear",
+      "jumlah_langkah": 1,
+      "alasan_level": "Penerapan satu langkah aturan rantai turunan fungsi eksponen dengan pangkat linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = e^{5x}$.",
+      "jawaban_benar": "$y' = 5e^{5x}$",
+      "alasan_benar": "Berdasarkan sifat turunan fungsi $e^{f(x)}$, turunannya adalah $f'(x)e^{f(x)}$. Dengan $f(x) = 5x$, diperoleh $f'(x) = 5$, sehingga $y' = 5e^{5x}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = e^{5x}$",
+          "alasan": "Lupa mengalikan dengan turunan dari fungsi pangkat $5x$."
+        },
+        {
+          "teks": "$y' = 5x e^{5x-1}$",
+          "alasan": "Menerapkan aturan pangkat aljabar pada fungsi eksponensial."
+        },
+        {
+          "teks": "$y' = \\dfrac{1}{5}e^{5x}$",
+          "alasan": "Tertukar dengan rumus antiturunan (integral) fungsi eksponensial."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat turunan fungsi eksponensial alami $y = e^{f(x)}$:\n$y' = f'(x) \\cdot e^{f(x)}$\n\nUntuk $f(x) = 5x$, kita peroleh $f'(x) = 5$.\nJadi:\n$y' = 5e^{5x}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan eksponen bentuk akar rantai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung turunan komposit eksponen berpangkat bentuk akar sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x-3}}$.",
+      "jawaban_benar": "$y' = \\dfrac{e^{\\sqrt{x-3}}}{2\\sqrt{x-3}}$",
+      "alasan_benar": "Turunan dari $e^{u}$ adalah $u'e^u$. Untuk $u = \\sqrt{x-3} = (x-3)^{1/2}$, turunannya adalah $u' = \\dfrac{1}{2\\sqrt{x-3}}$, sehingga $y' = \\dfrac{e^{\\sqrt{x-3}}}{2\\sqrt{x-3}}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = \\dfrac{e^{\\sqrt{x-3}}}{\\sqrt{x-3}}$",
+          "alasan": "Lupa faktor pembagi 2 pada turunan bentuk akar kuadrat."
+        },
+        {
+          "teks": "$y' = 2\\sqrt{x-3}e^{\\sqrt{x-3}}$",
+          "alasan": "Mengalikan turunan akar bukan membaginya dengan $2\\sqrt{x-3}$."
+        },
+        {
+          "teks": "$y' = \\dfrac{e^{\\sqrt{x-3}}}{2(x-3)}$",
+          "alasan": "Menghilangkan akar pada penyebut hasil turunan rantai."
+        }
+      ],
+      "pembahasan": "Misalkan $u = \\sqrt{x-3} = (x-3)^{\\frac{1}{2}}$.\nTurunan dari $u$ terhadap $x$ adalah:\n$u' = \\frac{1}{2}(x-3)^{-\\frac{1}{2}} = \\frac{1}{2\\sqrt{x-3}}$\n\nDengan aturan rantai untuk fungsi eksponen:\n$y' = u' \\cdot e^u = \\dfrac{1}{2\\sqrt{x-3}} \\cdot e^{\\sqrt{x-3}} = \\dfrac{e^{\\sqrt{x-3}}}{2\\sqrt{x-3}}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi f kontinu sehingga berlaku STT 2: f ( x ) = tan x , maka f l ( x ) = sec2 x ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "turunan fungsi trigonometri sekan",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan menerapkan langsung sifat turunan fungsi trigonometri secan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 5\\sec x$.",
+      "jawaban_benar": "$f'(x) = 5\\sec x \\tan x$",
+      "alasan_benar": "Turunan dari $\\sec x$ adalah $\\sec x \\tan x$, dikalikan dengan skalar 5 menjadi $5\\sec x \\tan x$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 5\\sec^2 x$",
+          "alasan": "Tertukar dengan turunan fungsi tangen."
+        },
+        {
+          "teks": "$f'(x) = -5\\sec x \\tan x$",
+          "alasan": "Salah mengira turunan sekan memiliki tanda negatif seperti kosekan."
+        },
+        {
+          "teks": "$f'(x) = 5\\tan x$",
+          "alasan": "Hanya mengganti fungsi sekan menjadi tangen tanpa faktor sekan."
+        }
+      ],
+      "pembahasan": "Berdasarkan Sifat Turunan Trigonometri 4 (STT 4):\nJika $g(x) = \\sec x$, maka $g'(x) = \\sec x \\tan x$.\n\nDengan sifat kelipatan konstanta:\n$f'(x) = 5 \\cdot g'(x) = 5\\sec x \\tan x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = c adalah fungsi yang kontinu di R , maka f l ( x ) = 0 ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi trigonometri kotangen",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat turunan kotangen dan sifat turunan fungsi konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 3\\cot x + 8$.",
+      "jawaban_benar": "$f'(x) = -3\\csc^2 x$",
+      "alasan_benar": "Turunan dari $\\cot x$ adalah $-\\csc^2 x$ dan turunan dari konstanta 8 adalah 0, sehingga $f'(x) = -3\\csc^2 x$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 3\\csc^2 x$",
+          "alasan": "Lupa tanda negatif pada turunan fungsi kotangen."
+        },
+        {
+          "teks": "$f'(x) = -3\\csc^2 x + 8$",
+          "alasan": "Tidak menurunkan suku konstanta (salah menganggap turunan konstanta tetap)."
+        },
+        {
+          "teks": "$f'(x) = -3\\cot x \\csc x$",
+          "alasan": "Tertukar dengan rumus turunan fungsi kosekan."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat turunan trigonometri (STT 3):\nTurunan dari $\\cot x$ adalah $-\\csc^2 x$.\nBerdasarkan turunan fungsi konstan, turunan dari konstanta $8$ adalah $0$.\n\nMaka:\n$f'(x) = 3(-\\csc^2 x) + 0 = -3\\csc^2 x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan perkalian aljabar trigonometri cosinus",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan perkalian turunan dua fungsi secara langsung dengan dua langkah komputasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = (7x^4 - 9)\\cos x$.",
+      "jawaban_benar": "$y' = 28x^3\\cos x - (7x^4 - 9)\\sin x$",
+      "alasan_benar": "Menggunakan aturan perkalian $(uv)' = u'v + uv'$ dengan $u = 7x^4 - 9$ dan $v = \\cos x$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 28x^3\\cos x + (7x^4 - 9)\\sin x$",
+          "alasan": "Lupa bahwa turunan dari $\\cos x$ menghasilkan tanda negatif ($-\\sin x$)."
+        },
+        {
+          "teks": "$y' = -28x^3\\sin x$",
+          "alasan": "Hanya mengalikan turunan dari masing-masing fungsi tanpa menerapkan aturan perkalian turunan."
+        },
+        {
+          "teks": "$y' = 7x^3\\cos x - (7x^4 - 9)\\sin x$",
+          "alasan": "Salah menghitung turunan aljabar dengan tidak mengalikan pangkat lama dengan koefisien awal."
+        }
+      ],
+      "pembahasan": "Misalkan $u(x) = 7x^4 - 9$ dan $v(x) = \\cos x$.\nMaka diperoleh:\n$u'(x) = 4 \\cdot 7x^{4-1} = 28x^3$\n$v'(x) = -\\sin x$\n\nBerdasarkan aturan perkalian turunan fungsi:\n$y' = u'(x)v(x) + u(x)v'(x)$\n$y' = 28x^3 \\cos x + (7x^4 - 9)(-\\sin x)$\n$y' = 28x^3 \\cos x - (7x^4 - 9)\\sin x$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 134,
+        "bagian": "Contoh Soal 2.6",
+        "nomor": "1",
+        "teks": "1. y = 2 sin x + 5 x",
+        "jawaban": "y l = 2 cos x + 5",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan penjumlahan sinus aljabar",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung turunan dari penjumlahan dua fungsi dasar secara langsung dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = 8\\sin x + 9x$.",
+      "jawaban_benar": "$y' = 8\\cos x + 9$",
+      "alasan_benar": "Turunan dari $\\sin x$ adalah $\\cos x$ dan turunan dari $9x$ adalah $9$.",
+      "distraktor": [
+        {
+          "teks": "$y' = -8\\cos x + 9$",
+          "alasan": "Keliru menganggap turunan $\\sin x$ bernilai negatif."
+        },
+        {
+          "teks": "$y' = 8\\cos x$",
+          "alasan": "Lupa menurunkan suku linear $9x$ atau menganggapnya bernilai nol."
+        },
+        {
+          "teks": "$y' = 8\\sin x + 9$",
+          "alasan": "Lupa menurunkan fungsi trigonometri $\\sin x$."
+        }
+      ],
+      "pembahasan": "Gunakan sifat turunan penjumlahan dan turunan fungsi dasar:\n$y = 8\\sin x + 9x$\n$y' = 8(\\cos x) + 9(1)$\n$y' = 8\\cos x + 9$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 141,
+        "bagian": "Contoh Soal 2.7",
+        "nomor": "4",
+        "teks": "4. y = 32 x . Misalkan g ^ x h = 2 x , maka y = 3 g ( x ) .",
+        "jawaban": "y' = 2(ln 3) 3^(2x)",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan eksponen basis a aturan rantai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung turunan fungsi eksponensial basis konstanta berpangkat fungsi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = 7^{6x}$.",
+      "jawaban_benar": "$y' = 6 \\cdot 7^{6x} \\ln 7$",
+      "alasan_benar": "Turunan dari $a^{g(x)}$ adalah $g'(x) \\cdot a^{g(x)} \\ln a$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 7^{6x} \\ln 7$",
+          "alasan": "Lupa mengalikan dengan turunan dari fungsi pangkat $6x$."
+        },
+        {
+          "teks": "$y' = 6 \\cdot 7^{6x}$",
+          "alasan": "Lupa mengalikan dengan faktor logaritma natural dari basis ($\\,\\ln 7$)."
+        },
+        {
+          "teks": "$y' = 6x \\cdot 7^{6x-1}$",
+          "alasan": "Salah menerapkan rumus fungsi pangkat aljabar pada fungsi eksponensial."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat turunan fungsi eksponensial dengan aturan rantai:\nJika $y = a^{g(x)}$, maka $y' = g'(x) \\cdot a^{g(x)} \\ln a$.\nDi sini $a = 7$ dan $g(x) = 6x$, sehingga $g'(x) = 6$.\nDiperoleh:\n$y' = 6 \\cdot 7^{6x} \\ln 7$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 134,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "STT 5: f ^ x h = csc x , maka f l ^ x h = - csc x cot x ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "turunan fungsi trigonometri kosekan",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan menerapkan rumus dasar turunan trigonometri kosekan dengan faktor pengali konstanta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 6\\csc x$.",
+      "jawaban_benar": "$f'(x) = -6\\csc x \\cot x$",
+      "alasan_benar": "Berdasarkan STT 5, turunan dari $\\csc x$ adalah $-\\csc x \\cot x$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 6\\csc x \\cot x$",
+          "alasan": "Lupa menyertakan tanda negatif pada hasil turunan fungsi kosekan."
+        },
+        {
+          "teks": "$f'(x) = -6\\csc^2 x$",
+          "alasan": "Tertukar dengan bentuk turunan fungsi kotangen."
+        },
+        {
+          "teks": "$f'(x) = -6\\cot x$",
+          "alasan": "Kehilangan faktor $\\csc x$ pada hasil turunan."
+        }
+      ],
+      "pembahasan": "Berdasarkan Sifat Turunan Trigonometri 5 (STT 5):\nJika $g(x) = \\csc x$, maka $g'(x) = -\\csc x \\cot x$.\nMaka untuk $f(x) = 6\\csc x$:\n$f'(x) = 6(-\\csc x \\cot x) = -6\\csc x \\cot x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = c adalah fungsi yang kontinu di R , maka f l ( x ) = 0 ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "turunan fungsi konstan",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi dan sifat dasar turunan fungsi konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi konstan $f(x) = -85$.",
+      "jawaban_benar": "$f'(x) = 0$",
+      "alasan_benar": "Turunan dari fungsi konstan apapun selalu bernilai 0.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = -85$",
+          "alasan": "Mengira hasil turunan fungsi konstan adalah nilai konstanta tersebut."
+        },
+        {
+          "teks": "$f'(x) = 1$",
+          "alasan": "Tertukar dengan turunan dari fungsi linear $x$."
+        },
+        {
+          "teks": "$f'(x) = -1$",
+          "alasan": "Mengira turunan konstanta negatif menghasilkan $-1$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat Turunan Fungsi Konstan (TFK):\nUntuk setiap fungsi konstan $f(x) = c$ dengan $c \\in \\mathbb{R}$, berlaku:\n$f'(x) = 0$.\nKarena $f(x) = -85$ adalah fungsi konstan, maka $f'(x) = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Ayo Mencoba 2.5",
+        "nomor": "4",
+        "teks": "4. Dengan menggunakan Sifat Turunan e^{f(x)} pada y = e^{x^2}, diperoleh",
+        "jawaban": "y' = 2x e^{x^2}",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi eksponen natural rantai polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan rantai turunan fungsi eksponen dengan fungsi kuadrat sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = e^{5x^2}$.",
+      "jawaban_benar": "$y' = 10x e^{5x^2}$",
+      "alasan_benar": "Berdasarkan aturan turunan fungsi eksponensial $y = e^{f(x)}$, diperoleh $y' = f'(x)e^{f(x)}$. Karena $f(x) = 5x^2$, maka $f'(x) = 10x$, sehingga $y' = 10x e^{5x^2}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 5x e^{5x^2}$",
+          "alasan": "Siswa salah menurunkan pangkat kuadrat tanpa mengalikan koefisien 5 dengan pangkat 2."
+        },
+        {
+          "teks": "$y' = 10x e^{5x}$",
+          "alasan": "Siswa salah menerapkan aturan eksponen dengan mengurangi pangkat pada fungsi asal."
+        },
+        {
+          "teks": "$y' = e^{5x^2}$",
+          "alasan": "Siswa lupa mengalikan dengan turunan dari fungsi pangkat (aturan rantai)."
+        }
+      ],
+      "pembahasan": "Misalkan $f(x) = 5x^2$, maka $f'(x) = 10x$.\nTurunan dari $y = e^{f(x)}$ adalah:\n$y' = f'(x)e^{f(x)} = 10x e^{5x^2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi trigonometri sinus aturan rantai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan turunan konstan dan aturan rantai sederhana pada fungsi sinus linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi trigonometri $f(x) = 8 - 5\\sin(3x)$.",
+      "jawaban_benar": "$f'(x) = -15\\cos(3x)$",
+      "alasan_benar": "Turunan dari konstanta 8 adalah 0. Turunan dari $-5\\sin(3x)$ adalah $-5 \\cdot (\\cos(3x)) \\cdot 3 = -15\\cos(3x)$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 15\\cos(3x)$",
+          "alasan": "Siswa salah menentukan tanda turunan sinus, mengira turunan $-\\sin$ menghasilkan positif $\\cos$."
+        },
+        {
+          "teks": "$f'(x) = -5\\cos(3x)$",
+          "alasan": "Siswa lupa mengalikan dengan turunan fungsi di dalam sinus yaitu 3."
+        },
+        {
+          "teks": "$f'(x) = -15\\sin(3x)$",
+          "alasan": "Siswa lupa mengubah fungsi sinus menjadi kosinus saat melakukan penurunan."
+        }
+      ],
+      "pembahasan": "Diketahui $f(x) = 8 - 5\\sin(3x)$.\nTurunan dari konstanta 8 adalah $0$.\nDengan aturan rantai untuk $-5\\sin(3x)$:\n$\\frac{d}{dx}[-5\\sin(3x)] = -5 \\cdot \\cos(3x) \\cdot \\frac{d}{dx}[3x] = -5 \\cdot 3\\cos(3x) = -15\\cos(3x)$.\nJadi, $f'(x) = -15\\cos(3x)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = sin x dan g ( x ) = cos x adalah fungsi-fungsi yang kontinu di R , maka f l ( x ) = cos x dan g l ( x ) = - sin x ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan kombinasi linear sinus cosinus",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat turunan fungsi trigonometri dasar dan kelipatan konstanta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 5\\cos x - 3\\sin x$.",
+      "jawaban_benar": "$f'(x) = -5\\sin x - 3\\cos x$",
+      "alasan_benar": "Turunan dari $\\cos x$ adalah $-\\sin x$ dan turunan dari $\\sin x$ adalah $\\cos x$, sehingga $f'(x) = 5(-\\sin x) - 3(\\cos x) = -5\\sin x - 3\\cos x$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 5\\sin x - 3\\cos x$",
+          "alasan": "Siswa lupa tanda minus pada turunan $\\cos x$."
+        },
+        {
+          "teks": "$f'(x) = -5\\sin x + 3\\cos x$",
+          "alasan": "Siswa salah menyimpulkan turunan $\\sin x$ bernilai negatif sehingga tanda berubah menjadi penjumlahan."
+        },
+        {
+          "teks": "$f'(x) = 5\\cos x - 3\\sin x$",
+          "alasan": "Siswa menganggap fungsi trigonometri tidak berubah bentuk ketika diturunkan."
+        }
+      ],
+      "pembahasan": "Gunakan Sifat Turunan Trigonometri 1:\n- $\\frac{d}{dx}[\\cos x] = -\\sin x$\n- $\\frac{d}{dx}[\\sin x] = \\cos x$\n\nMaka:\n$f'(x) = 5(-\\sin x) - 3(\\cos x) = -5\\sin x - 3\\cos x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari f ( x ) = e^x adalah e^x . Ditulis"
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan kombinasi fungsi eksponen natural dan aljabar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan penjumlahan turunan fungsi eksponen natural dasar dan aturan pangkat aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = 7e^x + 4x^3$.",
+      "jawaban_benar": "$f'(x) = 7e^x + 12x^2$",
+      "alasan_benar": "Turunan dari $7e^x$ adalah $7e^x$ dan turunan dari $4x^3$ adalah $4 \\cdot 3x^2 = 12x^2$. Jumlah keduanya adalah $7e^x + 12x^2$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 7e^x + 4x^2$",
+          "alasan": "Siswa hanya mengurangi pangkat aljabar tanpa mengalikannya ke koefisien depan."
+        },
+        {
+          "teks": "$f'(x) = 7x e^{x-1} + 12x^2$",
+          "alasan": "Siswa salah memperlakukan fungsi eksponen $e^x$ seperti variabel berpangkat $x^n$."
+        },
+        {
+          "teks": "$f'(x) = e^x + 12x^2$",
+          "alasan": "Siswa menghilangkan koefisien pengali pada suku eksponen natural."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat penjumlahan dan kaidah dasar turunan:\n1. $\\frac{d}{dx}[7e^x] = 7 \\cdot \\frac{d}{dx}[e^x] = 7e^x$\n2. $\\frac{d}{dx}[4x^3] = 4 \\cdot (3x^2) = 12x^2$\n\nSehingga diperoleh:\n$f'(x) = 7e^x + 12x^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan fungsi trigonometri rantai sudut pecahan pi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan aturan turunan konstan dan rantai trigonometri sinus secara langsung dalam dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan fungsi trigonometri $f(x) = 7 - 9\\sin\\left(\\frac{1}{5}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 10, x \\in \\mathbb{R}\\}$. Tentukan turunan pertama dari $f(x)$.",
+      "jawaban_benar": "$f'(x) = -\\frac{9}{5}\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$",
+      "alasan_benar": "Turunan dari konstanta 7 adalah 0, turunan dari $\\sin(u)$ adalah $\\cos(u)$, dan turunan dari $u = \\frac{1}{5}\\pi x$ adalah $\\frac{1}{5}\\pi$, sehingga $f'(x) = -9 \\cdot \\frac{1}{5}\\pi \\cos\\left(\\frac{1}{5}\\pi x\\right) = -\\frac{9}{5}\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = \\frac{9}{5}\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$",
+          "alasan": "Kesalahan tanda akibat mengabaikan tanda negatif di depan koefisien sinus."
+        },
+        {
+          "teks": "$f'(x) = -\\frac{9}{5}\\pi\\sin\\left(\\frac{1}{5}\\pi x\\right)$",
+          "alasan": "Lupa mengubah fungsi sinus menjadi kosinus saat melakukan diferensiasi."
+        },
+        {
+          "teks": "$f'(x) = -9\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$",
+          "alasan": "Lupa membagi dengan faktor penyebut 5 pada turunan argumen dalam."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan dari konstanta dan fungsi trigonometri.\nTurunan dari konstanta 7 adalah 0.\nDengan aturan rantai, jika $g(x) = \\sin(u)$ dengan $u = \\frac{1}{5}\\pi x$, maka $g'(x) = u' \\cdot \\cos(u)$.\n\nLangkah 2: Menghitung turunan rantai.\n$u' = \\frac{d}{dx}\\left(\\frac{1}{5}\\pi x\\right) = \\frac{1}{5}\\pi$\n$f'(x) = 0 - 9 \\cdot \\frac{1}{5}\\pi \\cos\\left(\\frac{1}{5}\\pi x\\right) = -\\frac{9}{5}\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Ayo Mencoba 2.5",
+        "nomor": "3",
+        "teks": "3. Dengan menggunakan Aturan Rantai dan Sifat Turunan _a_<sup>_x_</sup> pada _y_ = 4<sup>_x_</sup> 2 + 5 , diperoleh",
+        "jawaban": "y' = 2x \\cdot 4^{x^2 + 5} \\ln 4",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "turunan eksponen basis a aturan rantai polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menentukan turunan fungsi eksponen dengan pangkat fungsi aljabar menggunakan aturan rantai dalam dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = 7^{x^3 + 6}$.",
+      "jawaban_benar": "$y' = 3x^2 \\cdot 7^{x^3 + 6} \\ln 7$",
+      "alasan_benar": "Turunan dari $y = a^{u(x)}$ adalah $y' = u'(x) \\cdot a^{u(x)} \\ln a$. Dengan $u(x) = x^3 + 6$, diperoleh $u'(x) = 3x^2$, sehingga $y' = 3x^2 \\cdot 7^{x^3 + 6} \\ln 7$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 7^{x^3 + 6} \\ln 7$",
+          "alasan": "Lupa mengalikan dengan turunan fungsi pangkatnya ($3x^2$)."
+        },
+        {
+          "teks": "$y' = 3x^2 \\cdot 7^{x^3 + 6}$",
+          "alasan": "Lupa mengalikan dengan $\\ln 7$ karena memperlakukan basis seperti bilangan natural $e$."
+        },
+        {
+          "teks": "$y' = (x^3 + 6) \\cdot 7^{x^3 + 5}$",
+          "alasan": "Keliru menerapkan aturan turunan fungsi pangkat aljabar biasa $n \\cdot x^{n-1}$ pada fungsi eksponensial."
+        }
+      ],
+      "pembahasan": "Misalkan $u(x) = x^3 + 6$, maka $u'(x) = 3x^2$.\nBerdasarkan sifat turunan fungsi eksponensial $y = a^u$, turunannya adalah:\n$$y' = u'(x) \\cdot a^{u(x)} \\ln a$$\nSubstitusikan $u(x)$ dan $a = 7$:\n$$y' = 3x^2 \\cdot 7^{x^3 + 6} \\ln 7$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

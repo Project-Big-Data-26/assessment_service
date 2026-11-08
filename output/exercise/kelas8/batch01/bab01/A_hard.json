@@ -515,6 +515,1190 @@
       ],
       "pembahasan": "$3^{t} > 1.000.000$. $3^{10} = 59.049$, $3^{11} = 177.147$, $3^{12} = 531.441$, $3^{13} = 1.594.323$. Jadi $t = 13$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a29fa45e5ec34537763876",
+        "teks": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{1}{64} < 2^{n} \\leq 32$ adalah ....",
+        "jawaban": "11",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pangkat",
+      "alasan_level": "Target hard; variasi konsep aturan pangkat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Bentuk $(5^5)^2 : 5^4$ ditulis sebagai $5^n$. Tentukan $n$.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "catatan": "codex-replenishment:kelas8-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b01-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "371c8c295094708659cb8465",
+        "teks": "Nilai dari $(-8)^{0}$ adalah ....",
+        "jawaban": "1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=256$ dan $2^{2a-b}=16$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Samakan pangkat: a+b=8, 2a-b=4. Eliminasi memberi a=4, b=4; selisih kuadrat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=8, 2a-b=4. Eliminasi memberi a=4, b=4; selisih kuadrat 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b01-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1679ad34a936d9b6617fbdbe",
+        "teks": "Bentuk bilangan berpangkat dari $0,4 \\times 0,4 \\times 0,4 \\times 0,4 \\times 0,4 \\times 0,4$ adalah ....",
+        "jawaban": "$(0,4)^{6}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=2048$ dan $2^{2a-b}=8192$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$55$",
+      "alasan_benar": "Samakan pangkat: a+b=11, 2a-b=13. Eliminasi memberi a=8, b=3; selisih kuadrat 55.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=11, 2a-b=13. Eliminasi memberi a=8, b=3; selisih kuadrat 55.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c1ed1133c7df29ab19d8927",
+        "teks": "Bentuk bilangan berpangkat dari $7 \\times 7 \\times 7 \\times b \\times b \\times b \\times b \\times b$ adalah ....",
+        "jawaban": "$7^{3}b^{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=4096$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=12. Eliminasi memberi a=8, b=4; selisih kuadrat 48.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=12. Eliminasi memberi a=8, b=4; selisih kuadrat 48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87a62692e6b9430a4dbe67c1",
+        "teks": "Nilai dari $(-5)^{4}$ adalah ....",
+        "jawaban": "625",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=128$ dan $2^{2a-b}=32$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Samakan pangkat: a+b=7, 2a-b=5. Eliminasi memberi a=4, b=3; selisih kuadrat 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=7, 2a-b=5. Eliminasi memberi a=4, b=3; selisih kuadrat 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2ebeb4e5e1ceabff52479e08",
+        "teks": "Nilai dari $\\left(\\frac{7}{4}\\right)^{2}$ adalah ....",
+        "jawaban": "$\\frac{49}{16}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=8$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-24$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=3. Eliminasi memberi a=5, b=7; selisih kuadrat -24.",
+      "distraktor": [
+        {
+          "teks": "$-25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=3. Eliminasi memberi a=5, b=7; selisih kuadrat -24.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d7a11c5e106942705580b934",
+        "teks": "Nilai $x$ yang memenuhi $2^{x} = 512$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=2048$ dan $2^{2a-b}=128$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Samakan pangkat: a+b=11, 2a-b=7. Eliminasi memberi a=6, b=5; selisih kuadrat 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=11, 2a-b=7. Eliminasi memberi a=6, b=5; selisih kuadrat 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "43c3223367e9230075f35fd5",
+        "teks": "Nilai $x$ yang memenuhi $x^{3} = 343$ adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=1024$ dan $2^{2a-b}=\\frac{1}{2}$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-40$",
+      "alasan_benar": "Samakan pangkat: a+b=10, 2a-b=-1. Eliminasi memberi a=3, b=7; selisih kuadrat -40.",
+      "distraktor": [
+        {
+          "teks": "$-41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-80$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=10, 2a-b=-1. Eliminasi memberi a=3, b=7; selisih kuadrat -40.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65ad6678fabd3adbb7b9b3ac",
+        "teks": "Sebuah bakteri memiliki diameter $2^{-4}$ cm. Diameter bakteri dalam bentuk desimal adalah .... cm.",
+        "jawaban": "0,0625",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=64$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=6. Eliminasi memberi a=6, b=6; selisih kuadrat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=6. Eliminasi memberi a=6, b=6; selisih kuadrat 0.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d78060049590f3b021828eb2",
+        "teks": "Ubahlah bentuk berikut dalam bentuk pangkat positif: $7^{-2}$. Hasilnya adalah ....",
+        "jawaban": "$\\frac{1}{7^{2}}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=2048$ dan $2^{2a-b}=\\frac{1}{4}$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-55$",
+      "alasan_benar": "Samakan pangkat: a+b=11, 2a-b=-2. Eliminasi memberi a=3, b=8; selisih kuadrat -55.",
+      "distraktor": [
+        {
+          "teks": "$-56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-54$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-110$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=11, 2a-b=-2. Eliminasi memberi a=3, b=8; selisih kuadrat -55.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a99b593124f6e598322c05",
+        "teks": "Bentuk sederhana dari $6^{3} \\times 6^{7}$ adalah ....",
+        "jawaban": "$6^{10}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=32$ dan $2^{2a-b}=2$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Samakan pangkat: a+b=5, 2a-b=1. Eliminasi memberi a=2, b=3; selisih kuadrat -5.",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=5, 2a-b=1. Eliminasi memberi a=2, b=3; selisih kuadrat -5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46519ee093eb8827068dae78",
+        "teks": "Bentuk sederhana dari $(5^{2})^{6}$ adalah ....",
+        "jawaban": "$5^{12}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=512$ dan $2^{2a-b}=8$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-9$",
+      "alasan_benar": "Samakan pangkat: a+b=9, 2a-b=3. Eliminasi memberi a=4, b=5; selisih kuadrat -9.",
+      "distraktor": [
+        {
+          "teks": "$-10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=9, 2a-b=3. Eliminasi memberi a=4, b=5; selisih kuadrat -9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07066bdea9401e40fed32a74",
+        "teks": "Pada bilangan berpangkat $9^{4}$, bilangan 4 disebut ....",
+        "jawaban": "pangkat (eksponen)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=512$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=9. Eliminasi memberi a=7, b=5; selisih kuadrat 24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=9. Eliminasi memberi a=7, b=5; selisih kuadrat 24.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2ed8ddcecc9424c16e639127",
+        "teks": "Bentuk sederhana dari $\\frac{7^{9}}{7^{4}}$ adalah ....",
+        "jawaban": "$7^{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=64$ dan $2^{2a-b}=8$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Samakan pangkat: a+b=6, 2a-b=3. Eliminasi memberi a=3, b=3; selisih kuadrat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=6, 2a-b=3. Eliminasi memberi a=3, b=3; selisih kuadrat 0.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "371c8c295094708659cb8465",
+        "teks": "Nilai dari $(-8)^{0}$ adalah ....",
+        "jawaban": "1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=256$ dan $2^{2a-b}=2$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Samakan pangkat: a+b=8, 2a-b=1. Eliminasi memberi a=3, b=5; selisih kuadrat -16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=8, 2a-b=1. Eliminasi memberi a=3, b=5; selisih kuadrat -16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b1787d2233862d46be4a830",
+        "teks": "Bentuk $(3 \\times 4)^{5}$ sama dengan ....",
+        "jawaban": "$3^{5} \\times 4^{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=65536$ dan $2^{2a-b}=32$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-32$",
+      "alasan_benar": "Samakan pangkat: a+b=16, 2a-b=5. Eliminasi memberi a=7, b=9; selisih kuadrat -32.",
+      "distraktor": [
+        {
+          "teks": "$-33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=16, 2a-b=5. Eliminasi memberi a=7, b=9; selisih kuadrat -32.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "99e0cbd42cc98edbdd42b2b9",
+        "teks": "Nilai dari $-3^{4}$ adalah ....",
+        "jawaban": "-81",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=256$ dan $2^{2a-b}=1024$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Samakan pangkat: a+b=8, 2a-b=10. Eliminasi memberi a=6, b=2; selisih kuadrat 32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=8, 2a-b=10. Eliminasi memberi a=6, b=2; selisih kuadrat 32.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8a7680e2aa29bd20f13c33dd",
+        "teks": "Klaim: $(x+y)^{2} = x^{2}+y^{2}$ berlaku untuk semua bilangan real $x$ dan $y$. Pasangan $(x, y)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$(x, y) = (3, 4)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=512$ dan $2^{2a-b}=4096$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Samakan pangkat: a+b=9, 2a-b=12. Eliminasi memberi a=7, b=2; selisih kuadrat 45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=9, 2a-b=12. Eliminasi memberi a=7, b=2; selisih kuadrat 45.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e14bddea685395c4c4c9a940",
+        "teks": "Andi menyederhanakan $(2^{3})^{4} \\times 2^{2}$ sebagai berikut: $(2^{3})^{4} \\times 2^{2} = 2^{3+4} \\times 2^{2} = 2^{7} \\times 2^{2} = 2^{9}$. Hasil yang benar dan alasan kesalahan Andi ditunjukkan oleh ....",
+        "jawaban": "$2^{14}$, karena $(2^{3})^{4} = 2^{12}$ (pangkat dikalikan, bukan dijumlahkan)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=256$ dan $2^{2a-b}=\\frac{1}{4}$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-32$",
+      "alasan_benar": "Samakan pangkat: a+b=8, 2a-b=-2. Eliminasi memberi a=2, b=6; selisih kuadrat -32.",
+      "distraktor": [
+        {
+          "teks": "$-33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=8, 2a-b=-2. Eliminasi memberi a=2, b=6; selisih kuadrat -32.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cbe02995f2629d617c938d25",
+        "teks": "Rani menyederhanakan $\\frac{5^{-2}}{5^{-4}} = 5^{-2-4} = 5^{-6}$. Nilai yang benar dari $\\frac{5^{-2}}{5^{-4}}$ adalah ....",
+        "jawaban": "$25$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=2048$ dan $2^{2a-b}=1024$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Samakan pangkat: a+b=11, 2a-b=10. Eliminasi memberi a=7, b=4; selisih kuadrat 33.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=11, 2a-b=10. Eliminasi memberi a=7, b=4; selisih kuadrat 33.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "30625623aa0be7c5a9d4239d",
+        "teks": "Angka satuan dari bilangan $7^{2024}$ adalah ....",
+        "jawaban": "1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=512$ dan $2^{2a-b}=\\frac{1}{8}$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-45$",
+      "alasan_benar": "Samakan pangkat: a+b=9, 2a-b=-3. Eliminasi memberi a=2, b=7; selisih kuadrat -45.",
+      "distraktor": [
+        {
+          "teks": "$-46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=9, 2a-b=-3. Eliminasi memberi a=2, b=7; selisih kuadrat -45.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d3176718e17ec711e04a507",
+        "teks": "Angka satuan dari bilangan $3^{50} + 2^{50}$ adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=8192$ dan $2^{2a-b}=2048$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Samakan pangkat: a+b=13, 2a-b=11. Eliminasi memberi a=8, b=5; selisih kuadrat 39.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=13, 2a-b=11. Eliminasi memberi a=8, b=5; selisih kuadrat 39.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c7fdd0cf642c85727138757",
+        "teks": "Banyak angka (digit) pada bilangan $2^{10} \\times 5^{12}$ adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=1024$ dan $2^{2a-b}=4$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-20$",
+      "alasan_benar": "Samakan pangkat: a+b=10, 2a-b=2. Eliminasi memberi a=4, b=6; selisih kuadrat -20.",
+      "distraktor": [
+        {
+          "teks": "$-21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-40$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=10, 2a-b=2. Eliminasi memberi a=4, b=6; selisih kuadrat -20.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "672a95660afb724113d0a980",
+        "teks": "Bilangan terbesar di antara $4^{25}$, $8^{17}$, $16^{13}$, dan $32^{9}$ adalah ....",
+        "jawaban": "$16^{13}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=512$ dan $2^{2a-b}=1$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-27$",
+      "alasan_benar": "Samakan pangkat: a+b=9, 2a-b=0. Eliminasi memberi a=3, b=6; selisih kuadrat -27.",
+      "distraktor": [
+        {
+          "teks": "$-28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-54$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=9, 2a-b=0. Eliminasi memberi a=3, b=6; selisih kuadrat -27.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a29fa45e5ec34537763876",
+        "teks": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{1}{64} < 2^{n} \\leq 32$ adalah ....",
+        "jawaban": "11",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=32768$ dan $2^{2a-b}=8$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-45$",
+      "alasan_benar": "Samakan pangkat: a+b=15, 2a-b=3. Eliminasi memberi a=6, b=9; selisih kuadrat -45.",
+      "distraktor": [
+        {
+          "teks": "$-46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=15, 2a-b=3. Eliminasi memberi a=6, b=9; selisih kuadrat -45.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "91130cfacfe24fef383abba2",
+        "teks": "Bilangan bulat $k$ terkecil yang membuat $8^{x} = 2^{k}$ dengan $x$ bilangan bulat dan $k > 10$ adalah ....",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=64$ dan $2^{2a-b}=1$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-12$",
+      "alasan_benar": "Samakan pangkat: a+b=6, 2a-b=0. Eliminasi memberi a=2, b=4; selisih kuadrat -12.",
+      "distraktor": [
+        {
+          "teks": "$-13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=6, 2a-b=0. Eliminasi memberi a=2, b=4; selisih kuadrat -12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "01a254ddf5c185ceb5465a6e",
+        "teks": "Pasangan bilangan pokok positif dan pangkat bulat $(a, n)$ yang membuat $a^{n} = \\frac{1}{81}$ adalah ....",
+        "jawaban": "$(a, n) = (3, -4)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=64$ dan $2^{2a-b}=64$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Samakan pangkat: a+b=6, 2a-b=6. Eliminasi memberi a=4, b=2; selisih kuadrat 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=6, 2a-b=6. Eliminasi memberi a=4, b=2; selisih kuadrat 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9b537eedf36bfc89452ad2a",
+        "teks": "Klaim: $a^{m} \\times b^{n} = (ab)^{m+n}$ berlaku untuk semua bilangan real $a$, $b$ dan bilangan bulat $m$, $n$. Set nilai $(a, b, m, n)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$(a, b, m, n) = (2, 3, 2, 2)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=16384$ dan $2^{2a-b}=16$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-28$",
+      "alasan_benar": "Samakan pangkat: a+b=14, 2a-b=4. Eliminasi memberi a=6, b=8; selisih kuadrat -28.",
+      "distraktor": [
+        {
+          "teks": "$-29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=14, 2a-b=4. Eliminasi memberi a=6, b=8; selisih kuadrat -28.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e1d0e1563f04e19b7d4bc661",
+        "teks": "Ayu menyatakan bahwa $2^{n} + 2^{n} = 2^{2n}$. Penilaian yang paling tepat tentang pernyataan Ayu adalah ....",
+        "jawaban": "benar hanya untuk $n = 1$, karena $2^{n} + 2^{n} = 2^{n+1}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=1$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-48$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=0. Eliminasi memberi a=4, b=8; selisih kuadrat -48.",
+      "distraktor": [
+        {
+          "teks": "$-49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-96$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=0. Eliminasi memberi a=4, b=8; selisih kuadrat -48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c94a1d55529099f4c1a42c5",
+        "teks": "Bimo menyatakan bahwa $(-2)^{n} = -2^{n}$ untuk bilangan bulat $n$. Penilaian yang paling tepat adalah ....",
+        "jawaban": "benar hanya untuk $n$ ganjil",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=16384$ dan $2^{2a-b}=1024$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Samakan pangkat: a+b=14, 2a-b=10. Eliminasi memberi a=8, b=6; selisih kuadrat 28.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=14, 2a-b=10. Eliminasi memberi a=8, b=6; selisih kuadrat 28.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17bae6eb8e74bb639101cc81",
+        "teks": "Bilangan bulat positif $n$ terkecil yang membuat $\\frac{3^{20}}{3^{n}} < 100$ adalah ....",
+        "jawaban": "16",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=4096$ dan $2^{2a-b}=\\frac{1}{8}$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-72$",
+      "alasan_benar": "Samakan pangkat: a+b=12, 2a-b=-3. Eliminasi memberi a=3, b=9; selisih kuadrat -72.",
+      "distraktor": [
+        {
+          "teks": "$-73$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=12, 2a-b=-3. Eliminasi memberi a=3, b=9; selisih kuadrat -72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "96f0ceadc22de7d5b7c16b0e",
+        "teks": "Awalnya ada 1 bakteri, dan banyaknya menjadi 3 kali lipat setiap jam. Bilangan bulat $t$ terkecil sehingga setelah $t$ jam banyak bakteri lebih dari $1.000.000$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas8.json",
+        "source_sha256": "84171ae8afa1fcd08aa73cdf0beb7f826279e7e4d4c9c5aecca27d9d6bcd1f2c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=2048$ dan $2^{2a-b}=16$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$-11$",
+      "alasan_benar": "Samakan pangkat: a+b=11, 2a-b=4. Eliminasi memberi a=5, b=6; selisih kuadrat -11.",
+      "distraktor": [
+        {
+          "teks": "$-12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=11, 2a-b=4. Eliminasi memberi a=5, b=6; selisih kuadrat -11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas8-b01-a-hard-bt01-047"
     }
   ]
 }

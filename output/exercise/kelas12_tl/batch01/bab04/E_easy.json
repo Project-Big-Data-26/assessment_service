@@ -849,6 +849,997 @@
       "pembahasan": "Diketahui variabel acak kontinu $X$ tersebar merata dari $x = 50$ hingga $x = 150$.\nPanjang interval domain adalah $150 - 50 = 100$.\nFungsi densitas peluang $X$ adalah:\n$$f(x) = \\begin{cases} \\frac{1}{100}, & 50 \\le x \\le 150 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\n\nPeluang siswa belajar efektif dalam rentang waktu 75 menit hingga 110 menit dihitung dengan integral:\n$$P(75 \\le X \\le 110) = \\int_{75}^{110} f(x)\\,dx = \\int_{75}^{110} \\frac{1}{100}\\,dx = \\left[ \\frac{x}{100} \\right]_{75}^{110} = \\frac{110 - 75}{100} = \\frac{35}{100} = \\frac{7}{20}$$\n\nJadi, peluang siswa tersebut belajar efektif dalam rentang waktu 75 menit hingga 110 menit adalah $\\frac{7}{20}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "182c767ef5cefdbb117f31d9",
+        "teks": "Dalam masa pembatasan kunjungan, suatu galeri seni hanya beroperasi selama 300 menit, yaitu mulai pukul 10.00 hingga pukul 15.00. Pengunjung tidak diperbolehkan berada di dalam galeri sebelum pukul 10.00 dan harus meninggalkan galeri paling lambat pukul 15.00. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam galeri (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan $f(x)=\\begin{cases}\\frac{1}{300}, & 0 \\le x \\le 300\\\\ 0, & x<0 \\text{ atau } x>300\\end{cases}$. Peluang seorang pengunjung berada di dalam galeri pada rentang waktu antara 60 dan 120 menit adalah ....",
+        "jawaban": "$\\frac{1}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{9}{20}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{9}{20}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{20}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{40}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{29}{40}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 11/40 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{9}{20}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b7346afd6b462973ff90f383.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              20
+            ],
+            [
+              "t",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 20], [\"t\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7dfa78fdb15269d6258ecb05",
+        "teks": "Waktu pengisian daya baterai sebuah perangkat hingga penuh dinyatakan sebagai variabel acak kontinu $T$ (dalam menit) dengan fungsi densitas peluang:\n$$f(t)=\\begin{cases}\\frac{1}{80}, & 0 \\le t \\le 80\\\\ 0, & \\text{untuk } t \\text{ lainnya}\\end{cases}$$\nPeluang pengisian daya berlangsung dalam rentang waktu antara 20 dan 60 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{13}{20}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{13}{20}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{20}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{13}{40}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{33}{40}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 7/40 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{13}{20}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/013557ce3f413d75dfd12892.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              20
+            ],
+            [
+              "t",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 20], [\"t\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0642a5399d24647e2b391d8",
+        "teks": "Sebuah laboratorium komputer dibuka untuk sesi praktikum mandiri dengan durasi paling lama 6 jam. Misalkan $Y$ menyatakan waktu praktikum seorang mahasiswa (dalam jam) dengan fungsi densitas peluang $f(y) = \\frac{1}{6}$ untuk $0 \\le y \\le 6$ dan $f(y) = 0$ untuk nilai lainnya. Peluang seorang mahasiswa melakukan praktikum selama 4 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{14}{17}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{14}{17}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{17}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{7}{17}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{31}{34}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/34 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{14}{17}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a2b1931756d3b624e2891d74.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              17
+            ],
+            [
+              "t",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 17], [\"t\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e289217c133d74a71e0c51f",
+        "teks": "Jika $X$ merupakan variabel acak kontinu dengan fungsi densitas peluang $f(x)$, maka untuk sembarang nilai konstanta real $c$, nilai dari $P(X = c)$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{12}{29}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{12}{29}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{29}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{6}{29}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{58}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 17/58 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{12}{29}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d2f67ca8e16fd5533a45fb32.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              29
+            ],
+            [
+              "t",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 29], [\"t\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b75c05a5a8c69330f0d7f6ba",
+        "teks": "Diketahui $X$ adalah variabel acak kontinu dengan fungsi densitas peluang $f(x)$. Peluang bahwa $X$ berada pada selang $a$ hingga $b$, yaitu $P(a \\le X \\le b)$, secara matematis dinyatakan oleh ....",
+        "jawaban": "$\\int_{a}^{b} f(x)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{4}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{9}{10}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/10 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{4}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f385cb1ad3e1d906f5821bb0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              15
+            ],
+            [
+              "t",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 15], [\"t\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62a5df3d2bc8178d429d3cc4",
+        "teks": "Sebuah wahana permainan buka selama 240 menit setiap sesi. Misalkan $X$ adalah variabel acak yang menyatakan lama waktu seorang pengunjung berada di wahana (dalam menit) dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{240}, & 0 \\le x \\le 240 \\\\ 0, & x < 0 \\text{ atau } x > 240 \\end{cases}$$\nPeluang seorang pengunjung berada di wahana tersebut pada rentang waktu antara 40 dan 160 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{23}{26}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{23}{26}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{26}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{23}{52}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{49}{52}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/52 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{23}{26}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/825162f53c69c7ed5bf0538a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              26
+            ],
+            [
+              "t",
+              23
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 26], [\"t\", 23]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2eec49fcbb25dc4c0ab62d7",
+        "teks": "Sebuah mesin pendingin beroperasi secara otomatis selama 120 menit dalam satu siklus kerja. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi kerja mesin (dalam menit) dengan fungsi densitas:\n$$f(x) = \\begin{cases} \\frac{1}{120}, & 0 \\le x \\le 120 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nPeluang mesin beroperasi dalam rentang waktu antara 45 menit dan 85 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{13}{17}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{13}{17}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{17}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{13}{34}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{15}{17}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/17 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{13}{17}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9fad13b0e08089f0cf76ed4f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              17
+            ],
+            [
+              "t",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 17], [\"t\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5634fed32896d5f329e0daf",
+        "teks": "Sebuah ruang laboratorium disewa maksimal selama 8 jam dalam sehari. Waktu penggunaan laboratorium dinyatakan oleh variabel acak kontinu $Y$ (dalam jam) dengan fungsi densitas:\n$$f(y) = \\begin{cases} \\frac{1}{8}, & 0 \\le y \\le 8 \\\\ 0, & \\text{untuk } y \\text{ lainnya} \\end{cases}$$\nPeluang laboratorium tersebut digunakan selama 6 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/5 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ba72f4217ff3cff469f56b40.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              5
+            ],
+            [
+              "t",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 5], [\"t\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb5088d052d6c0cc8656bc14",
+        "teks": "Perhitungan nilai peluang untuk suatu variabel acak kontinu tidak ditentukan berdasarkan nilai tunggal, melainkan dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas pada suatu interval nilai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{8}{9}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{8}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{17}{18}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/18 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{8}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5903c9903912c6ba4e26b586.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              9
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 9], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e200c6ab6c96fb6fb8849f6d",
+        "teks": "Fungsi distribusi peluang yang menggambarkan sebaran nilai dari suatu variabel acak kontinu secara matematis disebut sebagai ....",
+        "jawaban": "fungsi densitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{1}{9}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/3e42e77a98b4b3b62ee64549.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              18
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 18], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3c7127f12d07b1d99ea8671",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=2$ dan $x=6$, memiliki fungsi densitas peluang $f(x)=\\frac{x}{16}$. Nilai dari $P(X < 4)$ adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/4 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5dd842f141746a6176fdb3bf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              8
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 8], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ad111d49fd01dc2c1728a59",
+        "teks": "Seorang teknisi melakukan kalibrasi alat sensor dengan waktu pengerjaan yang tersebar merata dari 10 menit hingga 70 menit. Misalkan $X$ menyatakan waktu kalibrasi (dalam menit) dengan fungsi densitas peluang $f(x) = \\frac{1}{60}$ untuk $10 \\le x \\le 70$, dan $f(x)=0$ untuk nilai lainnya.\n\nBerdasarkan stimulus tersebut, tentukan peluang teknisi menyelesaikan kalibrasi dalam rentang waktu dari 25 menit hingga 55 menit.",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5/12 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/cae445c3277d303aefd099c5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              6
+            ],
+            [
+              "t",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 6], [\"t\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85544a0703175d962c47d08",
+        "teks": "Distribusi peluang dari suatu variabel acak kontinu tidak dapat disajikan dalam bentuk tabel distribusi peluang diskret karena ....",
+        "jawaban": "nilai-nilai variabel acak kontinu berada pada suatu selang yang tak terhingga banyaknya",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{2}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/10 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{2}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d06de07509f58eeddc9aeab2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              5
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 5], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a4e39430a826775cfa3c16",
+        "teks": "Pada grafik fungsi densitas peluang $f(x)$ dari suatu variabel acak kontinu $X$, luas daerah di bawah kurva yang dibatasi oleh garis $x = a$ dan $x = b$ serta sumbu-$x$ merepresentasikan ....",
+        "jawaban": "peluang variabel acak bernilai pada interval $a \\le X \\le b$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $20$; t = $19$. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{19}{20}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{19}{20}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{20}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{19}{40}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{39}{40}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/40 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{19}{20}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "234a84a610c6e374bc05c1cc",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=0$ dan $x=6$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{x+1}{24}$. Nilai dari $P(X < 2)$ adalah ....",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $16$; t = $2$. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 7/16 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{1}{8}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a02771365039a94cba775a16",
+        "teks": "Seorang pekerja magang mencatat durasi fokus kerja harian yang tersebar secara merata antara 30 menit hingga 150 menit. Jika $X$ menyatakan durasi waktu fokus tersebut (dalam menit), peluang pekerja tersebut fokus dalam rentang 50 menit hingga 90 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $27$; t = $14$. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{14}{27}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{14}{27}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{27}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{7}{27}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{54}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 13/54 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{14}{27}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d21267402a9ac2e7a8dfc90d",
+        "teks": "Seorang atlet renang mencatat waktu latihan fisik tambahan yang tersebar merata dari 15 menit hingga 75 menit. Jika durasi latihan dinyatakan oleh variabel acak kontinu $X$, peluang atlet tersebut berlatih dalam rentang waktu antara 25 menit hingga 65 menit adalah ....",
+        "jawaban": "$\\frac{2}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $28$; t = $3$. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{3}{28}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{3}{28}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{28}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3}{56}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{31}{56}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 25/56 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{3}{28}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0137326ab94e36014c3b54ce",
+        "teks": "Berdasarkan representasi grafisnya, fungsi peluang dari suatu variabel acak kontinu disajikan dalam bentuk ....",
+        "jawaban": "kurva kontinu tanpa titik-titik diskret",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_density_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $13$; t = $10$. Densitas X konstan pada $[0,L]$ dan nol selainnya. Tentukan $P(X<t)$.",
+      "jawaban_benar": "$\\frac{10}{13}$",
+      "alasan_benar": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{10}{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{13}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{5}{13}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{23}{26}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/26 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi densitas konstan dan hitung luas persegipanjang di bawah kurva. Hasilnya $\\frac{10}{13}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-easy-bt01-038"
     }
   ]
 }

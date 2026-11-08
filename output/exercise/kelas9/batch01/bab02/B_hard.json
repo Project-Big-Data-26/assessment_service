@@ -639,6 +639,2071 @@
       "pembahasan": "Langkah 1: Menentukan dimensi bidang alas prisma segitiga.\nBidang alas prisma adalah segitiga siku-siku dengan panjang sisi siku-siku $6\\text{ cm}$ dan $8\\text{ cm}$.\n$$\\text{Sisi miring} = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = 10\\text{ cm}$$\n\nLangkah 2: Menghitung luas kedua bidang alas (alas bawah dan atas).\n$$\\text{Luas satu alas} = \\frac{1}{2} \\times 6 \\times 8 = 24\\text{ cm}^2$$\n$$\\text{Luas 2 alas} = 2 \\times 24 = 48\\text{ cm}^2$$\n\nLangkah 3: Menghitung keliling alas prisma.\n$$K = 6 + 8 + 10 = 24\\text{ cm}$$\n\nLangkah 4: Menghitung luas ketiga sisi tegak prisma.\nTinggi prisma sama dengan tinggi balok mula-mula, yaitu $15\\text{ cm}$.\n$$\\text{Luas sisi tegak} = K \\times t = 24 \\times 15 = 360\\text{ cm}^2$$\n(Terdiri atas tiga persegi panjang: $6 \\times 15 = 90\\text{ cm}^2$, $8 \\times 15 = 120\\text{ cm}^2$, dan bidang potong $10 \\times 15 = 150\\text{ cm}^2$).\n\nLangkah 5: Menghitung total luas permukaan salah satu prisma.\n$$\\text{Luas total} = 48 + 360 = 408\\text{ cm}^2$$\n\nJadi, luas permukaan dari salah satu prisma segitiga siku-siku hasil potongan tersebut adalah $408\\text{ cm}^2$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9345ccaaeb548eb48dd80be8",
+        "teks": "Sebuah kotak pensil terbuat dari seng dengan ukuran panjang $15\\text{ cm}$, lebar $8\\text{ cm}$, dan tinggi $4\\text{ cm}$. Luas seng minimal yang dibutuhkan untuk membuat kotak pensil tersebut adalah ....",
+        "jawaban": "$424\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 170 cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 128 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$610$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 10 (akar positif). Dari 4(p+l+t)=128, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 610.",
+      "distraktor": [
+        {
+          "teks": "$609$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $610$."
+        },
+        {
+          "teks": "$611$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $610$."
+        },
+        {
+          "teks": "$1220$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 10 (akar positif). Dari 4(p+l+t)=128, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 610.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67ffe9a4160bed86a47c9b90",
+        "teks": "Sebuah tandon air tertutup berbentuk balok memiliki ukuran panjang $4\\text{ m}$, lebar $3\\text{ m}$, dan tinggi $2\\text{ m}$. Tandon tersebut akan diganti dengan model baru yang sebangun dengan faktor perbesaran skala $k$. Jika luas permukaan tandon baru yang dibuat adalah $468\\text{ m}^2$, berapakah nilai faktor skala $k$ dan berapa kali lipat luas permukaannya membesar dibandingkan tandon semula?",
+        "jawaban": "Faktor skala $k = 3$ dan luas permukaan membesar $9\\text{ kali lipat}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 90 cm², panjang lebih besar dari lebar sebesar 9 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$306$",
+      "alasan_benar": "Luas dan selisih memberi panjang 15, lebar 6 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 306.",
+      "distraktor": [
+        {
+          "teks": "$305$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $306$."
+        },
+        {
+          "teks": "$307$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $306$."
+        },
+        {
+          "teks": "$612$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 15, lebar 6 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 306.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c822fb673e86b7a95086bacb",
+        "teks": "Sebuah tugu berbentuk limas dengan alas persegi memiliki keliling alas $96\\text{ m}$ dan tinggi limas $16\\text{ m}$. Seluruh permukaan sisi miring tegak tugu tersebut akan dipasangi panel kaca dengan biaya Rp$400.000,00$ per $\\text{m}^2$. Namun, pada salah satu sisi tegaknya terdapat pintu masuk berbentuk segitiga dengan panjang alas $4\\text{ m}$ dan tinggi $3\\text{ m}$ yang tidak dipasangi kaca. Total biaya yang diperlukan untuk memasang seluruh panel kaca tersebut adalah ....",
+        "jawaban": "Rp381.600.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 153 cm², panjang lebih besar dari lebar sebesar 8 cm, dan panjang seluruh rusuk 132 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$670$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 9 (akar positif). Dari 4(p+l+t)=132, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 670.",
+      "distraktor": [
+        {
+          "teks": "$669$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $670$."
+        },
+        {
+          "teks": "$671$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $670$."
+        },
+        {
+          "teks": "$1340$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 9 (akar positif). Dari 4(p+l+t)=132, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 670.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67ffe9a4160bed86a47c9b90",
+        "teks": "Sebuah tandon air tertutup berbentuk balok memiliki ukuran panjang $4\\text{ m}$, lebar $3\\text{ m}$, dan tinggi $2\\text{ m}$. Tandon tersebut akan diganti dengan model baru yang sebangun dengan faktor perbesaran skala $k$. Jika luas permukaan tandon baru yang dibuat adalah $468\\text{ m}^2$, berapakah nilai faktor skala $k$ dan berapa kali lipat luas permukaannya membesar dibandingkan tandon semula?",
+        "jawaban": "Faktor skala $k = 3$ dan luas permukaan membesar $9\\text{ kali lipat}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 44 cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 84 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$268$",
+      "alasan_benar": "Luas dan selisih memberi panjang 11, lebar 4 (akar positif). Dari 4(p+l+t)=84, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 268.",
+      "distraktor": [
+        {
+          "teks": "$267$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $268$."
+        },
+        {
+          "teks": "$269$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $268$."
+        },
+        {
+          "teks": "$536$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 11, lebar 4 (akar positif). Dari 4(p+l+t)=84, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 268.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "675e735c3a9add7d14ca2333",
+        "teks": "Sebuah kotak penyimpanan berbentuk kubus memiliki luas permukaan mula-mula $1.350\\text{ cm}^2$. Kotak tersebut dirancang ulang sehingga setiap panjang rusuknya diperkecil dengan faktor skala $\\frac{2}{3}$. Perbandingan antara pengurangan luas permukaan kotak tersebut terhadap luas permukaan setelah diperkecil adalah ....",
+        "jawaban": "$5 : 4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 72 cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 80 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$246$",
+      "alasan_benar": "Luas dan selisih memberi panjang 9, lebar 8 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 246.",
+      "distraktor": [
+        {
+          "teks": "$245$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $246$."
+        },
+        {
+          "teks": "$247$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $246$."
+        },
+        {
+          "teks": "$492$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 9, lebar 8 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 246.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b79733919627a203048ed72a",
+        "teks": "Sebuah prisma tegak memiliki alas berbentuk segitiga siku-siku dengan panjang sisi siku-sikunya $6\\text{ cm}$ dan $8\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, luas permukaan prisma tersebut adalah ....",
+        "jawaban": "$408\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 77 cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 92 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$334$",
+      "alasan_benar": "Luas dan selisih memberi panjang 11, lebar 7 (akar positif). Dari 4(p+l+t)=92, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 334.",
+      "distraktor": [
+        {
+          "teks": "$333$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $334$."
+        },
+        {
+          "teks": "$335$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $334$."
+        },
+        {
+          "teks": "$668$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 11, lebar 7 (akar positif). Dari 4(p+l+t)=92, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 334.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "19dfb8fc8daea00624a7fadd",
+        "teks": "Rumus luas permukaan kubus dan balok dapat diturunkan dari rumus luas permukaan prisma karena ....",
+        "jawaban": "kubus termasuk balok dan balok termasuk prisma",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 96 cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 104 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$432$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 8 (akar positif). Dari 4(p+l+t)=104, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 432.",
+      "distraktor": [
+        {
+          "teks": "$431$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $432$."
+        },
+        {
+          "teks": "$433$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $432$."
+        },
+        {
+          "teks": "$864$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 8 (akar positif). Dari 4(p+l+t)=104, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 432.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea0bf0160addddecf3084990",
+        "teks": "Dua buah kubus mainan terbuat dari kayu masing-masing memiliki panjang rusuk $0,3\\text{ m}$ dan $0,4\\text{ m}$. Selisih luas permukaan kedua kubus tersebut adalah ....",
+        "jawaban": "$0,42\\text{ m}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 160 cm², panjang lebih besar dari lebar sebesar 6 cm, dan panjang seluruh rusuk 136 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$736$",
+      "alasan_benar": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=136, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 736.",
+      "distraktor": [
+        {
+          "teks": "$735$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $736$."
+        },
+        {
+          "teks": "$737$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $736$."
+        },
+        {
+          "teks": "$1472$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=136, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 736.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e529d28a8f380ed5b2150ae7",
+        "teks": "Sebuah kawat sepanjang $144\\text{ cm}$ akan digunakan seluruhnya untuk membuat kerangka sebuah balok dengan alas berbentuk persegi. Jika tinggi balok dirancang $6\\text{ cm}$ lebih panjang daripada panjang rusuk alasnya, maka luas permukaan balok yang terbentuk adalah ....",
+        "jawaban": "$840\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 50 cm², panjang lebih besar dari lebar sebesar 5 cm, dan panjang seluruh rusuk 84 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$280$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 5 (akar positif). Dari 4(p+l+t)=84, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 280.",
+      "distraktor": [
+        {
+          "teks": "$279$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $280$."
+        },
+        {
+          "teks": "$281$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $280$."
+        },
+        {
+          "teks": "$560$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 5 (akar positif). Dari 4(p+l+t)=84, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 280.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a37aac686bfabcba2d8ac522",
+        "teks": "Sebuah kotak kardus berbentuk balok dengan ukuran panjang $30\\text{ cm}$, lebar $20\\text{ cm}$, dan tinggi $15\\text{ cm}$ akan dibungkus rapat dengan kertas kado. Jika selembar kertas kado yang tersedia memiliki luas $3.000\\text{ cm}^2$, luas kertas kado yang tersisa setelah membungkus kotak tersebut adalah ....",
+        "jawaban": "$300\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 56 cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 88 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$322$",
+      "alasan_benar": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=88, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 322.",
+      "distraktor": [
+        {
+          "teks": "$321$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $322$."
+        },
+        {
+          "teks": "$323$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $322$."
+        },
+        {
+          "teks": "$644$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=88, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 322.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f5a68597d462f1c04ba3706",
+        "teks": "Luas permukaan sebuah kubus adalah $486\\text{ cm}^2$. Jumlah panjang seluruh rusuk kubus tersebut adalah ....",
+        "jawaban": "$108\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 60 cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 104 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$426$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 5 (akar positif). Dari 4(p+l+t)=104, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 426.",
+      "distraktor": [
+        {
+          "teks": "$425$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $426$."
+        },
+        {
+          "teks": "$427$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $426$."
+        },
+        {
+          "teks": "$852$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 5 (akar positif). Dari 4(p+l+t)=104, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 426.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c301fb6c2359b46a100878e",
+        "teks": "Sebuah limas memiliki alas berbentuk persegi dengan panjang sisi $10\\text{ cm}$. Jika tinggi limas tersebut adalah $12\\text{ cm}$, luas permukaan limas tersebut adalah ....",
+        "jawaban": "$360\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 119 cm², panjang lebih besar dari lebar sebesar 10 cm, dan panjang seluruh rusuk 124 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$574$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 7 (akar positif). Dari 4(p+l+t)=124, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 574.",
+      "distraktor": [
+        {
+          "teks": "$573$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $574$."
+        },
+        {
+          "teks": "$575$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $574$."
+        },
+        {
+          "teks": "$1148$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 7 (akar positif). Dari 4(p+l+t)=124, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 574.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37f0dac0ab6a3722d2a4de15",
+        "teks": "Sebuah bak penampungan air tanpa tutup terbuat dari pelat baja dengan ukuran panjang $120\\text{ cm}$, lebar $80\\text{ cm}$, dan tinggi $60\\text{ cm}$. Jika seluruh permukaan pelat baja pada bagian dalam dan bagian luar bak tersebut akan dilapisi cat anti-karat (ketebalan pelat diabaikan), luas total permukaan pelat yang terlapisi cat adalah ....",
+        "jawaban": "$67.200\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 56 cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 80 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$262$",
+      "alasan_benar": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=80, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 262.",
+      "distraktor": [
+        {
+          "teks": "$261$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $262$."
+        },
+        {
+          "teks": "$263$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $262$."
+        },
+        {
+          "teks": "$524$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=80, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 262.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c301fb6c2359b46a100878e",
+        "teks": "Sebuah limas memiliki alas berbentuk persegi dengan panjang sisi $10\\text{ cm}$. Jika tinggi limas tersebut adalah $12\\text{ cm}$, luas permukaan limas tersebut adalah ....",
+        "jawaban": "$360\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 110 cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$346$",
+      "alasan_benar": "Luas dan selisih memberi panjang 11, lebar 10 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 346.",
+      "distraktor": [
+        {
+          "teks": "$345$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $346$."
+        },
+        {
+          "teks": "$347$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $346$."
+        },
+        {
+          "teks": "$692$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 11, lebar 10 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 346.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1dc297debf5277874c754c9c",
+        "teks": "Sebuah prisma tegak memiliki alas berbentuk belah ketupat dengan panjang diagonal-diagonalnya masing-masing $12\\text{ cm}$ dan $16\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, luas permukaan prisma tersebut adalah ....",
+        "jawaban": "$792\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 136 cm², panjang lebih besar dari lebar sebesar 9 cm, dan panjang seluruh rusuk 132 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$672$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 8 (akar positif). Dari 4(p+l+t)=132, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 672.",
+      "distraktor": [
+        {
+          "teks": "$671$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $672$."
+        },
+        {
+          "teks": "$673$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $672$."
+        },
+        {
+          "teks": "$1344$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 8 (akar positif). Dari 4(p+l+t)=132, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 672.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "501ad7da472e1c0468756db4",
+        "teks": "Sebuah kotak kayu berbentuk balok memiliki ukuran panjang $8\\text{ cm}$, lebar $5\\text{ cm}$, dan tinggi $4\\text{ cm}$. Berapakah luas permukaan kotak kayu tersebut?",
+        "jawaban": "$184\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 80 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$248$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 6 (akar positif). Dari 4(p+l+t)=80, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 248.",
+      "distraktor": [
+        {
+          "teks": "$247$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$496$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 6 (akar positif). Dari 4(p+l+t)=80, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 248.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c6e14ce8ee678d6fbbe298c",
+        "teks": "Sebuah limas dengan alas berbentuk persegi memiliki panjang sisi alas $8\\text{ cm}$ dan tinggi sisi tegak $7\\text{ cm}$. Luas permukaan limas tersebut adalah ....",
+        "jawaban": "$176\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 2 cm, dan panjang seluruh rusuk 100 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$372$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 10 (akar positif). Dari 4(p+l+t)=100, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 372.",
+      "distraktor": [
+        {
+          "teks": "$371$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$373$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$744$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 10 (akar positif). Dari 4(p+l+t)=100, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 372.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/42bab1bcb7c0555b3388b5db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              120
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 120]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "40334ece683ef7db255f301b",
+        "teks": "Berapakah luas permukaan sebuah kubus yang memiliki panjang rusuk $0,4\\text{ m}$?",
+        "jawaban": "$0,96\\text{ m}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 72 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$208$",
+      "alasan_benar": "Luas dan selisih memberi panjang 8, lebar 4 (akar positif). Dari 4(p+l+t)=72, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 208.",
+      "distraktor": [
+        {
+          "teks": "$207$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$209$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$416$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 8, lebar 4 (akar positif). Dari 4(p+l+t)=72, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 208.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/e5f9f2d7da11bc68e63a828f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              32
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 32]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7fc345d09a710aff62d9312e",
+        "teks": "Secara umum, pengertian dari luas permukaan sebuah bangun ruang adalah ....",
+        "jawaban": "total luas dari semua sisi bangun ruang tersebut",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 144 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$826$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 10 (akar positif). Dari 4(p+l+t)=144, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 826.",
+      "distraktor": [
+        {
+          "teks": "$825$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$827$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1652$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 10 (akar positif). Dari 4(p+l+t)=144, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 826.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/b723d78b38275a644ee436d6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              170
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 170]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a166b83795a9eb56b232d6ea",
+        "teks": "Sebuah prisma tegak memiliki luas alas $30\\text{ cm}^2$, keliling alas $24\\text{ cm}$, dan tinggi prisma $10\\text{ cm}$. Luas permukaan prisma tersebut adalah ....",
+        "jawaban": "$300\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 6 cm, dan panjang seluruh rusuk 68 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$164$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 4 (akar positif). Dari 4(p+l+t)=68, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 164.",
+      "distraktor": [
+        {
+          "teks": "$163$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$165$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$328$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 4 (akar positif). Dari 4(p+l+t)=68, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 164.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/dc7fb29dca5ef26a1021f56a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              40
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 40]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d75576d88c8124a7fdc0303",
+        "teks": "Luas permukaan kubus yang memiliki panjang rusuk $7\\text{ cm}$ adalah ....",
+        "jawaban": "$294\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 108 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$454$",
+      "alasan_benar": "Luas dan selisih memberi panjang 13, lebar 9 (akar positif). Dari 4(p+l+t)=108, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 454.",
+      "distraktor": [
+        {
+          "teks": "$453$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$455$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$908$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 13, lebar 9 (akar positif). Dari 4(p+l+t)=108, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 454.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/1d54d2010d431aec1765209a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              117
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 117]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9345ccaaeb548eb48dd80be8",
+        "teks": "Sebuah kotak pensil terbuat dari seng dengan ukuran panjang $15\\text{ cm}$, lebar $8\\text{ cm}$, dan tinggi $4\\text{ cm}$. Luas seng minimal yang dibutuhkan untuk membuat kotak pensil tersebut adalah ....",
+        "jawaban": "$424\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 2 cm, dan panjang seluruh rusuk 68 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Luas dan selisih memberi panjang 8, lebar 6 (akar positif). Dari 4(p+l+t)=68, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 180.",
+      "distraktor": [
+        {
+          "teks": "$179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 8, lebar 6 (akar positif). Dari 4(p+l+t)=68, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 180.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/10a7578f84581e9ad1bc85f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              48
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 48]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc6617cfa3b342d5c66adf20",
+        "teks": "Suatu limas dengan alas berbentuk persegi memiliki panjang rusuk alas $10\\text{ cm}$ dan tinggi sisi tegak $8\\text{ cm}$. Luas permukaan limas tersebut adalah ....",
+        "jawaban": "$260\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 72 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$202$",
+      "alasan_benar": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=72, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 202.",
+      "distraktor": [
+        {
+          "teks": "$201$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$203$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$404$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 8, lebar 7 (akar positif). Dari 4(p+l+t)=72, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 202.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/a0d5f2764ac07ce5a0ab47cb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              56
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 56]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7ea621d0a1909e3ca5d07a9d",
+        "teks": "Jika sebuah prisma memiliki luas alas $L$, keliling alas $K$, dan tinggi $t$, maka rumus luas permukaan prisma tersebut adalah ....",
+        "jawaban": "$2 \\times L + K \\times t$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 3 cm, dan panjang seluruh rusuk 80 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$242$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 7 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 242.",
+      "distraktor": [
+        {
+          "teks": "$241$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$243$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$484$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 7 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 242.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/f831e55d4a452774b961219a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              70
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 70]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b76485e8ac3fc0828bbdd4a1",
+        "teks": "Luas permukaan kubus yang memiliki panjang sisi $0,5\\text{ m}$ adalah ....",
+        "jawaban": "$1,5\\text{ m}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 104 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$378$",
+      "alasan_benar": "Luas dan selisih memberi panjang 15, lebar 8 (akar positif). Dari 4(p+l+t)=104, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 378.",
+      "distraktor": [
+        {
+          "teks": "$377$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$379$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$756$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 15, lebar 8 (akar positif). Dari 4(p+l+t)=104, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 378.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/42bab1bcb7c0555b3388b5db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              120
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 120]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "19dfb8fc8daea00624a7fadd",
+        "teks": "Rumus luas permukaan kubus dan balok dapat diturunkan dari rumus luas permukaan prisma karena ....",
+        "jawaban": "kubus termasuk balok dan balok termasuk prisma",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 84 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$280$",
+      "alasan_benar": "Luas dan selisih memberi panjang 9, lebar 8 (akar positif). Dari 4(p+l+t)=84, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 280.",
+      "distraktor": [
+        {
+          "teks": "$279$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$281$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$560$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 9, lebar 8 (akar positif). Dari 4(p+l+t)=84, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 280.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/67dc53f8b52a0f284ab98f69.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              72
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 72]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e34a8fc155bd30559f21ae44",
+        "teks": "Secara sederhana, luas permukaan suatu bangun ruang dapat dianalogikan sebagai ....",
+        "jawaban": "luas kertas atau bungkus yang dibutuhkan untuk membungkus bangun ruang tersebut",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 6 cm, dan panjang seluruh rusuk 100 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$382$",
+      "alasan_benar": "Luas dan selisih memberi panjang 13, lebar 7 (akar positif). Dari 4(p+l+t)=100, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 382.",
+      "distraktor": [
+        {
+          "teks": "$381$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$383$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$764$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 13, lebar 7 (akar positif). Dari 4(p+l+t)=100, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 382.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/9cdb3fd8f28592466b922ef6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              91
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 91]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0cd29ff1b71ce163cd6da93",
+        "teks": "Sebuah kubus awalnya memiliki panjang rusuk $8\\text{ cm}$. Jika kubus tersebut diperkecil dengan faktor skala $0,5$, luas permukaan kubus setelah diubah adalah ....",
+        "jawaban": "$96\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 6 cm, dan panjang seluruh rusuk 128 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$632$",
+      "alasan_benar": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=128, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 632.",
+      "distraktor": [
+        {
+          "teks": "$631$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$633$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=128, tinggi 6. Terapkan rumus 2(pl+pt+lt), hasil 632.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/b65636db6496cc5a36a8bd70.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              160
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 160]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "886c9f1746c275923003e046",
+        "teks": "Cari luas permukaan balok dengan ukuran panjang alas $9\\text{ cm}$, lebar alas $7\\text{ cm}$, dan tinggi $3\\text{ cm}$.",
+        "jawaban": "$222\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 3 cm, dan panjang seluruh rusuk 112 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$518$",
+      "alasan_benar": "Luas dan selisih memberi panjang 11, lebar 8 (akar positif). Dari 4(p+l+t)=112, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 518.",
+      "distraktor": [
+        {
+          "teks": "$517$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$519$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1036$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 11, lebar 8 (akar positif). Dari 4(p+l+t)=112, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 518.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/162f5d099604587eb885bc84.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              88
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 88]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b59e080d9f76b7aa7a4a5e85",
+        "teks": "Sebuah kubus memiliki panjang rusuk $5\\text{ m}$. Jika rusuk kubus tersebut diperbesar dengan faktor skala $3$, berapa kali lipat luas permukaannya berubah dibandingkan luas permukaan semula?",
+        "jawaban": "$9\\text{ kali lipat}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 2 cm, dan panjang seluruh rusuk 84 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$268$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 8 (akar positif). Dari 4(p+l+t)=84, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 268.",
+      "distraktor": [
+        {
+          "teks": "$267$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$269$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$536$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 8 (akar positif). Dari 4(p+l+t)=84, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 268.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/db30e1aec49f165c4c3912cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              80
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 80]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7337f7602c5597a6db811069",
+        "teks": "Sebuah balok kayu berukuran panjang $10\\text{ cm}$, lebar $6\\text{ cm}$, dan tinggi $8\\text{ cm}$ diletakkan di atas meja. Sebuah kubus kayu dengan panjang rusuk $4\\text{ cm}$ ditempelkan tepat di bagian tengah permukaan atas balok tersebut. Luas permukaan seluruh bangun gabungan tersebut adalah ....",
+        "jawaban": "$440\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 2 cm, dan panjang seluruh rusuk 108 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$460$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 10 (akar positif). Dari 4(p+l+t)=108, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 460.",
+      "distraktor": [
+        {
+          "teks": "$459$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$920$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 10 (akar positif). Dari 4(p+l+t)=108, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 460.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/42bab1bcb7c0555b3388b5db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              120
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 120]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8fb3911b604672338e287f53",
+        "teks": "Sebuah balok kayu pejal berukuran $12\\text{ cm} \\times 8\\text{ cm} \\times 6\\text{ cm}$ dipotong tepat pada salah satu pojok sudutnya sedemikian sehingga sebuah kubus kecil berukuran rusuk $2\\text{ cm}$ terbuang. Tiga orang siswa berpendapat mengenai luas permukaan bangun yang tersisa:\n- Siswa A: Luas permukaan berkurang $24\\text{ cm}^2$ karena 6 sisi kubus hilang.\n- Siswa B: Luas permukaan berkurang $8\\text{ cm}^2$ sebanding volume kubus yang terbuang.\n- Siswa C: Luas permukaan bangun yang tersisa sama dengan luas permukaan balok mula-mula.\n\nPendapat yang benar dan alasan logisnya adalah ....",
+        "jawaban": "Pendapat Siswa C benar, karena tiga persegi luar yang hilang digantikan seimbang oleh tiga persegi baru di bagian dalam sudut potongan.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 8 cm, dan panjang seluruh rusuk 76 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 4 (akar positif). Dari 4(p+l+t)=76, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 192.",
+      "distraktor": [
+        {
+          "teks": "$191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$193$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 4 (akar positif). Dari 4(p+l+t)=76, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 192.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/10a7578f84581e9ad1bc85f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              48
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 48]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "675e735c3a9add7d14ca2333",
+        "teks": "Sebuah kotak penyimpanan berbentuk kubus memiliki luas permukaan mula-mula $1.350\\text{ cm}^2$. Kotak tersebut dirancang ulang sehingga setiap panjang rusuknya diperkecil dengan faktor skala $\\frac{2}{3}$. Perbandingan antara pengurangan luas permukaan kotak tersebut terhadap luas permukaan setelah diperkecil adalah ....",
+        "jawaban": "$5 : 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 5 cm, dan panjang seluruh rusuk 88 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$306$",
+      "alasan_benar": "Luas dan selisih memberi panjang 9, lebar 4 (akar positif). Dari 4(p+l+t)=88, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 306.",
+      "distraktor": [
+        {
+          "teks": "$305$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$612$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 9, lebar 4 (akar positif). Dari 4(p+l+t)=88, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 306.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e529d28a8f380ed5b2150ae7",
+        "teks": "Sebuah kawat sepanjang $144\\text{ cm}$ akan digunakan seluruhnya untuk membuat kerangka sebuah balok dengan alas berbentuk persegi. Jika tinggi balok dirancang $6\\text{ cm}$ lebih panjang daripada panjang rusuk alasnya, maka luas permukaan balok yang terbentuk adalah ....",
+        "jawaban": "$840\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 88 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$298$",
+      "alasan_benar": "Luas dan selisih memberi panjang 11, lebar 4 (akar positif). Dari 4(p+l+t)=88, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 298.",
+      "distraktor": [
+        {
+          "teks": "$297$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$299$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$596$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 11, lebar 4 (akar positif). Dari 4(p+l+t)=88, tinggi 7. Terapkan rumus 2(pl+pt+lt), hasil 298.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/0ad7ec0f68a340cc25599684.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              44
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 44]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c822fb673e86b7a95086bacb",
+        "teks": "Sebuah tugu berbentuk limas dengan alas persegi memiliki keliling alas $96\\text{ m}$ dan tinggi limas $16\\text{ m}$. Seluruh permukaan sisi miring tegak tugu tersebut akan dipasangi panel kaca dengan biaya Rp$400.000,00$ per $\\text{m}^2$. Namun, pada salah satu sisi tegaknya terdapat pintu masuk berbentuk segitiga dengan panjang alas $4\\text{ m}$ dan tinggi $3\\text{ m}$ yang tidak dipasangi kaca. Total biaya yang diperlukan untuk memasang seluruh panel kaca tersebut adalah ....",
+        "jawaban": "Rp381.600.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Balok mempunyai luas alas $T_1$ cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 100 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$408$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 6 (akar positif). Dari 4(p+l+t)=100, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 408.",
+      "distraktor": [
+        {
+          "teks": "$407$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$409$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$816$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 6 (akar positif). Dari 4(p+l+t)=100, tinggi 9. Terapkan rumus 2(pl+pt+lt), hasil 408.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-050",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67ffe9a4160bed86a47c9b90",
+        "teks": "Sebuah tandon air tertutup berbentuk balok memiliki ukuran panjang $4\\text{ m}$, lebar $3\\text{ m}$, dan tinggi $2\\text{ m}$. Tandon tersebut akan diganti dengan model baru yang sebangun dengan faktor perbesaran skala $k$. Jika luas permukaan tandon baru yang dibuat adalah $468\\text{ m}^2$, berapakah nilai faktor skala $k$ dan berapa kali lipat luas permukaannya membesar dibandingkan tandon semula?",
+        "jawaban": "Faktor skala $k = 3$ dan luas permukaan membesar $9\\text{ kali lipat}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 63 cm², panjang lebih besar dari lebar sebesar 2 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$382$",
+      "alasan_benar": "Luas dan selisih memberi panjang 9, lebar 7 (akar positif). Dari 4(p+l+t)=96, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 382.",
+      "distraktor": [
+        {
+          "teks": "$381$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$383$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$764$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 9, lebar 7 (akar positif). Dari 4(p+l+t)=96, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 382.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37f0dac0ab6a3722d2a4de15",
+        "teks": "Sebuah bak penampungan air tanpa tutup terbuat dari pelat baja dengan ukuran panjang $120\\text{ cm}$, lebar $80\\text{ cm}$, dan tinggi $60\\text{ cm}$. Jika seluruh permukaan pelat baja pada bagian dalam dan bagian luar bak tersebut akan dilapisi cat anti-karat (ketebalan pelat diabaikan), luas total permukaan pelat yang terlapisi cat adalah ....",
+        "jawaban": "$67.200\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 153 cm², panjang lebih besar dari lebar sebesar 8 cm, dan panjang seluruh rusuk 116 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$462$",
+      "alasan_benar": "Luas dan selisih memberi panjang 17, lebar 9 (akar positif). Dari 4(p+l+t)=116, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 462.",
+      "distraktor": [
+        {
+          "teks": "$461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$463$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$924$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 17, lebar 9 (akar positif). Dari 4(p+l+t)=116, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 462.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1f2bd5961a8658ab05a9911f",
+        "teks": "Sebuah prisma tegak memiliki alas berbentuk segitiga siku-siku dengan panjang sisi $9\\text{ cm}$, $12\\text{ cm}$, dan $15\\text{ cm}$, serta tinggi prisma $20\\text{ cm}$. Seorang siswa keliru menerapkan rumus: ia menghitung luas seluruh sisi tegak dengan cara mengalikan luas alas dengan tinggi prisma, lalu menambahkannya dengan keliling alas sebagai luas sisi yang tersisa. Berapakah selisih antara hasil perhitungan keliru siswa tersebut dengan luas permukaan prisma yang sebenarnya?",
+        "jawaban": "$288\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 160 cm², panjang lebih besar dari lebar sebesar 6 cm, dan panjang seluruh rusuk 120 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$528$",
+      "alasan_benar": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=120, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 528.",
+      "distraktor": [
+        {
+          "teks": "$527$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$529$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1056$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 16, lebar 10 (akar positif). Dari 4(p+l+t)=120, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 528.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "416bed224d11c27dc5d59582",
+        "teks": "Sebuah balok kayu pejal memiliki ukuran $12\\text{ cm} \\times 12\\text{ cm} \\times 15\\text{ cm}$. Tepat di tengah balok dibuat lubang tembus dari permukaan atas tembus ke permukaan bawah berbentuk prisma tegak persegi dengan ukuran alas $5\\text{ cm} \\times 5\\text{ cm}$. Berapakah luas seluruh permukaan bangun ruang kayu setelah dilubangi tersebut?",
+        "jawaban": "$1.258\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 96 cm², panjang lebih besar dari lebar sebesar 4 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$352$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 8 (akar positif). Dari 4(p+l+t)=96, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 352.",
+      "distraktor": [
+        {
+          "teks": "$351$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$353$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$704$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 8 (akar positif). Dari 4(p+l+t)=96, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 352.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1b8966166f610868313a05e3",
+        "teks": "Sebuah limas tegak memiliki alas berbentuk persegi panjang dengan ukuran panjang $18\\text{ cm}$ dan lebar $10\\text{ cm}$. Puncak limas berada tepat di atas titik pusat perpotongan diagonal alas dengan tinggi limas $12\\text{ cm}$. Luas seluruh permukaan limas tersebut adalah ....",
+        "jawaban": "$564\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 60 cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 80 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$222$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 5 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 222.",
+      "distraktor": [
+        {
+          "teks": "$221$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$223$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$444$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 5 (akar positif). Dari 4(p+l+t)=80, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 222.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5dd5619779a7cd302a856ee4",
+        "teks": "Sebuah kawat sepanjang $160\\text{ cm}$ akan digunakan seluruhnya untuk membuat kerangka sebuah kotak balok tertutup. Kotak tersebut dirancang memiliki perbandingan ukuran panjang, lebar, dan tinggi berturut-turut $5 : 3 : 2$. Jika seluruh permukaan kerangka kotak tersebut akan dilapisi pelat seng hingga tertutup rapat tanpa tumpang tindih, berapakah luas pelat seng minimal yang dibutuhkan?",
+        "jawaban": "$992\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 90 cm², panjang lebih besar dari lebar sebesar 1 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$370$",
+      "alasan_benar": "Luas dan selisih memberi panjang 10, lebar 9 (akar positif). Dari 4(p+l+t)=96, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 370.",
+      "distraktor": [
+        {
+          "teks": "$369$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$371$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$740$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 10, lebar 9 (akar positif). Dari 4(p+l+t)=96, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 370.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a544dba8b0d4c991f849a717",
+        "teks": "Sebuah wadah prisma tegak memiliki alas berbentuk trapesium siku-siku dengan panjang sisi-sisi sejajar $7\\text{ cm}$ dan $13\\text{ cm}$, serta tinggi alas $8\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, berapakah luas seluruh permukaan prisma tersebut?",
+        "jawaban": "$730\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 65 cm², panjang lebih besar dari lebar sebesar 8 cm, dan panjang seluruh rusuk 92 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$310$",
+      "alasan_benar": "Luas dan selisih memberi panjang 13, lebar 5 (akar positif). Dari 4(p+l+t)=92, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 310.",
+      "distraktor": [
+        {
+          "teks": "$309$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$311$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$620$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 13, lebar 5 (akar positif). Dari 4(p+l+t)=92, tinggi 5. Terapkan rumus 2(pl+pt+lt), hasil 310.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce608d65a7997845943a3aba",
+        "teks": "Sebuah balok kayu pejal memiliki ukuran $10\\text{ cm} \\times 8\\text{ cm} \\times 6\\text{ cm}$. Balok tersebut akan dibelah menjadi dua balok berukuran sama dengan satu kali potongan lurus sejajar salah satu bidang sisinya. Seorang pengrajin ingin memilih arah potongan sedemikian sehingga jumlah total luas permukaan kedua balok hasil potongan bernilai paling besar. Berapakah jumlah luas permukaan kedua balok tersebut?",
+        "jawaban": "$536\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 126 cm², panjang lebih besar dari lebar sebesar 5 cm, dan panjang seluruh rusuk 124 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$620$",
+      "alasan_benar": "Luas dan selisih memberi panjang 14, lebar 9 (akar positif). Dari 4(p+l+t)=124, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 620.",
+      "distraktor": [
+        {
+          "teks": "$619$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$621$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1240$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 14, lebar 9 (akar positif). Dari 4(p+l+t)=124, tinggi 8. Terapkan rumus 2(pl+pt+lt), hasil 620.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c987863a13742867d0a48851",
+        "teks": "Dua buah limas tegak beraturan $A$ dan $B$ memiliki alas berbentuk persegi dan saling sebangun. Diketahui luas alas limas $B$ adalah $9$ kali luas alas limas $A$. Jika limas $A$ memiliki panjang sisi alas $6\\text{ cm}$ dan tinggi sisi tegak $5\\text{ cm}$, berapakah selisih luas seluruh permukaan antara limas $B$ dan limas $A$?",
+        "jawaban": "$768\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 108 cm², panjang lebih besar dari lebar sebesar 3 cm, dan panjang seluruh rusuk 96 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$342$",
+      "alasan_benar": "Luas dan selisih memberi panjang 12, lebar 9 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 342.",
+      "distraktor": [
+        {
+          "teks": "$341$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$343$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$684$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 12, lebar 9 (akar positif). Dari 4(p+l+t)=96, tinggi 3. Terapkan rumus 2(pl+pt+lt), hasil 342.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9b657102ee4a1a3f0bc6e436",
+        "teks": "Sebuah balok kayu pejal berukuran $6\\text{ cm} \\times 8\\text{ cm} \\times 15\\text{ cm}$ dibelah menjadi dua bagian prisma segitiga siku-siku yang kongruen dengan satu kali pemotongan lurus vertikal melalui bidang diagonal alasnya. Berapakah luas permukaan dari salah satu prisma segitiga siku-siku hasil potongan tersebut?",
+        "jawaban": "$408\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_balok_tiga_kendala",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Balok mempunyai luas alas 78 cm², panjang lebih besar dari lebar sebesar 7 cm, dan panjang seluruh rusuk 92 cm. Tentukan luas permukaannya dalam cm².",
+      "jawaban_benar": "$308$",
+      "alasan_benar": "Luas dan selisih memberi panjang 13, lebar 6 (akar positif). Dari 4(p+l+t)=92, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 308.",
+      "distraktor": [
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$309$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$616$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Luas dan selisih memberi panjang 13, lebar 6 (akar positif). Dari 4(p+l+t)=92, tinggi 4. Terapkan rumus 2(pl+pt+lt), hasil 308.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-b-hard-bt01-060"
     }
   ]
 }

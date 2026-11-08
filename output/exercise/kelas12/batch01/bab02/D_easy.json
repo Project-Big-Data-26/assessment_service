@@ -681,6 +681,2288 @@
       ],
       "pembahasan": "X: 200.000. Y: 225.000. Selisih = 25.000.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14cca2bb1b2d8a14d99fbfd0",
+        "teks": "Sebuah pinjaman berbunga 9% per tahun dengan bunga dihitung tiap bulan. Persentase bunga per bulan adalah ....",
+        "jawaban": "0,75%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp4.800.000,00 dikenai bunga majemuk 5% per tahun dan belum dibayar selama 3 tahun. Berapa sisa utangnya tepat setelah 3 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$5556600$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=4800000(1+1/20)^3=5556600.",
+      "distraktor": [
+        {
+          "teks": "$5556601$",
+          "alasan": "Pilihan $5556601$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5556600$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$5556599$",
+          "alasan": "Pilihan $5556599$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5556600$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$5556602$",
+          "alasan": "Pilihan $5556602$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5556600$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=4800000(1+1/20)^3=5556600.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f44f3ee5a2de6722e3dfe68",
+        "teks": "Bu Rina mengambil kredit di koperasi sebesar Rp36.000.000,00 untuk modal usaha. Kredit dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan, bunga koperasi 18% per tahun. Besar angsuran pokok tiap bulan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp8.400.000,00 dikenai bunga majemuk 6% per tahun dan belum dibayar selama 2 tahun. Berapa sisa utangnya tepat setelah 2 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$9438240$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=8400000(1+3/50)^2=9438240.",
+      "distraktor": [
+        {
+          "teks": "$9438241$",
+          "alasan": "Pilihan $9438241$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9438240$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$9438239$",
+          "alasan": "Pilihan $9438239$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9438240$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$9438242$",
+          "alasan": "Pilihan $9438242$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9438240$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=8400000(1+3/50)^2=9438240.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "505aebdb4f717f61ccfabccf",
+        "teks": "| Bulan ke-n | Sisa pinjaman (Rp) | Angsuran pokok (Rp) | Bunga 2% (Rp) | Total angsuran (Rp) |\n|---|---|---|---|---|\n| 1 | 10.000.000 | 2.000.000 | 200.000 | 2.200.000 |\n| 2 | 8.000.000 | 2.000.000 | 160.000 | 2.160.000 |\n| 3 | 6.000.000 | 2.000.000 | 120.000 | 2.120.000 |\n\nTabel di atas menunjukkan angsuran 3 bulan pertama dari pinjaman Rp10.000.000,00 yang diangsur 5 bulan dengan pokok tetap dan bunga 2% per bulan. Total angsuran pada bulan ke-4 adalah ....",
+        "jawaban": "Rp2.080.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp13.200.000,00 dikenai bunga majemuk 5% per tahun dan belum dibayar selama 3 tahun. Berapa sisa utangnya tepat setelah 3 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$15280650$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=13200000(1+1/20)^3=15280650.",
+      "distraktor": [
+        {
+          "teks": "$15280651$",
+          "alasan": "Pilihan $15280651$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15280650$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$15280649$",
+          "alasan": "Pilihan $15280649$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15280650$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$15280652$",
+          "alasan": "Pilihan $15280652$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $15280650$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=13200000(1+1/20)^3=15280650.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8c438206fe8aa69f9e5e5c7",
+        "teks": "Pak Wahyu meminjam dana sebesar Rp45.000.000,00 yang diangsur selama 9 bulan (pokok tetap) dengan bunga 15% per tahun. Angsuran pokok per bulan adalah ....",
+        "jawaban": "Rp5.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp36.000.000,00 dikenai bunga majemuk 2% per tahun dan belum dibayar selama 5 tahun. Berapa sisa utangnya tepat setelah 5 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{24841818072}{625}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=36000000(1+1/50)^5=24841818072/625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{24841818697}{625}$",
+          "alasan": "Pilihan $\\frac{24841818697}{625}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{24841818072}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{24841817447}{625}$",
+          "alasan": "Pilihan $\\frac{24841817447}{625}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{24841818072}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{24841819322}{625}$",
+          "alasan": "Pilihan $\\frac{24841819322}{625}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{24841818072}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=36000000(1+1/50)^5=24841818072/625.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0738aa85583125c00864f3c8",
+        "teks": "Pada rumus besar bunga pinjaman majemuk setiap bulan $B_k = [P_a - A \\times (k-1)] \\times \\frac{b}{12}$, lambang $A$ menyatakan ....",
+        "jawaban": "angsuran pokok tiap bulan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp33.600.000,00 dikenai bunga majemuk 5% per tahun dan belum dibayar selama 3 tahun. Berapa sisa utangnya tepat setelah 3 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$38896200$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=33600000(1+1/20)^3=38896200.",
+      "distraktor": [
+        {
+          "teks": "$38896201$",
+          "alasan": "Pilihan $38896201$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $38896200$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$38896199$",
+          "alasan": "Pilihan $38896199$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $38896200$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$38896202$",
+          "alasan": "Pilihan $38896202$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $38896200$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=33600000(1+1/20)^3=38896200.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37884e52dec3df1b10bc67b4",
+        "teks": "Pada pinjaman bunga majemuk dengan angsuran pokok tetap, total angsuran yang dibayar pada suatu bulan sama dengan ....",
+        "jawaban": "angsuran pokok ditambah bunga pada bulan itu",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp21.600.000,00 dikenai bunga majemuk 3% per tahun dan belum dibayar selama 5 tahun. Berapa sisa utangnya tepat setelah 5 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{313004000061}{12500}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=21600000(1+3/100)^5=313004000061/12500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{313004012561}{12500}$",
+          "alasan": "Pilihan $\\frac{313004012561}{12500}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{313004000061}{12500}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{313003987561}{12500}$",
+          "alasan": "Pilihan $\\frac{313003987561}{12500}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{313004000061}{12500}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{313004025061}{12500}$",
+          "alasan": "Pilihan $\\frac{313004025061}{12500}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{313004000061}{12500}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=21600000(1+3/100)^5=313004000061/12500.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f75619d1b1d2a5d92e238baa",
+        "teks": "Pinjaman Rp60.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap. Sisa pokok pinjaman pada awal bulan ke-6 (setelah 5 kali angsuran pokok) adalah ....",
+        "jawaban": "Rp35.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp8.400.000,00 dikenai bunga majemuk 3% per tahun dan belum dibayar selama 4 tahun. Berapa sisa utangnya tepat setelah 4 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{2363568501}{250}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=8400000(1+3/100)^4=2363568501/250.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2363568751}{250}$",
+          "alasan": "Pilihan $\\frac{2363568751}{250}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2363568501}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2363568251}{250}$",
+          "alasan": "Pilihan $\\frac{2363568251}{250}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2363568501}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2363569001}{250}$",
+          "alasan": "Pilihan $\\frac{2363569001}{250}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2363568501}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=8400000(1+3/100)^4=2363568501/250.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f44f3ee5a2de6722e3dfe68",
+        "teks": "Bu Rina mengambil kredit di koperasi sebesar Rp36.000.000,00 untuk modal usaha. Kredit dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan, bunga koperasi 18% per tahun. Besar angsuran pokok tiap bulan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp9.600.000,00 dikenai bunga majemuk 2% per tahun dan belum dibayar selama 3 tahun. Berapa sisa utangnya tepat setelah 3 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{50937984}{5}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=9600000(1+1/50)^3=50937984/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{50937989}{5}$",
+          "alasan": "Pilihan $\\frac{50937989}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{50937984}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{50937979}{5}$",
+          "alasan": "Pilihan $\\frac{50937979}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{50937984}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{50937994}{5}$",
+          "alasan": "Pilihan $\\frac{50937994}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{50937984}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=9600000(1+1/50)^3=50937984/5.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "683e456a4a746e1230f3a123",
+        "teks": "Pinjaman X sebesar Rp20.000.000,00 berbunga 12% per tahun, sedangkan pinjaman Y sebesar Rp15.000.000,00 berbunga 18% per tahun. Bunga dihitung tiap bulan dari pokok pinjaman. Selisih bunga pada bulan pertama antara kedua pinjaman adalah ....",
+        "jawaban": "Rp25.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target easy; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp32.400.000,00 dikenai bunga majemuk 3% per tahun dan belum dibayar selama 4 tahun. Berapa sisa utangnya tepat setelah 4 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{9116621361}{250}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=32400000(1+3/100)^4=9116621361/250.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9116621611}{250}$",
+          "alasan": "Pilihan $\\frac{9116621611}{250}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9116621361}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9116621111}{250}$",
+          "alasan": "Pilihan $\\frac{9116621111}{250}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9116621361}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9116621861}{250}$",
+          "alasan": "Pilihan $\\frac{9116621861}{250}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9116621361}{250}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=32400000(1+3/100)^4=9116621361/250.",
+      "catatan": "codex-replenishment:kelas12-b02-D-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-easy-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8c438206fe8aa69f9e5e5c7",
+        "teks": "Pak Wahyu meminjam dana sebesar Rp45.000.000,00 yang diangsur selama 9 bulan (pokok tetap) dengan bunga 15% per tahun. Angsuran pokok per bulan adalah ....",
+        "jawaban": "Rp5.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{6897852}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{6897852}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6897857}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6897847}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13795704}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{6897852}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8c3539c7caf0636d2f17a60f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1300000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1300000], [\"r\", 2], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f44f3ee5a2de6722e3dfe68",
+        "teks": "Bu Rina mengambil kredit di koperasi sebesar Rp36.000.000,00 untuk modal usaha. Kredit dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan, bunga koperasi 18% per tahun. Besar angsuran pokok tiap bulan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$2382032$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $2382032$.",
+      "distraktor": [
+        {
+          "teks": "$2382033$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2382031$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4764064$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $2382032$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/251ea9ba931dd306149d81e0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2000000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2000000], [\"r\", 6], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f036860b61ef39efd80008ee",
+        "teks": "Pak Hendra meminjam dana sebesar Rp30.000.000,00 yang diangsur selama 10 bulan (pokok tetap) dengan bunga 12% per tahun. Besar bunga pada bulan ke-4 adalah ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1114959573}{320}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{1114959573}{320}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1114959893}{320}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1114959253}{320}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1114959573}{160}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{1114959573}{320}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/58ca9862f453208416add386.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2600000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2600000], [\"r\", 5], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54fa9bc96fbf7329f0266531",
+        "teks": "Seorang karyawan mengambil kredit sepeda motor Rp24.000.000,00 yang dilunasi dalam 8 bulan dengan angsuran pokok tetap. Bunga kredit 18% per tahun dan dikenakan pada sisa pokok. Bunga yang harus dibayar pada bulan ke-3 adalah ....",
+        "jawaban": "Rp270.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{14836085793}{3125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{14836085793}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14836088918}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{14836082668}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{29672171586}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{14836085793}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2e8f3be18c4f2ab72741ba21.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4300000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4300000], [\"r\", 2], [\"n\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b00ee86b35c23947b66590c",
+        "teks": "Bu Tari meminjam dana sebesar Rp20.000.000,00 yang diangsur selama 2 bulan (pokok tetap) dengan bunga 12% per tahun. Total bunga yang dibayar selama 2 bulan adalah ....",
+        "jawaban": "Rp300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$4168556$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4168556$.",
+      "distraktor": [
+        {
+          "teks": "$4168557$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4168555$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8337112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4168556$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/5b5a450554df0531d3b484c6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3500000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3500000], [\"r\", 6], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ed52cb3cbd46aac38322337",
+        "teks": "Sebuah koperasi memberi pinjaman Rp30.000.000,00 kepada seorang peternak. Pinjaman dilunasi dalam 2 bulan dengan angsuran pokok yang sama dan bunga 18% per tahun dari sisa pokok. Jumlah seluruh bunga yang dibayar peternak adalah ....",
+        "jawaban": "Rp675.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{22478848}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{22478848}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{22478853}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{22478843}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{44957696}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{22478848}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/1bb6089767af8af0abcd35e4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3200000
+            ],
+            [
+              "r",
+              12
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3200000], [\"r\", 12], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45edfdbf24d748b9f87e3c0e",
+        "teks": "Andi meminjam uang sebesar Rp20.000.000,00 di bank dengan bunga 18% per tahun yang diangsur selama 8 bulan dengan pokok tetap. Total angsuran (pokok + bunga) pada bulan ke-2 adalah ....",
+        "jawaban": "Rp2.762.500,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$1573000$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1573000$.",
+      "distraktor": [
+        {
+          "teks": "$1573001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1572999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3146000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1573000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/14ed9e275b1ccaedb3b7db08.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1300000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1300000], [\"r\", 10], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "00fe103324186d560100ef16",
+        "teks": "Rina membeli laptop dengan kredit Rp12.000.000,00 yang dilunasi selama 6 bulan, angsuran pokok sama tiap bulan, bunga 12% per tahun dari sisa pokok. Total angsuran yang dibayar Rina pada bulan terakhir adalah ....",
+        "jawaban": "Rp2.020.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1913364977}{1000}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{1913364977}{1000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1913365977}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1913363977}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1913364977}{500}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{1913364977}{1000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/51e300c60f67012a3f089978.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1700000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1700000], [\"r\", 3], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fa925be1180b2413fa2fb60",
+        "teks": "Pak Budi meminjam Rp16.000.000,00 di bank dengan suku bunga 12% per tahun. Pinjaman dikembalikan dalam 8 bulan dengan angsuran pokok tetap dan bunga menurun. Besar bunga pada cicilan ke-5 adalah ....",
+        "jawaban": "Rp80.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$4862025$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4862025$.",
+      "distraktor": [
+        {
+          "teks": "$4862026$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4862024$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9724050$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4862025$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/91a539571be0ea30ca9a6eaf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4000000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4000000], [\"r\", 5], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "945dc2f8bfe82645098aa927",
+        "teks": "Bu Dewi memperoleh pinjaman usaha Rp25.000.000,00 dengan bunga 6% per tahun. Pinjaman dibayar lunas dalam 5 bulan, angsuran pokok tetap dan bunga dihitung dari sisa pinjaman. Bunga yang dibayar pada cicilan ke-2 adalah ....",
+        "jawaban": "Rp100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{112550881}{50}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{112550881}{50}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{112550931}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{112550831}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{112550881}{25}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{112550881}{50}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9a469c73bbb517f46650aeb5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2000000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2000000], [\"r\", 3], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39de85557bdbb08440c6681c",
+        "teks": "Pada pinjaman bunga majemuk dengan angsuran pokok tetap, besar bunga yang dibayar dari bulan ke bulan akan ....",
+        "jawaban": "semakin kecil karena dihitung dari sisa pokok yang menurun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{771895089}{320}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{771895089}{320}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{771895409}{320}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{771894769}{320}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{771895089}{160}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{771895089}{320}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6eee5a1c58e36c9bda0c498c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1800000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1800000], [\"r\", 5], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14cca2bb1b2d8a14d99fbfd0",
+        "teks": "Sebuah pinjaman berbunga 9% per tahun dengan bunga dihitung tiap bulan. Persentase bunga per bulan adalah ....",
+        "jawaban": "0,75%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$1620675$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1620675$.",
+      "distraktor": [
+        {
+          "teks": "$1620676$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1620674$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3241350$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1620675$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a479c1137ce382296d9fb666.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1400000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1400000], [\"r\", 5], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b38c2abad15656f5c2a3a403",
+        "teks": "Pak Joko meminjam Rp40.000.000,00 dengan bunga 1,5% per bulan. Besar bunga pada bulan pertama adalah ....",
+        "jawaban": "Rp600.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{5061888}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{5061888}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5061893}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5061883}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{10123776}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{5061888}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/c9d7466c5a325b6e56d4d63a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              900000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 900000], [\"r\", 4], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f75619d1b1d2a5d92e238baa",
+        "teks": "Pinjaman Rp60.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap. Sisa pokok pinjaman pada awal bulan ke-6 (setelah 5 kali angsuran pokok) adalah ....",
+        "jawaban": "Rp35.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{4775436}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{4775436}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4775441}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4775431}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9550872}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{4775436}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/24e435814f22228c11112fbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              900000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 900000], [\"r\", 2], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "505aebdb4f717f61ccfabccf",
+        "teks": "| Bulan ke-n | Sisa pinjaman (Rp) | Angsuran pokok (Rp) | Bunga 2% (Rp) | Total angsuran (Rp) |\n|---|---|---|---|---|\n| 1 | 10.000.000 | 2.000.000 | 200.000 | 2.200.000 |\n| 2 | 8.000.000 | 2.000.000 | 160.000 | 2.160.000 |\n| 3 | 6.000.000 | 2.000.000 | 120.000 | 2.120.000 |\n\nTabel di atas menunjukkan angsuran 3 bulan pertama dari pinjaman Rp10.000.000,00 yang diangsur 5 bulan dengan pokok tetap dan bunga 2% per bulan. Total angsuran pada bulan ke-4 adalah ....",
+        "jawaban": "Rp2.080.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{27988876}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{27988876}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27988881}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{27988871}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{55977752}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{27988876}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/ad6a5d937b6561b8a3a1a8db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4700000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4700000], [\"r\", 6], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8fa49185c7849e20ddce201b",
+        "teks": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Total angsuran bulan pertama lebih besar daripada total angsuran bulan kedua sebesar ....",
+        "jawaban": "Rp20.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{675305286}{125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{675305286}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{675305411}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{675305161}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1350610572}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{675305286}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/bf073646769178de8c8399ce.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4800000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4800000], [\"r\", 3], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0738aa85583125c00864f3c8",
+        "teks": "Pada rumus besar bunga pinjaman majemuk setiap bulan $B_k = [P_a - A \\times (k-1)] \\times \\frac{b}{12}$, lambang $A$ menyatakan ....",
+        "jawaban": "angsuran pokok tiap bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$4862025$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4862025$.",
+      "distraktor": [
+        {
+          "teks": "$4862026$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4862024$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9724050$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4862025$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/aacd1a01d8a6446364c4d5fd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4200000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4200000], [\"r\", 5], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37884e52dec3df1b10bc67b4",
+        "teks": "Pada pinjaman bunga majemuk dengan angsuran pokok tetap, total angsuran yang dibayar pada suatu bulan sama dengan ....",
+        "jawaban": "angsuran pokok ditambah bunga pada bulan itu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$5808000$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5808000$.",
+      "distraktor": [
+        {
+          "teks": "$5808001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5807999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11616000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5808000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d15a86f253d4200e15db1862.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4800000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4800000], [\"r\", 10], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d71007dc3e16bd8abb1c6680",
+        "teks": "Pinjaman Rp48.000.000,00 dilunasi dalam 16 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Bunga yang dibayar pada bulan terakhir (bulan ke-16) adalah ....",
+        "jawaban": "Rp30.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{292989304832}{78125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{292989304832}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{292989382957}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{292989226707}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{585978609664}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{292989304832}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/efc095bca57b311886d17831.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1900000
+            ],
+            [
+              "r",
+              12
+            ],
+            [
+              "n",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1900000], [\"r\", 12], [\"n\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "683e456a4a746e1230f3a123",
+        "teks": "Pinjaman X sebesar Rp20.000.000,00 berbunga 12% per tahun, sedangkan pinjaman Y sebesar Rp15.000.000,00 berbunga 18% per tahun. Bunga dihitung tiap bulan dari pokok pinjaman. Selisih bunga pada bulan pertama antara kedua pinjaman adalah ....",
+        "jawaban": "Rp25.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$3028480$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $3028480$.",
+      "distraktor": [
+        {
+          "teks": "$3028481$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3028479$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6056960$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $3028480$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/27f5fb58281c7960600e7770.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2800000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2800000], [\"r\", 4], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "825a0528917b3a8aa6e998d1",
+        "teks": "Pinjaman dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok tiap bulan. Bunga bulan pertama Rp240.000,00. Dito menghitung total bunga seluruh masa dengan rumus $\\frac{1}{2} \\times 12 \\times 240.000 = 1.440.000$. Total bunga yang benar adalah ....",
+        "jawaban": "Rp1.560.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $700000$; r = $10$; n = $4$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$1024870$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1024870$.",
+      "distraktor": [
+        {
+          "teks": "$1024871$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1024869$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2049740$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $1024870$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24eb70276065e189610ca778",
+        "teks": "Rani menyatakan: \"Jika dua pinjaman berbunga sama dan memakai angsuran pokok tetap, pinjaman dengan pokok lebih besar pasti membayar bunga bulan ke-5 lebih besar.\" Sebagai pembanding, pinjaman X sebesar Rp40.000.000,00 dilunasi dalam 20 bulan. Pinjaman Y yang menjadi contoh penyangkal klaim Rani (pokok lebih besar dari X, tetapi bunga bulan ke-5 lebih kecil) adalah ....",
+        "jawaban": "Rp48.000.000,00 dilunasi dalam 8 bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3900000$; r = $8$; n = $5$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{17907435936}{3125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{17907435936}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17907439061}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17907432811}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{35814871872}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{17907435936}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07d943a2f1d05c59d9213fd3",
+        "teks": "Seorang nasabah meminjam Rp36.000.000,00 dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Ia ingin total bunga seluruh masa pinjaman tidak lebih dari Rp1.800.000,00. Lama pinjaman terpanjang yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4200000$; r = $8$; n = $5$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{19284931008}{3125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{19284931008}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19284934133}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19284927883}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{38569862016}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{19284931008}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "33b483cea8f1511df9d39737",
+        "teks": "Bank menetapkan total angsuran (pokok + bunga) bulan pertama tidak boleh melebihi Rp3.500.000,00. Pinjaman Rp30.000.000,00 memakai angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Lama pinjaman paling singkat yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $900000$; r = $6$; n = $4$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{142028658}{125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{142028658}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{142028783}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{142028533}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{284057316}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{142028658}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6765f4971c84455020ca360",
+        "teks": "| Bulan | Sisa pokok awal bulan | Bunga |\n|---|---|---|\n| 1 | Rp18.000.000,00 | Rp180.000,00 |\n| 2 | Rp15.000.000,00 | Rp150.000,00 |\n| 3 | Rp12.000.000,00 | Rp90.000,00 |\n| 4 | Rp9.000.000,00 | Rp90.000,00 |\n\nPak Joko membuat tabel angsuran untuk pinjaman Rp18.000.000,00 yang dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Empat baris pertama tabel tersebut memuat tepat satu kesalahan pada kolom bunga. Pernyataan yang benar adalah ....",
+        "jawaban": "kesalahan pada bulan ke-3; bunga seharusnya Rp120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1300000$; r = $2$; n = $5$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{4485328263}{3125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{4485328263}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4485331388}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4485325138}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8970656526}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{4485328263}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48e82359d7c3e5d6007b9284",
+        "teks": "Suatu pinjaman dengan angsuran pokok tetap berbunga 12% per tahun dari sisa pokok. Bunga bulan ke-3 sebesar Rp480.000,00 dan bunga bulan terakhir Rp120.000,00. Lama pinjaman tersebut adalah .... bulan.",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3400000$; r = $8$; n = $4$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{578207808}{125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{578207808}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{578207933}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{578207683}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1156415616}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{578207808}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "150da281248eebaeb733db92",
+        "teks": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan. Bank A menghitung bunga 12% per tahun dari sisa pokok. Bank B menghitung bunga 7% per tahun dari pokok awal dan besarnya sama untuk selama 12 bulan itu. Pernyataan yang benar tentang total bunga yang dibayar adalah ....",
+        "jawaban": "Bank A lebih murah Rp120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4800000$; r = $10$; n = $5$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$7730448$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $7730448$.",
+      "distraktor": [
+        {
+          "teks": "$7730449$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7730447$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15460896$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $7730448$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36f3284e12ba5d6c20a85d33",
+        "teks": "Pinjaman Rp20.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga seluruh masa pinjaman adalah Rp550.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3400000$; r = $4$; n = $4$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{497189888}{125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{497189888}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{497190013}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{497189763}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{994379776}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{497189888}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7d7c3ecc8862e731ffc7b7e",
+        "teks": "Pinjaman Rp30.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah membayar angsuran bulan ke-1 sampai ke-4 sesuai jadwal. Pada bulan ke-5 ia membayar bunga bulan ke-5 dan melunasi seluruh sisa pokok, sehingga tidak ada bunga setelah bulan ke-5. Bunga yang dihemat dibandingkan jika pinjaman dilunasi sesuai jadwal adalah ....",
+        "jawaban": "Rp450.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $900000$; r = $4$; n = $3$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{5061888}{5}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{5061888}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5061893}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5061883}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{10123776}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{5061888}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34e2ad0f06b7143bca775d19",
+        "teks": "Sebuah koperasi menawarkan pinjaman dengan pokok kelipatan Rp4.000.000,00, dilunasi dalam 8 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah menginginkan bunga bulan ke-3 tidak kurang dari Rp200.000,00 dan tidak lebih dari Rp300.000,00. Banyak pilihan pokok pinjaman yang memenuhi adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4500000$; r = $5$; n = $6$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{771895089}{128}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{771895089}{128}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{771895217}{128}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{771894961}{128}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{771895089}{64}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{771895089}{128}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "96d97e7bc3213b3329ccf6f9",
+        "teks": "Pinjaman dilunasi dalam 15 bulan dengan angsuran pokok tetap dan bunga 1,5% per bulan dari sisa pokok. Bunga bulan ke-3 adalah Rp780.000,00. Bunga bulan ke-11 adalah ....",
+        "jawaban": "Rp300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4000000$; r = $10$; n = $3$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$5324000$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5324000$.",
+      "distraktor": [
+        {
+          "teks": "$5324001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5323999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10648000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5324000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51ea6e77e34f0178af837e5a",
+        "teks": "Pinjaman Rp36.000.000,00 dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Seorang nasabah mengklaim: \"Jika persen bunga dan lama pinjaman sama-sama dijadikan dua kali lipat (12% per tahun dan 12 bulan), total bunga menjadi tepat 4 kali lipat.\" Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga baru Rp2.340.000,00 dan klaim salah karena kurang dari 4 kali lipat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4300000$; r = $2$; n = $6$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{756640375443}{156250}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{756640375443}{156250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{756640531693}{156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{756640219193}{156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{756640375443}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{756640375443}{156250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3275d04bbe5741c8480e68d",
+        "teks": "Bu Sari memiliki dua pinjaman yang dimulai pada bulan yang sama, keduanya dengan angsuran pokok tetap dan bunga 1% per bulan dari sisa pokok. Pinjaman I sebesar Rp24.000.000,00 dilunasi dalam 8 bulan dan pinjaman II sebesar Rp18.000.000,00 dilunasi dalam 6 bulan. Jumlah bunga kedua pinjaman yang dibayar pada bulan ke-7 adalah ....",
+        "jawaban": "Rp60.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3300000$; r = $2$; n = $5$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{11385833283}{3125}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{11385833283}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11385836408}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11385830158}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{22771666566}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{11385833283}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c2a0bf19243af266f6c9074",
+        "teks": "Dua pinjaman berpokok sama masing-masing memakai angsuran pokok tetap dan bunga dari sisa pokok. Pinjaman I dilunasi dalam 11 bulan dengan bunga 12% per tahun. Pinjaman II dilunasi dalam 5 bulan. Agar total bunga kedua pinjaman sama besar, suku bunga pinjaman II harus ....",
+        "jawaban": "24% per tahun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4500000$; r = $12$; n = $3$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$6322176$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $6322176$.",
+      "distraktor": [
+        {
+          "teks": "$6322177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6322175$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12644352$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $6322176$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec26563095c22ba980237113",
+        "teks": "Pak Surya meminjam dana sebesar Rp54.000.000,00 yang diangsur selama 9 bulan (pokok tetap) dengan bunga 9% per tahun. Besar bunga pada bulan ke-7 adalah ....",
+        "jawaban": "Rp135.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4400000$; r = $8$; n = $2$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$5132160$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5132160$.",
+      "distraktor": [
+        {
+          "teks": "$5132161$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5132159$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10264320$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $5132160$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f108a45c4e1e8cce2a490069",
+        "teks": "Seorang pedagang mengambil kredit renovasi kios sebesar Rp36.000.000,00 yang dilunasi dalam 12 bulan dengan angsuran pokok tetap. Bunga kredit 10% per tahun dan dikenakan pada sisa pokok. Bunga yang harus dibayar pedagang pada bulan ke-10 adalah ....",
+        "jawaban": "Rp75.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3900000$; r = $5$; n = $6$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3344878719}{640}$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{3344878719}{640}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3344879359}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3344878079}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3344878719}{320}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $\\frac{3344878719}{640}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2b0f67f3c9caa5870ff05bd",
+        "teks": "Pak Rudi meminjam dana sebesar Rp40.000.000,00 yang diangsur selama 8 bulan (pokok tetap) dengan bunga 9% per tahun. Total bunga keseluruhan yang dibayar adalah ....",
+        "jawaban": "Rp1.350.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "session_sma_compound_loan_direct",
+      "alasan_level": "Satu definisi atau prosedur langsung dalam materi kelas sasaran.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3500000$; r = $10$; n = $3$. Pinjaman $P$ berbunga majemuk $r$ persen per tahun tanpa pembayaran. Berapa utang setelah $n$ tahun, tanpa pembulatan?",
+      "jawaban_benar": "$4658500$",
+      "alasan_benar": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4658500$.",
+      "distraktor": [
+        {
+          "teks": "$4658501$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4658499$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9317000$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Majemukkan utang dengan faktor bunga tahunan. Hasilnya $4658500$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-easy-bt01-066"
     }
   ]
 }

@@ -1,0 +1,3563 @@
+{
+  "schemaVersion": "codex-local-review-audit-v1",
+  "policyVersion": "codex-template-math-and-content-review-v1",
+  "apiCalls": 0,
+  "confidenceMeasured": false,
+  "reviewedTemplateFiles": {
+    "app/services/exercise/replenishment_math.py": "eadedc02673e6fb9da42ef052303d4bd6b4ef7f2c0ebaf001115bdf39d3fbb4e",
+    "app/services/exercise/replenishment_sd.py": "2d632ac813069f76dc4c9adae46493a417f0a9c9f87defac10042d5b2c35c4e3",
+    "app/services/exercise/replenishment_smp.py": "35635ff0944214a375a844e091d66453e2be8a1ebbf0f35ee8dfae4483ceea72",
+    "app/services/exercise/replenishment_sma.py": "662ea3db2dd8b48b6bdf2c8eb0d752c25ac5a4a4c854d0cc443dd3fe9cf0923e",
+    "app/services/exercise/replenishment_tl.py": "48172d41c4d3c359343614fed80ee08bb60b2d7d303bc6f6f929d165a0cb6cb3",
+    "app/services/exercise/local_review.py": "64918e85844052101f5f922dbe8daa4c5ddbf47fda8c00c552215a146018795c",
+    "scripts/review_replenishment_local.py": "4e5ee4600d434c58f5e5ee3d73ebee46c1575e1cde3c67a3d46a7808be729e5d"
+  },
+  "reviewer": "Codex direct review in this session",
+  "items": [
+    {
+      "questionId": "10bac2d0fb75a89e89788c81",
+      "sourceHash": "888c852bfde9afd2c62abe1205fff0b0c3d7127bba55ee8512428ac613e917dd",
+      "publishedQuestion": {
+        "_id": "10bac2d0fb75a89e89788c81",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 9 bola merah dan 5 biru. Kotak Q memuat 10 merah dan 5 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=9/14 dan Q=2/3. Karena 2/3>9/14, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=9/14 dan Q=2/3. Karena 2/3>9/14, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=9/14 dan Q=2/3. Karena 2/3>9/14, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=9/14 dan Q=2/3. Karena 2/3>9/14, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.886127+00:00",
+        "updated_at": "2026-11-03T15:07:39.886127+00:00"
+      },
+      "questionHash": "243df72513f5074e590f0f6ed5faa834da3759fad9ac939cb4fbde9e9a934ee1",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=9/14 dan Q=2/3. Karena 2/3>9/14, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "12163b6b85dcd7244764f495",
+      "sourceHash": "a3cab8c064489d62e710af47127bd4485bd347a626dbde01e7a2239135dabbbb",
+      "publishedQuestion": {
+        "_id": "12163b6b85dcd7244764f495",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Bilangan Desimal",
+        "soal_text": "Massa sebuah paket 10,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "14,9",
+            "alasan": "Salah: Pilihan 14,9 lebih besar sebesar $\\frac{18}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 11,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "10,94",
+            "alasan": "Salah: Pilihan 10,94 lebih kecil sebesar $\\frac{9}{25}$ daripada hasil yang memenuhi perhitungan, yaitu 11,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "11,3",
+            "alasan": "Benar: Samakan nilai tempat desimal, lalu jumlahkan: 10,9 + 0,4 = 11,3 kg.",
+            "option_id": "C"
+          },
+          {
+            "text": "10,5",
+            "alasan": "Salah: Pilihan 10,5 lebih kecil sebesar $\\frac{4}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 11,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.285474+00:00",
+        "updated_at": "2026-11-03T15:07:39.285474+00:00"
+      },
+      "questionHash": "40972a417837973e1ee6932733a9580a2351d0d77318c2ab8369bd844041a6f8",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "operasi_desimal",
+      "solution": "Samakan nilai tempat desimal, lalu jumlahkan: 10,9 + 0,4 = 11,3 kg.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "16d3f0893eef3c02656a5693",
+      "sourceHash": "31cc0cee9e4f7c0ae90ba499cabb61e18844d26d0f110127efd650261daf4e07",
+      "publishedQuestion": {
+        "_id": "16d3f0893eef3c02656a5693",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Mengonstruksi dan Mengurai",
+        "soal_text": "Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 5 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$422$",
+            "alasan": "Salah: Pilihan $422$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $420$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$420$",
+            "alasan": "Benar: Tiap lapisan memuat 60 kubus. Dengan 7 lapisan ada 60×7=420 kubus.",
+            "option_id": "B"
+          },
+          {
+            "text": "$419$",
+            "alasan": "Salah: Pilihan $419$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $420$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$421$",
+            "alasan": "Salah: Pilihan $421$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $420$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.563652+00:00",
+        "updated_at": "2026-11-03T15:07:39.563652+00:00"
+      },
+      "questionHash": "38f179ad503c07af3bcd49ae97935be301ec5b85d6451f4d7dc9ea2873879f83",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "susunan_kubus",
+      "solution": "Tiap lapisan memuat 60 kubus. Dengan 7 lapisan ada 60×7=420 kubus.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "1e415a12c00984ae06356fbd",
+      "sourceHash": "4cc9a9c03b887e1ff0fb52464835f68244d339a8720d2d3fc904d8e3cfff3b50",
+      "publishedQuestion": {
+        "_id": "1e415a12c00984ae06356fbd",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 8 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 64 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$87$",
+            "alasan": "Salah: Pilihan $87$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$90$",
+            "alasan": "Salah: Pilihan $90$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$89$",
+            "alasan": "Salah: Pilihan $89$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$88$",
+            "alasan": "Benar: Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 11×8=88.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.488055+00:00",
+        "updated_at": "2026-11-03T15:07:39.488055+00:00"
+      },
+      "questionHash": "fb1c8cba9af6a32293a1cc4fd6e8cdd0fd9cb4e059deebff474d86665a6be9ed",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 11×8=88.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "1f318782f9d8c898975393eb",
+      "sourceHash": "32dc7deb36b15096885e6bf741dd68ce3d502e96a4e3f4c70659371b379be44f",
+      "publishedQuestion": {
+        "_id": "1f318782f9d8c898975393eb",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Bilangan Desimal",
+        "soal_text": "Massa sebuah paket 3,2 kg. Setelah ditambah kemasan, massanya bertambah 0,6 kg. Berapa massa paket beserta kemasan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "3,8",
+            "alasan": "Benar: Samakan nilai tempat desimal, lalu jumlahkan: 3,2 + 0,6 = 3,8 kg.",
+            "option_id": "A"
+          },
+          {
+            "text": "2,6",
+            "alasan": "Salah: Pilihan 2,6 lebih kecil sebesar $\\frac{6}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 3,8. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "3,26",
+            "alasan": "Salah: Pilihan 3,26 lebih kecil sebesar $\\frac{27}{50}$ daripada hasil yang memenuhi perhitungan, yaitu 3,8. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "9,2",
+            "alasan": "Salah: Pilihan 9,2 lebih besar sebesar $\\frac{27}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 3,8. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.285474+00:00",
+        "updated_at": "2026-11-03T15:07:39.285474+00:00"
+      },
+      "questionHash": "79bc4d8eb16b98e0e5a1827f186bdda8145b6646936a2eae9b56fbe941a5166a",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "operasi_desimal",
+      "solution": "Samakan nilai tempat desimal, lalu jumlahkan: 3,2 + 0,6 = 3,8 kg.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "1f4d2f954a6da65fac2fa96a",
+      "sourceHash": "f13eef056accfe34607b2cc0d4789baf2e69491ce95f3c938a858a2b44bd7a81",
+      "publishedQuestion": {
+        "_id": "1f4d2f954a6da65fac2fa96a",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Penerapan Rasio",
+        "soal_text": "Rasio bibit mawar terhadap melati adalah 9:10. Jika jumlah seluruh bibit 76, berapa banyak bibit mawar?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$35$",
+            "alasan": "Salah: Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$37$",
+            "alasan": "Salah: Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$36$",
+            "alasan": "Benar: Jumlah bagian rasio 19. Tiap bagian bernilai 4. Bibit mawar 9×4=36.",
+            "option_id": "C"
+          },
+          {
+            "text": "$38$",
+            "alasan": "Salah: Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.331178+00:00",
+        "updated_at": "2026-11-03T15:07:39.331178+00:00"
+      },
+      "questionHash": "3a67e1ce0684821dfc0cf64c410995fc2c3acef9c87180985a5fda64c3078332",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "penerapan_rasio",
+      "solution": "Jumlah bagian rasio 19. Tiap bagian bernilai 4. Bibit mawar 9×4=36.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "22de7384c749d4cfa5b7d292",
+      "sourceHash": "bed4f9b717e38a1511ee071d493352e107ab176ea5a34a45d32898a4d5f7d505",
+      "publishedQuestion": {
+        "_id": "22de7384c749d4cfa5b7d292",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 3 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.742157+00:00",
+        "updated_at": "2026-11-03T15:07:39.742157+00:00"
+      },
+      "questionHash": "a0025d57598eabdf84cc21e743f93126d98aa64eede1a58b1ed46dc068e7aad7",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "251dbd679b354e00c5bc9c9d",
+      "sourceHash": "c35d65a1b189cc45f8dbeaf2cdc86e38fba68291362cabb7d94eb08f592268d3",
+      "publishedQuestion": {
+        "_id": "251dbd679b354e00c5bc9c9d",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 1, 2, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.742157+00:00",
+        "updated_at": "2026-11-03T15:07:39.742157+00:00"
+      },
+      "questionHash": "26715515af1fa69d201af301242b47256d054bd3e85ea406157d902b65a18d32",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "2795f545a10006d6e54143f2",
+      "sourceHash": "b273795ec4c9f5ac0f6f98159f697eb6f80e8cc6aa9459b3c3041ae3ad817856",
+      "publishedQuestion": {
+        "_id": "2795f545a10006d6e54143f2",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 8 bola merah dan 5 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{5}{13}$",
+            "alasan": "Salah: Pilihan $\\frac{5}{13}$ lebih kecil sebesar $\\frac{3}{13}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{13}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$\\frac{8}{13}$",
+            "alasan": "Benar: Kejadian merah ada 8 dari 13 bola, sehingga peluangnya 8/13.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{8}{5}$",
+            "alasan": "Salah: Nilai $\\frac{8}{5}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{1}{13}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{13}$ lebih kecil sebesar $\\frac{7}{13}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{13}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.784691+00:00",
+        "updated_at": "2026-11-03T15:07:39.784691+00:00"
+      },
+      "questionHash": "0c3ae51dbe16b23903ed0ebb069c8aa2e3dc6fd2fb43d9225191a8424cf7fb93",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 8 dari 13 bola, sehingga peluangnya 8/13.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "2868ca7fdbbfccc0b23a2512",
+      "sourceHash": "addd684591d23dd1d859db63ec526b7d3ee10938861678c64ad80738533dad71",
+      "publishedQuestion": {
+        "_id": "2868ca7fdbbfccc0b23a2512",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(3, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Salah: Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Benar: Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.835538+00:00",
+        "updated_at": "2026-11-03T15:07:39.835538+00:00"
+      },
+      "questionHash": "0e3bc45cf235d91abf15b4c86f27003d8567f1fbf6fc6a1b86e58a8a8ac13f1e",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "2982bac04d46c6321a64f6b9",
+      "sourceHash": "4cc3bcd32f7051cddb8e44f4c7d5fcf0419225ee4093dd39dcd4128f1c9c72f9",
+      "publishedQuestion": {
+        "_id": "2982bac04d46c6321a64f6b9",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(10, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Benar: Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+            "option_id": "B"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.836707+00:00",
+        "updated_at": "2026-11-03T15:07:39.836707+00:00"
+      },
+      "questionHash": "d3a18728bb5ed21ba075a4bd80431c0d05a8460cc8e4f307d5c42a0ebb1da7a9",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "2dcea42a4422f6bd081fc763",
+      "sourceHash": "d6684bf9df45ffe775e0f4f31656dc8ae72ff29c3afcd9626282aa15d5e2ce70",
+      "publishedQuestion": {
+        "_id": "2dcea42a4422f6bd081fc763",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(2, 6)$ ke $(4, 11)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Benar: Perpindahan mendatar 2 petak dan tegak 5 petak. Minimum jumlah langkah = 7.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.701344+00:00",
+        "updated_at": "2026-11-03T15:07:39.701344+00:00"
+      },
+      "questionHash": "84c3280dfcb60d1a97b8acd6152432a1ef6f0b2c018f8b69cf42da49b3b7bea1",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 2 petak dan tegak 5 petak. Minimum jumlah langkah = 7.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "2ecb034fe48974844b2629ea",
+      "sourceHash": "9e89de9389fde39ed4443c324e636cb1b248d880c12fe642694f36969fbf637f",
+      "publishedQuestion": {
+        "_id": "2ecb034fe48974844b2629ea",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(5, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$6$",
+            "alasan": "Benar: Perpindahan mendatar 4 petak dan tegak 2 petak. Minimum jumlah langkah = 6.",
+            "option_id": "A"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Salah: Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.836707+00:00",
+        "updated_at": "2026-11-03T15:07:39.836707+00:00"
+      },
+      "questionHash": "cd0284c0175cdd8a911ada0d055d42fcb6ea81e7daeb4c1510e35935ff4061bc",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 4 petak dan tegak 2 petak. Minimum jumlah langkah = 6.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "3d4462b5992e2d14b1e911b3",
+      "sourceHash": "2963df50a9c3fc60a0c4d8941de1ebe817b7195b7e6685d7b7b196b9af783b69",
+      "publishedQuestion": {
+        "_id": "3d4462b5992e2d14b1e911b3",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 10 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 50 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$39$",
+            "alasan": "Salah: Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$40$",
+            "alasan": "Benar: Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+            "option_id": "B"
+          },
+          {
+            "text": "$42$",
+            "alasan": "Salah: Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$41$",
+            "alasan": "Salah: Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.488055+00:00",
+        "updated_at": "2026-11-03T15:07:39.488055+00:00"
+      },
+      "questionHash": "9c76f7264a381f46ca04404a463057550c1f42fb81ac241b4c9f184ffb52f213",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "427fc2e0a5f126f55aa8b1a1",
+      "sourceHash": "7b5bd8899adc81930f2879c93200013be08618b09bdffdd9dd19feb215f6e7b6",
+      "publishedQuestion": {
+        "_id": "427fc2e0a5f126f55aa8b1a1",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 2)$ ke $(6, 6)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$10$",
+            "alasan": "Salah: Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$11$",
+            "alasan": "Salah: Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Benar: Perpindahan mendatar 5 petak dan tegak 4 petak. Minimum jumlah langkah = 9.",
+            "option_id": "C"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.702713+00:00",
+        "updated_at": "2026-11-03T15:07:39.702713+00:00"
+      },
+      "questionHash": "2892cb34da48b64862fefb2612cbef38ea3d2183f4ab992e8fd8fa24e95a4e3f",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 5 petak dan tegak 4 petak. Minimum jumlah langkah = 9.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "4883f78f9773a76c77ee073a",
+      "sourceHash": "d29ea5021737a85f4eeaa381757e6158623987158e9b23e096910b696b45f8bb",
+      "publishedQuestion": {
+        "_id": "4883f78f9773a76c77ee073a",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 15 bola merah dan 10 biru. Kotak Q memuat 16 merah dan 10 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=3/5 dan Q=8/13. Karena 8/13>3/5, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=3/5 dan Q=8/13. Karena 8/13>3/5, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=3/5 dan Q=8/13. Karena 8/13>3/5, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=3/5 dan Q=8/13. Karena 8/13>3/5, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.885129+00:00",
+        "updated_at": "2026-11-03T15:07:39.885129+00:00"
+      },
+      "questionHash": "ea9eb7cc5459a15746512a5cec192822063ca9dd6dfb889b1c195d9f73240636",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=3/5 dan Q=8/13. Karena 8/13>3/5, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "5231ef25739bcfcf6401d653",
+      "sourceHash": "b5620db61949c0ebe7badbaf71e9e0478eab8080ccd56bfb2c6a579cfc5652a3",
+      "publishedQuestion": {
+        "_id": "5231ef25739bcfcf6401d653",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Rasio",
+        "soal_text": "Satu paket berisi 12 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$5001$",
+            "alasan": "Salah: Pilihan $5001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$5002$",
+            "alasan": "Salah: Pilihan $5002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5000$",
+            "alasan": "Benar: Harga satuan = 60000/12 = 5000 rupiah.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4999$",
+            "alasan": "Salah: Pilihan $4999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.443307+00:00",
+        "updated_at": "2026-11-03T15:07:39.443307+00:00"
+      },
+      "questionHash": "b6915ca826d78926a3869648f2268e39a0572c297dbb77f483eef9b7728965b3",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_satuan",
+      "solution": "Harga satuan = 60000/12 = 5000 rupiah.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "53c5a4bdb518f2a6dc533f26",
+      "sourceHash": "3e0502ba7102ce6fe56f4582770340c3026dbf3f63d7116271ff3e70c0ef9607",
+      "publishedQuestion": {
+        "_id": "53c5a4bdb518f2a6dc533f26",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Bilangan Desimal",
+        "soal_text": "Massa sebuah paket 8,4 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "8,42",
+            "alasan": "Salah: Pilihan 8,42 lebih kecil sebesar $\\frac{9}{50}$ daripada hasil yang memenuhi perhitungan, yaitu 8,6. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "8,2",
+            "alasan": "Salah: Pilihan 8,2 lebih kecil sebesar $\\frac{2}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 8,6. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "10,4",
+            "alasan": "Salah: Pilihan 10,4 lebih besar sebesar $\\frac{9}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 8,6. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "8,6",
+            "alasan": "Benar: Samakan nilai tempat desimal, lalu jumlahkan: 8,4 + 0,2 = 8,6 kg.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.388122+00:00",
+        "updated_at": "2026-11-03T15:07:39.388122+00:00"
+      },
+      "questionHash": "e0ad47de58e35a2f4977c6c37c42c0016b64a8206513d65000e029b33c75c347",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "operasi_desimal",
+      "solution": "Samakan nilai tempat desimal, lalu jumlahkan: 8,4 + 0,2 = 8,6 kg.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "542029f34543889fae556158",
+      "sourceHash": "1fc66a6d8e843afd359ed7d8a3ba5c7684f947ff315db0dd8ddecc71df399408",
+      "publishedQuestion": {
+        "_id": "542029f34543889fae556158",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(2, 4)$ ke $(6, 9)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$11$",
+            "alasan": "Salah: Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Benar: Perpindahan mendatar 4 petak dan tegak 5 petak. Minimum jumlah langkah = 9.",
+            "option_id": "C"
+          },
+          {
+            "text": "$10$",
+            "alasan": "Salah: Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.835538+00:00",
+        "updated_at": "2026-11-03T15:07:39.835538+00:00"
+      },
+      "questionHash": "f173401b9664b210ffdfe410282f2d7c0b68c188acb7631c8af4f54867c1e9fc",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 4 petak dan tegak 5 petak. Minimum jumlah langkah = 9.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "5f7ada7ce076fcc225d8ca81",
+      "sourceHash": "c36187c6782fa9aa0d85174add08a20f8f85e7843efe1e83bc28648b981c0b9a",
+      "publishedQuestion": {
+        "_id": "5f7ada7ce076fcc225d8ca81",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 8 bola merah dan 9 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{8}{17}$",
+            "alasan": "Benar: Kejadian merah ada 8 dari 17 bola, sehingga peluangnya 8/17.",
+            "option_id": "A"
+          },
+          {
+            "text": "$\\frac{8}{9}$",
+            "alasan": "Salah: Pilihan $\\frac{8}{9}$ lebih besar sebesar $\\frac{64}{153}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{9}{17}$",
+            "alasan": "Salah: Pilihan $\\frac{9}{17}$ lebih besar sebesar $\\frac{1}{17}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{1}{17}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{17}$ lebih kecil sebesar $\\frac{7}{17}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.781660+00:00",
+        "updated_at": "2026-11-03T15:07:39.781660+00:00"
+      },
+      "questionHash": "95849cd590254f86796d4a84d9188b3598bbf91d79b797247e18bc4718b70d54",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 8 dari 17 bola, sehingga peluangnya 8/17.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "611c67ab73de47e9d676ea7f",
+      "sourceHash": "a5e77bdd2000bed22ead73cec080af7c76ad8358a27ad6818adfcf58dc1ec577",
+      "publishedQuestion": {
+        "_id": "611c67ab73de47e9d676ea7f",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 14 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 70 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$39$",
+            "alasan": "Salah: Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$42$",
+            "alasan": "Salah: Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$40$",
+            "alasan": "Benar: Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+            "option_id": "C"
+          },
+          {
+            "text": "$41$",
+            "alasan": "Salah: Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.523844+00:00",
+        "updated_at": "2026-11-03T15:07:39.523844+00:00"
+      },
+      "questionHash": "e50f2c7cac094c7d50b24a8a0b41fa1776e9d63ef3b545e89fb2a2d576e82549",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "66253a05e5500e61c140de5d",
+      "sourceHash": "e72ead991cd893d614a959f243e68ddb5c570c4915593ad7d16a73448cc119fd",
+      "publishedQuestion": {
+        "_id": "66253a05e5500e61c140de5d",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Rasio",
+        "soal_text": "Satu paket berisi 6 bibit dan harganya Rp48.000,00. Berapa harga setiap bibit jika harganya sama?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$7999$",
+            "alasan": "Salah: Pilihan $7999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$8001$",
+            "alasan": "Salah: Pilihan $8001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$8002$",
+            "alasan": "Salah: Pilihan $8002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$8000$",
+            "alasan": "Benar: Harga satuan = 48000/6 = 8000 rupiah.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.444303+00:00",
+        "updated_at": "2026-11-03T15:07:39.444303+00:00"
+      },
+      "questionHash": "4397b793a167b1bf692b44d62e8b2041b429227cea2bfd9259036444728e4114",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_satuan",
+      "solution": "Harga satuan = 48000/6 = 8000 rupiah.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "68c07b8340f335c8c521c4da",
+      "sourceHash": "905d94fe2de0faede3c736509edf843bb7255de41734bf15e99ef57064be521e",
+      "publishedQuestion": {
+        "_id": "68c07b8340f335c8c521c4da",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Rasio",
+        "soal_text": "Satu paket berisi 6 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$9999$",
+            "alasan": "Salah: Pilihan $9999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$10000$",
+            "alasan": "Benar: Harga satuan = 60000/6 = 10000 rupiah.",
+            "option_id": "B"
+          },
+          {
+            "text": "$10002$",
+            "alasan": "Salah: Pilihan $10002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$10001$",
+            "alasan": "Salah: Pilihan $10001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.445307+00:00",
+        "updated_at": "2026-11-03T15:07:39.445307+00:00"
+      },
+      "questionHash": "4f91f6592c754b76026537c645c860641cc84bfe0e071259887826aa0c205ac5",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_satuan",
+      "solution": "Harga satuan = 60000/6 = 10000 rupiah.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "6b696db127fe1e216aec8c75",
+      "sourceHash": "615e792a2ea94b1e22aedf6aa759ea6378d9f8aac8d2c69b7398dc40c5707f8d",
+      "publishedQuestion": {
+        "_id": "6b696db127fe1e216aec8c75",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Mengonstruksi dan Mengurai",
+        "soal_text": "Model balok tersusun dari kubus satuan. Susunan alas 7 baris dan 7 kubus tiap baris, dengan 6 lapisan penuh. Berapa kubus satuan penyusunnya?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$295$",
+            "alasan": "Salah: Pilihan $295$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$294$",
+            "alasan": "Benar: Tiap lapisan memuat 49 kubus. Dengan 6 lapisan ada 49×6=294 kubus.",
+            "option_id": "B"
+          },
+          {
+            "text": "$296$",
+            "alasan": "Salah: Pilihan $296$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$293$",
+            "alasan": "Salah: Pilihan $293$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.561660+00:00",
+        "updated_at": "2026-11-03T15:07:39.561660+00:00"
+      },
+      "questionHash": "4e5b966ffa5bc31bae3e35441b7be07626760bb19b5ba2a46bfeed04164dab2e",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "susunan_kubus",
+      "solution": "Tiap lapisan memuat 49 kubus. Dengan 6 lapisan ada 49×6=294 kubus.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "706a58689f9e741b6310ed58",
+      "sourceHash": "925e0fac5e32658233bdaed9feb8428ece222ac63a2bf0ca428a14fe9cea26da",
+      "publishedQuestion": {
+        "_id": "706a58689f9e741b6310ed58",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Penerapan Rasio",
+        "soal_text": "Rasio bibit mawar terhadap melati adalah 15:11. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$45$",
+            "alasan": "Benar: Jumlah bagian rasio 26. Tiap bagian bernilai 3. Bibit mawar 15×3=45.",
+            "option_id": "A"
+          },
+          {
+            "text": "$44$",
+            "alasan": "Salah: Pilihan $44$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$47$",
+            "alasan": "Salah: Pilihan $47$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$46$",
+            "alasan": "Salah: Pilihan $46$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.330157+00:00",
+        "updated_at": "2026-11-03T15:07:39.330157+00:00"
+      },
+      "questionHash": "0179b8da66e63480eb8225ce80c8ccd06692993442bb43321c1837077357b491",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "penerapan_rasio",
+      "solution": "Jumlah bagian rasio 26. Tiap bagian bernilai 3. Bibit mawar 15×3=45.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "7a72b4490bd9509d73d8f729",
+      "sourceHash": "3e62382845c3d2d93ddbd669897eeae60fcec0f4b60bcfaab69da31c90e8eea7",
+      "publishedQuestion": {
+        "_id": "7a72b4490bd9509d73d8f729",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 5, 1, dan 5 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "A"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.741103+00:00",
+        "updated_at": "2026-11-03T15:07:39.741103+00:00"
+      },
+      "questionHash": "01c57324e772e1fc64e65eb61a8e70a4f398a2c2a0212acddf4b20fab5dcae7f",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "7b3002c8381318bddecc0527",
+      "sourceHash": "44bff725179b0b8a3adc1849a3cfef3ef96b5fb1bd7c8c337bbd2f1736cda747",
+      "publishedQuestion": {
+        "_id": "7b3002c8381318bddecc0527",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Bilangan Desimal",
+        "soal_text": "Massa sebuah paket 4,9 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "5,1",
+            "alasan": "Benar: Samakan nilai tempat desimal, lalu jumlahkan: 4,9 + 0,2 = 5,1 kg.",
+            "option_id": "A"
+          },
+          {
+            "text": "6,9",
+            "alasan": "Salah: Pilihan 6,9 lebih besar sebesar $\\frac{9}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 5,1. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "4,92",
+            "alasan": "Salah: Pilihan 4,92 lebih kecil sebesar $\\frac{9}{50}$ daripada hasil yang memenuhi perhitungan, yaitu 5,1. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "4,7",
+            "alasan": "Salah: Pilihan 4,7 lebih kecil sebesar $\\frac{2}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 5,1. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.389640+00:00",
+        "updated_at": "2026-11-03T15:07:39.389640+00:00"
+      },
+      "questionHash": "854ae3a15aa04c95ce29020833000681d3e3fb10d959093164df8a1b8a23982b",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "operasi_desimal",
+      "solution": "Samakan nilai tempat desimal, lalu jumlahkan: 4,9 + 0,2 = 5,1 kg.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "7dd61466504c62bec05256a0",
+      "sourceHash": "b6b5f050c9dfe1dc176a136a26c2450aeba288174a735017883572a6621aef32",
+      "publishedQuestion": {
+        "_id": "7dd61466504c62bec05256a0",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 11 gelas minuman dibutuhkan 4 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 88 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$31$",
+            "alasan": "Salah: Pilihan $31$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$34$",
+            "alasan": "Salah: Pilihan $34$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$32$",
+            "alasan": "Benar: Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 4×8=32.",
+            "option_id": "C"
+          },
+          {
+            "text": "$33$",
+            "alasan": "Salah: Pilihan $33$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.524845+00:00",
+        "updated_at": "2026-11-03T15:07:39.524845+00:00"
+      },
+      "questionHash": "471895a27641bc3e8b85c06dd38b919b95a8da9e90f5dcda733ae2f7c63433e6",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 4×8=32.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "81dd90054030395f008c4c51",
+      "sourceHash": "c838815ced4cc36ed9c936d9d95526a3824e4e62388bc2134e3842b8d176ad15",
+      "publishedQuestion": {
+        "_id": "81dd90054030395f008c4c51",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 9 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 27 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$32$",
+            "alasan": "Salah: Pilihan $32$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$33$",
+            "alasan": "Benar: Banyak gelas menjadi 3 kali, sehingga sirup juga 3 kali: 11×3=33.",
+            "option_id": "B"
+          },
+          {
+            "text": "$34$",
+            "alasan": "Salah: Pilihan $34$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$35$",
+            "alasan": "Salah: Pilihan $35$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.488055+00:00",
+        "updated_at": "2026-11-03T15:07:39.488055+00:00"
+      },
+      "questionHash": "93648727a31722eeb6a5a1421ee5c77cd3daaee102fe5bc681220b3cd46e4e9a",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 3 kali, sehingga sirup juga 3 kali: 11×3=33.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "839b766c578b51afd4fd29ab",
+      "sourceHash": "af9cec829d21bb053a738b99da5d49857528d3bcc297603858e4997393040681",
+      "publishedQuestion": {
+        "_id": "839b766c578b51afd4fd29ab",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Pembagian Pecahan",
+        "soal_text": "Tersedia $\\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$12$",
+            "alasan": "Salah: Pilihan $12$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$10$",
+            "alasan": "Benar: Jumlah loyang = (161/4)/(4) = 161/16. Karena yang dihitung loyang penuh, ambil bagian bulatnya, yaitu 10.",
+            "option_id": "B"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$11$",
+            "alasan": "Salah: Pilihan $11$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.155170+00:00",
+        "updated_at": "2026-11-03T15:07:39.155170+00:00"
+      },
+      "questionHash": "61a0e7039d40f893e21c9a2faef5aeb709fbff7549c1c9e9ff49e398997e5aaa",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "pembagian_pecahan_bersyarat",
+      "solution": "Jumlah loyang = (161/4)/(4) = 161/16. Karena yang dihitung loyang penuh, ambil bagian bulatnya, yaitu 10.",
+      "checks": [
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "8b6c06020da7e5b8a58d33a0",
+      "sourceHash": "811a1b1b78b59032122d2b73065225af1b83236ecce1ce6b1e7c5991fffe11b3",
+      "publishedQuestion": {
+        "_id": "8b6c06020da7e5b8a58d33a0",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 4 bola merah dan 7 biru. Kotak Q memuat 5 merah dan 7 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=4/11 dan Q=5/12. Karena 5/12>4/11, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=4/11 dan Q=5/12. Karena 5/12>4/11, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=4/11 dan Q=5/12. Karena 5/12>4/11, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=4/11 dan Q=5/12. Karena 5/12>4/11, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.885129+00:00",
+        "updated_at": "2026-11-03T15:07:39.885129+00:00"
+      },
+      "questionHash": "08de396eba51191309a87d430bda463e2b2874dfa4b6526a13b6fea16d9d5595",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=4/11 dan Q=5/12. Karena 5/12>4/11, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "8ca127bd00647e8171b8705b",
+      "sourceHash": "2ac4e0aa649972cdbb2c75e387bb057bb66abc6ad0c77739e678db32052da473",
+      "publishedQuestion": {
+        "_id": "8ca127bd00647e8171b8705b",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 3, 3, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "A"
+          },
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.242382+00:00",
+        "updated_at": "2026-11-03T15:07:39.242382+00:00"
+      },
+      "questionHash": "8918f826d9ebc7178b2b0b08d28a2806462579e6b4cd13976deb3b815fc279b7",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "99e61a2ef8190b6564b283fe",
+      "sourceHash": "eac1dc669d3d2b0a4f4aabf3c588cbc0b2d0eff0ceaf7e77cffad852e4a12257",
+      "publishedQuestion": {
+        "_id": "99e61a2ef8190b6564b283fe",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(3, 3)$ ke $(6, 7)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Benar: Perpindahan mendatar 3 petak dan tegak 4 petak. Minimum jumlah langkah = 7.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.702713+00:00",
+        "updated_at": "2026-11-03T15:07:39.702713+00:00"
+      },
+      "questionHash": "6b2e80aaae6413c393251a71f97958b43075cbda13c08e1b2e3ae6989e95291f",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 3 petak dan tegak 4 petak. Minimum jumlah langkah = 7.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "a29967b8a252424375805399",
+      "sourceHash": "48a30e17c9e3f61dde9dd559c41cdbd7e8bd82808f3b9cc111c9f28a3f27e652",
+      "publishedQuestion": {
+        "_id": "a29967b8a252424375805399",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(8, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Salah: Pilihan $7$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Benar: Perpindahan mendatar 3 petak dan tegak 2 petak. Minimum jumlah langkah = 5.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.835538+00:00",
+        "updated_at": "2026-11-03T15:07:39.835538+00:00"
+      },
+      "questionHash": "51aa905e33646e41d9aa78e2b35f3c143b49f03b596e331d47b6333d4359e433",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 3 petak dan tegak 2 petak. Minimum jumlah langkah = 5.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "a589f854506e0673fb6af3cf",
+      "sourceHash": "71a66a45193e68f3bdb9f04026ef5abc5b38284f57f769a817829a1986040f99",
+      "publishedQuestion": {
+        "_id": "a589f854506e0673fb6af3cf",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 4 bola merah dan 4 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{3}{2}$",
+            "alasan": "Salah: Nilai $\\frac{3}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini.",
+            "option_id": "A"
+          },
+          {
+            "text": "$1$",
+            "alasan": "Salah: Pilihan $1$ lebih besar sebesar $\\frac{1}{2}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1}{2}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{1}{2}$",
+            "alasan": "Benar: Kejadian merah ada 4 dari 8 bola, sehingga peluangnya 4/8.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{1}{8}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{8}$ lebih kecil sebesar $\\frac{3}{8}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1}{2}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.783659+00:00",
+        "updated_at": "2026-11-03T15:07:39.783659+00:00"
+      },
+      "questionHash": "52477f5dbc6ea68f3dd054437eb78641ad8a64d621edef36b116d72f87a41f78",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 4 dari 8 bola, sehingga peluangnya 4/8.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "aad6bf26fbafe13c872c822d",
+      "sourceHash": "15d5d225bfef2c432549b9d003e67bb9499a7eddcf50d8046251ab4c57d7a1c1",
+      "publishedQuestion": {
+        "_id": "aad6bf26fbafe13c872c822d",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 9 gelas minuman dibutuhkan 3 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 18 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$7$",
+            "alasan": "Salah: Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Benar: Banyak gelas menjadi 2 kali, sehingga sirup juga 2 kali: 3×2=6.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.524845+00:00",
+        "updated_at": "2026-11-03T15:07:39.524845+00:00"
+      },
+      "questionHash": "ab8db24b981db98199c358e62559ca7cfc81c965179481e8fc5ce03e3b7349cf",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 2 kali, sehingga sirup juga 2 kali: 3×2=6.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "b52b52a484a5548f5f40490a",
+      "sourceHash": "7a4451116835b1ef11f0318c989a1753a13dfbb771f36c467540456b4c4ed94c",
+      "publishedQuestion": {
+        "_id": "b52b52a484a5548f5f40490a",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 7 bola merah dan 9 biru. Kotak Q memuat 8 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=7/16 dan Q=8/17. Karena 8/17>7/16, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=7/16 dan Q=8/17. Karena 8/17>7/16, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=7/16 dan Q=8/17. Karena 8/17>7/16, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=7/16 dan Q=8/17. Karena 8/17>7/16, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.886127+00:00",
+        "updated_at": "2026-11-03T15:07:39.886127+00:00"
+      },
+      "questionHash": "a75ba689a6ab7b44bb35549fe4368dfceafc55dc8de6e4d4835dba012f21715a",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=7/16 dan Q=8/17. Karena 8/17>7/16, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "b874b22033216d68c13dc9d0",
+      "sourceHash": "310b24618e5ce3361eff4127a92b7087f8a78c22741f04dc8b7a63983941605a",
+      "publishedQuestion": {
+        "_id": "b874b22033216d68c13dc9d0",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 2, 3, dan 1 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.741103+00:00",
+        "updated_at": "2026-11-03T15:07:39.741103+00:00"
+      },
+      "questionHash": "40201867bbfd712ba22b4ebd1de33137bfda713870abfe8dc9fa84003e6a1429",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "bbc7a3bd1d21cbc88d20684e",
+      "sourceHash": "45c0ce97d256bff39f913d0e4300e3c421a6a44faba151e741db7d46b90c6723",
+      "publishedQuestion": {
+        "_id": "bbc7a3bd1d21cbc88d20684e",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 2)$ ke $(10, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$7$",
+            "alasan": "Benar: Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+            "option_id": "A"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$8$",
+            "alasan": "Salah: Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.701344+00:00",
+        "updated_at": "2026-11-03T15:07:39.701344+00:00"
+      },
+      "questionHash": "50b0f3367b6eeac6fe8efb7abc889209b1644bd8e8c800d7063e751ebd8d6f4a",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "bc956f2e6080f9347e3a1a28",
+      "sourceHash": "92aefc512e6a14285866a312a9d5e75b8c64b3e4d5b455af3333b0ff1a551193",
+      "publishedQuestion": {
+        "_id": "bc956f2e6080f9347e3a1a28",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Mengonstruksi dan Mengurai",
+        "soal_text": "Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 9 kubus tiap baris, dengan 2 lapisan penuh. Berapa kubus satuan penyusunnya?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$218$",
+            "alasan": "Salah: Pilihan $218$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$216$",
+            "alasan": "Benar: Tiap lapisan memuat 108 kubus. Dengan 2 lapisan ada 108×2=216 kubus.",
+            "option_id": "B"
+          },
+          {
+            "text": "$215$",
+            "alasan": "Salah: Pilihan $215$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$217$",
+            "alasan": "Salah: Pilihan $217$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "B",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.562658+00:00",
+        "updated_at": "2026-11-03T15:07:39.562658+00:00"
+      },
+      "questionHash": "6ccf94e5cb90e992855cb22dddcbc5622223b61d175eb5a2e276077e3e6b5ab3",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "susunan_kubus",
+      "solution": "Tiap lapisan memuat 108 kubus. Dengan 2 lapisan ada 108×2=216 kubus.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "bcc821599605fde4472903f5",
+      "sourceHash": "ec439151547fa33abfd286c47139d03555e671ac48ca119fa2ea0cdc1169909e",
+      "publishedQuestion": {
+        "_id": "bcc821599605fde4472903f5",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Perkalian Pecahan",
+        "soal_text": "Panjang seutas pita $\\frac{3}{8}$ meter. Sebanyak $\\frac{10}{13}$ bagian dari pita itu digunakan. Berapa meter panjang pita yang digunakan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{119}{104}$",
+            "alasan": "Salah: Pilihan $\\frac{119}{104}$ lebih besar sebesar $\\frac{89}{104}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{52}$. Periksa kembali langkah perkalian pecahan pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$- \\frac{41}{104}$",
+            "alasan": "Salah: Pilihan $- \\frac{41}{104}$ lebih kecil sebesar $\\frac{71}{104}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{52}$. Periksa kembali langkah perkalian pecahan pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{39}{80}$",
+            "alasan": "Salah: Pilihan $\\frac{39}{80}$ lebih besar sebesar $\\frac{207}{1040}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{52}$. Periksa kembali langkah perkalian pecahan pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{15}{52}$",
+            "alasan": "Benar: Panjang yang dipakai = 3/8 × 10/13 = 15/52 meter.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.103306+00:00",
+        "updated_at": "2026-11-03T15:07:39.103306+00:00"
+      },
+      "questionHash": "2bb3ad41f432c8b6c93c12ea3145962f8f449c4b6c14b5de209e0a29f657f851",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "perkalian_pecahan",
+      "solution": "Panjang yang dipakai = 3/8 × 10/13 = 15/52 meter.",
+      "checks": [
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "c7d64ef3fc7e4c84b654992b",
+      "sourceHash": "0e2ab0ed807395e25bd15e11f53534697cf9e4fe11dc736e1dc264f96a94d36f",
+      "publishedQuestion": {
+        "_id": "c7d64ef3fc7e4c84b654992b",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(7, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Salah: Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$6$",
+            "alasan": "Salah: Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Benar: Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.836707+00:00",
+        "updated_at": "2026-11-03T15:07:39.836707+00:00"
+      },
+      "questionHash": "39dbf65fbf69b2e1cad1a09143395042f7148bd3f443060a2ed6edbdfe781cc4",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "cbb2d3440e8862ff41282beb",
+      "sourceHash": "70473256ec8f98c777bf1e735a8dabffe21af1a003c1604d6a28fec0142921fa",
+      "publishedQuestion": {
+        "_id": "cbb2d3440e8862ff41282beb",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 4, 1, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.741103+00:00",
+        "updated_at": "2026-11-03T15:07:39.741103+00:00"
+      },
+      "questionHash": "791bc9ad90b9f00a917aa166e7e28f31535fde0060daaebbb595356d134f5bad",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "cc859cab4f20fbbb7748e9cf",
+      "sourceHash": "95c3a358ceafdd76700ea68ec45ae82ba9e1f341d5a9815b512c934e0f6a669f",
+      "publishedQuestion": {
+        "_id": "cc859cab4f20fbbb7748e9cf",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 13 bola merah dan 11 biru. Kotak Q memuat 14 merah dan 11 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/24 dan Q=14/25. Karena 14/25>13/24, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/24 dan Q=14/25. Karena 14/25>13/24, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/24 dan Q=14/25. Karena 14/25>13/24, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=13/24 dan Q=14/25. Karena 14/25>13/24, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.885129+00:00",
+        "updated_at": "2026-11-03T15:07:39.885129+00:00"
+      },
+      "questionHash": "fa8a52eee3d6568fd4a178d84f42f404b9af1ef47e8446f69cdd96c4778bf932",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=13/24 dan Q=14/25. Karena 14/25>13/24, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "d237006d6fa99cacfcfa2025",
+      "sourceHash": "49645471654ba631d4dee6e9a5117aba5dfee36e54b1a510b76cb6d760846b54",
+      "publishedQuestion": {
+        "_id": "d237006d6fa99cacfcfa2025",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 6 bola merah dan 11 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{6}{11}$",
+            "alasan": "Salah: Pilihan $\\frac{6}{11}$ lebih besar sebesar $\\frac{36}{187}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{6}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$\\frac{11}{17}$",
+            "alasan": "Salah: Pilihan $\\frac{11}{17}$ lebih besar sebesar $\\frac{5}{17}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{6}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{1}{17}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{17}$ lebih kecil sebesar $\\frac{5}{17}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{6}{17}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{6}{17}$",
+            "alasan": "Benar: Kejadian merah ada 6 dari 17 bola, sehingga peluangnya 6/17.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.784691+00:00",
+        "updated_at": "2026-11-03T15:07:39.784691+00:00"
+      },
+      "questionHash": "1d9866e48f44d7f8dfaa63b0649f6d1c329493a1066053b1b2fabe85190aeac6",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 6 dari 17 bola, sehingga peluangnya 6/17.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "d5d005f6d89b933e25a27c65",
+      "sourceHash": "431e703c68e80ac9c8c3b6aa540de48bbe3495d98d86f363aedd077db1668111",
+      "publishedQuestion": {
+        "_id": "d5d005f6d89b933e25a27c65",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Bilangan Desimal",
+        "soal_text": "Massa sebuah paket 13,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "13,94",
+            "alasan": "Salah: Pilihan 13,94 lebih kecil sebesar $\\frac{9}{25}$ daripada hasil yang memenuhi perhitungan, yaitu 14,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "13,5",
+            "alasan": "Salah: Pilihan 13,5 lebih kecil sebesar $\\frac{4}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 14,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "17,9",
+            "alasan": "Salah: Pilihan 17,9 lebih besar sebesar $\\frac{18}{5}$ daripada hasil yang memenuhi perhitungan, yaitu 14,3. Periksa kembali langkah operasi desimal pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "14,3",
+            "alasan": "Benar: Samakan nilai tempat desimal, lalu jumlahkan: 13,9 + 0,4 = 14,3 kg.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.388122+00:00",
+        "updated_at": "2026-11-03T15:07:39.388122+00:00"
+      },
+      "questionHash": "78c360a58810b2cad01e49c1bffa09a6a7223ea6e632a3d2f35ebfae87d3c20f",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "operasi_desimal",
+      "solution": "Samakan nilai tempat desimal, lalu jumlahkan: 13,9 + 0,4 = 14,3 kg.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "d617c0032c3cbeffaf0a793c",
+      "sourceHash": "06ba43fbb39b311d442353ce48db941d2b4cd70ea61c771dbcdbe5259321e4df",
+      "publishedQuestion": {
+        "_id": "d617c0032c3cbeffaf0a793c",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Lokasi",
+        "soal_text": "Pada denah berpetak, sebuah bidak berpindah dari $(3, 1)$ ke $(8, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$8$",
+            "alasan": "Benar: Perpindahan mendatar 5 petak dan tegak 3 petak. Minimum jumlah langkah = 8.",
+            "option_id": "A"
+          },
+          {
+            "text": "$10$",
+            "alasan": "Salah: Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$7$",
+            "alasan": "Salah: Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$9$",
+            "alasan": "Salah: Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.836707+00:00",
+        "updated_at": "2026-11-03T15:07:39.836707+00:00"
+      },
+      "questionHash": "708be948c4881bfbcae9d75e5251b9fa5d069ba604c172a5ad5f8b1bc6ab133d",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "lokasi_pada_petak",
+      "solution": "Perpindahan mendatar 5 petak dan tegak 3 petak. Minimum jumlah langkah = 8.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "dd0d7fa1dcd0299e241c3137",
+      "sourceHash": "4ce078dc6a32d80d6bb6f5a77c5fa6ce0ce9a4cba82d063d0d98d914bdb405c3",
+      "publishedQuestion": {
+        "_id": "dd0d7fa1dcd0299e241c3137",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Mengonstruksi dan Mengurai",
+        "soal_text": "Model balok tersusun dari kubus satuan. Susunan alas 4 baris dan 7 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$195$",
+            "alasan": "Salah: Pilihan $195$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $196$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$197$",
+            "alasan": "Salah: Pilihan $197$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $196$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$196$",
+            "alasan": "Benar: Tiap lapisan memuat 28 kubus. Dengan 7 lapisan ada 28×7=196 kubus.",
+            "option_id": "C"
+          },
+          {
+            "text": "$198$",
+            "alasan": "Salah: Pilihan $198$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $196$. Periksa kembali langkah susunan kubus pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.562658+00:00",
+        "updated_at": "2026-11-03T15:07:39.562658+00:00"
+      },
+      "questionHash": "48254c3beaecb68d5bab8a1597ebc15dea146e5000edfb1e01b2664240948cef",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "susunan_kubus",
+      "solution": "Tiap lapisan memuat 28 kubus. Dengan 7 lapisan ada 28×7=196 kubus.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "df3e2817cde4e17817f33305",
+      "sourceHash": "1e5931aca3512aefdacde2597832e82702642f76f6a7402c3929ab7fc1aef32c",
+      "publishedQuestion": {
+        "_id": "df3e2817cde4e17817f33305",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 13 bola merah dan 9 biru. Kotak Q memuat 14 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/22 dan Q=14/23. Karena 14/23>13/22, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/22 dan Q=14/23. Karena 14/23>13/22, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=13/22 dan Q=14/23. Karena 14/23>13/22, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=13/22 dan Q=14/23. Karena 14/23>13/22, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.885129+00:00",
+        "updated_at": "2026-11-03T15:07:39.885129+00:00"
+      },
+      "questionHash": "609604bab906f1f25bc999c7e8fdd94a2a19bfb5769af95f0a9dd3b1c66e568b",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=13/22 dan Q=14/23. Karena 14/23>13/22, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "dffc87ff16b4dc251aac2199",
+      "sourceHash": "0cced29de5c396c139b43ebfdf57d616a87f859fa79f48ec789724680585109b",
+      "publishedQuestion": {
+        "_id": "dffc87ff16b4dc251aac2199",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Visualisasi Spasial",
+        "soal_text": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 6 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$2$",
+            "alasan": "Salah: Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$5$",
+            "alasan": "Salah: Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$3$",
+            "alasan": "Benar: Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+            "option_id": "C"
+          },
+          {
+            "text": "$4$",
+            "alasan": "Salah: Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah visualisasi spasial pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.740098+00:00",
+        "updated_at": "2026-11-03T15:07:39.740098+00:00"
+      },
+      "questionHash": "1f633196849f2e04349d90853fb4f7955f2f3dbad7bdb51d25c55fd5b1169dc5",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "knowing",
+      "family": "visualisasi_spasial",
+      "solution": "Setiap menara menempati satu petak alas. Perbedaan tinggi tidak mengubah banyak petak pada tampak atas, sehingga ada 3 petak.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "e39cbfbbcb6f32e97c389ce7",
+      "sourceHash": "99c9698f07a6e5a24582d888388cd17ba5ff34a52e102b063e3ab6b0b69a18e3",
+      "publishedQuestion": {
+        "_id": "e39cbfbbcb6f32e97c389ce7",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Penerapan Rasio",
+        "soal_text": "Rasio bibit mawar terhadap melati adalah 11:2. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$65$",
+            "alasan": "Salah: Pilihan $65$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$67$",
+            "alasan": "Salah: Pilihan $67$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$66$",
+            "alasan": "Benar: Jumlah bagian rasio 13. Tiap bagian bernilai 6. Bibit mawar 11×6=66.",
+            "option_id": "C"
+          },
+          {
+            "text": "$68$",
+            "alasan": "Salah: Pilihan $68$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "C",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.195564+00:00",
+        "updated_at": "2026-11-03T15:07:39.195564+00:00"
+      },
+      "questionHash": "d179ad9051dd24571803b87fc876fed2b6aa8332ccfafce68a909c4ebd47a18d",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "medium",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "penerapan_rasio",
+      "solution": "Jumlah bagian rasio 13. Tiap bagian bernilai 6. Bibit mawar 11×6=66.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "e63e8ca13bae2927896c154f",
+      "sourceHash": "94e5b697b58ef0293720f551e894b2a9e77a42cafba5ed8a09d6d47b628ef790",
+      "publishedQuestion": {
+        "_id": "e63e8ca13bae2927896c154f",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 9 bola merah dan 10 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{9}{19}$",
+            "alasan": "Benar: Kejadian merah ada 9 dari 19 bola, sehingga peluangnya 9/19.",
+            "option_id": "A"
+          },
+          {
+            "text": "$\\frac{9}{10}$",
+            "alasan": "Salah: Pilihan $\\frac{9}{10}$ lebih besar sebesar $\\frac{81}{190}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{19}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{10}{19}$",
+            "alasan": "Salah: Pilihan $\\frac{10}{19}$ lebih besar sebesar $\\frac{1}{19}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{19}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{1}{19}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{19}$ lebih kecil sebesar $\\frac{8}{19}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{19}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "A",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.785690+00:00",
+        "updated_at": "2026-11-03T15:07:39.785690+00:00"
+      },
+      "questionHash": "af678bd0b3335c3f0cff25f28c905f6e6c54e3f76f48e4e90186aae568a1b61c",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 9 dari 19 bola, sehingga peluangnya 9/19.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "efb8f9979a64f594cd35b18b",
+      "sourceHash": "852b08649cc3247480225d1d60496c204fb46339986a74d4be3f40f9a1fef7ee",
+      "publishedQuestion": {
+        "_id": "efb8f9979a64f594cd35b18b",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Konsep Kesamaan Rasio",
+        "soal_text": "Untuk membuat 13 gelas minuman dibutuhkan 5 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 104 gelas?",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$41$",
+            "alasan": "Salah: Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$39$",
+            "alasan": "Salah: Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "B"
+          },
+          {
+            "text": "$42$",
+            "alasan": "Salah: Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$40$",
+            "alasan": "Benar: Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 5×8=40.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.523844+00:00",
+        "updated_at": "2026-11-03T15:07:39.523844+00:00"
+      },
+      "questionHash": "730107000ea83df75f95222ec1980dea1ec6da1f464d83ac4ae00b6f07ac612e",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "rasio_senilai",
+      "solution": "Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 5×8=40.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "f2f78126b17d29c63dbfe4c8",
+      "sourceHash": "d075dd48ba1897f26af4540a92c22a0a7113b5cc54454642c59017c82f34c5d1",
+      "publishedQuestion": {
+        "_id": "f2f78126b17d29c63dbfe4c8",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Membandingkan Peluang Kejadian",
+        "soal_text": "Kotak P memuat 8 bola merah dan 4 biru. Kotak Q memuat 9 merah dan 4 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "Peluang merah di kedua kotak pasti 1.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak pasti 1. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=2/3 dan Q=9/13. Karena 9/13>2/3, peluang di Q lebih besar.",
+            "option_id": "A"
+          },
+          {
+            "text": "Peluang merah di P lebih besar daripada di Q.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di P lebih besar daripada di Q. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=2/3 dan Q=9/13. Karena 9/13>2/3, peluang di Q lebih besar.",
+            "option_id": "B"
+          },
+          {
+            "text": "Peluang merah di kedua kotak sama.",
+            "alasan": "Salah: Pernyataan atau koordinat Peluang merah di kedua kotak sama. tidak sesuai hasil yang memenuhi data, yaitu Peluang merah di Q lebih besar daripada di P.. Pemeriksaannya: Peluang P=2/3 dan Q=9/13. Karena 9/13>2/3, peluang di Q lebih besar.",
+            "option_id": "C"
+          },
+          {
+            "text": "Peluang merah di Q lebih besar daripada di P.",
+            "alasan": "Benar: Peluang P=2/3 dan Q=9/13. Karena 9/13>2/3, peluang di Q lebih besar.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "medium",
+        "cognitive_score": 1000,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.886127+00:00",
+        "updated_at": "2026-11-03T15:07:39.886127+00:00"
+      },
+      "questionHash": "ab60e31f1b459d438ef84c5425666d4fc04f2dd893569103cbefc9dd2455a654",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "easy",
+      "assessedLevel": "medium",
+      "levelRationale": "Memerlukan penerapan konsep dan beberapa langkah yang saling bergantung; bentuk masalah masih rutin untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "membandingkan_peluang",
+      "solution": "Peluang P=2/3 dan Q=9/13. Karena 9/13>2/3, peluang di Q lebih besar.",
+      "checks": [
+        "concept_or_coordinates_recomputed_from_stem"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    },
+    {
+      "questionId": "f56bf98a040258ca6d42612c",
+      "sourceHash": "2b6cd3b5a239a395c2806df55acf7db5535d131d85137b9ba758fa214cdd8680",
+      "publishedQuestion": {
+        "_id": "f56bf98a040258ca6d42612c",
+        "berkas_id": null,
+        "kelas_id": "kelas6",
+        "subbab_id": "Skala Peluang",
+        "soal_text": "Dari kotak berisi 7 bola merah dan 3 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....",
+        "image_url": [],
+        "soal_type": "Pilihan Ganda",
+        "options": [
+          {
+            "text": "$\\frac{3}{10}$",
+            "alasan": "Salah: Pilihan $\\frac{3}{10}$ lebih kecil sebesar $\\frac{2}{5}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{7}{10}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "A"
+          },
+          {
+            "text": "$\\frac{7}{3}$",
+            "alasan": "Salah: Nilai $\\frac{7}{3}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini.",
+            "option_id": "B"
+          },
+          {
+            "text": "$\\frac{1}{10}$",
+            "alasan": "Salah: Pilihan $\\frac{1}{10}$ lebih kecil sebesar $\\frac{3}{5}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{7}{10}$. Periksa kembali langkah peluang satu kejadian pada pembahasan.",
+            "option_id": "C"
+          },
+          {
+            "text": "$\\frac{7}{10}$",
+            "alasan": "Benar: Kejadian merah ada 7 dari 10 bola, sehingga peluangnya 7/10.",
+            "option_id": "D"
+          }
+        ],
+        "matching_pairs": null,
+        "jawaban": "D",
+        "cognitive_level": "easy",
+        "cognitive_score": 600,
+        "confidence_score": 0,
+        "status": "active",
+        "created_at": "2026-11-03T15:07:39.782662+00:00",
+        "updated_at": "2026-11-03T15:07:39.782662+00:00"
+      },
+      "questionHash": "c0caa31bdafd3afe1a665ba4032a1a6ce110b127056e14328b84b8d3e228a717",
+      "method": "codex_direct_template_and_item_review",
+      "apiCalls": 0,
+      "confidence": 0,
+      "confidenceMeasured": false,
+      "originalTarget": "hard",
+      "assessedLevel": "easy",
+      "levelRationale": "Pengenalan konsep atau prosedur langsung; solusi minimum singkat untuk kelas sasaran.",
+      "mathCognitiveDomain": "applying",
+      "family": "peluang_satu_kejadian",
+      "solution": "Kejadian merah ada 7 dari 10 bola, sehingga peluangnya 7/10.",
+      "checks": [
+        "stem_calculation_recomputed",
+        "reviewed_template_formula",
+        "exact_finite_value",
+        "four_semantically_distinct_numeric_options",
+        "key_matches_displayed_value"
+      ],
+      "repairs": [],
+      "concerns": [],
+      "trainingEvidenceQualified": false,
+      "policyVersion": "codex-template-math-and-content-review-v1"
+    }
+  ]
+}

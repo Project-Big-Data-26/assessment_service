@@ -39,7 +39,7 @@ QUEUE_DIR = os.path.join(C.OUT_ROOT, "..", "exercise_queue")
 Slot = Tuple[str, int, str, str]
 
 
-def _kurang_milik_pipeline(path: str, kuota: int) -> bool:
+def _kurang_milik_pipeline(path: str, kuota: int, *, generation_only: bool = False) -> bool:
     """Berkas buatan pipeline 9Router yang jumlah soalnya masih di bawah kuota (bisa dilengkapi)."""
     try:
         with open(path, encoding="utf-8") as f:
@@ -52,6 +52,8 @@ def _kurang_milik_pipeline(path: str, kuota: int) -> bool:
         return False          # kapasitas kurang yang sudah ditinjau dan dinyatakan final: jangan diulang
     if len(d.get("soal", [])) < kuota:
         return True
+    if generation_only:
+        return False
     try:                      # penuh, tetapi belum diverifikasi / verifikasi terakhir belum cocok semua
         with open(path[:-len(".json")] + ".verifikasi.json", encoding="utf-8") as f:
             v = json.load(f)
@@ -60,27 +62,7 @@ def _kurang_milik_pipeline(path: str, kuota: int) -> bool:
         return True
 
 
-def antrean_gambar(books: List[str], batch: int) -> List[Slot]:
-    """Slot soal BERGAMBAR: subbab yang punya soal pretest bergambar (berkas gambar ada), per level."""
-    from app.services.exercise.llm_generate import _pool_gambar
-    out: List[Slot] = []
-    for book in books:
-        for bab_no in range(1, 40):
-            bab = kurikulum.get(book, bab_no)
-            if not bab:
-                continue
-            for kode, _nama in bab.subbab:
-                if not _pool_gambar(Job(book, bab_no, kode, "easy", batch, gambar=True)):
-                    continue
-                for level in C.LEVELS:
-                    path = os.path.join(C.OUT_ROOT, book, f"batch{batch:02d}", f"bab{bab_no:02d}",
-                                        f"{kode}_{level}_gambar.json")
-                    if not os.path.exists(path):
-                        out.append((book, bab_no, kode, level))
-    return out
-
-
-def antrean(books: List[str], batch: int, lengkapi: bool = False) -> List[Slot]:
+def antrean(books: List[str], batch: int, lengkapi: bool = False, *, generation_only: bool = False) -> List[Slot]:
     out: List[Slot] = []
     for book in books:
         for bab_no in range(1, 40):
@@ -91,7 +73,7 @@ def antrean(books: List[str], batch: int, lengkapi: bool = False) -> List[Slot]:
                 for level in C.LEVELS:
                     path = os.path.join(C.OUT_ROOT, book, f"batch{batch:02d}", f"bab{bab_no:02d}", f"{kode}_{level}.json")
                     kuota = C.KUOTA_PER_LEVEL[get_book(book).jenjang]
-                    if not os.path.exists(path) or (lengkapi and _kurang_milik_pipeline(path, kuota)):
+                    if not os.path.exists(path) or (lengkapi and _kurang_milik_pipeline(path, kuota, generation_only=generation_only)):
                         out.append((book, bab_no, kode, level))
     return out
 
@@ -112,7 +94,16 @@ def main() -> int:
     ap.add_argument("--maks-menit", type=int, default=0, help="0 = tanpa batas waktu")
     ap.add_argument("--pekerja", type=int, default=2)
     ap.add_argument("--perbaikan", type=int, default=2, help="putaran perbaikan otomatis per slot")
+    ap.add_argument("--generation-only", action="store_true", help="Generate and check locally; defer all solver/validation calls")
+    ap.add_argument("--max-api-calls", type=int, default=12, help="Persistent request budget per generation-only batch")
     a = ap.parse_args()
+    from app.services.exercise.workflow import managed
+    bases = [Path(C.OUT_ROOT) / book / f"batch{a.batch:02d}" for book in a.book]
+    generation_only = a.generation_only or all(managed(base) or not (base / "soal_exercise_db.json").exists() for base in bases)
+    if not a.generation_only and not generation_only and any(managed(base) or not (base / "soal_exercise_db.json").exists() for base in bases):
+        ap.error("run new/deferred batches with --generation-only separately from legacy validation jobs")
+    if generation_only and not a.daftar:
+        return run_generation_only(a)
 
     slots = antrean_gambar(a.book, a.batch) if a.gambar else antrean(a.book, a.batch, a.lengkapi)
     lewati = {tuple(x.split(":")) for x in a.lewati}
@@ -125,7 +116,7 @@ def main() -> int:
             print("  ", *s)
         return 0
     if not slots:
-        return 0
+        return finalize_books(a.book, a.batch)
 
     try:
         settings = NineRouterSettings.from_environment()
@@ -186,6 +177,56 @@ def main() -> int:
     with ThreadPoolExecutor(max_workers=max(1, a.pekerja)) as pool:
         list(pool.map(jalankan, rantai.values()))
     print("Selesai. Status:", status_file)
+    return finalize_books(a.book, a.batch)
+
+
+def finalize_books(books, batch):
+    """Only export fully generated/verified books; skipped or unfinished slots wait."""
+    from app.services.exercise.export import export_batch
+    from app.services.exercise.handoff import run_validation
+    ready = False
+    for book in dict.fromkeys(books):
+        from app.services.exercise.workflow import managed
+        if managed(Path(C.OUT_ROOT) / book / f"batch{batch:02d}"):
+            export_batch(book, batch, generation_only=True)
+            continue
+        if antrean([book], batch, lengkapi=True):
+            continue
+        result = export_batch(book, batch)
+        ready = result["ready_for_validation"] or ready
+    return run_validation() if ready else 0
+
+
+def run_generation_only(args):
+    from app.services.exercise.generation import BudgetedGenerator, GenerationStopped, generate_plan
+    from app.services.exercise.llm_generate import generate
+    from app.services.exercise.workflow import batch_lock, begin_generation
+    from app.services.exercise.export import export_batch
+    settings = NineRouterSettings.from_environment()
+    for book in dict.fromkeys(args.book):
+        base = Path(C.OUT_ROOT) / book / f"batch{args.batch:02d}"
+        if (base / "generation_plan.json").exists():
+            if args.maks_slot or args.maks_menit or args.lewati:
+                raise ValueError("a source-bound pilot follows its plan; use exercise_visual.py and the request budget")
+            print(generate_plan(base, settings, args.max_api_calls))
+            continue
+        with batch_lock(base):
+            begin_generation(base, book, args.batch)
+            slots = antrean([book], args.batch, True, generation_only=True)
+            lewati = {tuple(x.split(":")) for x in args.lewati}
+            slots = [s for s in slots if (s[0], str(s[1]), s[2]) not in lewati]
+            if args.maks_slot:
+                slots = slots[:args.maks_slot]
+            deadline = time.monotonic() + args.maks_menit * 60 if args.maks_menit else None
+            with BudgetedGenerator(settings, base, args.max_api_calls) as client:
+                for _, chapter, code, level in slots:
+                    if (deadline and time.monotonic() >= deadline) or os.path.exists(os.path.join(QUEUE_DIR, "STOP")):
+                        break
+                    try:
+                        generate(Job(book, chapter, code, level, args.batch), client)
+                    except GenerationStopped:
+                        break
+            export_batch(book, args.batch, generation_only=True, _locked=True)
     return 0
 
 

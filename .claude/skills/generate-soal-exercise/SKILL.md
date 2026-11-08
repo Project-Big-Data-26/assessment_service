@@ -21,8 +21,15 @@ semua soal pretest dan batch sebelumnya (validator memeriksanya).
 - Level easy/medium/hard hanya **perkiraan awal**: tim data mengkalibrasinya dengan IRT dari jawaban siswa.
   Karena itu: jangan memaksa kuota hard dengan soal nyaris kembar; sebaran kesulitan yang lebar di dalam
   level (medium atas, hard bawah) lebih berguna daripada kuota yang penuh.
-- Hanya pilihan ganda, **teks saja** (soal bergambar belum didukung): data yang dibutuhkan soal
-  (angka, tabel, bacaan) harus ditulis di `stimulus`/`pertanyaan`.
+- Hanya pilihan ganda. Aturan teks pada panduan ini berlaku untuk jalur legacy teks:
+  data yang dibutuhkan soal harus ditulis di `stimulus`/`pertanyaan`.
+- Jalur visual baru memakai `scripts/exercise_visual.py` dan rencana sumber terverifikasi.
+  Mode **generation-only** memisahkan generate dari solver/validasi. Batch baru tetap
+  `validation_pending`, termasuk pada jadwal malam, sampai izin merujuk hash manifest
+  diberikan terpisah. Gunakan runbook `API_DOCUMENTATION/43_EXERCISE_VISUAL_GENERATION.md`.
+  Gambar yang esensial tidak boleh dibocorkan datanya ke stimulus; SVG/PNG dan spesifikasi
+  semantik memiliki checksum. Pembagian 70% visual dan 30/40/30 kesulitan adalah TARGET
+  kandidat, bukan label hasil validasi atau IRT. Kuota 10+10+10 di atas tetap khusus legacy.
 - Export ke `soal_exercise_db.json` mengosongkan `cognitive_level`, `cognitive_score`, `confidence_score`, dan
   `status` (null); itu diisi tahap validasi tim lain. Info pendamping (level target, tipe, acuan, pembahasan,
   penanda) ada di `soal_exercise_meta.json`. `subbab_id` = nama subbab di buku panduan.

@@ -639,6 +639,1693 @@
       "pembahasan": "Langkah pengerjaan:\n1. Hitung luas lingkaran utuh:\n$$L = \\pi r^2 = \\frac{22}{7} \\times 14 \\times 14 = 616\\text{ cm}^2$$\n2. Tentukan perbandingan luas juring terhadap luas lingkaran:\n$$\\frac{L_{\\text{juring}}}{L} = \\frac{77}{616} = \\frac{1}{8}$$\n3. Tentukan besar sudut pusat $\\theta$:\n$$\\theta = \\frac{1}{8} \\times 360^\\circ = 45^\\circ$$\nJadi, besar sudut pusat juring tersebut adalah $45^\\circ$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e6a7da78af4aff9667fdecc",
+        "teks": "Sebuah lingkaran memiliki panjang diameter $56\\text{ cm}$. Keliling dan luas lingkaran tersebut secara berturut-turut adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$176\\text{ cm}$ dan $2.464\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_lingkaran_keliling_luas",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Keliling lingkaran $12\\pi$ cm. Tentukan luas setengah lingkaran itu.",
+      "jawaban_benar": "$18 \\pi$",
+      "alasan_benar": "Keliling 2πr memberi r=6. Luas setengah πr²/2=$18 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$9 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$36 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 18 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Keliling 2πr memberi r=6. Luas setengah πr²/2=$18 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-d-medium-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f0e58c681e3fcb0af9f8cc12",
+        "teks": "Keliling sebuah lingkaran yang memiliki panjang jari-jari $35\\text{ cm}$ dengan $\\pi = \\frac{22}{7}$ adalah ....",
+        "jawaban": "$220\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 36 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $28 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $64 \\pi$. Selisih hasilnya $- 36 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 36 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 36 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 36 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $28 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $64 \\pi$. Selisih hasilnya $- 36 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/62ac8eb3b6ffce115c421f62.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "14"
+            ],
+            [
+              "II",
+              "R",
+              "32"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"14\"], [\"II\", \"R\", \"32\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1f393fa1fc672e68f6285516",
+        "teks": "Sebuah roda sepeda berbentuk lingkaran memiliki keliling $K$ dan panjang diameter $d$. Nilai perbandingan $\\frac{K}{d}$ pada roda tersebut selalu konstan dan mendekati nilai ....",
+        "jawaban": "$\\pi$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$44 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $16 \\pi$. Selisih hasilnya $44 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 44 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 44 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 44 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $16 \\pi$. Selisih hasilnya $44 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/292ea13f9a6084a3d6bd73dd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "30"
+            ],
+            [
+              "II",
+              "R",
+              "8"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"30\"], [\"II\", \"R\", \"8\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9f2b4e499d104e1c83b2ef73",
+        "teks": "Luas lingkaran yang memiliki panjang jari-jari $14\\text{ cm}$ dengan $\\pi = \\frac{22}{7}$ adalah ....",
+        "jawaban": "$616\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$34 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $14 \\pi$. Selisih hasilnya $34 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $14 \\pi$. Selisih hasilnya $34 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/2459a399096dd0d5c1fcc862.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "24"
+            ],
+            [
+              "II",
+              "R",
+              "7"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"24\"], [\"II\", \"R\", \"7\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b4dfd3c9eee0e2d78d7e25cc",
+        "teks": "Ruas garis yang menghubungkan dua titik pada lingkaran dan melalui titik pusat lingkaran disebut ....",
+        "jawaban": "diameter",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$20 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $22 \\pi$. Selisih hasilnya $20 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 20 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 20 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 20 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $22 \\pi$. Selisih hasilnya $20 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/3bc9f7a16ea5d23a17180eda.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "21"
+            ],
+            [
+              "II",
+              "R",
+              "11"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"21\"], [\"II\", \"R\", \"11\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9eace3082c296f1c41e0dfe4",
+        "teks": "Sudut yang dibentuk oleh perpotongan dua jari-jari lingkaran pada titik pusat lingkaran disebut ....",
+        "jawaban": "sudut pusat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$26 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $64 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Selisih hasilnya $26 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 26 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 26 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 26 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $64 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Selisih hasilnya $26 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/becbb35d406a6fa6158700de.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "32"
+            ],
+            [
+              "II",
+              "R",
+              "19"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"32\"], [\"II\", \"R\", \"19\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "58ae5de142df37fbae07f2b5",
+        "teks": "Luas lingkaran yang memiliki panjang diameter $20\\text{ cm}$ dengan $\\pi = 3,14$ adalah ....",
+        "jawaban": "$314\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$22 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Selisih hasilnya $22 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Selisih hasilnya $22 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/db68a71cc3207e3081675de6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "24"
+            ],
+            [
+              "II",
+              "R",
+              "13"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"24\"], [\"II\", \"R\", \"13\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4141c3419e10f69689e493d7",
+        "teks": "Keliling lingkaran yang memiliki panjang jari-jari $10\\text{ cm}$ dengan $\\pi = 3,14$ adalah ....",
+        "jawaban": "$62,8\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$22 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $30 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $8 \\pi$. Selisih hasilnya $22 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $30 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $8 \\pi$. Selisih hasilnya $22 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/1ca7f226201ab31d0351f775.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "15"
+            ],
+            [
+              "II",
+              "R",
+              "4"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"15\"], [\"II\", \"R\", \"4\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c4ed3000efd94cb121c2df2",
+        "teks": "Sebuah lingkaran memiliki panjang jari-jari $7\\text{ cm}$. Luas juring lingkaran tersebut yang memiliki sudut pusat $90^\\circ$ dengan $\\pi = \\frac{22}{7}$ adalah ....",
+        "jawaban": "$38,5\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 38 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 38 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 38 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 38 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 38 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 38 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/1a3af9b96a17d31d91269828.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "9"
+            ],
+            [
+              "II",
+              "R",
+              "28"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"9\"], [\"II\", \"R\", \"28\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36a77542cdad6377593b9798",
+        "teks": "Daerah pada lingkaran yang dibatasi oleh dua jari-jari lingkaran dan busur di antara jari-jari tersebut disebut ....",
+        "jawaban": "juring",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$8 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $50 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $8 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 8 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 8 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 8 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $50 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $8 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/2e72eaeb1e10e826763ea169.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "25"
+            ],
+            [
+              "II",
+              "R",
+              "21"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"25\"], [\"II\", \"R\", \"21\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47a342adf16a0bc2c6a008fb",
+        "teks": "Kumpulan semua titik pada bidang datar yang memiliki jarak yang sama terhadap titik tertentu disebut ....",
+        "jawaban": "lingkaran",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 12 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Selisih hasilnya $- 12 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 12 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 12 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 12 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Selisih hasilnya $- 12 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/126f2403ba2c84e5ef4ab477.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "13"
+            ],
+            [
+              "II",
+              "R",
+              "19"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"13\"], [\"II\", \"R\", \"19\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "588117d2288d21be6f6f8e0d",
+        "teks": "Keliling lingkaran yang memiliki panjang jari-jari $21\\text{ cm}$ dengan $\\pi = \\frac{22}{7}$ adalah ....",
+        "jawaban": "$132\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$36 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $12 \\pi$. Selisih hasilnya $36 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 36 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 36 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 36 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $12 \\pi$. Selisih hasilnya $36 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/16e39e579be6ced9919fd936.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "24"
+            ],
+            [
+              "II",
+              "R",
+              "6"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"24\"], [\"II\", \"R\", \"6\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e939d913c904d383c5e3a28",
+        "teks": "Luas juring lingkaran yang memiliki sudut pusat $45^\\circ$ dan panjang jari-jari $14\\text{ cm}$ dengan $\\pi = \\frac{22}{7}$ adalah ....",
+        "jawaban": "$77\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 22 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $24 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $46 \\pi$. Selisih hasilnya $- 22 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 22 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 22 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $24 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $46 \\pi$. Selisih hasilnya $- 22 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/69b36a1b23e9b5e960330c48.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "12"
+            ],
+            [
+              "II",
+              "R",
+              "23"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"12\"], [\"II\", \"R\", \"23\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2e15c103f665b3d65bbdb0e4",
+        "teks": "Luas lingkaran yang memiliki panjang diameter $40\\text{ cm}$ dengan $\\pi = 3,14$ adalah ....",
+        "jawaban": "$1.256\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$2 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $46 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Selisih hasilnya $2 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 2 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 2 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 2 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $46 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Selisih hasilnya $2 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/ce8456d59f9c17c5a8ccd30e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "23"
+            ],
+            [
+              "II",
+              "R",
+              "22"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"23\"], [\"II\", \"R\", \"22\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "164def5e140c8dcb007557c2",
+        "teks": "Sebuah lingkaran memiliki diameter sepanjang $48\\text{ cm}$. Panjang jari-jari lingkaran tersebut adalah ....",
+        "jawaban": "$24\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 16 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Selisih hasilnya $- 16 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 16 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 16 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 16 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Selisih hasilnya $- 16 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/acc2ad25856e6ac032f9e132.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "22"
+            ],
+            [
+              "II",
+              "R",
+              "30"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"22\"], [\"II\", \"R\", \"30\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "faa9fff70069605d1d99a434",
+        "teks": "Sebuah lingkaran memiliki keliling $120\\text{ cm}$. Panjang busur lingkaran yang berada di hadapan sudut pusat $60^\\circ$ adalah ....",
+        "jawaban": "$20\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 30 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 30 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 30 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 30 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 30 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 30 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/73d61ad1668e076a197fe24d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "13"
+            ],
+            [
+              "II",
+              "R",
+              "28"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"13\"], [\"II\", \"R\", \"28\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c642b01550b212cb4ec84c3c",
+        "teks": "Dua pengrajin membuat kipas lipat berbentuk juring lingkaran dengan sudut pusat sebesar $72^\\circ$. Pengrajin A mengklaim bahwa luas juring tersebut adalah tepat $\\frac{1}{5}$ dari luas lingkaran penuh. Pengrajin B mengklaim bahwa keliling juring tersebut juga tepat $\\frac{1}{5}$ dari keliling lingkaran penuh. Evaluasi yang tepat terhadap klaim kedua pengrajin tersebut adalah ....",
+        "jawaban": "Klaim Pengrajin A benar, sedangkan klaim Pengrajin B salah karena keliling juring harus memperhitungkan panjang dua jari-jari pembatasnya.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$18 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $18 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $60 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $18 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/db18dc5005dddba4fa3c76e4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "30"
+            ],
+            [
+              "II",
+              "R",
+              "21"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"30\"], [\"II\", \"R\", \"21\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6eb8fab0a57a432271559dc2",
+        "teks": "Sebuah taman kota berbentuk lingkaran memiliki jari-jari awal $r$. Pengelola taman merencanakan perluasan taman sehingga panjang jari-jarinya bertambah sebesar $50\\%$. Seorang perancang mengklaim bahwa biaya penanaman rumput baru yang menutup seluruh area taman akan meningkat lebih dari dua kali lipat (kenaikan biaya lebih dari $100\\%$) dari biaya semula. Manakah analisis yang benar mengenai klaim tersebut?",
+        "jawaban": "Klaim benar, luas area taman meningkat sebesar $125\\%$ sehingga luasnya menjadi $2,25$ kali luas semula.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 20 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $28 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 20 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 20 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 20 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 20 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $28 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 20 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/daf797a3bbabd81524e333ae.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "14"
+            ],
+            [
+              "II",
+              "R",
+              "24"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"14\"], [\"II\", \"R\", \"24\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7655fa81e143a178d036fef8",
+        "teks": "Sebuah kawat pembatas sepanjang $86\\text{ cm}$ ditekuk sedemikian rupa sehingga membentuk batas keliling dari suatu juring lingkaran. Jika panjang jari-jari juring yang dibuat adalah $21\\text{ cm}$, maka luas daerah juring yang dibatasi kawat tersebut adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$462\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$30 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $12 \\pi$. Selisih hasilnya $30 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 30 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 30 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 30 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $12 \\pi$. Selisih hasilnya $30 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/cb0f6ca513c320f4d51033fd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "21"
+            ],
+            [
+              "II",
+              "R",
+              "6"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"21\"], [\"II\", \"R\", \"6\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "33923db9de49528fe1c51e6a",
+        "teks": "Dua orang siswa, Doni dan Eka, mengamati busur $PQ$ pada sebuah lingkaran. Doni menyatakan bahwa panjang busur $PQ$ adalah $\\frac{3}{16}$ kali keliling lingkaran tersebut. Di sisi lain, Eka berpendapat bahwa sudut pusat yang menghadap busur $PQ$ besarnya adalah $67,5^\\circ$. Berdasarkan konsep hubungan panjang busur dan sudut pusat lingkaran, kesimpulan yang paling tepat mengenai kedua pernyataan tersebut adalah ....",
+        "jawaban": "Kedua pernyataan benar karena sudut pusat sebesar $\\frac{3}{16} \\times 360^\\circ = 67,5^\\circ$ menghasilkan panjang busur yang sama dengan proporsi yang dinyatakan Doni.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 38 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $10 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 38 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 38 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 38 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 38 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $10 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 38 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/4f2289d0a20ce09bdfbc725d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "5"
+            ],
+            [
+              "II",
+              "R",
+              "24"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"5\"], [\"II\", \"R\", \"24\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e3e9cd7b0db85ac88cd7f43",
+        "teks": "Sebuah taman rekreasi merancang dua zona taman berbentuk lingkaran, yaitu Zona A dan Zona B. Keliling Zona B dirancang sebesar $1,5$ kali keliling Zona A. Jika jari-jari Zona A adalah $14\\text{ m}$, selisih luas area antara Zona B dan Zona A adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$770\\text{ m}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 24 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $- 24 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 24 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 24 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 24 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Selisih hasilnya $- 24 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/cf4abf0f85b1d97946d52788.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "R",
+              "9"
+            ],
+            [
+              "II",
+              "R",
+              "21"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"R\", \"9\"], [\"II\", \"R\", \"21\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c7777d2c05ffb7b8ad235d74",
+        "teks": "Dua orang pelari, Ari dan Bagas, berlatih pada dua lintasan lari melingkar yang memiliki titik pusat yang sama. Ari berlari di lintasan dalam yang memiliki jari-jari $28\\text{ m}$, sedangkan Bagas berlari di lintasan luar yang memiliki jari-jari $35\\text{ m}$. Keduanya memulai lari dari garis start yang segaris secara radial dari pusat lintasan. Setelah Ari menyelesaikan tepat $5$ putaran penuh dan Bagas menyelesaikan tepat $4$ putaran penuh, evaluasilah perbandingan jarak tempuh yang telah dilalui oleh kedua pelari tersebut! (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "Kedua pelari menempuh jarak yang sama jauh, yaitu sejauh $880\\text{ m}$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=11$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=24$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 26 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $22 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 26 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 26 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 26 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 26 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $22 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $48 \\pi$. Selisih hasilnya $- 26 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1a48d14d4b3104a7ff00f63d",
+        "teks": "Seorang perajin memotong selembar pelat logam berbentuk juring lingkaran dengan sudut pusat $75^\\circ$ dan panjang jari-jari $28\\text{ cm}$. Perajin menduga luas pelat juring tersebut melebihi $510\\text{ cm}^2$ sehingga tidak muat dimasukkan ke dalam wadah berkapasitas maksimum $510\\text{ cm}^2$. Gunakan $\\pi = \\frac{22}{7}$. Evaluasilah kebenaran dugaan perajin tersebut!",
+        "jawaban": "Dugaan perajin benar karena luas juring adalah $513\\frac{1}{3}\\text{ cm}^2$, sehingga melebihi kapasitas sebesar $3\\frac{1}{3}\\text{ cm}^2$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=15$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=17$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 4 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $30 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $34 \\pi$. Selisih hasilnya $- 4 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 4 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 4 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 4 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $30 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $34 \\pi$. Selisih hasilnya $- 4 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7ab856800ece004fa7c669f8",
+        "teks": "Pada lingkaran yang sama, Juring $A$ memiliki luas $132\\text{ cm}^2$ dengan sudut pusat $60^\\circ$. Juring $B$ memiliki sudut pusat $\\theta_B$ sedemikian rupa sehingga selisih luas antara Juring $B$ dan Juring $A$ adalah $66\\text{ cm}^2$. Seorang siswa menyatakan bahwa sudut pusat Juring $B$ pasti bernilai $90^\\circ$. Evaluasilah kebenaran pernyataan siswa tersebut!",
+        "jawaban": "Pernyataan kurang tepat karena terdapat dua kemungkinan besar sudut pusat Juring $B$, yaitu $90^\\circ$ atau $30^\\circ$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=22$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=27$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 10 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $54 \\pi$. Selisih hasilnya $- 10 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 10 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 10 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 10 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $54 \\pi$. Selisih hasilnya $- 10 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a78b92fb606b15cd8c6e9713",
+        "teks": "Sebuah potongan kue berbentuk juring lingkaran memiliki batas keliling luar sepanjang $32\\text{ cm}$ dan luas permukaan sebesar $48\\text{ cm}^2$. Jika panjang busur kue tersebut lebih pendek daripada panjang jari-jarinya, berapakah panjang jari-jari lingkaran kue tersebut?",
+        "jawaban": "$12\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=12$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=9$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$6 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $24 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Selisih hasilnya $6 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 6 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 6 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 6 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $24 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $18 \\pi$. Selisih hasilnya $6 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c03b47f6a4709107fd3a294f",
+        "teks": "Dua busur lingkaran konsentris masing-masing dibentuk oleh sudut pusat $\\theta_1 = 60^\\circ$ dengan jari-jari $r_1 = 21\\text{ cm}$, dan busur kedua dibentuk oleh sudut pusat $\\theta_2 = 45^\\circ$ dengan jari-jari $r_2 = 28\\text{ cm}$. Gunakan $\\pi = \\frac{22}{7}$. Seorang teknisi menduga bahwa busur pertama lebih panjang daripada busur kedua karena memiliki sudut pusat yang lebih besar. Evaluasilah dugaan teknisi tersebut!",
+        "jawaban": "Dugaan teknisi salah karena kedua busur memiliki panjang yang sama, yaitu $22\\text{ cm}$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=21$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=13$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$16 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Selisih hasilnya $16 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 16 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 16 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 16 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $42 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $26 \\pi$. Selisih hasilnya $16 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5d6527c510bb6e21886e808",
+        "teks": "Dua lintasan lari sepusat (konsentris) dibuat sedemikian rupa sehingga jarak tegak lurus antarlintasan selalu selebar $d$ meter di setiap titik. Pelatih A mengklaim bahwa selisih keliling lintasan luar dan lintasan dalam bergantung pada panjang jari-jari lintasan dalam ($r$). Pelatih B mengklaim bahwa selisih keliling kedua lintasan selalu tetap sebesar $2\\pi d$, berapa pun panjang jari-jari lintasannya. Evaluasilah klaim kedua pelatih tersebut!",
+        "jawaban": "Klaim Pelatih B benar karena suku yang memuat $r$ saling meniadakan saat dikurangkan sehingga selisih keliling selalu konstan $2\\pi d$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=19$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=28$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 18 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 18 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 18 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $38 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $56 \\pi$. Selisih hasilnya $- 18 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8435c15dff3fcbb45f4b5bdd",
+        "teks": "Dua buah busur konsentris (sepusat) masing-masing berjari-jari $r_1$ dan $r_2$ ($r_2 > r_1$) dibatasi oleh sudut pusat yang sama sebesar $120^\\circ$. Luas daerah di antara kedua busur tersebut (daerah cincin juring) adalah $462\\text{ cm}^2$. Jika selisih panjang jari-jarinya adalah $r_2 - r_1 = 7\\text{ cm}$ dan $\\pi = \\frac{22}{7}$, berapakah nilai dari $r_1 + r_2$?",
+        "jawaban": "$63\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=26$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=3$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$46 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $52 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $6 \\pi$. Selisih hasilnya $46 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 46 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 46 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 46 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $52 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $6 \\pi$. Selisih hasilnya $46 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca1f937279748698a3dafb4c",
+        "teks": "Pada sebuah lingkaran dengan jari-jari $21\\text{ cm}$, terdapat dua buah juring yang sudut pusatnya saling berpelurus (berjumlah $180^\\circ$). Rasio perbandingan besar kedua sudut pusat tersebut adalah $5 : 1$. Seorang desainer mengklaim bahwa selisih luas antara kedua juring tersebut tepat sebesar $462\\text{ cm}^2$ (gunakan $\\pi = \\frac{22}{7}$). Manakah penilaian yang benar mengenai klaim tersebut?",
+        "jawaban": "Klaim benar, karena selisih sudut menghasilkan $\\frac{4}{6}$ bagian dari luas setengah lingkaran yang bernilai $462\\text{ cm}^2$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=27$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=10$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$34 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $54 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $20 \\pi$. Selisih hasilnya $34 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$-1 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 + 34 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $54 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $20 \\pi$. Selisih hasilnya $34 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "23922182008cbdac6e4bd005",
+        "teks": "Dua buah roda sepeda $A$ dan $B$ masing-masing memiliki jari-jari $14\\text{ cm}$ dan $21\\text{ cm}$. Kedua roda digelindingkan lurus tanpa selip menempuh lintasan dengan panjang yang sama. Jika roda $A$ berputar $10$ kali lebih banyak daripada roda $B$, berapakah panjang lintasan yang ditempuh kedua roda tersebut? (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$26,4\\text{ m}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=20$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=29$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 18 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $40 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $58 \\pi$. Selisih hasilnya $- 18 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 18 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 18 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $40 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $58 \\pi$. Selisih hasilnya $- 18 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c33bd176044b60a25aca19f",
+        "teks": "Dua buah lingkaran $C_1$ dan $C_2$ memiliki perbandingan luas $4 : 9$. Jika jumlah keliling kedua lingkaran tersebut adalah $220\\text{ cm}$, berapakah selisih panjang jari-jari kedua lingkaran tersebut? (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$7\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s9_lingkaran_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Diketahui $R=22$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Situasi II: Diketahui $R=29$. Lingkaran berjari-jari R cm. Tentukan kelilingnya dalam bentuk eksak yang memuat pi. Berapa hasil situasi I dikurangi hasil situasi II?",
+      "jawaban_benar": "$- 14 \\pi$",
+      "alasan_benar": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $58 \\pi$. Selisih hasilnya $- 14 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$1 - 14 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$- 14 \\pi - 1$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        },
+        {
+          "teks": "$2 - 14 \\pi$",
+          "alasan": "Pilihan ini tidak memenuhi hubungan dan syarat yang ditanyakan; periksa langkah pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $44 \\pi$. Situasi II: Keliling lingkaran adalah dua kali pi kali jari-jari Perhitungan dengan data tersebut memberi $58 \\pi$. Selisih hasilnya $- 14 \\pi$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-d-medium-bt01-046"
     }
   ]
 }

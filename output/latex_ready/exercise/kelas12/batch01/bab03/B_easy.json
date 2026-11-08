@@ -1,0 +1,710 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0118-latihan-3-2-2"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi n dari n objek",
+      "alasan_level": "satu rumus langsung $n!$ untuk 8 objek berbeda",
+      "stimulus": null,
+      "pertanyaan": "Delapan orang calon ketua regu berdiri berjajar dalam satu barisan untuk berfoto. Banyak susunan barisan yang mungkin adalah ....",
+      "jawaban_benar": "40.320",
+      "alasan_benar": "delapan objek berbeda disusun seluruhnya sehingga banyaknya $8! = 40.320$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "memakai $7!$ karena mengira satu orang tidak ikut diurutkan"
+        },
+        {
+          "teks": "362.880",
+          "alasan": "memakai $9!$ (salah menghitung banyak objek)"
+        },
+        {
+          "teks": "56",
+          "alasan": "hanya mengalikan dua faktor pertama, $8 \\times 7$"
+        }
+      ],
+      "pembahasan": "Menyusun 8 orang seluruhnya adalah permutasi 8 dari 8 objek: $8! = 8 \\times 7 \\times \\dots \\times 1 = 40.320$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0119-latihan-3-2-6"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "mengenali huruf yang berulang lalu membagi $7!$ dengan $2!$",
+      "stimulus": null,
+      "pertanyaan": "Putra menyusun seluruh huruf pada kata KEBUMEN sebagai kode rahasia. Banyak susunan huruf berbeda yang dapat dibentuk adalah ....",
+      "jawaban_benar": "2.520",
+      "alasan_benar": "7 huruf dengan huruf E muncul 2 kali, sehingga $\\frac{7!}{2!} = 2.520$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "tidak membagi dengan $2!$ untuk huruf E yang sama"
+        },
+        {
+          "teks": "1.260",
+          "alasan": "membagi dengan $2! \\times 2!$ padahal hanya satu huruf yang berulang"
+        },
+        {
+          "teks": "840",
+          "alasan": "membagi dengan $3!$ seolah E muncul 3 kali"
+        }
+      ],
+      "pembahasan": "Huruf K, E, B, U, M, E, N: 7 huruf dengan E dua kali. Banyak susunan $= \\frac{7!}{2!} = \\frac{5.040}{2} = 2.520$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 112,
+        "bagian": "Contoh 3.4",
+        "nomor": "3.4",
+        "teks": "Suatu permainan tradisonal Galasin (gobak sodor) terdiri dari 6 orang. Tentukan banyak cara menyusun formasi yang terdiri atas 6 orang tersebut.",
+        "jawaban": "720 cara"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi n dari n objek",
+      "alasan_level": "satu rumus langsung $n!$ untuk 7 orang",
+      "stimulus": null,
+      "pertanyaan": "Suatu permainan tradisional Egrang beregu terdiri dari 7 orang. Tentukan banyak cara menyusun formasi yang terdiri atas 7 orang tersebut.",
+      "jawaban_benar": "5.040",
+      "alasan_benar": "7 orang disusun seluruhnya sehingga $7! = 5.040$",
+      "distraktor": [
+        {
+          "teks": "720",
+          "alasan": "memakai $6!$ (kurang satu faktor)"
+        },
+        {
+          "teks": "40.320",
+          "alasan": "memakai $8!$ (kelebihan satu faktor)"
+        },
+        {
+          "teks": "49",
+          "alasan": "menghitung $7 \\times 7$ seolah setiap posisi bebas dipilih ulang"
+        }
+      ],
+      "pembahasan": "Formasi 7 orang adalah permutasi 7 dari 7 objek: $7! = 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 5.040$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 112,
+        "bagian": "Contoh 3.5",
+        "nomor": "3.5",
+        "teks": "Klinik bersalin “Sehat Jaya” memiliki kamar bersalin yang hanya bisa menampung 4 pasien yang akan melahirkan. Pada suatu hari, klinik tersebut kedatangan 4 pasien yang akan melahirkan dalam waktu hampir bersamaan. Berapa banyak cara yang dapat digunakan oleh bidan di klinik tersebut dalam menampung 4 pasien?",
+        "jawaban": "24 cara"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi n dari n objek",
+      "alasan_level": "satu rumus langsung $n!$ untuk 5 tamu pada 5 kamar",
+      "stimulus": null,
+      "pertanyaan": "Sebuah penginapan memiliki 5 kamar dan setiap kamar hanya dapat ditempati satu tamu. Pada suatu sore datang 5 tamu bersamaan. Banyak cara petugas menempatkan kelima tamu pada kelima kamar tersebut adalah ....",
+      "jawaban_benar": "120",
+      "alasan_benar": "5 tamu menempati 5 kamar sehingga $5! = 120$",
+      "distraktor": [
+        {
+          "teks": "24",
+          "alasan": "memakai $4!$ (kurang satu faktor)"
+        },
+        {
+          "teks": "25",
+          "alasan": "menghitung $5 \\times 5$"
+        },
+        {
+          "teks": "720",
+          "alasan": "memakai $6!$ (kelebihan satu faktor)"
+        }
+      ],
+      "pembahasan": "Menempatkan 5 tamu pada 5 kamar adalah $P(5,5) = 5! = 120$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0119-latihan-3-2-6"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "satu huruf berulang 2 kali pada kata 9 huruf",
+      "stimulus": null,
+      "pertanyaan": "Banyak susunan huruf berbeda yang dapat dibuat dari seluruh huruf pada nama kota PALEMBANG adalah ....",
+      "jawaban_benar": "181.440",
+      "alasan_benar": "9 huruf dengan A muncul 2 kali, sehingga $\\frac{9!}{2!} = 181.440$",
+      "distraktor": [
+        {
+          "teks": "362.880",
+          "alasan": "tidak membagi dengan $2!$ untuk huruf A yang sama"
+        },
+        {
+          "teks": "90.720",
+          "alasan": "membagi dengan $2! \\times 2!$ padahal hanya A yang berulang"
+        },
+        {
+          "teks": "60.480",
+          "alasan": "membagi dengan $3!$ seolah A muncul 3 kali"
+        }
+      ],
+      "pembahasan": "PALEMBANG memiliki 9 huruf dengan A dua kali. Banyak susunan $= \\frac{9!}{2!} = \\frac{362.880}{2} = 181.440$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 114,
+        "bagian": "Contoh 3.7",
+        "nomor": "3.7",
+        "teks": "Perhatikan kata pertama pada semboyan Indonesia yaitu BHINNEKA. Tentukan banyaknya susunan huruf berbeda yang dapat dibuat dari huruf-huruf pada kata pertama semboyan tersebut.",
+        "jawaban": "20.160 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "satu huruf berulang 3 kali pada kata 8 huruf",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko membuat gantungan kunci dari seluruh huruf nama kota SURABAYA dengan susunan berbeda-beda. Banyak susunan huruf berbeda yang mungkin adalah ....",
+      "jawaban_benar": "6.720",
+      "alasan_benar": "8 huruf dengan A muncul 3 kali, sehingga $\\frac{8!}{3!} = 6.720$",
+      "distraktor": [
+        {
+          "teks": "40.320",
+          "alasan": "tidak membagi dengan faktorial huruf yang sama"
+        },
+        {
+          "teks": "20.160",
+          "alasan": "membagi dengan $2!$ seolah A hanya muncul 2 kali"
+        },
+        {
+          "teks": "3.360",
+          "alasan": "membagi dengan $3! \\times 2!$ padahal hanya A yang berulang"
+        }
+      ],
+      "pembahasan": "SURABAYA memiliki 8 huruf dengan A tiga kali. Banyak susunan $= \\frac{8!}{3!} = \\frac{40.320}{6} = 6.720$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "bagian": "Contoh 3.8",
+        "nomor": "3.8",
+        "teks": "Terdapat empat orang yang melakukan diskusi dengan duduk secara melingkar. Tentukan banyak susunan yang bisa dibentuk dari empat orang tersebut.",
+        "jawaban": "6 susunan"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi siklis",
+      "alasan_level": "satu rumus langsung $(n-1)!$ untuk 7 orang",
+      "stimulus": null,
+      "pertanyaan": "Tujuh orang peserta rapat duduk mengelilingi sebuah meja bundar. Banyak susunan duduk yang berbeda adalah ....",
+      "jawaban_benar": "720",
+      "alasan_benar": "permutasi siklis 7 objek $= (7-1)! = 720$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "memakai $7!$ seperti susunan berjajar"
+        },
+        {
+          "teks": "120",
+          "alasan": "memakai $(n-2)!$"
+        },
+        {
+          "teks": "2.520",
+          "alasan": "membagi $7!$ dengan 2, bukan dengan 7"
+        }
+      ],
+      "pembahasan": "Permutasi siklis $n$ objek berbeda $= (n-1)!$, sehingga $(7-1)! = 6! = 720$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "bagian": "Contoh 3.8",
+        "nomor": "3.8",
+        "teks": "Terdapat empat orang yang melakukan diskusi dengan duduk secara melingkar. Tentukan banyak susunan yang bisa dibentuk dari empat orang tersebut.",
+        "jawaban": "6 susunan"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi siklis",
+      "alasan_level": "satu rumus langsung $(n-1)!$ untuk 5 orang dalam cerita makan malam",
+      "stimulus": null,
+      "pertanyaan": "Lima anggota sebuah keluarga makan malam dengan duduk melingkar pada satu meja makan bundar. Banyak susunan tempat duduk yang berbeda adalah ....",
+      "jawaban_benar": "24",
+      "alasan_benar": "permutasi siklis 5 objek $= (5-1)! = 24$",
+      "distraktor": [
+        {
+          "teks": "120",
+          "alasan": "memakai $5!$ seperti susunan berjajar"
+        },
+        {
+          "teks": "6",
+          "alasan": "memakai $(n-2)! = 3!$"
+        },
+        {
+          "teks": "60",
+          "alasan": "membagi $5!$ dengan 2, bukan dengan 5"
+        }
+      ],
+      "pembahasan": "Permutasi siklis 5 objek $= (5-1)! = 4! = 24$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 114,
+        "bagian": "Contoh 3.6",
+        "nomor": "3.6",
+        "teks": "Tentukan banyak susunan sepuluh huruf dari huruf KALIMANTAN.",
+        "jawaban": "302.400 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "dua huruf berulang (M dan A dan T) pada kata 10 huruf, hitung dengan rumus unsur sama",
+      "stimulus": null,
+      "pertanyaan": "Tentukan banyak susunan huruf berbeda yang dapat dibentuk dari seluruh huruf pada kata MATEMATIKA.",
+      "jawaban_benar": "151.200",
+      "alasan_benar": "10 huruf dengan M 2 kali, A 3 kali, T 2 kali, sehingga $\\frac{10!}{2!\\,3!\\,2!} = 151.200$",
+      "distraktor": [
+        {
+          "teks": "3.628.800",
+          "alasan": "tidak membagi dengan faktorial huruf yang sama"
+        },
+        {
+          "teks": "907.200",
+          "alasan": "hanya membagi dengan $2! \\times 2!$ (huruf A diabaikan)"
+        },
+        {
+          "teks": "302.400",
+          "alasan": "hanya membagi dengan $3! \\times 2!$ (salah satu huruf kembar diabaikan)"
+        }
+      ],
+      "pembahasan": "MATEMATIKA: 10 huruf, M dua kali, A tiga kali, T dua kali. Banyak susunan $= \\frac{10!}{2!\\,3!\\,2!} = \\frac{3.628.800}{24} = 151.200$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 114,
+        "bagian": "Contoh 3.7",
+        "nomor": "3.7",
+        "teks": "Perhatikan kata pertama pada semboyan Indonesia yaitu BHINNEKA. Tentukan banyaknya susunan huruf berbeda yang dapat dibuat dari huruf-huruf pada kata pertama semboyan tersebut.",
+        "jawaban": "20.160 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "satu huruf berulang 2 kali pada kata 6 huruf",
+      "stimulus": null,
+      "pertanyaan": "Berapa banyak susunan huruf berbeda yang dapat dibuat dari huruf-huruf pada kata TERTIB?",
+      "jawaban_benar": "360",
+      "alasan_benar": "6 huruf dengan T muncul 2 kali, sehingga $\\frac{6!}{2!} = 360$",
+      "distraktor": [
+        {
+          "teks": "720",
+          "alasan": "tidak membagi dengan $2!$"
+        },
+        {
+          "teks": "120",
+          "alasan": "membagi dengan $3!$ seolah T muncul 3 kali"
+        },
+        {
+          "teks": "180",
+          "alasan": "membagi dengan $2! \\times 2!$ padahal hanya T yang berulang"
+        }
+      ],
+      "pembahasan": "TERTIB: 6 huruf dengan T dua kali. Banyak susunan $= \\frac{6!}{2!} = \\frac{720}{2} = 360$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 114,
+        "bagian": "Contoh 3.6",
+        "nomor": "3.6",
+        "teks": "Tentukan banyak susunan sepuluh huruf dari huruf KALIMANTAN.",
+        "jawaban": "302.400 cara"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "permutasi unsur sama",
+      "alasan_level": "satu huruf berulang 2 kali pada kata 8 huruf",
+      "stimulus": null,
+      "pertanyaan": "Sebuah penerbit mencetak stiker dari seluruh huruf kata SEMARANG dengan susunan berbeda-beda. Banyak jenis stiker yang dapat dicetak adalah ....",
+      "jawaban_benar": "20.160",
+      "alasan_benar": "8 huruf dengan A muncul 2 kali, sehingga $\\frac{8!}{2!} = 20.160$",
+      "distraktor": [
+        {
+          "teks": "40.320",
+          "alasan": "tidak membagi dengan $2!$"
+        },
+        {
+          "teks": "10.080",
+          "alasan": "membagi dengan $2! \\times 2!$ padahal hanya A yang berulang"
+        },
+        {
+          "teks": "6.720",
+          "alasan": "membagi dengan $3!$ seolah A muncul 3 kali"
+        }
+      ],
+      "pembahasan": "SEMARANG memiliki 8 huruf dengan A dua kali. Banyak susunan $= \\frac{8!}{2!} = \\frac{40.320}{2} = 20.160$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0118-latihan-3-2-2"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi n dari n objek",
+      "alasan_level": "satu rumus langsung $n!$ untuk 9 buku berbeda",
+      "stimulus": null,
+      "pertanyaan": "Seorang guru menata 9 buku berbeda dalam satu baris pada sebuah rak. Banyak susunan buku yang mungkin adalah ....",
+      "jawaban_benar": "362.880",
+      "alasan_benar": "9 buku berbeda disusun seluruhnya sehingga $9! = 362.880$",
+      "distraktor": [
+        {
+          "teks": "40.320",
+          "alasan": "memakai $8!$ (kurang satu faktor)"
+        },
+        {
+          "teks": "504",
+          "alasan": "hanya mengalikan tiga faktor pertama, $9 \\times 8 \\times 7$"
+        },
+        {
+          "teks": "81",
+          "alasan": "menghitung $9 \\times 9$"
+        }
+      ],
+      "pembahasan": "Menata 9 buku berbeda dalam satu baris adalah $9! = 362.880$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Banyak permutasi dari n objek yang berbeda adalah n !."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung nilai faktorial",
+      "alasan_level": "menyederhanakan hasil bagi dua faktorial dengan menguraikan faktorial",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\frac{8!}{6!}$ adalah ....",
+      "jawaban_benar": "56",
+      "alasan_benar": "$\\frac{8!}{6!} = 8 \\times 7 = 56$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "mencoret faktorialnya secara salah sehingga hanya membagi $8$ dengan $6$"
+        },
+        {
+          "teks": "2",
+          "alasan": "mengurangkan $8 - 6$"
+        },
+        {
+          "teks": "336",
+          "alasan": "mengalikan tiga faktor, $8 \\times 7 \\times 6$"
+        }
+      ],
+      "pembahasan": "$\\frac{8!}{6!} = \\frac{8 \\times 7 \\times 6!}{6!} = 8 \\times 7 = 56$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 112,
+        "kutipan": "6! = 6 × 5 × 4 × 3 × 2 × 1 = 720 cara."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 2,
+      "jenis_soal": "hitung nilai faktorial",
+      "alasan_level": "dua faktorial dihitung lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $5! + 3!$ adalah ....",
+      "jawaban_benar": "126",
+      "alasan_benar": "$5! = 120$ dan $3! = 6$, sehingga jumlahnya $126$",
+      "distraktor": [
+        {
+          "teks": "40.320",
+          "alasan": "menjumlahkan $5 + 3$ terlebih dahulu lalu menghitung $8!$"
+        },
+        {
+          "teks": "720",
+          "alasan": "mengalikan $5! \\times 3!$ bukan menjumlahkan"
+        },
+        {
+          "teks": "8",
+          "alasan": "menjumlahkan $5 + 3$ tanpa faktorial"
+        }
+      ],
+      "pembahasan": "$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$, $3! = 6$, jadi $5! + 3! = 126$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Jadi, banyak cara yang mungkin membuat susunan pengurus adalah 6 × 5 = 30 cara."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung nilai P(n,r)",
+      "alasan_level": "satu operasi $P(7,2) = 7 \\times 6$",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $P(7,2)$ adalah ....",
+      "jawaban_benar": "42",
+      "alasan_benar": "$P(7,2) = \\frac{7!}{5!} = 7 \\times 6 = 42$",
+      "distraktor": [
+        {
+          "teks": "14",
+          "alasan": "mengalikan $n \\times r = 7 \\times 2$"
+        },
+        {
+          "teks": "49",
+          "alasan": "mengalikan $7 \\times 7$"
+        },
+        {
+          "teks": "21",
+          "alasan": "membagi hasil dengan $2!$, seolah urutan tidak diperhitungkan"
+        }
+      ],
+      "pembahasan": "$P(7,2) = \\frac{7!}{(7-2)!} = \\frac{7!}{5!} = 7 \\times 6 = 42$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Sehingga tersisa 6 siswa yang mungkin mengisi 2 susunan pengurus lain yang belum terisi."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung nilai P(n,r)",
+      "alasan_level": "satu operasi $P(9,3) = 9 \\times 8 \\times 7$",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $P(9,3)$ adalah ....",
+      "jawaban_benar": "504",
+      "alasan_benar": "$P(9,3) = \\frac{9!}{6!} = 9 \\times 8 \\times 7 = 504$",
+      "distraktor": [
+        {
+          "teks": "27",
+          "alasan": "mengalikan $n \\times r = 9 \\times 3$"
+        },
+        {
+          "teks": "729",
+          "alasan": "menghitung $9^3$"
+        },
+        {
+          "teks": "84",
+          "alasan": "membagi hasil dengan $3!$, seolah urutan tidak diperhitungkan"
+        }
+      ],
+      "pembahasan": "$P(9,3) = \\frac{9!}{(9-3)!} = \\frac{9!}{6!} = 9 \\times 8 \\times 7 = 504$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Sekretaris dan bendahara dapat diisi oleh 6 siswa sehingga kondisi tersebut dapat dinyatakan sebagai banyaknya cara menyusun dua pengurus (sekretaris dan bendahara) dari 6 siswa."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pemodelan permutasi r dari n",
+      "alasan_level": "mengenali pemilihan 3 jabatan berbeda dari 8 siswa sebagai $P(8,3)$",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 siswa yang bersedia akan dipilih seorang ketua, seorang sekretaris, dan seorang bendahara. Setiap siswa menduduki paling banyak satu jabatan. Banyak susunan pengurus yang mungkin adalah ....",
+      "jawaban_benar": "336",
+      "alasan_benar": "$P(8,3) = 8 \\times 7 \\times 6 = 336$",
+      "distraktor": [
+        {
+          "teks": "24",
+          "alasan": "menjumlahkan/mengalikan $8 \\times 3$"
+        },
+        {
+          "teks": "512",
+          "alasan": "menghitung $8^3$ (siswa boleh merangkap jabatan)"
+        },
+        {
+          "teks": "56",
+          "alasan": "membagi dengan $3!$, seolah jabatan tidak dibedakan"
+        }
+      ],
+      "pembahasan": "Jabatan berbeda sehingga urutan diperhitungkan: $P(8,3) = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Terdapat 8 siswa yang bersedia, dan terdapat 2 siswa yang sudah mengisi susunan pengurus yaitu Roni dan Andi."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pemodelan permutasi r dari n",
+      "alasan_level": "mengurangi siswa yang sudah menjabat lalu menghitung $P(10,2)$",
+      "stimulus": null,
+      "pertanyaan": "Dua belas siswa bersedia menjadi pengurus kelas. Jabatan ketua dan wakil ketua telah diisi oleh dua siswa di antaranya. Jabatan sekretaris dan bendahara akan diisi oleh siswa yang tersisa, dan setiap siswa menduduki paling banyak satu jabatan. Banyak cara mengisi kedua jabatan tersebut adalah ....",
+      "jawaban_benar": "90",
+      "alasan_benar": "tersisa 10 siswa untuk 2 jabatan berbeda, $P(10,2) = 10 \\times 9 = 90$",
+      "distraktor": [
+        {
+          "teks": "132",
+          "alasan": "memakai 12 siswa, $12 \\times 11$, lupa dua siswa sudah menjabat"
+        },
+        {
+          "teks": "100",
+          "alasan": "menghitung $10 \\times 10$ (siswa boleh merangkap)"
+        },
+        {
+          "teks": "45",
+          "alasan": "membagi dengan $2!$, seolah jabatan tidak dibedakan"
+        }
+      ],
+      "pembahasan": "Sisa $12 - 2 = 10$ siswa mengisi 2 jabatan berbeda: $P(10,2) = 10 \\times 9 = 90$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Ada n jenis permutasi siklis yang sama."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rumus permutasi siklis",
+      "alasan_level": "mengingat rumus permutasi siklis",
+      "stimulus": null,
+      "pertanyaan": "Banyak susunan melingkar (permutasi siklis) dari $n$ objek berbeda dinyatakan dengan ....",
+      "jawaban_benar": "$(n-1)!$",
+      "alasan_benar": "$n!$ susunan berjajar dibagi $n$ susunan yang sama pada lingkaran, sehingga $\\frac{n!}{n} = (n-1)!$",
+      "distraktor": [
+        {
+          "teks": "$n!$",
+          "alasan": "menyamakan dengan susunan berjajar"
+        },
+        {
+          "teks": "$(n+1)!$",
+          "alasan": "salah mengingat tanda pada rumus"
+        },
+        {
+          "teks": "$\\frac{n!}{2}$",
+          "alasan": "membagi dengan 2, bukan dengan $n$"
+        }
+      ],
+      "pembahasan": "Terdapat $n$ susunan berjajar yang menjadi satu susunan melingkar, sehingga banyak susunan siklis $= \\frac{n!}{n} = (n-1)!$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 112,
+        "kutipan": "Karena ada 4 pasien yang akan menempati 4 kamar, maka terdapat 4! cara"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "permutasi n dari n objek",
+      "alasan_level": "mengenali bahwa $P(3,3) = 3!$",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $P(3,3)$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$P(3,3) = \\frac{3!}{0!} = 3! = 6$",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "mengira hasilnya sama dengan $n$"
+        },
+        {
+          "teks": "9",
+          "alasan": "menghitung $3 \\times 3$"
+        },
+        {
+          "teks": "27",
+          "alasan": "menghitung $3^3$"
+        }
+      ],
+      "pembahasan": "Permutasi $n$ dari $n$ objek adalah $n!$, jadi $P(3,3) = 3! = 3 \\times 2 \\times 1 = 6$.",
+      "catatan": null
+    }
+  ]
+}

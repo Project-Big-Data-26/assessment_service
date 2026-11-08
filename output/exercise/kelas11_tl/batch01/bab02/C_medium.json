@@ -1,713 +1,2637 @@
 {
- "book": "kelas11_tl",
- "bab_no": 2,
- "subbab": "C",
- "level": "medium",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-001",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 89,
-    "bagian": "Mari Berkolaborasi",
-    "nomor": "1",
-    "teks": "Gunakan metode Horner untuk membagi 2 x 3 – 5 x 2 + 4 x – 3 dengan 2 x – 1.",
-    "jawaban": "hasil bagi x^2 - 2x + 1, sisa -2"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Horner pembagi ax - b",
-   "alasan_level": "mengubah pembagi $2x + 5$ menjadi $2(x - c)$, menjalankan Horner, lalu membagi hasil dengan $2$",
-   "stimulus": null,
-   "pertanyaan": "Gunakan metode Horner untuk membagi $6x^3 + 7x^2 - 6x + 29$ dengan $2x + 5$. Hasil bagi dan sisanya adalah ....",
-   "jawaban_benar": "hasil bagi $3x^2 - 4x + 7$, sisa $-6$",
-   "alasan_benar": "$2x + 5 = 2(x + \\frac{5}{2})$ sehingga $c = -\\frac{5}{2}$. Horner pada $6, 7, -6, 29$ memberi baris $6, -8, 14, -6$, yaitu $P = (x + \\frac{5}{2})(6x^2 - 8x + 14) - 6$. Karena $x + \\frac{5}{2} = \\frac{1}{2}(2x + 5)$, hasil bagi terhadap $2x + 5$ adalah $3x^2 - 4x + 7$ dan sisa tetap $-6$.",
-   "distraktor": [
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "hasil bagi $6x^2 - 8x + 14$, sisa $-6$",
-     "alasan": "lupa membagi hasil bagi Horner dengan $2$ (koefisien $x$ pada pembagi)"
+      "id": "kelas11_tl-b02-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "bagian": "Mari Berkolaborasi",
+        "nomor": "1",
+        "teks": "Gunakan metode Horner untuk membagi 2 x 3 – 5 x 2 + 4 x – 3 dengan 2 x – 1.",
+        "jawaban": "hasil bagi x^2 - 2x + 1, sisa -2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Horner pembagi ax - b",
+      "alasan_level": "mengubah pembagi $2x + 5$ menjadi $2(x - c)$, menjalankan Horner, lalu membagi hasil dengan $2$",
+      "stimulus": null,
+      "pertanyaan": "Gunakan metode Horner untuk membagi $6x^3 + 7x^2 - 6x + 29$ dengan $2x + 5$. Hasil bagi dan sisanya adalah ....",
+      "jawaban_benar": "hasil bagi $3x^2 - 4x + 7$, sisa $-6$",
+      "alasan_benar": "$2x + 5 = 2(x + \\frac{5}{2})$ sehingga $c = -\\frac{5}{2}$. Horner pada $6, 7, -6, 29$ memberi baris $6, -8, 14, -6$, yaitu $P = (x + \\frac{5}{2})(6x^2 - 8x + 14) - 6$. Karena $x + \\frac{5}{2} = \\frac{1}{2}(2x + 5)$, hasil bagi terhadap $2x + 5$ adalah $3x^2 - 4x + 7$ dan sisa tetap $-6$.",
+      "distraktor": [
+        {
+          "teks": "hasil bagi $6x^2 - 8x + 14$, sisa $-6$",
+          "alasan": "lupa membagi hasil bagi Horner dengan $2$ (koefisien $x$ pada pembagi)"
+        },
+        {
+          "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $6$",
+          "alasan": "salah tanda pada sisa"
+        },
+        {
+          "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $29$",
+          "alasan": "mengambil konstanta polinomial sebagai sisa tanpa Horner"
+        }
+      ],
+      "pembahasan": "$2x + 5 = 2(x - (-\\frac{5}{2}))$. Horner dengan $c = -\\frac{5}{2}$: $6, -8, 14, -6$. Hasil bagi terhadap $x - c$ adalah $6x^2 - 8x + 14$; terhadap $2x + 5$ dibagi $2$ menjadi $3x^2 - 4x + 7$; sisa $-6$.",
+      "catatan": null
     },
     {
-     "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $6$",
-     "alasan": "salah tanda pada sisa"
+      "id": "kelas11_tl-b02-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 90,
+        "bagian": "Mari Berkolaborasi",
+        "nomor": "2",
+        "teks": "Gunakan metode Horner untuk membagi x 4 – 10 x 2 – 5 x + 10 dengan ( x – 1) ( x – 3).",
+        "jawaban": "hasil bagi x^2 + 4x + 3, sisa -5x + 1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "Horner dua kali (pembagi kuadrat terfaktor)",
+      "alasan_level": "dua kali Horner berurutan ($c = 6$ lalu $c = -7$) dan memilih hasil bagi akhir, bukan hasil antara",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = x^4 - 4x^3 - 39x^2 + 225x - 345$ dibagi $(x - 6)(x + 7)$ dengan metode Horner dua kali: pertama dibagi $x - 6$, lalu hasil baginya dibagi $x + 7$. Hasil bagi akhir pembagian $P(x)$ oleh $(x - 6)(x + 7)$ adalah ....",
+      "jawaban_benar": "$x^2 - 5x + 8$",
+      "alasan_benar": "Horner $c = 6$ memberi hasil bagi $x^3 + 2x^2 - 27x + 63$. Horner $c = -7$ pada hasil itu memberi hasil bagi $x^2 - 5x + 8$, itulah hasil bagi terhadap $(x - 6)(x + 7)$.",
+      "distraktor": [
+        {
+          "teks": "$x^3 + 2x^2 - 27x + 63$",
+          "alasan": "berhenti setelah Horner pertama: itu hasil bagi oleh $x - 6$ saja"
+        },
+        {
+          "teks": "$x^2 + 9x + 36$",
+          "alasan": "memakai $c = 7$ pada Horner kedua padahal pembagi $x + 7$ berarti $c = -7$"
+        },
+        {
+          "teks": "$7x - 9$",
+          "alasan": "mengambil sisa sebagai hasil bagi"
+        }
+      ],
+      "pembahasan": "Horner $c = 6$: koefisien baru [1, 2, -27, 63], sisa 33. Horner $c = -7$ pada [1, 2, -27, 63]: koefisien [1, -5, 8]. Hasil bagi akhir $x^2 - 5x + 8$ (cek: $(x-6)(x+7)(x^2 - 5x + 8) + 7x - 9 = P(x)$).",
+      "catatan": null
     },
     {
-     "teks": "hasil bagi $3x^2 - 4x + 7$, sisa $29$",
-     "alasan": "mengambil konstanta polinomial sebagai sisa tanpa Horner"
+      "id": "kelas11_tl-b02-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 94,
+        "bagian": "Latihan C",
+        "nomor": "4",
+        "teks": "Misalkan P ( x ) = x 6 – x 4 + x 2 – 1 dan Q ( x ) = x 2 + 2 x – 1. Tentukan hasil bagi dan sisa pembagian P ( x ) oleh Q ( x ) dengan menggunakan pembagian bersusun",
+        "jawaban": "hasil bagi x^4 - 2x^3 + 4x^2 - 10x + 25, sisa -60x + 24"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pembagian bersusun",
+      "alasan_level": "pembagian bersusun berpangkat loncat (suku $x^4$ dan $x^2$ tidak ada) sehingga harus disisipkan suku nol dan ada empat langkah pengurangan",
+      "stimulus": null,
+      "pertanyaan": "Misalkan $P(x) = x^5 - 8x^3 + 6x - 7$ dan $Q(x) = x^2 + 3x - 5$. Hasil bagi dan sisa pembagian $P(x)$ oleh $Q(x)$ dengan pembagian bersusun adalah ....",
+      "jawaban_benar": "$H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$",
+      "alasan_benar": "Setelah menyisipkan suku nol, pembagian bersusun menghasilkan $H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$.",
+      "distraktor": [
+        {
+          "teks": "$H(x) = x^3 + 3x^2 + 6x + 33$ dan $S(x) = 135x + 158$",
+          "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 5$)"
+        },
+        {
+          "teks": "$H(x) = x^3 - 3x^2 - 4x + 27$ dan $S(x) = -55x - 142$",
+          "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 5$)"
+        },
+        {
+          "teks": "$H(x) = x^3 + 3x^2 - 4x - 27$ dan $S(x) = -55x + 128$",
+          "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 5$)"
+        }
+      ],
+      "pembahasan": "Tulis $P(x) = x^5 + 0x^4 - 8x^3 + 0x^2 + 6x - 7$ lalu bagi bersusun oleh $x^2 + 3x - 5$: $H(x) = x^3 - 3x^2 + 6x - 33$, $S(x) = 135x - 172$. Cek: $Q \\cdot H + S = P$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 94,
+        "bagian": "Latihan C",
+        "nomor": "8",
+        "teks": "Polinomial P ( x ) jika dibagi x – 2 sisanya –3, dan jika dibagi x + 3 sisanya –13. Tentukan sisa polinomial tersebut jika dibagi x 2 + x – 6.",
+        "jawaban": "2x - 7"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sisa pembagi kuadrat dari dua syarat sisa",
+      "alasan_level": "menyusun $S(x) = ax + b$ dan dua persamaan dari Teorema Sisa, lalu menyelesaikan sistemnya",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ jika dibagi $x - 6$ bersisa $31$, dan jika dibagi $x + 4$ bersisa $-9$. Sisa pembagian $P(x)$ oleh $x^2 - 2x - 24$ adalah ....",
+      "jawaban_benar": "$4x + 7$",
+      "alasan_benar": "Karena $x^2 - 2x - 24 = (x - 6)(x + 4)$, sisanya $S(x) = ax + b$. Teorema Sisa: $P(6) = 6a + b = 31$ dan $P(-4) = -4a + b = -9$. Pengurangan memberi $10a = 40$, $a = 4$, $b = 7$.",
+      "distraktor": [
+        {
+          "teks": "$20x - 89$",
+          "alasan": "memakai $P(4) = -9$ (salah tanda pembuat nol $x + 4$)"
+        },
+        {
+          "teks": "$-4x + 15$",
+          "alasan": "dua nilai sisa tertukar saat disubstitusikan"
+        },
+        {
+          "teks": "$4x - 7$",
+          "alasan": "benar $a = 4$ tetapi salah tanda saat mencari $b$ ($b = 31 - 24$)"
+        }
+      ],
+      "pembahasan": "$S(x) = ax + b$. $6a + b = 31$ dan $-4a + b = -9$ sehingga $a = 4$, $b = 7$. Jadi $S(x) = 4x + 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b02-p0094-latihan-c-7"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "Teorema Sisa dengan Horner (nilai pecahan)",
+      "alasan_level": "Horner empat langkah dengan $c$ pecahan negatif dan koefisien nol di tengah, hasil akhir = $P(c)$",
+      "stimulus": null,
+      "pertanyaan": "Misalkan $P(x) = 16x^4 + 8x^3 - 18x^2 + 7x - 13$ dan $c = -\\frac{1}{2}$. Dengan metode Horner dan Teorema Sisa, nilai $P(c)$ adalah ....",
+      "jawaban_benar": "$-21$",
+      "alasan_benar": "Horner $c = -\\frac{1}{2}$: $16$; $8 - 8 = 0$; $-18 + 0 = -18$; $7 + 9 = 16$; $-13 - 8 = -21$. Sisa terakhir $-21 = P(-\\frac{1}{2})$.",
+      "distraktor": [
+        {
+          "teks": "$-12$",
+          "alasan": "mensubstitusi $c = \\frac{1}{2}$ (salah tanda)"
+        },
+        {
+          "teks": "$93$",
+          "alasan": "mensubstitusi $c = -2$ (pecahan dibalik)"
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "berhenti sebelum menjumlahkan konstanta terakhir $-13$"
+        }
+      ],
+      "pembahasan": "Horner dengan $c = -\\frac{1}{2}$ memberi baris $16, 0, -18, 16, -21$. Maka $P(-\\frac{1}{2}) = -21$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "bagian": "Mari Mencoba 2.9",
+        "nomor": "2.9",
+        "teks": "Jika P ( x ) = 3 x 5 – 20 x 4 – 6 x 3 – 48 x – 8 dibagi dengan x – 7, tentukan hasil bagi dan sisanya. Gunakan Teorema Sisa untuk mencari nilai P (7).",
+        "jawaban": "sisa 6; P(7) = 6"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Teorema Sisa dengan Horner (hasil bagi dan P(c))",
+      "alasan_level": "Horner lengkap pada polinomial berderajat 4 dengan $c$ negatif, lalu mengaitkan sisa dengan $P(c)$",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x) = 7x^4 + 15x^3 - 9x^2 + 6x - 11$ dibagi dengan $x + 2$, hasil bagi dan nilai $P(-2)$ yang diperoleh dengan Teorema Sisa berturut-turut adalah ....",
+      "jawaban_benar": "$7x^3 + x^2 - 11x + 28$ dan $-67$",
+      "alasan_benar": "$x + 2 = x - (-2)$. Horner $c = -2$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$, sisa $-67 = P(-2)$.",
+      "distraktor": [
+        {
+          "teks": "$7x^3 + 29x^2 + 49x + 104$ dan $197$",
+          "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
+        },
+        {
+          "teks": "$7x^3 + x^2 - 11x + 28$ dan $67$",
+          "alasan": "salah tanda pada sisa/nilai $P(-2)$"
+        },
+        {
+          "teks": "$7x^3 + x^2 - 11x + 28$ dan $28$",
+          "alasan": "mengambil konstanta hasil bagi sebagai nilai $P(-2)$"
+        }
+      ],
+      "pembahasan": "Horner $c = -2$ pada $7, 15, -9, 6, -11$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$ dan sisa $-67$, sehingga $P(-2) = -67$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "bagian": "Contoh 2.7",
+        "nomor": "2.7",
+        "teks": "Bagilah 4 x 4 + 17 x 3 – 3 x + 1 dengan x 2 + 4 x – 1. Tuliskan hasilnya ke dalam bentuk-bentuk algoritma pembagian.",
+        "jawaban": "4x^4 + 17x^3 - 3x + 1 = (x^2 + 4x - 1)(4x^2 + x) - 2x + 1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pembagian bersusun",
+      "alasan_level": "pembagian bersusun berderajat 4 dengan suku $x^2$ yang hilang (disisipkan nol) dan penulisan hasil dalam bentuk $P = Q \\cdot H + S$",
+      "stimulus": null,
+      "pertanyaan": "Bagilah $5x^4 - 6x^3 + 8x - 9$ dengan $x^2 + 3x - 7$. Hasil pembagian yang ditulis dalam bentuk algoritma pembagian adalah ....",
+      "jawaban_benar": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x - 7)(5x^2 - 21x + 98) - 433x + 677$",
+      "alasan_benar": "Setelah menyisipkan $0x^2$, pembagian bersusun menghasilkan $H(x) = 5x^2 - 21x + 98$ dan $S(x) = -433x + 677$ sehingga $P = Q \\cdot H + S$.",
+      "distraktor": [
+        {
+          "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x - 7)(5x^2 + 9x + 62) + 257x + 425$",
+          "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 7$)"
+        },
+        {
+          "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x + 7)(5x^2 - 21x + 28) + 71x - 205$",
+          "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 7$)"
+        },
+        {
+          "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x + 7)(5x^2 + 9x - 8) - 79x + 47$",
+          "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 7$)"
+        }
+      ],
+      "pembahasan": "Bagi bersusun $5x^4 - 6x^3 + 0x^2 + 8x - 9$ oleh $x^2 + 3x - 7$: $H = 5x^2 - 21x + 98$, $S = -433x + 677$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 88,
+        "bagian": "Contoh 2.8",
+        "nomor": "2.8",
+        "teks": "Gunakan metode Horner untuk membagi 2 x 3 + 5 x 2 + 6 dengan x + 3.",
+        "jawaban": "hasil bagi 2x^2 - x + 3, sisa -3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Horner: hasil bagi dan sisa",
+      "alasan_level": "Horner berderajat 4 dengan dua koefisien nol ($x^3$ dan $x$) dan $c = -2$",
+      "stimulus": null,
+      "pertanyaan": "Gunakan metode Horner untuk membagi $3x^4 + 7x^2 - 8$ dengan $x + 2$. Hasil baginya adalah ....",
+      "jawaban_benar": "$3x^3 - 6x^2 + 19x - 38$",
+      "alasan_benar": "Koefisien $3, 0, 7, 0, -8$ dengan $c = -2$ menghasilkan baris $3, -6, 19, -38, 68$. Empat angka pertama adalah koefisien hasil bagi, $68$ sisanya.",
+      "distraktor": [
+        {
+          "teks": "$3x^3 + 6x^2 + 19x + 38$",
+          "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
+        },
+        {
+          "teks": "$3x^2 - 6x + 19$",
+          "alasan": "lupa koefisien nol untuk $x$ sehingga hanya empat koefisien ($3, 0, 7, -8$) dihitung"
+        },
+        {
+          "teks": "$3x^3 - 6x^2 + 19x + 68$",
+          "alasan": "mengambil sisa $68$ sebagai suku konstan hasil bagi"
+        }
+      ],
+      "pembahasan": "Baris Horner: $3$; $0 - 6 = -6$; $7 + 12 = 19$; $0 - 38 = -38$; $-8 + 76 = 68$. Hasil bagi $3x^3 - 6x^2 + 19x - 38$, sisa $68$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 87,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "1",
+        "teks": "Tentukan hasil bagi dan sisa pembagian ( x 3 – 1) : ( x – 1).",
+        "jawaban": "hasil bagi x^2 + x + 1, sisa 0"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Horner: hasil bagi dan sisa",
+      "alasan_level": "Horner lima koefisien dengan empat koefisien nol, sisa tidak nol",
+      "stimulus": null,
+      "pertanyaan": "Hasil bagi dan sisa pembagian $(x^5 - 7) : (x - 2)$ adalah ....",
+      "jawaban_benar": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$",
+      "alasan_benar": "Koefisien $1, 0, 0, 0, 0, -7$ dengan $c = 2$ memberi baris $1, 2, 4, 8, 16, 25$. Lima angka pertama hasil bagi, angka terakhir sisa.",
+      "distraktor": [
+        {
+          "teks": "hasil bagi $x^4 - 2x^3 + 4x^2 - 8x + 16$, sisa $-39$",
+          "alasan": "memakai $c = -2$ padahal pembagi $x - 2$ berarti $c = 2$"
+        },
+        {
+          "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $16$",
+          "alasan": "mengambil koefisien terakhir hasil bagi sebagai sisa"
+        },
+        {
+          "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $-7$",
+          "alasan": "mengira konstanta polinomial menjadi sisa tanpa dihitung"
+        }
+      ],
+      "pembahasan": "Horner $c = 2$: $1, 2, 4, 8, 16, 25$. Hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "juga berlaku jika pembaginya"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Teorema Sisa pembagi ax - b",
+      "alasan_level": "menyadari pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$ lalu mensubstitusikan pada polinomial kubik",
+      "stimulus": null,
+      "pertanyaan": "Sisa pembagian $P(x) = 8x^3 + 10x^2 - 5x + 7$ oleh $2x + 3$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$, sehingga sisa $= P(-\\frac{3}{2}) = -27 + \\frac{45}{2} + \\frac{15}{2} + 7 = 10$.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "mensubstitusi $x = \\frac{3}{2}$ (salah tanda pembuat nol)"
+        },
+        {
+          "teks": "$-104$",
+          "alasan": "mensubstitusi $x = -3$ tanpa membagi dengan koefisien $2$"
+        },
+        {
+          "teks": "$298$",
+          "alasan": "mensubstitusi $x = 3$ (salah tanda dan tidak dibagi $2$)"
+        }
+      ],
+      "pembahasan": "$2x + 3 = 0$ memberi $x = -\\frac{3}{2}$. $P(-\\frac{3}{2}) = 8(-\\frac{27}{8}) + 10(\\frac{9}{4}) - 5(-\\frac{3}{2}) + 7 = -27 + 22,5 + 7,5 + 7 = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "selalu sama dengan nilai"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter Teorema Sisa (satu syarat)",
+      "alasan_level": "membentuk persamaan $P(-2) = 25$ dari Teorema Sisa lalu menyelesaikannya untuk $k$",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = 2x^3 + kx^2 - 5x + 7$ jika dibagi $x + 2$ bersisa $25$. Nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Teorema Sisa: $P(-2) = 2(-8) + 4k + 10 + 7 = 4k + 1 = 25$, sehingga $k = 6$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "mensubstitusi $x = 2$ padahal pembagi $x + 2$ berarti $x = -2$"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "menghitung $kx^2$ di $x = -2$ sebagai $2k$ (lupa mengkuadratkan)"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "salah tanda pada suku $-5x$: $-5(-2)$ dihitung $-10$"
+        }
+      ],
+      "pembahasan": "$P(-2) = -16 + 4k + 10 + 7 = 4k + 1$. Dari $4k + 1 = 25$ diperoleh $k = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter Teorema Sisa (dua syarat)",
+      "alasan_level": "dua persamaan dari Teorema Sisa dengan pembuat nol berbeda tanda lalu menyelesaikan sistem dua variabel",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = x^3 + ax^2 + bx - 8$ jika dibagi $x - 2$ bersisa $2$ dan jika dibagi $x + 3$ bersisa $7$. Nilai $a \\cdot b$ adalah ....",
+      "jawaban_benar": "$-15$",
+      "alasan_benar": "$P(2) = 4a + 2b = 2$ atau $2a + b = 1$. $P(-3) = -35 + 9a - 3b = 7$ atau $3a - b = 14$. Penjumlahan: $5a = 15$, $a = 3$, $b = -5$, sehingga $ab = -15$.",
+      "distraktor": [
+        {
+          "teks": "$-55$",
+          "alasan": "memakai $x = 3$ untuk pembagi $x + 3$ sehingga $a = -5$, $b = 11$"
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "menghitung $a + b$, bukan $a \\cdot b$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "menghitung $a - b$, bukan $a \\cdot b$"
+        }
+      ],
+      "pembahasan": "$P(2) = 8 + 4a + 2b - 8 = 2$ sehingga $2a + b = 1$. $P(-3) = -27 + 9a - 3b - 8 = 7$ sehingga $3a - b = 14$. Maka $a = 3$, $b = -5$, $ab = -15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "dapat menuliskannya menjadi bentuk berikut"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun polinomial dari hasil pembagian",
+      "alasan_level": "menyusun $P = (x - c) \\cdot H + S$ dengan pembagi $x + 2$, menjabarkan, lalu menambah sisa",
+      "stimulus": null,
+      "pertanyaan": "Pembagian polinomial $P(x)$ oleh $x + 2$ dengan metode Horner menghasilkan hasil bagi $2x^2 - 3x + 5$ dan sisa $4$. Polinomial $P(x)$ adalah ....",
+      "jawaban_benar": "$2x^3 + x^2 - x + 14$",
+      "alasan_benar": "$P(x) = (x + 2)(2x^2 - 3x + 5) + 4 = 2x^3 + x^2 - x + 10 + 4 = 2x^3 + x^2 - x + 14$.",
+      "distraktor": [
+        {
+          "teks": "$2x^3 + x^2 - x + 10$",
+          "alasan": "lupa menambahkan sisa $4$"
+        },
+        {
+          "teks": "$2x^3 - 7x^2 + 11x - 6$",
+          "alasan": "memakai pembagi $x - 2$ padahal pembagi sebenarnya $x + 2$"
+        },
+        {
+          "teks": "$2x^3 + x^2 - x + 6$",
+          "alasan": "mengurangkan sisa, bukan menambahkan"
+        }
+      ],
+      "pembahasan": "$(x + 2)(2x^2 - 3x + 5) = 2x^3 + x^2 - x + 10$. Tambah sisa $4$: $2x^3 + x^2 - x + 14$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 93,
+        "kutipan": "derajat sisa pembagiannya selalu kurang dari derajat"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "konsep derajat hasil bagi dan sisa",
+      "alasan_level": "menurunkan derajat pembagi dari derajat $P$ dan hasil bagi, lalu menyimpulkan batas derajat sisa",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ berderajat $11$ dibagi $Q(x)$ sehingga hasil baginya berderajat $7$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $3$",
+      "alasan_benar": "Derajat $P$ = derajat $Q$ + derajat hasil bagi, sehingga derajat $Q = 11 - 7 = 4$. Sisa berderajat kurang dari $4$, yaitu paling tinggi $3$.",
+      "distraktor": [
+        {
+          "teks": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $4$",
+          "alasan": "mengira sisa boleh berderajat sama dengan pembagi"
+        },
+        {
+          "teks": "$Q(x)$ berderajat $18$ dan sisa paling tinggi berderajat $17$",
+          "alasan": "menjumlahkan derajat, bukan mengurangkan"
+        },
+        {
+          "teks": "$Q(x)$ berderajat $5$ dan sisa paling tinggi berderajat $4$",
+          "alasan": "salah hitung derajat pembagi ($11 - 7 + 1$)"
+        }
+      ],
+      "pembahasan": "$11 = \\deg Q + 7$ sehingga $\\deg Q = 4$. Sisa nol atau berderajat kurang dari $4$, jadi paling tinggi $3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "Proses pembagian tersebut menyisakan polinomial"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bentuk algoritma pembagian",
+      "alasan_level": "menjabarkan $Q \\cdot H$ lalu mengurangkannya dari $P$ untuk mendapat sisa, tiga langkah aljabar",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x) = 2x^3 - 5x^2 + 9x - 4$ dibagi $Q(x) = x^2 + 2x - 3$ dengan hasil bagi $H(x) = 2x - 9$. Sisa pembagian tersebut adalah ....",
+      "jawaban_benar": "$33x - 31$",
+      "alasan_benar": "$Q \\cdot H = 2x^3 - 5x^2 - 24x + 27$. Sisa $S = P - Q \\cdot H = (9 + 24)x + (-4 - 27) = 33x - 31$.",
+      "distraktor": [
+        {
+          "teks": "$33x + 23$",
+          "alasan": "salah tanda saat mengurangkan konstanta ($-4 + 27$)"
+        },
+        {
+          "teks": "$-15x - 31$",
+          "alasan": "salah tanda saat mengurangkan suku $x$ ($9 - 24$)"
+        },
+        {
+          "teks": "$-33x + 31$",
+          "alasan": "mengurangkan terbalik: $Q \\cdot H - P$"
+        }
+      ],
+      "pembahasan": "$Q \\cdot H = 2x^3 + 4x^2 - 6x - 9x^2 - 18x + 27 = 2x^3 - 5x^2 - 24x + 27$. $S = P - QH = 33x - 31$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 88,
+        "kutipan": "Dalam metode Horner, jika polinomial pembaginya"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "analisis kesalahan Horner",
+      "alasan_level": "menemukan kesalahan pemilihan $c$ pada pekerjaan yang diberikan, lalu menghitung ulang dengan benar",
+      "stimulus": null,
+      "pertanyaan": "Dina membagi $x^3 + 5x - 3$ oleh $x + 2$ dengan metode Horner. Ia menuliskan koefisien $1, 0, 5, -3$ dan memakai $c = 2$, sehingga memperoleh baris $1, 2, 9, 15$ dan menyimpulkan sisanya $15$. Sisa pembagian yang benar adalah ....",
+      "jawaban_benar": "$-21$",
+      "alasan_benar": "Pembagi $x + 2 = x - (-2)$ sehingga $c = -2$ (kesalahan Dina). Horner: $1, -2, 9, -21$, sisa $-21$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "mengikuti pekerjaan Dina yang memakai $c = 2$"
+        },
+        {
+          "teks": "$21$",
+          "alasan": "salah tanda pada sisa"
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "menghilangkan koefisien nol $x^2$ sehingga hanya $1, 5, -3$ yang dihitung"
+        }
+      ],
+      "pembahasan": "Dengan $c = -2$: $1$; $0 + (-2)(1) = -2$; $5 + (-2)(-2) = 9$; $-3 + (-2)(9) = -21$. Sisa $-21$. Cek: $P(-2) = -8 - 10 - 3 = -21$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "yang derajatnya kurang dari polinomial pembagi"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita pembagian polinomial",
+      "alasan_level": "memodelkan luas alas sebagai volume dibagi tinggi, membagi dengan Horner, lalu mensubstitusi nilai $x$",
+      "stimulus": null,
+      "pertanyaan": "Volume sebuah balok adalah $V(x) = x^3 + 4x^2 - 11x - 30$ cm$^3$ dan tingginya $(x - 3)$ cm. Jika $x = 6$, luas alas balok tersebut adalah .... cm$^2$.",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Luas alas $= V(x) : (x - 3)$. Horner $c = 3$ pada $1, 4, -11, -30$ memberi $1, 7, 10, 0$, sehingga luas alas $x^2 + 7x + 10$. Untuk $x = 6$: $36 + 42 + 10 = 88$.",
+      "distraktor": [
+        {
+          "teks": "$264$",
+          "alasan": "menghitung volume $V(6)$, bukan luas alas"
+        },
+        {
+          "teks": "$28$",
+          "alasan": "memakai $c = -3$ pada Horner sehingga luas alas menjadi $x^2 + x - 14$"
+        },
+        {
+          "teks": "$40$",
+          "alasan": "mensubstitusi $x = 3$ (pembuat nol tinggi) ke $x^2 + 7x + 10$"
+        }
+      ],
+      "pembahasan": "$V = (\\text{luas alas})(\\text{tinggi})$. Horner $c = 3$: $1, 7, 10, 0$; luas alas $x^2 + 7x + 10$. Di $x = 6$: $88$ cm$^2$ (cek $264 : 3 = 88$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Berdasarkan Teorema Sisa, nilai"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Teorema Sisa dari bentuk algoritma",
+      "alasan_level": "mengenali bahwa sisa terhadap pembagi yang berbeda ($x - 2$) harus dicari lewat $P(2)$, bukan dibaca dari bentuk algoritma",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x) = (x + 4)(x^2 - 3x + 6) - 7$. Sisa pembagian $P(x)$ oleh $x - 2$ adalah ....",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Menurut Teorema Sisa, sisa $= P(2) = (6)(4 - 6 + 6) - 7 = 24 - 7 = 17$.",
+      "distraktor": [
+        {
+          "teks": "$-7$",
+          "alasan": "mengira sisa pembagian oleh $x - 2$ adalah suku konstan bentuk algoritma yang diberikan"
+        },
+        {
+          "teks": "$25$",
+          "alasan": "mensubstitusi $x = -2$ (salah tanda pembuat nol)"
+        },
+        {
+          "teks": "$24$",
+          "alasan": "lupa mengurangkan $7$ setelah mengalikan $(x + 4)$ dengan hasil bagi"
+        }
+      ],
+      "pembahasan": "$P(2) = (2 + 4)(4 - 6 + 6) - 7 = 6 \\cdot 4 - 7 = 17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "agar suku-sukunya lengkap"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pembagian bersusun",
+      "alasan_level": "pembagian bersusun oleh pembagi tanpa suku $x$ dengan suku $x^3$ yang hilang, tiga langkah pengurangan",
+      "stimulus": null,
+      "pertanyaan": "Hasil bagi dan sisa pembagian $x^4 - 3x^2 + 7x - 5$ oleh $x^2 - 2$ adalah ....",
+      "jawaban_benar": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 7$",
+      "alasan_benar": "$x^2 \\cdot (x^2 - 2) = x^4 - 2x^2$ menyisakan $-x^2 + 7x - 5$ (dengan $0x^3$). $-1 \\cdot (x^2 - 2) = -x^2 + 2$ menyisakan $7x - 7$.",
+      "distraktor": [
+        {
+          "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 3$",
+          "alasan": "salah tanda saat mengurangkan konstanta ($-5 - 2$ dihitung $-5 + 2$)"
+        },
+        {
+          "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 5$",
+          "alasan": "lupa mengurangkan hasil kali $-1 \\cdot (-2)$ pada konstanta"
+        },
+        {
+          "teks": "$H(x) = 7x - 7$ dan $S(x) = x^2 - 1$",
+          "alasan": "hasil bagi dan sisa tertukar"
+        }
+      ],
+      "pembahasan": "Bentuk lengkap $x^4 + 0x^3 - 3x^2 + 7x - 5$. $H = x^2 - 1$, $S = 7x - 7$. Cek: $(x^2 - 2)(x^2 - 1) + 7x - 7 = x^4 - 3x^2 + 2 + 7x - 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 89,
+        "kutipan": "menjumlahkan bilangan-bilangan dalam satu kolom"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "Horner: koefisien hasil bagi",
+      "alasan_level": "menjalankan Horner empat koefisien (satu bernilai nol) lalu memilih koefisien $x$ pada hasil bagi, bukan sisa",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $3x^4 - 11x^3 + 9x - 8$ dibagi $x - 4$ dengan metode Horner. Koefisien $x$ pada hasil bagi adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Koefisien $3, -11, 0, 9, -8$ dengan $c = 4$ memberi baris $3, 1, 4, 25, 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$, sisa $92$. Koefisien $x$ adalah $4$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "mengambil suku konstan hasil bagi"
+        },
+        {
+          "teks": "$92$",
+          "alasan": "mengambil sisa sebagai koefisien $x$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengambil koefisien $x^2$ pada hasil bagi"
+        }
+      ],
+      "pembahasan": "Horner $c = 4$: $3$; $-11 + 12 = 1$; $0 + 4 = 4$; $9 + 16 = 25$; $-8 + 100 = 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$.",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f78feccf9594df350eaf288",
+        "teks": "Polinomial $P(x)$ dibagi $Q(x) = x - 5$ menghasilkan hasil bagi $H(x) = x + 6$ dan sisa $S(x) = 4$. Polinomial $P(x)$ adalah ....",
+        "jawaban": "$x^2 + x - 26$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sisa_pembagian_polinomial",
+      "alasan_level": "Target medium; variasi konsep sisa pembagian polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan sisa pembagian $P(x)=9 x^{3} - 9 x^{2} + 3 x - 6$ oleh $(x-(1))$.",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Teorema sisa: sisanya P(1)=-3.",
+      "distraktor": [
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-3$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan $-4$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-3$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan $-1$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-3$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema sisa: sisanya P(1)=-3.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aab83dd062ff282363220108",
+        "teks": "Hasil pembagian $3x^3 + 8x^2 - 5x + 7$ oleh $x^2 + 5x - 2$ yang ditulis dalam bentuk algoritma pembagian adalah ....",
+        "jawaban": "$3x^3 + 8x^2 - 5x + 7 = (x^2 + 5x - 2)(3x - 7) + 36x - 7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sisa_pembagian_polinomial",
+      "alasan_level": "Target medium; variasi konsep sisa pembagian polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tentukan sisa pembagian $P(x)=4 x^{3} - 6 x^{2} + 6 x - 4$ oleh $(x-(0))$.",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Teorema sisa: sisanya P(0)=-4.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan $-5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah sisa pembagian polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema sisa: sisanya P(0)=-4.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-c-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4836d092ba0bec8f64c7fb91",
+        "teks": "Hasil bagi $H(x)$ dan sisa $S(x)$ setelah $P(x) = x^3 + 4x^2 - 6x + 7$ dibagi $Q(x) = x^2 + 5x - 4$ adalah ....",
+        "jawaban": "$H(x) = x - 1$ dan $S(x) = 3x + 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2371$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2371$.",
+      "distraktor": [
+        {
+          "teks": "$2372$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2370$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4742$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2371$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/05c0e2d04b6d47fe058c82d9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              4
+            ],
+            [
+              "p",
+              423
+            ],
+            [
+              "q",
+              910
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 4], [\"p\", 423], [\"q\", 910], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65241b6a20c1ba9ddfbce23c",
+        "teks": "Hasil bagi dan sisa dari pembagian $x^3 + 7$ oleh $x - 2$ dengan menggunakan metode Horner adalah ....",
+        "jawaban": "hasil bagi $x^2 + 2x + 4$, sisa $15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1620$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1620$.",
+      "distraktor": [
+        {
+          "teks": "$1621$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1619$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3240$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1620$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/b9a5daae582f690718b9ab76.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              95
+            ],
+            [
+              "q",
+              1010
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 5], [\"p\", 95], [\"q\", 1010], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b86b933852e1d56ca5d020da",
+        "teks": "Hasil bagi pada pembagian $4x^3 - 7x + 8$ oleh $x + 1$ dengan metode Horner adalah ....",
+        "jawaban": "$4x^2 - 4x - 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$305$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $305$.",
+      "distraktor": [
+        {
+          "teks": "$306$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$304$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$610$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $305$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d215b8d9d15e2906abbbdb69.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              3
+            ],
+            [
+              "p",
+              91
+            ],
+            [
+              "q",
+              198
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 3], [\"p\", 91], [\"q\", 198], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "49adc01c1d643acc18ba7409",
+        "teks": "Sisa pembagian $P(x) = 9x^3 + 12x^2 - 11x + 13$ oleh $x - 2$ dengan Teorema Sisa adalah ....",
+        "jawaban": "$111$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1373$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1373$.",
+      "distraktor": [
+        {
+          "teks": "$1374$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1372$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2746$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1373$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d9000d1dc74e3afb1d138c81.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              3
+            ],
+            [
+              "p",
+              169
+            ],
+            [
+              "q",
+              470
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 3], [\"p\", 169], [\"q\", 470], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59128a47567632e4d4a3d15b",
+        "teks": "Jika $P(x) = 7x^3 + 8x^2 - 6x + 12$ dibagi $x + 1$, diperoleh hasil bagi $7x^2 + x - 7$ dan sisa $19$. Dengan menggunakan Teorema Sisa, nilai $P(-1)$ adalah ....",
+        "jawaban": "$19$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$4352$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $4352$.",
+      "distraktor": [
+        {
+          "teks": "$4353$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4351$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8704$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $4352$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/fe343d1e117d3a277bbf03e2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              6
+            ],
+            [
+              "p",
+              152
+            ],
+            [
+              "q",
+              2952
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 6], [\"p\", 152], [\"q\", 2952], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aab83dd062ff282363220108",
+        "teks": "Hasil pembagian $3x^3 + 8x^2 - 5x + 7$ oleh $x^2 + 5x - 2$ yang ditulis dalam bentuk algoritma pembagian adalah ....",
+        "jawaban": "$3x^3 + 8x^2 - 5x + 7 = (x^2 + 5x - 2)(3x - 7) + 36x - 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1273$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1273$.",
+      "distraktor": [
+        {
+          "teks": "$1274$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1272$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2546$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1273$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/bb825b6868f69cdfa880d9ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              153
+            ],
+            [
+              "q",
+              601
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 5], [\"p\", 153], [\"q\", 601], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "64532365ee68effbae11731c",
+        "teks": "Sebuah polinomial dibagi oleh polinomial pembagi yang berderajat $4$. Derajat tertinggi yang mungkin dimiliki sisa pembagian tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$6111$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $6111$.",
+      "distraktor": [
+        {
+          "teks": "$6112$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6110$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12222$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $6111$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/57c4cc12f74faebb0e18c30c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              7
+            ],
+            [
+              "p",
+              311
+            ],
+            [
+              "q",
+              3211
+            ],
+            [
+              "t",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 7], [\"p\", 311], [\"q\", 3211], [\"t\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "55356e6794614569bcaa2f2f",
+        "teks": "Polinomial $P(x)$ dibagi $x + 5$ menghasilkan sisa $-8$. Nilai $P(-5)$ adalah ....",
+        "jawaban": "$-8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$287$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $287$.",
+      "distraktor": [
+        {
+          "teks": "$288$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$286$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$574$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $287$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/9671351d893d4a9f3e66d67d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              3
+            ],
+            [
+              "p",
+              79
+            ],
+            [
+              "q",
+              183
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 3], [\"p\", 79], [\"q\", 183], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d630c57716d2ad1a1b66b300",
+        "teks": "Diketahui $x^3 + x^2 - 33x - 42 = (x - 6)(x^2 + 7x + 9) + 12$. Jika polinomial $x^3 + x^2 - 33x - 42$ dibagi $x - 6$, hasil bagi dan sisanya berturut-turut adalah ....",
+        "jawaban": "$x^2 + 7x + 9$ dan $12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$984$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $984$.",
+      "distraktor": [
+        {
+          "teks": "$985$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$983$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1968$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $984$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/4f04bdfe08083ae4331edf10.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              3
+            ],
+            [
+              "p",
+              147
+            ],
+            [
+              "q",
+              426
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 3], [\"p\", 147], [\"q\", 426], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ab2137562c4a3fe6e4d046ad",
+        "teks": "Hasil bagi dan sisa pembagian $(x^3 + 64) : (x + 4)$ adalah ....",
+        "jawaban": "hasil bagi $x^2 - 4x + 16$, sisa $0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1454$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1454$.",
+      "distraktor": [
+        {
+          "teks": "$1455$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1453$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2908$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1454$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/144afcb778ae3721d17627e7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              122
+            ],
+            [
+              "q",
+              1121
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 5], [\"p\", 122], [\"q\", 1121], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ff51a86cb85ae6b51bdbbcc",
+        "teks": "Misalkan $P(x) = 8x^3 - 14x^2 + 9x - 10$ dan $c = \\frac{1}{2}$. Dengan metode Horner dan Teorema Sisa, nilai $P(c)$ adalah ....",
+        "jawaban": "$-8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2294$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2294$.",
+      "distraktor": [
+        {
+          "teks": "$2295$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2293$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4588$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2294$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/413d4aa7184ea36274ca166c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              299
+            ],
+            [
+              "q",
+              1097
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 5], [\"p\", 299], [\"q\", 1097], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ad875be1020494fc064d3fd4",
+        "teks": "Pembagi $x + 6$ dapat ditulis $x - (-6)$. Bilangan yang menggantikan pembagi tersebut dalam skema Horner adalah ....",
+        "jawaban": "$-6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2715$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2715$.",
+      "distraktor": [
+        {
+          "teks": "$2716$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2714$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5430$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2715$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d2239d560b3353c7d02ef3e6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              7
+            ],
+            [
+              "p",
+              179
+            ],
+            [
+              "q",
+              1447
+            ],
+            [
+              "t",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 7], [\"p\", 179], [\"q\", 1447], [\"t\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2385c2e440c85fe55a74d0ab",
+        "teks": "Polinomial $5x^4 - 2x + 7$ akan dibagi dengan metode Horner. Deretan koefisien yang ditulis pada skema Horner adalah ....",
+        "jawaban": "$5, 0, 0, -2, 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2119$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2119$.",
+      "distraktor": [
+        {
+          "teks": "$2120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4238$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2119$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/19595ad8bf857cc15ddd9341.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              1
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              26
+            ],
+            [
+              "q",
+              1222
+            ],
+            [
+              "t",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 1], [\"v\", 5], [\"p\", 26], [\"q\", 1222], [\"t\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f78feccf9594df350eaf288",
+        "teks": "Polinomial $P(x)$ dibagi $Q(x) = x - 5$ menghasilkan hasil bagi $H(x) = x + 6$ dan sisa $S(x) = 4$. Polinomial $P(x)$ adalah ....",
+        "jawaban": "$x^2 + x - 26$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1980$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1980$.",
+      "distraktor": [
+        {
+          "teks": "$1981$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1979$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3960$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1980$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/cb9b6c6b9517b101268f1491.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              120
+            ],
+            [
+              "q",
+              1236
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 2], [\"v\", 5], [\"p\", 120], [\"q\", 1236], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a53a8c0e5525e41469e8391f",
+        "teks": "Sebelum dibagi secara bersusun oleh $x^2 + x - 1$, polinomial $x^3 - 5x + 2$ perlu ditulis lengkap menjadi ....",
+        "jawaban": "$x^3 + 0x^2 - 5x + 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1148$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1148$.",
+      "distraktor": [
+        {
+          "teks": "$1149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1147$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2296$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1148$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/8ab7b21651b860b426ac5c9f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              1
+            ],
+            [
+              "v",
+              5
+            ],
+            [
+              "p",
+              20
+            ],
+            [
+              "q",
+              772
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 1], [\"v\", 5], [\"p\", 20], [\"q\", 772], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0f07cf15ee3804205fa1850",
+        "teks": "Diketahui $P(x) = (x - 3)(x^2 + 2x + 5) + 4$. Nilai $P(3)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$5176$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $5176$.",
+      "distraktor": [
+        {
+          "teks": "$5177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5175$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10352$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $5176$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/4e187a4b79eb392c5b2925f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              3
+            ],
+            [
+              "v",
+              7
+            ],
+            [
+              "p",
+              297
+            ],
+            [
+              "q",
+              3085
+            ],
+            [
+              "t",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 3], [\"v\", 7], [\"p\", 297], [\"q\", 3085], [\"t\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccb3eb29297a7fa099d19c2e",
+        "teks": "Pembagian $3x^3 - 5x^2 + 2x + 9$ oleh $x - 2$ dengan metode Horner menghasilkan baris bawah $3, 1, 4, 17$. Hasil bagi dan sisa pembagian tersebut adalah ....",
+        "jawaban": "hasil bagi $3x^2 + x + 4$, sisa $17$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$996$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $996$.",
+      "distraktor": [
+        {
+          "teks": "$997$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$995$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1992$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $996$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/aeb5d2146c8a366658658899.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "u",
+              1
+            ],
+            [
+              "v",
+              3
+            ],
+            [
+              "p",
+              30
+            ],
+            [
+              "q",
+              352
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"u\", 1], [\"v\", 3], [\"p\", 30], [\"q\", 352], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a4e282662877eb6c89421e",
+        "teks": "Pada pembagian bersusun $6x^3 + 7x^2 - 4x + 5$ oleh $2x - 1$, suku pertama hasil bagi adalah ....",
+        "jawaban": "$3x^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $4$; p = $19$; q = $397$; t = $6$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$649$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $649$.",
+      "distraktor": [
+        {
+          "teks": "$650$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$648$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1298$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $649$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c52c8d960472e283a037ca4",
+        "teks": "Bilangan $58$ dibagi $9$ memberi hasil bagi $6$ dan sisa $4$. Bentuk algoritma pembagian yang sesuai adalah ....",
+        "jawaban": "$58 = 9 \\cdot 6 + 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $6$; p = $68$; q = $1104$; t = $10$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2140$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2140$.",
+      "distraktor": [
+        {
+          "teks": "$2141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2140$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "679f1d18014771bcc25d4d8c",
+        "teks": "Metode Horner dapat dipakai secara langsung jika pembaginya berbentuk $x - c$. Pembagi berikut yang dapat langsung memakai metode Horner adalah ....",
+        "jawaban": "$x - 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $4$; p = $64$; q = $378$; t = $6$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$692$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $692$.",
+      "distraktor": [
+        {
+          "teks": "$693$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$691$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $692$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77909071fab7e237ae915f82",
+        "teks": "Ahmad menduga bahwa sisa pembagian $P(x)$ oleh $ax - b$ sama dengan $P\\left(\\frac{a}{b}\\right)$. Untuk menguji dugaan itu, ia memakai $P(x) = 8x^3 + 6x^2 - 13x + 9$ yang dibagi $2x - 3$. Pernyataan yang benar adalah ....",
+        "jawaban": "Dugaan Ahmad salah; sisa sebenarnya $P\\left(\\frac{3}{2}\\right) = 30$, sedangkan $P\\left(\\frac{2}{3}\\right) = \\frac{145}{27}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $5$; p = $33$; q = $1101$; t = $7$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1635$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1635$.",
+      "distraktor": [
+        {
+          "teks": "$1636$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1634$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3270$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1635$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "de5914501175be642de5e788",
+        "teks": "Seorang siswa mengklaim: \"Jika $P(2) = P(-2)$, maka $P(x)$ habis dibagi $x^2 - 4$.\" Polinomial yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$x^4 - 3x^2 + 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $3$; v = $5$; p = $248$; q = $1002$; t = $7$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1756$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1756$.",
+      "distraktor": [
+        {
+          "teks": "$1757$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1755$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3512$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1756$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c6493392c2196c43964b3f20",
+        "teks": "Wulan membagi $P(x) = x^4 - 7x^2 + 3x - 9$ oleh $x - 2$ dengan metode Horner. Ia menuliskan koefisien $1, -7, 3, -9$ dan memakai $c = 2$ sehingga memperoleh baris bawah $1, -5, -7, -23$, lalu menyimpulkan sisanya $-23$. Pernyataan yang benar mengenai pekerjaan Wulan adalah ....",
+        "jawaban": "Ia salah karena koefisien $x^3$ yang bernilai nol tidak ditulis; sisa sebenarnya $-15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $5$; p = $22$; q = $846$; t = $9$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1670$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1670$.",
+      "distraktor": [
+        {
+          "teks": "$1671$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1669$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1670$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f10bb8b77fdf99522f59d2ce",
+        "teks": "Raka membagi $P(x) = 3x^3 - 4x^2 - 17x + 9$ oleh $(x - 2)(x + 1)$ dengan Horner dua kali: pertama dibagi $x - 2$, lalu hasil baginya dibagi $x + 1$. Ia memperoleh sisa tahap pertama $-17$ dan sisa tahap kedua $-12$, kemudian menyatakan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 1)$ adalah $-12$. Pernyataan yang benar adalah ....",
+        "jawaban": "Raka keliru; sisa yang benar adalah $-12x + 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $3$; v = $6$; p = $355$; q = $2521$; t = $10$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$5409$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $5409$.",
+      "distraktor": [
+        {
+          "teks": "$5410$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5408$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10818$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $5409$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fdf9967589fa13b8e64f1fa5",
+        "teks": "Doni membagi $P(x) = 2x^3 - 3x^2 - 7x + 4$ oleh $Q(x) = x^2 - 2x + 5$ secara bersusun. Suku pertama hasil bagi ia tulis $2x$, lalu ia mengurangkan $2x \\cdot Q(x) = 2x^3 - 4x^2 + 10x$ dan menuliskan sisa sementara $x^2 + 3x + 4$. Lanjutannya ia peroleh hasil bagi $2x + 1$ dan sisa $5x - 1$. Pernyataan yang benar mengenai pekerjaan Doni adalah ....",
+        "jawaban": "Doni salah pada pengurangan suku $x$ (seharusnya $-7x - 10x = -17x$); hasil bagi $2x + 1$ benar dan sisa yang benar $-15x - 1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $5$; p = $16$; q = $1064$; t = $9$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2112$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2112$.",
+      "distraktor": [
+        {
+          "teks": "$2113$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4224$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2112$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97b0d631325c238f8c7289d2",
+        "teks": "Polinomial $P(x) = 2x^3 + kx^2 - 6x + 5$ dirancang agar sisa pembagian oleh $x - 3$ sama dengan sisa pembagian oleh $x + 2$. Sisa yang sama tersebut adalah ....",
+        "jawaban": "$-31$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $6$; p = $74$; q = $1118$; t = $7$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1379$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1379$.",
+      "distraktor": [
+        {
+          "teks": "$1380$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1378$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2758$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1379$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "835c97ce0e3b9c89ceafcbee",
+        "teks": "Polinomial $P(x) = x^4 + ax^3 + bx - 12$ habis dibagi $(x - 2)(x + 1)$. Jika hasil bagi pembagian tersebut adalah $H(x)$, nilai $H(3)$ adalah ....",
+        "jawaban": "$27$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $3$; v = $7$; p = $166$; q = $1162$; t = $10$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1909$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1909$.",
+      "distraktor": [
+        {
+          "teks": "$1910$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1908$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3818$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1909$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c71834bb48c92df9884ea8e5",
+        "teks": "Polinomial $P(x)$ jika dibagi $x^2 + x - 2$ bersisa $2x + 5$, dan jika dibagi $x^2 - 2x - 8$ bersisa $3x + 7$. Sisa pembagian $P(x)$ oleh $x^2 - 5x + 4$ adalah ....",
+        "jawaban": "$4x + 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $3$; p = $90$; q = $245$; t = $4$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$400$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $400$.",
+      "distraktor": [
+        {
+          "teks": "$401$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$399$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $400$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c35a74ff30ac3e016c2ed73",
+        "teks": "Beni membagi $P(x) = 8x^3 - 4x^2 + 10x - 7$ dengan $x - \\frac{1}{2}$ dan dengan $2x - 1$. Ia mengklaim bahwa kedua pembagian memberi hasil bagi yang sama dan sisa yang sama karena $2x - 1 = 2\\left(x - \\frac{1}{2}\\right)$. Pernyataan yang benar mengenai klaim Beni adalah ....",
+        "jawaban": "Salah: hasil baginya berbeda (hasil bagi oleh $2x - 1$ adalah $4x^2 + 5$), sedangkan sisanya sama, yaitu $-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $3$; v = $5$; p = $381$; q = $1507$; t = $6$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$2070$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2070$.",
+      "distraktor": [
+        {
+          "teks": "$2071$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2069$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $2070$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bed6a6ea6e4b584773e3709a",
+        "teks": "Sebuah polinomial monik berderajat $3$, $P(x) = x^3 + ax^2 + bx + c$, dirancang agar jika dibagi $x - 1$ bersisa $1$, jika dibagi $x - 2$ bersisa $7$, dan jika dibagi $x + 1$ bersisa $-11$. Nilai $P(3)$ adalah ....",
+        "jawaban": "$21$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $5$; p = $24$; q = $892$; t = $9$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1760$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1760$.",
+      "distraktor": [
+        {
+          "teks": "$1761$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1759$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3520$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1760$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ec2796137b473ef7b6d3e38",
+        "teks": "Untuk menentukan sisa pembagian $P(x)$ oleh $x^2 - x - 6$ secara tunggal (tanpa mengetahui $P(x)$ sepenuhnya), informasi yang cukup adalah ....",
+        "jawaban": "sisa pembagian $P(x)$ oleh $x - 3$ dan sisa pembagian $P(x)$ oleh $x + 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $3$; p = $54$; q = $151$; t = $4$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$248$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $248$.",
+      "distraktor": [
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$247$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$496$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $248$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0cba7bdfeaef6529a3bc616",
+        "teks": "Polinomial $P(x)$ dibagi $x - 2$ bersisa $9$ dengan hasil bagi $H(x)$, dan $H(x)$ dibagi $x + 3$ bersisa $-4$. Rina menyimpulkan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 3)$ adalah $5$ (jumlah kedua sisa). Pernyataan yang benar adalah ....",
+        "jawaban": "Rina keliru; sisa yang benar adalah $-4x + 17$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $2$; v = $4$; p = $88$; q = $570$; t = $8$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$1534$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1534$.",
+      "distraktor": [
+        {
+          "teks": "$1535$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1533$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3068$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $1534$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5797e09949428c7708476c1",
+        "teks": "Polinomial $P(x)$ dibagi $x - c$ bersisa $s$. Polinomial berikut yang pasti habis dibagi $x - c$, untuk sembarang $P(x)$, $c$, dan $s$ yang memenuhi, adalah ....",
+        "jawaban": "$P(x) - s$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_polynomial_remainder_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui u = $1$; v = $2$; p = $23$; q = $67$; t = $5$. Diketahui $P(u)=p$ dan $P(v)=q$. Jika P dibagi oleh $(x-u)(x-v)$, sisanya R berderajat kurang dari dua. Tentukan $R(t)$.",
+      "jawaban_benar": "$199$",
+      "alasan_benar": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $199$.",
+      "distraktor": [
+        {
+          "teks": "$200$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$198$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$398$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Sisa linear harus sama nilainya dengan P pada kedua akar pembagi. Tentukan garis melalui kedua data lalu evaluasi pada t. Hasilnya $199$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-medium-bt01-055"
     }
-   ],
-   "pembahasan": "$2x + 5 = 2(x - (-\\frac{5}{2}))$. Horner dengan $c = -\\frac{5}{2}$: $6, -8, 14, -6$. Hasil bagi terhadap $x - c$ adalah $6x^2 - 8x + 14$; terhadap $2x + 5$ dibagi $2$ menjadi $3x^2 - 4x + 7$; sisa $-6$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-002",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 90,
-    "bagian": "Mari Berkolaborasi",
-    "nomor": "2",
-    "teks": "Gunakan metode Horner untuk membagi x 4 – 10 x 2 – 5 x + 10 dengan ( x – 1) ( x – 3).",
-    "jawaban": "hasil bagi x^2 + 4x + 3, sisa -5x + 1"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "Horner dua kali (pembagi kuadrat terfaktor)",
-   "alasan_level": "dua kali Horner berurutan ($c = 6$ lalu $c = -7$) dan memilih hasil bagi akhir, bukan hasil antara",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $P(x) = x^4 - 4x^3 - 39x^2 + 225x - 345$ dibagi $(x - 6)(x + 7)$ dengan metode Horner dua kali: pertama dibagi $x - 6$, lalu hasil baginya dibagi $x + 7$. Hasil bagi akhir pembagian $P(x)$ oleh $(x - 6)(x + 7)$ adalah ....",
-   "jawaban_benar": "$x^2 - 5x + 8$",
-   "alasan_benar": "Horner $c = 6$ memberi hasil bagi $x^3 + 2x^2 - 27x + 63$. Horner $c = -7$ pada hasil itu memberi hasil bagi $x^2 - 5x + 8$, itulah hasil bagi terhadap $(x - 6)(x + 7)$.",
-   "distraktor": [
-    {
-     "teks": "$x^3 + 2x^2 - 27x + 63$",
-     "alasan": "berhenti setelah Horner pertama: itu hasil bagi oleh $x - 6$ saja"
-    },
-    {
-     "teks": "$x^2 + 9x + 36$",
-     "alasan": "memakai $c = 7$ pada Horner kedua padahal pembagi $x + 7$ berarti $c = -7$"
-    },
-    {
-     "teks": "$7x - 9$",
-     "alasan": "mengambil sisa sebagai hasil bagi"
-    }
-   ],
-   "pembahasan": "Horner $c = 6$: koefisien baru [1, 2, -27, 63], sisa 33. Horner $c = -7$ pada [1, 2, -27, 63]: koefisien [1, -5, 8]. Hasil bagi akhir $x^2 - 5x + 8$ (cek: $(x-6)(x+7)(x^2 - 5x + 8) + 7x - 9 = P(x)$).",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-003",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 94,
-    "bagian": "Latihan C",
-    "nomor": "4",
-    "teks": "Misalkan P ( x ) = x 6 – x 4 + x 2 – 1 dan Q ( x ) = x 2 + 2 x – 1. Tentukan hasil bagi dan sisa pembagian P ( x ) oleh Q ( x ) dengan menggunakan pembagian bersusun",
-    "jawaban": "hasil bagi x^4 - 2x^3 + 4x^2 - 10x + 25, sisa -60x + 24"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "pembagian bersusun",
-   "alasan_level": "pembagian bersusun berpangkat loncat (suku $x^4$ dan $x^2$ tidak ada) sehingga harus disisipkan suku nol dan ada empat langkah pengurangan",
-   "stimulus": null,
-   "pertanyaan": "Misalkan $P(x) = x^5 - 8x^3 + 6x - 7$ dan $Q(x) = x^2 + 3x - 5$. Hasil bagi dan sisa pembagian $P(x)$ oleh $Q(x)$ dengan pembagian bersusun adalah ....",
-   "jawaban_benar": "$H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$",
-   "alasan_benar": "Setelah menyisipkan suku nol, pembagian bersusun menghasilkan $H(x) = x^3 - 3x^2 + 6x - 33$ dan $S(x) = 135x - 172$.",
-   "distraktor": [
-    {
-     "teks": "$H(x) = x^3 + 3x^2 + 6x + 33$ dan $S(x) = 135x + 158$",
-     "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 5$)"
-    },
-    {
-     "teks": "$H(x) = x^3 - 3x^2 - 4x + 27$ dan $S(x) = -55x - 142$",
-     "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 5$)"
-    },
-    {
-     "teks": "$H(x) = x^3 + 3x^2 - 4x - 27$ dan $S(x) = -55x + 128$",
-     "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 5$)"
-    }
-   ],
-   "pembahasan": "Tulis $P(x) = x^5 + 0x^4 - 8x^3 + 0x^2 + 6x - 7$ lalu bagi bersusun oleh $x^2 + 3x - 5$: $H(x) = x^3 - 3x^2 + 6x - 33$, $S(x) = 135x - 172$. Cek: $Q \\cdot H + S = P$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-004",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 94,
-    "bagian": "Latihan C",
-    "nomor": "8",
-    "teks": "Polinomial P ( x ) jika dibagi x – 2 sisanya –3, dan jika dibagi x + 3 sisanya –13. Tentukan sisa polinomial tersebut jika dibagi x 2 + x – 6.",
-    "jawaban": "2x - 7"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "sisa pembagi kuadrat dari dua syarat sisa",
-   "alasan_level": "menyusun $S(x) = ax + b$ dan dua persamaan dari Teorema Sisa, lalu menyelesaikan sistemnya",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $P(x)$ jika dibagi $x - 6$ bersisa $31$, dan jika dibagi $x + 4$ bersisa $-9$. Sisa pembagian $P(x)$ oleh $x^2 - 2x - 24$ adalah ....",
-   "jawaban_benar": "$4x + 7$",
-   "alasan_benar": "Karena $x^2 - 2x - 24 = (x - 6)(x + 4)$, sisanya $S(x) = ax + b$. Teorema Sisa: $P(6) = 6a + b = 31$ dan $P(-4) = -4a + b = -9$. Pengurangan memberi $10a = 40$, $a = 4$, $b = 7$.",
-   "distraktor": [
-    {
-     "teks": "$20x - 89$",
-     "alasan": "memakai $P(4) = -9$ (salah tanda pembuat nol $x + 4$)"
-    },
-    {
-     "teks": "$-4x + 15$",
-     "alasan": "dua nilai sisa tertukar saat disubstitusikan"
-    },
-    {
-     "teks": "$4x - 7$",
-     "alasan": "benar $a = 4$ tetapi salah tanda saat mencari $b$ ($b = 31 - 24$)"
-    }
-   ],
-   "pembahasan": "$S(x) = ax + b$. $6a + b = 31$ dan $-4a + b = -9$ sehingga $a = 4$, $b = 7$. Jadi $S(x) = 4x + 7$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-005",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas11_tl-b02-p0094-latihan-c-7"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "Teorema Sisa dengan Horner (nilai pecahan)",
-   "alasan_level": "Horner empat langkah dengan $c$ pecahan negatif dan koefisien nol di tengah, hasil akhir = $P(c)$",
-   "stimulus": null,
-   "pertanyaan": "Misalkan $P(x) = 16x^4 + 8x^3 - 18x^2 + 7x - 13$ dan $c = -\\frac{1}{2}$. Dengan metode Horner dan Teorema Sisa, nilai $P(c)$ adalah ....",
-   "jawaban_benar": "$-21$",
-   "alasan_benar": "Horner $c = -\\frac{1}{2}$: $16$; $8 - 8 = 0$; $-18 + 0 = -18$; $7 + 9 = 16$; $-13 - 8 = -21$. Sisa terakhir $-21 = P(-\\frac{1}{2})$.",
-   "distraktor": [
-    {
-     "teks": "$-12$",
-     "alasan": "mensubstitusi $c = \\frac{1}{2}$ (salah tanda)"
-    },
-    {
-     "teks": "$93$",
-     "alasan": "mensubstitusi $c = -2$ (pecahan dibalik)"
-    },
-    {
-     "teks": "$-8$",
-     "alasan": "berhenti sebelum menjumlahkan konstanta terakhir $-13$"
-    }
-   ],
-   "pembahasan": "Horner dengan $c = -\\frac{1}{2}$ memberi baris $16, 0, -18, 16, -21$. Maka $P(-\\frac{1}{2}) = -21$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-006",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 92,
-    "bagian": "Mari Mencoba 2.9",
-    "nomor": "2.9",
-    "teks": "Jika P ( x ) = 3 x 5 – 20 x 4 – 6 x 3 – 48 x – 8 dibagi dengan x – 7, tentukan hasil bagi dan sisanya. Gunakan Teorema Sisa untuk mencari nilai P (7).",
-    "jawaban": "sisa 6; P(7) = 6"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Teorema Sisa dengan Horner (hasil bagi dan P(c))",
-   "alasan_level": "Horner lengkap pada polinomial berderajat 4 dengan $c$ negatif, lalu mengaitkan sisa dengan $P(c)$",
-   "stimulus": null,
-   "pertanyaan": "Jika $P(x) = 7x^4 + 15x^3 - 9x^2 + 6x - 11$ dibagi dengan $x + 2$, hasil bagi dan nilai $P(-2)$ yang diperoleh dengan Teorema Sisa berturut-turut adalah ....",
-   "jawaban_benar": "$7x^3 + x^2 - 11x + 28$ dan $-67$",
-   "alasan_benar": "$x + 2 = x - (-2)$. Horner $c = -2$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$, sisa $-67 = P(-2)$.",
-   "distraktor": [
-    {
-     "teks": "$7x^3 + 29x^2 + 49x + 104$ dan $197$",
-     "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
-    },
-    {
-     "teks": "$7x^3 + x^2 - 11x + 28$ dan $67$",
-     "alasan": "salah tanda pada sisa/nilai $P(-2)$"
-    },
-    {
-     "teks": "$7x^3 + x^2 - 11x + 28$ dan $28$",
-     "alasan": "mengambil konstanta hasil bagi sebagai nilai $P(-2)$"
-    }
-   ],
-   "pembahasan": "Horner $c = -2$ pada $7, 15, -9, 6, -11$: $7, 1, -11, 28, -67$. Hasil bagi $7x^3 + x^2 - 11x + 28$ dan sisa $-67$, sehingga $P(-2) = -67$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-007",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 86,
-    "bagian": "Contoh 2.7",
-    "nomor": "2.7",
-    "teks": "Bagilah 4 x 4 + 17 x 3 – 3 x + 1 dengan x 2 + 4 x – 1. Tuliskan hasilnya ke dalam bentuk-bentuk algoritma pembagian.",
-    "jawaban": "4x^4 + 17x^3 - 3x + 1 = (x^2 + 4x - 1)(4x^2 + x) - 2x + 1"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "pembagian bersusun",
-   "alasan_level": "pembagian bersusun berderajat 4 dengan suku $x^2$ yang hilang (disisipkan nol) dan penulisan hasil dalam bentuk $P = Q \\cdot H + S$",
-   "stimulus": null,
-   "pertanyaan": "Bagilah $5x^4 - 6x^3 + 8x - 9$ dengan $x^2 + 3x - 7$. Hasil pembagian yang ditulis dalam bentuk algoritma pembagian adalah ....",
-   "jawaban_benar": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x - 7)(5x^2 - 21x + 98) - 433x + 677$",
-   "alasan_benar": "Setelah menyisipkan $0x^2$, pembagian bersusun menghasilkan $H(x) = 5x^2 - 21x + 98$ dan $S(x) = -433x + 677$ sehingga $P = Q \\cdot H + S$.",
-   "distraktor": [
-    {
-     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x - 7)(5x^2 + 9x + 62) + 257x + 425$",
-     "alasan": "tanda suku $x$ pembagi terbalik ($x^2 - 3x - 7$)"
-    },
-    {
-     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 + 3x + 7)(5x^2 - 21x + 28) + 71x - 205$",
-     "alasan": "tanda konstanta pembagi terbalik ($x^2 + 3x + 7$)"
-    },
-    {
-     "teks": "$5x^4 - 6x^3 + 8x - 9 = (x^2 - 3x + 7)(5x^2 + 9x - 8) - 79x + 47$",
-     "alasan": "kedua tanda pembagi terbalik ($x^2 - 3x + 7$)"
-    }
-   ],
-   "pembahasan": "Bagi bersusun $5x^4 - 6x^3 + 0x^2 + 8x - 9$ oleh $x^2 + 3x - 7$: $H = 5x^2 - 21x + 98$, $S = -433x + 677$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-008",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 88,
-    "bagian": "Contoh 2.8",
-    "nomor": "2.8",
-    "teks": "Gunakan metode Horner untuk membagi 2 x 3 + 5 x 2 + 6 dengan x + 3.",
-    "jawaban": "hasil bagi 2x^2 - x + 3, sisa -3"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Horner: hasil bagi dan sisa",
-   "alasan_level": "Horner berderajat 4 dengan dua koefisien nol ($x^3$ dan $x$) dan $c = -2$",
-   "stimulus": null,
-   "pertanyaan": "Gunakan metode Horner untuk membagi $3x^4 + 7x^2 - 8$ dengan $x + 2$. Hasil baginya adalah ....",
-   "jawaban_benar": "$3x^3 - 6x^2 + 19x - 38$",
-   "alasan_benar": "Koefisien $3, 0, 7, 0, -8$ dengan $c = -2$ menghasilkan baris $3, -6, 19, -38, 68$. Empat angka pertama adalah koefisien hasil bagi, $68$ sisanya.",
-   "distraktor": [
-    {
-     "teks": "$3x^3 + 6x^2 + 19x + 38$",
-     "alasan": "memakai $c = 2$ padahal pembagi $x + 2$ berarti $c = -2$"
-    },
-    {
-     "teks": "$3x^2 - 6x + 19$",
-     "alasan": "lupa koefisien nol untuk $x$ sehingga hanya empat koefisien ($3, 0, 7, -8$) dihitung"
-    },
-    {
-     "teks": "$3x^3 - 6x^2 + 19x + 68$",
-     "alasan": "mengambil sisa $68$ sebagai suku konstan hasil bagi"
-    }
-   ],
-   "pembahasan": "Baris Horner: $3$; $0 - 6 = -6$; $7 + 12 = 19$; $0 - 38 = -38$; $-8 + 76 = 68$. Hasil bagi $3x^3 - 6x^2 + 19x - 38$, sisa $68$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-009",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 87,
-    "bagian": "Mari Berpikir Kreatif",
-    "nomor": "1",
-    "teks": "Tentukan hasil bagi dan sisa pembagian ( x 3 – 1) : ( x – 1).",
-    "jawaban": "hasil bagi x^2 + x + 1, sisa 0"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Horner: hasil bagi dan sisa",
-   "alasan_level": "Horner lima koefisien dengan empat koefisien nol, sisa tidak nol",
-   "stimulus": null,
-   "pertanyaan": "Hasil bagi dan sisa pembagian $(x^5 - 7) : (x - 2)$ adalah ....",
-   "jawaban_benar": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$",
-   "alasan_benar": "Koefisien $1, 0, 0, 0, 0, -7$ dengan $c = 2$ memberi baris $1, 2, 4, 8, 16, 25$. Lima angka pertama hasil bagi, angka terakhir sisa.",
-   "distraktor": [
-    {
-     "teks": "hasil bagi $x^4 - 2x^3 + 4x^2 - 8x + 16$, sisa $-39$",
-     "alasan": "memakai $c = -2$ padahal pembagi $x - 2$ berarti $c = 2$"
-    },
-    {
-     "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $16$",
-     "alasan": "mengambil koefisien terakhir hasil bagi sebagai sisa"
-    },
-    {
-     "teks": "hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $-7$",
-     "alasan": "mengira konstanta polinomial menjadi sisa tanpa dihitung"
-    }
-   ],
-   "pembahasan": "Horner $c = 2$: $1, 2, 4, 8, 16, 25$. Hasil bagi $x^4 + 2x^3 + 4x^2 + 8x + 16$, sisa $25$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-010",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 92,
-    "kutipan": "juga berlaku jika pembaginya"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Teorema Sisa pembagi ax - b",
-   "alasan_level": "menyadari pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$ lalu mensubstitusikan pada polinomial kubik",
-   "stimulus": null,
-   "pertanyaan": "Sisa pembagian $P(x) = 8x^3 + 10x^2 - 5x + 7$ oleh $2x + 3$ adalah ....",
-   "jawaban_benar": "$10$",
-   "alasan_benar": "Pembuat nol $2x + 3$ adalah $x = -\\frac{3}{2}$, sehingga sisa $= P(-\\frac{3}{2}) = -27 + \\frac{45}{2} + \\frac{15}{2} + 7 = 10$.",
-   "distraktor": [
-    {
-     "teks": "$49$",
-     "alasan": "mensubstitusi $x = \\frac{3}{2}$ (salah tanda pembuat nol)"
-    },
-    {
-     "teks": "$-104$",
-     "alasan": "mensubstitusi $x = -3$ tanpa membagi dengan koefisien $2$"
-    },
-    {
-     "teks": "$298$",
-     "alasan": "mensubstitusi $x = 3$ (salah tanda dan tidak dibagi $2$)"
-    }
-   ],
-   "pembahasan": "$2x + 3 = 0$ memberi $x = -\\frac{3}{2}$. $P(-\\frac{3}{2}) = 8(-\\frac{27}{8}) + 10(\\frac{9}{4}) - 5(-\\frac{3}{2}) + 7 = -27 + 22,5 + 7,5 + 7 = 10$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-011",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 91,
-    "kutipan": "selalu sama dengan nilai"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "parameter Teorema Sisa (satu syarat)",
-   "alasan_level": "membentuk persamaan $P(-2) = 25$ dari Teorema Sisa lalu menyelesaikannya untuk $k$",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $P(x) = 2x^3 + kx^2 - 5x + 7$ jika dibagi $x + 2$ bersisa $25$. Nilai $k$ yang memenuhi adalah ....",
-   "jawaban_benar": "$6$",
-   "alasan_benar": "Teorema Sisa: $P(-2) = 2(-8) + 4k + 10 + 7 = 4k + 1 = 25$, sehingga $k = 6$.",
-   "distraktor": [
-    {
-     "teks": "$3$",
-     "alasan": "mensubstitusi $x = 2$ padahal pembagi $x + 2$ berarti $x = -2$"
-    },
-    {
-     "teks": "$12$",
-     "alasan": "menghitung $kx^2$ di $x = -2$ sebagai $2k$ (lupa mengkuadratkan)"
-    },
-    {
-     "teks": "$11$",
-     "alasan": "salah tanda pada suku $-5x$: $-5(-2)$ dihitung $-10$"
-    }
-   ],
-   "pembahasan": "$P(-2) = -16 + 4k + 10 + 7 = 4k + 1$. Dari $4k + 1 = 25$ diperoleh $k = 6$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-012",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 91,
-    "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "parameter Teorema Sisa (dua syarat)",
-   "alasan_level": "dua persamaan dari Teorema Sisa dengan pembuat nol berbeda tanda lalu menyelesaikan sistem dua variabel",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $P(x) = x^3 + ax^2 + bx - 8$ jika dibagi $x - 2$ bersisa $2$ dan jika dibagi $x + 3$ bersisa $7$. Nilai $a \\cdot b$ adalah ....",
-   "jawaban_benar": "$-15$",
-   "alasan_benar": "$P(2) = 4a + 2b = 2$ atau $2a + b = 1$. $P(-3) = -35 + 9a - 3b = 7$ atau $3a - b = 14$. Penjumlahan: $5a = 15$, $a = 3$, $b = -5$, sehingga $ab = -15$.",
-   "distraktor": [
-    {
-     "teks": "$-55$",
-     "alasan": "memakai $x = 3$ untuk pembagi $x + 3$ sehingga $a = -5$, $b = 11$"
-    },
-    {
-     "teks": "$-2$",
-     "alasan": "menghitung $a + b$, bukan $a \\cdot b$"
-    },
-    {
-     "teks": "$8$",
-     "alasan": "menghitung $a - b$, bukan $a \\cdot b$"
-    }
-   ],
-   "pembahasan": "$P(2) = 8 + 4a + 2b - 8 = 2$ sehingga $2a + b = 1$. $P(-3) = -27 + 9a - 3b - 8 = 7$ sehingga $3a - b = 14$. Maka $a = 3$, $b = -5$, $ab = -15$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-013",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 89,
-    "kutipan": "dapat menuliskannya menjadi bentuk berikut"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "menyusun polinomial dari hasil pembagian",
-   "alasan_level": "menyusun $P = (x - c) \\cdot H + S$ dengan pembagi $x + 2$, menjabarkan, lalu menambah sisa",
-   "stimulus": null,
-   "pertanyaan": "Pembagian polinomial $P(x)$ oleh $x + 2$ dengan metode Horner menghasilkan hasil bagi $2x^2 - 3x + 5$ dan sisa $4$. Polinomial $P(x)$ adalah ....",
-   "jawaban_benar": "$2x^3 + x^2 - x + 14$",
-   "alasan_benar": "$P(x) = (x + 2)(2x^2 - 3x + 5) + 4 = 2x^3 + x^2 - x + 10 + 4 = 2x^3 + x^2 - x + 14$.",
-   "distraktor": [
-    {
-     "teks": "$2x^3 + x^2 - x + 10$",
-     "alasan": "lupa menambahkan sisa $4$"
-    },
-    {
-     "teks": "$2x^3 - 7x^2 + 11x - 6$",
-     "alasan": "memakai pembagi $x - 2$ padahal pembagi sebenarnya $x + 2$"
-    },
-    {
-     "teks": "$2x^3 + x^2 - x + 6$",
-     "alasan": "mengurangkan sisa, bukan menambahkan"
-    }
-   ],
-   "pembahasan": "$(x + 2)(2x^2 - 3x + 5) = 2x^3 + x^2 - x + 10$. Tambah sisa $4$: $2x^3 + x^2 - x + 14$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-014",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 93,
-    "kutipan": "derajat sisa pembagiannya selalu kurang dari derajat"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "konsep derajat hasil bagi dan sisa",
-   "alasan_level": "menurunkan derajat pembagi dari derajat $P$ dan hasil bagi, lalu menyimpulkan batas derajat sisa",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $P(x)$ berderajat $11$ dibagi $Q(x)$ sehingga hasil baginya berderajat $7$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $3$",
-   "alasan_benar": "Derajat $P$ = derajat $Q$ + derajat hasil bagi, sehingga derajat $Q = 11 - 7 = 4$. Sisa berderajat kurang dari $4$, yaitu paling tinggi $3$.",
-   "distraktor": [
-    {
-     "teks": "$Q(x)$ berderajat $4$ dan sisa paling tinggi berderajat $4$",
-     "alasan": "mengira sisa boleh berderajat sama dengan pembagi"
-    },
-    {
-     "teks": "$Q(x)$ berderajat $18$ dan sisa paling tinggi berderajat $17$",
-     "alasan": "menjumlahkan derajat, bukan mengurangkan"
-    },
-    {
-     "teks": "$Q(x)$ berderajat $5$ dan sisa paling tinggi berderajat $4$",
-     "alasan": "salah hitung derajat pembagi ($11 - 7 + 1$)"
-    }
-   ],
-   "pembahasan": "$11 = \\deg Q + 7$ sehingga $\\deg Q = 4$. Sisa nol atau berderajat kurang dari $4$, jadi paling tinggi $3$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-015",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 86,
-    "kutipan": "Proses pembagian tersebut menyisakan polinomial"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "bentuk algoritma pembagian",
-   "alasan_level": "menjabarkan $Q \\cdot H$ lalu mengurangkannya dari $P$ untuk mendapat sisa, tiga langkah aljabar",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $P(x) = 2x^3 - 5x^2 + 9x - 4$ dibagi $Q(x) = x^2 + 2x - 3$ dengan hasil bagi $H(x) = 2x - 9$. Sisa pembagian tersebut adalah ....",
-   "jawaban_benar": "$33x - 31$",
-   "alasan_benar": "$Q \\cdot H = 2x^3 - 5x^2 - 24x + 27$. Sisa $S = P - Q \\cdot H = (9 + 24)x + (-4 - 27) = 33x - 31$.",
-   "distraktor": [
-    {
-     "teks": "$33x + 23$",
-     "alasan": "salah tanda saat mengurangkan konstanta ($-4 + 27$)"
-    },
-    {
-     "teks": "$-15x - 31$",
-     "alasan": "salah tanda saat mengurangkan suku $x$ ($9 - 24$)"
-    },
-    {
-     "teks": "$-33x + 31$",
-     "alasan": "mengurangkan terbalik: $Q \\cdot H - P$"
-    }
-   ],
-   "pembahasan": "$Q \\cdot H = 2x^3 + 4x^2 - 6x - 9x^2 - 18x + 27 = 2x^3 - 5x^2 - 24x + 27$. $S = P - QH = 33x - 31$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-016",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 88,
-    "kutipan": "Dalam metode Horner, jika polinomial pembaginya"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "analisis kesalahan Horner",
-   "alasan_level": "menemukan kesalahan pemilihan $c$ pada pekerjaan yang diberikan, lalu menghitung ulang dengan benar",
-   "stimulus": null,
-   "pertanyaan": "Dina membagi $x^3 + 5x - 3$ oleh $x + 2$ dengan metode Horner. Ia menuliskan koefisien $1, 0, 5, -3$ dan memakai $c = 2$, sehingga memperoleh baris $1, 2, 9, 15$ dan menyimpulkan sisanya $15$. Sisa pembagian yang benar adalah ....",
-   "jawaban_benar": "$-21$",
-   "alasan_benar": "Pembagi $x + 2 = x - (-2)$ sehingga $c = -2$ (kesalahan Dina). Horner: $1, -2, 9, -21$, sisa $-21$.",
-   "distraktor": [
-    {
-     "teks": "$15$",
-     "alasan": "mengikuti pekerjaan Dina yang memakai $c = 2$"
-    },
-    {
-     "teks": "$21$",
-     "alasan": "salah tanda pada sisa"
-    },
-    {
-     "teks": "$-9$",
-     "alasan": "menghilangkan koefisien nol $x^2$ sehingga hanya $1, 5, -3$ yang dihitung"
-    }
-   ],
-   "pembahasan": "Dengan $c = -2$: $1$; $0 + (-2)(1) = -2$; $5 + (-2)(-2) = 9$; $-3 + (-2)(9) = -21$. Sisa $-21$. Cek: $P(-2) = -8 - 10 - 3 = -21$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-017",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 86,
-    "kutipan": "yang derajatnya kurang dari polinomial pembagi"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "soal cerita pembagian polinomial",
-   "alasan_level": "memodelkan luas alas sebagai volume dibagi tinggi, membagi dengan Horner, lalu mensubstitusi nilai $x$",
-   "stimulus": null,
-   "pertanyaan": "Volume sebuah balok adalah $V(x) = x^3 + 4x^2 - 11x - 30$ cm$^3$ dan tingginya $(x - 3)$ cm. Jika $x = 6$, luas alas balok tersebut adalah .... cm$^2$.",
-   "jawaban_benar": "$88$",
-   "alasan_benar": "Luas alas $= V(x) : (x - 3)$. Horner $c = 3$ pada $1, 4, -11, -30$ memberi $1, 7, 10, 0$, sehingga luas alas $x^2 + 7x + 10$. Untuk $x = 6$: $36 + 42 + 10 = 88$.",
-   "distraktor": [
-    {
-     "teks": "$264$",
-     "alasan": "menghitung volume $V(6)$, bukan luas alas"
-    },
-    {
-     "teks": "$28$",
-     "alasan": "memakai $c = -3$ pada Horner sehingga luas alas menjadi $x^2 + x - 14$"
-    },
-    {
-     "teks": "$40$",
-     "alasan": "mensubstitusi $x = 3$ (pembuat nol tinggi) ke $x^2 + 7x + 10$"
-    }
-   ],
-   "pembahasan": "$V = (\\text{luas alas})(\\text{tinggi})$. Horner $c = 3$: $1, 7, 10, 0$; luas alas $x^2 + 7x + 10$. Di $x = 6$: $88$ cm$^2$ (cek $264 : 3 = 88$).",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-018",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 91,
-    "kutipan": "Berdasarkan Teorema Sisa, nilai"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Teorema Sisa dari bentuk algoritma",
-   "alasan_level": "mengenali bahwa sisa terhadap pembagi yang berbeda ($x - 2$) harus dicari lewat $P(2)$, bukan dibaca dari bentuk algoritma",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $P(x) = (x + 4)(x^2 - 3x + 6) - 7$. Sisa pembagian $P(x)$ oleh $x - 2$ adalah ....",
-   "jawaban_benar": "$17$",
-   "alasan_benar": "Menurut Teorema Sisa, sisa $= P(2) = (6)(4 - 6 + 6) - 7 = 24 - 7 = 17$.",
-   "distraktor": [
-    {
-     "teks": "$-7$",
-     "alasan": "mengira sisa pembagian oleh $x - 2$ adalah suku konstan bentuk algoritma yang diberikan"
-    },
-    {
-     "teks": "$25$",
-     "alasan": "mensubstitusi $x = -2$ (salah tanda pembuat nol)"
-    },
-    {
-     "teks": "$24$",
-     "alasan": "lupa mengurangkan $7$ setelah mengalikan $(x + 4)$ dengan hasil bagi"
-    }
-   ],
-   "pembahasan": "$P(2) = (2 + 4)(4 - 6 + 6) - 7 = 6 \\cdot 4 - 7 = 17$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-019",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 86,
-    "kutipan": "agar suku-sukunya lengkap"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "pembagian bersusun",
-   "alasan_level": "pembagian bersusun oleh pembagi tanpa suku $x$ dengan suku $x^3$ yang hilang, tiga langkah pengurangan",
-   "stimulus": null,
-   "pertanyaan": "Hasil bagi dan sisa pembagian $x^4 - 3x^2 + 7x - 5$ oleh $x^2 - 2$ adalah ....",
-   "jawaban_benar": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 7$",
-   "alasan_benar": "$x^2 \\cdot (x^2 - 2) = x^4 - 2x^2$ menyisakan $-x^2 + 7x - 5$ (dengan $0x^3$). $-1 \\cdot (x^2 - 2) = -x^2 + 2$ menyisakan $7x - 7$.",
-   "distraktor": [
-    {
-     "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 3$",
-     "alasan": "salah tanda saat mengurangkan konstanta ($-5 - 2$ dihitung $-5 + 2$)"
-    },
-    {
-     "teks": "$H(x) = x^2 - 1$ dan $S(x) = 7x - 5$",
-     "alasan": "lupa mengurangkan hasil kali $-1 \\cdot (-2)$ pada konstanta"
-    },
-    {
-     "teks": "$H(x) = 7x - 7$ dan $S(x) = x^2 - 1$",
-     "alasan": "hasil bagi dan sisa tertukar"
-    }
-   ],
-   "pembahasan": "Bentuk lengkap $x^4 + 0x^3 - 3x^2 + 7x - 5$. $H = x^2 - 1$, $S = 7x - 7$. Cek: $(x^2 - 2)(x^2 - 1) + 7x - 7 = x^4 - 3x^2 + 2 + 7x - 7$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas11_tl-b02-c-medium-bt01-020",
-   "tipe_generate": "orisinal",
-   "variasi_cara": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 89,
-    "kutipan": "menjumlahkan bilangan-bilangan dalam satu kolom"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "Horner: koefisien hasil bagi",
-   "alasan_level": "menjalankan Horner empat koefisien (satu bernilai nol) lalu memilih koefisien $x$ pada hasil bagi, bukan sisa",
-   "stimulus": null,
-   "pertanyaan": "Polinomial $3x^4 - 11x^3 + 9x - 8$ dibagi $x - 4$ dengan metode Horner. Koefisien $x$ pada hasil bagi adalah ....",
-   "jawaban_benar": "$4$",
-   "alasan_benar": "Koefisien $3, -11, 0, 9, -8$ dengan $c = 4$ memberi baris $3, 1, 4, 25, 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$, sisa $92$. Koefisien $x$ adalah $4$.",
-   "distraktor": [
-    {
-     "teks": "$25$",
-     "alasan": "mengambil suku konstan hasil bagi"
-    },
-    {
-     "teks": "$92$",
-     "alasan": "mengambil sisa sebagai koefisien $x$"
-    },
-    {
-     "teks": "$1$",
-     "alasan": "mengambil koefisien $x^2$ pada hasil bagi"
-    }
-   ],
-   "pembahasan": "Horner $c = 4$: $3$; $-11 + 12 = 1$; $0 + 4 = 4$; $9 + 16 = 25$; $-8 + 100 = 92$. Hasil bagi $3x^3 + x^2 + 4x + 25$.",
-   "catatan": null
-  }
- ]
+  ]
 }

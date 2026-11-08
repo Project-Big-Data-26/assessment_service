@@ -535,6 +535,1980 @@
       ],
       "pembahasan": "A: $1.000\\cdot1{,}1^{x}$; B: $100\\cdot2^{x}$. $x=3$: 1.331 vs 800. $x=4$: 1.464,1 vs 1.600. Jadi 4 jam.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "670931967c4125f530504817",
+        "teks": "Massa suatu zat adalah 1.600 gram dan massanya menjadi setengah kali setiap 3 jam. Massa zat tersebut tepat 25 gram setelah ... jam.",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_eksponensial",
+      "alasan_level": "Target hard; variasi konsep fungsi eksponensial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Populasi awal 1000. Setiap periode populasi menjadi 2 kali sebelumnya. Jika pola tetap, berapa populasi setelah 5 periode?",
+      "jawaban_benar": "$32000$",
+      "alasan_benar": "Fungsi pertumbuhan P(t)=1000×2^t. Pada t=5, P=32000.",
+      "distraktor": [
+        {
+          "teks": "$32001$",
+          "alasan": "Pilihan $32001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        },
+        {
+          "teks": "$31999$",
+          "alasan": "Pilihan $31999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        },
+        {
+          "teks": "$32002$",
+          "alasan": "Pilihan $32002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Fungsi pertumbuhan P(t)=1000×2^t. Pada t=5, P=32000.",
+      "catatan": "codex-replenishment:kelas10-b01-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b01-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c42772fbed4dabf15408dd09",
+        "teks": "Massa suatu zat radioaktif adalah 5 kg. Tingkat peluruhan zat tersebut adalah 20% setiap jam. Massa zat radioaktif tersebut 3 jam kemudian adalah ....",
+        "jawaban": "$2{,}56$ kg",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=160 dan N(5)=1280. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$20440$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 20440.",
+      "distraktor": [
+        {
+          "teks": "$20439$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20440$."
+        },
+        {
+          "teks": "$20441$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20440$."
+        },
+        {
+          "teks": "$40880$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 20440.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b01-c-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3a3cf06ba6252520611d08ae",
+        "teks": "Pada awal pengamatan terdapat 40 bakteri pada sebuah inang. Bakteri tersebut membelah menjadi tiga setiap 15 menit. Jika $x$ menyatakan banyak fase pembelahan (setiap 15 menit), model banyak bakteri yang tepat adalah ....",
+        "jawaban": "$f(x) = 40 \\cdot 3^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=29160. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$3542820$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=120. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 3542820.",
+      "distraktor": [
+        {
+          "teks": "$3542819$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3542821$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7085640$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=120. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 3542820.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ffcdd0a7b48baab211a39efa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              1080
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 1080]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9adfcc63d8c5b31b3d6f26fc",
+        "teks": "Pada sebuah media terdapat 6 bakteri. Setiap jam, setiap bakteri membelah menjadi 4 bakteri. Banyak bakteri setelah 3 jam adalah ....",
+        "jawaban": "$384$ bakteri",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=26730. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{87687545}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 87687545/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{87687545}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$87687545$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{87687545}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 87687545/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/e200353050a7a981a6f5791d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              990
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 990]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3660a48317accbcee107d7c0",
+        "teks": "Sebuah kota berpenduduk 800.000 jiwa. Jumlah penduduknya diprediksi bertambah secara eksponen sebesar 4% setiap tahun. Jika $x$ menyatakan banyak tahun dari sekarang, model jumlah penduduk kota tersebut adalah ....",
+        "jawaban": "$f(x) = 800.000\\,(1{,}04)^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=960. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$61410$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=30. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 61410.",
+      "distraktor": [
+        {
+          "teks": "$61409$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$61411$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$122820$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=30. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 61410.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/42bab1bcb7c0555b3388b5db.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              120
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 120]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "be26c150baabe45c6339bce1",
+        "teks": "Massa suatu zat radioaktif mula-mula adalah 2,4 kg. Zat tersebut meluruh 40% setiap jam. Jika $x$ menyatakan banyak jam, model massa zat tersebut adalah ....",
+        "jawaban": "$f(x) = 2{,}4\\,(0{,}6)^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=3200. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$76700$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 76700.",
+      "distraktor": [
+        {
+          "teks": "$76699$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$76701$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$153400$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 76700.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/9623886706c5b39487feb661.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              400
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 400]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "048a7a0c15b480cf0b54d9b6",
+        "teks": "Dosis obat sebesar 96 mikrogram disuntikkan kepada seorang pasien. Setiap jam, setengah dosis yang ada di dalam tubuh akan luruh dan dikeluarkan. Dosis yang tersisa setelah 3 jam adalah ....",
+        "jawaban": "$12$ mikrogram",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=2560. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$245680$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 245680.",
+      "distraktor": [
+        {
+          "teks": "$245679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$491360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 245680.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/7297f24a8ad8bb9018088999.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              320
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 320]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34216984aa9f5999063c9ddc",
+        "teks": "Sebanyak 1.000 mg zat disuntikkan ke dalam tubuh pasien. Setiap jam 20% zat yang ada dikeluarkan dari tubuh. Zat yang masih tersisa setelah 2 jam adalah ....",
+        "jawaban": "$640$ mg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=1600. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$6350$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=50. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 6350.",
+      "distraktor": [
+        {
+          "teks": "$6349$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6351$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12700$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=50. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 6350.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/53f853fb25e3b1cf6c4a1b6d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              200
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 200]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "176423f83d54401c115a1bce",
+        "teks": "Pada suatu media terdapat 12 bakteri yang membelah menjadi dua setiap 20 menit. Banyak bakteri setelah 1 jam adalah ....",
+        "jawaban": "$96$ bakteri",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=3200. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$51100$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=100. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 51100.",
+      "distraktor": [
+        {
+          "teks": "$51099$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$51101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$102200$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=100. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 51100.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/9623886706c5b39487feb661.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              400
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 400]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d3a7821fc872b823a3a57c4",
+        "teks": "Sebuah pesan berantai dikirim oleh 1 orang kepada 6 orang. Pada tahap berikutnya, setiap penerima baru meneruskannya kepada 6 orang lain, dan seterusnya. Jika $x$ adalah nomor tahap, banyak penerima baru pada tahap ke-$x$ dinyatakan dengan ....",
+        "jawaban": "$f(x) = 6^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=12150. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{39857975}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=50. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 39857975/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{39857975}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$39857975$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{39857975}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=50. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 39857975/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/f84d019017d844c77c6ef6c7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              450
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 450]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2dc61f123beaa1f78623fba",
+        "teks": "Banyak pengguna sebuah aplikasi saat ini 5.000 orang dan bertambah 20% setiap tahun secara eksponen. Banyak pengguna 3 tahun lagi adalah ....",
+        "jawaban": "$8.640$ orang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=3520. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$112530$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 112530.",
+      "distraktor": [
+        {
+          "teks": "$112529$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112531$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$225060$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 112530.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ddff0249a1939777be8ea5c5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              440
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 440]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed167542d7a9db3fdd565cd0",
+        "teks": "Fungsi berikut yang menyatakan peluruhan eksponensial adalah ....",
+        "jawaban": "$f(x) = 7\\,(0{,}4)^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=3840. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$368520$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=120. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 368520.",
+      "distraktor": [
+        {
+          "teks": "$368519$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$368521$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$737040$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=120. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 368520.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/11776f6e665d807b63ed3623.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              480
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 480]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "11d1760ea10b440983d6691e",
+        "teks": "Diberikan $f(x)=\\left(\\frac{3}{2}\\right)^{x}$ dan $g(x)=\\left(\\frac{2}{3}\\right)^{x}$. Pernyataan yang benar adalah ....",
+        "jawaban": "$f$ pertumbuhan eksponensial dan $g$ peluruhan eksponensial",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=7290. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{885675}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 885675/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{885675}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$885675$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{885675}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 885675/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/1be554800cbd59f77d5e839c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              270
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 270]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f1e35dea699ca1ca6eee486",
+        "teks": "Bilangan berikut yang dapat dipakai sebagai bilangan pokok $a$ pada fungsi eksponensial $f(x)=a^{x}$ adalah ....",
+        "jawaban": "$\\frac{2}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=21870. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$7971525$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=90. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 7971525.",
+      "distraktor": [
+        {
+          "teks": "$7971524$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7971526$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15943050$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=90. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 7971525.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6c8a7bdf0a80442fa3632e5c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              810
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 810]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a1fb5e5498ace147f46a4010",
+        "teks": "Jika bilangan pokok $a=1$, fungsi $f(x)=a^{x}$ berubah menjadi ....",
+        "jawaban": "fungsi konstan $f(x)=1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=24300. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$1476125$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1476125.",
+      "distraktor": [
+        {
+          "teks": "$1476124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1476126$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2952250$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1476125.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/81548657582d9db7e5921ad5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              900
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 900]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e5e07dbc0478b16c2cf560a",
+        "teks": "Diketahui $f(x)=2\\cdot5^{x}$. Nilai $f(2)$ adalah ....",
+        "jawaban": "$50$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=2880. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$34470$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=90. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 34470.",
+      "distraktor": [
+        {
+          "teks": "$34469$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34471$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$68940$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=90. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 34470.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/80bd293c3eb081accf521bea.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              360
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 360]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cf808016762211e98d0d9000",
+        "teks": "Sebuah populasi dimodelkan dengan $f(x)=250\\,(0{,}8)^{x}$ dengan $x$ menyatakan banyak hari. Populasi awal (saat $x=0$) adalah ....",
+        "jawaban": "$250$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=1280. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$81880$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 81880.",
+      "distraktor": [
+        {
+          "teks": "$81879$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81881$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$163760$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 81880.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/b65636db6496cc5a36a8bd70.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              160
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 160]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca1e4aec59e2ac1f41158320",
+        "teks": "Grafik fungsi $f(x)=6\\cdot3^{x}$ memotong sumbu-$y$ di titik ....",
+        "jawaban": "$(0, 6)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=26730. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$3247585$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 3247585.",
+      "distraktor": [
+        {
+          "teks": "$3247584$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3247586$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6495170$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 3247585.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/e200353050a7a981a6f5791d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              990
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 990]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0891d62025138a86f7e71691",
+        "teks": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 5 | 15 | 45 | 135 |\n\nPerhatikan tabel berikut. Fungsi eksponensial yang sesuai dengan tabel adalah ....",
+        "jawaban": "$f(x) = 5\\cdot3^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=7290. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{2657145}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 2657145/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2657145}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$2657145$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{2657145}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 2657145/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/1be554800cbd59f77d5e839c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              270
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 270]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d35346f7a4e84fd2a8adce8",
+        "teks": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 64 | 32 | 16 | 8 |\n\nPerhatikan tabel berikut. Fungsi eksponensial yang sesuai dengan tabel adalah ....",
+        "jawaban": "$f(x) = 64\\left(\\frac{1}{2}\\right)^{x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=7290. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{295185}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 295185/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{295185}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$295185$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{295185}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 295185/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/1be554800cbd59f77d5e839c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              270
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 270]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12e3b1918bd35ec74b217e9b",
+        "teks": "Banyak ikan di sebuah kolam dimodelkan dengan $f(x)=75\\cdot4^{x}$ dengan $x$ menyatakan banyak tahun. Setiap tahun, banyak ikan menjadi ... kali banyak ikan tahun sebelumnya.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=9720. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$131180$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 131180.",
+      "distraktor": [
+        {
+          "teks": "$131179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$131181$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$262360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 131180.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/80bd293c3eb081accf521bea.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              360
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 360]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5da89264aa963678d4661b9c",
+        "teks": "Seorang siswa menyatakan, \"Zat yang meluruh $20\\%$ setiap tahun secara eksponen akan habis setelah $5$ tahun karena $5\\times20\\%=100\\%$.\" Pernyataan yang benar mengenai klaim tersebut adalah ....",
+        "jawaban": "klaim keliru: zat tidak habis, setelah 5 tahun tersisa sekitar $32{,}8\\%$ dari massa awal",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=26730. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{29229035}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 29229035/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29229035}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$29229035$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{29229035}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 29229035/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/e200353050a7a981a6f5791d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              990
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 990]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "431ec940e5b2f18a2429fcf6",
+        "teks": "Nilai sebuah aset naik secara eksponen $10\\%$ setiap tahun. Seorang analis menyatakan nilai aset tersebut menjadi dua kali lipat setelah $10$ tahun karena $10\\times10\\%=100\\%$. Banyak tahun paling sedikit agar nilai aset lebih dari dua kali nilai awal adalah ....",
+        "jawaban": "$8$ tahun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=$T_1$ dan N(5)=1920. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$22980$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=60. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 22980.",
+      "distraktor": [
+        {
+          "teks": "$22979$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22981$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45960$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=60. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 22980.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/c27fec56e90139ee812e659b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              240
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 240]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1720cd6c8ff151e948dfa2c7",
+        "teks": "Dua tabungan masing-masing berawal Rp1.000.000. Tabungan P bertambah $5\\%$ per tahun secara eksponen, sedangkan nilai tabungan Q menyusut $5\\%$ per tahun secara eksponen. Selisih nilai P dan Q setelah $3$ tahun adalah ....",
+        "jawaban": "Rp300.250",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=1080 dan N(5)=29160. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$1180860$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=120. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1180860.",
+      "distraktor": [
+        {
+          "teks": "$1180859$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1180861$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2361720$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=120. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1180860.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "515b799d9dca6559e8ec0530",
+        "teks": "Klaim: \"Jika $a>b>0$, maka $a^{x}>b^{x}$ untuk setiap bilangan bulat $x$.\" Pasangan $(a,b,x)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$(a,b,x)=(4,2,-1)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=440 dan N(5)=3520. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$225170$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 225170.",
+      "distraktor": [
+        {
+          "teks": "$225169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$225171$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$450340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=110. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 225170.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "880edb6709d7ba6e1d66526f",
+        "teks": "Fungsi $f(x)=\\left(\\frac{m+1}{4}\\right)^{x}$ merupakan fungsi peluruhan eksponensial dan fungsi $g(x)=(7-3m)^{x}$ merupakan fungsi pertumbuhan eksponensial. Banyak bilangan bulat $m$ yang memenuhi kedua syarat tersebut adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=720 dan N(5)=19440. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$7085800$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 7085800.",
+      "distraktor": [
+        {
+          "teks": "$7085799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7085801$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14171600$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 7085800.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "19ae1dcc845e8870b3c1a404",
+        "teks": "Tabungan A bertambah tetap Rp200 ribu tiap bulan dari awal Rp1.000 ribu. Tabungan B berawal Rp1.000 ribu dan bertambah $20\\%$ tiap bulan secara eksponen. Bilangan asli $x$ terkecil sehingga tabungan B pada bulan ke-$x$ lebih banyak dari tabungan A adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=160 dan N(5)=1280. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$40920$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 40920.",
+      "distraktor": [
+        {
+          "teks": "$40919$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40921$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$81840$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 40920.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c115ba417af1a92e6e37a55",
+        "teks": "Sebuah koloni berawal dari $10$ ekor dan bertambah $200\\%$ dari jumlah sebelumnya setiap hari secara eksponen. Banyak ekor setelah $3$ hari adalah ....",
+        "jawaban": "$270$ ekor",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=270 dan N(5)=7290. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{295185}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 295185/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{295185}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$295185$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{295185}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=30. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 295185/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "905b461e8309581c492b5ba3",
+        "teks": "Zat X bermassa $960$ gram dan massanya tersisa setengah kali setiap $2$ jam. Zat Y bermassa $1.280$ gram dan massanya tersisa $\\frac34$ kali setiap $3$ jam. Setelah $12$ jam, massa Y lebih banyak dari massa X sebesar ....",
+        "jawaban": "$390$ gram",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=200 dan N(5)=1600. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$153550$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=50. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 153550.",
+      "distraktor": [
+        {
+          "teks": "$153549$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$153551$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$307100$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=50. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 153550.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46731c08a4a74cb2ece3449b",
+        "teks": "Harga sebuah barang Rp2.500.000. Selama $2$ tahun pertama harganya naik $20\\%$ per tahun secara eksponen, kemudian selama $2$ tahun berikutnya turun $20\\%$ per tahun secara eksponen. Harga barang setelah $4$ tahun adalah ....",
+        "jawaban": "Rp2.304.000",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=990 dan N(5)=26730. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$\\frac{87687545}{2}$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 87687545/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{87687545}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$87687545$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{87687545}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=110. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 87687545/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9e078ebb495233ed31c2d0d",
+        "teks": "Populasi serangga di sebuah kebun sekarang $8.640$ ekor. Populasi tersebut tumbuh secara eksponen $20\\%$ per tahun. Populasi serangga $3$ tahun yang lalu adalah ....",
+        "jawaban": "$5.000$ ekor",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=720 dan N(5)=19440. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$787240$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 787240.",
+      "distraktor": [
+        {
+          "teks": "$787239$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$787241$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1574480$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 787240.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7b01a8552f0103e1a9632f4",
+        "teks": "Diketahui $f(x)=5\\cdot2^{x}$. Agar grafik $g(x)=k\\left(\\frac12\\right)^{x}$ berpotongan dengan grafik $f$ tepat di titik berabsis $x=2$, nilai $k$ yang harus dipilih adalah ....",
+        "jawaban": "$80$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=160 dan N(5)=1280. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$7640$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 7640.",
+      "distraktor": [
+        {
+          "teks": "$7639$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7641$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 7640.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fcb69f2735abe2e39ce343bc",
+        "teks": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 5 | 10 | 20 | 35 |\n\nSebuah tabel pengamatan memuat data yang seharusnya mengikuti fungsi eksponensial $f(x)=n\\cdot a^{x}$. Data pada $x=0,1,2$ dicatat dengan benar, sedangkan data pada $x=3$ salah catat. Nilai $f(3)$ yang seharusnya adalah ....",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=280 dan N(5)=2240. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$26810$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=70. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 26810.",
+      "distraktor": [
+        {
+          "teks": "$26809$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26811$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53620$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=70. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 26810.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28615bc98d4d82f2e3b189f0",
+        "teks": "Diketahui $f(x)=3^{x}$ dan $g(x)=\\left(\\frac13\\right)^{x}$. Pernyataan yang benar adalah ....",
+        "jawaban": "$g(-2)=9$ dan $f(-2)=\\frac19$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=320 dan N(5)=2560. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=12 terhadap N(0)?",
+      "jawaban_benar": "$245680$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 245680.",
+      "distraktor": [
+        {
+          "teks": "$245679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$491360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 7 kali lalu kurangi a, hasil 245680.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32deda0c9cc3161864a6bcf0",
+        "teks": "Koloni A berjumlah $1.000$ sel dan bertambah $10\\%$ per jam secara eksponen. Koloni B berjumlah $100$ sel dan menjadi dua kali lipat setiap jam. Banyak jam paling sedikit agar koloni B lebih banyak dari koloni A adalah ....",
+        "jawaban": "$4$ jam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=900 dan N(5)=24300. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$4428575$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 4428575.",
+      "distraktor": [
+        {
+          "teks": "$4428574$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4428576$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8857150$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 4428575.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8ebb7086043671773a3c7f2",
+        "teks": "Populasi lalat buah di sebuah laboratorium bertambah menurut faktor pengali tetap tiap hari. Pada hari ke-2 tercatat 80 ekor dan pada hari ke-4 tercatat 1.280 ekor. Populasi lalat buah pada hari ke-5 adalah ....",
+        "jawaban": "$5.120$ ekor",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=360 dan N(5)=2880. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$69030$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=90. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 69030.",
+      "distraktor": [
+        {
+          "teks": "$69029$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$69031$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$138060$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=90. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 69030.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a31fe1f57c31dadeadd88a8",
+        "teks": "Pada tahun 2021 jumlah kasus suatu penyakit di sebuah provinsi adalah 40.000 jiwa. Jumlah kasus diprediksi meningkat secara eksponen sebesar 25% setiap tahun. Jumlah kasus pada tahun 2024 adalah ....",
+        "jawaban": "$78.125$ jiwa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=240 dan N(5)=1920. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$11460$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=60. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 11460.",
+      "distraktor": [
+        {
+          "teks": "$11459$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22920$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=60. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 11460.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f94866dde7a8a2bf28f1862",
+        "teks": "Harga sebuah rumah saat ini Rp500.000.000 dan diperkirakan naik secara eksponen 10% setiap tahun. Kenaikan harga rumah tersebut setelah 3 tahun dari sekarang adalah ....",
+        "jawaban": "Rp165.500.000",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=630 dan N(5)=17010. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$688835$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=70. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 688835.",
+      "distraktor": [
+        {
+          "teks": "$688834$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$688836$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1377670$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=70. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 688835.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c42772fbed4dabf15408dd09",
+        "teks": "Massa suatu zat radioaktif adalah 5 kg. Tingkat peluruhan zat tersebut adalah 20% setiap jam. Massa zat radioaktif tersebut 3 jam kemudian adalah ....",
+        "jawaban": "$2{,}56$ kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=320 dan N(5)=2560. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=11 terhadap N(0)?",
+      "jawaban_benar": "$122800$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 122800.",
+      "distraktor": [
+        {
+          "teks": "$122799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$122801$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245600$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 6 kali lalu kurangi a, hasil 122800.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e0bec460a00a38b33c42c3d",
+        "teks": "Sebuah mobil dibeli seharga Rp160.000.000 dan nilainya menyusut secara eksponen 25% setiap tahun. Besar penyusutan nilai mobil tersebut setelah 3 tahun adalah ....",
+        "jawaban": "Rp92.500.000",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=900 dan N(5)=24300. Tepat setelah pengamatan t=5, sebanyak 1/4 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=9 terhadap N(0)?",
+      "jawaban_benar": "$1476125$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1476125.",
+      "distraktor": [
+        {
+          "teks": "$1476124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1476126$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2952250$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=100. Setelah pemindahan tersisa (4-1)/4 N(5); tumbuhkan 4 kali lalu kurangi a, hasil 1476125.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "69b0634626813049098d1c3f",
+        "teks": "Dosis obat sebesar 300 mikrogram disuntikkan kepada seorang pasien. Setiap jam, setengah dosis yang ada di dalam tubuh akan luruh dan dikeluarkan. Paling sedikit berapa jam diperlukan agar dosis yang tersisa kurang dari 5 mikrogram?",
+        "jawaban": "$6$ jam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=320 dan N(5)=2560. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$10160$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 10160.",
+      "distraktor": [
+        {
+          "teks": "$10159$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10161$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20320$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=80. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 10160.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9df69efb6ebe806d6f480915",
+        "teks": "Sebuah koloni ragi berjumlah 5 sel pada awal pengamatan dan menjadi dua kali lipat setiap jam. Paling sedikit berapa jam diperlukan agar jumlah sel lebih dari 1.000?",
+        "jawaban": "$8$ jam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=540 dan N(5)=14580. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=8 terhadap N(0)?",
+      "jawaban_benar": "$196770$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=60. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 196770.",
+      "distraktor": [
+        {
+          "teks": "$196769$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$196771$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$393540$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=27, jadi b=3 dan a=60. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 3 kali lalu kurangi a, hasil 196770.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b01-c-hard-bt01-058"
     }
   ]
 }

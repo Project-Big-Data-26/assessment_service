@@ -639,6 +639,1510 @@
       "pembahasan": "Langkah 1: Menghitung banyak siswa awal untuk Multimedia dan Elektronika:\n- Multimedia = $\\frac{90^\\circ}{360^\\circ} \\times 180 = 45$ siswa.\n- Elektronika = $\\frac{70^\\circ}{360^\\circ} \\times 180 = 35$ siswa.\n\nLangkah 2: Menghitung banyak siswa setelah penambahan:\n- Total siswa baru = $180 + 20 = 200$ siswa.\n- Multimedia baru = $45 + 10 = 55$ siswa.\n- Elektronika baru = $35 + 10 = 45$ siswa.\n\nLangkah 3: Menghitung sudut pusat juring pada diagram baru:\n- Sudut Multimedia = $\\frac{55}{200} \\times 360^\\circ = 99^\\circ$.\n- Sudut Elektronika = $\\frac{45}{200} \\times 360^\\circ = 81^\\circ$.\n\nLangkah 4: Menghitung perubahan sudut pusat masing-masing:\n- Perubahan Multimedia = $99^\\circ - 90^\\circ = +9^\\circ$ (bertambah $9^\\circ$).\n- Perubahan Elektronika = $81^\\circ - 70^\\circ = +11^\\circ$ (bertambah $11^\\circ$).\n\nLangkah 5: Evaluasi klaim:\nKlaim pengurus OSIS salah karena pertambahan besar sudut pusat kedua juring berbeda ($9^\\circ$ dan $11^\\circ$).",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3eb2c815cfccc2a24d36fa93",
+        "teks": "Sebuah diagram lingkaran menyajikan komposisi 80 siswa yang mengikuti tiga kelompok belajar: IPA (32 siswa), IPS (28 siswa), dan Bahasa (20 siswa). Sekolah kemudian membuka satu kelompok baru, yaitu Seni, dan menerima 20 siswa baru (kelompok lama tidak mengalami perubahan jumlah siswa). Guru menggambar ulang seluruh diagram lingkaran untuk menyajikan keempat kelompok tersebut.\n\nBerdasarkan stimulus tersebut, berapakah besar penyusutan (pengurangan) sudut pusat juring untuk kelompok IPA pada diagram lingkaran yang baru?",
+        "jawaban": "$28{,}8^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "diagram_lingkaran",
+      "alasan_level": "Target hard; variasi konsep diagram lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam diagram lingkaran yang memuat 96 siswa, suatu kategori beranggotakan 32 siswa. Berapa sudut pusat kategori itu?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Sudut pusat=(32/96)×360°=120°.",
+      "distraktor": [
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan $121$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah diagram lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan $119$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah diagram lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$122$",
+          "alasan": "Pilihan $122$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah diagram lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Sudut pusat=(32/96)×360°=120°.",
+      "catatan": "codex-replenishment:kelas7-b06-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-e-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "695cc654ca70285ab500428e",
+        "teks": "Jenis diagram yang biasanya digunakan untuk menampilkan bagian atau bagian berbeda yang membentuk satu keseluruhan dari suatu objek atau peristiwa adalah ....",
+        "jawaban": "diagram lingkaran",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 60 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah 11, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Anggota A=15; sisa B+C=45. Bersama B-C=11, diperoleh B=28, lalu sudut B=360B/60.",
+      "distraktor": [
+        {
+          "teks": "$167$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $168$."
+        },
+        {
+          "teks": "$169$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $168$."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Anggota A=15; sisa B+C=45. Bersama B-C=11, diperoleh B=28, lalu sudut B=360B/60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-e-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7cfc8d25c9fda9d0388ce26e",
+        "teks": "Diagram lingkaran menunjukkan data pilihan kegiatan ekstrakurikuler 80 siswa kelas VII SMP Cemerlang:\n- Futsal: 30 siswa\n- Pramuka: 26 siswa\n- PMR: 16 siswa\n- Paskibra: 8 siswa\n\nBerdasarkan data pada diagram lingkaran tersebut, kegiatan ekstrakurikuler apakah yang peminatnya paling sedikit?",
+        "jawaban": "Paskibra",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 132 siswa dalam tiga klub. Klub A memiliki sudut pusat 60°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{1860}{11}$",
+      "alasan_benar": "Anggota A=22; sisa B+C=110. Bersama B-C=14, diperoleh B=62, lalu sudut B=360B/132.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{930}{11}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3720}{11}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1860}{11}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=22; sisa B+C=110. Bersama B-C=14, diperoleh B=62, lalu sudut B=360B/132.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/060dfb6226767c36417a42a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              14
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 14]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb2640912822712e44b35735",
+        "teks": "Diagram lingkaran menunjukkan persentase moda transportasi siswa menuju ke sekolah:\n- Berjalan kaki: $25\\%$\n- Sepeda: $35\\%$\n- Angkutan umum: $40\\%$\n\nBerapakah persentase siswa yang menggunakan sepeda untuk pergi ke sekolah?",
+        "jawaban": "$35\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 132 siswa dalam tiga klub. Klub A memiliki sudut pusat 150°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{1380}{11}$",
+      "alasan_benar": "Anggota A=55; sisa B+C=77. Bersama B-C=15, diperoleh B=46, lalu sudut B=360B/132.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{690}{11}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2760}{11}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1380}{11}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=55; sisa B+C=77. Bersama B-C=15, diperoleh B=46, lalu sudut B=360B/132.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "27b4a151f9fdef7ca62a70be",
+        "teks": "Data jenis buku bacaan yang dipinjam 40 siswa di perpustakaan adalah sebagai berikut:\n- Novel: 16 siswa\n- Komik: 14 siswa\n- Majalah: 6 siswa\n- Ensiklopedia: 4 siswa\n\nBerapakah besar sudut pusat juring pada diagram lingkaran untuk kelompok peminjam Ensiklopedia?",
+        "jawaban": "$36^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 96 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Anggota A=32; sisa B+C=64. Bersama B-C=16, diperoleh B=40, lalu sudut B=360B/96.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=32; sisa B+C=64. Bersama B-C=16, diperoleh B=40, lalu sudut B=360B/96.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a430dbd1f08f34a3e40383f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              16
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 16]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d38c5b74ca547dd6b6bf152",
+        "teks": "Diagram lingkaran menunjukkan perolehan suara pemilihan ketua kelas VII A:\n- Ali: 8 suara\n- Badu: 14 suara\n- Citra: 12 suara\n- Dian: 6 suara\n\nBerdasarkan data tersebut, tentukanlah jumlah semua suara yang masuk.",
+        "jawaban": "40 suara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 48 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{405}{2}$",
+      "alasan_benar": "Anggota A=12; sisa B+C=36. Bersama B-C=18, diperoleh B=27, lalu sudut B=360B/48.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{405}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$405$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{405}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=12; sisa B+C=36. Bersama B-C=18, diperoleh B=27, lalu sudut B=360B/48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/c9a1de6d9f060ebe437d24a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              18
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 18]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0205b0378e71de0391c7509e",
+        "teks": "Sebuah diagram lingkaran menyajikan hasil pemilihan ketua klub sains sebagai berikut:\n- Gita: 15 suara\n- Hani: 28 suara\n- Irfan: 17 suara\n- Joko: 10 suara\n\nBerdasarkan data tersebut, siapakah yang memenangkan pemilihan ketua klub sains?",
+        "jawaban": "Hani",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 108 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Anggota A=36; sisa B+C=72. Bersama B-C=6, diperoleh B=39, lalu sudut B=360B/108.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=36; sisa B+C=72. Bersama B-C=6, diperoleh B=39, lalu sudut B=360B/108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "75e1dcccc8487e956dbe1f14",
+        "teks": "Pernyataan yang benar mengenai diagram lingkaran adalah ....",
+        "jawaban": "tidak memiliki sumbu vertikal atau horizontal",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 72 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$170$",
+      "alasan_benar": "Anggota A=18; sisa B+C=54. Bersama B-C=14, diperoleh B=34, lalu sudut B=360B/72.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$171$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=18; sisa B+C=54. Bersama B-C=14, diperoleh B=34, lalu sudut B=360B/72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/060dfb6226767c36417a42a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              14
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 14]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "10f0433a8a7f2ffcf746fe49",
+        "teks": "Sebuah diagram lingkaran menunjukkan bahwa $25\\%$ dari total 200 siswa memilih ekstrakurikuler musik. Berapakah banyak siswa yang memilih ekstrakurikuler musik?",
+        "jawaban": "50 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 36 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$210$",
+      "alasan_benar": "Anggota A=12; sisa B+C=24. Bersama B-C=18, diperoleh B=21, lalu sudut B=360B/36.",
+      "distraktor": [
+        {
+          "teks": "$209$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$211$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$420$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=12; sisa B+C=24. Bersama B-C=18, diperoleh B=21, lalu sudut B=360B/36.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/c9a1de6d9f060ebe437d24a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              18
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 18]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff76167228e5c60cb31bafaa",
+        "teks": "Daerah bagian-bagian data yang membentuk satu kesatuan utuh pada diagram lingkaran berupa ....",
+        "jawaban": "juring-juring lingkaran",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 144 siswa dalam tiga klub. Klub A memiliki sudut pusat 180°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$110$",
+      "alasan_benar": "Anggota A=72; sisa B+C=72. Bersama B-C=16, diperoleh B=44, lalu sudut B=360B/144.",
+      "distraktor": [
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$220$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=72; sisa B+C=72. Bersama B-C=16, diperoleh B=44, lalu sudut B=360B/144.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a430dbd1f08f34a3e40383f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              16
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 16]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c8f4807abbe1e948364885a0",
+        "teks": "Diagram lingkaran menyajikan pilihan menu makan siang siswa yang terbagi menjadi juring: Soto, Bakso, Rawon, Pecel, dan Sate.\n\nBerdasarkan stimulus tersebut, ada berapa macam pilihan menu makan siang yang disajikan pada diagram lingkaran?",
+        "jawaban": "5 macam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 60 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "Anggota A=20; sisa B+C=40. Bersama B-C=8, diperoleh B=24, lalu sudut B=360B/60.",
+      "distraktor": [
+        {
+          "teks": "$143$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$145$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$288$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=20; sisa B+C=40. Bersama B-C=8, diperoleh B=24, lalu sudut B=360B/60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2cec2639a77160a86250800",
+        "teks": "Sebuah diagram lingkaran hanya memuat dua kategori data, yaitu kelompok A dan kelompok B. Jika kelompok A menempati porsi sebesar $65\\%$, berapakah persentase untuk kelompok B?",
+        "jawaban": "$35\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 96 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{285}{2}$",
+      "alasan_benar": "Anggota A=24; sisa B+C=72. Bersama B-C=4, diperoleh B=38, lalu sudut B=360B/96.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{285}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$285$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{285}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=24; sisa B+C=72. Bersama B-C=4, diperoleh B=38, lalu sudut B=360B/96.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54265764a04831efc716e201",
+        "teks": "Diagram lingkaran menunjukkan persentase peminat mata pelajaran di kelas VII B. Sebanyak $40\\%$ siswa memilih Matematika sebagai mata pelajaran favorit.\n\nBerapakah besar sudut pusat juring yang menunjukkan peminat Matematika?",
+        "jawaban": "$144^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 84 siswa dalam tiga klub. Klub A memiliki sudut pusat 180°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{690}{7}$",
+      "alasan_benar": "Anggota A=42; sisa B+C=42. Bersama B-C=4, diperoleh B=23, lalu sudut B=360B/84.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{345}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1380}{7}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{690}{7}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=42; sisa B+C=42. Bersama B-C=4, diperoleh B=23, lalu sudut B=360B/84.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6fc3b242336295ced04739cd",
+        "teks": "Dalam pemilihan ketua regu pramuka, terdapat total 50 suara yang masuk. Regu Elang memperoleh 15 suara.\n\nBerapa persenkah suara yang diperoleh Regu Elang pada diagram lingkaran pemilihan tersebut?",
+        "jawaban": "$30\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 60 siswa dalam tiga klub. Klub A memiliki sudut pusat 240°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$102$",
+      "alasan_benar": "Anggota A=40; sisa B+C=20. Bersama B-C=14, diperoleh B=17, lalu sudut B=360B/60.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$103$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$204$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=40; sisa B+C=20. Bersama B-C=14, diperoleh B=17, lalu sudut B=360B/60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/060dfb6226767c36417a42a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              14
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 14]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "adf4b5a69c7e9650e4ce0456",
+        "teks": "Diagram lingkaran alokasi kas kelas menunjukkan pengeluaran total sebesar $\\text{Rp}200.000{,}00$. Bagian untuk dana kebersihan adalah sebesar $15\\%$.\n\nBerapakah jumlah dana yang dialokasikan untuk kebersihan?",
+        "jawaban": "$\\text{Rp}30.000{,}00$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 84 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Anggota A=28; sisa B+C=56. Bersama B-C=14, diperoleh B=35, lalu sudut B=360B/84.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=28; sisa B+C=56. Bersama B-C=14, diperoleh B=35, lalu sudut B=360B/84.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/060dfb6226767c36417a42a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              14
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 14]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "695cc654ca70285ab500428e",
+        "teks": "Jenis diagram yang biasanya digunakan untuk menampilkan bagian atau bagian berbeda yang membentuk satu keseluruhan dari suatu objek atau peristiwa adalah ....",
+        "jawaban": "diagram lingkaran",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 60 siswa dalam tiga klub. Klub A memiliki sudut pusat 60°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Anggota A=10; sisa B+C=50. Bersama B-C=6, diperoleh B=28, lalu sudut B=360B/60.",
+      "distraktor": [
+        {
+          "teks": "$167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=10; sisa B+C=50. Bersama B-C=6, diperoleh B=28, lalu sudut B=360B/60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72d4807ab5badd3c7a25bf9d",
+        "teks": "Diagram lingkaran menyajikan sebaran anggota sanggar tari berdasarkan tingkat kemahiran:\n- Pemula: $45\\%$\n- Madya: $35\\%$\n- Lanjutan: $20\\%$\n\nBerdasarkan stimulus tersebut, berapakah persentase anggota sanggar tari pada tingkat pemula?",
+        "jawaban": "$45\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 48 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Anggota A=12; sisa B+C=36. Bersama B-C=12, diperoleh B=24, lalu sudut B=360B/48.",
+      "distraktor": [
+        {
+          "teks": "$179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=12; sisa B+C=36. Bersama B-C=12, diperoleh B=24, lalu sudut B=360B/48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76dda2ee0828be0f8307cfc8",
+        "teks": "Diagram lingkaran $A$ menyajikan persentase jenis koleksi buku di Perpustakaan Cerdas, dengan proporsi buku Fiksi sebesar $40\\%$. Diagram lingkaran $B$ menyajikan persentase jenis koleksi buku di Perpustakaan Pintar, dengan proporsi buku Fiksi sebesar $25\\%$. Siswa $X$ menyimpulkan bahwa Perpustakaan Cerdas pasti memiliki lebih banyak buku fiksi daripada Perpustakaan Pintar.\n\nBerdasarkan stimulus tersebut, evaluasilah kesimpulan siswa $X$ beserta alasannya yang tepat!",
+        "jawaban": "Kesimpulan salah karena persentase yang lebih besar belum tentu menghasilkan jumlah riil yang lebih banyak tanpa mengetahui jumlah total buku di masing-masing perpustakaan.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram lingkaran memuat 132 siswa dalam tiga klub. Klub A memiliki sudut pusat 180°. Selisih jumlah anggota B dan C adalah $T_1$, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{1110}{11}$",
+      "alasan_benar": "Anggota A=66; sisa B+C=66. Bersama B-C=8, diperoleh B=37, lalu sudut B=360B/132.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{555}{11}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2220}{11}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1110}{11}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=66; sisa B+C=66. Bersama B-C=8, diperoleh B=37, lalu sudut B=360B/132.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2ce7fc6e449964cb693c266a",
+        "teks": "Sebuah diagram lingkaran awal dibuat dari data 60 siswa yang terbagi ke dalam tiga kelompok minat: Sains ($30$ siswa), Bahasa ($18$ siswa), dan Seni ($12$ siswa). Kemudian, bergabung 20 siswa baru yang seluruhnya masuk ke kelompok Seni.\n\nBerdasarkan stimulus tersebut, bagaimanakah perubahan besar sudut pusat juring untuk kelompok Sains pada diagram lingkaran yang baru dibandingkan diagram awal?",
+        "jawaban": "berkurang sebesar $45^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 60 siswa dalam tiga klub. Klub A memiliki sudut pusat 210°. Selisih jumlah anggota B dan C adalah 15, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Anggota A=35; sisa B+C=25. Bersama B-C=15, diperoleh B=20, lalu sudut B=360B/60.",
+      "distraktor": [
+        {
+          "teks": "$119$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$121$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$240$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=35; sisa B+C=25. Bersama B-C=15, diperoleh B=20, lalu sudut B=360B/60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e356aef0c60d659fc851011e",
+        "teks": "Seorang siswa membuat draf diagram lingkaran untuk menyajikan data jenis hewan ternak di sebuah desa yang terdiri atas empat jenis: Sapi, Kambing, Ayam, dan Bebek. Siswa tersebut menetapkan nilai berikut:\n- Juring Sapi: persentase $35\\%$, sudut pusat $126^\\circ$\n- Juring Kambing: persentase $25\\%$, sudut pusat $90^\\circ$\n- Juring Ayam: persentase $20\\%$, sudut pusat $72^\\circ$\n- Juring Bebek: persentase $15\\%$, sudut pusat $72^\\circ$\n\nGuru menyatakan draf diagram lingkaran tersebut salah. Pernyataan evaluasi manakah yang paling tepat menjelaskan letak kesalahan matematis pada draf tersebut?",
+        "jawaban": "Total persentase tidak mencapai $100\\%$ dan perbandingan juring Bebek tidak konsisten, karena persentase $15\\%$ seharusnya memiliki sudut pusat $54^\\circ$, bukan $72^\\circ$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 36 siswa dalam tiga klub. Klub A memiliki sudut pusat 150°. Selisih jumlah anggota B dan C adalah 7, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Anggota A=15; sisa B+C=21. Bersama B-C=7, diperoleh B=14, lalu sudut B=360B/36.",
+      "distraktor": [
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=15; sisa B+C=21. Bersama B-C=7, diperoleh B=14, lalu sudut B=360B/36.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3eb2c815cfccc2a24d36fa93",
+        "teks": "Sebuah diagram lingkaran menyajikan komposisi 80 siswa yang mengikuti tiga kelompok belajar: IPA (32 siswa), IPS (28 siswa), dan Bahasa (20 siswa). Sekolah kemudian membuka satu kelompok baru, yaitu Seni, dan menerima 20 siswa baru (kelompok lama tidak mengalami perubahan jumlah siswa). Guru menggambar ulang seluruh diagram lingkaran untuk menyajikan keempat kelompok tersebut.\n\nBerdasarkan stimulus tersebut, berapakah besar penyusutan (pengurangan) sudut pusat juring untuk kelompok IPA pada diagram lingkaran yang baru?",
+        "jawaban": "$28{,}8^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 132 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah 18, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{1590}{11}$",
+      "alasan_benar": "Anggota A=44; sisa B+C=88. Bersama B-C=18, diperoleh B=53, lalu sudut B=360B/132.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{795}{11}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3180}{11}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1590}{11}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=44; sisa B+C=88. Bersama B-C=18, diperoleh B=53, lalu sudut B=360B/132.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06b0bb90ddbf3447916454b5",
+        "teks": "Dalam suatu pemilihan ketua paguyuban yang diikuti oleh 4 orang calon (A, B, C, dan D), hasil perolehan suara disajikan dalam sebuah diagram lingkaran utuh. Seorang pengamat menyatakan bahwa calon A dapat dipastikan terpilih sebagai pemenang tunggal hanya dengan mengamati bentuk juringnya, tanpa perlu mengetahui perolehan suara maupun ukuran juring ketiga calon lainnya. Kondisi visual minimal manakah pada juring calon A yang menjamin kebenaran klaim tersebut?",
+        "jawaban": "Sudut pusat juring calon A lebih dari $180^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 72 siswa dalam tiga klub. Klub A memiliki sudut pusat 180°. Selisih jumlah anggota B dan C adalah 18, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "Anggota A=36; sisa B+C=36. Bersama B-C=18, diperoleh B=27, lalu sudut B=360B/72.",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$136$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=36; sisa B+C=36. Bersama B-C=18, diperoleh B=27, lalu sudut B=360B/72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "494d79ab4a72665c9251853e",
+        "teks": "Sebuah diagram lingkaran menyajikan moda transportasi yang digunakan oleh 200 karyawan suatu perusahaan ke tempat kerja, yang terbagi menjadi empat kategori: Kereta, Bus, Sepeda Motor, dan Mobil. Juring untuk pengguna Kereta dan Bus masing-masing membentuk sudut siku-siku ($90^\\circ$). Sisa juring lingkaran dialokasikan untuk Sepeda Motor dan Mobil dengan perbandingan besar sudut $3 : 1$. Seorang staf HR mengklaim bahwa pengguna Sepeda Motor mencakup lebih dari sepertiga total seluruh karyawan. Evaluasilah kebenaran klaim staf HR tersebut!",
+        "jawaban": "Klaim benar, karena pengguna Sepeda Motor mencapai $37{,}5\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 72 siswa dalam tiga klub. Klub A memiliki sudut pusat 210°. Selisih jumlah anggota B dan C adalah 14, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$110$",
+      "alasan_benar": "Anggota A=42; sisa B+C=30. Bersama B-C=14, diperoleh B=22, lalu sudut B=360B/72.",
+      "distraktor": [
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$220$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=42; sisa B+C=30. Bersama B-C=14, diperoleh B=22, lalu sudut B=360B/72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a21f9f91bd033c8b0e05e7",
+        "teks": "Sebanyak 160 siswa kelas VII mengikuti salah satu dari empat kegiatan ekstrakurikuler: Basket, Futsal, Tari, atau Paduan Suara, yang disajikan ke dalam sebuah diagram lingkaran. Diketahui sudut pusat juring Tari adalah $54^\\circ$. Banyak peserta Futsal adalah dua kali banyak peserta Basket. Selain itu, juring Paduan Suara memiliki sudut pusat $36^\\circ$ lebih besar daripada juring Basket. Berapakah banyak siswa yang mengikuti kegiatan ekstrakurikuler Futsal?",
+        "jawaban": "60 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 108 siswa dalam tiga klub. Klub A memiliki sudut pusat 60°. Selisih jumlah anggota B dan C adalah 18, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Anggota A=18; sisa B+C=90. Bersama B-C=18, diperoleh B=54, lalu sudut B=360B/108.",
+      "distraktor": [
+        {
+          "teks": "$179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=18; sisa B+C=90. Bersama B-C=18, diperoleh B=54, lalu sudut B=360B/108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "304b19b165956ada6f7f1af9",
+        "teks": "Diagram lingkaran peminat mata pelajaran di Kelas VII-A (berjumlah 30 siswa) menunjukkan bahwa juring peminat Matematika memiliki sudut pusat $120^\\circ$. Sementara itu, pada diagram lingkaran Kelas VII-B (berjumlah 50 siswa), juring peminat Matematika memiliki sudut pusat $72^\\circ$. Jika data peminat Matematika dari kedua kelas tersebut digabungkan ke dalam satu diagram lingkaran baru yang memuat seluruh 80 siswa, berapakah besar sudut pusat juring peminat Matematika pada diagram gabungan tersebut?",
+        "jawaban": "$90^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 84 siswa dalam tiga klub. Klub A memiliki sudut pusat 210°. Selisih jumlah anggota B dan C adalah 7, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Anggota A=49; sisa B+C=35. Bersama B-C=7, diperoleh B=21, lalu sudut B=360B/84.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$180$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=49; sisa B+C=35. Bersama B-C=7, diperoleh B=21, lalu sudut B=360B/84.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "158bc78f8924e83290f516c7",
+        "teks": "Sebuah diagram lingkaran menyajikan persentase alokasi dana pentas seni sekolah ke dalam empat pos: Perlengkapan ($40\\%$), Konsumsi ($30\\%$), Acara ($20\\%$), dan Dokumentasi ($10\\%$). Bendahara menyatakan bahwa total anggaran pentas seni pasti bernilai $\\text{Rp}10.000.000{,}00$ jika diketahui selisih biaya Perlengkapan dan Konsumsi adalah $\\text{Rp}1.000.000{,}00$. Apakah pernyataan bendahara tersebut benar?",
+        "jawaban": "Benar, karena selisih persentase kedua pos tersebut adalah $10\\%$, sehingga total anggaran tepat bernilai $\\text{Rp}1.000.000{,}00 : 10\\% = \\text{Rp}10.000.000{,}00$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 108 siswa dalam tiga klub. Klub A memiliki sudut pusat 210°. Selisih jumlah anggota B dan C adalah 11, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{280}{3}$",
+      "alasan_benar": "Anggota A=63; sisa B+C=45. Bersama B-C=11, diperoleh B=28, lalu sudut B=360B/108.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{140}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{560}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{280}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=63; sisa B+C=45. Bersama B-C=11, diperoleh B=28, lalu sudut B=360B/108.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61d5f941f4ee9efa3e13685c",
+        "teks": "| Kategori Data | Sudut Pusat | Nilai Riil |\n| :--- | :--- | :--- |\n| Dokumen | $72^\\circ$ | $40\\text{ GB}$ |\n| Video | $126^\\circ$ | $70\\text{ GB}$ |\n| Aplikasi | $108^\\circ$ | $60\\text{ GB}$ |\n| Cadangan Sistem | $54^\\circ$ | $35\\text{ GB}$ |\n\nSebuah media penyimpanan berkapasitas total $200\\text{ GB}$ dipetakan ke dalam diagram lingkaran dengan data pada tabel stimulus. Seorang analis menyatakan bahwa terdapat satu kategori yang memuat ketidakkonsistenan data antara besar sudut pusat dan nilai riil kapasitasnya. Kategori manakah yang dimaksud?",
+        "jawaban": "Cadangan Sistem, karena sudut pusat $54^\\circ$ seharusnya mewakili $30\\text{ GB}$, bukan $35\\text{ GB}$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 36 siswa dalam tiga klub. Klub A memiliki sudut pusat 210°. Selisih jumlah anggota B dan C adalah 13, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Anggota A=21; sisa B+C=15. Bersama B-C=13, diperoleh B=14, lalu sudut B=360B/36.",
+      "distraktor": [
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=21; sisa B+C=15. Bersama B-C=13, diperoleh B=14, lalu sudut B=360B/36.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76a724964ba389bae22b9a4e",
+        "teks": "Diagram lingkaran menyajikan alokasi waktu belajar mandiri mingguan Doni dengan total durasi 36 jam yang terbagi ke dalam empat mata pelajaran: Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris. Diketahui:\n- Juring Bahasa Indonesia memiliki sudut pusat $100^\\circ$.\n- Juring Bahasa Inggris memiliki sudut pusat $60^\\circ$.\n- Sisa lingkaran dialokasikan untuk Matematika dan IPA dengan rasio besar sudut pusat berturut-turut $3 : 2$.\n\nBerdasarkan informasi tersebut, selisih durasi belajar mandiri Doni antara mata pelajaran Matematika dan Bahasa Inggris adalah ....",
+        "jawaban": "6 jam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 72 siswa dalam tiga klub. Klub A memiliki sudut pusat 120°. Selisih jumlah anggota B dan C adalah 18, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$165$",
+      "alasan_benar": "Anggota A=24; sisa B+C=48. Bersama B-C=18, diperoleh B=33, lalu sudut B=360B/72.",
+      "distraktor": [
+        {
+          "teks": "$164$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$330$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=24; sisa B+C=48. Bersama B-C=18, diperoleh B=33, lalu sudut B=360B/72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2392a16d7843e8b056007c8",
+        "teks": "Dua kelas disurvei mengenai kebiasaan sarapan pagi. Di Kelas VII-A (berjumlah 40 siswa), menu Roti disajikan dengan juring bersudut pusat $108^\\circ$. Di Kelas VII-B (berjumlah 60 siswa), menu Roti disajikan dengan persentase $20\\%$. Seorang pengurus kelas mengklaim bahwa jika data kedua kelas digabungkan menjadi satu diagram lingkaran, juring menu Roti akan memiliki sudut pusat sebesar $90^\\circ$, yang diperoleh dari rata-rata langsung sudut juring Kelas VII-A ($108^\\circ$) dan Kelas VII-B ($72^\\circ$).\n\nBerdasarkan analisis data diagram lingkaran, evaluasilah klaim pengurus kelas tersebut!",
+        "jawaban": "Klaim salah; sudut pusat sebenarnya adalah $86{,}4^\\circ$ karena proporsi gabungan dipengaruhi oleh perbedaan jumlah siswa kedua kelas.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 48 siswa dalam tiga klub. Klub A memiliki sudut pusat 60°. Selisih jumlah anggota B dan C adalah 18, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{435}{2}$",
+      "alasan_benar": "Anggota A=8; sisa B+C=40. Bersama B-C=18, diperoleh B=29, lalu sudut B=360B/48.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{435}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$435$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{435}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=8; sisa B+C=40. Bersama B-C=18, diperoleh B=29, lalu sudut B=360B/48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f0896ab0944d393491f21db",
+        "teks": "Diagram lingkaran menyajikan keanggotaan 120 siswa dalam tiga klub sains di sekolah: Klub Fisika ($108^\\circ$), Klub Biologi ($144^\\circ$), dan Klub Astronomi ($108^\\circ$). Sekolah akan membuka pendaftaran anggota baru khusus untuk Klub Astronomi tanpa ada anggota lama yang keluar. Panitia mengklaim: \"Cukup ditambahkan minimal 13 siswa baru ke Klub Astronomi agar juringnya menjadi yang terbesar pada diagram lingkaran yang baru.\"\n\nBerdasarkan stimulus tersebut, evaluasilah kebenaran klaim panitia!",
+        "jawaban": "Klaim panitia benar, karena penambahan 13 siswa membuat anggota Astronomi menjadi 49 orang, melampaui anggota terbanyak sebelumnya yaitu Biologi (48 orang).",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 48 siswa dalam tiga klub. Klub A memiliki sudut pusat 180°. Selisih jumlah anggota B dan C adalah 16, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Anggota A=24; sisa B+C=24. Bersama B-C=16, diperoleh B=20, lalu sudut B=360B/48.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=24; sisa B+C=24. Bersama B-C=16, diperoleh B=20, lalu sudut B=360B/48.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8dea3dc4c2ae60dc041cdc01",
+        "teks": "Diagram lingkaran peminatan vokasi dari 180 siswa kelas VII menyajikan data sudut pusat sebagai berikut:\n- Tata Boga: $120^\\circ$\n- Multimedia: $90^\\circ$\n- Otomotif: $80^\\circ$\n- Elektronika: $70^\\circ$\n\nSebanyak 20 siswa pindahan kemudian mendaftar, dengan rincian 10 siswa memilih bidang Multimedia dan 10 siswa memilih bidang Elektronika. Pengurus OSIS mengklaim bahwa karena kedua bidang sama-sama mendapat tambahan 10 siswa, maka sudut pusat juring Multimedia dan juring Elektronika pada diagram lingkaran yang baru akan bertambah dengan besar derajat yang sama.\n\nBerdasarkan analisis perhitungan diagram lingkaran yang baru, bagaimana evaluasi yang tepat terhadap klaim pengurus OSIS tersebut?",
+        "jawaban": "Klaim salah; sudut pusat juring Multimedia bertambah $9^\\circ$, sedangkan sudut pusat juring Elektronika bertambah $11^\\circ$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 120 siswa dalam tiga klub. Klub A memiliki sudut pusat 60°. Selisih jumlah anggota B dan C adalah 10, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$165$",
+      "alasan_benar": "Anggota A=20; sisa B+C=100. Bersama B-C=10, diperoleh B=55, lalu sudut B=360B/120.",
+      "distraktor": [
+        {
+          "teks": "$164$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$330$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Anggota A=20; sisa B+C=100. Bersama B-C=10, diperoleh B=55, lalu sudut B=360B/120.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb78efdb42266d7442a8dffb",
+        "teks": "Diagram lingkaran perolehan suara pemilihan ketua komunitas lingkungan menyajikan data berikut:\n- Ratna: 16 suara\n- Surya: 24 suara\n- Tri: 12 suara\n- Umar: 28 suara\n\nBerapakah persentase suara yang diperoleh Surya dalam pemilihan tersebut?",
+        "jawaban": "$30\\%$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lingkaran_kelompok_inverse",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diagram lingkaran memuat 144 siswa dalam tiga klub. Klub A memiliki sudut pusat 90°. Selisih jumlah anggota B dan C adalah 14, dengan B lebih banyak. Berapa sudut pusat B?",
+      "jawaban_benar": "$\\frac{305}{2}$",
+      "alasan_benar": "Anggota A=36; sisa B+C=108. Bersama B-C=14, diperoleh B=61, lalu sudut B=360B/144.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{305}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$305$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{305}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Anggota A=36; sisa B+C=108. Bersama B-C=14, diperoleh B=61, lalu sudut B=360B/144.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-e-hard-bt01-047"
     }
   ]
 }

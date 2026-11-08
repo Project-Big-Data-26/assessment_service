@@ -98,13 +98,13 @@ def test_invalid_responses_remain_drafts_after_bounded_retries(tmp_path, monkeyp
     assert len(calls) == 3
 
 
-def test_global_quota_stop_publishes_all_classes_without_next_live_call(monkeypatch):
+def test_global_quota_stop_publishes_all_classes_without_next_live_call(monkeypatch, tmp_path):
     monkeypatch.setattr(exercise, "CLASSES", {"kelas5": (5, "regular"), "kelas7": (7, "regular")})
     monkeypatch.setattr(exercise, "available_classes", lambda batch: list(exercise.CLASSES))
     monkeypatch.setattr(exercise, "stage_class", lambda *args: None)
     monkeypatch.setattr(exercise, "init_checkpoint", lambda *args: None)
     monkeypatch.setattr(exercise, "paths", lambda name, batch: {
-        "source": Path(f"{name}/source.json"), "checkpoint": Path(f"{name}/checkpoint.json"), "exercise": Path(name)})
+        "source": tmp_path / name / "source.json", "checkpoint": tmp_path / name / "checkpoint.json", "exercise": tmp_path / name})
     monkeypatch.setattr(exercise, "load", lambda path: [{"_id": "a"}] if path.name == "source.json" else {"items": {}})
     monkeypatch.setattr(exercise, "pilot_ids", lambda *args: ["a"])
     calls, published = [], []

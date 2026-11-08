@@ -1,0 +1,505 @@
+{
+  "book": "kelas8",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b04-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 177,
+        "kutipan": "Durahman mengatakan bahwa diagram pada Gambar 4.7 termasuk bukan relasi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi diagram dengan anggota di luar kodomain",
+      "alasan_level": "mengevaluasi klaim tentang suatu himpunan pasangan memakai definisi relasi sebagai himpunan bagian $A \\times B$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{a, b, c\\}$. Sebuah diagram panah dari $A$ ke $B$ digambar dengan pasangan berurutan $\\{(1, a), (2, b), (3, c), (4, d)\\}$, dengan $d$ bukan anggota $B$. Relasi dari $A$ ke $B$ adalah himpunan bagian dari $A \\times B$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Himpunan pasangan itu bukan relasi dari $A$ ke $B$ karena $(4, d)$ bukan anggota $A \\times B$",
+      "alasan_benar": "relasi dari A ke B harus himpunan bagian A x B; (4,d) tidak ada di A x B",
+      "distraktor": [
+        {
+          "teks": "Himpunan pasangan itu adalah relasi dari $A$ ke $B$ karena setiap anggota $A$ mempunyai pasangan",
+          "alasan": "hanya memeriksa anggota $A$ dan mengabaikan kodomain"
+        },
+        {
+          "teks": "Himpunan pasangan itu adalah relasi dari $A$ ke $B$ karena relasi boleh memuat pasangan dengan anggota di luar $B$",
+          "alasan": "mengira relasi tidak dibatasi oleh kodomain"
+        },
+        {
+          "teks": "Himpunan pasangan itu adalah relasi dari $B$ ke $A$ karena ada huruf yang dipasangkan dengan bilangan",
+          "alasan": "salah arah: anggota pertama pasangan berasal dari $A$, bukan $B$"
+        }
+      ],
+      "pembahasan": "$A \\times B$ hanya memuat pasangan dengan anggota kedua $a$, $b$, atau $c$. Pasangan $(4, d)$ tidak ada di $A \\times B$, sehingga himpunan itu bukan himpunan bagian $A \\times B$ dan bukan relasi dari $A$ ke $B$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 181,
+        "kutipan": "Pak Mamad mengatakan bahwa pernyataan yang benar adalah milik Candra."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi relasi kosong",
+      "alasan_level": "menimbang dua pendapat tentang relasi tanpa pasangan berdasarkan definisi himpunan bagian",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{5, 6, 7\\}$. Relasi dari $A$ ke $B$ adalah \"lebih dari\". Pernyataan yang benar tentang relasi tersebut adalah ....",
+      "jawaban_benar": "Relasinya himpunan kosong, tetap merupakan relasi karena himpunan kosong adalah himpunan bagian $A \\times B$, dan rangenya kosong",
+      "alasan_benar": "tidak ada anggota $A$ yang lebih dari anggota $B$; $\\emptyset \\subset A \\times B$",
+      "distraktor": [
+        {
+          "teks": "Bukan relasi karena tidak ada anggota $A$ yang berpasangan dengan anggota $B$",
+          "alasan": "mengira relasi harus memuat paling sedikit satu pasangan"
+        },
+        {
+          "teks": "Rangenya sama dengan $B$ karena range selalu sama dengan kodomain",
+          "alasan": "mengira range = kodomain padahal tidak ada anggota $B$ yang mendapat pasangan"
+        },
+        {
+          "teks": "Relasinya sama dengan $A \\times B$ sehingga memiliki 9 pasangan berurutan",
+          "alasan": "membalik syarat: $A \\times B$ memuat semua pasangan, bukan pasangan yang memenuhi syarat"
+        }
+      ],
+      "pembahasan": "Karena $1, 2, 3$ lebih kecil dari $5, 6, 7$, tidak ada pasangan yang memenuhi \"lebih dari\". Relasinya $\\emptyset$, himpunan bagian $A \\times B$, sehingga tetap relasi dengan range $\\emptyset$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 174,
+        "kutipan": "Domain = {2, 3, 5} Kodomain = {1, 4, 5, 6} Range = {4, 5, 6}"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan menentukan range",
+      "alasan_level": "mengidentifikasi bahwa jawaban siswa adalah kodomain lalu menentukan range sebenarnya untuk menolak pernyataan lain",
+      "stimulus": null,
+      "pertanyaan": "Rani menyatakan bahwa daerah hasil (range) relasi \"kurang dari\" dari $A = \\{2, 5, 7\\}$ ke $B = \\{1, 3, 5, 8\\}$ adalah $\\{1, 3, 5, 8\\}$. Pernyataan yang benar tentang jawaban Rani adalah ....",
+      "jawaban_benar": "Keliru, karena $1$ tidak lebih dari anggota $A$ mana pun; range yang benar $\\{3, 5, 8\\}$",
+      "alasan_benar": "Rani menulis seluruh kodomain; $1$ tidak mendapat pasangan",
+      "distraktor": [
+        {
+          "teks": "Benar, karena range selalu sama dengan kodomain",
+          "alasan": "menyamakan range dengan kodomain"
+        },
+        {
+          "teks": "Keliru, range yang benar adalah $\\{2, 5, 7\\}$",
+          "alasan": "menulis anggota $A$ (domain) sebagai range"
+        },
+        {
+          "teks": "Keliru, range yang benar adalah $\\{5, 8\\}$",
+          "alasan": "membuang $3$ padahal $2 < 3$"
+        }
+      ],
+      "pembahasan": "Pasangan: $(2,3),(2,5),(2,8),(5,8),(7,8)$. Anggota $B$ yang mendapat pasangan adalah $3, 5, 8$; $1$ tidak. Range $=\\{3,5,8\\}$ berbeda dari kodomain.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "dapat dideinisikan sebagai himpunan bagian dari A × B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memilih relasi yang membantah klaim umum dengan membandingkan banyak anggota range dan domain pada empat relasi",
+      "stimulus": null,
+      "pertanyaan": "Klaim: \"Pada setiap relasi dari $A$ ke $B$, banyak anggota range sama dengan banyak anggota domain.\" Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{a, b, c, d\\}$ dengan domain $A$. Relasi dari $A$ ke $B$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\{(1, a), (2, a), (3, b)\\}$",
+      "alasan_benar": "domain 3 anggota, range $\\{a, b\\}$ 2 anggota",
+      "distraktor": [
+        {
+          "teks": "$\\{(1, a), (2, b), (3, c)\\}$",
+          "alasan": "range $\\{a,b,c\\}$ berjumlah 3 sehingga justru mendukung klaim"
+        },
+        {
+          "teks": "$\\{(1, b), (2, c), (3, d)\\}$",
+          "alasan": "range $\\{b,c,d\\}$ berjumlah 3 sehingga mendukung klaim"
+        },
+        {
+          "teks": "$\\{(1, d), (2, a), (3, c)\\}$",
+          "alasan": "range $\\{d,a,c\\}$ berjumlah 3 sehingga mendukung klaim"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus punya range yang banyaknya bukan 3. Hanya $\\{(1,a),(2,a),(3,b)\\}$ yang rangenya $\\{a,b\\}$ (2 anggota).",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 180,
+        "kutipan": "yang relasinya \"faktor dari\" dengan menggunakan cara himpunan pasangan berurutan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar banyak pasangan tertentu",
+      "alasan_level": "mencari nilai anggota kodomain agar relasi faktor dari memiliki tepat lima pasangan, menguji tiap kandidat",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{2, 3, 5\\}$ dan $B = \\{6, 10, k\\}$. Relasi dari $A$ ke $B$ adalah \"faktor dari\". Nilai $k$ yang membuat relasi tersebut memiliki tepat $5$ pasangan berurutan adalah ....",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "6 dan 10 memberi 4 pasangan; 21 hanya punya faktor 3 di A sehingga total 5",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "faktor di $A$ ada dua ($3$ dan $5$) sehingga total 6"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "faktor di $A$ ada tiga ($2, 3, 5$) sehingga total 7"
+        },
+        {
+          "teks": "$49$",
+          "alasan": "tidak ada faktor di $A$ sehingga total tetap 4"
+        }
+      ],
+      "pembahasan": "Pasangan dari $6$: $(2,6),(3,6)$; dari $10$: $(2,10),(5,10)$ sehingga 4 pasangan. Perlu tepat satu pasangan lagi dari $k$: $21$ hanya habis dibagi $3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "bagaimana cara menentukan aturan relasi yang mungkin didapat?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter pada aturan relasi",
+      "alasan_level": "menentukan syarat nilai $p$ agar setiap anggota $A$ punya pasangan di $B$, lalu memilih yang terbesar",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{5, 6, 7, 8, 9\\}$. Relasi dari $A$ ke $B$ memiliki aturan $b = a + p$ dengan $p$ bilangan asli. Jika setiap anggota $A$ harus mempunyai pasangan di $B$, nilai $p$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "p=5 memberi 6,7,8,9 semuanya di B; p=6 memberi 10 yang di luar B",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "nilai $p$ yang memenuhi tetapi bukan yang terbesar"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "$a = 4$ menghasilkan $10$ yang bukan anggota $B$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "hanya $a = 1$ yang menghasilkan anggota $B$ ($9$)"
+        }
+      ],
+      "pembahasan": "Untuk $p=5$: $1\\to6$, $2\\to7$, $3\\to8$, $4\\to9$ semuanya di $B$. Untuk $p=6$: $4\\to10$ tidak di $B$. Jadi $p$ terbesar $5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 180,
+        "kutipan": "Tuliskan sebanyak mungkin hubungan yang dapat kalain temukan dari himpunan K ke himpunan L"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang relasi dari beberapa syarat",
+      "alasan_level": "memeriksa tiga syarat sekaligus (pasangan tertentu, banyak pasangan, range) pada empat rancangan relasi",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{2, 3, 4, 5, 6\\}$. Sebuah relasi dari $A$ ke $B$ harus memenuhi tiga syarat: memuat pasangan $(1, 3)$, memiliki tepat $5$ pasangan berurutan, dan rangenya tepat $\\{3, 4\\}$. Relasi yang memenuhi ketiga syarat adalah ....",
+      "jawaban_benar": "$\\{(1, 3), (1, 4), (2, 3), (3, 4), (4, 3)\\}$",
+      "alasan_benar": "memuat (1,3), 5 pasangan, range {3,4}",
+      "distraktor": [
+        {
+          "teks": "$\\{(1, 3), (2, 3), (3, 4), (4, 4)\\}$",
+          "alasan": "hanya 4 pasangan"
+        },
+        {
+          "teks": "$\\{(1, 3), (1, 5), (2, 3), (3, 4), (4, 3)\\}$",
+          "alasan": "range memuat $5$ sehingga bukan $\\{3, 4\\}$"
+        },
+        {
+          "teks": "$\\{(1, 4), (2, 3), (2, 4), (3, 3), (4, 4)\\}$",
+          "alasan": "tidak memuat pasangan $(1, 3)$"
+        }
+      ],
+      "pembahasan": "Periksa tiap pilihan terhadap tiga syarat. Hanya pilihan pertama yang memenuhi semuanya; tiap pilihan lain melanggar tepat satu syarat.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "bagaimana cara menentukan aturan relasi yang mungkin didapat?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua aturan relasi",
+      "alasan_level": "membandingkan hasil dua aturan pada tiap anggota $A$ untuk mencari anggota yang dipasangkan sama",
+      "stimulus": null,
+      "pertanyaan": "Dina mengusulkan aturan $b = a^2 + 2$ dan Edo mengusulkan aturan $b = 3a$ untuk relasi dari $A = \\{1, 2, 3, 4, 5, 6\\}$. Banyak anggota $A$ yang oleh kedua aturan dipasangkan dengan anggota $B$ yang sama adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "a=1: 3 dan 3; a=2: 6 dan 6; a=3..6 berbeda",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "hanya menemukan $a = 1$ dan lupa $a = 2$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengira $a = 3$ cocok karena $3 \\times 3 = 9$ dan $3^2 = 9$, lupa menambah $2$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "menyangka kedua aturan menghasilkan nilai sama untuk semua anggota $A$"
+        }
+      ],
+      "pembahasan": "Bandingkan: $a=1$: $3$ dan $3$; $a=2$: $6$ dan $6$; $a=3$: $11$ dan $9$; $a=4$: $18$ dan $12$; $a=5$: $27$ dan $15$; $a=6$: $38$ dan $18$. Hanya 2 anggota.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 162,
+        "kutipan": "keduanya memiliki hubungan sebaliknya, yaitu hubungan sebagai \"anak dari\""
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi relasi kebalikan",
+      "alasan_level": "menalar dari relasi ke relasi kebalikannya: arah pasangan, range, dan banyak pasangan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{x, y\\}$. Relasi $R$ dari $A$ ke $B$ adalah $\\{(1, x), (2, x), (3, y)\\}$. Relasi kebalikan $R$ adalah relasi dari $B$ ke $A$ dengan arah pasangan dibalik. Pernyataan yang benar tentang relasi kebalikan tersebut adalah ....",
+      "jawaban_benar": "Rangenya $\\{1, 2, 3\\}$ dan banyak pasangannya $3$",
+      "alasan_benar": "pasangan kebalikan $(x,1),(x,2),(y,3)$; anggota 4 tidak berpasangan",
+      "distraktor": [
+        {
+          "teks": "Rangenya sama dengan $A$, yaitu $\\{1, 2, 3, 4\\}$",
+          "alasan": "menganggap range = kodomain; $4$ tidak berpasangan"
+        },
+        {
+          "teks": "Rangenya $\\{x, y\\}$",
+          "alasan": "mengambil anggota $B$ yang kini menjadi domain"
+        },
+        {
+          "teks": "Pasangan $(1, x)$ merupakan anggota relasi kebalikan",
+          "alasan": "arah pasangan tidak dibalik"
+        }
+      ],
+      "pembahasan": "Kebalikan $R$ adalah $\\{(x,1),(x,2),(y,3)\\}$. Range kebalikan adalah anggota $A$ yang berpasangan, yaitu $\\{1,2,3\\}$; ada 3 pasangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 175,
+        "kutipan": "Domain = {3, 4, 5, 6} Kodomain = {0, 1, 2, 3, 4, 5} Range = {2, 3, 4, 5}"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan jawaban siswa",
+      "alasan_level": "membaca jawaban domain, kodomain, dan range siswa lalu menunjuk bagian yang keliru dan menolak koreksi palsu",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A =$ {bilangan bulat antara $3$ dan $9$} dan $B =$ {enam bilangan cacah pertama}. Relasi dari $A$ ke $B$ adalah \"satu lebihnya dari\". Seorang siswa menulis: Domain $= \\{4, 5, 6, 7, 8\\}$, Kodomain $= \\{0, 1, 2, 3, 4, 5\\}$, Range $= \\{3, 4, 5, 6, 7\\}$. Kesalahan siswa tersebut adalah ....",
+      "jawaban_benar": "Range memuat $6$ dan $7$ yang bukan anggota $B$; range yang benar $\\{3, 4, 5\\}$",
+      "alasan_benar": "pasangan yang ada: (4,3),(5,4),(6,5); 7 dan 8 tidak punya pasangan",
+      "distraktor": [
+        {
+          "teks": "Domain seharusnya $\\{5, 6, 7, 8\\}$",
+          "alasan": "domain adalah seluruh $A$, jadi tulisan siswa sudah benar"
+        },
+        {
+          "teks": "Kodomain seharusnya $\\{1, 2, 3, 4, 5, 6\\}$",
+          "alasan": "bilangan cacah dimulai dari $0$, jadi kodomain siswa benar"
+        },
+        {
+          "teks": "Range seharusnya $\\{4, 5, 6, 7, 8\\}$",
+          "alasan": "menulis domain sebagai range"
+        }
+      ],
+      "pembahasan": "$A=\\{4,5,6,7,8\\}$, $B=\\{0,1,2,3,4,5\\}$. Pasangan $(a, a-1)$ dengan $a-1 \\in B$: $(4,3),(5,4),(6,5)$. Range $=\\{3,4,5\\}$; siswa memasukkan $6$ dan $7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 173,
+        "kutipan": "Anggota himpunan A berada pada sumbu horizontal, sedangkan anggota himpunan B berada pada sumbu vertikal."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membaca titik koordinat relasi",
+      "alasan_level": "membaca titik dengan benar arah sumbu lalu menolak tiga kesimpulan yang tertukar",
+      "stimulus": null,
+      "pertanyaan": "Relasi dari himpunan $A = \\{1, 2, 3, 4\\}$ ke himpunan $B = \\{1, 2, 3, 4, 5\\}$ dipaparkan pada koordinat dengan anggota $A$ pada sumbu mendatar dan anggota $B$ pada sumbu tegak. Titik yang tergambar adalah $(1, 3)$, $(2, 3)$, $(3, 3)$, dan $(4, 3)$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Range hanya $\\{3\\}$ dan anggota $3$ berpasangan dengan keempat anggota $A$",
+      "alasan_benar": "keempat titik memiliki koordinat tegak 3",
+      "distraktor": [
+        {
+          "teks": "Range relasi tersebut adalah $\\{1, 2, 3, 4\\}$",
+          "alasan": "mengambil koordinat mendatar (anggota $A$) sebagai range"
+        },
+        {
+          "teks": "Anggota $1$ dari $A$ berpasangan dengan tiga anggota $B$",
+          "alasan": "menafsirkan titik tegak 3 sebagai banyak pasangan"
+        },
+        {
+          "teks": "Relasi tersebut memiliki $3$ pasangan berurutan",
+          "alasan": "mengira banyak pasangan sama dengan koordinat tegak $3$"
+        }
+      ],
+      "pembahasan": "Titik $(a, b)$: $a \\in A$ mendatar, $b \\in B$ tegak. Semua titik tegaknya $3$, sehingga range $\\{3\\}$ dan ada 4 pasangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "dapat dideinisikan sebagai himpunan bagian dari A × B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "batas banyak pasangan relasi",
+      "alasan_level": "menalar batas atas banyak pasangan dan range untuk sembarang relasi dari kardinalitas himpunan",
+      "stimulus": null,
+      "pertanyaan": "Relasi $R$ dari himpunan $A$ ke himpunan $B$ dengan $n(A) = 5$ dan $n(B) = 4$ dapat berupa relasi apa saja (himpunan bagian $A \\times B$). Pernyataan yang pasti benar untuk setiap relasi $R$ tersebut adalah ....",
+      "jawaban_benar": "Banyak pasangan berurutan paling banyak $20$ dan banyak anggota range paling banyak $4$",
+      "alasan_benar": "$R \\subset A\\times B$ sehingga $n(R)\\le 20$; range subset $B$ sehingga paling banyak 4",
+      "distraktor": [
+        {
+          "teks": "Banyak pasangan berurutan selalu $20$ dan range selalu $B$",
+          "alasan": "mengira setiap relasi sama dengan $A \\times B$"
+        },
+        {
+          "teks": "Banyak anggota range selalu $5$ sebab $n(A) = 5$",
+          "alasan": "mengambil $n(A)$ padahal range himpunan bagian $B$"
+        },
+        {
+          "teks": "Banyak pasangan berurutan paling sedikit $5$ sebab $n(A) = 5$",
+          "alasan": "mengira setiap anggota $A$ pasti berpasangan; relasi kosong punya 0 pasangan"
+        }
+      ],
+      "pembahasan": "$n(A \\times B) = 5 \\times 4 = 20$ dan $R$ adalah himpunan bagian, jadi $n(R) \\le 20$. Range himpunan bagian $B$ sehingga paling banyak 4. Relasi kosong membantah dua pilihan lain.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "dapat dideinisikan sebagai himpunan bagian dari A × B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar semua pasangan memenuhi",
+      "alasan_level": "menentukan batas anggota $A$ agar relasi kurang dari memuat seluruh $A \\times B$, tanpa tertipu nilai batas",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ memiliki tiga anggota berbeda, yaitu $2$, $5$, dan bilangan asli $k$, dan $B = \\{6, 7, 8, 9\\}$. Agar relasi \"kurang dari\" dari $A$ ke $B$ sama dengan seluruh $A \\times B$, nilai $k$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "semua anggota A harus kurang dari 6, k berbeda dari 2 dan 5, jadi k terbesar 4",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "lupa bahwa $k$ harus berbeda dari anggota $5$ yang sudah ada"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "$6$ tidak kurang dari $6$ sehingga $(6, 6)$ tidak memenuhi"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengambil anggota $B$ sebagai batas atas"
+        }
+      ],
+      "pembahasan": "Agar $A \\times B$ seluruhnya memenuhi \"kurang dari\", setiap anggota $A$ harus kurang dari $6$. Bilangan asli $k<6$ yang berbeda dari $2$ dan $5$: $1,3,4$. Terbesar $4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "dapat dideinisikan sebagai himpunan bagian dari A × B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi A x B dan B x A",
+      "alasan_level": "membandingkan $A \\times B$ dengan $B \\times A$ pada contoh nyata untuk menolak tiga klaim",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2\\}$ dan $B = \\{2, 3, 4\\}$. Pernyataan yang benar tentang $A \\times B$ dan $B \\times A$ adalah ....",
+      "jawaban_benar": "$n(A \\times B) = n(B \\times A) = 6$, tetapi $(1, 2)$ hanya anggota $A \\times B$",
+      "alasan_benar": "$A\\times B$ dan $B\\times A$ sama banyak (6); $(1,2)$ tidak ada di $B \\times A$ karena $1 \\notin B$",
+      "distraktor": [
+        {
+          "teks": "$A \\times B = B \\times A$ karena banyak anggotanya sama",
+          "alasan": "menyamakan himpunan hanya karena banyak anggotanya sama"
+        },
+        {
+          "teks": "$(2, 2)$ hanya anggota $A \\times B$",
+          "alasan": "$2$ ada di $A$ dan $B$ sehingga $(2,2)$ ada di keduanya"
+        },
+        {
+          "teks": "$n(B \\times A) = 5$ karena $2$ dihitung sekali",
+          "alasan": "mengira anggota yang muncul di dua himpunan dihitung sekali; $3 \\times 2 = 6$"
+        }
+      ],
+      "pembahasan": "$A\\times B=\\{(1,2),(1,3),(1,4),(2,2),(2,3),(2,4)\\}$ dan $B\\times A=\\{(2,1),(3,1),(4,1),(2,2),(3,2),(4,2)\\}$. Sama banyak tetapi anggotanya berbeda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 176,
+        "kutipan": "yang berarti tiga hasil akar dari sembilan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan menyusun relasi akar dari",
+      "alasan_level": "membandingkan pasangan hasil siswa dengan relasi akar dari lengkap lalu menolak koreksi palsu",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{2, 3, 4, 5, 6, 7\\}$ dan $B = \\{4, 9, 16, 25, 36, 49\\}$. Seorang siswa menuliskan relasi \"akar dari\" dari $A$ ke $B$ sebagai $\\{(2, 4), (3, 9), (5, 25), (6, 36), (7, 49)\\}$. Kesalahan siswa tersebut adalah ....",
+      "jawaban_benar": "Kurang pasangan $(4, 16)$ karena $4$ adalah akar dari $16$",
+      "alasan_benar": "$\\sqrt{16}=4$ dan $4 \\in A$, $16 \\in B$ sehingga $(4,16)$ harus ada",
+      "distraktor": [
+        {
+          "teks": "Kurang pasangan $(4, 4)$ karena $4$ adalah akar dari $4$",
+          "alasan": "mengira bilangan adalah akar dari dirinya sendiri"
+        },
+        {
+          "teks": "Pasangan $(7, 49)$ keliru karena akar dari $49$ adalah $9$",
+          "alasan": "salah menghitung akar kuadrat $49$"
+        },
+        {
+          "teks": "Urutan pasangan terbalik, seharusnya $(4, 2), (9, 3), (25, 5), (36, 6), (49, 7)$",
+          "alasan": "pasangan relasi dari $A$ ke $B$ memuat anggota $A$ terlebih dahulu"
+        }
+      ],
+      "pembahasan": "Akar kuadrat anggota $B$: $2,3,4,5,6,7$, semuanya di $A$, jadi ada 6 pasangan. Siswa melewatkan $(4,16)$.",
+      "catatan": null
+    }
+  ]
+}

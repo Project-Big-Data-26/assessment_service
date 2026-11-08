@@ -502,6 +502,2256 @@
       ],
       "pembahasan": "$\\frac{a}{1-r}=9$ dan $ar=2$. Maka $\\frac{2}{r(1-r)}=9 \\Rightarrow 9r^2-9r+2=0 \\Rightarrow (3r-1)(3r-2)=0$. $r=\\frac13 \\Rightarrow a=6$; $r=\\frac23 \\Rightarrow a=3$. Keduanya $|r|<1$; yang terbesar $6$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ea024a69cc41b2f27fdb8ce",
+        "teks": "Jumlah 4 suku pertama suatu deret aritmetika adalah 44 dan jumlah 8 suku pertama adalah 152. Suku ke-10 deret tersebut adalah ....",
+        "jawaban": "$41$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 2 dan beda 3. Tentukan jumlah 15 suku pertamanya.",
+      "jawaban_benar": "$345$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 15(2×2+(15-1)×3)/2 = 345.",
+      "distraktor": [
+        {
+          "teks": "$346$",
+          "alasan": "Pilihan $346$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$344$",
+          "alasan": "Pilihan $344$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$347$",
+          "alasan": "Pilihan $347$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 15(2×2+(15-1)×3)/2 = 345.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e215e223aaddf9148fc971",
+        "teks": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$8-4+2-1+\\dots$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 5 dan beda 3. Tentukan jumlah 14 suku pertamanya.",
+      "jawaban_benar": "$343$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 14(2×5+(14-1)×3)/2 = 343.",
+      "distraktor": [
+        {
+          "teks": "$344$",
+          "alasan": "Pilihan $344$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$342$",
+          "alasan": "Pilihan $342$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$345$",
+          "alasan": "Pilihan $345$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 14(2×5+(14-1)×3)/2 = 343.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3cb950cc2f11800af7fe0844",
+        "teks": "Pernyataan berikut yang benar adalah ....",
+        "jawaban": "Deret $2+\\frac{4}{3}+\\frac{8}{9}+\\dots$ konvergen dengan jumlah $6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 9 dan beda 7. Tentukan jumlah 17 suku pertamanya.",
+      "jawaban_benar": "$1105$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 17(2×9+(17-1)×7)/2 = 1105.",
+      "distraktor": [
+        {
+          "teks": "$1106$",
+          "alasan": "Pilihan $1106$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$1104$",
+          "alasan": "Pilihan $1104$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$1107$",
+          "alasan": "Pilihan $1107$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 17(2×9+(17-1)×7)/2 = 1105.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e215e223aaddf9148fc971",
+        "teks": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$8-4+2-1+\\dots$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 2 dan beda 2. Tentukan jumlah 13 suku pertamanya.",
+      "jawaban_benar": "$182$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 13(2×2+(13-1)×2)/2 = 182.",
+      "distraktor": [
+        {
+          "teks": "$183$",
+          "alasan": "Pilihan $183$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Pilihan $181$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Pilihan $184$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 13(2×2+(13-1)×2)/2 = 182.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0015c68184ffe0fb7d2479e3",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 50 dan beda $-6$. Nilai terbesar yang dapat dicapai oleh jumlah $n$ suku pertama ($n$ bilangan asli) adalah ....",
+        "jawaban": "$234$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 6 dan beda 4. Tentukan jumlah 6 suku pertamanya.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 6(2×6+(6-1)×4)/2 = 96.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan $97$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan $95$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Pilihan $98$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 6(2×6+(6-1)×4)/2 = 96.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "313c2bb0927ceaa030984ee4",
+        "teks": "Deret $P$: $12+3+\\frac{3}{4}+\\dots$ adalah deret geometri tak hingga. Deret geometri tak hingga $Q$ memiliki suku pertama 9 dan jumlahnya dua kali jumlah deret $P$. Rasio deret $Q$ adalah ....",
+        "jawaban": "$\\frac{23}{32}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=110$. Berapa n terkecil dengan $S_n>616$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=22, jadi a=16, d=3. Selesaikan n(2a+(n-1)d)/2>616. Batas positif n=16, sehingga n terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=22, jadi a=16, d=3. Selesaikan n(2a+(n-1)d)/2>616. Batas positif n=16, sehingga n terkecil 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0db5301f48d71c5ac84e1e76",
+        "teks": "Suatu deret geometri tak hingga konvergen dengan jumlah 9 dan suku kedua 2. Suku pertama terbesar yang mungkin adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=60$ dan $S_5=110$. Berapa n terkecil dengan $S_n>630$?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=22, jadi a=18, d=2. Selesaikan n(2a+(n-1)d)/2>630. Batas positif n=18, sehingga n terkecil 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=22, jadi a=18, d=2. Selesaikan n(2a+(n-1)d)/2>630. Batas positif n=18, sehingga n terkecil 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "acc7cf996994e6d1987e0e47",
+        "teks": "Suatu deret geometri memiliki suku pertama 2 dan rasio 3. Jumlah 6 suku pertama deret tersebut adalah ....",
+        "jawaban": "$728$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=27$ dan $S_5=65$. Berapa n terkecil dengan $S_n>152$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Rumus jumlah memberi a+d=9, a+2d=13, jadi a=5, d=4. Selesaikan n(2a+(n-1)d)/2>152. Batas positif n=8, sehingga n terkecil 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=9, a+2d=13, jadi a=5, d=4. Selesaikan n(2a+(n-1)d)/2>152. Batas positif n=8, sehingga n terkecil 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4107fcaac9c69dee681237cb",
+        "teks": "Tentukan jumlah deret geometri tak hingga $16 + 8 + 4 + 2 + \\dots$",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=66$ dan $S_5=125$. Berapa n terkecil dengan $S_n>325$?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Rumus jumlah memberi a+d=22, a+2d=25, jadi a=19, d=3. Selesaikan n(2a+(n-1)d)/2>325. Batas positif n=10, sehingga n terkecil 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=22, a+2d=25, jadi a=19, d=3. Selesaikan n(2a+(n-1)d)/2>325. Batas positif n=10, sehingga n terkecil 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "de484adc73d5e86de7f36f4c",
+        "teks": "Diketahui deret aritmetika $3 + 7 + 11 + \\dots + 99$. Jumlah suku-suku yang bernomor genap (suku ke-2, ke-4, ke-6, dan seterusnya) adalah ....",
+        "jawaban": "$612$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=105$. Berapa n terkecil dengan $S_n>225$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>225. Batas positif n=9, sehingga n terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>225. Batas positif n=9, sehingga n terkecil 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecda62f58e9c764e1b8cad34",
+        "teks": "Deret bilangan adalah ....",
+        "jawaban": "jumlah suku-suku penyusun suatu barisan bilangan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=80$. Berapa n terkecil dengan $S_n>216$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Rumus jumlah memberi a+d=12, a+2d=16, jadi a=8, d=4. Selesaikan n(2a+(n-1)d)/2>216. Batas positif n=9, sehingga n terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=12, a+2d=16, jadi a=8, d=4. Selesaikan n(2a+(n-1)d)/2>216. Batas positif n=9, sehingga n terkecil 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "da19095aae54858e9a06f7e1",
+        "teks": "Diketahui deret: $7 + 11 + 15 + 19 + \\dots$ Jumlah 20 suku pertama deret tersebut adalah ....",
+        "jawaban": "$900$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=70$. Berapa n terkecil dengan $S_n>544$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Rumus jumlah memberi a+d=11, a+2d=14, jadi a=8, d=3. Selesaikan n(2a+(n-1)d)/2>544. Batas positif n=17, sehingga n terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=11, a+2d=14, jadi a=8, d=3. Selesaikan n(2a+(n-1)d)/2>544. Batas positif n=17, sehingga n terkecil 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a9f52242a4233a63c0bf7fa4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              33
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 33]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28ce77f5e1870110661dd2b9",
+        "teks": "Diketahui deret: $40 + 36 + 32 + 28 + \\dots$ Jumlah 12 suku pertama deret tersebut adalah ....",
+        "jawaban": "$216$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=70$. Berapa n terkecil dengan $S_n>220$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Rumus jumlah memberi a+d=12, a+2d=14, jadi a=10, d=2. Selesaikan n(2a+(n-1)d)/2>220. Batas positif n=11, sehingga n terkecil 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=12, a+2d=14, jadi a=10, d=2. Selesaikan n(2a+(n-1)d)/2>220. Batas positif n=11, sehingga n terkecil 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70167a9b886989fe8990bae1",
+        "teks": "Banyak pengunjung sebuah situs pada hari pertama adalah 6 orang. Setiap hari banyak pengunjung menjadi 3 kali lipat hari sebelumnya sehingga membentuk barisan geometri. Berapa total pengunjung selama 5 hari pertama?",
+        "jawaban": "$726$ orang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=130$. Berapa n terkecil dengan $S_n>1258$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Rumus jumlah memberi a+d=18, a+2d=26, jadi a=10, d=8. Selesaikan n(2a+(n-1)d)/2>1258. Batas positif n=17, sehingga n terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=18, a+2d=26, jadi a=10, d=8. Selesaikan n(2a+(n-1)d)/2>1258. Batas positif n=17, sehingga n terkecil 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a5ef16281ad8268f8bcc6c0a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              54
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 54]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dec25e2a03cfded335cc05f2",
+        "teks": "Penjualan sebuah toko roti pada minggu pertama adalah 30 bungkus. Penjualan setiap minggu membentuk barisan geometri dengan rasio 4. Berapa total penjualan roti hingga minggu kelima?",
+        "jawaban": "$10.230$ bungkus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=85$. Berapa n terkecil dengan $S_n>705$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=11, a+2d=17, jadi a=5, d=6. Selesaikan n(2a+(n-1)d)/2>705. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=11, a+2d=17, jadi a=5, d=6. Selesaikan n(2a+(n-1)d)/2>705. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a9f52242a4233a63c0bf7fa4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              33
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 33]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2d89d10ed61e9ff31aec114",
+        "teks": "Rani membagikan stiker kepada sembilan temannya. Teman pertama mendapat 3 stiker, teman kedua 7 stiker, teman ketiga 11 stiker, dan seterusnya dengan pola yang sama hingga teman kesembilan. Berapa stiker yang harus disiapkan Rani?",
+        "jawaban": "$171$ stiker",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=125$. Berapa n terkecil dengan $S_n>1035$?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=25, jadi a=15, d=5. Selesaikan n(2a+(n-1)d)/2>1035. Batas positif n=18, sehingga n terkecil 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=25, jadi a=15, d=5. Selesaikan n(2a+(n-1)d)/2>1035. Batas positif n=18, sehingga n terkecil 19.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4107fcaac9c69dee681237cb",
+        "teks": "Tentukan jumlah deret geometri tak hingga $16 + 8 + 4 + 2 + \\dots$",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=65$. Berapa n terkecil dengan $S_n>209$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Rumus jumlah memberi a+d=11, a+2d=13, jadi a=9, d=2. Selesaikan n(2a+(n-1)d)/2>209. Batas positif n=11, sehingga n terkecil 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=11, a+2d=13, jadi a=9, d=2. Selesaikan n(2a+(n-1)d)/2>209. Batas positif n=11, sehingga n terkecil 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a9f52242a4233a63c0bf7fa4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              33
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 33]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fadbeabd09427e23c4727bf3",
+        "teks": "Tentukan jumlah deret geometri tak hingga $12 - 6 + 3 - \\frac{3}{2} + \\dots$",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=115$. Berapa n terkecil dengan $S_n>360$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Rumus jumlah memberi a+d=21, a+2d=23, jadi a=19, d=2. Selesaikan n(2a+(n-1)d)/2>360. Batas positif n=12, sehingga n terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=21, a+2d=23, jadi a=19, d=2. Selesaikan n(2a+(n-1)d)/2>360. Batas positif n=12, sehingga n terkecil 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/0de8e1546aeba3d0ddee0278.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              63
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 63]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "000cc718216f750ac67d2905",
+        "teks": "Suku pertama dan rasio dari suatu deret geometri berturut-turut adalah 2 dan 4. Tentukan banyak suku jika diketahui jumlah deret bilangan tersebut adalah 682.",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=135$. Berapa n terkecil dengan $S_n>445$?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=27, jadi a=13, d=7. Selesaikan n(2a+(n-1)d)/2>445. Batas positif n=10, sehingga n terkecil 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=27, jadi a=13, d=7. Selesaikan n(2a+(n-1)d)/2>445. Batas positif n=10, sehingga n terkecil 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa3125db5fea91a315f4c47e",
+        "teks": "Sebuah perpustakaan mengumpulkan 4.200 buku selama 40 hari. Banyak buku yang terkumpul setiap hari membentuk barisan aritmetika. Pada hari pertama terkumpul 20 buku. Berapa buku yang terkumpul pada hari terakhir?",
+        "jawaban": "$190$ buku",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=130$. Berapa n terkecil dengan $S_n>378$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Rumus jumlah memberi a+d=18, a+2d=26, jadi a=10, d=8. Selesaikan n(2a+(n-1)d)/2>378. Batas positif n=9, sehingga n terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=18, a+2d=26, jadi a=10, d=8. Selesaikan n(2a+(n-1)d)/2>378. Batas positif n=9, sehingga n terkecil 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a5ef16281ad8268f8bcc6c0a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              54
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 54]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb05a5696a97bdd0e83c727e",
+        "teks": "Deret $5 + 10 + 20 + 40 + \\dots$ termasuk ....",
+        "jawaban": "deret geometri dengan rasio 2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=120$. Berapa n terkecil dengan $S_n>306$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=24, jadi a=14, d=5. Selesaikan n(2a+(n-1)d)/2>306. Batas positif n=9, sehingga n terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=24, jadi a=14, d=5. Selesaikan n(2a+(n-1)d)/2>306. Batas positif n=9, sehingga n terkecil 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6e63f6d81ee5aa481ed0952b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              57
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 57]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59c68ac7870c6894454f77d0",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 4 dan suku ke-15 sama dengan 60. Jumlah 15 suku pertama deret tersebut adalah ....",
+        "jawaban": "$480$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=95$. Berapa n terkecil dengan $S_n>1008$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Rumus jumlah memberi a+d=11, a+2d=19, jadi a=3, d=8. Selesaikan n(2a+(n-1)d)/2>1008. Batas positif n=16, sehingga n terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=11, a+2d=19, jadi a=3, d=8. Selesaikan n(2a+(n-1)d)/2>1008. Batas positif n=16, sehingga n terkecil 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a9f52242a4233a63c0bf7fa4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              33
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 33]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "38626eaa8a810f06a8e5f548",
+        "teks": "Jumlah semua bilangan asli dari 1 sampai 50, yaitu $1 + 2 + 3 + \\dots + 50$, adalah ....",
+        "jawaban": "$1.275$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=150$. Berapa n terkecil dengan $S_n>1184$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Rumus jumlah memberi a+d=22, a+2d=30, jadi a=14, d=8. Selesaikan n(2a+(n-1)d)/2>1184. Batas positif n=16, sehingga n terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=22, a+2d=30, jadi a=14, d=8. Selesaikan n(2a+(n-1)d)/2>1184. Batas positif n=16, sehingga n terkecil 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/462736cc4e47b9a5e3c8eb1a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              66
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 66]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "acc7cf996994e6d1987e0e47",
+        "teks": "Suatu deret geometri memiliki suku pertama 2 dan rasio 3. Jumlah 6 suku pertama deret tersebut adalah ....",
+        "jawaban": "$728$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=115$. Berapa n terkecil dengan $S_n>697$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=23, jadi a=17, d=3. Selesaikan n(2a+(n-1)d)/2>697. Batas positif n=17, sehingga n terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=23, jadi a=17, d=3. Selesaikan n(2a+(n-1)d)/2>697. Batas positif n=17, sehingga n terkecil 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e0af3e315312bf0e8676c0d",
+        "teks": "Rumus jumlah $n$ suku pertama deret aritmetika dengan suku pertama $a$ dan beda $b$ adalah ....",
+        "jawaban": "$S_n=\\frac{n}{2}(2a+(n-1)b)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=115$. Berapa n terkecil dengan $S_n>945$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=15, a+2d=23, jadi a=7, d=8. Selesaikan n(2a+(n-1)d)/2>945. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=15, a+2d=23, jadi a=7, d=8. Selesaikan n(2a+(n-1)d)/2>945. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6d263e46ff6f4b85749041de.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              45
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 45]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a39f29b9cad84dcc71e7fa6c",
+        "teks": "Untuk deret geometri dengan suku pertama $a$ dan rasio $r>1$, rumus jumlah $n$ suku pertama adalah ....",
+        "jawaban": "$S_n=\\frac{a(r^n-1)}{r-1}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=170$. Berapa n terkecil dengan $S_n>638$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Rumus jumlah memberi a+d=26, a+2d=34, jadi a=18, d=8. Selesaikan n(2a+(n-1)d)/2>638. Batas positif n=11, sehingga n terkecil 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=26, a+2d=34, jadi a=18, d=8. Selesaikan n(2a+(n-1)d)/2>638. Batas positif n=11, sehingga n terkecil 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a51ec8891af5c5423f5305c0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              78
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 78]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39354d2876b83586f97fe674",
+        "teks": "Jumlah deret geometri tak hingga $24 + 12 + 6 + 3 + \\dots$ adalah ....",
+        "jawaban": "$48$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=90$. Berapa n terkecil dengan $S_n>338$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Rumus jumlah memberi a+d=16, a+2d=18, jadi a=14, d=2. Selesaikan n(2a+(n-1)d)/2>338. Batas positif n=13, sehingga n terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=16, a+2d=18, jadi a=14, d=2. Selesaikan n(2a+(n-1)d)/2>338. Batas positif n=13, sehingga n terkecil 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/10a7578f84581e9ad1bc85f6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              48
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 48]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "838f8b4ab8ce06e0158e0664",
+        "teks": "Deret geometri tak hingga yang konvergen adalah ....",
+        "jawaban": "$8 + 4 + 2 + 1 + \\dots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=70$. Berapa n terkecil dengan $S_n>532$?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Rumus jumlah memberi a+d=12, a+2d=14, jadi a=10, d=2. Selesaikan n(2a+(n-1)d)/2>532. Batas positif n=19, sehingga n terkecil 20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=12, a+2d=14, jadi a=10, d=2. Selesaikan n(2a+(n-1)d)/2>532. Batas positif n=19, sehingga n terkecil 20.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1590122cb263270e2cb4b2f6",
+        "teks": "Deret geometri $1 + (m-3) + (m-3)^2 + (m-3)^3 + \\dots$ konvergen jika ....",
+        "jawaban": "$2<m<4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=80$. Berapa n terkecil dengan $S_n>374$?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Rumus jumlah memberi a+d=10, a+2d=16, jadi a=4, d=6. Selesaikan n(2a+(n-1)d)/2>374. Batas positif n=11, sehingga n terkecil 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=10, a+2d=16, jadi a=4, d=6. Selesaikan n(2a+(n-1)d)/2>374. Batas positif n=11, sehingga n terkecil 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/fb81c959c7e9f85028a1727f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              30
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 30]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3cb950cc2f11800af7fe0844",
+        "teks": "Pernyataan berikut yang benar adalah ....",
+        "jawaban": "Deret $2+\\frac{4}{3}+\\frac{8}{9}+\\dots$ konvergen dengan jumlah $6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=T_1$ dan $S_5=130$. Berapa n terkecil dengan $S_n>650$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=26, jadi a=14, d=6. Selesaikan n(2a+(n-1)d)/2>650. Batas positif n=13, sehingga n terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=26, jadi a=14, d=6. Selesaikan n(2a+(n-1)d)/2>650. Batas positif n=13, sehingga n terkecil 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3c582fcb9d5d1d6b10d87dbc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              60
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 60]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e215e223aaddf9148fc971",
+        "teks": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$8-4+2-1+\\dots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=42$ dan $S_5=100$. Berapa n terkecil dengan $S_n>848$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Rumus jumlah memberi a+d=14, a+2d=20, jadi a=8, d=6. Selesaikan n(2a+(n-1)d)/2>848. Batas positif n=16, sehingga n terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=14, a+2d=20, jadi a=8, d=6. Selesaikan n(2a+(n-1)d)/2>848. Batas positif n=16, sehingga n terkecil 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d230a6d7bb0ff4aca5d58756",
+        "teks": "Seorang siswa menghitung jumlah deret $5+8+11+\\dots+101$. Ia menentukan banyak suku dengan $n=\\frac{101-5}{3}=32$ lalu memperoleh jumlah $1.696$. Jumlah deret yang benar adalah ....",
+        "jawaban": "$1.749$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=27$ dan $S_5=80$. Berapa n terkecil dengan $S_n>572$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Rumus jumlah memberi a+d=9, a+2d=16, jadi a=2, d=7. Selesaikan n(2a+(n-1)d)/2>572. Batas positif n=13, sehingga n terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=9, a+2d=16, jadi a=2, d=7. Selesaikan n(2a+(n-1)d)/2>572. Batas positif n=13, sehingga n terkecil 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ae6eb57c607bc20fe6cc3690",
+        "teks": "Tiga bilangan bulat positif membentuk deret aritmetika. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Bilangan terbesar di antara ketiganya adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=105$. Berapa n terkecil dengan $S_n>561$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>561. Batas positif n=17, sehingga n terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>561. Batas positif n=17, sehingga n terkecil 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a39da9854e21d237ec6ef46c",
+        "teks": "Tiga bilangan positif membentuk deret geometri. Jumlah ketiga bilangan itu 26 dan hasil kalinya 216. Selisih bilangan terbesar dan bilangan terkecil adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=45$ dan $S_5=100$. Berapa n terkecil dengan $S_n>595$?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Rumus jumlah memberi a+d=15, a+2d=20, jadi a=10, d=5. Selesaikan n(2a+(n-1)d)/2>595. Batas positif n=14, sehingga n terkecil 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=15, a+2d=20, jadi a=10, d=5. Selesaikan n(2a+(n-1)d)/2>595. Batas positif n=14, sehingga n terkecil 15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c7bdf26980486b4a653e01d",
+        "teks": "Deret geometri tak hingga $1+\\frac{x}{x+3}+\\left(\\frac{x}{x+3}\\right)^2+\\dots$ konvergen untuk semua nilai $x$ yang memenuhi ....",
+        "jawaban": "$x>-\\frac{3}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=15$ dan $S_5=40$. Berapa n terkecil dengan $S_n>222$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Rumus jumlah memberi a+d=5, a+2d=8, jadi a=2, d=3. Selesaikan n(2a+(n-1)d)/2>222. Batas positif n=12, sehingga n terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=5, a+2d=8, jadi a=2, d=3. Selesaikan n(2a+(n-1)d)/2>222. Batas positif n=12, sehingga n terkecil 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e753856d467055bb4da3cc8f",
+        "teks": "Deret $P$: $5+11+17+\\dots$ dan deret $Q$: $47+49+51+\\dots$ keduanya aritmetika. Banyak suku $n$ (bilangan asli) sehingga jumlah $n$ suku pertama kedua deret sama adalah ....",
+        "jawaban": "$22$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=27$ dan $S_5=70$. Berapa n terkecil dengan $S_n>378$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Rumus jumlah memberi a+d=9, a+2d=14, jadi a=4, d=5. Selesaikan n(2a+(n-1)d)/2>378. Batas positif n=12, sehingga n terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=9, a+2d=14, jadi a=4, d=5. Selesaikan n(2a+(n-1)d)/2>378. Batas positif n=12, sehingga n terkecil 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "094ff7eb6dfaab94caaf66f0",
+        "teks": "Barisan $P$: $2,5,8,\\dots$ dan barisan $Q$: $40,36,32,\\dots$ keduanya aritmetika. Barisan $R$ dibentuk dengan menjumlahkan suku-suku yang seletak pada $P$ dan $Q$ ($R_1=42$, $R_2=41$, dan seterusnya). Jumlah 20 suku pertama $R$ adalah ....",
+        "jawaban": "$650$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=30$ dan $S_5=65$. Berapa n terkecil dengan $S_n>420$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=10, a+2d=13, jadi a=7, d=3. Selesaikan n(2a+(n-1)d)/2>420. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=10, a+2d=13, jadi a=7, d=3. Selesaikan n(2a+(n-1)d)/2>420. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cc2fb92ef739851a83d8176e",
+        "teks": "Suatu deret geometri tak hingga memiliki suku pertama 12 dan rasio $\\frac{1}{m}$ dengan $m$ bilangan bulat, $m>1$. Nilai $m$ terbesar sehingga jumlah deret tersebut lebih dari $12{,}5$ adalah ....",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=51$ dan $S_5=105$. Berapa n terkecil dengan $S_n>615$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=17, a+2d=21, jadi a=13, d=4. Selesaikan n(2a+(n-1)d)/2>615. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=17, a+2d=21, jadi a=13, d=4. Selesaikan n(2a+(n-1)d)/2>615. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "40d7d99385f61f835709db66",
+        "teks": "Rumus jumlah $n$ suku pertama berikut yang menghasilkan deret aritmetika adalah ....",
+        "jawaban": "$S_n=2n^2-3n$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=21$ dan $S_5=45$. Berapa n terkecil dengan $S_n>221$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Rumus jumlah memberi a+d=7, a+2d=9, jadi a=5, d=2. Selesaikan n(2a+(n-1)d)/2>221. Batas positif n=13, sehingga n terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=7, a+2d=9, jadi a=5, d=2. Selesaikan n(2a+(n-1)d)/2>221. Batas positif n=13, sehingga n terkecil 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "313c2bb0927ceaa030984ee4",
+        "teks": "Deret $P$: $12+3+\\frac{3}{4}+\\dots$ adalah deret geometri tak hingga. Deret geometri tak hingga $Q$ memiliki suku pertama 9 dan jumlahnya dua kali jumlah deret $P$. Rasio deret $Q$ adalah ....",
+        "jawaban": "$\\frac{23}{32}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=39$ dan $S_5=105$. Berapa n terkecil dengan $S_n>410$?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Rumus jumlah memberi a+d=13, a+2d=21, jadi a=5, d=8. Selesaikan n(2a+(n-1)d)/2>410. Batas positif n=10, sehingga n terkecil 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=13, a+2d=21, jadi a=5, d=8. Selesaikan n(2a+(n-1)d)/2>410. Batas positif n=10, sehingga n terkecil 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f2e2c80bc8af2401e8943daa",
+        "teks": "Deret aritmetika $4+10+16+\\dots$ dan deret geometri $4+8+16+\\dots$ dibandingkan jumlah $n$ suku pertamanya. Bilangan asli $n$ terkecil sehingga jumlah deret geometri lebih besar daripada jumlah deret aritmetika adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=66$ dan $S_5=130$. Berapa n terkecil dengan $S_n>936$?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Rumus jumlah memberi a+d=22, a+2d=26, jadi a=18, d=4. Selesaikan n(2a+(n-1)d)/2>936. Batas positif n=18, sehingga n terkecil 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=22, a+2d=26, jadi a=18, d=4. Selesaikan n(2a+(n-1)d)/2>936. Batas positif n=18, sehingga n terkecil 19.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "90c254bbff2a76f7e7ee4889",
+        "teks": "Seorang siswa menghitung jumlah 6 suku pertama deret $243-81+27-9+\\dots$ dengan $r=\\frac{1}{3}$ sehingga memperoleh $364$. Jumlah 6 suku pertama yang benar adalah ....",
+        "jawaban": "$182$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=51$ dan $S_5=105$. Berapa n terkecil dengan $S_n>420$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Rumus jumlah memberi a+d=17, a+2d=21, jadi a=13, d=4. Selesaikan n(2a+(n-1)d)/2>420. Batas positif n=12, sehingga n terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=17, a+2d=21, jadi a=13, d=4. Selesaikan n(2a+(n-1)d)/2>420. Batas positif n=12, sehingga n terkecil 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0015c68184ffe0fb7d2479e3",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 50 dan beda $-6$. Nilai terbesar yang dapat dicapai oleh jumlah $n$ suku pertama ($n$ bilangan asli) adalah ....",
+        "jawaban": "$234$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=36$ dan $S_5=90$. Berapa n terkecil dengan $S_n>1026$?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Rumus jumlah memberi a+d=12, a+2d=18, jadi a=6, d=6. Selesaikan n(2a+(n-1)d)/2>1026. Batas positif n=18, sehingga n terkecil 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=12, a+2d=18, jadi a=6, d=6. Selesaikan n(2a+(n-1)d)/2>1026. Batas positif n=18, sehingga n terkecil 19.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0db5301f48d71c5ac84e1e76",
+        "teks": "Suatu deret geometri tak hingga konvergen dengan jumlah 9 dan suku kedua 2. Suku pertama terbesar yang mungkin adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=48$ dan $S_5=95$. Berapa n terkecil dengan $S_n>354$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Rumus jumlah memberi a+d=16, a+2d=19, jadi a=13, d=3. Selesaikan n(2a+(n-1)d)/2>354. Batas positif n=12, sehingga n terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=16, a+2d=19, jadi a=13, d=3. Selesaikan n(2a+(n-1)d)/2>354. Batas positif n=12, sehingga n terkecil 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d674cd365e1defa383d4577c",
+        "teks": "Tentukanlah jumlah bilangan kelipatan 7 di antara bilangan 20 dan 150.",
+        "jawaban": "$1.596$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=51$ dan $S_5=95$. Berapa n terkecil dengan $S_n>351$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Rumus jumlah memberi a+d=17, a+2d=19, jadi a=15, d=2. Selesaikan n(2a+(n-1)d)/2>351. Batas positif n=13, sehingga n terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=17, a+2d=19, jadi a=15, d=2. Selesaikan n(2a+(n-1)d)/2>351. Batas positif n=13, sehingga n terkecil 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f4f3b0f77c40b3934ce9d001",
+        "teks": "Tentukanlah jumlah bilangan kelipatan 11 di antara bilangan 100 dan 1.000.",
+        "jawaban": "$44.550$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=39$ dan $S_5=95$. Berapa n terkecil dengan $S_n>935$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Rumus jumlah memberi a+d=13, a+2d=19, jadi a=7, d=6. Selesaikan n(2a+(n-1)d)/2>935. Batas positif n=17, sehingga n terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=13, a+2d=19, jadi a=7, d=6. Selesaikan n(2a+(n-1)d)/2>935. Batas positif n=17, sehingga n terkecil 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0f76d916ba3dc630de64059",
+        "teks": "Suku ke-4 suatu barisan aritmetika adalah 42 dan suku ke-9 adalah 12. Tentukan nilai n agar suku ke-n = 0.",
+        "jawaban": "$11$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=45$ dan $S_5=105$. Berapa n terkecil dengan $S_n>765$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=15, a+2d=21, jadi a=9, d=6. Selesaikan n(2a+(n-1)d)/2>765. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=15, a+2d=21, jadi a=9, d=6. Selesaikan n(2a+(n-1)d)/2>765. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34f904738a495ba3961f8427",
+        "teks": "Agar deret geometri $6 + 6(2m-7) + 6(2m-7)^2 + \\dots$ merupakan deret konvergen, tentukan nilai $m$.",
+        "jawaban": "$3<m<4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=51$ dan $S_5=95$. Berapa n terkecil dengan $S_n>435$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Rumus jumlah memberi a+d=17, a+2d=19, jadi a=15, d=2. Selesaikan n(2a+(n-1)d)/2>435. Batas positif n=15, sehingga n terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=17, a+2d=19, jadi a=15, d=2. Selesaikan n(2a+(n-1)d)/2>435. Batas positif n=15, sehingga n terkecil 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20f7ea2034b5084a1fec9f07",
+        "teks": "Suku pertama suatu deret geometri tak hingga adalah $x$ dan jumlah deret tak hingga tersebut adalah 15. Nilai $x$ berikut yang mungkin adalah ....",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=120$. Berapa n terkecil dengan $S_n>651$?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=24, jadi a=14, d=5. Selesaikan n(2a+(n-1)d)/2>651. Batas positif n=14, sehingga n terkecil 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=24, jadi a=14, d=5. Selesaikan n(2a+(n-1)d)/2>651. Batas positif n=14, sehingga n terkecil 15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ea024a69cc41b2f27fdb8ce",
+        "teks": "Jumlah 4 suku pertama suatu deret aritmetika adalah 44 dan jumlah 8 suku pertama adalah 152. Suku ke-10 deret tersebut adalah ....",
+        "jawaban": "$41$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=66$ dan $S_5=150$. Berapa n terkecil dengan $S_n>924$?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Rumus jumlah memberi a+d=22, a+2d=30, jadi a=14, d=8. Selesaikan n(2a+(n-1)d)/2>924. Batas positif n=14, sehingga n terkecil 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=22, a+2d=30, jadi a=14, d=8. Selesaikan n(2a+(n-1)d)/2>924. Batas positif n=14, sehingga n terkecil 15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b02-b-hard-bt01-065"
     }
   ]
 }

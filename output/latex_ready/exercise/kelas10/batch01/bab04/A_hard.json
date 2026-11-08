@@ -1,0 +1,407 @@
+{
+  "book": "kelas10",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "soal": [
+    {
+      "id": "kelas10-b04-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 131,
+        "kutipan": "setelah melakukan eliminasi, didapatkan sebuah kesamaan"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan nilai parameter",
+      "alasan_level": "mengenali persamaan ketiga harus kombinasi dua persamaan lain (tanpa $x$) lalu menentukan koefisien dan ruas kanannya",
+      "stimulus": "Diketahui sistem persamaan linear tiga variabel:\n\n$x + 2y + z = 6$ ... (1)\n\n$2x - y + 3z = 4$ ... (2)\n\n$5y + kz = m$ ... (3)",
+      "pertanyaan": "Agar sistem tersebut memiliki banyak solusi, nilai $k + m$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "persamaan (3) harus sama dengan $2 \\times (1) - (2)$ yaitu $5y - z = 8$, sehingga $k = -1$ dan $m = 8$, jadi $k + m = 7$",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "tanda $z$ salah ($k = 1$) sehingga $1 + 8$"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "ruas kanan dijumlahkan, bukan dikurangkan ($m = 12 + 4 = 16$)"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "ruas kanan hanya $2 \\times 6 = 12$ tanpa mengurangi 4, sehingga $m = 12$"
+        }
+      ],
+      "pembahasan": "Persamaan (3) tidak memuat $x$, jadi harus berbentuk $a(1) + b(2)$ dengan $a + 2b = 0$. Ambil $a = 2$, $b = -1$: $2(1) - (2)$ memberi $5y - z = 12 - 4 = 8$. Maka $k = -1$, $m = 8$. Untuk $k$ dan $m$ lain, persamaan (3) bukan kombinasi (1) dan (2), sehingga solusi tidak banyak. Jadi $k + m = 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Solusi/penyelesaian adalah nilai yang memenuhi semua persamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "memeriksa penyelesaian",
+      "alasan_level": "mengevaluasi empat usulan penyelesaian dengan memeriksanya pada ketiga persamaan; tiga usulan hanya memenuhi dua persamaan",
+      "stimulus": "Diketahui sistem persamaan linear:\n\n$x + y + z = 9$ ... (1)\n\n$2x - y + z = 8$ ... (2)\n\n$x + 3y - z = 5$ ... (3)\n\nEmpat siswa mengusulkan penyelesaian berbeda dan masing-masing yakin usulannya benar.",
+      "pertanyaan": "Usulan yang merupakan penyelesaian sistem tersebut adalah ....",
+      "jawaban_benar": "$(x, y, z) = (3, 2, 4)$",
+      "alasan_benar": "hanya $(3,2,4)$ yang memenuhi ketiga persamaan: $9$, $6-2+4=8$, dan $3+6-4=5$",
+      "distraktor": [
+        {
+          "teks": "$(x, y, z) = (5, 3, 1)$",
+          "alasan": "memenuhi (1) dan (2) tetapi tidak (3): $5+9-1=13 \\neq 5$"
+        },
+        {
+          "teks": "$(x, y, z) = (1, 3, 5)$",
+          "alasan": "memenuhi (1) dan (3) tetapi tidak (2): $2-3+5=4 \\neq 8$"
+        },
+        {
+          "teks": "$(x, y, z) = (1, 1, 7)$",
+          "alasan": "memenuhi (1) dan (2) tetapi tidak (3): $1+3-7=-3 \\neq 5$"
+        }
+      ],
+      "pembahasan": "Penyelesaian harus memenuhi semua persamaan. $(5,3,1)$: (3) menghasilkan $13$. $(1,3,5)$: (2) menghasilkan $4$. $(1,1,7)$: (3) menghasilkan $-3$. $(3,2,4)$: (1) $9$, (2) $6-2+4=8$, (3) $3+6-4=5$, semuanya benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 125,
+        "kutipan": "Penyelesaian dari sistem persamaan linear adalah nilai-nilai yang memenuhi semua persamaan tersebut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menafsirkan penyelesaian dalam konteks",
+      "alasan_level": "menyelesaikan sistem tiga variabel lalu mengevaluasi apakah hasil (harga negatif) masuk akal untuk konteksnya",
+      "stimulus": "Di sebuah kantin, harga per buah tiga jenis kudapan (bakwan, risoles, dan lemper) belum diketahui. Pencatatan transaksi: 1 bakwan, 1 risoles, dan 1 lemper dibayar Rp8.000,00; 2 bakwan, 1 risoles, dan 2 lemper dibayar Rp11.000,00; 1 bakwan, 2 risoles, dan 3 lemper dibayar Rp11.000,00.",
+      "pertanyaan": "Kesimpulan yang paling tepat mengenai hasil perhitungan dari catatan tersebut adalah ....",
+      "jawaban_benar": "sistem memiliki penyelesaian tunggal, tetapi harga lemper $-$Rp1.000,00 tidak mungkin sehingga catatan transaksi perlu diperiksa ulang",
+      "alasan_benar": "dengan $b$, $r$, $l$ harga bakwan, risoles, lemper diperoleh $b = 4.000$, $r = 5.000$, $l = -1.000$; harga negatif tidak masuk akal",
+      "distraktor": [
+        {
+          "teks": "harga lemper Rp1.000,00 karena harga tidak mungkin negatif",
+          "alasan": "mengubah tanda hasil tanpa memeriksa apakah persamaan lain masih terpenuhi"
+        },
+        {
+          "teks": "sistem tidak memiliki penyelesaian karena ada harga yang negatif",
+          "alasan": "mengira penyelesaian yang tidak masuk akal berarti sistem tanpa solusi"
+        },
+        {
+          "teks": "sistem memiliki banyak penyelesaian sehingga harga lemper dapat dipilih positif",
+          "alasan": "mengira konteks dapat memilih nilai, padahal ketiga persamaan mengunci semua harga"
+        }
+      ],
+      "pembahasan": "$b+r+l=8.000$; $2b+r+2l=11.000$; $b+2r+3l=11.000$. (2)-(1): $b+l=3.000$. (3)-(1): $r+2l=3.000$. Dari (1): $r=8.000-(b+l)=5.000$, sehingga $l=-1.000$ dan $b=4.000$. Penyelesaian tunggal, tetapi harga negatif tidak mungkin; berarti data transaksi ada yang salah catat.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 132,
+        "kutipan": "Hanya ada satu pasangan nilai yang menyebabkan persamaan linear bernilai benar."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menafsirkan penyelesaian dalam konteks",
+      "alasan_level": "menyelesaikan sistem tiga variabel lalu menilai bahwa hasil pecahan tidak mungkin untuk banyak orang",
+      "stimulus": "Panitia pelatihan membagikan 85 permen kepada peserta dari tiga jenjang: $x$ siswa SD, $y$ siswa SMP, dan $z$ siswa SMA. Jumlah peserta 30 orang. Setiap siswa SD mendapat 4 permen, SMP 3 permen, dan SMA 2 permen. Selain itu, banyak siswa SD ditambah dua kali banyak siswa SMP, dikurangi banyak siswa SMA, adalah 15.",
+      "pertanyaan": "Kesimpulan yang tepat mengenai data tersebut adalah ....",
+      "jawaban_benar": "sistem memiliki penyelesaian tunggal, tetapi $x = 7{,}5$ bukan banyak orang yang mungkin sehingga data tidak sesuai kenyataan",
+      "alasan_benar": "dari $x + y + z = 30$, $4x + 3y + 2z = 85$, dan $x + 2y - z = 15$ diperoleh $x = 7{,}5$, $y = 10$, $z = 12{,}5$; banyak orang harus bilangan bulat",
+      "distraktor": [
+        {
+          "teks": "banyak siswa SD 8 orang, SMP 10 orang, dan SMA 12 orang setelah dibulatkan",
+          "alasan": "pembulatan membuat persamaan kedua tidak lagi terpenuhi ($32+30+24=86$)"
+        },
+        {
+          "teks": "sistem tidak memiliki penyelesaian karena ada hasil pecahan",
+          "alasan": "mengira hasil pecahan berarti sistem tanpa solusi"
+        },
+        {
+          "teks": "sistem memiliki banyak penyelesaian sehingga ada pilihan bilangan bulat",
+          "alasan": "mengira tiga persamaan untuk tiga variabel pasti longgar"
+        }
+      ],
+      "pembahasan": "$x+y+z=30$ (1), $4x+3y+2z=85$ (2), $x+2y-z=15$ (3). (1)+(3): $2x+3y=45$. (2)-2(1): $2x+y=25$. Kurangkan: $2y=20$, $y=10$, $x=7{,}5$, $z=12{,}5$. Penyelesaian tunggal tetapi bukan bilangan bulat, padahal $x$ dan $z$ menyatakan banyak orang, sehingga data tidak konsisten dengan kenyataan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 130,
+        "kutipan": "Sistem persamaan linear memiliki banyak solusi. Grafiknya berupa dua garis yang berimpit."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengevaluasi klaim",
+      "alasan_level": "menguji klaim umum dengan contoh sistem dan menemukan kontradiksi antarpersamaan",
+      "stimulus": "Tika menyatakan: \"Jika dua persamaan dalam sistem persamaan linear tiga variabel saling berimpit, sistem itu pasti memiliki banyak solusi.\" Untuk mengujinya, ia mengambil sistem berikut:\n\n$x + y + z = 4$ ... (1)\n\n$2x + 2y + 2z = 8$ ... (2)\n\n$x + y + z = 7$ ... (3)",
+      "pertanyaan": "Penilaian yang tepat terhadap pernyataan Tika berdasarkan sistem tersebut adalah ....",
+      "jawaban_benar": "pernyataan salah, karena persamaan (1) dan (3) bertentangan ($4 \\neq 7$) sehingga sistem tidak memiliki solusi",
+      "alasan_benar": "persamaan (1) dan (2) berimpit, tetapi (1) dan (3) memiliki ruas kiri sama tetapi ruas kanan berbeda sehingga tidak ada $x, y, z$ yang memenuhi keduanya",
+      "distraktor": [
+        {
+          "teks": "pernyataan benar, karena (1) dan (2) berimpit sehingga solusinya banyak",
+          "alasan": "tidak memeriksa persamaan ketiga yang bertentangan"
+        },
+        {
+          "teks": "pernyataan salah, karena sistem tersebut memiliki tepat satu solusi",
+          "alasan": "mengira tiga persamaan pasti memberi satu solusi"
+        },
+        {
+          "teks": "pernyataan salah, karena sistem tersebut memiliki tepat dua solusi",
+          "alasan": "mengira banyak solusi bisa dihitung seperti banyak persamaan bebas"
+        }
+      ],
+      "pembahasan": "(2) adalah dua kali (1), jadi berimpit. Tetapi (3) memiliki ruas kiri yang sama dengan (1) dan ruas kanan berbeda: $x+y+z=4$ dan $x+y+z=7$ tidak mungkin sekaligus benar. Maka sistem tidak memiliki solusi, sehingga pernyataan Tika salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Perhatikan bahwa persamaan (3) tidak mengandung variabel"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang informasi tambahan",
+      "alasan_level": "mengenali bahwa tambahan data harus bukan kombinasi dua persamaan yang ada lalu memilih data yang benar-benar baru",
+      "stimulus": "Harga satu pulpen, satu buku, dan satu pensil (dalam ribu rupiah) berturut-turut adalah $x$, $y$, dan $z$. Dua transaksi tercatat: 2 pulpen, 1 buku, dan 1 pensil seharga Rp11.000,00; serta 1 pulpen, 2 buku, dan 1 pensil seharga Rp10.000,00. Seorang kasir ingin menentukan harga masing-masing barang secara tepat dan hanya boleh menambahkan satu informasi (satu persamaan baru) yang benar.",
+      "pertanyaan": "Informasi tambahan yang cukup untuk menentukan harga ketiga barang secara tunggal adalah ....",
+      "jawaban_benar": "satu pulpen, satu buku, dan satu pensil seluruhnya seharga Rp8.000,00",
+      "alasan_benar": "$x+y+z=8$ bukan kombinasi dua persamaan yang ada, sehingga mengunci $x=3$, $y=2$, $z=3$",
+      "distraktor": [
+        {
+          "teks": "harga pulpen Rp1.000,00 lebih mahal daripada harga buku ($x - y = 1$)",
+          "alasan": "persamaan itu sama dengan (1) dikurangi (2), jadi tidak memberi informasi baru"
+        },
+        {
+          "teks": "tiga pulpen, tiga buku, dan dua pensil seharga Rp21.000,00",
+          "alasan": "persamaan itu sama dengan (1) ditambah (2), jadi tidak memberi informasi baru"
+        },
+        {
+          "teks": "empat pulpen, lima buku, dan tiga pensil seharga Rp31.000,00",
+          "alasan": "persamaan itu sama dengan (1) ditambah 2 kali (2), jadi tidak memberi informasi baru"
+        }
+      ],
+      "pembahasan": "Persamaan awal: $2x+y+z=11$ (1) dan $x+2y+z=10$ (2). Informasi baru hanya berguna bila bukan kombinasi $a(1)+b(2)$, yang koefisiennya $(2a+b,\\ a+2b,\\ a+b)$. $x-y=1$ adalah (1)$-$(2); $3x+3y+2z=21$ adalah (1)+(2); $4x+5y+3z=31$ adalah (1)+2(2). Untuk $x+y+z=8$ diperlukan $2a+b=1$ dan $a+2b=1$ sehingga $a=b=\\tfrac{1}{3}$, tetapi $a+b=\\tfrac{2}{3}\\neq 1$, jadi bukan kombinasi. Maka tiga persamaan bebas dan harganya tunggal: $x=3$, $y=2$, $z=3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 125,
+        "kutipan": "Sistem persamaan linear adalah gabungan beberapa persamaan linear."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "merancang sistem tiga persamaan dari tiga pernyataan berbeda, termasuk pernyataan hubungan dua kali lipat",
+      "stimulus": "Seorang pengrajin memproduksi tiga jenis tas: $a$ buah tas jenis A, $b$ buah tas jenis B, dan $c$ buah tas jenis C. Total produksi 40 buah. Banyak tas jenis B dua kali banyak tas jenis A. Harga jual per buah (dalam ribu rupiah) adalah 50 untuk jenis A, 40 untuk jenis B, dan 30 untuk jenis C, dengan total penjualan Rp1.600.000,00.",
+      "pertanyaan": "Sistem persamaan linear yang tepat untuk memodelkan keadaan tersebut adalah ....",
+      "jawaban_benar": "$a + b + c = 40$, $2a - b = 0$, dan $50a + 40b + 30c = 1.600$",
+      "alasan_benar": "total produksi $a+b+c=40$, $b=2a$ ditulis $2a-b=0$, dan total penjualan $50a+40b+30c=1.600$",
+      "distraktor": [
+        {
+          "teks": "$a + b + c = 40$, $a - 2b = 0$, dan $50a + 40b + 30c = 1.600$",
+          "alasan": "hubungan dua kali terbalik ($a = 2b$)"
+        },
+        {
+          "teks": "$a + b + c = 40$, $2a - b = 0$, dan $30a + 40b + 50c = 1.600$",
+          "alasan": "harga jual jenis A dan C tertukar"
+        },
+        {
+          "teks": "$a + b + c = 1.600$, $2a - b = 0$, dan $50a + 40b + 30c = 40$",
+          "alasan": "total produksi dan total penjualan tertukar"
+        }
+      ],
+      "pembahasan": "Tiga informasi menjadi tiga persamaan: $a+b+c=40$; $b=2a$ sehingga $2a-b=0$; $50a+40b+30c=1.600$ (ribu rupiah). Cek: $a=10$, $b=20$, $c=10$ memberi $500+800+300=1.600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 125,
+        "kutipan": "Sistem persamaan linear adalah gabungan beberapa persamaan linear."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua model",
+      "alasan_level": "membandingkan dua model siswa untuk situasi yang sama dan menentukan model yang benar beserta alasannya",
+      "stimulus": "Panti asuhan membagikan 60 nasi kotak dengan tiga menu: $a$ menu ayam, $b$ menu ikan, dan $c$ menu telur. Banyak menu ayam 5 lebih banyak daripada menu ikan. Jumlah menu ayam dan menu telur sama dengan tiga kali menu ikan.\n\nModel Rina: $a + b + c = 60$, $a - b = 5$, $a - 3b + c = 0$.\n\nModel Sari: $a + b + c = 60$, $b - a = 5$, $a - 3b + c = 0$.",
+      "pertanyaan": "Pernyataan yang benar mengenai kedua model tersebut adalah ....",
+      "jawaban_benar": "model Rina benar, model Sari salah karena persamaan keduanya menyatakan menu ikan lebih banyak daripada menu ayam",
+      "alasan_benar": "$a-b=5$ sesuai \"ayam 5 lebih banyak\", sedangkan $b-a=5$ berarti ikan lebih banyak; persamaan ketiga kedua model sudah benar",
+      "distraktor": [
+        {
+          "teks": "model Sari benar, model Rina salah karena persamaan keduanya terbalik",
+          "alasan": "salah membaca arah selisih: \"ayam lebih banyak\" berarti $a-b=5$"
+        },
+        {
+          "teks": "kedua model benar karena $a-b=5$ dan $b-a=5$ saling setara",
+          "alasan": "mengira selisih boleh dibalik tanpa mengubah tanda ruas kanan"
+        },
+        {
+          "teks": "kedua model salah karena persamaan ketiga memuat tiga variabel",
+          "alasan": "mengira persamaan ketiga harus dua variabel"
+        }
+      ],
+      "pembahasan": "\"Ayam 5 lebih banyak daripada ikan\": $a=b+5$, yaitu $a-b=5$. Model Sari memakai $b-a=5$ (setara $a-b=-5$) sehingga salah. \"Ayam dan telur sama dengan tiga kali ikan\": $a+c=3b$, yaitu $a-3b+c=0$ (benar pada kedua model). Model Rina menghasilkan $a=20$, $b=15$, $c=25$ (jumlah 60).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Solusi/penyelesaian adalah nilai yang memenuhi semua persamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menentukan nilai parameter",
+      "alasan_level": "menentukan nilai variabel dari dua persamaan dan syarat tambahan lalu mencari parameter pada persamaan ketiga",
+      "stimulus": "Diketahui sistem persamaan linear tiga variabel:\n\n$x + y + z = 12$ ... (1)\n\n$3x + y - 2z = k$ ... (2)\n\n$x - y + z = 4$ ... (3)\n\nPenyelesaian sistem itu memenuhi $z = 3x$.",
+      "pertanyaan": "Nilai $k$ adalah ....",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "(1)$-$(3) memberi $y = 4$, $x + z = 8$ dengan $z = 3x$ sehingga $x = 2$, $z = 6$, dan $k = 6 + 4 - 12 = -2$",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "tanda hasil $6 + 4 - 12$ salah (dianggap 2)"
+        },
+        {
+          "teks": "$18$",
+          "alasan": "nilai $x$ dan $z$ tertukar ($x = 6$, $z = 2$) sehingga $18 + 4 - 4$"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "suku $-2z$ terlupa sehingga $6 + 4$"
+        }
+      ],
+      "pembahasan": "(1)$-$(3): $2y = 8$, $y = 4$. Lalu $x + z = 8$ dan $z = 3x$ sehingga $4x = 8$, $x = 2$, $z = 6$. Dari (2): $k = 3(2) + 4 - 2(6) = -2$. Cek (3): $2 - 4 + 6 = 4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 125,
+        "kutipan": "Di SMP kamu telah mempelajari sistem persamaan linear dengan dua variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "membandingkan pilihan",
+      "alasan_level": "menyelesaikan sistem tiga variabel untuk harga satuan lalu membandingkan biaya dua rencana pembelian",
+      "stimulus": "Di sebuah toko, tiga barang A, B, dan C dijual dengan harga satuan tetap. Catatan transaksi: 2 barang A, 1 barang B, dan 1 barang C seharga Rp26.000,00; 1 barang A, 3 barang B, dan 1 barang C seharga Rp28.000,00; 1 barang A, 1 barang B, dan 2 barang C seharga Rp30.000,00. Rani membandingkan dua rencana belanja: Rencana 1 membeli 3 barang A, 2 barang B, dan 2 barang C; Rencana 2 membeli 5 barang A, 4 barang B, dan 1 barang C.",
+      "pertanyaan": "Rencana yang biayanya lebih murah dan selisih biayanya adalah ....",
+      "jawaban_benar": "Rencana 1, lebih murah Rp10.000,00",
+      "alasan_benar": "harga A, B, C berturut-turut Rp6.000, Rp4.000, Rp10.000; Rencana 1 Rp46.000 dan Rencana 2 Rp56.000",
+      "distraktor": [
+        {
+          "teks": "Rencana 2, lebih murah Rp10.000,00",
+          "alasan": "kedua biaya benar tetapi membandingkan terbalik"
+        },
+        {
+          "teks": "Rencana 1, lebih murah Rp4.000,00",
+          "alasan": "harga satuan salah dihitung sehingga selisih biaya meleset"
+        },
+        {
+          "teks": "Rencana 2, lebih murah Rp6.000,00",
+          "alasan": "harga satuan salah dihitung sehingga perbandingan terbalik dan selisih meleset"
+        }
+      ],
+      "pembahasan": "Dalam ribu rupiah: $2a+b+c=26$, $a+3b+c=28$, $a+b+2c=30$. (1)$-$(2): $a-2b=-2$ sehingga $a=2b-2$. Dari (1): $c=26-2a-b=30-5b$. Substitusi ke (3): $(2b-2)+b+2(30-5b)=30$ sehingga $58-7b=30$, $b=4$, $a=6$, $c=10$. Rencana 1: $18+8+20=46$. Rencana 2: $30+16+10=56$. Rencana 1 lebih murah Rp10.000,00.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 125,
+        "kutipan": "Di SMP kamu telah mempelajari sistem persamaan linear dengan dua variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "membandingkan pilihan",
+      "alasan_level": "menentukan tarif tetap, per km, dan per menit dari tiga perjalanan lalu membandingkan dengan tarif tawaran lain",
+      "stimulus": "Sebuah taksi menetapkan tarif: biaya buka $a$, biaya per km $b$, dan biaya per menit $c$. Tiga perjalanan tercatat: 5 km selama 10 menit dibayar Rp33.000,00; 10 km selama 20 menit dibayar Rp58.000,00; 8 km selama 30 menit dibayar Rp55.000,00. Aplikasi taksi online menawarkan tarif tetap Rp66.000,00 untuk perjalanan 12 km selama 25 menit.",
+      "pertanyaan": "Pilihan yang lebih murah untuk perjalanan 12 km selama 25 menit dan selisih biayanya adalah ....",
+      "jawaban_benar": "taksi online, lebih murah Rp2.500,00",
+      "alasan_benar": "$a = 8.000$, $b = 4.000$, $c = 500$ sehingga taksi biasa $8.000 + 48.000 + 12.500 = 68.500$, lebih mahal Rp2.500 dari Rp66.000",
+      "distraktor": [
+        {
+          "teks": "taksi biasa, lebih murah Rp2.500,00",
+          "alasan": "membandingkan terbalik meski biaya sudah benar"
+        },
+        {
+          "teks": "taksi online, lebih murah Rp500,00",
+          "alasan": "tarif per menit dihitung 1.000 sehingga biaya taksi biasa meleset"
+        },
+        {
+          "teks": "taksi biasa, lebih murah Rp3.500,00",
+          "alasan": "biaya buka salah dihitung sehingga biaya taksi biasa meleset"
+        }
+      ],
+      "pembahasan": "$a+5b+10c=33.000$ (1); $a+10b+20c=58.000$ (2); $a+8b+30c=55.000$ (3). (2)$-$(1): $5b+10c=25.000$, jadi $b+2c=5.000$. (3)$-$(2): $-2b+10c=-3.000$. Dari $b=5.000-2c$: $-10.000+4c+10c=-3.000$, $c=500$, $b=4.000$, $a=8.000$. Biaya 12 km, 25 menit: $8.000+48.000+12.500=68.500$. Selisih dengan Rp66.000 adalah Rp2.500 (taksi online lebih murah).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b04-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 129,
+        "kutipan": "Solusi/penyelesaian adalah nilai yang memenuhi semua persamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "mengevaluasi klaim",
+      "alasan_level": "membentuk tiga persamaan dari hubungan umur dua waktu, menyelesaikannya, lalu menilai kebenaran klaim",
+      "stimulus": "Jumlah umur ayah, ibu, dan anak sekarang adalah 95 tahun. Ayah 4 tahun lebih tua daripada ibu. Lima tahun yang lalu, jumlah umur ayah dan anak sama dengan umur ibu ditambah 14 tahun. Dina berkata, \"Ketika anak lahir, umur ibu 25 tahun.\"",
+      "pertanyaan": "Penilaian yang tepat terhadap pernyataan Dina adalah ....",
+      "jawaban_benar": "salah, karena ibu berumur 23 tahun ketika anak lahir",
+      "alasan_benar": "umur sekarang ayah 42, ibu 38, anak 15 sehingga ibu berumur $38 - 15 = 23$ tahun saat anak lahir",
+      "distraktor": [
+        {
+          "teks": "benar, karena selisih umur ibu dan anak 25 tahun",
+          "alasan": "menghitung selisih umur ibu dan anak dari hasil yang salah"
+        },
+        {
+          "teks": "salah, karena ibu berumur 27 tahun ketika anak lahir",
+          "alasan": "memakai selisih umur ayah dan anak ($42 - 15$)"
+        },
+        {
+          "teks": "salah, karena ibu berumur 20 tahun ketika anak lahir",
+          "alasan": "salah menghitung umur anak sebagai 18 tahun"
+        }
+      ],
+      "pembahasan": "Misal ayah $a$, ibu $i$, anak $c$. $a+i+c=95$; $a-i=4$; $(a-5)+(c-5)=(i-5)+14$ sehingga $a-i+c=19$. Substitusi $a-i=4$: $c=15$. Maka $a+i=80$ dan $a-i=4$ sehingga $a=42$, $i=38$. Ibu berumur $38-15=23$ tahun saat anak lahir, bukan 25.",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Kapasitas aktual sekitar 12-14 soal; sisanya hampir pasti kembar medium (hitung SPLTV, tafsir banyak solusi) atau di luar materi subbab A."
+}

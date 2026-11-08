@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": "Latihan 1.4",
+        "nomor": "1.c",
+        "teks": "Jika f (x) = 1/x dan g (x) = 2x + 1 , tentukan f (a) jika (f ◦ g) (a) = −1.",
+        "jawaban": "-1",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai parameter komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menyusun rumus $(f \\circ g)(a)$, menyelesaikan persamaan untuk nilai $a$, lalu menghitung $g(a)$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{1}{x + 3}$ dan $g(x) = 4x - 1$. Jika $(f \\circ g)(a) = \\frac{1}{7}$, maka nilai dari $g(a)$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$(f \\circ g)(a) = f(g(a)) = \\frac{1}{(4a - 1) + 3} = \\frac{1}{4a + 2} = \\frac{1}{7}$, sehingga $4a + 2 = 7 \\Rightarrow 4a = 5 \\Rightarrow a = \\frac{5}{4}$. Maka $g(a) = 4\\left(\\frac{5}{4}\\right) - 1 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Siswa berhenti pada nilai $a$ dan lupa menyubstitusikannya kembali ke $g(a)$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa langsung menganggap $g(a)$ sama dengan penyebut dari hasil komposisi tanpa memperhitungkan konstanta $+3$ pada fungsi $f$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah saat menyelesaikan persamaan $4a + 2 = 7$ menjadi $4a = 3$, sehingga $a = \\frac{3}{4}$ dan $g(a) = 3 - 1 = 2$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi komposisi:\n$$(f \\circ g)(a) = f(g(a)) = \\frac{1}{g(a) + 3}$$\nDiketahui $(f \\circ g)(a) = \\frac{1}{7}$, maka:\n$$\\frac{1}{g(a) + 3} = \\frac{1}{7}$$\n$$g(a) + 3 = 7$$\n$$g(a) = 7 - 3 = 4$$\n\nJadi, nilai $g(a)$ adalah $4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "3",
+        "teks": "Jika f (x) = 6x − 5 dan g(x) = ax + b, tentukan a dan b sehingga (f ◦ g) (x) = (g ◦ f )(x).",
+        "jawaban": "a dan b yang memenuhi persamaan kesamaan fungsi",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "komutatif komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis kesamaan dua fungsi komposisi $(f \\circ g)(x) = (g \\circ f)(x)$ untuk menentukan koefisien yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 5x - 4$ dan $g(x) = ax + 8$. Agar berlaku sifat komutatif $(f \\circ g)(x) = (g \\circ f)(x)$ untuk setiap $x \\in \\mathbb{R}$, maka nilai konstanta $a$ adalah ....",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "$(f \\circ g)(x) = 5(ax + 8) - 4 = 5ax + 36$. $(g \\circ f)(x) = a(5x - 4) + 8 = 5ax - 4a + 8$. Menyamakan konstanta: $36 = -4a + 8 \\Rightarrow -4a = 28 \\Rightarrow a = -7$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Siswa salah tanda saat memindahkan ruas konstanta: $-4a = -28$ sehingga $a = 7$."
+        },
+        {
+          "teks": "$-11$",
+          "alasan": "Siswa menjumlahkan konstanta $36 + 8 = 44$ lalu membaginya dengan $-4$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa berasumsi sifat komutatif hanya terpenuhi jika $a = 1$."
+        }
+      ],
+      "pembahasan": "Tentukan masing-masing fungsi komposisi:\n1. $(f \\circ g)(x) = f(g(x)) = 5(ax + 8) - 4 = 5ax + 40 - 4 = 5ax + 36$\n2. $(g \\circ f)(x) = g(f(x)) = a(5x - 4) + 8 = 5ax - 4a + 8$\n\nAgar $(f \\circ g)(x) = (g \\circ f)(x)$ identik untuk setiap $x$, konstanta kedua ruas harus bernilai sama:\n$$36 = -4a + 8$$\n$$4a = 8 - 36$$\n$$4a = -28$$\n$$a = -7$$\n\nJadi, nilai $a$ yang memenuhi adalah $-7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g: A → B dan f: B→C merupakan dua fungsi maka komposisi keduanya f (g (x)) dinyatakan dengan notasi (f ◦ g)(x) adalah fungsi dari domain A ke kodomain C."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "akar persamaan komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengharuskan siswa mengomposisikan fungsi linier ke fungsi kuadrat kemudian menyelesaikan persamaan kuadrat yang terbentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = x^2 - 4x + 3$ dan $g(x) = 2x + 1$. Jumlah semua nilai $x$ yang memenuhi persamaan $(f \\circ g)(x) = 0$ adalah ....",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "$(f \\circ g)(x) = f(2x + 1) = (2x+1)^2 - 4(2x+1) + 3 = 4x^2 + 4x + 1 - 8x - 4 + 3 = 4x^2 - 4x = 0$. Akar-akarnya $x_1 = 0$ dan $x_2 = 1$, sehingga $x_1 + x_2 = 1$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa menggunakan rumus $-b/a$ langsung dari fungsi awal $f(x)$ yaitu $-(-4)/1 = 4$ lalu membaginya 2."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Siswa melakukan kesalahan tanda pada rumus jumlah akar $-(-4)/4$ menjadi $-4/4 = -1$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa mencari jumlah akar dari persamaan $f(x) = 0$, bukan $(f \\circ g)(x) = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan rumus $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = (2x + 1)^2 - 4(2x + 1) + 3$$\n$$(f \\circ g)(x) = (4x^2 + 4x + 1) - (8x + 4) + 3 = 4x^2 - 4x$$\n\nLangkah 2: Selesaikan persamaan $(f \\circ g)(x) = 0$:\n$$4x^2 - 4x = 0$$\n$$4x(x - 1) = 0$$\nDiperoleh akar-akar $x_1 = 0$ dan $x_2 = 1$.\n\nLangkah 3: Hitung jumlah akar-akarnya:\n$$x_1 + x_2 = 0 + 1 = 1$$\n\nJadi, jumlah semua nilai $x$ yang memenuhi adalah $1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "domain fungsi komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis domain gabungan dari fungsi luar berbentuk akar dan fungsi dalam berbentuk kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{x - 5}$ dan $g(x) = x^2 - 4$. Daerah asal (domain) dari fungsi komposisi $(f \\circ g)(x)$ untuk $x \\in \\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\mid x \\le -3 \\text{ atau } x \\ge 3,\\, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "$(f \\circ g)(x) = \\sqrt{(x^2 - 4) - 5} = \\sqrt{x^2 - 9}$. Syarat domain nilai di bawah akar tidak negatif: $x^2 - 9 \\ge 0 \\Rightarrow (x - 3)(x + 3) \\ge 0 \\Rightarrow x \\le -3$ atau $x \\ge 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid -3 \\le x \\le 3,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa terbalik menentukan interval tanda pertidaksamaan kuadrat $\\ge$ dengan interval tertutup di dalam akar."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 3,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa hanya mengambil solusi positif dari pertidaksamaan kuadrat dan mengabaikan bagian $x \\le -3$."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 5,\\, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa hanya melihat domain dari fungsi luar $f(x)$ yaitu $x \\ge 5$ tanpa mengomposisikannya dengan $g(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Susun bentuk fungsi komposisi $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = \\sqrt{(x^2 - 4) - 5} = \\sqrt{x^2 - 9}$$\n\nLangkah 2: Tentukan syarat agar bentuk akar terdefinisi pada bilangan real:\n$$x^2 - 9 \\ge 0$$\n$$(x - 3)(x + 3) \\ge 0$$\n\nLangkah 3: Pembuat nol adalah $x = 3$ dan $x = -3$. Menggunakan garis bilangan, daerah yang memenuhi tanda positif adalah:\n$$x \\le -3 \\text{ atau } x \\ge 3$$\n\nJadi, domain dari $(f \\circ g)(x)$ adalah $\\{x \\mid x \\le -3 \\text{ atau } x \\ge 3,\\, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 41,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pilihan pertama ialah “diskon 20%” terhadap semua barang dengan tambahan potongan harga sebesar Rp25.000,00 setelah diskon 20%."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan komposisi diskon",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memodelkan dua tahap potongan harga secara berurutan sebagai fungsi komposisi dan menentukan nilai mula-mula.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah butik memberikan promo akhir pekan berupa diskon sebesar 15% kemudian dilanjutkan dengan potongan kupon belanja senilai Rp30.000,00 pada saat pembayaran di kasir. Jika seorang pelanggan membayar sebesar Rp140.000,00 untuk sepotong pakaian, harga awal pakaian tersebut sebelum dikenakan promo adalah ....",
+      "jawaban_benar": "Rp200.000,00",
+      "alasan_benar": "Fungsi diskon $d(x) = 0{,}85x$, fungsi kupon $k(y) = y - 30.000$. Komposisinya $(k \\circ d)(x) = 0{,}85x - 30.000$. Persamaan: $0{,}85x - 30.000 = 140.000 \\Rightarrow 0{,}85x = 170.000 \\Rightarrow x = 200.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp195.500,00",
+          "alasan": "Siswa menerapkan potongan kupon Rp30.000 terlebih dahulu sebelum diskon 15%, sehingga $0{,}85(x - 30.000) = 140.000$."
+        },
+        {
+          "teks": "Rp170.000,00",
+          "alasan": "Siswa hanya menambahkan potongan kupon Rp30.000 ke harga akhir tanpa memperhitungkan diskon 15%."
+        },
+        {
+          "teks": "Rp220.000,00",
+          "alasan": "Siswa salah menghitung persentase diskon dengan mengalikan $170.000 \\times 1{,}15$ ditambah pembulatan."
+        }
+      ],
+      "pembahasan": "Misalkan harga awal pakaian adalah $x$.\n1. Tahap pertama (diskon 15%):\nHarga menjadi $d(x) = (1 - 0{,}15)x = 0{,}85x$.\n2. Tahap kedua (potongan kupon Rp30.000,00):\nHarga akhir menjadi $(k \\circ d)(x) = 0{,}85x - 30.000$.\n\nDiketahui harga akhir yang dibayar adalah Rp140.000,00:\n$$0{,}85x - 30.000 = 140.000$$\n$$0{,}85x = 170.000$$\n$$x = \\frac{170.000}{0{,}85} = 200.000$$\n\nJadi, harga awal pakaian tersebut adalah Rp200.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "7",
+        "teks": "Jumlah kertas yang diperlukan untuk mencetak x eksemplar modul matematika dinyatakan dalam fungsi k(x) = 250(x + 1) lembar. Biaya pencetakan yang diperlukan untuk k lembar adalah b(k) = 400k + 20.000 (dalam rupiah). Jika pengeluaran hari ini untuk mencetak x eksemplar modul adalah Rp10.120.000,00 tentukan banyak eksemplar modul yang dicetak.",
+        "jawaban": "100",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi biaya produksi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi fungsi ke dalam fungsi lain lalu menyelesaikan persamaan linear satu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jumlah kertas yang diperlukan untuk mencetak $x$ eksemplar buku panduan dinyatakan dengan fungsi $k(x) = 120(x + 5)$ lembar. Biaya cetak untuk $k$ lembar kertas memenuhi fungsi $b(k) = 500k + 50.000$ (dalam rupiah). Jika total biaya yang dikeluarkan percetakan sebesar Rp15.350.000,00, maka banyak eksemplar buku panduan yang dicetak adalah ....",
+      "jawaban_benar": "250",
+      "alasan_benar": "Fungsi total biaya terhadap banyak eksemplar adalah $(b \\circ k)(x) = 500(120(x + 5)) + 50.000 = 60.000(x + 5) + 50.000$. Menyamakan dengan Rp15.350.000,00 menghasilkan $60.000(x + 5) = 15.300.000 \\iff x + 5 = 255 \\iff x = 250$.",
+      "distraktor": [
+        {
+          "teks": "255",
+          "alasan": "Lupa mengurangkan konstanta 5 di akhir perhitungan ($x + 5 = 255$ dianggap sebagai $x$)."
+        },
+        {
+          "teks": "245",
+          "alasan": "Salah menjumlahkan konstanta 5 dua kali sehingga mengurangkan 10 dari 255."
+        },
+        {
+          "teks": "260",
+          "alasan": "Salah operasi tanda pada langkah terakhir, menjumlahkan $255 + 5$ bukannya mengurangkan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Susun fungsi komposisi total biaya terhadap $x$:\n$$(b \\circ k)(x) = b(k(x)) = 500(120(x + 5)) + 50.000 = 60.000(x + 5) + 50.000$$\n\nLangkah 2: Substitusikan total biaya yang diketahui:\n$$60.000(x + 5) + 50.000 = 15.350.000$$\n$$60.000(x + 5) = 15.300.000$$\n\nLangkah 3: Tentukan nilai $x$:\n$$x + 5 = \\frac{15.300.000}{60.000} = 255$$\n$$x = 255 - 5 = 250$$\n\nJadi, banyak eksemplar buku panduan yang dicetak adalah 250 eksemplar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "8",
+        "teks": "Suatu pabrik memberikan ketentuan mengenai jumlah produksi dan jenisnya. Produksi telepon genggam berbasis android adalah dua kali produksi telepon genggam berbasis bukan android sedangkan produksi laptop adalah tiga kali produksi telepon genggam berbasis android. a. Gunakan mesin fungsi untuk menyatakan fungsinya. b. Jika diproduksi 2.000 telepon genggam tidak berbasis android, berapa banyak laptop yang dihasilkan? Selesaikan dengan mesin fungsi.",
+        "jawaban": "12.000",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi bertingkat produksi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan dua fungsi komposisi bertingkat dengan evaluasi nilai fungsi secara berurutan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik perakitan elektronik mengatur kapasitas produksinya. Produksi telepon genggam Android dirumuskan oleh $A(x) = 3x + 50$, dengan $x$ adalah banyak telepon genggam non-Android. Sementara itu, produksi unit laptop dirumuskan oleh $L(A) = 4A - 100$, dengan $A$ adalah banyak telepon genggam Android yang dirakit. Jika pabrik tersebut merakit 1.500 unit telepon genggam non-Android, banyak unit laptop yang dihasilkan adalah ....",
+      "jawaban_benar": "18.100",
+      "alasan_benar": "Nilai $A(1.500) = 3(1.500) + 50 = 4.550$. Kemudian $L(4.550) = 4(4.550) - 100 = 18.200 - 100 = 18.100$.",
+      "distraktor": [
+        {
+          "teks": "18.200",
+          "alasan": "Lupa mengurangkan konstanta 100 pada fungsi laptop $L(A)$."
+        },
+        {
+          "teks": "18.300",
+          "alasan": "Salah tanda pada konstanta laptop menjadi $4A + 100$."
+        },
+        {
+          "teks": "17.900",
+          "alasan": "Lupa menambahkan konstanta 50 pada fungsi pertama sehingga $L(4(1.500)) - 100 = 17.900$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung banyak telepon genggam Android ($A$) untuk $x = 1.500$:\n$$A(1.500) = 3(1.500) + 50 = 4.500 + 50 = 4.550$$\n\nLangkah 2: Hitung banyak laptop yang diproduksi dengan memasukkan $A = 4.550$ ke fungsi $L(A)$:\n$$L(4.550) = 4(4.550) - 100 = 18.200 - 100 = 18.100$$\n\nJadi, banyak unit laptop yang dihasilkan adalah 18.100 unit.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "3",
+        "teks": "Jika f (x) = 6x − 5 dan g(x) = ax + b, tentukan a dan b sehingga (f ◦ g) (x) = (g ◦ f )(x).",
+        "jawaban": "a = 6 atau hubungan linear antara a dan b",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komutatif fungsi linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Membentuk dua bentuk komposisi fungsi berbalik arah lalu menyamakan konstanta untuk menentukan parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 4x - 6$ dan $g(x) = 3x + b$. Agar berlaku kesamaan $(f \\circ g)(x) = (g \\circ f)(x)$ untuk setiap bilangan real $x$, maka nilai konstanta $b$ adalah ....",
+      "jawaban_benar": "-4",
+      "alasan_benar": "Hasil $(f \\circ g)(x) = 4(3x + b) - 6 = 12x + 4b - 6$ dan $(g \\circ f)(x) = 3(4x - 6) + b = 12x - 18 + b$. Menyamakan kedua konstanta menghasilkan $4b - 6 = -18 + b \\iff 3b = -12 \\iff b = -4$.",
+      "distraktor": [
+        {
+          "teks": "-8",
+          "alasan": "Salah menjumlahkan konstanta di ruas kanan menjadi $4b - b = -18 - 6 = -24$ sehingga $b = -8$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Kesalahan tanda minus saat membagi $-12$ dengan $3$."
+        },
+        {
+          "teks": "-2",
+          "alasan": "Lupa mengalikan konstanta $b$ dengan koefisien luar $4$ pada saat ekspansi $(f \\circ g)(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan rumus fungsi $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = 4(3x + b) - 6 = 12x + 4b - 6$$\n\nLangkah 2: Tentukan rumus fungsi $(g \\circ f)(x)$:\n$$(g \\circ f)(x) = g(f(x)) = 3(4x - 6) + b = 12x - 18 + b$$\n\nLangkah 3: Samakan kedua fungsi karena $(f \\circ g)(x) = (g \\circ f)(x)$:\n$$12x + 4b - 6 = 12x - 18 + b$$\n$$4b - b = -18 + 6$$\n$$3b = -12$$\n$$b = -4$$\n\nJadi, nilai $b$ yang memenuhi adalah $-4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f (x) dan g(x) merupakan dua fungsi dengan domain masing-masing Df dan Dg. Maka pengurangan (f − g)(x) = f (x) − g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain operasi aljabar fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan domain dari dua fungsi berbeda (bentuk akar dan rasional) lalu mengiriskan keduanya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi real $f(x) = \\sqrt{2x + 8}$ dan $g(x) = \\frac{5}{x - 3}$. Daerah asal (domain) dari fungsi hasil pengurangan $(f - g)(x)$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid x \\ge -4 \\text{ dan } x \\ne 3\\}$",
+      "alasan_benar": "Domain $f(x)$ adalah $2x + 8 \\ge 0 \\implies x \\ge -4$. Domain $g(x)$ adalah $x - 3 \\ne 0 \\implies x \\ne 3$. Maka daerah asal $(f - g)(x)$ adalah irisan $D_f \\cap D_g = \\{x \\in \\mathbb{R} \\mid x \\ge -4 \\text{ dan } x \\ne 3\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x > -4 \\text{ dan } x \\ne 3\\}$",
+          "alasan": "Mengira tanda pertidaksamaan fungsi bentuk akar tidak boleh nol (menggunakan $>$ bukannya $\\ge$)."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ge 4 \\text{ dan } x \\ne 3\\}$",
+          "alasan": "Salah menghitung pertidaksamaan $2x + 8 \\ge 0$ menjadi $x \\ge 4$."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ge -4\\}$",
+          "alasan": "Lupa memperhitungkan syarat pembuat nol pada penyebut fungsi rasional $g(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan domain fungsi $f(x)$ ($D_f$).\nBentuk akar terdefinisi di bilangan real jika radikan tak negatif:\n$$2x + 8 \\ge 0 \\iff 2x \\ge -8 \\iff x \\ge -4$$\nJadi, $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge -4\\}$.\n\nLangkah 2: Menentukan domain fungsi $g(x)$ ($D_g$).\nFungsi pecahan terdefinisi jika penyebut tidak sama dengan nol:\n$$x - 3 \\ne 0 \\iff x \\ne 3$$\nJadi, $D_g = \\{x \\in \\mathbb{R} \\mid x \\ne 3\\}$.\n\nLangkah 3: Menentukan domain $(f - g)(x)$ melalui irisan domain:\n$$D_{f - g} = D_f \\cap D_g = \\{x \\in \\mathbb{R} \\mid x \\ge -4 \\text{ dan } x \\ne 3\\}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "7",
+        "teks": "Jumlah kertas yang diperlukan untuk mencetak x eksemplar modul matematika dinyatakan dalam fungsi k(x) = 250(x + 1) lembar. Biaya pencetakan yang diperlukan untuk k lembar adalah b(k) = 400k + 20.000 (dalam rupiah). Jika pengeluaran hari ini untuk mencetak x eksemplar modul adalah Rp10.120.000,00 tentukan banyak eksemplar modul yang dicetak.",
+        "jawaban": "100",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi biaya pencetakan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi invers bertahap dari fungsi komposisi biaya cetak terhadap banyaknya eksemplar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jumlah kertas yang diperlukan untuk mencetak $x$ eksemplar modul ajar dinyatakan dalam fungsi $k(x) = 150(x + 2)$ lembar. Biaya pencetakan yang diperlukan untuk $k$ lembar kertas adalah $b(k) = 300k + 10.000$ (dalam rupiah). Jika total biaya yang dikeluarkan percetakan sebesar Rp4.060.000,00, banyak eksemplar modul ajar yang dicetak adalah ....",
+      "jawaban_benar": "88",
+      "alasan_benar": "Menyelesaikan $300k + 10.000 = 4.060.000$ menghasilkan $k = 13.500$, lalu $150(x + 2) = 13.500$ menghasilkan $x + 2 = 90$, sehingga $x = 88$.",
+      "distraktor": [
+        {
+          "teks": "90",
+          "alasan": "Siswa lupa mengurangkan nilai 2 dari hasil pembagian 13.500 / 150."
+        },
+        {
+          "teks": "92",
+          "alasan": "Siswa salah mengoperasikan tanda pada langkah terakhir, menjumlahkan 90 + 2 bukannya mengurangkan."
+        },
+        {
+          "teks": "86",
+          "alasan": "Siswa keliru mengurangkan konstanta 4 alih-alih 2 pada persamaan linear akhir."
+        }
+      ],
+      "pembahasan": "Fungsi total biaya dinyatakan dengan komposisi $(b \\circ k)(x) = b(k(x))$. Diketahui total biaya $b(k) = 4.060.000$:\n$$300k + 10.000 = 4.060.000$$\n$$300k = 4.050.000$$\n$$k = 13.500$$\nSubstitusikan nilai $k$ ke dalam fungsi $k(x)$:\n$$150(x + 2) = 13.500$$\n$$x + 2 = \\frac{13.500}{150}$$\n$$x + 2 = 90$$\n$$x = 90 - 2 = 88$$\nJadi, banyak eksemplar modul yang dicetak adalah 88.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "8",
+        "teks": "Suatu pabrik memberikan ketentuan mengenai jumlah produksi dan jenisnya. Produksi telepon genggam berbasis android adalah dua kali produksi telepon genggam berbasis bukan android sedangkan produksi laptop adalah tiga kali produksi telepon genggam berbasis android. a. Gunakan mesin fungsi untuk menyatakan fungsinya. b. Jika diproduksi 2.000 telepon genggam tidak berbasis android, berapa banyak laptop yang dihasilkan? Selesaikan dengan mesin fungsi.",
+        "jawaban": "12.000",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "komposisi rasio bertingkat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan pemodelan komposisi perkalian dua fungsi linear untuk menghitung output tahap akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu pabrik elektronik menetapkan target harian sebagai berikut: jumlah produksi ponsel Android adalah 4 kali jumlah produksi ponsel non-Android, sedangkan jumlah produksi laptop adalah 5 kali jumlah produksi ponsel Android. Jika pada suatu hari pabrik memproduksi 600 unit ponsel non-Android, maka banyak laptop yang dihasilkan pada hari tersebut adalah ....",
+      "jawaban_benar": "12.000 unit",
+      "alasan_benar": "Komposisi fungsi menghasilkan $L(x) = 5 \\times (4x) = 20x$. Untuk $x = 600$, diperoleh $20 \\times 600 = 12.000$ unit.",
+      "distraktor": [
+        {
+          "teks": "2.400 unit",
+          "alasan": "Hanya menghitung ponsel Android ($4 \\times 600$) tanpa mengalikan rasio laptop."
+        },
+        {
+          "teks": "5.400 unit",
+          "alasan": "Menjumlahkan pengali $(4 + 5) \\times 600 = 9 \\times 600 = 5.400$ alih-alih mengomposisikannya."
+        },
+        {
+          "teks": "15.000 unit",
+          "alasan": "Salah menghitung ponsel Android menjadi $5 \\times 600 = 3.000$, lalu dikalikan 5 lagi."
+        }
+      ],
+      "pembahasan": "Misalkan $x$ adalah banyak ponsel non-Android, $A(x) = 4x$ adalah banyak ponsel Android, dan $L(A) = 5A$ adalah banyak laptop.\nKomposisi fungsinya adalah:\n$$(L \\circ A)(x) = L(A(x)) = 5(4x) = 20x$$\nUntuk $x = 600$ unit:\n$$(L \\circ A)(600) = 20 \\times 600 = 12.000\\text{ unit}$$\nJadi, banyak laptop yang dihasilkan adalah 12.000 unit.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "syarat domain komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis irisan daerah hasil fungsi dalam dengan domain fungsi luar yang melibatkan bentuk akar pada penyebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{1}{\\sqrt{x - 2}}$ dan $g(x) = x^2 - 7$. Daerah asal (domain) dari fungsi komposisi $(f \\circ g)(x)$ untuk $x$ bilangan real adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid x < -3 \\text{ atau } x > 3\\}$",
+      "alasan_benar": "Syarat fungsi terdefinisi adalah $g(x) > 2 \\iff x^2 - 7 > 2 \\iff x^2 > 9$, sehingga $x < -3$ atau $x > 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -3 < x < 3\\}$",
+          "alasan": "Siswa salah menentukan daerah pertidaksamaan kuadrat $x^2 > 9$ menjadi rentang interval dalam."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\le -3 \\text{ atau } x \\ge 3\\}$",
+          "alasan": "Siswa menyertakan tanda sama dengan, padahal penyebut dalam pecahan tidak boleh bernilai nol."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x > 3\\}$",
+          "alasan": "Siswa melupakan penyelesaian pertidaksamaan kuadrat untuk nilai variabel yang negatif."
+        }
+      ],
+      "pembahasan": "Agar $(f \\circ g)(x) = f(g(x))$ terdefinisi, nilai $g(x)$ harus berada dalam domain $f$.\nFungsi $f(u) = \\frac{1}{\\sqrt{u - 2}}$ terdefinisi pada bilangan real jika bagian di bawah tanda akar bernilai positif murni (karena penyebut tidak boleh nol):\n$$u - 2 > 0 \\implies u > 2$$\nKarena $u = g(x) = x^2 - 7$, maka:\n$$x^2 - 7 > 2$$\n$$x^2 - 9 > 0$$\n$$(x - 3)(x + 3) > 0$$\nDari garis bilangan diperoleh pembuat nol $x = -3$ dan $x = 3$. Daerah yang memenuhi pertidaksamaan bertanda positif adalah $x < -3$ atau $x > 3$.\nJadi, daerah asalnya adalah $\\{x \\in \\mathbb{R} \\mid x < -3 \\text{ atau } x > 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "evaluasi asosiatif komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi nilai komposisi tiga fungsi bertingkat dengan substitusi berurutan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui tiga buah fungsi $f(x) = 2x - 3$, $g(x) = x^2 + 1$, dan $h(x) = 3x - 2$. Nilai dari $((f \\circ g) \\circ h)(2)$ adalah ....",
+      "jawaban_benar": "31",
+      "alasan_benar": "$h(2) = 4$, lalu $g(4) = 17$, dan $f(17) = 2(17) - 3 = 31$.",
+      "distraktor": [
+        {
+          "teks": "27",
+          "alasan": "Siswa salah saat menghitung nilai $g(4) = 4^2 - 1 = 15$, sehingga $f(15) = 27$."
+        },
+        {
+          "teks": "35",
+          "alasan": "Siswa melakukan kesalahan tanda pada fungsi $f$, menghitung $2(17) + 3 = 37$ atau salah hitung aritmetika menjadi 35."
+        },
+        {
+          "teks": "15",
+          "alasan": "Siswa salah membalik urutan pengerjaan menjadi $(h \\circ g \\circ f)(2)$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat asosiatif komposisi fungsi, $((f \\circ g) \\circ h)(2) = f(g(h(2)))$.\nLangkah 1: Hitung nilai $h(2)$:\n$$h(2) = 3(2) - 2 = 6 - 2 = 4$$\nLangkah 2: Hitung nilai $g(h(2)) = g(4)$:\n$$g(4) = 4^2 + 1 = 16 + 1 = 17$$\nLangkah 3: Hitung nilai $f(g(4)) = f(17)$:\n$$f(17) = 2(17) - 3 = 34 - 3 = 31$$\nJadi, nilai dari $((f \\circ g) \\circ h)(2)$ adalah 31.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika harga awal adalah x dan harga akhir atau nilai fungsi f (x) = y , nyatakan y sebagai suatu fungsi yang memodelkan diskon 30% dilanjutkan dengan potongan harga sebesar Rp10.000,00."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "analisis perbandingan komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memodelkan dan membandingkan hasil akhir dari dua urutan operasi komposisi diskon dan potongan harga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pusat perbelanjaan menawarkan dua pilihan skema promo untuk barang seharga $x$:\n- Skema 1: Diskon 20% terlebih dahulu, kemudian dilanjutkan potongan harga langsung sebesar Rp15.000,00.\n- Skema 2: Potongan harga langsung sebesar Rp15.000,00 terlebih dahulu, kemudian dilanjutkan diskon 20%.\n\nJika seorang pembeli membeli pakaian dengan label harga Rp200.000,00, selisih harga akhir yang dibayar antara Skema 1 dan Skema 2 adalah ....",
+      "jawaban_benar": "Rp3.000,00",
+      "alasan_benar": "Harga Skema 1 = $0{,}8(200.000) - 15.000 = 145.000$. Harga Skema 2 = $0{,}8(200.000 - 15.000) = 148.000$. Selisih = $148.000 - 145.000 = 3.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp0,00",
+          "alasan": "Mengira komposisi fungsi diskon dan potongan harga bersifat komutatif sehingga menghasilkan nilai yang persis sama."
+        },
+        {
+          "teks": "Rp2.500,00",
+          "alasan": "Salah mengalikan persentase diskon terhadap potongan harga."
+        },
+        {
+          "teks": "Rp5.000,00",
+          "alasan": "Salah menghitung harga akhir Skema 2 menjadi Rp150.000,00 sehingga selisihnya Rp5.000,00."
+        }
+      ],
+      "pembahasan": "Misalkan $x = 200.000$.\nFungsi diskon 20%: $d(x) = x - 0{,}2x = 0{,}8x$.\nFungsi potongan harga Rp15.000,00: $p(x) = x - 15.000$.\n\n1. Skema 1 (diskon lalu potongan harga):\n$$(p \\circ d)(x) = p(d(x)) = 0{,}8x - 15.000$$\n$$(p \\circ d)(200.000) = 0{,}8(200.000) - 15.000 = 160.000 - 15.000 = 145.000$$\n\n2. Skema 2 (potongan harga lalu diskon):\n$$(d \\circ p)(x) = d(p(x)) = 0{,}8(x - 15.000)$$\n$$(d \\circ p)(200.000) = 0{,}8(200.000 - 15.000) = 0{,}8(185.000) = 148.000$$\n\nSelisih harga kedua skema:\n$$|148.000 - 145.000| = 3.000$$\nJadi, selisih harga akhir yang dibayar adalah Rp3.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "9",
+        "teks": "Anton membeli sebuah meja belajar dari sebuah toko. Ada banyak pilihan meja dengan harga-harga yang bervariasi. Meja-meja tersebut berukuran besar. Karena ukuran mobil Anton kecil, maka Anton memutuskan untuk menyewa jasa antar dari toko tersebut. Setelah berdiskusi dengan pihak toko, maka total biaya yang harus dibayar adalah harga meja belajar, pajak pembelian, dan biaya angkut. Pajak pembelian sebesar 7,5% harga meja. Biaya angkut sebesar Rp20.000,00.",
+        "jawaban": "t(x) = 1,075x + 20.000",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan biaya fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyusun fungsi biaya bertingkat dengan persentase dan konstanta, kemudian mencari nilai asal dengan substitusi mundur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang pemilik konveksi memesan gulungan kain secara daring. Toko memberlakukan biaya tambahan penanganan sebesar 5% dari harga kain, serta ongkos kirim kargo tetap senilai Rp45.000,00. Jika pengusaha tersebut membayar total sebesar Rp885.000,00, maka harga asli gulungan kain sebelum dikenai biaya tambahan dan ongkos kirim adalah ....",
+      "jawaban_benar": "Rp800.000,00",
+      "alasan_benar": "Total biaya dimodelkan dengan $B(x) = 1,05x + 45.000$. Persamaan $1,05x + 45.000 = 885.000$ memberikan $1,05x = 840.000$, sehingga $x = 840.000 / 1,05 = 800.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp840.000,00",
+          "alasan": "Siswa hanya mengurangkan ongkos kirim ($885.000 - 45.000$) tanpa membagi dengan faktor pengali persentase 1,05."
+        },
+        {
+          "teks": "Rp795.000,00",
+          "alasan": "Siswa menghitung dengan cara salah: mengurangkan 5% langsung dari 840.000 ($840.000 - 42.000$)."
+        },
+        {
+          "teks": "Rp825.000,00",
+          "alasan": "Siswa salah menghitung pembagian atau mengurangkan biaya penanganan secara acak."
+        }
+      ],
+      "pembahasan": "Misalkan harga asli kain adalah $x$.\nBiaya penanganan 5% membuat total harga kain menjadi $1,05x$.\nDengan ongkos kirim tetap Rp45.000,00, model total pengeluaran adalah:\n$B(x) = 1,05x + 45.000$\n\nDiketahui $B(x) = 885.000$, maka:\n$1,05x + 45.000 = 885.000$\n$1,05x = 885.000 - 45.000$\n$1,05x = 840.000$\n$x = \\frac{840.000}{1,05} = 800.000$\n\nJadi, harga asli gulungan kain tersebut adalah Rp800.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Maka pengurangan (f − g)(x) = f (x) − g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "optimasi selisih fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembentukan fungsi keuntungan dari selisih fungsi penerimaan dan biaya, lalu menentukan titik ekstrem parabolanya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi penerimaan total dari penjualan $x$ unit kue dinyatakan oleh $R(x) = 800x - 2x^2$, sedangkan fungsi biaya total produksi dinyatakan oleh $C(x) = 200x + 10.000$ (keduanya dalam ribuan rupiah). Keuntungan maksimum yang dapat diraih dari penjualan kue tersebut adalah ....",
+      "jawaban_benar": "Rp35.000.000,00",
+      "alasan_benar": "Fungsi keuntungan $U(x) = R(x) - C(x) = -2x^2 + 600x - 10.000$. Nilai maksimum tercapai saat $x = -\\frac{600}{2(-2)} = 150$. Substitusi $x = 150$ menghasilkan $U(150) = -2(22.500) + 600(150) - 10.000 = 35.000$ ribu rupiah, atau Rp35.000.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp45.000.000,00",
+          "alasan": "Siswa lupa mengurangkan biaya tetap 10.000 dari fungsi biaya."
+        },
+        {
+          "teks": "Rp70.000.000,00",
+          "alasan": "Siswa hanya memaksimalkan fungsi pendapatan $R(x)$ tanpa mengurangkan biaya produksi $C(x)$."
+        },
+        {
+          "teks": "Rp25.000.000,00",
+          "alasan": "Siswa melakukan kesalahan perhitungan pada suku kuadrat saat menghitung nilai puncak."
+        }
+      ],
+      "pembahasan": "Fungsi keuntungan $U(x)$ adalah selisih fungsi pendapatan dan biaya produksi:\n$U(x) = (R - C)(x) = R(x) - C(x)$\n$U(x) = (800x - 2x^2) - (200x + 10.000)$\n$U(x) = -2x^2 + 600x - 10.000$\n\nTitik puncak fungsi kuadrat terjadi pada:\n$x = -\\frac{b}{2a} = -\\frac{600}{2(-2)} = 150$\n\nKeuntungan maksimum:\n$U(150) = -2(150)^2 + 600(150) - 10.000$\n$U(150) = -2(22.500) + 90.000 - 10.000$\n$U(150) = -45.000 + 90.000 - 10.000 = 35.000$ (ribu rupiah)\n\nDalam rupiah, keuntungan maksimum adalah $35.000 \\times \\text{Rp}1.000,00 = \\text{Rp}35.000.000,00$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g: A →B dan f: B→C merupakan dua fungsi maka komposisi keduanya f (g (x)) dinyatakan dengan notasi (f ◦ g)(x) adalah fungsi dari domain A ke kodomain C."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rekonstruksi fungsi dalam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis prapeta nilai fungsi bagian dalam sebelum mengevaluasi komposisi fungsinya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $g(x) = 3x - 2$ dan rumus komposisinya $(f \\circ g)(x) = 9x^2 - 3x + 1$. Nilai dari $f(4)$ adalah ....",
+      "jawaban_benar": "31",
+      "alasan_benar": "Untuk menghitung $f(4)$, dicari nilai $x$ pembuat $g(x) = 4$, yaitu $3x - 2 = 4 \\implies x = 2$. Kemudian nilai $x = 2$ disubstitusikan ke $(f \\circ g)(x)$: $f(g(2)) = 9(2)^2 - 3(2) + 1 = 36 - 6 + 1 = 31$.",
+      "distraktor": [
+        {
+          "teks": "133",
+          "alasan": "Siswa langsung menyubstitusikan angka 4 ke rumus $(f \\circ g)(x)$ tanpa menyesuaikan domain bagian dalam."
+        },
+        {
+          "teks": "25",
+          "alasan": "Siswa salah hitung aljabar pada perpangkatan atau perkalian koefisien."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa hanya menghitung nilai $g(4) = 3(4) - 2 = 10$."
+        }
+      ],
+      "pembahasan": "Diketahui $(f \\circ g)(x) = f(g(x)) = 9x^2 - 3x + 1$ dan $g(x) = 3x - 2$.\n\nUntuk mencari nilai $f(4)$, cari nilai $x$ sehingga $g(x) = 4$:\n$3x - 2 = 4$\n$3x = 6$\n$x = 2$\n\nSubstitusikan $x = 2$ ke dalam $(f \\circ g)(x)$:\n$f(g(2)) = 9(2)^2 - 3(2) + 1$\n$f(4) = 9(4) - 6 + 1$\n$f(4) = 36 - 6 + 1 = 31$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan komposisi bertingkat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengomposisikan tiga fungsi berurutan lalu menyelesaikan persamaan kuadrat yang terbentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi-fungsi real $f(x) = 3x - 1$, $g(x) = x + 2$, dan $h(x) = x^2 - 1$. Jika $((f \\circ g) \\circ h)(a) = 50$ dengan $a > 0$, maka nilai $a$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Komposisi $(f \\circ g)(x) = 3(x + 2) - 1 = 3x + 5$. Lalu $((f \\circ g) \\circ h)(a) = 3(a^2 - 1) + 5 = 3a^2 + 2$. Persamaan $3a^2 + 2 = 50$ menghasilkan $3a^2 = 48 \\implies a^2 = 16$. Karena $a > 0$, maka $a = 4$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa salah membagi nilai $48 / 3$ atau melakukan kesalahan penarikan akar."
+        },
+        {
+          "teks": "16",
+          "alasan": "Siswa berhenti pada nilai $a^2$ dan lupa menarik akar kuadrat."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah menyederhanakan konstanta pada saat komposisi awal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan fungsi $(f \\circ g)(x)$:\n$(f \\circ g)(x) = f(g(x)) = 3(x + 2) - 1 = 3x + 6 - 1 = 3x + 5$\n\nLangkah 2: Komposisikan dengan fungsi $h(x)$:\n$((f \\circ g) \\circ h)(a) = (f \\circ g)(h(a))$\n$= 3(a^2 - 1) + 5\n= 3a^2 - 3 + 5\n= 3a^2 + 2$\n\nLangkah 3: Selesaikan persamaan untuk $a > 0$:\n$3a^2 + 2 = 50$\n$3a^2 = 48$\n$a^2 = 16$\n$a = 4$ (karena syarat $a > 0$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "9",
+        "teks": "Anton membeli sebuah meja belajar dari sebuah toko. Ada banyak pilihan meja dengan harga-harga yang bervariasi. Meja-meja tersebut berukuran besar. Karena ukuran mobil Anton kecil, maka Anton memutuskan untuk menyewa jasa antar dari toko tersebut. Setelah berdiskusi dengan pihak toko, maka total biaya yang harus dibayar adalah harga meja belajar, pajak pembelian, dan biaya angkut. Pajak pembelian sebesar 7,5% harga meja. Biaya angkut sebesar Rp20.000,00.",
+        "jawaban": "t(x) = 1,075x dan f(x) = x + 20.000",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan tarif total",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan fungsi komposisi dari tarif gabungan lalu menyelesaikan persamaan linear untuk menentukan nilai asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rani memesan satu set lemari pakaian secara daring. Toko mebel menetapkan biaya asuransi pengiriman sebesar 4% dari harga lemari dan biaya ongkos kirim kargo tetap sebesar Rp40.000,00. Jika total pembayaran yang dikeluarkan Rani adalah Rp1.860.000,00, maka harga lemari pakaian tersebut sebelum dikenai asuransi dan ongkos kirim adalah ....",
+      "jawaban_benar": "Rp1.750.000,00",
+      "alasan_benar": "Total biaya dimodelkan oleh fungsi $B(x) = x + 0,04x + 40.000 = 1,04x + 40.000$. Diketahui $B(x) = 1.860.000$, sehingga $1,04x = 1.860.000 - 40.000 = 1.820.000$. Diperoleh $x = \\frac{1.820.000}{1,04} = 1.750.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp1.820.000,00",
+          "alasan": "Siswa hanya mengurangkan ongkos kirim tetap tetapi lupa memperhitungkan persentase biaya asuransi."
+        },
+        {
+          "teks": "Rp1.747.200,00",
+          "alasan": "Siswa mengurangkan ongkos kirim lalu langsung mengalikan dengan $(1 - 0,04) = 0,96$ alih-alih membagi dengan 1,04."
+        },
+        {
+          "teks": "Rp1.700.000,00",
+          "alasan": "Siswa salah menghitung pembagian atau mengurangkan nilai persentase secara kasar tanpa rumus fungsi yang tepat."
+        }
+      ],
+      "pembahasan": "Misalkan harga lemari pakaian adalah $x$.\n1. Fungsi biaya mencakup harga barang dan asuransi 4%: $f(x) = x + 0,04x = 1,04x$.\n2. Fungsi total setelah ditambah ongkos kirim kargo Rp40.000,00: $B(x) = 1,04x + 40.000$.\n3. Rani membayar total Rp1.860.000,00, maka:\n$$1,04x + 40.000 = 1.860.000$$\n$$1,04x = 1.820.000$$\n$$x = \\frac{1.820.000}{1,04} = 1.750.000$$\nJadi, harga lemari pakaian sebelum dikenai asuransi dan ongkos kirim adalah Rp1.750.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": "Masalah Pertama",
+        "nomor": null,
+        "teks": "Jika harga awal adalah x dan harga akhir atau nilai fungsi f (x) = y , nyatakan y sebagai suatu fungsi yang memodelkan diskon 30% dilanjutkan dengan potongan harga sebesar Rp10.000,00.",
+        "jawaban": "y = 0,7x - 10000",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "inversi model diskon",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menyusun fungsi komposisi diskon bertingkat lalu melakukan langkah aljabar balik untuk mencari harga awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Harga awal suatu barang adalah $x$ rupiah. Sebuah toko memberikan penawaran khusus berupa diskon 25% dilanjutkan dengan potongan voucer belanja sebesar Rp35.000,00 dari harga setelah diskon. Jika seorang pembeli membayar sebesar Rp145.000,00 di kasir untuk barang tersebut, harga awal barang sebelum diskon dan potongan voucer adalah ....",
+      "jawaban_benar": "Rp240.000,00",
+      "alasan_benar": "Harga setelah diskon 25% adalah $f(x) = (1 - 0,25)x = 0,75x$. Setelah potongan voucer, total yang dibayar adalah $g(f(x)) = 0,75x - 35.000$. Karena $0,75x - 35.000 = 145.000$, diperoleh $0,75x = 180.000$, sehingga $x = \\frac{180.000}{0,75} = 240.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp225.000,00",
+          "alasan": "Siswa menambahkan voucer menjadi Rp180.000,00 lalu mengalikannya dengan 1,25 (menambah 25%) alih-alih membaginya dengan 0,75."
+        },
+        {
+          "teks": "Rp180.000,00",
+          "alasan": "Siswa hanya menambahkan potongan voucer ke harga bayar dan lupa memperhitungkan diskon 25%."
+        },
+        {
+          "teks": "Rp720.000,00",
+          "alasan": "Siswa keliru memodelkan persentase yang harus dibayar sebagai $0,25x$ bukan $0,75x$, sehingga membagi $180.000$ dengan $0,25$."
+        }
+      ],
+      "pembahasan": "Misalkan harga awal barang adalah $x$.\n1. Setelah diskon 25%, harga menjadi:\n$$f(x) = (1 - 0,25)x = 0,75x$$\n2. Setelah dipotong voucer sebesar Rp35.000,00, harga akhir menjadi:\n$$y = (g \\circ f)(x) = 0,75x - 35.000$$\n3. Karena pembeli membayar Rp145.000,00:\n$$0,75x - 35.000 = 145.000$$\n$$0,75x = 180.000$$\n$$x = \\frac{180.000}{0,75} = 240.000$$\nJadi, harga awal barang tersebut adalah Rp240.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

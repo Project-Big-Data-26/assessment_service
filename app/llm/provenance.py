@@ -21,8 +21,31 @@ def verify_retained_record(source, question_id, record, cache=None):
             raise ValueError("retained provider checkpoint checksum differs")
         cache[identity] = json.loads(data)
     original = cache[identity]
-    if (original["sourceHash"] != hashlib.sha256(Path(source).read_bytes()).hexdigest()
-            or original["provider"] != record["provider"] or original["model"] != record["model"]):
+    source_identity = ("source-bytes", str(Path(source).resolve()))
+    if source_identity not in cache:
+        cache[source_identity] = Path(source).read_bytes()
+    current_bytes = cache[source_identity]
+    source_matches = original["sourceHash"] == hashlib.sha256(current_bytes).hexdigest()
+    if not source_matches:
+        # Appending candidates must not invalidate paid decisions for unchanged
+        # old inputs. Require an immutable copy of the entire previous source,
+        # and verify that every old row and its relative order were retained.
+        proof_identity = ("extension-source", str(Path(source).resolve()), original["sourceHash"])
+        if proof_identity not in cache:
+            current = json.loads(current_bytes)
+            verified_ids = set()
+            for archived in Path(source).parent.glob("history/source_extension_*/soal_exercise_db.json"):
+                raw = archived.read_bytes()
+                if hashlib.sha256(raw).hexdigest() != original["sourceHash"]:
+                    continue
+                previous = json.loads(raw)
+                old_ids = {str(row["_id"]) for row in previous}
+                if [row for row in current if str(row["_id"]) in old_ids] == previous:
+                    verified_ids = old_ids
+                    break
+            cache[proof_identity] = verified_ids
+        source_matches = question_id in cache[proof_identity]
+    if (not source_matches or original["provider"] != record["provider"] or original["model"] != record["model"]):
         raise ValueError("retained provider/source identity differs")
     before = original["items"][question_id]
     actual = {key: value for key, value in record.items() if key != "retainedProviderEvidence"}

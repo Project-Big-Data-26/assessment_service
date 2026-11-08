@@ -1,0 +1,520 @@
+{
+  "book": "kelas8",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b01-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "Untuk memahami perkalian bentuk akar lebih lanjut, coba kalian lengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim akar",
+      "alasan_level": "mengevaluasi klaim umum dengan menguji pasangan nilai: hanya satu pasangan yang benar-benar menyangkal",
+      "stimulus": null,
+      "pertanyaan": "Raka menyatakan bahwa $\\sqrt{a+b}=\\sqrt{a}+\\sqrt{b}$ berlaku untuk semua bilangan $a$ dan $b$ yang tidak negatif. Pasangan $(a,b)$ berikut yang dapat membuktikan bahwa pernyataan Raka salah adalah ....",
+      "jawaban_benar": "$(9,16)$",
+      "alasan_benar": "$\\sqrt{9+16}=\\sqrt{25}=5$ sedangkan $\\sqrt{9}+\\sqrt{16}=3+4=7$, hasilnya berbeda",
+      "distraktor": [
+        {
+          "teks": "$(0,25)$",
+          "alasan": "$\\sqrt{25}=5$ dan $0+5=5$, sama sehingga justru cocok dengan klaim; bukan penyangkal"
+        },
+        {
+          "teks": "$(36,0)$",
+          "alasan": "$\\sqrt{36}=6$ dan $6+0=6$, sama; bilangan nol tidak menyangkal"
+        },
+        {
+          "teks": "$(0,0)$",
+          "alasan": "$\\sqrt{0}=0$ dan $0+0=0$, sama; bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Penyangkal harus membuat kedua ruas berbeda. Untuk $(9,16)$: $\\sqrt{25}=5\\neq 7=3+4$. Pasangan yang memuat 0 membuat kedua ruas sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Untuk menyederhanakan bentuk akar, kalian dapat melengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah keliru menyederhanakan",
+      "alasan_level": "memeriksa urutan penyederhanaan dan menentukan langkah yang salah beserta alasannya",
+      "stimulus": "Dewi menyederhanakan $\\sqrt{75}+\\sqrt{12}$ sebagai berikut.\n\nLangkah 1: $\\sqrt{75}=\\sqrt{25\\times 3}=5\\sqrt{3}$\n\nLangkah 2: $\\sqrt{12}=\\sqrt{4\\times 3}=4\\sqrt{3}$\n\nLangkah 3: $5\\sqrt{3}+4\\sqrt{3}=9\\sqrt{3}$",
+      "pertanyaan": "Pernyataan yang tepat mengenai pekerjaan Dewi adalah ....",
+      "jawaban_benar": "Langkah 2 keliru karena $\\sqrt{4}=2$, bukan 4",
+      "alasan_benar": "$\\sqrt{4\\times 3}=\\sqrt{4}\\times\\sqrt{3}=2\\sqrt{3}$, sehingga hasil yang benar $5\\sqrt{3}+2\\sqrt{3}=7\\sqrt{3}$",
+      "distraktor": [
+        {
+          "teks": "Langkah 1 keliru karena 75 tidak dapat ditulis sebagai $25\\times 3$",
+          "alasan": "$25\\times 3=75$ dan $\\sqrt{25}=5$, langkah 1 benar"
+        },
+        {
+          "teks": "Langkah 3 keliru karena akar sejenis dijumlahkan dengan cara dikalikan koefisiennya",
+          "alasan": "akar sejenis dijumlahkan dengan menjumlahkan koefisien; langkah 3 sudah benar menurut nilai sebelumnya"
+        },
+        {
+          "teks": "Semua langkah sudah benar sehingga hasilnya $9\\sqrt{3}$",
+          "alasan": "tidak melihat bahwa $\\sqrt{4}$ ditulis 4"
+        }
+      ],
+      "pembahasan": "$\\sqrt{75}=5\\sqrt{3}$ benar. $\\sqrt{12}=2\\sqrt{3}$, bukan $4\\sqrt{3}$. Jadi langkah 2 keliru dan hasil benar $7\\sqrt{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 54,
+        "kutipan": "Pecahan penyebut tersebut dapat diubah menjadi pecahan rasional dengan cara mengalikan pembilang dan penyebutnya dengan pasangan bentuk akar sekawannya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan merasionalkan penyebut",
+      "alasan_level": "menelusuri pekerjaan yang salah di penyebut sekawan lalu menentukan hasil yang benar",
+      "stimulus": "Dina merasionalkan $\\frac{6}{\\sqrt{7}-\\sqrt{3}}$ sebagai berikut.\n\n$\\frac{6}{\\sqrt{7}-\\sqrt{3}}\\times\\frac{\\sqrt{7}+\\sqrt{3}}{\\sqrt{7}+\\sqrt{3}}=\\frac{6(\\sqrt{7}+\\sqrt{3})}{7+3}=\\frac{3\\sqrt{7}+3\\sqrt{3}}{5}$",
+      "pertanyaan": "Pekerjaan Dina memuat kesalahan. Hasil yang benar adalah ....",
+      "jawaban_benar": "$\\frac{3\\sqrt{7}+3\\sqrt{3}}{2}$",
+      "alasan_benar": "penyebut $(\\sqrt{7}-\\sqrt{3})(\\sqrt{7}+\\sqrt{3})=7-3=4$, bukan 10, sehingga $\\frac{6(\\sqrt{7}+\\sqrt{3})}{4}=\\frac{3\\sqrt{7}+3\\sqrt{3}}{2}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3\\sqrt{7}+3\\sqrt{3}}{5}$",
+          "alasan": "mengulang hasil Dina (penyebut dihitung $7+3=10$ lalu dibagi 2)"
+        },
+        {
+          "teks": "$\\frac{3\\sqrt{7}-3\\sqrt{3}}{2}$",
+          "alasan": "tanda pembilang diubah menjadi sama dengan penyebut awal, padahal pembilang dikali $\\sqrt{7}+\\sqrt{3}$"
+        },
+        {
+          "teks": "$6\\sqrt{7}+6\\sqrt{3}$",
+          "alasan": "penyebut 4 dianggap 1 sehingga tidak dibagi"
+        }
+      ],
+      "pembahasan": "Kesalahan Dina ada pada penyebut: $(\\sqrt{7})^2-(\\sqrt{3})^2=7-3=4$. Maka $\\frac{6(\\sqrt{7}+\\sqrt{3})}{4}=\\frac{3(\\sqrt{7}+\\sqrt{3})}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Menentukan a = 25 berarti melakukan penarikan akar dari 625"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "estimasi nilai tanpa kalkulator",
+      "alasan_level": "memperkirakan selisih dua bentuk akar dengan batas-batas akar kuadrat lalu membulatkan",
+      "stimulus": null,
+      "pertanyaan": "Tanpa kalkulator, bilangan bulat yang paling dekat dengan nilai $5\\sqrt{3}-2\\sqrt{2}$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$5\\sqrt{3}=\\sqrt{75}\\approx 8{,}66$ dan $2\\sqrt{2}=\\sqrt{8}\\approx 2{,}83$, selisih sekitar $5{,}83$ sehingga paling dekat dengan 6",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "bilangan dipotong ke bawah, bukan dibulatkan ke yang terdekat"
+        },
+        {
+          "teks": "8",
+          "alasan": "menghitung $\\sqrt{75-8}=\\sqrt{67}\\approx 8{,}2$ (isi akar dikurangkan)"
+        },
+        {
+          "teks": "3",
+          "alasan": "menghitung $(5-2)\\sqrt{3-2}=3$ (koefisien dan isi akar dikurangkan terpisah)"
+        }
+      ],
+      "pembahasan": "$\\sqrt{75}$ ada di antara 8,6 dan 8,7 karena $8{,}6^2=73{,}96$ dan $8{,}7^2=75{,}69$. $\\sqrt{8}\\approx 2{,}83$. Selisih sekitar 5,8 sehingga bilangan terdekat adalah 6.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Untuk menyederhanakan bentuk akar, kalian dapat melengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengurutkan bentuk akar",
+      "alasan_level": "mengurutkan empat bentuk akar dengan memasukkan koefisien ke dalam akar, bukan membaca koefisien atau isi akar saja",
+      "stimulus": null,
+      "pertanyaan": "Urutan bilangan $3\\sqrt{10}$, $5\\sqrt{3}$, $7\\sqrt{2}$, dan $4\\sqrt{6}$ dari yang terkecil ke terbesar adalah ....",
+      "jawaban_benar": "$5\\sqrt{3},\\ 3\\sqrt{10},\\ 4\\sqrt{6},\\ 7\\sqrt{2}$",
+      "alasan_benar": "$5\\sqrt{3}=\\sqrt{75}$, $3\\sqrt{10}=\\sqrt{90}$, $4\\sqrt{6}=\\sqrt{96}$, $7\\sqrt{2}=\\sqrt{98}$ sehingga urutannya naik",
+      "distraktor": [
+        {
+          "teks": "$3\\sqrt{10},\\ 4\\sqrt{6},\\ 5\\sqrt{3},\\ 7\\sqrt{2}$",
+          "alasan": "diurutkan menurut koefisien saja (3, 4, 5, 7)"
+        },
+        {
+          "teks": "$7\\sqrt{2},\\ 5\\sqrt{3},\\ 4\\sqrt{6},\\ 3\\sqrt{10}$",
+          "alasan": "diurutkan menurut isi akar saja (2, 3, 6, 10)"
+        },
+        {
+          "teks": "$7\\sqrt{2},\\ 4\\sqrt{6},\\ 3\\sqrt{10},\\ 5\\sqrt{3}$",
+          "alasan": "urutan terbalik, dari terbesar ke terkecil"
+        }
+      ],
+      "pembahasan": "Masukkan koefisien ke dalam akar: 75, 90, 96, 98. Urutan naik: $5\\sqrt{3}<3\\sqrt{10}<4\\sqrt{6}<7\\sqrt{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Untuk menyederhanakan bentuk akar, kalian dapat melengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter agar akar menjadi bilangan rasional",
+      "alasan_level": "menentukan faktor pelengkap kuadrat sempurna lewat faktorisasi isi akar",
+      "stimulus": null,
+      "pertanyaan": "Bilangan asli $n$ terkecil sehingga $\\sqrt{20n}$ merupakan bilangan bulat adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "$20=2^2\\times 5$, perlu pelengkap $5$ agar $20\\times 5=100=10^2$",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "$\\sqrt{40}=2\\sqrt{10}$ masih berbentuk akar karena faktor 10 belum kuadrat"
+        },
+        {
+          "teks": "4",
+          "alasan": "$\\sqrt{80}=4\\sqrt{5}$ masih berbentuk akar (hanya memasangkan kuadrat 4)"
+        },
+        {
+          "teks": "10",
+          "alasan": "$\\sqrt{200}=10\\sqrt{2}$ masih berbentuk akar, dan 10 bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "$20n$ harus kuadrat sempurna. $20=4\\times 5$, jadi $n$ harus mengandung faktor 5. Untuk $n=5$: $\\sqrt{100}=10$ (bulat).",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 54,
+        "kutipan": "Pasangan bentuk akar sekawan adalah sebagai berikut"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar hasil kali rasional",
+      "alasan_level": "menjabarkan perkalian, menyamakan koefisien bagian irasional dengan nol, lalu mencari nilai parameter",
+      "stimulus": null,
+      "pertanyaan": "Bilangan real $p$ dipilih sehingga hasil kali $(p+2\\sqrt{3})(5-\\sqrt{3})$ merupakan bilangan rasional. Nilai $p$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$(p+2\\sqrt{3})(5-\\sqrt{3})=(5p-6)+(10-p)\\sqrt{3}$. Rasional jika $10-p=0$ sehingga $p=10$",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "menyamakan $p$ dengan koefisien 5 pada faktor kedua"
+        },
+        {
+          "teks": "-10",
+          "alasan": "tanda salah: menyelesaikan $10+p=0$"
+        },
+        {
+          "teks": "6",
+          "alasan": "menganggap suku $-2\\cdot 3=-6$ yang harus dinolkan"
+        }
+      ],
+      "pembahasan": "Jabarkan: $5p-p\\sqrt{3}+10\\sqrt{3}-2\\cdot 3=(5p-6)+(10-p)\\sqrt{3}$. Bagian irasional hilang bila $10-p=0$, jadi $p=10$ dan hasilnya 44.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "Untuk memahami perkalian bentuk akar lebih lanjut, coba kalian lengkapi tabel berikut"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang bilangan dengan hasil kali tertentu",
+      "alasan_level": "merancang pasangan koefisien bulat dari persamaan hasil kali, lalu memilih nilai ekstrem",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat positif $a$ dan $b$ memenuhi $(a\\sqrt{3})\\times(b\\sqrt{12})=36$. Nilai $a+b$ yang terbesar adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "$ab\\sqrt{36}=6ab=36$ sehingga $ab=6$. Pasangan: $(1,6)$ dan $(2,3)$ beserta kebalikannya, jumlah terbesar $1+6=7$",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "hanya memakai pasangan $(2,3)$ sehingga yang terkecil, bukan terbesar"
+        },
+        {
+          "teks": "6",
+          "alasan": "mengira $a+b$ sama dengan $ab=6$"
+        },
+        {
+          "teks": "12",
+          "alasan": "mengira $\\sqrt{12}$ tidak disederhanakan sehingga $ab\\sqrt{36}$ dihitung 36 dibagi 3"
+        }
+      ],
+      "pembahasan": "$(a\\sqrt{3})(b\\sqrt{12})=ab\\sqrt{36}=6ab$. Dari $6ab=36$ diperoleh $ab=6$. Pasangan bulat positif: $(1,6),(2,3),(3,2),(6,1)$, sehingga $a+b$ terbesar adalah 7.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 54,
+        "kutipan": "bilangan irasional adalah bilangan real yang hasil baginya tidak berhenti"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim akar",
+      "alasan_level": "membuktikan klaim salah dengan memilih satu pasangan irasional yang hasil kalinya rasional di antara empat pasangan",
+      "stimulus": null,
+      "pertanyaan": "Sita menyatakan bahwa hasil kali dua bilangan irasional selalu irasional. Pasangan berikut yang menunjukkan bahwa pernyataan Sita salah adalah ....",
+      "jawaban_benar": "$\\sqrt{2}\\times\\sqrt{8}$",
+      "alasan_benar": "$\\sqrt{2}\\times\\sqrt{8}=\\sqrt{16}=4$, bilangan rasional padahal $\\sqrt{2}$ dan $\\sqrt{8}$ irasional",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{2}\\times\\sqrt{3}$",
+          "alasan": "hasilnya $\\sqrt{6}$ irasional, tidak menyangkal"
+        },
+        {
+          "teks": "$\\sqrt{3}\\times\\sqrt{5}$",
+          "alasan": "hasilnya $\\sqrt{15}$ irasional, tidak menyangkal"
+        },
+        {
+          "teks": "$\\sqrt{5}\\times\\sqrt{10}$",
+          "alasan": "hasilnya $\\sqrt{50}=5\\sqrt{2}$ irasional, tidak menyangkal"
+        }
+      ],
+      "pembahasan": "Hanya $\\sqrt{2}\\times\\sqrt{8}=\\sqrt{16}=4$ yang rasional. Tiga pasangan lain menghasilkan $\\sqrt{6}$, $\\sqrt{15}$, dan $5\\sqrt{2}$ yang irasional.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 54,
+        "kutipan": "Pecahan penyebut tersebut dapat diubah menjadi pecahan rasional dengan cara mengalikan pembilang dan penyebutnya dengan pasangan bentuk akar sekawannya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua cara menghitung",
+      "alasan_level": "membandingkan dua pekerjaan siswa dengan menjabarkan sendiri dan memilih pernyataan yang tepat",
+      "stimulus": "Rina dan Sari menghitung $(\\sqrt{5}+\\sqrt{3})(\\sqrt{5}+\\sqrt{3})$.\n\nRina: $\\sqrt{5}\\times\\sqrt{5}+\\sqrt{3}\\times\\sqrt{3}=5+3=8$.\n\nSari: $5+\\sqrt{15}+\\sqrt{15}+3=8+2\\sqrt{15}$.",
+      "pertanyaan": "Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Sari benar, hasilnya $8+2\\sqrt{15}$",
+      "alasan_benar": "semua empat suku hasil penjabaran harus dihitung; Rina melewatkan dua suku silang $\\sqrt{15}$",
+      "distraktor": [
+        {
+          "teks": "Rina benar, hasilnya $8$",
+          "alasan": "dua suku silang $\\sqrt{5}\\times\\sqrt{3}$ terlewat"
+        },
+        {
+          "teks": "Keduanya salah, hasilnya $8-2\\sqrt{15}$",
+          "alasan": "tanda suku silang keliru; kedua suku silang positif"
+        },
+        {
+          "teks": "Keduanya benar karena $8$ dan $8+2\\sqrt{15}$ sama nilainya",
+          "alasan": "$2\\sqrt{15}\\neq 0$ sehingga kedua hasil berbeda"
+        }
+      ],
+      "pembahasan": "$(\\sqrt{5}+\\sqrt{3})^2=5+2\\sqrt{15}+3=8+2\\sqrt{15}$. Rina melupakan suku silang, sehingga Sari yang benar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Menentukan a = 25 berarti melakukan penarikan akar dari 625"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "estimasi nilai tanpa kalkulator",
+      "alasan_level": "memasukkan koefisien ke dalam akar lalu menempatkan di antara dua kuadrat sempurna untuk memilih satu opsi",
+      "stimulus": null,
+      "pertanyaan": "Tanpa kalkulator, bentuk akar berikut yang nilainya terletak di antara 6 dan 7 adalah ....",
+      "jawaban_benar": "$2\\sqrt{10}$",
+      "alasan_benar": "$2\\sqrt{10}=\\sqrt{40}$ dan $36<40<49$ sehingga $6<2\\sqrt{10}<7$",
+      "distraktor": [
+        {
+          "teks": "$3\\sqrt{3}$",
+          "alasan": "$3\\sqrt{3}=\\sqrt{27}$, kurang dari $\\sqrt{36}=6$"
+        },
+        {
+          "teks": "$5\\sqrt{2}$",
+          "alasan": "$5\\sqrt{2}=\\sqrt{50}$, lebih dari $\\sqrt{49}=7$"
+        },
+        {
+          "teks": "$4\\sqrt{5}$",
+          "alasan": "$4\\sqrt{5}=\\sqrt{80}$, lebih dari 8 (hanya koefisien 4 dan akar 5 yang dilihat)"
+        }
+      ],
+      "pembahasan": "Ubah ke bentuk $\\sqrt{\\ }$: $\\sqrt{40}$ terletak di antara $\\sqrt{36}=6$ dan $\\sqrt{49}=7$. Pilihan lain: $\\sqrt{27}<6$, $\\sqrt{50}>7$, $\\sqrt{80}>8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Untuk menyederhanakan bentuk akar, kalian dapat melengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar bentuk akar sederhana tertentu",
+      "alasan_level": "menentukan isi akar yang membuat selisih dua bentuk akar sama dengan bentuk tertentu",
+      "stimulus": null,
+      "pertanyaan": "Bilangan asli $x$ memenuhi $\\sqrt{18}+\\sqrt{x}=5\\sqrt{2}$. Nilai $x$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "$\\sqrt{18}=3\\sqrt{2}$ sehingga $\\sqrt{x}=5\\sqrt{2}-3\\sqrt{2}=2\\sqrt{2}=\\sqrt{8}$",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "menganggap $\\sqrt{x}=\\sqrt{2}$ karena $5-3=2$ lalu 2 dipakai sebagai $x$"
+        },
+        {
+          "teks": "4",
+          "alasan": "menulis $2\\sqrt{2}$ sebagai $\\sqrt{2+2}=\\sqrt{4}$"
+        },
+        {
+          "teks": "32",
+          "alasan": "menghitung $50-18=32$ (isi akar dikurangkan langsung)"
+        }
+      ],
+      "pembahasan": "$\\sqrt{18}=3\\sqrt{2}$. Maka $\\sqrt{x}=2\\sqrt{2}=\\sqrt{4\\times 2}=\\sqrt{8}$ sehingga $x=8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Menentukan a = 25 berarti melakukan penarikan akar dari 625"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menganalisis hubungan sisi dan luas persegi",
+      "alasan_level": "membandingkan dua persegi dari panjang sisi akar dan memilih pernyataan benar di antara perbandingan sisi, luas, dan selisih",
+      "stimulus": null,
+      "pertanyaan": "Persegi $A$ memiliki panjang sisi $\\sqrt{75}$ cm dan persegi $B$ memiliki panjang sisi $\\sqrt{12}$ cm. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "panjang sisi $A$ adalah $2{,}5$ kali panjang sisi $B$",
+      "alasan_benar": "$\\sqrt{75}=5\\sqrt{3}$ dan $\\sqrt{12}=2\\sqrt{3}$ sehingga perbandingan sisi $5:2=2{,}5$",
+      "distraktor": [
+        {
+          "teks": "panjang sisi $A$ adalah $6{,}25$ kali panjang sisi $B$",
+          "alasan": "luas $A$ yang 6,25 kali luas $B$ tertukar dengan perbandingan sisi"
+        },
+        {
+          "teks": "selisih panjang sisi $A$ dan $B$ adalah $\\sqrt{63}$ cm",
+          "alasan": "isi akar dikurangkan ($75-12=63$), padahal selisihnya $3\\sqrt{3}$"
+        },
+        {
+          "teks": "perbandingan luas $A$ dan $B$ adalah $5:2$",
+          "alasan": "perbandingan sisi tertukar dengan perbandingan luas yang sebenarnya $25:4$"
+        }
+      ],
+      "pembahasan": "$\\sqrt{75}=5\\sqrt{3}$, $\\sqrt{12}=2\\sqrt{3}$, perbandingan sisi $5:2$. Luas $A=75$, luas $B=12$, perbandingan luas $75:12=25:4$. Selisih sisi $=3\\sqrt{3}$ cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 54,
+        "kutipan": "Merasionalkan penyebut maksudnya adalah menjadikan bilangan bentuk akar yang menjadi penyebut dari bilangan irasional menjadi bilangan rasional"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi pekerjaan beberapa siswa",
+      "alasan_level": "memeriksa tiga hasil rasionalisasi dan menentukan kombinasi yang benar dengan menyederhanakan satu per satu",
+      "stimulus": "Tiga siswa merasionalkan penyebut $\\frac{10}{\\sqrt{5}}$.\n\nAli: $2\\sqrt{5}$\n\nBeni: $\\frac{10\\sqrt{5}}{5}$\n\nCici: $10\\sqrt{5}$",
+      "pertanyaan": "Siswa yang jawabannya benar adalah ....",
+      "jawaban_benar": "Ali dan Beni",
+      "alasan_benar": "$\\frac{10}{\\sqrt{5}}\\times\\frac{\\sqrt{5}}{\\sqrt{5}}=\\frac{10\\sqrt{5}}{5}=2\\sqrt{5}$; Ali dan Beni sama nilainya, Cici lupa membagi dengan 5",
+      "distraktor": [
+        {
+          "teks": "Ali saja",
+          "alasan": "Beni juga benar karena $\\frac{10\\sqrt{5}}{5}=2\\sqrt{5}$ (belum disederhanakan)"
+        },
+        {
+          "teks": "Beni dan Cici",
+          "alasan": "Cici tidak membagi dengan 5 dan Ali yang benar terabaikan"
+        },
+        {
+          "teks": "Cici saja",
+          "alasan": "hanya menghitung pembilang $10\\sqrt{5}$ tanpa membagi penyebut 5"
+        }
+      ],
+      "pembahasan": "$\\frac{10}{\\sqrt{5}}=\\frac{10\\sqrt{5}}{5}=2\\sqrt{5}$. Ali dan Beni benar, Cici salah karena penyebut 5 tidak dibagikan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Untuk menyederhanakan bentuk akar, kalian dapat melengkapi tabel berikut"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengevaluasi kesetaraan bentuk akar",
+      "alasan_level": "memeriksa empat bentuk apakah setara dengan $4\\sqrt{18}$ dan menemukan satu yang tidak",
+      "stimulus": null,
+      "pertanyaan": "Tiga dari empat bentuk berikut sama nilainya dengan $4\\sqrt{18}$. Bentuk yang nilainya berbeda dari $4\\sqrt{18}$ adalah ....",
+      "jawaban_benar": "$\\sqrt{72}$",
+      "alasan_benar": "$4\\sqrt{18}=12\\sqrt{2}=\\sqrt{288}=6\\sqrt{8}$, sedangkan $\\sqrt{72}=6\\sqrt{2}$",
+      "distraktor": [
+        {
+          "teks": "$12\\sqrt{2}$",
+          "alasan": "$4\\sqrt{18}=4\\cdot 3\\sqrt{2}=12\\sqrt{2}$, nilainya sama sehingga bukan jawaban"
+        },
+        {
+          "teks": "$\\sqrt{288}$",
+          "alasan": "$4\\sqrt{18}=\\sqrt{16\\times 18}=\\sqrt{288}$, sama"
+        },
+        {
+          "teks": "$6\\sqrt{8}$",
+          "alasan": "$6\\sqrt{8}=6\\cdot 2\\sqrt{2}=12\\sqrt{2}$, sama"
+        }
+      ],
+      "pembahasan": "$4\\sqrt{18}=12\\sqrt{2}$. $\\sqrt{288}=12\\sqrt{2}$ dan $6\\sqrt{8}=12\\sqrt{2}$ sama. $\\sqrt{72}=6\\sqrt{2}$ berbeda (4 dimasukkan ke akar tanpa dikuadratkan).",
+      "catatan": null
+    }
+  ]
+}

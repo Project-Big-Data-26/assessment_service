@@ -1,0 +1,243 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "E",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab E (Identitas Polinomial) hanya 5 halaman dengan satu sifat (7 identitas) dan dua contoh; setelah easy (20) dan medium (16), bahan hard yang bernalar sungguhan hanya Latihan E no.7 (tripel Pythagoras), evaluasi klaim/contoh penyangkal, penyamaan koefisien, dan faktorisasi non-standar. Soal tambahan akan menjadi kembar berangka beda atau hanya hitung langsung.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 107,
+        "kutipan": "merupakan panjang sisi-sisi segitiga siku-siku"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang pasangan pembangkit tripel Pythagoras",
+      "alasan_level": "merancang pasangan bilangan asli yang memenuhi syarat sisi miring, memeriksa semua kemungkinan, lalu memilih yang memberi jumlah terbesar",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan $a^2-b^2$, $2ab$, dan $a^2+b^2$ dengan $a>b$ selalu merupakan panjang sisi segitiga siku-siku dengan sisi miring $a^2+b^2$. Pesulap ingin segitiga siku-siku dengan sisi miring tepat 65 satuan, dengan $a$ dan $b$ bilangan asli, $a>b$. Nilai terbesar yang mungkin untuk $a+b$ adalah ....",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "$a^2+b^2=65$ dipenuhi $(a,b)=(8,1)$ dan $(7,4)$; jumlahnya 9 dan 11, terbesar 11 (sisi 33, 56, 65).",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "hanya menemukan pasangan $(8,1)$ dan melewatkan $(7,4)$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengambil $a$ dari pasangan $(7,4)$, bukan jumlah $a+b$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "menghitung selisih $a-b$ dari pasangan $(7,4)$"
+        }
+      ],
+      "pembahasan": "Karena sisi miring $a^2+b^2=65$, uji $b=1,\\dots,5$: $b=1\\Rightarrow a=8$, $b=4\\Rightarrow a=7$, lainnya tidak bulat. $a+b$ bernilai 9 atau 11, maksimum 11.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 107,
+        "kutipan": "Tripel Pythagoras."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi bukti tripel Pythagoras",
+      "alasan_level": "menilai kesahihan beberapa argumen pembuktian: identitas harus berlaku untuk semua nilai, bukan satu contoh, dan menentukan sisi miring",
+      "stimulus": null,
+      "pertanyaan": "Jika $a$ dan $b$ bilangan real positif dengan $a>b$, empat siswa memberi argumen bahwa $a^2-b^2$, $2ab$, dan $a^2+b^2$ adalah panjang sisi segitiga siku-siku. Argumen yang sahih dan benar adalah ....",
+      "jawaban_benar": "Identitas $(a^2-b^2)^2+(2ab)^2=(a^2+b^2)^2$ berlaku untuk semua $a>b>0$, sisi miringnya $a^2+b^2$",
+      "alasan_benar": "kebalikan teorema Pythagoras berlaku bila jumlah kuadrat dua sisi sama dengan kuadrat sisi ketiga untuk semua $a>b>0$.",
+      "distraktor": [
+        {
+          "teks": "Cukup menguji $a=2$, $b=1$ yang memberi sisi 3, 4, 5, lalu berlaku untuk semua $a,b$",
+          "alasan": "satu contoh dianggap membuktikan identitas"
+        },
+        {
+          "teks": "Benar, dengan sisi miring $2ab$ karena suku yang memuat dua variabel paling panjang",
+          "alasan": "sisi miring ditentukan dari bentuk suku, padahal pada $a=2$, $b=1$ nilai $2ab=4<5$"
+        },
+        {
+          "teks": "Tidak berlaku, karena $(a^2-b^2)^2+(2ab)^2=a^4+b^4$",
+          "alasan": "suku silang $2a^2b^2$ dari dua kuadrat terlewat"
+        }
+      ],
+      "pembahasan": "Jabarkan: $(a^2-b^2)^2+(2ab)^2=a^4-2a^2b^2+b^4+4a^2b^2=(a^2+b^2)^2$ untuk semua $a,b$. Karena $a>b>0$, ketiganya positif, dan $a^2+b^2$ terbesar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "suatu persamaan polinomial yang selalu benar untuk setiap kemungkinan nilai variabelnya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menemukan kesalahan penyamaan koefisien",
+      "alasan_level": "menelusuri pekerjaan siswa, menjabarkan kuadrat trinomial untuk menemukan koefisien yang salah, lalu mengoreksinya",
+      "stimulus": null,
+      "pertanyaan": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+      "jawaban_benar": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+      "alasan_benar": "koefisien $x^2$ pada $(x^2+ax+b)^2$ adalah $a^2+2b$; dengan $a=-3$ diperoleh $b=2$, dan koefisien $x$ ($2ab=-12$) serta konstanta ($b^2=4$) cocok.",
+      "distraktor": [
+        {
+          "teks": "Koefisien $x^3$ seharusnya $a$, sehingga $a=-6$",
+          "alasan": "mengira kuadrat tidak menggandakan koefisien $x^3$"
+        },
+        {
+          "teks": "Koefisien $x$ seharusnya $a+b$, sehingga $b=-9$",
+          "alasan": "salah menjabarkan suku silang $2ab$ menjadi $a+b$"
+        },
+        {
+          "teks": "Pekerjaannya sudah benar, karena $a=-3$ dan $b=4$ memenuhi syarat koefisien $x^3$ dan $x^2$",
+          "alasan": "tidak mengecek koefisien $x$: $2ab=-24$ bukan $-12$"
+        }
+      ],
+      "pembahasan": "Jabarkan $(x^2+ax+b)^2=x^4+2ax^3+(a^2+2b)x^2+2abx+b^2$. Dari $2a=-6$, $a=-3$; dari $9+2b=13$, $b=2$. Cek: $2ab=-12$, $b^2=4$. Nilai $b=4$ gagal pada koefisien $x$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "mengevaluasi empat pernyataan identitas",
+      "alasan_level": "setiap pernyataan harus dijabarkan atau diuji dengan contoh penyangkal sebelum memilih satu-satunya yang identitas",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan berikut yang merupakan identitas polinomial (benar untuk semua bilangan real $a$ dan $b$) adalah ....",
+      "jawaban_benar": "$(a-b)^3=a^3-b^3-3ab(a-b)$",
+      "alasan_benar": "menjabarkan ruas kanan: $a^3-b^3-3a^2b+3ab^2$ sama dengan $(a-b)^3$.",
+      "distraktor": [
+        {
+          "teks": "$(a-b)^3=(b-a)^3$",
+          "alasan": "mengira pangkat tiga tidak mengubah tanda; $a=1$, $b=0$ memberi 1 lawan $-1$"
+        },
+        {
+          "teks": "$a^3-b^3=(a-b)^3+3ab(a+b)$",
+          "alasan": "tanda suku silang tertukar; $a=1$, $b=1$ memberi 0 lawan 6"
+        },
+        {
+          "teks": "$a^4-b^4=(a^2+b^2)(a+b)$",
+          "alasan": "faktor $(a-b)$ terlewat; $a=3$, $b=1$ memberi 80 lawan 40"
+        }
+      ],
+      "pembahasan": "Jabarkan tiap pernyataan. Hanya pernyataan pertama yang sama untuk semua $a$ dan $b$; ketiga yang lain punya contoh penyangkal.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "kita cukup memberikan satu contoh nilai variabel"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mencari contoh penyangkal terkecil",
+      "alasan_level": "menilai klaim siswa dengan mencari contoh penyangkal terkecil setelah memahami bahwa beberapa nilai cocok hanya kebetulan",
+      "stimulus": null,
+      "pertanyaan": "Rudi menguji persamaan $x^3+2x=3x^2$ dengan $x=0$, $x=1$, dan $x=2$; ketiganya benar, sehingga ia menyimpulkan persamaan itu identitas polinomial. Bilangan bulat positif terkecil yang menunjukkan kesimpulan Rudi keliru adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "kedua ruas sama pada $x=1,2$, tetapi pada $x=3$ ruas kiri 33 dan ruas kanan 27.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "memilih nilai yang sudah diuji Rudi, kedua ruas sama-sama 3"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "memilih nilai yang sudah diuji Rudi, kedua ruas sama-sama 12"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "$x=4$ memang penyangkal, tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "$x^3-3x^2+2x=x(x-1)(x-2)$, nol hanya di $x=0,1,2$. Bilangan bulat positif terkecil yang membuat selisih tak nol adalah 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "mengevaluasi klaim banyak pasangan selisih kuadrat",
+      "alasan_level": "menilai klaim dengan memfaktorkan selisih kuadrat dan memeriksa syarat paritas serta urutan faktor",
+      "stimulus": null,
+      "pertanyaan": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+      "jawaban_benar": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+      "alasan_benar": "setiap pasangan faktor dengan $p<q$ menghasilkan satu $(a,b)$: $(23,22)$, $(9,6)$, $(7,2)$.",
+      "distraktor": [
+        {
+          "teks": "Benar, karena setiap faktor positif 45 menghasilkan satu pasangan $(a,b)$",
+          "alasan": "menghitung faktor, bukan pasangan faktor"
+        },
+        {
+          "teks": "Keliru; ada 2 pasangan, karena pasangan faktor $(3,15)$ menghasilkan $b$ yang bukan bilangan bulat",
+          "alasan": "$(3,15)$ memberi $a=9$, $b=6$ yang bulat"
+        },
+        {
+          "teks": "Keliru; ada 4 pasangan, karena $a-b=45$ dan $a+b=1$ juga dihitung",
+          "alasan": "pasangan itu memberi $b=-22$, bukan bilangan asli"
+        }
+      ],
+      "pembahasan": "$a-b=p$, $a+b=q$, $pq=45$, $p<q$: $(1,45)\\to(23,22)$, $(3,15)\\to(9,6)$, $(5,9)\\to(7,2)$. Jadi 3 pasangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 104,
+        "kutipan": "Berikut ini beberapa identitas polinomial."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mengevaluasi klaim bilangan prima",
+      "alasan_level": "menilai klaim bahwa jumlah dua kuadrat tidak dapat difaktorkan dengan menyusun $x^4+4$ sebagai selisih kuadrat",
+      "stimulus": null,
+      "pertanyaan": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+      "jawaban_benar": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+      "alasan_benar": "dari $x^4+4=(x^2+2)^2-(2x)^2=(x^2+2x+2)(x^2-2x+2)$ dengan $x=9$ diperoleh $101\\cdot65=6565$.",
+      "distraktor": [
+        {
+          "teks": "Benar, karena jumlah dua kuadrat tidak dapat difaktorkan",
+          "alasan": "mengira bentuk $p^2+q^2$ tidak pernah dapat difaktorkan"
+        },
+        {
+          "teks": "Keliru; $9^4+4=(9^2+2)^2=83^2$, sehingga kuadrat sempurna",
+          "alasan": "melupakan suku silang $2\\cdot81\\cdot2$ pada kuadrat binomial"
+        },
+        {
+          "teks": "Keliru, karena jumlah digit 6565 adalah 22 sehingga habis dibagi 3",
+          "alasan": "salah aritmetika: 22 tidak habis dibagi 3"
+        }
+      ],
+      "pembahasan": "$9^4+4=6565$. Dengan $x^4+4=(x^2+2x+2)(x^2-2x+2)$ dan $x=9$: $101\\cdot65=6565$, sehingga komposit (bahkan $5\\cdot13\\cdot101$).",
+      "catatan": null
+    }
+  ]
+}

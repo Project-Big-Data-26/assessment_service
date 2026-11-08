@@ -271,6 +271,820 @@
       ],
       "pembahasan": "Sisi baru 14 cm. Keliling = 3 x 14 = 42 cm.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "945764051ec03abf1862c3b7",
+        "teks": "Sebuah segitiga memiliki sisi pertama 12 cm. Sisi kedua 5 cm lebih panjang daripada sisi pertama. Sisi ketiga dua kali sisi pertama. Keliling segitiga tersebut adalah ....",
+        "jawaban": "53 cm",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "keliling_segitiga",
+      "alasan_level": "Target medium; variasi konsep keliling segitiga. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga memiliki panjang sisi 9, 9, dan 14 cm. Berapakah kelilingnya?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Jumlah panjang ketiga sisi = 32 cm.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah keliling segitiga pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan $31$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah keliling segitiga pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah keliling segitiga pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah panjang ketiga sisi = 32 cm.",
+      "catatan": "codex-replenishment:kelas5-b04-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b04-b-medium-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f2130105598732c4220577d5",
+        "teks": "Sebuah segitiga memiliki panjang sisi 7 cm, 9 cm, dan 12 cm. Keliling segitiga tersebut adalah ....",
+        "jawaban": "28 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $108$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $89$. Selisih hasilnya $19$.",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $108$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $89$. Selisih hasilnya $19$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-010",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/2a015ae2428449e5b3b8f5d5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "52"
+            ],
+            [
+              "I",
+              "B",
+              "4"
+            ],
+            [
+              "II",
+              "A",
+              "42"
+            ],
+            [
+              "II",
+              "B",
+              "5"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"52\"], [\"I\", \"B\", \"4\"], [\"II\", \"A\", \"42\"], [\"II\", \"B\", \"5\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "313de80cf09e8f21d4126fde",
+        "teks": "Sebuah segitiga sama sisi panjang sisinya 8 cm. Keliling segitiga tersebut adalah ....",
+        "jawaban": "24 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $103$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $115$. Selisih hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $103$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $115$. Selisih hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-011",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/91f262082acb815ca58fa33a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "48"
+            ],
+            [
+              "I",
+              "B",
+              "7"
+            ],
+            [
+              "II",
+              "A",
+              "49"
+            ],
+            [
+              "II",
+              "B",
+              "17"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"48\"], [\"I\", \"B\", \"7\"], [\"II\", \"A\", \"49\"], [\"II\", \"B\", \"17\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a84777dfcccacf282f621679",
+        "teks": "Sebuah segitiga sama kaki memiliki dua sisi yang panjangnya 9 cm dan satu sisi lain 5 cm. Keliling segitiga tersebut adalah ....",
+        "jawaban": "23 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $103$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $64$. Selisih hasilnya $39$.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $103$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $64$. Selisih hasilnya $39$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-012",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/6d486069b348b8ff8e9879c6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "42"
+            ],
+            [
+              "I",
+              "B",
+              "19"
+            ],
+            [
+              "II",
+              "A",
+              "30"
+            ],
+            [
+              "II",
+              "B",
+              "4"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"42\"], [\"I\", \"B\", \"19\"], [\"II\", \"A\", \"30\"], [\"II\", \"B\", \"4\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0bf6acedc6fd9d8b64e3f39",
+        "teks": "Cara menentukan keliling segitiga sama sisi dengan panjang sisi s adalah ....",
+        "jawaban": "3 x s",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $114$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $107$. Selisih hasilnya $7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $114$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $107$. Selisih hasilnya $7$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/adadc666338a25dd3b4dd1d9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "47"
+            ],
+            [
+              "I",
+              "B",
+              "20"
+            ],
+            [
+              "II",
+              "A",
+              "50"
+            ],
+            [
+              "II",
+              "B",
+              "7"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"47\"], [\"I\", \"B\", \"20\"], [\"II\", \"A\", \"50\"], [\"II\", \"B\", \"7\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "713bef66ddc5d76ac21405ac",
+        "teks": "Sebuah segitiga memiliki panjang sisi 6 cm, 4 cm, dan 6 cm. Nama segitiga tersebut adalah ....",
+        "jawaban": "segitiga sama kaki",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $105$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $90$. Selisih hasilnya $15$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $105$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $90$. Selisih hasilnya $15$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/b439c4d9a2ff3c7cbb7ffd8f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "47"
+            ],
+            [
+              "I",
+              "B",
+              "11"
+            ],
+            [
+              "II",
+              "A",
+              "35"
+            ],
+            [
+              "II",
+              "B",
+              "20"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"47\"], [\"I\", \"B\", \"11\"], [\"II\", \"A\", \"35\"], [\"II\", \"B\", \"20\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca12977d7c91bf72d8d12491",
+        "teks": "Sebuah segitiga memiliki panjang sisi 5 cm, 5 cm, dan 5 cm. Nama segitiga tersebut adalah ....",
+        "jawaban": "segitiga sama sisi",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $95$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $62$. Selisih hasilnya $33$.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $95$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $62$. Selisih hasilnya $33$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/a8f8e7141619d4f036767cc8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "40"
+            ],
+            [
+              "I",
+              "B",
+              "15"
+            ],
+            [
+              "II",
+              "A",
+              "28"
+            ],
+            [
+              "II",
+              "B",
+              "6"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"40\"], [\"I\", \"B\", \"15\"], [\"II\", \"A\", \"28\"], [\"II\", \"B\", \"6\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "211d32eb2d50f5dacdf10acd",
+        "teks": "Bu Rina memasang pita di tepi kain segitiga yang panjang sisinya 30 cm, 40 cm, dan 50 cm. Panjang pita yang dibutuhkan paling sedikit adalah ....",
+        "jawaban": "120 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki $A$ cm dan alas $B$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $100$. Selisih hasilnya $16$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $100$. Selisih hasilnya $16$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/b2f0f6c716dd1faca14be01e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "34"
+            ],
+            [
+              "I",
+              "B",
+              "16"
+            ],
+            [
+              "II",
+              "A",
+              "47"
+            ],
+            [
+              "II",
+              "B",
+              "6"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"34\"], [\"I\", \"B\", \"16\"], [\"II\", \"A\", \"47\"], [\"II\", \"B\", \"6\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "89a8f633f9396afdc987ff71",
+        "teks": "Keliling sebuah segitiga adalah 20 cm. Dua sisinya berukuran 7 cm dan 8 cm. Panjang sisi ketiga adalah ....",
+        "jawaban": "5 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${27}$ cm dan alas ${20}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${52}$ cm dan alas ${17}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $74$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $121$. Selisih hasilnya $47$.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $74$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $121$. Selisih hasilnya $47$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b814b74827d7b41ec6229735",
+        "teks": "Keliling sebuah segitiga sama sisi adalah 45 cm. Panjang setiap sisinya adalah ....",
+        "jawaban": "15 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${52}$ cm dan alas ${4}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${41}$ cm dan alas ${9}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $108$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $91$. Selisih hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $108$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $91$. Selisih hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c16945d280ec1a485ae51079",
+        "teks": "Segitiga P sama sisi dengan panjang sisi 12 cm. Segitiga Q sama kaki dengan panjang kaki 11 cm dan alas 13 cm. Pernyataan yang benar adalah ....",
+        "jawaban": "keliling P lebih panjang 1 cm daripada keliling Q",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${49}$ cm dan alas ${4}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${39}$ cm dan alas ${15}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $102$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $93$. Selisih hasilnya $9$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $102$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $93$. Selisih hasilnya $9$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "33515002b6ca1cb636205108",
+        "teks": "Rudi mencari panjang kaki segitiga sama kaki yang kelilingnya 46 cm dan alasnya 16 cm. Langkah Rudi: 46 - 16 = 30, jadi panjang kaki 30 cm. Kesalahan Rudi adalah ....",
+        "jawaban": "tidak membagi 30 dengan 2, padahal ada dua kaki sama panjang sehingga kaki 15 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${50}$ cm dan alas ${17}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${30}$ cm dan alas ${20}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $117$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $80$. Selisih hasilnya $37$.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $117$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $80$. Selisih hasilnya $37$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a2c0a57453eb9df8eee7b7f",
+        "teks": "Ada empat segitiga. Manakah segitiga yang kelilingnya paling panjang?",
+        "jawaban": "segitiga sama sisi dengan sisi 14 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${50}$ cm dan alas ${9}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${39}$ cm dan alas ${6}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $109$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Selisih hasilnya $25$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $109$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Selisih hasilnya $25$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3c9b70fb00812caacde03cd",
+        "teks": "Pak Joko memiliki kawat sepanjang 100 cm. Ia membuat kerangka segitiga sama sisi dengan panjang sisi bilangan bulat dalam cm. Kawat tidak boleh disambung dan tidak boleh kurang. Panjang sisi terpanjang yang dapat dibuat adalah ....",
+        "jawaban": "33 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${31}$ cm dan alas ${10}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${23}$ cm dan alas ${8}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $72$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $54$. Selisih hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $72$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $54$. Selisih hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "af86801bd1a596b10a2bf0d2",
+        "teks": "Segitiga sama kaki mempunyai keliling 44 cm. Pasangan ukuran yang mungkin adalah ....",
+        "jawaban": "kaki 12 cm dan alas 20 cm",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s5_keliling_segitiga_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Segitiga sama kaki mempunyai kaki ${25}$ cm dan alas ${3}$ cm. Tentukan kelilingnya. Situasi II: Segitiga sama kaki mempunyai kaki ${35}$ cm dan alas ${14}$ cm. Tentukan kelilingnya. Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $53$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Selisih hasilnya $31$.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $53$. Situasi II: Keliling adalah jumlah ketiga sisi Perhitungan dengan data tersebut memberi $84$. Selisih hasilnya $31$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b04-b-medium-bt01-023"
     }
   ]
 }

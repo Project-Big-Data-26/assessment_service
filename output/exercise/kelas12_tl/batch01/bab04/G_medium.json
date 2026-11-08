@@ -849,6 +849,3486 @@
       "pembahasan": "Hitung nilai baku ($Z$) dari $X = 18$:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{18 - 15}{4} = \\frac{3}{4} = 0,75$$\nKarena dicari peluang waktu pelayanan lebih dari $18\\text{ menit}$:\n$$P(X > 18) = P(Z > 0,75) = 1 - P(Z < 0,75)$$\nBerdasarkan nilai tabel normal baku:\n$$P(X > 18) = 1 - 0,7734 = 0,2266$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 55 dan simpangan baku 6. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<67)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(67-55)/6=2. Maka peluangnya Φ(2)=2443/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4943}{2500}$",
+          "alasan": "Nilai $\\frac{4943}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{57}{2500}$",
+          "alasan": "Nilai $- \\frac{57}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7443}{2500}$",
+          "alasan": "Nilai $\\frac{7443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(67-55)/6=2. Maka peluangnya Φ(2)=2443/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "fd90910a9859f703910d6647",
+        "teks": "Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masing-masing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.",
+        "jawaban": "rata-rata 40 dan nilai standar (simpangan baku) 60",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 50 dan simpangan baku 3. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<47)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(47-50)/3=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11587}{10000}$",
+          "alasan": "Nilai $\\frac{11587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8413}{10000}$",
+          "alasan": "Nilai $- \\frac{8413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{21587}{10000}$",
+          "alasan": "Nilai $\\frac{21587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(47-50)/3=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 41 dan simpangan baku 11. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<19)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(19-41)/11=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(19-41)/11=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 43 dan simpangan baku 10. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<33)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(33-43)/10=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11587}{10000}$",
+          "alasan": "Nilai $\\frac{11587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8413}{10000}$",
+          "alasan": "Nilai $- \\frac{8413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{21587}{10000}$",
+          "alasan": "Nilai $\\frac{21587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(33-43)/10=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 67 dan simpangan baku 7. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<60)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(60-67)/7=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11587}{10000}$",
+          "alasan": "Nilai $\\frac{11587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8413}{10000}$",
+          "alasan": "Nilai $- \\frac{8413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{21587}{10000}$",
+          "alasan": "Nilai $\\frac{21587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(60-67)/7=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "fd90910a9859f703910d6647",
+        "teks": "Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masing-masing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.",
+        "jawaban": "rata-rata 40 dan nilai standar (simpangan baku) 60",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 62 dan simpangan baku 7. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<48)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(48-62)/7=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(48-62)/7=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 79 dan simpangan baku 6. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<91)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(91-79)/6=2. Maka peluangnya Φ(2)=2443/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4943}{2500}$",
+          "alasan": "Nilai $\\frac{4943}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{57}{2500}$",
+          "alasan": "Nilai $- \\frac{57}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7443}{2500}$",
+          "alasan": "Nilai $\\frac{7443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(91-79)/6=2. Maka peluangnya Φ(2)=2443/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 84 dan simpangan baku 10. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<64)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(64-84)/10=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(64-84)/10=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 83 dan simpangan baku 12. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<59)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(59-83)/12=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(59-83)/12=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 41 dan simpangan baku 9. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<50)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(50-41)/9=1. Maka peluangnya Φ(1)=8413/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{18413}{10000}$",
+          "alasan": "Nilai $\\frac{18413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1587}{10000}$",
+          "alasan": "Nilai $- \\frac{1587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{28413}{10000}$",
+          "alasan": "Nilai $\\frac{28413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(50-41)/9=1. Maka peluangnya Φ(1)=8413/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 83 dan simpangan baku 3. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<89)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(89-83)/3=2. Maka peluangnya Φ(2)=2443/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4943}{2500}$",
+          "alasan": "Nilai $\\frac{4943}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{57}{2500}$",
+          "alasan": "Nilai $- \\frac{57}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7443}{2500}$",
+          "alasan": "Nilai $\\frac{7443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(89-83)/3=2. Maka peluangnya Φ(2)=2443/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 89 dan simpangan baku 5. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<84)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(84-89)/5=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11587}{10000}$",
+          "alasan": "Nilai $\\frac{11587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8413}{10000}$",
+          "alasan": "Nilai $- \\frac{8413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{21587}{10000}$",
+          "alasan": "Nilai $\\frac{21587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(84-89)/5=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 89 dan simpangan baku 8. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<73)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(73-89)/8=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(73-89)/8=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 90 dan simpangan baku 10. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<100)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(100-90)/10=1. Maka peluangnya Φ(1)=8413/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{18413}{10000}$",
+          "alasan": "Nilai $\\frac{18413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1587}{10000}$",
+          "alasan": "Nilai $- \\frac{1587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{28413}{10000}$",
+          "alasan": "Nilai $\\frac{28413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(100-90)/10=1. Maka peluangnya Φ(1)=8413/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 85 dan simpangan baku 12. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<61)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(61-85)/12=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(61-85)/12=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "fd90910a9859f703910d6647",
+        "teks": "Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masing-masing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.",
+        "jawaban": "rata-rata 40 dan nilai standar (simpangan baku) 60",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 69 dan simpangan baku 7. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<76)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(76-69)/7=1. Maka peluangnya Φ(1)=8413/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{18413}{10000}$",
+          "alasan": "Nilai $\\frac{18413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1587}{10000}$",
+          "alasan": "Nilai $- \\frac{1587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{28413}{10000}$",
+          "alasan": "Nilai $\\frac{28413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(76-69)/7=1. Maka peluangnya Φ(1)=8413/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 78 dan simpangan baku 6. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<66)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(66-78)/6=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(66-78)/6=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 73 dan simpangan baku 11. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<51)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(51-73)/11=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2557}{2500}$",
+          "alasan": "Nilai $\\frac{2557}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2443}{2500}$",
+          "alasan": "Nilai $- \\frac{2443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5057}{2500}$",
+          "alasan": "Nilai $\\frac{5057}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(51-73)/11=-2. Maka peluangnya Φ(-2)=57/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "24f43ff9447508b7453ba292",
+        "teks": "Sebuah perusahaan elektronik memproduksi lampu dengan masa pakai berdistribusi normal dengan rata-rata 800 jam dan simpangan baku 40 jam.\n\nTentukan peluang lampu padam antara 778 jam dan 834 jam.",
+        "jawaban": "0,5111",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 61 dan simpangan baku 4. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<69)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi memberi Z=(69-61)/4=2. Maka peluangnya Φ(2)=2443/2500.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4943}{2500}$",
+          "alasan": "Nilai $\\frac{4943}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{57}{2500}$",
+          "alasan": "Nilai $- \\frac{57}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7443}{2500}$",
+          "alasan": "Nilai $\\frac{7443}{2500}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(69-61)/4=2. Maka peluangnya Φ(2)=2443/2500.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "fd90910a9859f703910d6647",
+        "teks": "Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masing-masing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.",
+        "jawaban": "rata-rata 40 dan nilai standar (simpangan baku) 60",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "normal_peluang_tabel",
+      "alasan_level": "Target medium; variasi konsep normal peluang tabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "X normal dengan rata-rata 90 dan simpangan baku 8. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<82)$ menurut nilai tabel tersebut.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi memberi Z=(82-90)/8=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11587}{10000}$",
+          "alasan": "Nilai $\\frac{11587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{8413}{10000}$",
+          "alasan": "Nilai $- \\frac{8413}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{21587}{10000}$",
+          "alasan": "Nilai $\\frac{21587}{10000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Standardisasi memberi Z=(82-90)/8=-1. Maka peluangnya Φ(-1)=1587/10000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-G-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-g-medium-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cf4fe43aad62853e9bb102d",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 69 dan simpangan baku 3. Berapa skor baku Z untuk nilai 72?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/15e45ac33818c3564d8e8679.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              87
+            ],
+            [
+              "s",
+              2
+            ],
+            [
+              "x",
+              89
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 87], [\"s\", 2], [\"x\", 89], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47c9e4262a39a96c0c053fcf",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 73 dan simpangan baku 4. Berapa skor baku Z untuk nilai 81?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/684fba497469f1c5ce8c4544.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              65
+            ],
+            [
+              "s",
+              12
+            ],
+            [
+              "x",
+              77
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 65], [\"s\", 12], [\"x\", 77], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4de2b1633bf4e59a4cc4d920",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 70 dan simpangan baku 5. Berapa skor baku Z untuk nilai 80?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9b1bc850b7eceae3f152b036.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              65
+            ],
+            [
+              "s",
+              10
+            ],
+            [
+              "x",
+              55
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 65], [\"s\", 10], [\"x\", 55], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83772aec4a89c2e3ef3e2add",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 66 dan simpangan baku 5. Berapa skor baku Z untuk nilai 76?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ddaf7ff5e486cf2872e40409.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              90
+            ],
+            [
+              "s",
+              5
+            ],
+            [
+              "x",
+              80
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 90], [\"s\", 5], [\"x\", 80], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "186e60ed31541c42c39fdc5c",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 46 dan simpangan baku 8. Berapa skor baku Z untuk nilai 62?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/328c13a8653e307b192081ee.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              32
+            ],
+            [
+              "s",
+              4
+            ],
+            [
+              "x",
+              24
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 32], [\"s\", 4], [\"x\", 24], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "158fe09534e168b551cbead5",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 59 dan simpangan baku 4. Berapa skor baku Z untuk nilai 51?",
+        "jawaban": "$-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/dfa96c0cd0f1a84a8b266a07.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              99
+            ],
+            [
+              "s",
+              10
+            ],
+            [
+              "x",
+              119
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 99], [\"s\", 10], [\"x\", 119], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d2f37a0f3512484e208a898f",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 88 dan simpangan baku 7. Berapa skor baku Z untuk nilai 95?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/87281d518959c6d5edec7234.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              67
+            ],
+            [
+              "s",
+              11
+            ],
+            [
+              "x",
+              45
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 67], [\"s\", 11], [\"x\", 45], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74a709d53f8f13258e021fc4",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 71 dan simpangan baku 12. Berapa skor baku Z untuk nilai 47?",
+        "jawaban": "$-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/26e5ed8a4bbd68be01740fc3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              81
+            ],
+            [
+              "s",
+              9
+            ],
+            [
+              "x",
+              72
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 81], [\"s\", 9], [\"x\", 72], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d2d471d1f8b571a2a7887a2",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 53 dan simpangan baku 8. Berapa skor baku Z untuk nilai 45?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a0bfa9cb5707383cbaf7667c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              49
+            ],
+            [
+              "s",
+              5
+            ],
+            [
+              "x",
+              59
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 49], [\"s\", 5], [\"x\", 59], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8479449c57f90611996663a",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 48 dan simpangan baku 9. Berapa skor baku Z untuk nilai 57?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-050",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1252f2c6240c54251b700527.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              79
+            ],
+            [
+              "s",
+              14
+            ],
+            [
+              "x",
+              65
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 79], [\"s\", 14], [\"x\", 65], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a913f18259f88dbb29f080bb",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 85 dan simpangan baku 9. Berapa skor baku Z untuk nilai 76?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-051",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5a6d090c922c4d992143d1f9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              85
+            ],
+            [
+              "s",
+              5
+            ],
+            [
+              "x",
+              90
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 85], [\"s\", 5], [\"x\", 90], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce613c4afb15821a3a0ea3de",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 74 dan simpangan baku 11. Berapa skor baku Z untuk nilai 63?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-052",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ea19a4e53d9fa1695f3772c5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              40
+            ],
+            [
+              "s",
+              9
+            ],
+            [
+              "x",
+              22
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 40], [\"s\", 9], [\"x\", 22], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3b7aa41de9e4ed5626db8349",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 49 dan simpangan baku 6. Berapa skor baku Z untuk nilai 61?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-053",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/dca74676fd25b1887db93ac7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              65
+            ],
+            [
+              "s",
+              5
+            ],
+            [
+              "x",
+              75
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 65], [\"s\", 5], [\"x\", 75], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "667512d133618bbc89f9e0c8",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 51 dan simpangan baku 6. Berapa skor baku Z untuk nilai 57?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-054",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1af5b443ee68fa117f72d7c5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              40
+            ],
+            [
+              "s",
+              5
+            ],
+            [
+              "x",
+              45
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 40], [\"s\", 5], [\"x\", 45], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d342cbb0300be8f9b8afb74d",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 88 dan simpangan baku 10. Berapa skor baku Z untuk nilai 98?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-055",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/0caba61f3d2d74b132608c17.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              66
+            ],
+            [
+              "s",
+              14
+            ],
+            [
+              "x",
+              52
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 66], [\"s\", 14], [\"x\", 52], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc543213d79a9e7511d768e6",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 68 dan simpangan baku 12. Berapa skor baku Z untuk nilai 56?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-056",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/777c4d49439e433d3433e9fe.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              97
+            ],
+            [
+              "s",
+              11
+            ],
+            [
+              "x",
+              108
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 97], [\"s\", 11], [\"x\", 108], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1650b704ac7920ebc6d28cc6",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 40 dan simpangan baku 9. Berapa skor baku Z untuk nilai 58?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-057",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/415218682d965f807c28da5e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              99
+            ],
+            [
+              "s",
+              4
+            ],
+            [
+              "x",
+              103
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 99], [\"s\", 4], [\"x\", 103], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8aff28b2b28325cac81471ad",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 51 dan simpangan baku 3. Berapa skor baku Z untuk nilai 48?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-058",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/2e0fb911872f7a460fd29855.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              52
+            ],
+            [
+              "s",
+              13
+            ],
+            [
+              "x",
+              65
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 52], [\"s\", 13], [\"x\", 65], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "40dcaf58a77fe2b4b979a8d0",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 57 dan simpangan baku 3. Berapa skor baku Z untuk nilai 63?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-059",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b80f6b772d231ff91b721429.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              51
+            ],
+            [
+              "s",
+              14
+            ],
+            [
+              "x",
+              37
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 51], [\"s\", 14], [\"x\", 37], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f223ce8ea3e6490a7ad91ff4",
+        "teks": "Nilai tes X berdistribusi normal dengan rata-rata 47 dan simpangan baku 3. Berapa skor baku Z untuk nilai 44?",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-060",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5d1824770dd79861a3481c3a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              85
+            ],
+            [
+              "s",
+              4
+            ],
+            [
+              "x",
+              93
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 85], [\"s\", 4], [\"x\", 93], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff5a5350117a80c23fb32bcd",
+        "teks": "X normal dengan rata-rata 55 dan simpangan baku 6. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<67)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{2443}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/14d72790064722f1c14f671a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              70
+            ],
+            [
+              "s",
+              15
+            ],
+            [
+              "x",
+              100
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 70], [\"s\", 15], [\"x\", 100], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76cd054f79f6cbe0807a1298",
+        "teks": "X normal dengan rata-rata 50 dan simpangan baku 3. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<47)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{1587}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{1587}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8413}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1587}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11587}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8413/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{1587}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/abcc8abffd9f04a8cec841f0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              93
+            ],
+            [
+              "s",
+              13
+            ],
+            [
+              "x",
+              80
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 93], [\"s\", 13], [\"x\", 80], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c17c46ace83513b44c0b277d",
+        "teks": "X normal dengan rata-rata 41 dan simpangan baku 11. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<19)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/0b124a33962bd10759db2f32.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              37
+            ],
+            [
+              "s",
+              9
+            ],
+            [
+              "x",
+              46
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 37], [\"s\", 9], [\"x\", 46], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4657553ffea7998e1aa3f94",
+        "teks": "X normal dengan rata-rata 43 dan simpangan baku 10. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<33)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{1587}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f2b5833875dcdf2102ccb0c7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              86
+            ],
+            [
+              "s",
+              15
+            ],
+            [
+              "x",
+              56
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 86], [\"s\", 15], [\"x\", 56], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97b9d779dff1265145312148",
+        "teks": "X normal dengan rata-rata 67 dan simpangan baku 7. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<60)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{1587}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/48f4eff00619fd375932d25b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              99
+            ],
+            [
+              "s",
+              15
+            ],
+            [
+              "x",
+              69
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 99], [\"s\", 15], [\"x\", 69], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "66700fc96d6dd5e8d67ca84c",
+        "teks": "X normal dengan rata-rata 62 dan simpangan baku 7. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<48)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/cd9ecde48be7112b7cbdd172.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              31
+            ],
+            [
+              "s",
+              7
+            ],
+            [
+              "x",
+              17
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 31], [\"s\", 7], [\"x\", 17], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a6f49d5de4495819392f07d",
+        "teks": "X normal dengan rata-rata 79 dan simpangan baku 6. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<91)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{2443}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/0d6f97f0368b6155c290091c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              46
+            ],
+            [
+              "s",
+              14
+            ],
+            [
+              "x",
+              18
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 46], [\"s\", 14], [\"x\", 18], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6a3e8ba4944139dd658f935",
+        "teks": "X normal dengan rata-rata 84 dan simpangan baku 10. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<64)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/aaad13c651c79e2575dec488.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              36
+            ],
+            [
+              "s",
+              3
+            ],
+            [
+              "x",
+              30
+            ],
+            [
+              "F1",
+              "57/2500"
+            ],
+            [
+              "F2",
+              "1587/10000"
+            ],
+            [
+              "F3",
+              "8413/10000"
+            ],
+            [
+              "F4",
+              "2443/2500"
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 36], [\"s\", 3], [\"x\", 30], [\"F1\", \"57/2500\"], [\"F2\", \"1587/10000\"], [\"F3\", \"8413/10000\"], [\"F4\", \"2443/2500\"]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "09167785711bb66a182dafa7",
+        "teks": "X normal dengan rata-rata 83 dan simpangan baku 12. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<59)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $98$; s = $8$; x = $114$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-069"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d9ea7b2337ebca0da00fd35",
+        "teks": "X normal dengan rata-rata 41 dan simpangan baku 9. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<50)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{8413}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $38$; s = $13$; x = $64$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-070"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f0190a32e1b6d5693b17f5cf",
+        "teks": "X normal dengan rata-rata 83 dan simpangan baku 3. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<89)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{2443}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $35$; s = $15$; x = $65$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-071"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28bf63beb90221cb27aa4dff",
+        "teks": "X normal dengan rata-rata 89 dan simpangan baku 5. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<84)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{1587}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $88$; s = $15$; x = $58$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-072"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd773061e97cb6e2163d9019",
+        "teks": "X normal dengan rata-rata 89 dan simpangan baku 8. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<73)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $68$; s = $12$; x = $44$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-073"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "960d430faff230d900bc4b3f",
+        "teks": "X normal dengan rata-rata 90 dan simpangan baku 10. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<100)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{8413}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $89$; s = $10$; x = $109$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-074"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461522bc20f49dd34411d85f",
+        "teks": "X normal dengan rata-rata 85 dan simpangan baku 12. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<61)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $92$; s = $14$; x = $120$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-075"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6b5df24f045e33b80c59276b",
+        "teks": "X normal dengan rata-rata 69 dan simpangan baku 7. Gunakan $\\Phi(1)=\\frac{8413}{10000}$. Tentukan $P(X<76)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{8413}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $48$; s = $5$; x = $38$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-076"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aaff73942befca52bc9e0577",
+        "teks": "X normal dengan rata-rata 78 dan simpangan baku 6. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<66)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $50$; s = $14$; x = $64$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{8413}{10000}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1587}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8413}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{18413}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1587/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{8413}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-077"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c03bc25ac781169817c4dcfb",
+        "teks": "X normal dengan rata-rata 73 dan simpangan baku 11. Gunakan $\\Phi(-2)=\\frac{57}{2500}$. Tentukan $P(X<51)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{57}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $48$; s = $13$; x = $74$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{2443}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2443}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4943}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 57/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{2443}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-078"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83bcc317e6ee98145a3efda6",
+        "teks": "X normal dengan rata-rata 61 dan simpangan baku 4. Gunakan $\\Phi(2)=\\frac{2443}{2500}$. Tentukan $P(X<69)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{2443}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $69$; s = $4$; x = $61$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-079"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f70fc12b2da476c00fd9b13",
+        "teks": "X normal dengan rata-rata 90 dan simpangan baku 8. Gunakan $\\Phi(-1)=\\frac{1587}{10000}$. Tentukan $P(X<82)$ menurut nilai tabel tersebut.",
+        "jawaban": "$\\frac{1587}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_normal_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $82$; s = $8$; x = $66$; F1 = $\\frac{57}{2500}$; F2 = $\\frac{1587}{10000}$; F3 = $\\frac{8413}{10000}$; F4 = $\\frac{2443}{2500}$. X normal dengan rata-rata $m$ dan simpangan baku $s$. Tabel normal memberi $\\Phi(-2)=F1$, $\\Phi(-1)=F2$, $\\Phi(1)=F3$, dan $\\Phi(2)=F4$. Tentukan $P(X<x)$.",
+      "jawaban_benar": "$\\frac{57}{2500}$",
+      "alasan_benar": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2443}{2500}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{57}{5000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2557}{5000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2443/5000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Standardisasi nilai x, pilih baris tabel yang sesuai, dan gunakan peluang kumulatifnya. Hasilnya $\\frac{57}{2500}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-g-medium-bt01-080"
     }
   ]
 }

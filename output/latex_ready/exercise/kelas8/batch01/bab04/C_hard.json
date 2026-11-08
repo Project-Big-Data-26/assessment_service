@@ -1,0 +1,488 @@
+{
+  "book": "kelas8",
+  "bab_no": 4,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b04-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 216,
+        "kutipan": "apabila banyak anggota himpunan A sama dengan banyak anggota himpunan B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan menghitung banyak korespondensi",
+      "alasan_level": "mengevaluasi klaim 4x4 dan menunjukkan pilihan yang berkurang sehingga hasilnya 4!",
+      "stimulus": null,
+      "pertanyaan": "Himpunan $A$ dan $B$ masing-masing beranggota 4. Andi menghitung banyak korespondensi satu-satu dari $A$ ke $B$ dengan $4 \\times 4 = 16$ karena tiap anggota $A$ boleh dipasangkan dengan salah satu dari 4 anggota $B$. Penilaian yang benar atas hitungan Andi adalah ....",
+      "jawaban_benar": "Salah, karena pilihan makin berkurang sehingga banyaknya $4! = 24$",
+      "alasan_benar": "pilihan berturut-turut 4, 3, 2, 1 sehingga $4 \\times 3 \\times 2 \\times 1 = 24$",
+      "distraktor": [
+        {
+          "teks": "Benar, karena tiap anggota $A$ bebas dipasangkan dengan 4 anggota $B$",
+          "alasan": "mengabaikan syarat setiap anggota $B$ berpasangan tepat satu kali"
+        },
+        {
+          "teks": "Salah, karena seharusnya $4 + 3 + 2 + 1 = 10$ cara",
+          "alasan": "menjumlahkan pilihan, bukan mengalikan"
+        },
+        {
+          "teks": "Salah, karena seharusnya $4 \\times 3 = 12$ cara",
+          "alasan": "berhenti setelah dua faktor pertama"
+        }
+      ],
+      "pembahasan": "Anggota pertama $A$ punya 4 pilihan pasangan, anggota kedua 3 pilihan, ketiga 2, keempat 1. Banyaknya $4! = 24$, bukan $16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal fungsi bukan korespondensi",
+      "alasan_level": "memeriksa tiap pilihan apakah fungsi dan apakah korespondensi untuk menemukan penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa berpendapat: \"Jika $n(A) = n(B)$, maka setiap fungsi dari $A$ ke $B$ pasti korespondensi satu-satu.\" Misalkan $A = \\{1, 2, 3\\}$ dan $B = \\{a, b, c\\}$. Himpunan pasangan berurutan yang merupakan contoh penyangkal pendapat itu adalah ....",
+      "jawaban_benar": "$\\{(1, a); (2, a); (3, b)\\}$",
+      "alasan_benar": "himpunan ini fungsi dari $A$ ke $B$ tetapi $a$ berpasangan dua kali dan $c$ tidak berpasangan",
+      "distraktor": [
+        {
+          "teks": "$\\{(1, a); (2, b)\\}$",
+          "alasan": "bukan fungsi karena anggota 3 tidak punya pasangan, sehingga tidak dapat menyangkal pendapat tentang fungsi"
+        },
+        {
+          "teks": "$\\{(1, a); (1, b); (2, c)\\}$",
+          "alasan": "bukan fungsi karena anggota 1 berpasangan dua kali dan 3 tidak berpasangan"
+        },
+        {
+          "teks": "$\\{(1, b); (2, c); (3, a)\\}$",
+          "alasan": "ini korespondensi satu-satu sehingga mendukung, bukan menyangkal, pendapat itu"
+        }
+      ],
+      "pembahasan": "Penyangkal harus fungsi dari $A$ ke $B$ yang bukan korespondensi satu-satu: $\\{(1, a); (2, a); (3, b)\\}$ fungsi, tetapi $a$ dipakai dua kali dan $c$ tidak dipakai.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi fungsi vs korespondensi beda banyak anggota",
+      "alasan_level": "membedakan syarat fungsi dari syarat korespondensi pada dua himpunan yang banyak anggotanya berbeda",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{a, b, c, d\\}$. Pernyataan yang benar tentang hubungan dari $A$ ke $B$ adalah ....",
+      "jawaban_benar": "Ada fungsi dari $A$ ke $B$ yang memasangkan ketiga anggota $A$ dengan anggota $B$ yang berbeda-beda, tetapi tidak ada korespondensi satu-satu dari $A$ ke $B$",
+      "alasan_benar": "contoh fungsi $\\{(1, a); (2, b); (3, c)\\}$ ada, tetapi karena $n(A) \\neq n(B)$ pasti ada anggota $B$ tanpa pasangan",
+      "distraktor": [
+        {
+          "teks": "Ada korespondensi satu-satu dari $A$ ke $B$ karena setiap anggota $A$ dapat dipasangkan dengan anggota $B$ yang berbeda",
+          "alasan": "hanya memeriksa daerah asal, anggota daerah kawan tanpa pasangan diabaikan"
+        },
+        {
+          "teks": "Tidak ada fungsi dari $A$ ke $B$ karena $d$ tidak dapat berpasangan dengan anggota $A$",
+          "alasan": "mengira syarat fungsi mengharuskan setiap anggota $B$ berpasangan"
+        },
+        {
+          "teks": "Ada korespondensi satu-satu dari $A$ ke $B$ sebanyak $3! = 6$ karena ketiga anggota $A$ sudah habis dipasangkan",
+          "alasan": "memakai $n!$ dari $n(A)$ padahal $n(A) \\neq n(B)$"
+        }
+      ],
+      "pembahasan": "Fungsi hanya mensyaratkan setiap anggota $A$ punya tepat satu pasangan. Korespondensi juga mensyaratkan setiap anggota $B$ punya tepat satu pasangan, mustahil karena $4 > 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter batas himpunan agar dapat berkorespondensi",
+      "alasan_level": "menghitung huruf berbeda pada kata (huruf berulang), menyatakan n(A) dalam k termasuk nol, lalu menyamakan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{x \\mid -2 \\leq x \\leq k, x \\text{ bilangan bulat}\\}$ dengan $k$ bilangan bulat, dan $B = \\{\\text{huruf pembentuk kata MATEMATIKA}\\}$. Agar dapat dibuat korespondensi satu-satu dari $A$ ke $B$, nilai $k$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$B = \\{M, A, T, E, I, K\\}$ ada 6 anggota; $A = \\{-2, -1, 0, \\dots, k\\}$ punya $k + 3$ anggota sehingga $k + 3 = 6$ dan $k = 3$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "tidak menghitung bilangan 0 pada $A$ sehingga dikira banyak anggota $A$ adalah $k + 2$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "menyamakan $k$ langsung dengan $n(B)$"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "menghitung semua 10 huruf pada MATEMATIKA, huruf berulang ikut terhitung"
+        }
+      ],
+      "pembahasan": "Huruf berbeda: M, A, T, E, I, K (6). Anggota $A$ dari $-2$ sampai $k$ ada $k - (-2) + 1 = k + 3$. Syarat $k + 3 = 6$ memberi $k = 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 216,
+        "kutipan": "apabila banyak anggota himpunan A sama dengan banyak anggota himpunan B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim kelipatan banyak korespondensi",
+      "alasan_level": "menilai klaim bahwa n dua kali lipat membuat n! dua kali lipat dengan menghitung rasio 10!/5!",
+      "stimulus": null,
+      "pertanyaan": "Tika berkata: \"Karena $10 = 2 \\times 5$, banyak korespondensi satu-satu dari himpunan beranggota 10 ke himpunan beranggota 10 adalah dua kali banyak korespondensi dari himpunan beranggota 5 ke himpunan beranggota 5.\" Penilaian yang benar adalah ....",
+      "jawaban_benar": "Salah, karena banyak korespondensi pada 10 anggota adalah $10 \\times 9 \\times 8 \\times 7 \\times 6 = 30.240$ kali banyak korespondensi pada 5 anggota",
+      "alasan_benar": "$10! \\div 5! = 10 \\times 9 \\times 8 \\times 7 \\times 6 = 30.240$, bukan 2",
+      "distraktor": [
+        {
+          "teks": "Benar, karena banyak anggota menjadi dua kali lipat sehingga banyak korespondensi juga dua kali lipat",
+          "alasan": "mengira $n!$ naik sebanding dengan $n$"
+        },
+        {
+          "teks": "Salah, karena banyak korespondensi pada 10 anggota adalah 5 kali banyak korespondensi pada 5 anggota",
+          "alasan": "memakai selisih $10 - 5$ sebagai kelipatan"
+        },
+        {
+          "teks": "Salah, karena banyak korespondensi pada 10 anggota adalah 50 kali banyak korespondensi pada 5 anggota",
+          "alasan": "memakai hasil kali $10 \\times 5$ sebagai kelipatan"
+        }
+      ],
+      "pembahasan": "$10! = 10 \\times 9 \\times 8 \\times 7 \\times 6 \\times 5!$, jadi kelipatannya $30.240$. Klaim Tika salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 214,
+        "kutipan": "ada sebanyak 6 susunan diagram panah yang berbeda untuk korespondensi satu-satu"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua kelompok yang dipasangkan terpisah",
+      "alasan_level": "menyadari dua korespondensi terpisah, menghitung masing-masing n!, lalu mengalikan",
+      "stimulus": null,
+      "pertanyaan": "Tiga siswa putra harus menempati tiga kursi di baris depan dan empat siswa putri harus menempati empat kursi di baris belakang. Setiap siswa menempati tepat satu kursi dan setiap kursi ditempati tepat satu siswa. Banyak cara pengaturan duduk seluruhnya adalah ....",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "putra: $3! = 6$ cara; putri: $4! = 24$ cara; kedua pengaturan saling bebas sehingga $6 \\times 24 = 144$",
+      "distraktor": [
+        {
+          "teks": "$5.040$",
+          "alasan": "menganggap tujuh siswa bebas menempati tujuh kursi ($7!$), mengabaikan pembagian baris"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "menjumlahkan $3! + 4!$ bukan mengalikan"
+        },
+        {
+          "teks": "$12$",
+          "alasan": "mengalikan banyak siswa putra dan putri ($3 \\times 4$)"
+        }
+      ],
+      "pembahasan": "Dua korespondensi terpisah: $3! = 6$ dan $4! = 24$. Karena setiap pengaturan putra bisa digabung dengan setiap pengaturan putri, total $6 \\times 24 = 144$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "melengkapi pasangan berurutan dengan syarat ganda",
+      "alasan_level": "mencari anggota yang belum terpakai lalu menerapkan syarat urutan abjad agar korespondensi satu-satu",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{a, b, c, d\\}$. Himpunan $R = \\{(1, c); (2, a); (3, x); (4, y)\\}$ adalah korespondensi satu-satu dari $A$ ke $B$, dengan $x$ dan $y$ anggota $B$, dan $x$ lebih dahulu daripada $y$ dalam urutan abjad. Nilai $x$ dan $y$ adalah ....",
+      "jawaban_benar": "$x = b$ dan $y = d$",
+      "alasan_benar": "anggota $B$ yang belum terpakai adalah $b$ dan $d$; karena $x$ lebih dahulu dari $y$, $x = b$ dan $y = d$",
+      "distraktor": [
+        {
+          "teks": "$x = d$ dan $y = b$",
+          "alasan": "memakai $b$ dan $d$ yang benar tetapi urutan abjad terbalik"
+        },
+        {
+          "teks": "$x = a$ dan $y = d$",
+          "alasan": "$a$ sudah berpasangan dengan 2 sehingga dipakai dua kali"
+        },
+        {
+          "teks": "$x = b$ dan $y = c$",
+          "alasan": "$c$ sudah berpasangan dengan 1 sehingga dipakai dua kali"
+        }
+      ],
+      "pembahasan": "Pasangan yang ada memakai $c$ dan $a$, sisa $b$ dan $d$. Syarat urutan abjad memberi $x = b$, $y = d$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "himpunan bagian terbesar agar fungsi kuadrat satu-satu",
+      "alasan_level": "mencari bayangan tiap anggota, mengenali bayangan kembar, lalu menentukan banyak anggota maksimum tanpa kembar",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{-2, -1, 0, 1, 2, 3\\}$ dan fungsi $f(x) = x^2$. Himpunan bagian $A'$ dari $A$ dipilih sehingga $f$ memasangkan $A'$ dengan himpunan bayangannya secara korespondensi satu-satu. Banyak anggota $A'$ paling besar adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "bayangan: $4, 1, 0, 1, 4, 9$; bayangan berbeda ada 4 ($0, 1, 4, 9$), dan $A'$ boleh memuat tepat satu anggota untuk tiap bayangan",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengira seluruh anggota $A$ dapat dipakai tanpa memeriksa bayangan kembar"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "hanya menyingkirkan satu pasangan kembar ($f(-1) = f(1)$)"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "tidak menghitung bayangan $0$ sebagai bayangan tersendiri"
+        }
+      ],
+      "pembahasan": "$f(-2) = f(2) = 4$ dan $f(-1) = f(1) = 1$, sedangkan $f(0) = 0$ dan $f(3) = 9$. Agar satu-satu, tiap bayangan hanya boleh dari satu anggota: maksimum 4 anggota.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengklasifikasi tiga relasi",
+      "alasan_level": "memeriksa tiap relasi untuk syarat fungsi lalu syarat korespondensi, dan mencocokkan dengan pernyataan yang benar",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{x, y, z\\}$ dengan $R_1 = \\{(1, x); (2, y); (3, z)\\}$, $R_2 = \\{(1, x); (2, x); (3, y)\\}$, dan $R_3 = \\{(1, x); (1, y); (2, z)\\}$ merupakan relasi dari $A$ ke $B$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$R_1$ korespondensi satu-satu, $R_2$ fungsi tetapi bukan korespondensi satu-satu, dan $R_3$ bukan fungsi",
+      "alasan_benar": "$R_1$ memasangkan tiap anggota tepat satu; $R_2$ fungsi tetapi $x$ dua kali dan $z$ tidak berpasangan; $R_3$ anggota 1 punya dua pasangan",
+      "distraktor": [
+        {
+          "teks": "$R_1$ dan $R_2$ keduanya korespondensi satu-satu, dan $R_3$ bukan fungsi",
+          "alasan": "$R_2$ dikira korespondensi karena semua anggota $A$ berpasangan"
+        },
+        {
+          "teks": "$R_1$ korespondensi satu-satu, $R_2$ bukan fungsi, dan $R_3$ fungsi tetapi bukan korespondensi satu-satu",
+          "alasan": "peran $R_2$ dan $R_3$ tertukar"
+        },
+        {
+          "teks": "$R_1$ fungsi tetapi bukan korespondensi satu-satu, $R_2$ bukan fungsi, dan $R_3$ bukan fungsi",
+          "alasan": "mengira $R_1$ gagal karena tidak ada syarat tambahan terpenuhi dan $R_2$ dikira bukan fungsi"
+        }
+      ],
+      "pembahasan": "$R_1$: tiap anggota $A$ dan $B$ berpasangan tepat satu. $R_2$: fungsi, tetapi $x$ berpasangan dua kali dan $z$ tidak berpasangan. $R_3$: anggota 1 punya dua pasangan dan 3 tidak punya, bukan fungsi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 214,
+        "kutipan": "ada sebanyak 6 susunan diagram panah yang berbeda untuk korespondensi satu-satu"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak korespondensi dengan satu larangan",
+      "alasan_level": "menghitung seluruh korespondensi, mengurangi yang melanggar larangan (satu pasangan tetap)",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $K = \\{1, 2, 3, 4\\}$ dan $L = \\{a, b, c, d\\}$. Banyak korespondensi satu-satu dari $K$ ke $L$ yang tidak memasangkan 1 dengan $a$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "seluruhnya $4! = 24$; yang memasangkan 1 dengan $a$ ada $3! = 6$; sehingga $24 - 6 = 18$",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "mengabaikan larangan pasangan $(1, a)$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "menghitung korespondensi yang justru memasangkan 1 dengan $a$"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "mengalikan $3 \\times 3$ (pilihan untuk 1 dan untuk 2, tanpa menghitung sisanya)"
+        }
+      ],
+      "pembahasan": "Dari $24$ korespondensi, $6$ memuat $(1, a)$. Sisanya $24 - 6 = 18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 216,
+        "kutipan": "apabila banyak anggota himpunan A sama dengan banyak anggota himpunan B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter n dari perbandingan banyak korespondensi",
+      "alasan_level": "menyatakan n! = 6 x (n-1)!, menyederhanakan menjadi n = 6, lalu memeriksa",
+      "stimulus": null,
+      "pertanyaan": "Banyak korespondensi satu-satu dari himpunan beranggota $n$ ke himpunan beranggota $n$ sama dengan 6 kali banyak korespondensi satu-satu dari himpunan beranggota $n - 1$ ke himpunan beranggota $n - 1$, dengan $n$ bilangan asli lebih dari 1. Nilai $n$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$n! = n \\times (n - 1)!$ sehingga $n \\times (n - 1)! = 6 \\times (n - 1)!$ dan $n = 6$ (cek $720 = 6 \\times 120$)",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "mengira $n - 1$ yang bernilai 6 lalu keliru memilih $n - 1$ sebagai jawaban"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengira $n = 6 + 1$ karena ada pengurangan 1 pada anggota"
+        },
+        {
+          "teks": "$36$",
+          "alasan": "mengira $n! = 6 \\times n$ sehingga dikira $n = 6^2$"
+        }
+      ],
+      "pembahasan": "$n! = n \\times (n - 1)!$, jadi syaratnya $n = 6$. Cek: $6! = 720 = 6 \\times 5! = 6 \\times 120$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 216,
+        "kutipan": "apabila banyak anggota himpunan A sama dengan banyak anggota himpunan B"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat ganda batas banyak korespondensi",
+      "alasan_level": "menghitung n! beberapa nilai n lalu memilih yang memenuhi dua batas sekaligus",
+      "stimulus": null,
+      "pertanyaan": "Himpunan $A$ dan $B$ masing-masing beranggota $n$. Banyak korespondensi satu-satu dari $A$ ke $B$ lebih dari $1.000$ tetapi kurang dari $10.000$. Nilai $n$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$6! = 720$ (kurang dari 1.000), $7! = 5.040$ (memenuhi), $8! = 40.320$ (lebih dari 10.000)",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "$6! = 720$ tidak memenuhi batas atas lebih dari 1.000"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "$8! = 40.320$ melampaui batas 10.000"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "$5! = 120$ jauh di bawah batas 1.000"
+        }
+      ],
+      "pembahasan": "Hanya $7! = 5.040$ yang terletak antara 1.000 dan 10.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi syarat banyak anggota sama",
+      "alasan_level": "menilai bahwa 4x3x2x1 tidak berlaku saat banyak anggota berbeda, sehingga banyaknya nol",
+      "stimulus": null,
+      "pertanyaan": "Dika menghitung banyak korespondensi satu-satu dari $A = \\{1, 2, 3, 4\\}$ ke $B = \\{a, b, c\\}$ dengan $4 \\times 3 \\times 2 \\times 1 = 24$. Penilaian yang benar atas hitungan Dika adalah ....",
+      "jawaban_benar": "Salah, karena $n(A) \\neq n(B)$ sehingga tidak ada satu pun korespondensi satu-satu dari $A$ ke $B$",
+      "alasan_benar": "setiap anggota $B$ harus berpasangan tepat satu dengan anggota $A$, padahal $A$ punya satu anggota lebih banyak",
+      "distraktor": [
+        {
+          "teks": "Benar, karena $A$ memiliki 4 anggota sehingga banyaknya $4! = 24$",
+          "alasan": "memakai $n!$ dari himpunan pertama tanpa memeriksa syarat $n(A) = n(B)$"
+        },
+        {
+          "teks": "Salah, karena seharusnya $3! = 6$ sebab $B$ hanya beranggota 3",
+          "alasan": "memakai $n!$ dari himpunan yang lebih kecil"
+        },
+        {
+          "teks": "Salah, karena seharusnya $4 \\times 3 = 12$ sebab anggota $A$ yang berlebih tidak dihitung",
+          "alasan": "menghitung pasangan sebagian seolah-olah korespondensi"
+        }
+      ],
+      "pembahasan": "Korespondensi satu-satu mensyaratkan $n(A) = n(B)$. Karena $4 \\neq 3$, banyaknya adalah $0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b04-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 212,
+        "kutipan": "Korespondensi satu-satu adalah fungsi khusus yang memasangkan tepat satu untuk setiap anggota daerah asal maupun daerah kawan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "memilih korespondensi dari relasi terbatas",
+      "alasan_level": "mendaftar pasangan yang diizinkan dan menelusuri pilihan satu per satu agar tiap anggota berpasangan tepat satu",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3\\}$, $B = \\{a, b, c\\}$, dan relasi $R = \\{(1, a); (1, b); (2, b); (2, c); (3, c); (3, a)\\}$. Banyak himpunan bagian dari $R$ yang merupakan korespondensi satu-satu dari $A$ ke $B$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "jika 1 dipasangkan $a$, maka 3 harus $c$ dan 2 harus $b$; jika 1 dipasangkan $b$, maka 2 harus $c$ dan 3 harus $a$; tidak ada kemungkinan lain",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengira semua $3! = 6$ korespondensi ada padahal $R$ tidak memuat semuanya"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengalikan 2 pilihan tiap anggota $A$ tanpa memeriksa pasangan ganda ($2 \\times 2 \\times 2$)"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "hanya menghitung satu pasangan untuk tiap anggota $A$"
+        }
+      ],
+      "pembahasan": "Pilihan 1 ke $a$: 3 hanya bisa ke $c$ ($a$ terpakai), lalu 2 ke $b$. Pilihan 1 ke $b$: 2 hanya bisa ke $c$, lalu 3 ke $a$. Totalnya 2.",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab C pengayaan dan sempit (definisi, n!, fungsi sebagai korespondensi); bahan acuan dan pola penalaran habis di easy-medium, sehingga hanya soal penalaran yang layak yang ditulis tanpa soal nyaris kembar."
+}

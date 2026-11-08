@@ -1,0 +1,702 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 5,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b05-p0247-latihan-b-5a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta titik oleh matriks",
+      "alasan_level": "perkalian matriks 2 x 2 dengan vektor posisi satu titik",
+      "stimulus": null,
+      "pertanyaan": "Peta dari titik $(6, -4)$ yang ditransformasikan dengan matriks $\\begin{pmatrix} 2 & 5 \\\\ 4 & 3 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "$(-8, 12)$",
+      "alasan_benar": "$\\begin{pmatrix} 2 & 5 \\\\ 4 & 3 \\end{pmatrix}\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}=\\begin{pmatrix} 2\\cdot 6+5\\cdot(-4) \\\\ 4\\cdot 6+3\\cdot(-4) \\end{pmatrix}=\\begin{pmatrix} -8 \\\\ 12 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$(-4, 18)$",
+          "alasan": "memakai transpos matriks (baris dan kolom tertukar)"
+        },
+        {
+          "teks": "$(12, -8)$",
+          "alasan": "menukar absis dan ordinat hasil"
+        },
+        {
+          "teks": "$(32, 36)$",
+          "alasan": "salah tanda pada perkalian dengan komponen negatif"
+        }
+      ],
+      "pembahasan": "Kalikan matriks dengan vektor posisi: baris pertama $2\\cdot 6+5\\cdot(-4)=-8$, baris kedua $4\\cdot 6+3\\cdot(-4)=12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b05-p0247-latihan-b-5a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta titik oleh matriks",
+      "alasan_level": "perkalian matriks 2 x 2 dengan vektor posisi satu titik",
+      "stimulus": null,
+      "pertanyaan": "Titik $(8, 9)$ ditransformasikan oleh matriks $\\begin{pmatrix} 7 & -2 \\\\ 5 & 6 \\end{pmatrix}$. Koordinat petanya adalah ....",
+      "jawaban_benar": "$(38, 94)$",
+      "alasan_benar": "baris pertama $7\\cdot 8-2\\cdot 9=38$, baris kedua $5\\cdot 8+6\\cdot 9=94$",
+      "distraktor": [
+        {
+          "teks": "$(101, 38)$",
+          "alasan": "memakai transpos matriks"
+        },
+        {
+          "teks": "$(94, 38)$",
+          "alasan": "menukar absis dan ordinat hasil"
+        },
+        {
+          "teks": "$(74, -14)$",
+          "alasan": "salah tanda pada elemen negatif matriks"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} 7 & -2 \\\\ 5 & 6 \\end{pmatrix}\\begin{pmatrix} 8 \\\\ 9 \\end{pmatrix}=\\begin{pmatrix} 38 \\\\ 94 \\end{pmatrix}$, jadi petanya $(38, 94)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b05-p0247-latihan-b-5d"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta garis oleh matriks dilatasi",
+      "alasan_level": "substitusi (x, y) = (x'/k, y'/k) ke persamaan garis",
+      "stimulus": null,
+      "pertanyaan": "Garis $7x + 2y - 12 = 0$ ditransformasikan oleh matriks $\\begin{pmatrix} 6 & 0 \\\\ 0 & 6 \\end{pmatrix}$. Persamaan petanya adalah ....",
+      "jawaban_benar": "$7x + 2y - 72 = 0$",
+      "alasan_benar": "$(x', y')=(6x, 6y)$ sehingga $x=x'/6$, $y=y'/6$; substitusi dan kali 6 menghasilkan $7x'+2y'-72=0$",
+      "distraktor": [
+        {
+          "teks": "$7x + 2y - 2 = 0$",
+          "alasan": "mengalikan dengan $\\frac{1}{6}$, bukan 6, pada konstanta"
+        },
+        {
+          "teks": "$42x + 12y - 12 = 0$",
+          "alasan": "hanya mengalikan koefisien $x$ dan $y$ dengan 6"
+        },
+        {
+          "teks": "$7x + 2y - 432 = 0$",
+          "alasan": "mengalikan konstanta dengan $6^2$ setelah menyederhanakan"
+        }
+      ],
+      "pembahasan": "Dengan $x=x'/6$ dan $y=y'/6$: $\\frac{7x'}{6}+\\frac{2y'}{6}-12=0$, kalikan 6 diperoleh $7x'+2y'-72=0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b05-p0247-latihan-b-5d"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta garis oleh matriks dilatasi",
+      "alasan_level": "substitusi (x, y) = (x'/k, y'/k) ke persamaan garis",
+      "stimulus": null,
+      "pertanyaan": "Persamaan peta dari garis $5x + 4y - 7 = 0$ oleh transformasi dengan matriks $\\begin{pmatrix} 8 & 0 \\\\ 0 & 8 \\end{pmatrix}$ adalah ....",
+      "jawaban_benar": "$5x + 4y - 56 = 0$",
+      "alasan_benar": "pemetaan $(x,y)\\to(8x,8y)$, sehingga konstanta garis dikali 8 menjadi $-56$",
+      "distraktor": [
+        {
+          "teks": "$5x + 4y - 1 = 0$",
+          "alasan": "membagi konstanta dengan 8 dan membulatkan"
+        },
+        {
+          "teks": "$40x + 32y - 7 = 0$",
+          "alasan": "hanya mengalikan koefisien $x$ dan $y$ dengan 8"
+        },
+        {
+          "teks": "$5x + 4y - 448 = 0$",
+          "alasan": "mengalikan konstanta dengan $8^2$"
+        }
+      ],
+      "pembahasan": "$x=x'/8$, $y=y'/8$; substitusi: $\\frac{5x'}{8}+\\frac{4y'}{8}-7=0$, kalikan 8: $5x'+4y'-56=0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 241,
+        "bagian": "Contoh 5.11",
+        "nomor": "5.11",
+        "teks": "Carilah peta dari (3, –4) yang dicerminkan terhadap sumbu- x .",
+        "jawaban": "(3, 4)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta titik oleh pencerminan",
+      "alasan_level": "memilih matriks pencerminan sumbu-y lalu mengalikan dengan titik",
+      "stimulus": null,
+      "pertanyaan": "Peta dari titik $(8, -5)$ yang dicerminkan terhadap sumbu-$y$ adalah ....",
+      "jawaban_benar": "$(-8, -5)$",
+      "alasan_benar": "matriks pencerminan sumbu-$y$ $\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ mengubah tanda absis saja",
+      "distraktor": [
+        {
+          "teks": "$(8, 5)$",
+          "alasan": "memakai matriks pencerminan terhadap sumbu-$x$"
+        },
+        {
+          "teks": "$(-8, 5)$",
+          "alasan": "mengubah tanda kedua koordinat"
+        },
+        {
+          "teks": "$(-5, 8)$",
+          "alasan": "memakai matriks pencerminan terhadap garis $y=x$"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}\\begin{pmatrix} 8 \\\\ -5 \\end{pmatrix}=\\begin{pmatrix} -8 \\\\ -5 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 241,
+        "bagian": "Contoh 5.11",
+        "nomor": "5.11",
+        "teks": "Carilah peta dari (3, –4) yang dicerminkan terhadap sumbu- x .",
+        "jawaban": "(3, 4)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta titik oleh pencerminan",
+      "alasan_level": "memilih matriks pencerminan garis y = -x lalu mengalikan dengan titik",
+      "stimulus": null,
+      "pertanyaan": "Dengan memakai perkalian matriks, titik $(-6, 9)$ yang dicerminkan terhadap garis $y = -x$ dipetakan ke ....",
+      "jawaban_benar": "$(-9, 6)$",
+      "alasan_benar": "matriks pencerminan terhadap $y=-x$ adalah $\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$: $(-6,9)\\to(-9,6)$",
+      "distraktor": [
+        {
+          "teks": "$(9, -6)$",
+          "alasan": "memakai matriks pencerminan terhadap garis $y=x$"
+        },
+        {
+          "teks": "$(6, -9)$",
+          "alasan": "mengubah tanda kedua koordinat tanpa menukar posisinya"
+        },
+        {
+          "teks": "$(-6, -9)$",
+          "alasan": "memakai matriks pencerminan terhadap sumbu-$x$"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}\\begin{pmatrix} -6 \\\\ 9 \\end{pmatrix}=\\begin{pmatrix} -9 \\\\ 6 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 241,
+        "bagian": "Contoh 5.12",
+        "nomor": "5.12",
+        "teks": "Tentukan peta dari segitiga ABC dengan titik A (3, 1), titik B (–2, 3), dan titik C (2, –1) yang dicerminkan terhadap sumbu- y .",
+        "jawaban": "A'(-3, 1), B'(2, 3), C'(-2, -1)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta segitiga oleh pencerminan",
+      "alasan_level": "mengalikan matriks pencerminan dengan tiga titik sudut",
+      "stimulus": null,
+      "pertanyaan": "Segitiga $ABC$ memiliki titik sudut $A(5, 2)$, $B(-4, 6)$, dan $C(7, -3)$. Peta segitiga tersebut jika dicerminkan terhadap sumbu-$x$ adalah ....",
+      "jawaban_benar": "$A'(5, -2)$, $B'(-4, -6)$, $C'(7, 3)$",
+      "alasan_benar": "sumbu-$x$ hanya mengubah tanda ordinat setiap titik",
+      "distraktor": [
+        {
+          "teks": "$A'(-5, 2)$, $B'(4, 6)$, $C'(-7, -3)$",
+          "alasan": "mengubah tanda absis (pencerminan terhadap sumbu-$y$)"
+        },
+        {
+          "teks": "$A'(-5, -2)$, $B'(4, -6)$, $C'(-7, 3)$",
+          "alasan": "mengubah tanda kedua koordinat"
+        },
+        {
+          "teks": "$A'(2, 5)$, $B'(6, -4)$, $C'(-3, 7)$",
+          "alasan": "menukar absis dan ordinat (pencerminan terhadap $y=x$)"
+        }
+      ],
+      "pembahasan": "Matriks $\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$ dikalikan tiap titik: $A'(5,-2)$, $B'(-4,-6)$, $C'(7,3)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 241,
+        "bagian": "Contoh 5.12",
+        "nomor": "5.12",
+        "teks": "Tentukan peta dari segitiga ABC dengan titik A (3, 1), titik B (–2, 3), dan titik C (2, –1) yang dicerminkan terhadap sumbu- y .",
+        "jawaban": "A'(-3, 1), B'(2, 3), C'(-2, -1)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta segitiga oleh pencerminan",
+      "alasan_level": "mengalikan matriks pencerminan garis y = x dengan tiga titik sudut",
+      "stimulus": null,
+      "pertanyaan": "Titik-titik sudut sebuah segitiga adalah $P(4, -5)$, $Q(9, 2)$, dan $R(-7, 8)$. Segitiga itu dicerminkan terhadap garis $y = x$. Titik-titik peta segitiga tersebut adalah ....",
+      "jawaban_benar": "$P'(-5, 4)$, $Q'(2, 9)$, $R'(8, -7)$",
+      "alasan_benar": "pencerminan terhadap $y=x$ menukar absis dan ordinat",
+      "distraktor": [
+        {
+          "teks": "$P'(5, -4)$, $Q'(-2, -9)$, $R'(-8, 7)$",
+          "alasan": "memakai pencerminan terhadap $y=-x$ (tanda ikut berubah)"
+        },
+        {
+          "teks": "$P'(4, 5)$, $Q'(9, -2)$, $R'(-7, -8)$",
+          "alasan": "memakai pencerminan terhadap sumbu-$x$"
+        },
+        {
+          "teks": "$P'(-4, 5)$, $Q'(-9, -2)$, $R'(7, -8)$",
+          "alasan": "mengubah tanda kedua koordinat"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$ menukar koordinat: $P'(-5,4)$, $Q'(2,9)$, $R'(8,-7)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 246,
+        "bagian": "Contoh 5.15",
+        "nomor": "5.15",
+        "teks": "Tentukan peta dari titik (2, 4) yang ditransformasikan oleh dilatasi dengan titik pusat (1, 1) dan faktor skala 2.",
+        "jawaban": "(3, 7)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta oleh dilatasi berpusat sembarang",
+      "alasan_level": "rumus dilatasi k(x-a)+a, k(y-b)+b",
+      "stimulus": null,
+      "pertanyaan": "Peta dari titik $(8, -4)$ oleh dilatasi dengan titik pusat $(-3, 6)$ dan faktor skala $3$ adalah ....",
+      "jawaban_benar": "$(30, -24)$",
+      "alasan_benar": "$x'=3(8+3)-3=30$, $y'=3(-4-6)+6=-24$",
+      "distraktor": [
+        {
+          "teks": "$(24, -12)$",
+          "alasan": "memakai pusat $O(0,0)$, bukan pusat yang diberikan"
+        },
+        {
+          "teks": "$(12, 12)$",
+          "alasan": "salah tanda saat mengurangi koordinat pusat"
+        },
+        {
+          "teks": "$(33, -30)$",
+          "alasan": "lupa menambah koordinat pusat kembali"
+        }
+      ],
+      "pembahasan": "Gunakan $x'=k(x-a)+a$ dan $y'=k(y-b)+b$ dengan $k=3$, $(a,b)=(-3,6)$: $(30,-24)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 246,
+        "bagian": "Contoh 5.15",
+        "nomor": "5.15",
+        "teks": "Tentukan peta dari titik (2, 4) yang ditransformasikan oleh dilatasi dengan titik pusat (1, 1) dan faktor skala 2.",
+        "jawaban": "(3, 7)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta oleh dilatasi berpusat sembarang",
+      "alasan_level": "rumus dilatasi k(x-a)+a, k(y-b)+b",
+      "stimulus": null,
+      "pertanyaan": "Sebuah titik $(6, 10)$ didilatasikan dengan pusat $(7, -2)$ dan faktor skala $5$. Koordinat petanya adalah ....",
+      "jawaban_benar": "$(2, 58)$",
+      "alasan_benar": "$x'=5(6-7)+7=2$, $y'=5(10+2)-2=58$",
+      "distraktor": [
+        {
+          "teks": "$(30, 50)$",
+          "alasan": "memakai pusat $O(0,0)$"
+        },
+        {
+          "teks": "$(72, 38)$",
+          "alasan": "salah tanda saat mengurangi koordinat pusat"
+        },
+        {
+          "teks": "$(-5, 60)$",
+          "alasan": "lupa menambah koordinat pusat kembali"
+        }
+      ],
+      "pembahasan": "$(x',y')=(5(6-7)+7,\\ 5(10-(-2))+(-2))=(2, 58)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 247,
+        "bagian": "Latihan B",
+        "nomor": "4c",
+        "teks": "Tuliskanlah matriks yang berkaitan dengan transformasi berikut. c. Pencerminan terhadap garis y = x",
+        "jawaban": "[[0,1],[1,0]]"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "menuliskan matriks pencerminan",
+      "alasan_level": "mengingat matriks pencerminan terhadap sumbu-y",
+      "stimulus": null,
+      "pertanyaan": "Matriks 2 x 2 yang berkaitan dengan pencerminan terhadap sumbu-$y$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+      "alasan_benar": "titik $(x,y)$ dipetakan ke $(-x,y)$, sehingga matriksnya $\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+          "alasan": "matriks pencerminan terhadap sumbu-$x$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
+          "alasan": "matriks pencerminan terhadap garis $y=x$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+          "alasan": "matriks yang mengubah tanda kedua koordinat (rotasi $180^\\circ$)"
+        }
+      ],
+      "pembahasan": "Syarat $\\begin{pmatrix} r & s \\\\ t & u \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix}=\\begin{pmatrix} -x \\\\ y \\end{pmatrix}$ memberi $r=-1$, $s=0$, $t=0$, $u=1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 247,
+        "bagian": "Latihan B",
+        "nomor": "4e",
+        "teks": "Rotasi terhadap titik pusat O sebesar 2 π (ekuivalen dengan 90°)",
+        "jawaban": "[[0,-1],[1,0]]"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menuliskan matriks rotasi",
+      "alasan_level": "mensubstitusi sudut ke matriks rotasi",
+      "stimulus": null,
+      "pertanyaan": "Matriks yang berkaitan dengan rotasi terhadap titik pusat $O$ sebesar $\\pi$ (ekuivalen dengan $180^\\circ$) adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+      "alasan_benar": "$\\cos\\pi=-1$ dan $\\sin\\pi=0$ pada matriks rotasi",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$",
+          "alasan": "memakai matriks rotasi $90^\\circ$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+          "alasan": "memakai matriks pencerminan terhadap sumbu-$x$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+          "alasan": "memakai matriks identitas (rotasi $360^\\circ$)"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} \\cos\\pi & -\\sin\\pi \\\\ \\sin\\pi & \\cos\\pi \\end{pmatrix}=\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 246,
+        "kutipan": "Matriks dilatasi dengan titik pusat O (0, 0) dan faktor skala k ≠ 0 adalah"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "menuliskan matriks dilatasi",
+      "alasan_level": "mengingat Sifat 5.9, matriks diagonal dengan k",
+      "stimulus": null,
+      "pertanyaan": "Matriks yang berkaitan dengan dilatasi berpusat di $O(0, 0)$ dengan faktor skala $7$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 7 & 0 \\\\ 0 & 7 \\end{pmatrix}$",
+      "alasan_benar": "matriks dilatasi pusat $O$ faktor $k$ adalah $\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}$ dengan $k=7$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 7 & 7 \\\\ 0 & 0 \\end{pmatrix}$",
+          "alasan": "mengisi baris pertama dengan $k$ dan baris kedua nol"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & 7 \\\\ 7 & 0 \\end{pmatrix}$",
+          "alasan": "meletakkan $k$ pada diagonal samping"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 7 \\end{pmatrix}$",
+          "alasan": "hanya meregangkan sumbu-$y$, elemen pertama tetap 1"
+        }
+      ],
+      "pembahasan": "Sifat 5.9: matriks dilatasi $\\begin{pmatrix} k & 0 \\\\ 0 & k \\end{pmatrix}$, jadi $k=7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 244,
+        "kutipan": "Pada bagian ini, kita akan belajar untuk menemukan matriks yang terkait dengan rotasi terhadap titik pusat."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menuliskan matriks rotasi",
+      "alasan_level": "mensubstitusi sudut negatif ke matriks rotasi",
+      "stimulus": null,
+      "pertanyaan": "Matriks yang berkaitan dengan rotasi terhadap titik pusat $O$ sebesar $-90^\\circ$ (ekuivalen dengan $-\\frac{\\pi}{2}$) adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$",
+      "alasan_benar": "$\\cos(-90^\\circ)=0$ dan $\\sin(-90^\\circ)=-1$, sehingga matriks rotasinya $\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$",
+          "alasan": "memakai matriks rotasi $+90^\\circ$ (arah putar terbalik)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$",
+          "alasan": "memakai matriks pencerminan terhadap garis $y=-x$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+          "alasan": "memakai matriks rotasi $180^\\circ$"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix}$ dengan $\\theta=-90^\\circ$ menghasilkan $\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 240,
+        "kutipan": "Pada fase D, kita telah menemukan beberapa formula aljabar untuk mencari peta dari pencerminan terhadap beberapa garis."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mengenali transformasi dari aturan",
+      "alasan_level": "mencocokkan aturan pemetaan (x,y) -> (y,x) dengan matriksnya",
+      "stimulus": null,
+      "pertanyaan": "Suatu transformasi memetakan setiap titik $(x, y)$ ke titik $(y, x)$. Matriks yang mewakili transformasi tersebut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
+      "alasan_benar": "$\\begin{pmatrix} r & s \\\\ t & u \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix}=\\begin{pmatrix} y \\\\ x \\end{pmatrix}$ memberi $r=0$, $s=1$, $t=1$, $u=0$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$",
+          "alasan": "memakai pencerminan terhadap $y=-x$ (tanda ikut berubah)"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$",
+          "alasan": "memakai matriks rotasi $90^\\circ$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+          "alasan": "memakai matriks identitas"
+        }
+      ],
+      "pembahasan": "Baris pertama menghasilkan $y$ sehingga $(r,s)=(0,1)$; baris kedua menghasilkan $x$ sehingga $(t,u)=(1,0)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 238,
+        "kutipan": "Matriks 2 × 2 dapat dikaitkan dengan operasi transformasi terhadap sembarang titik pada bidang Kartesius."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "mengenali transformasi dari matriks",
+      "alasan_level": "mengenali jenis transformasi dari matriks yang diberikan",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$ jika dikalikan dengan vektor posisi suatu titik akan memetakan titik tersebut melalui transformasi ....",
+      "jawaban_benar": "pencerminan terhadap garis $y = -x$",
+      "alasan_benar": "$(x,y)\\to(-y,-x)$ adalah pencerminan terhadap garis $y=-x$",
+      "distraktor": [
+        {
+          "teks": "pencerminan terhadap garis $y = x$",
+          "alasan": "mengira tanda negatif tidak mengubah garis cermin"
+        },
+        {
+          "teks": "rotasi $90^\\circ$ terhadap titik asal",
+          "alasan": "mengira matriks dengan elemen $\\pm 1$ selalu rotasi"
+        },
+        {
+          "teks": "pencerminan terhadap sumbu-$y$",
+          "alasan": "mengira diagonal samping tidak berpengaruh"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix}=\\begin{pmatrix} -y \\\\ -x \\end{pmatrix}$, yaitu pencerminan terhadap $y=-x$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 243,
+        "kutipan": "Pada bagian ini, kita akan mempelajari cara menemukan operasi matriks yang berkaitan dengan operasi translasi."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "translasi dengan operasi matriks",
+      "alasan_level": "menjumlahkan vektor posisi dengan vektor translasi",
+      "stimulus": null,
+      "pertanyaan": "Titik $(6, -2)$ ditranslasikan oleh vektor $\\begin{pmatrix} -4 \\\\ 9 \\end{pmatrix}$ dengan operasi matriks. Peta titik tersebut adalah ....",
+      "jawaban_benar": "$(2, 7)$",
+      "alasan_benar": "$\\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}+\\begin{pmatrix} -4 \\\\ 9 \\end{pmatrix}=\\begin{pmatrix} 2 \\\\ 7 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$(10, -11)$",
+          "alasan": "mengurangkan vektor translasi, bukan menjumlahkan"
+        },
+        {
+          "teks": "$(-24, -18)$",
+          "alasan": "mengalikan komponen yang bersesuaian"
+        },
+        {
+          "teks": "$(7, 2)$",
+          "alasan": "menukar absis dan ordinat hasil"
+        }
+      ],
+      "pembahasan": "Translasi menjumlahkan vektor posisi dengan vektor translasi: $(6-4,\\,-2+9)=(2,7)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 245,
+        "kutipan": "titik ( x , y ) dipetakan oleh dilatasi dengan titik pusat O dan faktor skala k ≠ 0 ke titik ( kx , ky )"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "prapeta dari matriks dilatasi",
+      "alasan_level": "memakai invers perkalian: bagi koordinat peta dengan k",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi berpusat di $O$ dengan faktor skala $3$ memetakan titik $P$ ke $P'(12, -21)$. Koordinat titik $P$ adalah ....",
+      "jawaban_benar": "$(4, -7)$",
+      "alasan_benar": "$(3x, 3y)=(12,-21)$ sehingga $x=4$ dan $y=-7$",
+      "distraktor": [
+        {
+          "teks": "$(36, -63)$",
+          "alasan": "mengalikan peta dengan 3, bukan membagi"
+        },
+        {
+          "teks": "$(-4, 7)$",
+          "alasan": "mengubah tanda kedua koordinat setelah membagi"
+        },
+        {
+          "teks": "$(-7, 4)$",
+          "alasan": "menukar posisi koordinat dan tandanya"
+        }
+      ],
+      "pembahasan": "Karena $P'=3P$, maka $P=\\frac{1}{3}(12,-21)=(4,-7)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 238,
+        "kutipan": "dapat juga disimbolkan dengan vektor posisi"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "notasi vektor posisi",
+      "alasan_level": "mengingat penulisan titik sebagai vektor posisi",
+      "stimulus": null,
+      "pertanyaan": "Titik $(x, y)$ pada bidang Kartesius yang ditulis sebagai vektor posisi dinyatakan dengan matriks ....",
+      "jawaban_benar": "$\\begin{pmatrix} x \\\\ y \\end{pmatrix}$",
+      "alasan_benar": "vektor posisi berbentuk matriks kolom dengan absis di atas dan ordinat di bawah",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} x & y \\end{pmatrix}$",
+          "alasan": "menuliskan sebagai matriks baris"
+        },
+        {
+          "teks": "$\\begin{pmatrix} y \\\\ x \\end{pmatrix}$",
+          "alasan": "menukar urutan absis dan ordinat"
+        },
+        {
+          "teks": "$\\begin{pmatrix} x \\\\ -y \\end{pmatrix}$",
+          "alasan": "mencampur dengan peta pencerminan terhadap sumbu-$x$"
+        }
+      ],
+      "pembahasan": "Vektor posisi titik $(x,y)$ adalah matriks kolom $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b05-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 244,
+        "kutipan": "(x ∙ cos θ – y ∙ sin θ, x ∙ sin θ + y ∙ cos θ"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peta titik oleh rotasi",
+      "alasan_level": "matriks rotasi 90 derajat dikalikan titik",
+      "stimulus": null,
+      "pertanyaan": "Titik $(5, 3)$ dirotasikan sebesar $90^\\circ$ terhadap titik asal berlawanan arah jarum jam. Peta titik tersebut adalah ....",
+      "jawaban_benar": "$(-3, 5)$",
+      "alasan_benar": "$x'=5\\cos 90^\\circ-3\\sin 90^\\circ=-3$ dan $y'=5\\sin 90^\\circ+3\\cos 90^\\circ=5$",
+      "distraktor": [
+        {
+          "teks": "$(3, -5)$",
+          "alasan": "memutar searah jarum jam ($-90^\\circ$)"
+        },
+        {
+          "teks": "$(-5, -3)$",
+          "alasan": "memakai rotasi $180^\\circ$"
+        },
+        {
+          "teks": "$(3, 5)$",
+          "alasan": "menukar koordinat tanpa tanda (pencerminan $y=x$)"
+        }
+      ],
+      "pembahasan": "$\\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} 5 \\\\ 3 \\end{pmatrix}=\\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$.",
+      "catatan": null
+    }
+  ]
+}

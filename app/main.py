@@ -24,6 +24,7 @@ from app.staff.repository import MongoRepository
 from app.staff.routes import router as staff_router
 from app.staff.assets import PrivateAssetSigner
 from app.api.v2 import router as v2_router
+from app.api.routes.exercise import router as exercise_router
 from app.classification.v2.runtime import V2ClassifierRuntime
 from app.llm import GeminiReviewRuntime
 from app.assessment.routes import router as assessment_router, info_router as psychometrics_info_router
@@ -113,6 +114,7 @@ app.include_router(v2_router)
 app.include_router(staff_router)
 app.include_router(assessment_router)
 app.include_router(psychometrics_info_router)
+app.include_router(exercise_router)
 allowed_hosts = [item.strip() for item in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,testserver").split(",") if item.strip()]
 allowed_origins = [item.strip() for item in os.getenv("ALLOWED_ORIGINS", "http://localhost:8000").split(",") if item.strip()]
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)

@@ -429,6 +429,684 @@
       "pembahasan": "A ke D memerlukan 3 langkah dan 2 ke 5 memerlukan 3 langkah. Jumlahnya 6 langkah.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb9e3f5859e2737fd3ec0cd3",
+        "teks": "Dalam sistem berpetak, garis vertikal dinamai dengan apa?",
+        "jawaban": "Huruf",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(3, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e54e6f6b121761440703b8c",
+        "teks": "Pada sistem berpetak, titik berada di perpotongan garis C dan garis 5. Bagaimana lokasi titik itu ditulis?",
+        "jawaban": "(C,5)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(8, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Perpindahan mendatar 3 petak dan tegak 2 petak. Minimum jumlah langkah = 5.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 3 petak dan tegak 2 petak. Minimum jumlah langkah = 5.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06d324aba1d674420a7846e3",
+        "teks": "Pada sistem berpetak, titik P berada di (B,4) dan titik Q di (F,4). Berapa jarak mendatar antara P dan Q?",
+        "jawaban": "4 langkah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(2, 4)$ ke $(6, 9)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Perpindahan mendatar 4 petak dan tegak 5 petak. Minimum jumlah langkah = 9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 4 petak dan tegak 5 petak. Minimum jumlah langkah = 9.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e54e6f6b121761440703b8c",
+        "teks": "Pada sistem berpetak, titik berada di perpotongan garis C dan garis 5. Bagaimana lokasi titik itu ditulis?",
+        "jawaban": "(C,5)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(10, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06d324aba1d674420a7846e3",
+        "teks": "Pada sistem berpetak, titik P berada di (B,4) dan titik Q di (F,4). Berapa jarak mendatar antara P dan Q?",
+        "jawaban": "4 langkah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(5, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Perpindahan mendatar 4 petak dan tegak 2 petak. Minimum jumlah langkah = 6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 4 petak dan tegak 2 petak. Minimum jumlah langkah = 6.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb9e3f5859e2737fd3ec0cd3",
+        "teks": "Dalam sistem berpetak, garis vertikal dinamai dengan apa?",
+        "jawaban": "Huruf",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(3, 1)$ ke $(8, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Perpindahan mendatar 5 petak dan tegak 3 petak. Minimum jumlah langkah = 8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 5 petak dan tegak 3 petak. Minimum jumlah langkah = 8.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e54e6f6b121761440703b8c",
+        "teks": "Pada sistem berpetak, titik berada di perpotongan garis C dan garis 5. Bagaimana lokasi titik itu ditulis?",
+        "jawaban": "(C,5)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target easy; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(7, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 2 petak dan tegak 2 petak. Minimum jumlah langkah = 4.",
+      "catatan": "codex-replenishment:kelas6-b03-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-easy-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "965ad3773b76696cd3155e43",
+        "teks": "Pada sistem berpetak, berapa langkah mendatar dan vertikal dari (B,2) ke (G,6)?",
+        "jawaban": "5 langkah ke kanan dan 4 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Dari titik $(A,B)$ bergerak $U$ petak ke kanan dan $V$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/7a66bc2b11b0dfd5ddcef948.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "8"
+            ],
+            [
+              "B",
+              "3"
+            ],
+            [
+              "U",
+              "10"
+            ],
+            [
+              "V",
+              "3"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"8\"], [\"B\", \"3\"], [\"U\", \"10\"], [\"V\", \"3\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53b969d831bceafcb2850906",
+        "teks": "Pada peta kelas, Rani duduk di kursi (C,2). Dito duduk 4 deret di sebelah kanan Rani dan satu baris tepat di belakangnya. Di posisi mana Dito duduk?",
+        "jawaban": "(G,3)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Dari titik $(A,B)$ bergerak $U$ petak ke kanan dan $V$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $39$.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $39$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/9d4bb361ff0fca848fbf1fc1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "19"
+            ],
+            [
+              "B",
+              "9"
+            ],
+            [
+              "U",
+              "7"
+            ],
+            [
+              "V",
+              "4"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"19\"], [\"B\", \"9\"], [\"U\", \"7\"], [\"V\", \"4\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "da761a1d5fc58b6f282a2590",
+        "teks": "Seekor semut berada di (A,1) pada kertas berpetak. Semut berjalan menuju (D,5). Berapa langkah mendatar dan vertikal yang ditempuhnya?",
+        "jawaban": "3 langkah ke kanan dan 4 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Dari titik $(A,B)$ bergerak $U$ petak ke kanan dan $V$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d213ac48844b619ba2161e6a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "24"
+            ],
+            [
+              "B",
+              "10"
+            ],
+            [
+              "U",
+              "15"
+            ],
+            [
+              "V",
+              "5"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"24\"], [\"B\", \"10\"], [\"U\", \"15\"], [\"V\", \"5\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb9e3f5859e2737fd3ec0cd3",
+        "teks": "Dalam sistem berpetak, garis vertikal dinamai dengan apa?",
+        "jawaban": "Huruf",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Dari titik $(A,B)$ bergerak $U$ petak ke kanan dan $V$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $47$.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $47$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/a8077fc4a880971ae6c8fee7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "20"
+            ],
+            [
+              "B",
+              "13"
+            ],
+            [
+              "U",
+              "6"
+            ],
+            [
+              "V",
+              "8"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"20\"], [\"B\", \"13\"], [\"U\", \"6\"], [\"V\", \"8\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06d324aba1d674420a7846e3",
+        "teks": "Pada sistem berpetak, titik P berada di (B,4) dan titik Q di (F,4). Berapa jarak mendatar antara P dan Q?",
+        "jawaban": "4 langkah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Dari titik $(A,B)$ bergerak $U$ petak ke kanan dan $V$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/82e13fb7d83296db1d0e3fb5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "A",
+              "19"
+            ],
+            [
+              "B",
+              "19"
+            ],
+            [
+              "U",
+              "12"
+            ],
+            [
+              "V",
+              "4"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"A\", \"19\"], [\"B\", \"19\"], [\"U\", \"12\"], [\"V\", \"4\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dae42b6cc0708ef81dffa2d3",
+        "teks": "Tentukan jarak antara titik (B,1) dan (H,4) pada sistem berpetak.",
+        "jawaban": "6 langkah ke kanan dan 3 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik $({28},{15})$ bergerak ${5}$ petak ke kanan dan ${6}$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6c938a20e3547b32ac7b6da",
+        "teks": "Dari titik (C,8) ke titik (H,2), berapa jarak mendatar dan vertikalnya?",
+        "jawaban": "5 langkah ke kanan dan 6 langkah ke bawah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_lokasi",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik $({14},{6})$ bergerak ${9}$ petak ke kanan dan ${7}$ ke atas. Berapa jumlah koordinat titik akhirnya?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Koordinat akhir adalah (A+U,B+V), kemudian jumlahkan Perhitungan dengan data tersebut memberi $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-easy-bt01-024"
     }
   ]
 }

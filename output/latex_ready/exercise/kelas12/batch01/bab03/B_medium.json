@@ -1,0 +1,688 @@
+{
+  "book": "kelas12",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas12-b03-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0118-latihan-3-2-1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pembagian ke kelompok berukuran berbeda",
+      "alasan_level": "menerapkan rumus unsur sama $\\frac{n!}{r_1!\\,r_2!\\,r_3!}$ pada pembagian ke tiga kendaraan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kantor akan mengirim 10 pegawai ke lokasi pelatihan dengan tiga kendaraan berbeda. Kapasitas kendaraan secara berturut-turut adalah 6, 3, dan 1 orang dan semua kursi terisi penuh. Berapa banyak kemungkinan para pegawai dapat terangkut oleh ketiga kendaraan tersebut?",
+      "jawaban_benar": "840",
+      "alasan_benar": "membagi 10 pegawai ke kelompok berukuran 6, 3, dan 1 memberi $\\frac{10!}{6!\\,3!\\,1!} = 840$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "hanya membagi dengan $6!$, lupa membagi dengan $3!$"
+        },
+        {
+          "teks": "604.800",
+          "alasan": "hanya membagi dengan $3!$, lupa membagi dengan $6!$"
+        },
+        {
+          "teks": "3.628.800",
+          "alasan": "menghitung $10!$ tanpa membagi dengan faktorial kapasitas"
+        }
+      ],
+      "pembahasan": "Kendaraan berbeda dan terisi penuh: $\\frac{10!}{6!\\,3!\\,1!} = \\frac{3.628.800}{720 \\times 6 \\times 1} = 840$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0118-latihan-3-2-1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pembagian ke kelompok berukuran berbeda",
+      "alasan_level": "memodelkan pembagian atlet ke tiga lapangan bernama sebagai permutasi dengan unsur sama",
+      "stimulus": null,
+      "pertanyaan": "Seorang pelatih bulu tangkis membagi 9 atlet ke tiga lapangan latihan yang diberi nama Lapangan A, B, dan C. Lapangan A dan B masing-masing menampung 4 atlet, sedangkan Lapangan C menampung 1 atlet. Banyak cara pelatih membagi seluruh atlet tersebut adalah ....",
+      "jawaban_benar": "630",
+      "alasan_benar": "banyak pembagian $= \\frac{9!}{4!\\,4!\\,1!} = 630$",
+      "distraktor": [
+        {
+          "teks": "15.120",
+          "alasan": "hanya membagi dengan satu $4!$, lupa $4!$ yang kedua"
+        },
+        {
+          "teks": "315",
+          "alasan": "membagi lagi dengan $2!$ karena mengira lapangan berkapasitas sama tidak dibedakan padahal lapangan bernama berbeda"
+        },
+        {
+          "teks": "362.880",
+          "alasan": "menghitung $9!$ tanpa membagi dengan faktorial kapasitas"
+        }
+      ],
+      "pembahasan": "Lapangan berbeda sehingga $\\frac{9!}{4!\\,4!\\,1!} = \\frac{362.880}{24 \\times 24 \\times 1} = 630$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0119-latihan-3-2-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aturan pengisian dan permutasi",
+      "alasan_level": "menggabungkan pilihan angka berulang dengan permutasi huruf tanpa pengulangan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kawasan menetapkan pelat nomor yang diawali dua huruf BK, diikuti tiga angka yang dipilih dari 1, 2, 7, 8, dan 9 dan boleh berulang, serta diakhiri dua huruf berbeda yang dipilih dari huruf P, Q, R, S, T, dan U. Banyak pelat nomor yang dapat dibuat adalah ....",
+      "jawaban_benar": "3.750",
+      "alasan_benar": "$1 \\times 5^3 \\times P(6,2) = 125 \\times 30 = 3.750$",
+      "distraktor": [
+        {
+          "teks": "1.875",
+          "alasan": "memakai kombinasi $C(6,2)=15$ untuk dua huruf akhir, bukan permutasi"
+        },
+        {
+          "teks": "4.500",
+          "alasan": "mengira dua huruf akhir boleh berulang, $6^2 = 36$"
+        },
+        {
+          "teks": "1.800",
+          "alasan": "mengira ketiga angka tidak boleh berulang, $5 \\times 4 \\times 3 = 60$"
+        }
+      ],
+      "pembahasan": "Dua huruf awal tetap (1 cara); tiga angka boleh berulang: $5^3 = 125$; dua huruf akhir berbeda: $P(6,2) = 30$. Total $125 \\times 30 = 3.750$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0119-latihan-3-2-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aturan pengisian dan permutasi",
+      "alasan_level": "menggabungkan angka berulang dan huruf berbeda pada kode anggota koperasi",
+      "stimulus": null,
+      "pertanyaan": "Kode anggota sebuah koperasi diawali huruf tetap KS, kemudian tiga digit yang masing-masing dipilih dari 1, 3, 5, dan 7 (digit boleh berulang), dan ditutup tiga huruf berbeda yang dipilih dari M, N, O, P, dan Q. Banyak kode anggota yang dapat dibentuk adalah ....",
+      "jawaban_benar": "3.840",
+      "alasan_benar": "$4^3 \\times P(5,3) = 64 \\times 60 = 3.840$",
+      "distraktor": [
+        {
+          "teks": "640",
+          "alasan": "memakai kombinasi $C(5,3)=10$ untuk tiga huruf, bukan permutasi"
+        },
+        {
+          "teks": "8.000",
+          "alasan": "mengira huruf boleh berulang, $5^3 = 125$"
+        },
+        {
+          "teks": "1.440",
+          "alasan": "mengira digit tidak boleh berulang, $P(4,3) = 24$"
+        }
+      ],
+      "pembahasan": "Tiga digit boleh berulang: $4^3 = 64$; tiga huruf berbeda berurutan: $P(5,3) = 60$. Total $64 \\times 60 = 3.840$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0138-uji-kompetensi-bab-3-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aturan pengisian dan permutasi",
+      "alasan_level": "dua posisi nama dikalikan permutasi empat angka berbeda dari delapan angka",
+      "stimulus": null,
+      "pertanyaan": "Bayu akan membuat kata sandi dua belas karakter. Namanya, yang terdiri dari delapan karakter, ditulis berurutan pada awal atau pada akhir kata sandi, kemudian ditambahkan empat angka berbeda yang dipilih secara acak dari angka 1, 2, 3, 4, 5, 6, 7, dan 8. Banyak cara menyusun kata sandi tersebut adalah ....",
+      "jawaban_benar": "3.360",
+      "alasan_benar": "$2 \\times P(8,4) = 2 \\times 1.680 = 3.360$",
+      "distraktor": [
+        {
+          "teks": "1.680",
+          "alasan": "lupa mengalikan dengan 2 posisi (awal atau akhir) untuk nama"
+        },
+        {
+          "teks": "8.192",
+          "alasan": "mengira angka boleh berulang, $2 \\times 8^4$"
+        },
+        {
+          "teks": "140",
+          "alasan": "memakai kombinasi $C(8,4)=70$ dikali 2 sehingga urutan angka diabaikan"
+        }
+      ],
+      "pembahasan": "Nama di awal atau di akhir: 2 cara. Empat angka berbeda berurutan: $P(8,4) = 8 \\times 7 \\times 6 \\times 5 = 1.680$. Total $2 \\times 1.680 = 3.360$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0138-uji-kompetensi-bab-3-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "aturan pengisian dan permutasi",
+      "alasan_level": "dua posisi kata HEMAT dikalikan permutasi dua angka berbeda",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko daring menerbitkan kode voucher yang memuat kata HEMAT secara berurutan di awal atau di akhir kode, lalu ditambah dua angka berbeda dari 0, 1, 2, ..., 9 yang disusun secara bebas. Banyak kode voucher yang mungkin dibuat adalah ....",
+      "jawaban_benar": "180",
+      "alasan_benar": "$2 \\times P(10,2) = 2 \\times 90 = 180$",
+      "distraktor": [
+        {
+          "teks": "90",
+          "alasan": "lupa mengalikan dengan 2 posisi untuk kata HEMAT"
+        },
+        {
+          "teks": "200",
+          "alasan": "mengira kedua angka boleh sama, $2 \\times 10^2$"
+        },
+        {
+          "teks": "45",
+          "alasan": "memakai kombinasi $C(10,2)$ dan lupa 2 posisi sehingga urutan angka diabaikan"
+        }
+      ],
+      "pembahasan": "Kata HEMAT di awal atau akhir: 2 cara; dua angka berbeda berurutan: $P(10,2) = 90$. Total $2 \\times 90 = 180$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0138-uji-kompetensi-bab-3-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan dari angka dengan syarat besar",
+      "alasan_level": "menghitung per kasus angka pertama dan kedua pada angka yang berulang lalu menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bank menerbitkan kartu undian dengan nomor berupa bilangan lima angka yang disusun dari angka 2, 4, 4, 7, dan 9. Banyak kartu dengan nomor lebih besar daripada 47000 adalah ....",
+      "jawaban_benar": "36",
+      "alasan_benar": "kasus angka pertama 9: 12, angka pertama 7: 12, angka pertama 4 dan kedua 9: 6, angka pertama 4 dan kedua 7: 6, total $36$",
+      "distraktor": [
+        {
+          "teks": "24",
+          "alasan": "hanya menghitung angka pertama 9 dan 7, lupa kasus angka pertama 4"
+        },
+        {
+          "teks": "30",
+          "alasan": "lupa kasus angka pertama 4 dan kedua 7"
+        },
+        {
+          "teks": "48",
+          "alasan": "menganggap semua nomor berawalan 4 memenuhi sehingga $12+12+24$"
+        }
+      ],
+      "pembahasan": "Angka pertama 9: $\\frac{4!}{2!} = 12$. Angka pertama 7: $12$. Angka pertama 4: sisa 2, 4, 7, 9; kedua 9: $3! = 6$; kedua 7: $3! = 6$; kedua 4 atau 2 menghasilkan nomor di bawah 47000. Total $12 + 12 + 6 + 6 = 36$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b03-p0138-uji-kompetensi-bab-3-4"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bilangan dari angka dengan syarat besar",
+      "alasan_level": "menghitung per kasus angka pertama dan kedua dengan angka kembar untuk nomor yang lebih kecil dari batas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko buku membuat voucher belanja dengan nomor seri berupa bilangan lima angka yang disusun dari angka 1, 3, 3, 5, dan 8 (setiap angka dipakai tepat sekali). Banyak voucher dengan nomor seri kurang dari 53000 adalah ....",
+      "jawaban_benar": "39",
+      "alasan_benar": "angka pertama 1: 12, angka pertama 3: 24, angka pertama 5 dan kedua 1: 3, total $39$",
+      "distraktor": [
+        {
+          "teks": "36",
+          "alasan": "lupa kasus angka pertama 5 dan kedua 1, hanya $12 + 24$"
+        },
+        {
+          "teks": "42",
+          "alasan": "memakai $3!$ pada kasus angka pertama 5 dan kedua 1 (lupa angka 3 kembar), sehingga $12+24+6$"
+        },
+        {
+          "teks": "48",
+          "alasan": "menghitung angka pertama 1 sebagai $4! = 24$ tanpa membagi $2!$ dan lupa kasus angka pertama 5"
+        }
+      ],
+      "pembahasan": "Angka pertama 1: sisa 3, 3, 5, 8 sehingga $\\frac{4!}{2!} = 12$. Angka pertama 3: sisa 1, 3, 5, 8 sehingga $4! = 24$. Angka pertama 5: kedua harus 1 (sisa 3, 3, 8) sehingga $\\frac{3!}{2!} = 3$; kedua 3 menghasilkan nomor di atas 53000. Total $12 + 24 + 3 = 39$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "bagian": "Contoh 3.9",
+        "nomor": "3.9",
+        "teks": "Terdapat lima orang laki-laki dan tiga orang perempuan duduk mengelilingi pada suatu meja bundar, tentukan banyaknya cara duduk jika tidak ada perempuan yang duduk berdampingan.",
+        "jawaban": "1.440 cara"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "permutasi siklis dengan syarat",
+      "alasan_level": "mengatur siswa putra secara siklis lalu menempatkan siswa putri pada celah di antara mereka",
+      "stimulus": null,
+      "pertanyaan": "Enam pengurus OSIS putra dan empat pengurus OSIS putri akan duduk melingkar mengelilingi meja rapat bundar. Banyak cara duduk jika tidak ada dua putri yang duduk berdampingan adalah ....",
+      "jawaban_benar": "43.200",
+      "alasan_benar": "$(6-1)! \\times P(6,4) = 120 \\times 360 = 43.200$",
+      "distraktor": [
+        {
+          "teks": "259.200",
+          "alasan": "mengatur putra seperti berjajar, $6! \\times P(6,4)$"
+        },
+        {
+          "teks": "1.800",
+          "alasan": "memakai kombinasi $C(6,4) = 15$ untuk celah putri, $120 \\times 15$"
+        },
+        {
+          "teks": "362.880",
+          "alasan": "menghitung duduk bebas $(10-1)!$ tanpa syarat"
+        }
+      ],
+      "pembahasan": "Putra duduk siklis: $5! = 120$. Terbentuk 6 celah di antara putra; empat putri menempati 4 dari 6 celah secara berurutan: $P(6,4) = 360$. Total $120 \\times 360 = 43.200$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "bagian": "Contoh 3.9",
+        "nomor": "3.9",
+        "teks": "Terdapat lima orang laki-laki dan tiga orang perempuan duduk mengelilingi pada suatu meja bundar, tentukan banyaknya cara duduk jika tidak ada perempuan yang duduk berdampingan.",
+        "jawaban": "1.440 cara"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "permutasi siklis dengan syarat",
+      "alasan_level": "mengatur putra siklis lalu menempatkan dua putri pada celah yang tersedia",
+      "stimulus": null,
+      "pertanyaan": "Lima siswa putra dan dua siswa putri duduk melingkar pada sebuah meja makan bundar dalam suatu perjamuan. Banyak susunan duduk apabila kedua siswa putri tidak duduk berdampingan adalah ....",
+      "jawaban_benar": "480",
+      "alasan_benar": "$(5-1)! \\times P(5,2) = 24 \\times 20 = 480$",
+      "distraktor": [
+        {
+          "teks": "2.400",
+          "alasan": "mengatur putra seperti berjajar, $5! \\times P(5,2)$"
+        },
+        {
+          "teks": "240",
+          "alasan": "memakai kombinasi $C(5,2) = 10$ untuk celah putri, $24 \\times 10$"
+        },
+        {
+          "teks": "720",
+          "alasan": "menghitung duduk bebas $(7-1)!$ tanpa syarat"
+        }
+      ],
+      "pembahasan": "Putra duduk siklis: $4! = 24$. Terbentuk 5 celah; dua putri menempati 2 celah berbeda secara berurutan: $P(5,2) = 20$. Total $24 \\times 20 = 480$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 119,
+        "kutipan": "Terdapat 4 lukisan favorit yang selalu berdampingan."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "unsur harus berdampingan (berjajar)",
+      "alasan_level": "dua orang dijadikan satu blok lalu blok dan sisa orang disusun, dikali susunan di dalam blok",
+      "stimulus": null,
+      "pertanyaan": "Delapan orang berdiri berjajar dalam satu barisan untuk berfoto. Dua di antaranya, Amir dan Bayu, harus selalu berdampingan. Banyak susunan barisan yang mungkin adalah ....",
+      "jawaban_benar": "10.080",
+      "alasan_benar": "blok Amir-Bayu dan 6 orang lain menjadi 7 objek: $7! \\times 2! = 10.080$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "lupa susunan di dalam blok, hanya $7!$"
+        },
+        {
+          "teks": "40.320",
+          "alasan": "menghitung $8!$ tanpa syarat berdampingan"
+        },
+        {
+          "teks": "1.440",
+          "alasan": "menyusun hanya 6 objek (satu objek terlewat) lalu mengalikan $2!$, yaitu $2 \\times 6!$"
+        }
+      ],
+      "pembahasan": "Gabungkan Amir dan Bayu menjadi satu blok sehingga ada $7$ objek: $7! = 5.040$. Di dalam blok ada $2! = 2$ susunan. Total $5.040 \\times 2 = 10.080$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 118,
+        "kutipan": "Jika novel jenis B ditata berdekatan, maka terdapat 60 cara menyusun novel."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "unsur tidak boleh berdampingan (berjajar)",
+      "alasan_level": "banyak susunan seluruhnya dikurangi susunan saat dua orang berdampingan",
+      "stimulus": null,
+      "pertanyaan": "Tujuh orang duduk berjajar pada satu baris kursi. Dua di antaranya, Citra dan Dodi, tidak boleh duduk berdampingan. Banyak susunan duduk yang mungkin adalah ....",
+      "jawaban_benar": "3.600",
+      "alasan_benar": "$7! - 2 \\times 6! = 5.040 - 1.440 = 3.600$",
+      "distraktor": [
+        {
+          "teks": "5.040",
+          "alasan": "menghitung $7!$ tanpa syarat"
+        },
+        {
+          "teks": "1.440",
+          "alasan": "hanya menghitung susunan saat Citra dan Dodi berdampingan"
+        },
+        {
+          "teks": "4.320",
+          "alasan": "mengurangi $7! - 6!$ (lupa susunan di dalam blok $2!$)"
+        }
+      ],
+      "pembahasan": "Semua susunan: $7! = 5.040$. Citra dan Dodi berdampingan: $2 \\times 6! = 1.440$. Tidak berdampingan: $5.040 - 1.440 = 3.600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Karena termasuk permutasi dengan objek yang sama atau pengulangan, maka terlebih dahulu temukan huruf yang sama."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "huruf kata dengan syarat posisi",
+      "alasan_level": "menetapkan huruf pertama lalu menyusun sisanya dengan unsur sama",
+      "stimulus": null,
+      "pertanyaan": "Seluruh huruf pada kata SEMESTER disusun menjadi susunan berbeda yang diawali huruf E. Banyak susunan yang mungkin adalah ....",
+      "jawaban_benar": "1.260",
+      "alasan_benar": "huruf pertama E, sisa 7 huruf dengan S 2 kali dan E 2 kali: $\\frac{7!}{2!\\,2!} = 1.260$",
+      "distraktor": [
+        {
+          "teks": "6.720",
+          "alasan": "menghitung semua susunan $\\frac{8!}{3!}$ tanpa syarat huruf pertama"
+        },
+        {
+          "teks": "840",
+          "alasan": "membagi dengan $3!$ untuk sisa huruf, padahal E tinggal 2 buah (S juga 2 kali)"
+        },
+        {
+          "teks": "2.520",
+          "alasan": "hanya membagi dengan $2!$, lupa huruf S yang juga berulang"
+        }
+      ],
+      "pembahasan": "SEMESTER: S 2 kali, E 3 kali, M, T, R. Setelah E menempati posisi pertama, sisa 7 huruf dengan S dua kali dan E dua kali: $\\frac{7!}{2!\\,2!} = \\frac{5.040}{4} = 1.260$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 115,
+        "kutipan": "Diketahui banyak huruf pada semboyan tersebut ada 8 huruf."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "huruf kata dengan syarat tidak berdampingan",
+      "alasan_level": "semua susunan dikurangi susunan saat huruf N berdampingan, keduanya dengan unsur sama",
+      "stimulus": null,
+      "pertanyaan": "Seluruh huruf pada kata BANANA disusun menjadi susunan berbeda sehingga kedua huruf N tidak berdampingan. Banyak susunan yang mungkin adalah ....",
+      "jawaban_benar": "40",
+      "alasan_benar": "$\\frac{6!}{3!\\,2!} - \\frac{5!}{3!} = 60 - 20 = 40$",
+      "distraktor": [
+        {
+          "teks": "60",
+          "alasan": "menghitung semua susunan tanpa syarat N tidak berdampingan"
+        },
+        {
+          "teks": "20",
+          "alasan": "hanya menghitung susunan saat kedua N berdampingan"
+        },
+        {
+          "teks": "30",
+          "alasan": "membagi semua susunan dengan 2 untuk syarat N, bukan mengurangi susunan berdampingan"
+        }
+      ],
+      "pembahasan": "BANANA: 6 huruf, A 3 kali, N 2 kali: $\\frac{6!}{3!\\,2!} = 60$. Kedua N berdampingan dianggap satu blok sehingga 5 objek dengan A 3 kali: $\\frac{5!}{3!} = 20$. Tidak berdampingan: $60 - 20 = 40$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 116,
+        "kutipan": "Terdapat lima orang laki-laki dan tiga orang perempuan duduk mengelilingi pada suatu meja bundar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "permutasi siklis dengan syarat",
+      "alasan_level": "dua orang dijadikan satu blok pada susunan siklis lalu dikali susunan dalam blok",
+      "stimulus": null,
+      "pertanyaan": "Tujuh orang tamu duduk mengelilingi sebuah meja bundar. Dua di antaranya, Eka dan Feri, harus selalu duduk berdampingan. Banyak susunan duduk yang berbeda adalah ....",
+      "jawaban_benar": "240",
+      "alasan_benar": "blok Eka-Feri dan 5 tamu lain menjadi 6 objek siklis: $(6-1)! \\times 2! = 240$",
+      "distraktor": [
+        {
+          "teks": "120",
+          "alasan": "lupa susunan di dalam blok, hanya $(6-1)!$"
+        },
+        {
+          "teks": "1.440",
+          "alasan": "memakai $6!$ untuk 6 objek seperti berjajar, $6! \\times 2$"
+        },
+        {
+          "teks": "720",
+          "alasan": "menghitung duduk bebas $(7-1)!$ tanpa syarat berdampingan"
+        }
+      ],
+      "pembahasan": "Gabungkan Eka dan Feri menjadi satu blok sehingga ada 6 objek yang duduk melingkar: $(6-1)! = 120$. Susunan di dalam blok $2! = 2$. Total $120 \\times 2 = 240$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 117,
+        "kutipan": "Diketahui 5 orang laki-laki dan 3 orang perempuan duduk melingkar."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "permutasi siklis dengan syarat",
+      "alasan_level": "setiap pasangan dijadikan blok, blok disusun siklis, dan tiap blok punya dua susunan dalam",
+      "stimulus": null,
+      "pertanyaan": "Empat pasang suami istri duduk mengelilingi meja bundar pada suatu acara makan malam. Setiap pasangan harus duduk berdampingan. Banyak susunan duduk yang berbeda adalah ....",
+      "jawaban_benar": "96",
+      "alasan_benar": "4 blok siklis: $(4-1)! = 6$, tiap blok $2!$: $6 \\times 2^4 = 96$",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "hanya menghitung $(4-1)!$ untuk susunan blok, lupa susunan dalam pasangan"
+        },
+        {
+          "teks": "384",
+          "alasan": "memakai $4!$ untuk susunan blok seperti berjajar, $4! \\times 2^4$"
+        },
+        {
+          "teks": "48",
+          "alasan": "membagi hasil dengan 2 karena mengira susunan cermin dianggap sama, $\\frac{6 \\times 2^4}{2}$"
+        }
+      ],
+      "pembahasan": "Empat pasangan menjadi 4 blok yang disusun siklis: $(4-1)! = 6$. Setiap pasangan dapat bertukar tempat dalam $2!$ cara, sehingga $2^4 = 16$. Total $6 \\times 16 = 96$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 119,
+        "kutipan": "Terdapat 10 lukisan prioritas yang akan diletakkan pada beranda utama galeri pamerannya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "penjumlahan dua kasus pada bilangan",
+      "alasan_level": "membagi kasus angka satuan 0 dan bukan 0, tiap kasus memakai permutasi, lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Dari angka 0, 1, 2, 3, 4, 5, dan 6 akan dibentuk bilangan tiga angka yang genap dan tidak memuat angka berulang. Banyak bilangan yang dapat dibentuk adalah ....",
+      "jawaban_benar": "105",
+      "alasan_benar": "satuan 0: $P(6,2) = 30$; satuan 2, 4, atau 6: $3 \\times 5 \\times 5 = 75$; total $105$",
+      "distraktor": [
+        {
+          "teks": "75",
+          "alasan": "hanya menghitung bilangan dengan satuan 2, 4, 6, lupa satuan 0"
+        },
+        {
+          "teks": "30",
+          "alasan": "hanya menghitung bilangan dengan satuan 0"
+        },
+        {
+          "teks": "120",
+          "alasan": "mengira angka ratusan boleh 0 pada kasus satuan 2, 4, 6, sehingga $30 + 3 \\times 30$"
+        }
+      ],
+      "pembahasan": "Kasus satuan 0: ratusan dan puluhan dari 6 angka sisa, $P(6,2) = 30$. Kasus satuan 2, 4, atau 6 (3 pilihan): ratusan bukan 0 dan bukan satuan (5 pilihan), puluhan dari 5 angka sisa (5 pilihan): $3 \\times 5 \\times 5 = 75$. Total $30 + 75 = 105$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Secara matematis, perhitungan banyaknya susunan pengurus tersebut dapat dituliskan menggunakan konsep faktorial sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan permutasi",
+      "alasan_level": "mengubah $P(n,2)$ menjadi $n(n-1)$ lalu menyelesaikan persamaan kuadrat dan memilih akar bulat positif",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $n$ bilangan asli dengan $n \\geq 2$ dan $P(n,2) = 90$. Nilai $n$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "$P(n,2) = n(n-1) = 90 = 10 \\times 9$ sehingga $n = 10$",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "mengambil faktor yang lebih kecil dari pasangan $10 \\times 9$"
+        },
+        {
+          "teks": "45",
+          "alasan": "menganggap $P(n,2) = 2n$ sehingga $n = 45$"
+        },
+        {
+          "teks": "91",
+          "alasan": "menganggap $n - 1 = 90$ dan mengabaikan faktor $n$"
+        }
+      ],
+      "pembahasan": "$P(n,2) = \\frac{n!}{(n-2)!} = n(n-1) = 90$. Karena $10 \\times 9 = 90$, diperoleh $n^2 - n - 90 = 0$, $(n-10)(n+9) = 0$, dan $n$ bilangan asli sehingga $n = 10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Berdasarkan perhitungan tersebut kalian dapat mengetahui bahwa susunan pengurus kelas yang belum terisi adalah sekretaris dan bendahara."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan permutasi",
+      "alasan_level": "menguraikan $P(n,3)$ dan $P(n,2)$ lalu menyederhanakan dan menyelesaikan persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $n$ bilangan asli dengan $n \\geq 3$ dan $P(n,3) = 6 \\times P(n,2)$. Nilai $n$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "$n(n-1)(n-2) = 6\\,n(n-1)$ sehingga $n - 2 = 6$ dan $n = 8$",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "mengira $n = 6$ dari angka pengali, lupa $n - 2 = 6$"
+        },
+        {
+          "teks": "7",
+          "alasan": "menyederhanakan menjadi $n - 1 = 6$"
+        },
+        {
+          "teks": "12",
+          "alasan": "menyelesaikan $n - 2 = 6$ menjadi $n = 6 \\times 2$"
+        }
+      ],
+      "pembahasan": "$P(n,3) = n(n-1)(n-2)$ dan $P(n,2) = n(n-1)$. Persamaan menjadi $n(n-1)(n-2) = 6\\,n(n-1)$. Karena $n \\geq 3$, kedua ruas dapat dibagi $n(n-1)$ sehingga $n - 2 = 6$ dan $n = 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b03-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 110,
+        "kutipan": "Terdapat 8 siswa yang bersedia, dan terdapat 2 siswa yang sudah mengisi susunan pengurus yaitu Roni dan Andi."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pemodelan permutasi r dari n dengan syarat",
+      "alasan_level": "jabatan ketua diisi tanpa Dina lalu dua jabatan lain sebagai permutasi dari sisa siswa",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 siswa yang bersedia akan dipilih seorang ketua, seorang sekretaris, dan seorang bendahara. Setiap siswa menduduki paling banyak satu jabatan dan Dina tidak bersedia menjadi ketua (tetapi boleh memegang jabatan lain). Banyak susunan pengurus yang mungkin adalah ....",
+      "jawaban_benar": "180",
+      "alasan_benar": "ketua dipilih dari 6 siswa selain Dina, lalu $P(6,2) = 30$ untuk dua jabatan lain: $6 \\times 30 = 180$",
+      "distraktor": [
+        {
+          "teks": "210",
+          "alasan": "menghitung $P(7,3)$ tanpa syarat Dina tidak menjadi ketua"
+        },
+        {
+          "teks": "30",
+          "alasan": "hanya menghitung susunan sekretaris dan bendahara setelah ketua dipilih"
+        },
+        {
+          "teks": "252",
+          "alasan": "mengira sekretaris dan bendahara dipilih dari 7 siswa, $6 \\times 7 \\times 6$"
+        }
+      ],
+      "pembahasan": "Ketua dipilih dari 6 siswa selain Dina: 6 cara. Sekretaris dan bendahara dipilih dari 6 siswa yang tersisa (termasuk Dina): $P(6,2) = 30$. Total $6 \\times 30 = 180$.",
+      "catatan": null
+    }
+  ]
+}

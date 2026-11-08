@@ -1,0 +1,702 @@
+{
+  "book": "kelas10",
+  "bab_no": 5,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b05-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 182,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "-",
+        "teks": "Harga 1 buku diberikan oleh h = 900 − 0,25 x dengan x adalah banyak buku yang diproduksi.",
+        "jawaban": "x = 1800 buku (pendapatan R = x(900 - 0,25x) maksimum di x = 900/0,5)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita pendapatan maksimum",
+      "alasan_level": "menyusun fungsi pendapatan $R=x\\cdot h$ lalu mencari absis puncak, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Harga satu pensil diberikan oleh $h = 600 - 0{,}4x$ rupiah dengan $x$ adalah banyak pensil yang diproduksi. Jika pendapatan dari penjualan adalah $R = x \\cdot h$, banyak pensil yang diproduksi agar pendapatan maksimum adalah ... pensil.",
+      "jawaban_benar": "750",
+      "alasan_benar": "$R=x(600-0{,}4x)=600x-0{,}4x^2$ maksimum di $x=\\frac{600}{2\\cdot 0{,}4}=750$",
+      "distraktor": [
+        {
+          "teks": "1.500",
+          "alasan": "mengambil $x$ saat harga nol ($600/0{,}4$), bukan absis puncak pendapatan"
+        },
+        {
+          "teks": "600",
+          "alasan": "menjawab harga awal pensil, bukan banyak pensil"
+        },
+        {
+          "teks": "225.000",
+          "alasan": "menjawab pendapatan maksimum, bukan banyak pensil"
+        }
+      ],
+      "pembahasan": "$R(x)=600x-0{,}4x^2$, $x=-\\frac{b}{2a}=\\frac{600}{0{,}8}=750$ (pendapatan maksimum Rp225.000).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 182,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "-",
+        "teks": "Harga 1 buku diberikan oleh h = 900 − 0,25 x dengan x adalah banyak buku yang diproduksi.",
+        "jawaban": "x = 1800 buku (pendapatan R = x(900 - 0,25x) maksimum di x = 900/0,5)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "cerita pendapatan maksimum",
+      "alasan_level": "susun fungsi pendapatan, cari absis puncak, lalu hitung nilai pendapatan, empat langkah",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko roti menjual kue dengan harga satu kue $h = 24000 - 6x$ rupiah, dengan $x$ adalah banyak kue yang dibuat setiap hari. Pendapatan toko dari penjualan kue adalah $R = x \\cdot h$. Pendapatan harian maksimum toko tersebut adalah ....",
+      "jawaban_benar": "Rp24.000.000",
+      "alasan_benar": "$R=24000x-6x^2$ maksimum di $x=2000$, $R=2000\\cdot 12000=24.000.000$",
+      "distraktor": [
+        {
+          "teks": "Rp48.000.000",
+          "alasan": "mengalikan harga awal Rp24.000 dengan $x$ optimum 2.000"
+        },
+        {
+          "teks": "Rp18.000.000",
+          "alasan": "memakai $x=1000$ (membagi dengan $4a$) lalu menghitung $1000\\cdot 18000$"
+        },
+        {
+          "teks": "Rp12.000",
+          "alasan": "menjawab harga satu kue saat pendapatan maksimum, bukan pendapatannya"
+        }
+      ],
+      "pembahasan": "$R(x)=24000x-6x^2$. $x=\\frac{24000}{12}=2000$; $h=12000$; $R=2000\\cdot 12000=24.000.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 172,
+        "bagian": "Latihan 5.7",
+        "nomor": "2",
+        "teks": "Tabel di bawah menunjukkan jarak tempuh sebuah mobil pada setiap waktu.",
+        "jawaban": "Terbuka ke bawah, karena jarak naik kemudian turun lagi"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari tabel data",
+      "alasan_level": "menentukan fungsi kuadrat dari tabel dengan memakai titik puncak atau tiga titik, tiga langkah",
+      "stimulus": "Ketinggian sebuah drone terhadap waktu setelah lepas landas dicatat pada tabel berikut.\n\n|Waktu $t$ (detik)|0|1|2|3|4|5|6|\n|---|---|---|---|---|---|---|---|\n|Ketinggian $f(t)$ (m)|0|7|12|15|16|15|12|",
+      "pertanyaan": "Fungsi kuadrat yang memodelkan ketinggian drone terhadap waktu adalah ....",
+      "jawaban_benar": "$f(t) = -t^2 + 8t$",
+      "alasan_benar": "puncak $(4,16)$ sehingga $f(t)=a(t-4)^2+16$; $f(0)=0$ memberi $a=-1$, jadi $f(t)=-t^2+8t$",
+      "distraktor": [
+        {
+          "teks": "$f(t) = t^2 - 8t$",
+          "alasan": "tanda $a$ salah padahal tabel naik lalu turun (terbuka ke bawah)"
+        },
+        {
+          "teks": "$f(t) = -t^2 + 16t$",
+          "alasan": "memakai ketinggian maksimum 16 sebagai koefisien $b$ (nilai $f(1)$ menjadi 15, bukan 7)"
+        },
+        {
+          "teks": "$f(t) = -t^2 + 4t$",
+          "alasan": "memakai waktu puncak 4 sebagai koefisien $b$ (nilai $f(1)$ menjadi 3, bukan 7)"
+        }
+      ],
+      "pembahasan": "Puncak $(4,16)$: $f(t)=a(t-4)^2+16$. Dari $f(0)=0$: $16a+16=0$, $a=-1$. Maka $f(t)=-(t-4)^2+16=-t^2+8t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 182,
+        "bagian": "Latihan 5.10",
+        "nomor": "1",
+        "teks": "Bandingkan fungsi linear dengan fungsi kuadrat.",
+        "jawaban": "Fungsi linear: perubahan jarak tiap detik sama; fungsi kuadrat: perubahan jarak tiap detik tidak sama"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan fungsi linear dan kuadrat",
+      "alasan_level": "menganalisis selisih tiap detik untuk membedakan fungsi linear dan kuadrat lalu menyusun rumus keduanya",
+      "stimulus": "Dua tangki air diisi bersamaan. Tabel berikut menunjukkan volume air (liter) pada tangki A dan tangki B setiap menit.\n\n|Menit|0|1|2|3|4|5|\n|---|---|---|---|---|---|---|\n|Volume A (liter)|3|7|11|15|19|23|\n|Volume B (liter)|1|3|9|19|33|51|",
+      "pertanyaan": "Dengan memperhatikan pertambahan volume tiap menit, volume A dan B sebagai fungsi menit $t$ berturut-turut adalah ....",
+      "jawaban_benar": "$A(t)=4t+3$ dan $B(t)=2t^2+1$",
+      "alasan_benar": "A bertambah tetap 4 tiap menit (linear); B bertambah 2, 6, 10, 14, 18 (selisih tetap 4, kuadrat) dan cocok dengan $2t^2+1$",
+      "distraktor": [
+        {
+          "teks": "$A(t)=3t+4$ dan $B(t)=2t^2+1$",
+          "alasan": "menukar kemiringan 4 dan konstanta 3 pada fungsi linear"
+        },
+        {
+          "teks": "$A(t)=4t+3$ dan $B(t)=t^2+2t+1$",
+          "alasan": "rumus kuadrat tidak cocok tabel ($B(1)=4$, bukan 3)"
+        },
+        {
+          "teks": "$A(t)=4t^2+3$ dan $B(t)=2t+1$",
+          "alasan": "menukar jenis fungsi: A yang linear dianggap kuadrat dan sebaliknya"
+        }
+      ],
+      "pembahasan": "Selisih A tetap 4, jadi $A=4t+3$. Selisih B tidak tetap (2, 6, 10, ...), $B(t)=at^2+bt+1$: $a+b=2$, $4a+2b=8$ sehingga $a=2$, $b=0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 177,
+        "bagian": "Contoh",
+        "nomor": "1",
+        "teks": "Carilah persamaan fungsi kuadrat yang grafiknya melalui titik K(-1,0), L(0,-3), dan M(1,-4).",
+        "jawaban": "f(x)=x^2-2x-3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi dari tiga titik",
+      "alasan_level": "membentuk dan menyelesaikan sistem tiga persamaan lalu menghitung nilai fungsi, empat langkah",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi kuadrat $f(x)=ax^2+bx+c$ melalui titik $(-1,10)$, $(2,7)$, dan $(3,14)$. Nilai $f(4)$ adalah ....",
+      "jawaban_benar": "25",
+      "alasan_benar": "sistem $a-b+c=10$, $4a+2b+c=7$, $9a+3b+c=14$ memberi $a=2$, $b=-3$, $c=5$; $f(4)=32-12+5=25$",
+      "distraktor": [
+        {
+          "teks": "49",
+          "alasan": "salah tanda $b$ (memakai $b=3$) sehingga $32+12+5$"
+        },
+        {
+          "teks": "20",
+          "alasan": "lupa menambahkan konstanta $c=5$"
+        },
+        {
+          "teks": "57",
+          "alasan": "mengkuadratkan $2x$ (bukan $x$) pada suku $ax^2$: $(2\\cdot 4)^2-12+5$"
+        }
+      ],
+      "pembahasan": "Substitusi tiga titik, selesaikan SPL: $a=2$, $b=-3$, $c=5$. $f(4)=2(16)-3(4)+5=25$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 180,
+        "bagian": "Latihan 5.9",
+        "nomor": "1",
+        "teks": "Fungsi kuadrat dengan titik puncak (2,6) dan melalui titik (1,7).",
+        "jawaban": "f(x)=(x-2)^2+6=x^2-4x+10"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari titik puncak",
+      "alasan_level": "mencari $a$ lalu menjabarkan bentuk titik puncak ke bentuk standar, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Fungsi kuadrat memiliki titik puncak $(3,-4)$ dan melalui titik $(1,4)$. Bentuk standar $f(x)=ax^2+bx+c$ fungsi tersebut adalah ....",
+      "jawaban_benar": "$f(x) = 2x^2 - 12x + 14$",
+      "alasan_benar": "$f(x)=a(x-3)^2-4$; $(1,4)$ memberi $4=4a-4$ sehingga $a=2$; jabarkan $2(x^2-6x+9)-4=2x^2-12x+14$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 2x^2 - 12x + 18$",
+          "alasan": "lupa menambahkan $k=-4$ setelah menjabarkan"
+        },
+        {
+          "teks": "$f(x) = 2x^2 + 12x + 14$",
+          "alasan": "salah tanda $b$: menjabarkan $(x+3)^2$"
+        },
+        {
+          "teks": "$f(x) = 2x^2 - 6x + 14$",
+          "alasan": "mengalikan $a=2$ hanya pada $x^2$ dan konstanta, suku tengah tidak ikut dikali"
+        }
+      ],
+      "pembahasan": "$f(x)=a(x-3)^2-4$. Dari $(1,4)$: $4=4a-4$, $a=2$. $f(x)=2(x^2-6x+9)-4=2x^2-12x+14$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5",
+        "teks": "Fungsi kuadrat digunakan untuk memodelkan hal ini, yaitu C(t) = −0,0003 t<sup>2</sup> + 0,09 t dengan satuan t adalah menit dan konsentrasi obat dalam mg/L.",
+        "jawaban": "300 menit dan 6,75 mg/L"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita nilai maksimum",
+      "alasan_level": "mencari waktu puncak lalu menghitung konsentrasi puncak dan menyatakannya sebagai pasangan",
+      "stimulus": null,
+      "pertanyaan": "Konsentrasi suatu obat dalam darah dimodelkan oleh $C(t) = -0{,}008t^2 + 1{,}2t$ dengan $t$ dalam menit dan $C$ dalam mg/L. Konsentrasi obat mencapai maksimum pada waktu dan nilai ....",
+      "jawaban_benar": "75 menit dan 45 mg/L",
+      "alasan_benar": "$t=\\frac{1{,}2}{2\\cdot 0{,}008}=75$; $C(75)=-45+90=45$",
+      "distraktor": [
+        {
+          "teks": "150 menit dan 45 mg/L",
+          "alasan": "memakai waktu saat konsentrasi kembali nol (dua kali waktu puncak)"
+        },
+        {
+          "teks": "75 menit dan 90 mg/L",
+          "alasan": "hanya menghitung suku $1{,}2t$ dan lupa suku kuadrat"
+        },
+        {
+          "teks": "75 menit dan 135 mg/L",
+          "alasan": "salah tanda suku kuadrat sehingga $45+90$"
+        }
+      ],
+      "pembahasan": "$t=-\\frac{b}{2a}=75$. $C(75)=-0{,}008(5625)+1{,}2(75)=-45+90=45$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5",
+        "teks": "Fungsi kuadrat digunakan untuk memodelkan hal ini, yaitu C(t) = −0,0003 t<sup>2</sup> + 0,09 t dengan satuan t adalah menit dan konsentrasi obat dalam mg/L.",
+        "jawaban": "300 menit dan 6,75 mg/L"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sumbu simetri pada cerita",
+      "alasan_level": "mencari sumbu simetri lalu memakai kesimetrian parabola untuk waktu bernilai sama, analisis tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Konsentrasi obat dalam darah dimodelkan oleh $C(t) = -0{,}005t^2 + 0{,}7t$ dengan $t$ dalam menit dan $C$ dalam mg/L. Konsentrasi obat pada menit ke-25 sama dengan konsentrasi pada menit ke-... (selain menit ke-25).",
+      "jawaban_benar": "115",
+      "alasan_benar": "sumbu simetri $t=\\frac{0{,}7}{0{,}01}=70$; pasangan simetris $t=2\\cdot 70-25=115$",
+      "distraktor": [
+        {
+          "teks": "45",
+          "alasan": "mengurangkan jarak 25 dari sumbu simetri ($70-25$), bukan memantulkan"
+        },
+        {
+          "teks": "95",
+          "alasan": "menambah 25 pada sumbu simetri ($70+25$)"
+        },
+        {
+          "teks": "140",
+          "alasan": "memakai waktu konsentrasi nol (dua kali sumbu simetri)"
+        }
+      ],
+      "pembahasan": "Sumbu simetri $t=-\\frac{b}{2a}=70$. Titik pasangan $t=140-25=115$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 174,
+        "kutipan": "untuk menentukan jumlah titik potong dengan sumbu x"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "parameter diskriminan",
+      "alasan_level": "menyusun syarat $D=0$ pada fungsi berparameter lalu menyelesaikan persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi kuadrat $f(x)=x^2-6x+k$ hanya menyentuh sumbu $x$ di satu titik. Nilai $k$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "satu titik potong berarti $D=36-4k=0$ sehingga $k=9$",
+      "distraktor": [
+        {
+          "teks": "36",
+          "alasan": "lupa faktor $4$ pada $-4ac$ sehingga $36-k=0$"
+        },
+        {
+          "teks": "18",
+          "alasan": "memakai $b/2$ tanpa dikuadratkan: $k=36/2$"
+        },
+        {
+          "teks": "-9",
+          "alasan": "salah tanda saat memindahkan ruas: $36+4k=0$"
+        }
+      ],
+      "pembahasan": "Satu titik potong jika $D=0$: $(-6)^2-4(1)k=0$, $k=9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 173,
+        "kutipan": "Sumbu simetri selalu melalui titik puncak,"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "parameter sumbu simetri",
+      "alasan_level": "memakai $x=-b/(2a)$ dengan koefisien berparameter lalu menyelesaikan persamaan",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi $f(x)=x^2+(p-2)x+1$ memiliki sumbu simetri $x=3$. Nilai $p$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "$-\\frac{p-2}{2}=3$ sehingga $p-2=-6$ dan $p=-4$",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "mengambil $b=p-2=-6$ sebagai $p$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "lupa tanda minus pada $-b/(2a)$ sehingga $p-2=6$"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "memakai $x=-b/a$ (lupa faktor 2): $-(p-2)=3$"
+        }
+      ],
+      "pembahasan": "$x=-\\frac{b}{2a}=-\\frac{p-2}{2}=3$, jadi $p-2=-6$ dan $p=-4$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Memfaktorkan bentuk fungsi"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi dari bentuk faktor",
+      "alasan_level": "menyusun $a(x-x_1)(x-x_2)$ lalu menentukan $a$ dari titik lain",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi kuadrat memotong sumbu $x$ di $(2,0)$ dan $(-3,0)$ serta melalui titik $(0,12)$. Persamaan fungsi tersebut adalah ....",
+      "jawaban_benar": "$y = -2(x-2)(x+3)$",
+      "alasan_benar": "$y=a(x-2)(x+3)$; $(0,12)$ memberi $-6a=12$ sehingga $a=-2$",
+      "distraktor": [
+        {
+          "teks": "$y = 2(x-2)(x+3)$",
+          "alasan": "salah tanda $a$: $a(-2)(3)=12$ dianggap $a=2$"
+        },
+        {
+          "teks": "$y = -2(x+2)(x-3)$",
+          "alasan": "membalik tanda kedua akar"
+        },
+        {
+          "teks": "$y = -(x-2)(x+3)$",
+          "alasan": "mengira $a=-1$: nilai $f(0)$ menjadi 6, bukan 12"
+        }
+      ],
+      "pembahasan": "Bentuk faktor $y=a(x-2)(x+3)$. Titik $(0,12)$: $a(-2)(3)=12$, $a=-2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "Menentukan titik maksimum atau minimum dari setiap grafik."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai ekstrem fungsi",
+      "alasan_level": "mencari absis puncak untuk $a\\neq 1$ lalu substitusi untuk nilai minimum",
+      "stimulus": null,
+      "pertanyaan": "Nilai minimum fungsi $f(x)=3x^2-12x+7$ adalah ....",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "$x=-\\frac{-12}{6}=2$ dan $f(2)=12-24+7=-5$",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "menjawab absis titik puncak, bukan nilai fungsinya"
+        },
+        {
+          "teks": "$7$",
+          "alasan": "mengambil konstanta $c$ sebagai nilai minimum"
+        },
+        {
+          "teks": "$-19$",
+          "alasan": "salah tanda konstanta: $12-24-7$"
+        }
+      ],
+      "pembahasan": "Sumbu simetri $x=2$. $f(2)=3(4)-12(2)+7=-5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 181,
+        "kutipan": "Panjang kawat adalah 96 m."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita luas maksimum",
+      "alasan_level": "mengubah $x(60-2x)$ menjadi bentuk kuadrat, cari puncak, hitung luas",
+      "stimulus": null,
+      "pertanyaan": "Seorang peternak membuat kandang persegi panjang dengan memanfaatkan sebuah tembok sebagai salah satu sisinya, sehingga pagar hanya dipasang di tiga sisi dengan kawat sepanjang 60 m. Jika lebar kandang (sisi yang tegak lurus tembok) adalah $x$ m, luas kandang $L(x)=x(60-2x)$ m$^2$. Luas kandang maksimum adalah ... m$^2$.",
+      "jawaban_benar": "450",
+      "alasan_benar": "$L=60x-2x^2$ maksimum di $x=15$, $L(15)=15\\cdot 30=450$",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "menjawab lebar yang memberi luas maksimum, bukan luasnya"
+        },
+        {
+          "teks": "900",
+          "alasan": "mengalikan 60 dengan 15 (lupa mengurangi $2x$)"
+        },
+        {
+          "teks": "225",
+          "alasan": "mengkuadratkan lebar optimal 15"
+        }
+      ],
+      "pembahasan": "$L(x)=-2x^2+60x$, $x=\\frac{60}{4}=15$, $L(15)=15(60-30)=450$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 174,
+        "kutipan": "artinya kamu mencari akar-akar persamaan kuadrat."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "titik potong sumbu x dari rumus",
+      "alasan_level": "menyelesaikan $2x^2-5x-3=0$ dengan koefisien $a\\neq 1$ lalu menuliskan koordinat",
+      "stimulus": null,
+      "pertanyaan": "Titik potong grafik fungsi $f(x)=2x^2-5x-3$ dengan sumbu $x$ adalah ....",
+      "jawaban_benar": "$(3,0)$ dan $(-\\frac{1}{2},0)$",
+      "alasan_benar": "$2x^2-5x-3=(2x+1)(x-3)=0$ sehingga $x=-\\frac12$ atau $x=3$",
+      "distraktor": [
+        {
+          "teks": "$(-3,0)$ dan $(\\frac{1}{2},0)$",
+          "alasan": "membalik tanda kedua akar"
+        },
+        {
+          "teks": "$(3,0)$ dan $(\\frac{1}{2},0)$",
+          "alasan": "salah tanda pada akar dari faktor $2x+1$"
+        },
+        {
+          "teks": "$(0,3)$ dan $(0,-\\frac{1}{2})$",
+          "alasan": "menukar absis dan ordinat"
+        }
+      ],
+      "pembahasan": "$f(x)=0$: $(2x+1)(x-3)=0$, $x=-\\frac12$ atau $x=3$. Diskriminan $25+24=49>0$ sehingga dua titik potong.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 173,
+        "kutipan": "Sumbu simetri selalu melalui titik puncak,"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "titik puncak dari bentuk faktor",
+      "alasan_level": "akar-akar memberi sumbu simetri (rata-rata) lalu substitusi untuk ordinat puncak",
+      "stimulus": null,
+      "pertanyaan": "Koordinat titik puncak grafik fungsi $y=2(x-1)(x-5)$ adalah ....",
+      "jawaban_benar": "$(3,-8)$",
+      "alasan_benar": "sumbu simetri di tengah akar 1 dan 5, $x=3$; $y=2(2)(-2)=-8$",
+      "distraktor": [
+        {
+          "teks": "$(3,8)$",
+          "alasan": "salah tanda saat mengalikan $2(2)(-2)$"
+        },
+        {
+          "teks": "$(-3,-8)$",
+          "alasan": "salah tanda absis puncak"
+        },
+        {
+          "teks": "$(3,-4)$",
+          "alasan": "lupa mengalikan dengan $a=2$"
+        }
+      ],
+      "pembahasan": "$x=\\frac{1+5}{2}=3$, $y(3)=2(3-1)(3-5)=-8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 174,
+        "kutipan": "maka ada dua titik potong dengan sumbu x. (dua akar real berbeda)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter diskriminan",
+      "alasan_level": "menerjemahkan dua titik potong menjadi $D>0$ lalu mencari bilangan bulat terkecil, analisis pertidaksamaan",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat positif terkecil $m$ sehingga grafik $f(x)=x^2+mx+9$ memotong sumbu $x$ di dua titik berbeda adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "$D=m^2-36>0$ sehingga $m>6$; bilangan bulat positif terkecil 7",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "memakai $D=0$ (satu titik potong), padahal dibutuhkan $D>0$"
+        },
+        {
+          "teks": "4",
+          "alasan": "lupa faktor 4 sehingga $m^2>9$ dan $m>3$"
+        },
+        {
+          "teks": "9",
+          "alasan": "mengambil konstanta $c=9$ sebagai $m$"
+        }
+      ],
+      "pembahasan": "Dua titik potong berbeda jika $D>0$: $m^2-4(1)(9)>0$, $m^2>36$, $m>6$ (positif). Terkecil $m=7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "menunjukkan peran dalam fungsi kuadrat yaitu menentukan titik potong grafik dengan sumbu y"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "titik potong sumbu y dari bentuk faktor",
+      "alasan_level": "substitusi $x=0$ pada bentuk faktor dengan $a\\neq 1$",
+      "stimulus": null,
+      "pertanyaan": "Titik potong grafik $y=-3(x-2)(x+4)$ dengan sumbu $y$ adalah ....",
+      "jawaban_benar": "$(0,24)$",
+      "alasan_benar": "$y(0)=-3(-2)(4)=24$",
+      "distraktor": [
+        {
+          "teks": "$(0,-24)$",
+          "alasan": "salah tanda perkalian $-3(-2)(4)$"
+        },
+        {
+          "teks": "$(0,-3)$",
+          "alasan": "mengira koefisien $a$ adalah titik potong sumbu $y$"
+        },
+        {
+          "teks": "$(0,-8)$",
+          "alasan": "lupa mengalikan dengan $a=-3$"
+        }
+      ],
+      "pembahasan": "Substitusi $x=0$: $y=-3(0-2)(0+4)=-3(-2)(4)=24$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 173,
+        "kutipan": "Titik-titik potong dengan sumbu x, yaitu (-1,0) dan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jarak titik potong sumbu x",
+      "alasan_level": "mencari kedua akar lalu menghitung jarak antar titik potong",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi $f(x)=x^2-2x-15$ memotong sumbu $x$ di dua titik. Jarak antara kedua titik potong tersebut adalah ... satuan.",
+      "jawaban_benar": "8",
+      "alasan_benar": "$x^2-2x-15=(x-5)(x+3)=0$, akar $5$ dan $-3$; jaraknya $5-(-3)=8$",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "menjumlahkan kedua akar ($5+(-3)$) alih-alih mencari jarak"
+        },
+        {
+          "teks": "4",
+          "alasan": "menjawab jarak titik puncak ke salah satu titik potong (setengah jarak)"
+        },
+        {
+          "teks": "15",
+          "alasan": "mengambil konstanta $c$ sebagai jarak"
+        }
+      ],
+      "pembahasan": "Akar $x=5$ dan $x=-3$. Jarak $=|5-(-3)|=8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 182,
+        "kutipan": "Fungsi kuadrat digunakan dalam berbagai bidang kehidupan, seperti olahraga, bangunan, ekonomi, kesehatan, dan lainnya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cerita waktu mendarat",
+      "alasan_level": "menyetel $h(t)=0$, memfaktorkan, lalu memilih akar yang bermakna",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bola dilempar ke atas dari atap gedung. Ketinggian bola dinyatakan oleh $h(t)=-5t^2+10t+15$ meter dengan $t$ dalam detik setelah dilempar. Bola mencapai tanah setelah ... detik.",
+      "jawaban_benar": "3",
+      "alasan_benar": "$h(t)=-5(t-3)(t+1)=0$, $t=3$ (nilai $t=-1$ tidak mungkin)",
+      "distraktor": [
+        {
+          "teks": "1",
+          "alasan": "menjawab waktu bola mencapai titik tertinggi ($t=-b/2a$)"
+        },
+        {
+          "teks": "15",
+          "alasan": "menjawab tinggi awal bola (nilai $h(0)$), bukan waktu"
+        },
+        {
+          "teks": "20",
+          "alasan": "menjawab tinggi maksimum bola, bukan waktu"
+        }
+      ],
+      "pembahasan": "$-5t^2+10t+15=0 \\Rightarrow t^2-2t-3=0 \\Rightarrow (t-3)(t+1)=0$. Waktu positif $t=3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b05-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 170,
+        "kutipan": "fungsi kuadrat terbuka ke atas jika"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "analisis karakteristik grafik",
+      "alasan_level": "menggabungkan tanda $a$, diskriminan, dan nilai puncak untuk menilai pernyataan, empat langkah",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang grafik fungsi $f(x)=-x^2+4x-7$ adalah ....",
+      "jawaban_benar": "Terbuka ke bawah, tidak memotong sumbu $x$, dan nilai maksimumnya $-3$",
+      "alasan_benar": "$a=-1<0$ terbuka ke bawah; $D=16-28=-12<0$ tanpa titik potong; $f(2)=-3$ nilai maksimum",
+      "distraktor": [
+        {
+          "teks": "Terbuka ke bawah, memotong sumbu $x$ di dua titik, dan nilai maksimumnya $-3$",
+          "alasan": "mengira $D>0$ karena nilai maksimum diabaikan terhadap diskriminan negatif"
+        },
+        {
+          "teks": "Terbuka ke atas, tidak memotong sumbu $x$, dan nilai minimumnya $-3$",
+          "alasan": "salah tanda $a$ sehingga arah dan jenis ekstrem tertukar"
+        },
+        {
+          "teks": "Terbuka ke bawah, tidak memotong sumbu $x$, dan nilai maksimumnya $-7$",
+          "alasan": "mengambil konstanta $c$ sebagai nilai maksimum"
+        }
+      ],
+      "pembahasan": "$a=-1$ (ke bawah). $D=16-28=-12<0$. Puncak $x=2$, $f(2)=-4+8-7=-3$ maksimum.",
+      "catatan": null
+    }
+  ]
+}

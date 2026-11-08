@@ -7,19 +7,72 @@ atau layanan mengalami 503 (`fallbackOn503=true`),
 Setup key Groq ada di [41_GROQ_EXERCISE_VALIDATION.md](41_GROQ_EXERCISE_VALIDATION.md);
 alur pergantian dan checkpoint bersama ada di
 [42_GEMINI_GROQ_FAILOVER.md](42_GEMINI_GROQ_FAILOVER.md). Konfigurasi
-aktif saat ini hanya memproses **`kelas8/batch01`**, sesuai pembatasan sementara
-pada 27 Oktober 2026. Kelas lain menunggu instruksi berikutnya. Konfigurasi
-sebelum pembatasan disimpan di `runs/nightly_pipeline/config_before_kelas8_*.json`.
-Runner tetap mendukung `kelas5`, `kelas7`, `kelas8`, `kelas9`, `kelas10`, `kelas11`,
-`kelas11_tl`, `kelas12`, dan `kelas12_tl`. Kelas 6 belum memiliki sumber exercise.
+aktif mencakup **semua kelas exercise: kelas 5–12, termasuk 11 TL dan 12 TL**.
+Batch baru hanya diproses setelah penanda `extraction_ready.json` tersedia dan
+hash sumbernya cocok. `bootstrapJobs` tetap menunjuk kelas12_tl/batch01 untuk resume.
 Ini runner CLI lokal, bukan endpoint HTTP ekstraksi async baru.
 
-Kelas 11 reguler dan 12 TL sudah didukung sebagai jalur terpisah. Pada inventaris
-27 Oktober 2026, kedua jalur itu belum mempunyai sumber exercise. `status` dan
-run baru mencatat `waitingClasses[].status=waiting_for_source`; file pretest tidak
-dipakai sebagai pengganti exercise. Setelah sumber tersedia, gunakan `ready`
-untuk kelas/jalur yang sesuai agar batch ditemukan. CLI `validate_exercise_batch`
+`status` mencatat `waitingClasses[].status=waiting_for_source` untuk kelas tanpa
+sumber, dan `waiting_for_ready` untuk sumber yang belum ditandai selesai.
+File pretest tidak dipakai sebagai pengganti exercise. CLI `validate_exercise_batch`
 tanpa `--classes` hanya memilih sumber exercise beserta metadata yang tersedia.
+
+### Handoff otomatis dari generator
+
+`scripts/run_exercise_queue.py` kini memeriksa seluruh slot kurikulum per buku
+setelah antrean berakhir (termasuk saat antrean sudah kosong). Buku yang semua
+slotnya selesai dan lolos verifikasi diekspor otomatis. Ekspor baru menulis
+`extraction_ready.json` jika semua kombinasi bab/subbab/level tersedia, ID cocok
+dengan metadata, tidak ada berkas dilewati, dan semua soal berupa teks.
+Antrean terbatas atau terhenti tidak menandai buku yang masih kurang sebagai siap.
+
+CLI `python -m app.services.exercise.export --book kelas7 --batch 2` juga menulis
+penanda lalu memanggil pipeline validasi untuk batch lengkap. Pemanggilan fungsi
+`export_batch` dari kode hanya mengekspor dan menandai; tidak membuat panggilan LLM.
+Generator satu slot `generate_exercise_9router.py` tetap menghasilkan slot saja;
+gunakan antrean atau CLI export untuk handoff batch. Pipeline memverifikasi hash,
+memakai lock, melanjutkan checkpoint, dan memperbarui `hasil_validasi` serta
+ekspor operasional setelah batch lengkap. Jadwal 01.00 WIB menjadi jalur resume
+dan pemeriksaan batch siap berikutnya. Tidak ada watcher folder yang berjalan terus.
+
+### Batas otomasi IRT dan fine-tuning
+
+Setiap eksekusi pipeline menjalankan screening CTT/IRT terhadap assessment lokal
+yang cocok dengan kelas aktif, termasuk saat validasi LLM terhambat. Estimasi
+IRT menunggu respons siswa dan gate kelayakan; file ekspor efektif ada di
+`runs/nightly_pipeline/empirical/`. Keputusan `retain`, `collect_more_events`,
+dan `needs_ai_review` dicatat otomatis oleh AssessmentStore.
+
+Fine-tuning challenger sudah disambungkan melalui `scripts/empirical_finetuning.py`
+dan `empiricalFineTuning` di konfigurasi nightly (aktif, 3 epoch, batas 6 jam
+per training). Sesudah screening, runner membaca ulang analisis yang tersimpan,
+memeriksa checksum, asal respons `server_scored`, gate readiness, status IRT
+`estimated`, keputusan `retain`, serta kecocokan versi/hash konten.
+
+Dataset baru dibentuk dari snapshot AI silver terverifikasi yang dipakai
+assessment tersebut. Hanya target difficulty yang diperbarui; label kognitif
+dan knowledge tetap, label awal dicatat pada provenance. Populasi/assessment
+berbeda mendapatkan versi dataset/model berbeda. Versi yang ditahan dikeluarkan,
+soal expansion tidak otomatis masuk training, dan pembagian train/validation/test
+asal dipertahankan. Seluruh gate minimum label dan integritas split tetap berlaku.
+
+`runs/nightly_pipeline/fine_tuning/<versi>/snapshot.json` menyimpan target baru;
+`status.json`, `training.log`, dan folder `model/` mencatat proses serta evaluasi.
+Nama kolom difficulty pada trainer lama adalah `intendedDifficulty`, tetapi
+snapshot ini secara eksplisit berprovenance
+`irt_empirical_difficulty_with_ai_cognitive_labels`, `researchOnly=true`, dan
+bukan snapshot AI silver untuk delivery. Master soal serta snapshot awal tidak
+ditimpa. Snapshot IRT baru dengan target identik memakai kembali hasil training
+sebelumnya sesudah checksum artifact diverifikasi; tidak melatih ulang tanpa
+perubahan label. Jika data belum cukup, status `waiting_for_training_data`;
+jika belum ada IRT layak, `waiting_for_qualified_irt`.
+
+Training memakai LoRA IndoBERT melalui `app.training.v2.train_lora`, menyimpan
+evaluasi dan kalibrasi sebagai challenger. Penggantian model produksi belum
+otomatis: difficulty empiris berlaku untuk populasi yang diukur, sedangkan model
+layanan utama mengeluarkan difficulty awal. Pembaruan file lokal bukan sinkronisasi
+otomatis ke database backend eksternal. Tidak ada pemanggilan generator soal pada
+tahap feedback/training ini.
 
 ```mermaid
 flowchart LR

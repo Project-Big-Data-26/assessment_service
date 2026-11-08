@@ -429,6 +429,524 @@
       "pembahasan": "Laju = 6 ÷ 40 = 0,15 km per menit. Waktu untuk 15 km = 15 ÷ 0,15 = 100 menit.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "827ff88a2b9f24d2709386ba",
+        "teks": "Nisa menyiram tanaman selama 1 jam 20 menit. Dito menyiram selama 32 menit. Berapa kali durasi Nisa dibandingkan durasi Dito?",
+        "jawaban": "2,5 kali",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "penerapan_rasio",
+      "alasan_level": "Target medium; variasi konsep penerapan rasio. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Rasio bibit mawar terhadap melati adalah 11:2. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+      "jawaban_benar": "$66$",
+      "alasan_benar": "Jumlah bagian rasio 13. Tiap bagian bernilai 6. Bibit mawar 11×6=66.",
+      "distraktor": [
+        {
+          "teks": "$67$",
+          "alasan": "Pilihan $67$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan $65$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$68$",
+          "alasan": "Pilihan $68$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $66$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah bagian rasio 13. Tiap bagian bernilai 6. Bibit mawar 11×6=66.",
+      "catatan": "codex-replenishment:kelas6-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-c-medium-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a5e10e75edda51a0858e43e",
+        "teks": "Di kebun, rasio tanaman bunga terhadap tanaman sayur adalah 7 : 8. Berapa rasio tanaman bunga terhadap seluruh tanaman?",
+        "jawaban": "7 : 15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${19}$ barang berharga ${342000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${28}$ barang berharga ${196000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$11000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $7000$. Selisih hasilnya $11000$.",
+      "distraktor": [
+        {
+          "teks": "$11001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $7000$. Selisih hasilnya $11000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c469f84033f5a762ee930b59",
+        "teks": "Di kelas ada 12 siswa perempuan dan 18 siswa laki-laki. Berapa rasio siswa perempuan terhadap siswa laki-laki dalam bentuk paling sederhana?",
+        "jawaban": "2 : 3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${16}$ barang berharga ${96000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${6}$ barang berharga ${96000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$10000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $6000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $16000$. Selisih hasilnya $10000$.",
+      "distraktor": [
+        {
+          "teks": "$10001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $6000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $16000$. Selisih hasilnya $10000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61376daa64e4a306f046dbd8",
+        "teks": "Rani belajar selama 2 jam. Berapa menit lama Rani belajar?",
+        "jawaban": "120 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${23}$ barang berharga ${276000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${5}$ barang berharga ${40000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$4000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$. Selisih hasilnya $4000$.",
+      "distraktor": [
+        {
+          "teks": "$4001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$. Selisih hasilnya $4000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0c7e69a7989759e06ebf7ee",
+        "teks": "Rasio bibit bunga dan bibit sayur yang terjual adalah 6 : 7. Berapa rasio bibit bunga terhadap seluruh bibit yang terjual?",
+        "jawaban": "6 : 13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${16}$ barang berharga ${48000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${24}$ barang berharga ${360000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$12000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$. Selisih hasilnya $12000$.",
+      "distraktor": [
+        {
+          "teks": "$12001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$. Selisih hasilnya $12000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9c1b0dbd4b17c73a7ffb7ee",
+        "teks": "Jumlah bibit mawar dan melati di sebuah toko adalah 117. Rasio bibit mawar terhadap bibit melati adalah 5 : 8. Berapa banyak bibit masing-masing jenis?",
+        "jawaban": "Mawar 45 bibit dan melati 72 bibit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${3}$ barang berharga ${36000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${17}$ barang berharga ${272000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$4000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $16000$. Selisih hasilnya $4000$.",
+      "distraktor": [
+        {
+          "teks": "$4001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $16000$. Selisih hasilnya $4000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "238f4d78e1143f8fe197f070",
+        "teks": "Dina menempuh jarak 3 km dalam waktu 40 menit dengan kecepatan tetap. Berapa waktu yang diperlukan untuk menempuh 12 km?",
+        "jawaban": "160 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${27}$ barang berharga ${297000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${30}$ barang berharga ${120000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$7000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $4000$. Selisih hasilnya $7000$.",
+      "distraktor": [
+        {
+          "teks": "$7001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $4000$. Selisih hasilnya $7000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f4242836bce8f53dbc758234",
+        "teks": "Dengan kecepatan tetap, Bima menempuh 2 km dalam 45 menit. Berapa jarak yang ditempuhnya selama 3 jam?",
+        "jawaban": "8 km",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${24}$ barang berharga ${72000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${29}$ barang berharga ${319000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$8000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Selisih hasilnya $8000$.",
+      "distraktor": [
+        {
+          "teks": "$8001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Selisih hasilnya $8000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b89bfbdcfb1baf1f99043ce5",
+        "teks": "Berapa hari dalam 6 minggu?",
+        "jawaban": "42 hari",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${20}$ barang berharga ${240000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${4}$ barang berharga ${56000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$2000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $14000$. Selisih hasilnya $2000$.",
+      "distraktor": [
+        {
+          "teks": "$2001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $14000$. Selisih hasilnya $2000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2010b8e36d984411aa76ac2",
+        "teks": "Total bibit tanaman hias dan tanaman obat yang terjual sebanyak 144 bibit. Rasio tanaman hias terhadap tanaman obat adalah 7 : 5. Berapa banyak bibit masing-masing jenis?",
+        "jawaban": "Tanaman hias 84 bibit dan tanaman obat 60 bibit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${19}$ barang berharga ${57000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${26}$ barang berharga ${182000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$4000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $7000$. Selisih hasilnya $4000$.",
+      "distraktor": [
+        {
+          "teks": "$4001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $7000$. Selisih hasilnya $4000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87c52f4a137a69cbc108a1d7",
+        "teks": "Sinta membaca selama 3 jam dan Dodi membaca selama 45 menit. Berapa rasio lama membaca Sinta terhadap Dodi dalam bentuk paling sederhana?",
+        "jawaban": "4 : 1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${26}$ barang berharga ${312000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${21}$ barang berharga ${231000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$1000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Selisih hasilnya $1000$.",
+      "distraktor": [
+        {
+          "teks": "$1001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Selisih hasilnya $1000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7815d8afc5d8cb1dda1ad68f",
+        "teks": "Jumlah peserta lomba 650 orang, terdiri atas siswa dan guru. Rasio siswa terhadap guru adalah 7 : 6. Raka berkata ada 350 siswa. Apakah hitungan Raka benar? Pilih jumlah siswa yang benar.",
+        "jawaban": "350 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${30}$ barang berharga ${600000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${17}$ barang berharga ${153000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$11000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $20000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $9000$. Selisih hasilnya $11000$.",
+      "distraktor": [
+        {
+          "teks": "$11001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $20000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $9000$. Selisih hasilnya $11000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54925e686a1cf5a1754c6bfb",
+        "teks": "Masa panen tanaman A adalah 8 minggu. Masa panen tanaman B adalah 2 tahun. Gunakan 1 tahun = 52 minggu.\n\nDito menyatakan rasio masa panen tanaman A terhadap tanaman B adalah 1 : 13. Apakah pernyataan itu benar? Pilih rasio paling sederhana yang tepat.",
+        "jawaban": "1 : 13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${10}$ barang berharga ${170000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${25}$ barang berharga ${50000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$15000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $17000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $2000$. Selisih hasilnya $15000$.",
+      "distraktor": [
+        {
+          "teks": "$15001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $17000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $2000$. Selisih hasilnya $15000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "342bc6d2fc6c75bcf967f09d",
+        "teks": "Di toko, rasio pot kaktus terhadap pot lidah mertua harus 3 : 5. Semua pot dihitung satu per satu.\n\nManakah catatan jumlah pot yang memenuhi rasio tersebut dan memiliki total paling banyak 96 pot?",
+        "jawaban": "Kaktus 36 pot dan lidah mertua 60 pot",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_penerapan_rasio_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Paket berisi ${31}$ barang berharga ${341000}$ rupiah. Berapa harga satu barang? Situasi II: Paket berisi ${23}$ barang berharga ${322000}$ rupiah. Berapa harga satu barang? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$3000$",
+      "alasan_benar": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $14000$. Selisih hasilnya $3000$.",
+      "distraktor": [
+        {
+          "teks": "$3001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$. Situasi II: Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $14000$. Selisih hasilnya $3000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-medium-bt01-024"
     }
   ]
 }

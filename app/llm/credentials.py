@@ -21,7 +21,13 @@ def _keys(provider, values):
         first = str(values.get(prefix + "_1") or values.get(prefix) or "").strip()
     keys = {1: first}
     if provider in ("gemini", "groq"):
-        keys.update({slot: _value(f"{prefix}_{slot}", values) for slot in (2, 3)})
+        slots = {2, 3}
+        for name in set(values) | set(os.environ):
+            if name.startswith(prefix + "_"):
+                suffix = name[len(prefix) + 1:]
+                if suffix.isdigit() and str(int(suffix)) == suffix and int(suffix) > 1:
+                    slots.add(int(suffix))
+        keys.update({slot: _value(f"{prefix}_{slot}", values) for slot in sorted(slots)})
     return keys
 
 
@@ -41,7 +47,7 @@ def selected_api_key(provider, values):
     if selected is None:
         slots = credential_slots(provider, values)
         return keys[slots[0]] if slots else ""
-    if selected not in ("1", "2", "3") or int(selected) not in keys or not keys[int(selected)]:
+    if not selected.isdigit() or str(int(selected)) != selected or int(selected) not in keys or not keys[int(selected)]:
         raise ValueError(f"{provider} credential slot is invalid or empty")
     return keys[int(selected)]
 

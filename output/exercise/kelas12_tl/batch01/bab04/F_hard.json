@@ -765,6 +765,3778 @@
       "pembahasan": "Misalkan $X$ adalah banyaknya sensor yang berhasil mendeteksi gas, maka $X \\sim B(5;\\, 0{,}6)$ dengan $q = 1 - 0{,}6 = 0{,}4$.\n\nPeluang alarm berbunyi pada sistem lama: $P_{\\text{lama}} = P(X \\ge 3) = P(X = 3) + P(X = 4) + P(X = 5)$.\nPeluang alarm berbunyi pada sistem baru: $P_{\\text{baru}} = P(X \\ge 4) = P(X = 4) + P(X = 5)$.\n\nPenurunan peluang berbunyinya alarm adalah:\n$\\Delta P = P_{\\text{lama}} - P_{\\text{baru}} = [P(X = 3) + P(X = 4) + P(X = 5)] - [P(X = 4) + P(X = 5)] = P(X = 3)$\n\nMaka kita cukup menghitung peluang tepat $3$ sensor mendeteksi gas:\n$P(X = 3) = \\binom{5}{3} (0{,}6)^3 (0{,}4)^{5-3}$\n$P(X = 3) = 10 \\cdot (0{,}216) \\cdot (0{,}16)$\n$P(X = 3) = 10 \\cdot 0{,}03456 = 0{,}3456$.\n\nJadi, penurunan peluang berbunyinya alarm adalah $0{,}3456$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 4 percobaan independen dengan peluang sukses $\\frac{1}{2}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{15}{16}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(1/2)^j(1-1/2)^(4-j)=15/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{16}$",
+          "alasan": "Nilai $\\frac{31}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{16}$",
+          "alasan": "Nilai $- \\frac{1}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{47}{16}$",
+          "alasan": "Nilai $\\frac{47}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(1/2)^j(1-1/2)^(4-j)=15/16.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{94235199}{100000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,8: ΣC(8,j)(3/10)^j(1-3/10)^(8-j)=94235199/100000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{194235199}{100000000}$",
+          "alasan": "Nilai $\\frac{194235199}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{5764801}{100000000}$",
+          "alasan": "Nilai $- \\frac{5764801}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{294235199}{100000000}$",
+          "alasan": "Nilai $\\frac{294235199}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,8: ΣC(8,j)(3/10)^j(1-3/10)^(8-j)=94235199/100000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{9997813}{10000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=9997813/10000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19997813}{10000000}$",
+          "alasan": "Nilai $\\frac{19997813}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2187}{10000000}$",
+          "alasan": "Nilai $- \\frac{2187}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{29997813}{10000000}$",
+          "alasan": "Nilai $\\frac{29997813}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=9997813/10000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 4 sukses?",
+      "jawaban_benar": "$\\frac{1701}{3125}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=4,...,6: ΣC(6,j)(3/5)^j(1-3/5)^(6-j)=1701/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4826}{3125}$",
+          "alasan": "Nilai $\\frac{4826}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1424}{3125}$",
+          "alasan": "Nilai $- \\frac{1424}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7951}{3125}$",
+          "alasan": "Nilai $\\frac{7951}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=4,...,6: ΣC(6,j)(3/5)^j(1-3/5)^(6-j)=1701/3125.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+      "jawaban_benar": "$\\frac{761}{9765625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=8,...,10: ΣC(10,j)(1/5)^j(1-1/5)^(10-j)=761/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9766386}{9765625}$",
+          "alasan": "Nilai $\\frac{9766386}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{9764864}{9765625}$",
+          "alasan": "Nilai $- \\frac{9764864}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{19532011}{9765625}$",
+          "alasan": "Nilai $\\frac{19532011}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=8,...,10: ΣC(10,j)(1/5)^j(1-1/5)^(10-j)=761/9765625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 3 sukses?",
+      "jawaban_benar": "$\\frac{267424}{390625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=3,...,8: ΣC(8,j)(2/5)^j(1-2/5)^(8-j)=267424/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{658049}{390625}$",
+          "alasan": "Nilai $\\frac{658049}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{123201}{390625}$",
+          "alasan": "Nilai $- \\frac{123201}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1048674}{390625}$",
+          "alasan": "Nilai $\\frac{1048674}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=3,...,8: ΣC(8,j)(2/5)^j(1-2/5)^(8-j)=267424/390625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{882351}{1000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,6: ΣC(6,j)(3/10)^j(1-3/10)^(6-j)=882351/1000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1882351}{1000000}$",
+          "alasan": "Nilai $\\frac{1882351}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{117649}{1000000}$",
+          "alasan": "Nilai $- \\frac{117649}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{2882351}{1000000}$",
+          "alasan": "Nilai $\\frac{2882351}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,6: ΣC(6,j)(3/10)^j(1-3/10)^(6-j)=882351/1000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 2 sukses?",
+      "jawaban_benar": "$\\frac{401998383}{500000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=2,...,9: ΣC(9,j)(3/10)^j(1-3/10)^(9-j)=401998383/500000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{901998383}{500000000}$",
+          "alasan": "Nilai $\\frac{901998383}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{98001617}{500000000}$",
+          "alasan": "Nilai $- \\frac{98001617}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1401998383}{500000000}$",
+          "alasan": "Nilai $\\frac{1401998383}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=2,...,9: ΣC(9,j)(3/10)^j(1-3/10)^(9-j)=401998383/500000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{231415583}{500000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=231415583/500000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{731415583}{500000000}$",
+          "alasan": "Nilai $\\frac{731415583}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{268584417}{500000000}$",
+          "alasan": "Nilai $- \\frac{268584417}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1231415583}{500000000}$",
+          "alasan": "Nilai $\\frac{1231415583}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=231415583/500000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 5 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 3 sukses?",
+      "jawaban_benar": "$\\frac{4077}{25000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=3,...,5: ΣC(5,j)(3/10)^j(1-3/10)^(5-j)=4077/25000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29077}{25000}$",
+          "alasan": "Nilai $\\frac{29077}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{20923}{25000}$",
+          "alasan": "Nilai $- \\frac{20923}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{54077}{25000}$",
+          "alasan": "Nilai $\\frac{54077}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=3,...,5: ΣC(5,j)(3/10)^j(1-3/10)^(5-j)=4077/25000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 6 sukses?",
+      "jawaban_benar": "$\\frac{5989}{1953125}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=6,...,9: ΣC(9,j)(1/5)^j(1-1/5)^(9-j)=5989/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1959114}{1953125}$",
+          "alasan": "Nilai $\\frac{1959114}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1947136}{1953125}$",
+          "alasan": "Nilai $- \\frac{1947136}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{3912239}{1953125}$",
+          "alasan": "Nilai $\\frac{3912239}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=6,...,9: ΣC(9,j)(1/5)^j(1-1/5)^(9-j)=5989/1953125.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{6620049}{625000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/10)^j(1-3/10)^(10-j)=6620049/625000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{631620049}{625000000}$",
+          "alasan": "Nilai $\\frac{631620049}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{618379951}{625000000}$",
+          "alasan": "Nilai $- \\frac{618379951}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1256620049}{625000000}$",
+          "alasan": "Nilai $\\frac{1256620049}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/10)^j(1-3/10)^(10-j)=6620049/625000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{16807}{40000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,6: ΣC(6,j)(7/10)^j(1-7/10)^(6-j)=16807/40000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{56807}{40000}$",
+          "alasan": "Nilai $\\frac{56807}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{23193}{40000}$",
+          "alasan": "Nilai $- \\frac{23193}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{96807}{40000}$",
+          "alasan": "Nilai $\\frac{96807}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,6: ΣC(6,j)(7/10)^j(1-7/10)^(6-j)=16807/40000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{1}{2}$, berapa peluang terdapat paling sedikit 6 sukses?",
+      "jawaban_benar": "$\\frac{37}{256}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=6,...,8: ΣC(8,j)(1/2)^j(1-1/2)^(8-j)=37/256.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{293}{256}$",
+          "alasan": "Nilai $\\frac{293}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{219}{256}$",
+          "alasan": "Nilai $- \\frac{219}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{549}{256}$",
+          "alasan": "Nilai $\\frac{549}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=6,...,8: ΣC(8,j)(1/2)^j(1-1/2)^(8-j)=37/256.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{1504}{15625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(2/5)^j(1-2/5)^(7-j)=1504/15625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17129}{15625}$",
+          "alasan": "Nilai $\\frac{17129}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{14121}{15625}$",
+          "alasan": "Nilai $- \\frac{14121}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{32754}{15625}$",
+          "alasan": "Nilai $\\frac{32754}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(2/5)^j(1-2/5)^(7-j)=1504/15625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{286497}{390625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(3/5)^j(1-3/5)^(9-j)=286497/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{677122}{390625}$",
+          "alasan": "Nilai $\\frac{677122}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{104128}{390625}$",
+          "alasan": "Nilai $- \\frac{104128}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1067747}{390625}$",
+          "alasan": "Nilai $\\frac{1067747}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(3/5)^j(1-3/5)^(9-j)=286497/390625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{45059567}{50000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=45059567/50000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{95059567}{50000000}$",
+          "alasan": "Nilai $\\frac{95059567}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{4940433}{50000000}$",
+          "alasan": "Nilai $- \\frac{4940433}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{145059567}{50000000}$",
+          "alasan": "Nilai $\\frac{145059567}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=45059567/50000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{1294139}{2000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=1294139/2000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3294139}{2000000}$",
+          "alasan": "Nilai $\\frac{3294139}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{705861}{2000000}$",
+          "alasan": "Nilai $- \\frac{705861}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5294139}{2000000}$",
+          "alasan": "Nilai $\\frac{5294139}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=1294139/2000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{3733209}{9765625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/5)^j(1-3/5)^(10-j)=3733209/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13498834}{9765625}$",
+          "alasan": "Nilai $\\frac{13498834}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{6032416}{9765625}$",
+          "alasan": "Nilai $- \\frac{6032416}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{23264459}{9765625}$",
+          "alasan": "Nilai $\\frac{23264459}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/5)^j(1-3/5)^(10-j)=3733209/9765625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{544}{625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(2/5)^j(1-2/5)^(4-j)=544/625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1169}{625}$",
+          "alasan": "Nilai $\\frac{1169}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{81}{625}$",
+          "alasan": "Nilai $- \\frac{81}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1794}{625}$",
+          "alasan": "Nilai $\\frac{1794}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(2/5)^j(1-2/5)^(4-j)=544/625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e498be34a815add6e65074c1",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{3}{10}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7424}{1953125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1945701}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{55115776}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7424}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{3712}{1953125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fe54d5dbdb548f762a6b720",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{3}{10}$. Tentukan $P(X=9)$.",
+        "jawaban": "$\\frac{137781}{1000000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{24}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{41553}{390625}$",
+      "alasan_benar": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{349072}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1726651809}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{41553}{390625}$."
+        },
+        {
+          "teks": "$\\frac{41553}{781250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{112}{243}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{131}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{12544}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{112}{243}$."
+        },
+        {
+          "teks": "$\\frac{56}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94af6823af16d247691128a1",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{3733209}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{20}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2048}{19683}$",
+      "alasan_benar": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17635}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4194304}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2048}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1024}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{5}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{11}{243}$",
+      "alasan_benar": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{232}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{243}$."
+        },
+        {
+          "teks": "$\\frac{11}{486}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "964a7253e7b866d334625299",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{6}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=4$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{16384}{9765625}$",
+      "alasan_benar": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9749241}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{268435456}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{16384}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{8192}{9765625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{7}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{5}{729}$",
+      "alasan_benar": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{724}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{25}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{5}{729}$."
+        },
+        {
+          "teks": "$\\frac{5}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{27}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{137781}{1953125}$",
+      "alasan_benar": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1815344}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{18983603961}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{137781}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{137781}{3906250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{4}{3}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{13}{729}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{716}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{729}$."
+        },
+        {
+          "teks": "$\\frac{13}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=2$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2816}{19683}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16867}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{7929856}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2816}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1408}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{452709}{9765625}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9312916}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{204945438681}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{452709}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{452709}{19531250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{729}{3125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2396}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{531441}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{729}{3125}$."
+        },
+        {
+          "teks": "$\\frac{729}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e77dba4467cc3dba39d26524",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{1}{5}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{96}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{64}{243}$",
+      "alasan_benar": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{179}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4096}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{64}{243}$."
+        },
+        {
+          "teks": "$\\frac{32}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{16}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{3328}{390625}$",
+      "alasan_benar": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{387297}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{11075584}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3328}{390625}$."
+        },
+        {
+          "teks": "$\\frac{1664}{390625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8c376fa0a7a5142de14746",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{286497}{390625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=3$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1053}{3125}$",
+      "alasan_benar": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2072}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1108809}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1053}{3125}$."
+        },
+        {
+          "teks": "$\\frac{1053}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4682f8a03b8106306b66502",
+        "teks": "Dari 7 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{1504}{15625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{12}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{128}{3125}$",
+      "alasan_benar": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2997}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16384}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{128}{3125}$."
+        },
+        {
+          "teks": "$\\frac{64}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8663204306fdde2df2a35770",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{12}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7}{19683}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19676}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{49}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7}{19683}$."
+        },
+        {
+          "teks": "$\\frac{7}{39366}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1472}{78125}$",
+      "alasan_benar": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{76653}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{2166784}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1472}{78125}$."
+        },
+        {
+          "teks": "$\\frac{736}{78125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb6709b90ace409ade3b74ac",
+        "teks": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{882351}{1000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{21}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{12393}{78125}$",
+      "alasan_benar": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65732}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{153586449}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{12393}{78125}$."
+        },
+        {
+          "teks": "$\\frac{12393}{156250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{272}{3125}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2853}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{73984}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{272}{3125}$."
+        },
+        {
+          "teks": "$\\frac{136}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{108864}{390625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{108864}{390625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{281761}{390625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{54432}{390625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{499489}{781250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 281761/781250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{108864}{390625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-059",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ec3506810b0195de543e4e04.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "24/5"
+            ],
+            [
+              "V",
+              "48/25"
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"24/5\"], [\"V\", \"48/25\"], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{306432}{95367431640625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{306432}{95367431640625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{95367431334193}{95367431640625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{153216}{95367431640625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{95367431947057}{190734863281250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 95367431334193/190734863281250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{306432}{95367431640625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-060",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/49ea378d1a2018047c2ebe5a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "21/5"
+            ],
+            [
+              "V",
+              "84/25"
+            ],
+            [
+              "k",
+              17
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"21/5\"], [\"V\", \"84/25\"], [\"k\", 17]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{4100096}{6103515625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{4100096}{6103515625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6099415529}{6103515625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2050048}{6103515625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{6107615721}{12207031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6099415529/12207031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{4100096}{6103515625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/e15ccfba1019474a7f120559.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              12
+            ],
+            [
+              "V",
+              "12/5"
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", 12], [\"V\", \"12/5\"], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{1365}{32768}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1365}{32768}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31403}{32768}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1365}{65536}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{34133}{65536}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 31403/65536 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1365}{32768}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c427272ff89b541d1e80c8d3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "15/2"
+            ],
+            [
+              "V",
+              "15/4"
+            ],
+            [
+              "k",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"15/2\"], [\"V\", \"15/4\"], [\"k\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e4eaeaaa1336921ba73a3c1",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{6537392199191511}{62500000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{6537392199191511}{62500000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{55962607800808489}{62500000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{6537392199191511}{125000000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{69037392199191511}{125000000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 55962607800808489/125000000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{6537392199191511}{62500000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/64325dd4fe6daee7f99eb02b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "63/5"
+            ],
+            [
+              "V",
+              "189/50"
+            ],
+            [
+              "k",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"63/5\"], [\"V\", \"189/50\"], [\"k\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46ad66e1686a2264b19c9611",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{3}{10}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{3}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{33}{2048}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{33}{2048}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2015}{2048}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{33}{4096}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2081}{4096}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2015/4096 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{33}{2048}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f87776daff078943735f1909.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              6
+            ],
+            [
+              "V",
+              3
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", 6], [\"V\", 3], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0a8952206a4fa6c513f1864",
+        "teks": "X berdistribusi binomial dengan $n=8$ dan $p=\\frac{3}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{24}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{657129996288}{3814697265625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{657129996288}{3814697265625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3157567269337}{3814697265625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{328564998144}{3814697265625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4471827261913}{7629394531250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3157567269337/7629394531250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{657129996288}{3814697265625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/3b3e54847225573fad49cbfa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "18/5"
+            ],
+            [
+              "V",
+              "72/25"
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"18/5\"], [\"V\", \"72/25\"], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8663204306fdde2df2a35770",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{12}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{7168}{30517578125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{7168}{30517578125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{30517570957}{30517578125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3584}{30517578125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{30517585293}{61035156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 30517570957/61035156250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{7168}{30517578125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d02b5413a8ff309f90f40463.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "16/5"
+            ],
+            [
+              "V",
+              "64/25"
+            ],
+            [
+              "k",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"16/5\"], [\"V\", \"64/25\"], [\"k\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{45927}{10000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{45927}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9954073}{10000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{45927}{20000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10045927}{20000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9954073/20000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{45927}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/de79774269b46836cd4c1d73.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "4/5"
+            ],
+            [
+              "V",
+              "18/25"
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"4/5\"], [\"V\", \"18/25\"], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d033a18d1c147cc1a74dc3e",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{1}{2}$. Berapa nilai harapan X?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{945728784}{6103515625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{945728784}{6103515625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5157786841}{6103515625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{472864392}{6103515625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7049244409}{12207031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5157786841/12207031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{945728784}{6103515625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/70113e4e709bca487a03e7ef.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "42/5"
+            ],
+            [
+              "V",
+              "84/25"
+            ],
+            [
+              "k",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"42/5\"], [\"V\", \"84/25\"], [\"k\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "297c215f138c1c1069336fff",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{18}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{3087}{10000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3087}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6913}{10000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3087}{20000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{13087}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6913/20000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3087}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-069",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b0cd554ae52e1406f3afa320.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "7/2"
+            ],
+            [
+              "V",
+              "21/20"
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"7/2\"], [\"V\", \"21/20\"], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e498be34a815add6e65074c1",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{3}{10}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{96757023244288}{2384185791015625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{96757023244288}{2384185791015625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2287428767771337}{2384185791015625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{48378511622144}{2384185791015625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2480942814259913}{4768371582031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2287428767771337/4768371582031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{96757023244288}{2384185791015625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-070",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/88029ae3faf131563b81aaa1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "88/5"
+            ],
+            [
+              "V",
+              "88/25"
+            ],
+            [
+              "k",
+              21
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"88/5\"], [\"V\", \"88/25\"], [\"k\", 21]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "964a7253e7b866d334625299",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{6}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{386889048}{6103515625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{386889048}{6103515625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5716626577}{6103515625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{193444524}{6103515625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{6490404673}{12207031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5716626577/12207031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{386889048}{6103515625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-071",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7b96af674ab21ada8179bab0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              6
+            ],
+            [
+              "V",
+              "18/5"
+            ],
+            [
+              "k",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", 6], [\"V\", \"18/5\"], [\"k\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25a5033cfe7d2b85b630f88f",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{1}{2}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{7}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{8567029273257}{200000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{8567029273257}{200000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{191432970726743}{200000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8567029273257}{400000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{208567029273257}{400000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 191432970726743/400000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{8567029273257}{200000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-072",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9ac4491df599d377c9f2b515.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "3/2"
+            ],
+            [
+              "V",
+              "27/20"
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"3/2\"], [\"V\", \"27/20\"], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a908c180d5887acad4ed2752",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{521404416}{3814697265625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{521404416}{3814697265625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3814175861209}{3814697265625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{260702208}{3814697265625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3815218670041}{7629394531250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3814175861209/7629394531250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{521404416}{3814697265625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-073",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/893b696ae5c122fd3d0a16a0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "72/5"
+            ],
+            [
+              "V",
+              "72/25"
+            ],
+            [
+              "k",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"72/5\"], [\"V\", \"72/25\"], [\"k\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32bb50385c88cf2c056cf8d0",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{3}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{12}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{1240029}{10000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1240029}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8759971}{10000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1240029}{20000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11240029}{20000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8759971/20000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1240029}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-074",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/44cd0b02c1c899a0f374d34b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "7/10"
+            ],
+            [
+              "V",
+              "63/100"
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"7/10\"], [\"V\", \"63/100\"], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62ac63174eb0270936d0a7ed",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{27}{500000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{27}{500000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{499973}{500000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{27}{1000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{500027}{1000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 499973/1000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{27}{500000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-075",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c90ab92f34e2815d2f6b9cbb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "3/5"
+            ],
+            [
+              "V",
+              "27/50"
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"3/5\"], [\"V\", \"27/50\"], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c617801b5086ad4bffb40209",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{3}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{21}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{5}{512}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{5}{512}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{507}{512}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{5}{1024}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{517}{1024}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 507/1024 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{5}{512}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-076",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/52c64d7bcbdab0130ea088c3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              5
+            ],
+            [
+              "V",
+              "5/2"
+            ],
+            [
+              "k",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", 5], [\"V\", \"5/2\"], [\"k\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d9a4f09866e1e4a7f846da0",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{85766121}{500000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{85766121}{500000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{414233879}{500000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{85766121}{1000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{585766121}{1000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 414233879/1000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{85766121}{500000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-077",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/fb239a5bc6fc8595efa34bba.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "27/10"
+            ],
+            [
+              "V",
+              "189/100"
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"27/10\"], [\"V\", \"189/100\"], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{156672}{762939453125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{156672}{762939453125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{762939296453}{762939453125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{78336}{762939453125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{762939609797}{1525878906250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 762939296453/1525878906250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{156672}{762939453125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-078",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/e76dab5a9e81d4201eaf2a6c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "18/5"
+            ],
+            [
+              "V",
+              "72/25"
+            ],
+            [
+              "k",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"18/5\"], [\"V\", \"72/25\"], [\"k\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b911c34ed25d1d5bd7cf92e3",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{7}{10}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{1323}{10000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{2470629}{10000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{2470629}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7529371}{10000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2470629}{20000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{12470629}{20000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 7529371/20000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{2470629}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-079",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c2f3be03794f92826b000a35.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "21/10"
+            ],
+            [
+              "V",
+              "147/100"
+            ],
+            [
+              "k",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"21/10\"], [\"V\", \"147/100\"], [\"k\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5727d06c63d81aae67545286",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{7}{10}$. Tentukan $P(X=1)$.",
+        "jawaban": "$\\frac{567}{20000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{3720087}{25000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3720087}{25000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21279913}{25000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3720087}{50000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{28720087}{50000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 21279913/50000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3720087}{25000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-080",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1dc4a3abda0ee80303b8c6a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "4/5"
+            ],
+            [
+              "V",
+              "18/25"
+            ],
+            [
+              "k",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"4/5\"], [\"V\", \"18/25\"], [\"k\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9538eb60839fd8f0eeb52f7",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{2}{5}$. Tentukan $P(X=1)$.",
+        "jawaban": "$\\frac{2916}{15625}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{8007771779340279219}{100000000000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{8007771779340279219}{100000000000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{91992228220659720781}{100000000000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8007771779340279219}{200000000000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{108007771779340279219}{200000000000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 91992228220659720781/200000000000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{8007771779340279219}{100000000000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-081",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f02ab53011b3ceef0580a56d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "63/10"
+            ],
+            [
+              "V",
+              "441/100"
+            ],
+            [
+              "k",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"63/10\"], [\"V\", \"441/100\"], [\"k\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ad5dcea98d5bf314881d9a8d",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{1}{2}$. Tentukan $P(X=4)$.",
+        "jawaban": "$\\frac{35}{128}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{4739419496448}{95367431640625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{4739419496448}{95367431640625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{90628012144177}{95367431640625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2369709748224}{95367431640625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{100106851137073}{190734863281250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 90628012144177/190734863281250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{4739419496448}{95367431640625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-082",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1655c6f433eae832f4beec94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "63/5"
+            ],
+            [
+              "V",
+              "126/25"
+            ],
+            [
+              "k",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"63/5\"], [\"V\", \"126/25\"], [\"k\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fe54d5dbdb548f762a6b720",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{3}{10}$. Tentukan $P(X=9)$.",
+        "jawaban": "$\\frac{137781}{1000000000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{45927}{10000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{45927}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9954073}{10000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{45927}{20000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10045927}{20000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9954073/20000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{45927}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-083",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/529723c0e07cf7787cbbdf09.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "36/5"
+            ],
+            [
+              "V",
+              "18/25"
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"36/5\"], [\"V\", \"18/25\"], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5234f861c67298bb46796be",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{3}{10}$. Tentukan $P(X=3)$.",
+        "jawaban": "$\\frac{189}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{1792}{15625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1792}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13833}{15625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{896}{15625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{17417}{31250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 13833/31250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1792}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-084",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a70880912df1a3b7ce0f02a6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "28/5"
+            ],
+            [
+              "V",
+              "28/25"
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"28/5\"], [\"V\", \"28/25\"], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83a45ff9dc77d9960e9c6bcc",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{7}{10}$. Tentukan $P(X=3)$.",
+        "jawaban": "$\\frac{1029}{2500}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{64}{152587890625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{64}{152587890625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{152587890561}{152587890625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{32}{152587890625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{152587890689}{305175781250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 152587890561/305175781250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{64}{152587890625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-085",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4fcfd426812a21d6e86bd85a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "64/5"
+            ],
+            [
+              "V",
+              "64/25"
+            ],
+            [
+              "k",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"64/5\"], [\"V\", \"64/25\"], [\"k\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b84bc3368acb9726d357e6b9",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{3}{10}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{1323}{5000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{3720087}{250000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3720087}{250000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{249996279913}{250000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3720087}{500000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{250003720087}{500000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 249996279913/500000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3720087}{250000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-086",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/895a286a71ea279c7e2d04e8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "M",
+              "18/5"
+            ],
+            [
+              "V",
+              "63/25"
+            ],
+            [
+              "k",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"M\", \"18/5\"], [\"V\", \"63/25\"], [\"k\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "df205a2b35735e6b268c0fab",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{2}{5}$. Tentukan $P(X=7)$.",
+        "jawaban": "$\\frac{41472}{1953125}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{18}{5}$; V = $\\frac{63}{25}$; k = $2$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{83895148953}{500000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{83895148953}{500000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{416104851047}{500000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{83895148953}{1000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{583895148953}{1000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 416104851047/1000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{83895148953}{500000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-087"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "512d8803de8e20eb50957d87",
+        "teks": "X berdistribusi binomial dengan $n=8$ dan $p=\\frac{1}{5}$. Tentukan $P(X=3)$.",
+        "jawaban": "$\\frac{57344}{390625}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{19}{10}$; V = $\\frac{171}{100}$; k = $7$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{3557764871051157}{2500000000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3557764871051157}{2500000000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2496442235128948843}{2500000000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3557764871051157}{5000000000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2503557764871051157}{5000000000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2496442235128948843/5000000000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3557764871051157}{2500000000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-088"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bf15dab01730c7a8f715e7c",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{589824}{1953125}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{48}{5}$; V = $\\frac{96}{25}$; k = $4$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{120766464}{30517578125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{120766464}{30517578125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{30396811661}{30517578125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{60383232}{30517578125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{30638344589}{61035156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 30396811661/61035156250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{120766464}{30517578125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-089"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2280df5ad9f411a66dfcebbd",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{7}{10}$. Tentukan $P(X=4)$.",
+        "jawaban": "$\\frac{36756909}{500000000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{28}{5}$; V = $\\frac{84}{25}$; k = $9$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{249080832}{6103515625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{249080832}{6103515625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5854434793}{6103515625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{124540416}{6103515625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{6352596457}{12207031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5854434793/12207031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{249080832}{6103515625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-090"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cccc56ff48fd468516d8b05b",
+        "teks": "X berdistribusi binomial dengan $n=8$ dan $p=\\frac{1}{2}$. Tentukan $P(X=5)$.",
+        "jawaban": "$\\frac{7}{32}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{44}{5}$; V = $\\frac{132}{25}$; k = $16$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{3564691587072}{2384185791015625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3564691587072}{2384185791015625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2380621099428553}{2384185791015625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1782345793536}{2384185791015625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2387750482602697}{4768371582031250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2380621099428553/4768371582031250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{3564691587072}{2384185791015625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-091"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0fd04da2c10f00426ce978ae",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{3}{5}$. Tentukan $P(X=3)$.",
+        "jawaban": "$\\frac{216}{625}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $6$; V = $\\frac{21}{5}$; k = $5$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{1117894066061748381}{6250000000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1117894066061748381}{6250000000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5132105933938251619}{6250000000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1117894066061748381}{12500000000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7367894066061748381}{12500000000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5132105933938251619/12500000000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{1117894066061748381}{6250000000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-092"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45a4282fe1dcd4229a26492e",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{7}{10}$. Tentukan $P(X=6)$.",
+        "jawaban": "$\\frac{200120949}{1000000000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $3$; V = $\\frac{21}{10}$; k = $1$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{121060821}{1000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{121060821}{1000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{878939179}{1000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{121060821}{2000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1121060821}{2000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 878939179/2000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{121060821}{1000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-093"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "73ead75db41f11d0033f3659",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{7}{10}$. Tentukan $P(X=1)$.",
+        "jawaban": "$\\frac{35721}{10000000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{57}{5}$; V = $\\frac{114}{25}$; k = $7$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{451373285376}{19073486328125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{451373285376}{19073486328125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{18622113042749}{19073486328125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{225686642688}{19073486328125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{19524859613501}{38146972656250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 18622113042749/38146972656250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{451373285376}{19073486328125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-094"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4a3a836f274f3cf573c0dc54",
+        "teks": "X berdistribusi binomial dengan $n=5$ dan $p=\\frac{3}{10}$. Tentukan $P(X=4)$.",
+        "jawaban": "$\\frac{567}{20000}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{77}{5}$; V = $\\frac{231}{50}$; k = $7$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{125956783898643159}{625000000000000000000}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{125956783898643159}{625000000000000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{624874043216101356841}{625000000000000000000}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{125956783898643159}{1250000000000000000000}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{625125956783898643159}{1250000000000000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 624874043216101356841/1250000000000000000000 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{125956783898643159}{625000000000000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-095"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c246a451fcd08e1c2c2dabb",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{2}$. Tentukan $P(X=7)$.",
+        "jawaban": "$\\frac{9}{128}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{16}{5}$; V = $\\frac{48}{25}$; k = $6$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{16128}{390625}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{16128}{390625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{374497}{390625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8064}{390625}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{406753}{781250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 374497/781250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{16128}{390625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-096"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e77dba4467cc3dba39d26524",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{1}{5}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{96}{625}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{28}{5}$; V = $\\frac{28}{25}$; k = $1$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{28}{78125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{28}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{78097}{78125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{14}{78125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{78153}{156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 78097/156250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{28}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-097"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd12c118d708956bda688acd",
+        "teks": "X berdistribusi binomial dengan $n=8$ dan $p=\\frac{3}{5}$. Tentukan $P(X=7)$.",
+        "jawaban": "$\\frac{34992}{390625}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_binomial_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui M = $\\frac{12}{5}$; V = $\\frac{48}{25}$; k = $9$. X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.",
+      "jawaban_benar": "$\\frac{2816}{48828125}$",
+      "alasan_benar": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{2816}{48828125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{48825309}{48828125}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1408}{48828125}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{48830941}{97656250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 48825309/97656250 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial. Hasilnya $\\frac{2816}{48828125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-f-hard-bt01-098"
     }
   ]
 }

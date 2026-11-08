@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b03-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0165-latihan-a-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi titik banyak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan komponen vektor translasi terlebih dahulu sebelum menghitung koordinat bayangan titik lainnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segitiga $KLM$ dengan koordinat titik $K(-3, 1)$, $L(1, -2)$, dan $M(5, 4)$ ditranslasikan oleh suatu pergeseran sehingga diperoleh bayangan titik $K'(2, 5)$. Koordinat titik $L'$ dan $M'$ berturut-turut adalah ...",
+      "jawaban_benar": "$L'(6, 2)$ dan $M'(10, 8)$",
+      "alasan_benar": "Vektor translasi dihitung dari $K$ ke $K'$: $a = 2 - (-3) = 5$ dan $b = 5 - 1 = 4$, jadi translasi adalah $\\binom{5}{4}$. Koordinat $L' = (1 + 5, -2 + 4) = (6, 2)$ dan $M' = (5 + 5, 4 + 4) = (10, 8)$.",
+      "distraktor": [
+        {
+          "teks": "$L'(-4, -6)$ dan $M'(0, 0)$",
+          "alasan": "Terbalik menghitung vektor translasi sebagai titik awal dikurangi titik bayangan yaitu $\\binom{-5}{-4}$."
+        },
+        {
+          "teks": "$L'(6, -6)$ dan $M'(10, 0)$",
+          "alasan": "Salah menjumlahkan tanda komponen vertikal translasi, mengurangkan bukannya menjumlahkan ordinat."
+        },
+        {
+          "teks": "$L'(5, 2)$ dan $M'(9, 8)$",
+          "alasan": "Keliru menghitung komponen horizontal translasi $2 - (-3) = 4$ bukan $5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komponen translasi $\\binom{a}{b}$ dari titik $K(-3, 1)$ ke $K'(2, 5)$:\n$$a = 2 - (-3) = 5$$\n$$b = 5 - 1 = 4$$\nSehingga matriks translasinya adalah $\\binom{5}{4}$.\n\nLangkah 2: Menentukan koordinat bayangan $L'$:\n$$L'(1 + 5, -2 + 4) = L'(6, 2)$$\n\nLangkah 3: Menentukan koordinat bayangan $M'$:\n$$M'(5 + 5, 4 + 4) = M'(10, 8)$$\n\nJadi, koordinat bayangan titik $L'$ dan $M'$ berturut-turut adalah $L'(6, 2)$ dan $M'(10, 8)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 165,
+        "bagian": "Penerapan Konsep",
+        "nomor": "7",
+        "teks": "Segitiga PQR ditranslasikan sehingga menghasilkan bayangan STU. Diketahui P(-1,2), Q(3,-2), S(2,-3), dan U(3,4), tentukan koordinat T dan R. Tentukan pula translasinya.",
+        "jawaban": "Translasi (3, -5), T(6, -7), R(0, 9)",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "bayangan dan titik asal segitiga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis relasi titik korespondensi untuk menemukan vektor translasi lalu menentukan titik bayangan sekaligus titik asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga $DEF$ ditranslasikan sehingga menghasilkan bayangan segitiga $KLM$, dengan titik $D$ berkorespondensi dengan $K$, $E$ dengan $L$, dan $F$ dengan $M$. Jika diketahui $D(-2, 4)$, $E(5, 1)$, $K(4, -1)$, dan $M(1, 6)$, maka koordinat titik $L$ dan titik $F$ berturut-turut adalah ...",
+      "jawaban_benar": "$L(11, -4)$ dan $F(-5, 11)$",
+      "alasan_benar": "Translasi didapat dari $D \\to K$: $\\binom{a}{b} = \\binom{4 - (-2)}{-1 - 4} = \\binom{6}{-5}$. Maka $L = E + T = (5 + 6, 1 + (-5)) = (11, -4)$. Untuk mencari $F$, gunakan $F = M - T = (1 - 6, 6 - (-5)) = (-5, 11)$.",
+      "distraktor": [
+        {
+          "teks": "$L(11, -4)$ dan $F(7, 1)$",
+          "alasan": "Keliru menghitung titik asal $F$ dengan menjumlahkan vektor translasi ke $M$, bukan mengurangkannya."
+        },
+        {
+          "teks": "$L(-1, 6)$ dan $F(-5, 11)$",
+          "alasan": "Menghitung titik $L$ dengan mengurangkan translasi dari titik $E$ alih-alih menjumlahkannya."
+        },
+        {
+          "teks": "$L(11, 6)$ dan $F(-5, 1)$",
+          "alasan": "Salah tanda komponen vertikal translasi $b = 5$ bukannya $-5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komponen translasi dari pasangan titik yang bersesuaian, yaitu $D(-2, 4)$ dan $K(4, -1)$:\n$$a = 4 - (-2) = 6$$\n$$b = -1 - 4 = -5$$\nTranslasi yang bersangkutan adalah $\\binom{6}{-5}$.\n\nLangkah 2: Menentukan koordinat bayangan titik $L$ dari titik asal $E(5, 1)$:\n$$L = (5 + 6, 1 + (-5)) = (11, -4)$$\n\nLangkah 3: Menentukan koordinat titik asal $F$ dari bayangannya $M(1, 6)$:\n$$F = (1 - 6, 6 - (-5)) = (-5, 11)$$\n\nJadi, koordinat titik $L$ dan $F$ berturut-turut adalah $L(11, -4)$ dan $F(-5, 11)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan titik A(x, y) oleh translasi a b adalah A'(x+a, y+ b)"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "translasi berurutan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan sistem persamaan dua langkah dari dua translasi berurutan untuk mencari nilai variabel titik awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(a, b)$ digeser oleh translasi $T_1 = \\binom{5}{-7}$ menghasilkan titik $Q$. Selanjutnya, titik $Q$ digeser kembali oleh translasi $T_2 = \\binom{-8}{3}$ sehingga menghasilkan bayangan akhir $P'(-1, 2)$. Nilai dari $2a + b$ adalah ...",
+      "jawaban_benar": "10",
+      "alasan_benar": "Translasi gabungan adalah $\\binom{5 + (-8)}{-7 + 3} = \\binom{-3}{-4}$. Maka $-1 = a - 3 \\implies a = 2$ dan $2 = b - 4 \\implies b = 6$. Nilai $2a + b = 2(2) + 6 = 10$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Menghitung translasi gabungan dengan membalik tanda sehingga $a = -4$ dan $b = -2$, lalu $2(-4) + (-2) = -10$ atau salah hitung tanda menghasilkan 2."
+        },
+        {
+          "teks": "14",
+          "alasan": "Keliru memperoleh $a = 4$ dan $b = 6$ sehingga $2(4) + 6 = 14$."
+        },
+        {
+          "teks": "-6",
+          "alasan": "Menghitung $P'$ dari titik asal dengan mengurangkan translasi bukan menjumlahkan, sehingga menghasilkan $a = -4, b = -2$, nilai $2a + b = -10$ atau keliru tanda ordinat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan translasi total pergeseran berurutan:\n$$T = T_1 + T_2 = \\binom{5 + (-8)}{-7 + 3} = \\binom{-3}{-4}$$\n\nLangkah 2: Menghitung koordinat titik asal $P(a, b)$ dari bayangan akhir $P'(-1, 2)$:\n$$a + (-3) = -1 \\implies a = -1 + 3 = 2$$\n$$b + (-4) = 2 \\implies b = 2 + 4 = 6$$\nDiperoleh $a = 2$ dan $b = 6$.\n\nLangkah 3: Menghitung nilai $2a + b$:\n$$2a + b = 2(2) + 6 = 4 + 6 = 10$$\n\nJadi, nilai dari $2a + b$ adalah 10.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 161,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Cara memperoleh hasil translasi persegi ABCD oleh -4 2 adalah dengan menentukan hasil translasi titik-titik sudut dari persegi ABCD."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi titik sudut bangun datar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan titik sudut keempat bangun datar terlebih dahulu sebelum mentranslasikannya pada bidang koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang $ABCD$ memiliki titik-titik sudut dengan koordinat $A(2, -1)$, $B(8, -1)$, dan $D(2, 3)$. Jika persegi panjang tersebut ditranslasikan oleh $\\binom{-5}{4}$, maka koordinat bayangan titik $C'$ adalah ...",
+      "jawaban_benar": "$(3, 7)$",
+      "alasan_benar": "Titik $C$ memiliki absis sama dengan $B$ ($x = 8$) dan ordinat sama dengan $D$ ($y = 3$), sehingga $C(8, 3)$. Bayangannya $C' = (8 + (-5), 3 + 4) = (3, 7)$.",
+      "distraktor": [
+        {
+          "teks": "(-3, 3)",
+          "alasan": "Keliru mentranslasikan titik $A(2, -1)$ alih-alih titik $C(8, 3)$."
+        },
+        {
+          "teks": "(3, 3)",
+          "alasan": "Keliru mentranslasikan titik $B(8, -1)$ alih-alih titik $C(8, 3)$."
+        },
+        {
+          "teks": "(13, -1)",
+          "alasan": "Mengurangkan komponen translasi dari koordinat titik $C$ bukannya menjumlahkannya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik $C$ pada persegi panjang $ABCD$.\nKarena sisi-sisi persegi panjang sejajar sumbu koordinat:\n- Titik $C$ sejajar vertikal dengan titik $B(8, -1)$, sehingga absis titik $C$ adalah $x = 8$.\n- Titik $C$ sejajar horizontal dengan titik $D(2, 3)$, sehingga ordinat titik $C$ adalah $y = 3$.\nMaka koordinat titik $C$ adalah $(8, 3)$.\n\nLangkah 2: Mentranslasikan titik $C(8, 3)$ oleh $\\binom{-5}{4}$:\n$$x' = 8 + (-5) = 3$$\n$$y' = 3 + 4 = 7$$\n\nJadi, koordinat bayangan titik $C'$ adalah $(3, 7)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0165-latihan-a-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan bayangan dan translasi segitiga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah pengerjaan yaitu menentukan komponen translasi dari pasangan titik yang diketahui lalu menerapkannya untuk mencari bayangan titik lainnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga $PQR$ dengan titik sudut $P(6, -5)$, $Q(9, -1)$, dan $R(8, 4)$ ditranslasikan oleh suatu pergeseran sehingga menghasilkan bayangan titik $P'(11, -8)$. Koordinat bayangan titik $R'$ dan translasi yang digunakan berturut-turut adalah ...",
+      "jawaban_benar": "$R'(13, 1)$ dan $\\binom{5}{-3}$",
+      "alasan_benar": "Vektor translasi dihitung dari pergeseran titik $P$ ke $P'$: $\\binom{a}{b} = \\binom{11 - 6}{-8 - (-5)} = \\binom{5}{-3}$. Selanjutnya, bayangan titik $R(8, 4)$ adalah $R'(8 + 5, 4 + (-3)) = R'(13, 1)$.",
+      "distraktor": [
+        {
+          "teks": "$R'(3, 7)$ dan $\\binom{-5}{3}$",
+          "alasan": "Siswa terbalik mengurangkan koordinat titik asal dikurangi bayangan ($P - P'$) sehingga tanda komponen translasi berkebalikan."
+        },
+        {
+          "teks": "$R'(13, 7)$ dan $\\binom{5}{3}$",
+          "alasan": "Siswa salah melakukan operasi pengurangan pada ordinat translasi ($-8 - (-5)$ dihitung $+3$ alih-alih $-3$)."
+        },
+        {
+          "teks": "$R'(13, -4)$ dan $\\binom{5}{-8}$",
+          "alasan": "Siswa langsung mengambil ordinat titik bayangan $P'$ sebagai komponen pergeseran vertikal tanpa mengurangkan ordinat titik mula-mula."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komponen translasi $\\binom{a}{b}$.\n$\\binom{a}{b} = \\binom{x_{P'} - x_P}{y_{P'} - y_P} = \\binom{11 - 6}{-8 - (-5)} = \\binom{5}{-3}$.\n\nLangkah 2: Menentukan koordinat bayangan $R'$.\n$x_{R'} = x_R + a = 8 + 5 = 13$\n$y_{R'} = y_R + b = 4 + (-3) = 1$\nJadi, bayangan titik $R$ adalah $R'(13, 1)$ dan translasinya adalah $\\binom{5}{-3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 161,
+        "bagian": "Contoh 3.1",
+        "nomor": "3.1",
+        "teks": "Sebuah persegi _ABCD_ dengan _A_ (1,1), _B_ (3,1), _C_ (3,3), dan _D_ (1,3) ditranslasikan sejauh 4 satuan ke kiri dan 2 satuan ke atas.",
+        "jawaban": "A'(-3,3), B'(-1,3), C'(-1,5), D'(-3,5)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi titik sudut persegi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan konversi deskripsi arah pergeseran ke bentuk aljabar translasi kemudian menghitung koordinat titik bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi $ABCD$ memiliki koordinat titik-titik sudut $A(5, 6)$, $B(9, 6)$, $C(9, 10)$, dan $D(5, 10)$. Jika persegi tersebut ditranslasikan sejauh $7$ satuan ke kiri dan $8$ satuan ke bawah, koordinat bayangan titik $C$ adalah ...",
+      "jawaban_benar": "$(2, 2)$",
+      "alasan_benar": "Pergeseran $7$ satuan ke kiri berarti $a = -7$, dan $8$ satuan ke bawah berarti $b = -8$. Bayangan titik $C(9, 10)$ adalah $C'(9 + (-7), 10 + (-8)) = C'(2, 2)$.",
+      "distraktor": [
+        {
+          "teks": "$(16, 18)$",
+          "alasan": "Siswa mengabaikan arah 'ke kiri' dan 'ke bawah' sehingga menganggap semua komponen pergeseran bernilai positif ($+7$ dan $+8$)."
+        },
+        {
+          "teks": "$(2, 18)$",
+          "alasan": "Siswa hanya menerapkan tanda negatif pada pergeseran horizontal namun salah menganggap pergeseran ke bawah bernilai positif."
+        },
+        {
+          "teks": "$(16, 2)$",
+          "alasan": "Siswa salah menganggap pergeseran ke kiri bernilai positif dan hanya mengurangkan pergeseran vertikal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan notasi translasi $\\binom{a}{b}$.\nPergeseran $7$ satuan ke kiri $\\Rightarrow a = -7$.\nPergeseran $8$ satuan ke bawah $\\Rightarrow b = -8$.\nBentuk translasi: $\\binom{-7}{-8}$.\n\nLangkah 2: Menghitung koordinat bayangan titik $C(9, 10)$.\n$x' = 9 + (-7) = 2$\n$y' = 10 + (-8) = 2$\nJadi, koordinat bayangan titik $C$ adalah $(2, 2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 162,
+        "bagian": "Ayo Mencoba",
+        "nomor": "",
+        "teks": "_A_ ( _-_ 1,2), _B_ (2, _-_ 1), dan _C_ ( _-_ 2, _-_ 2) adalah koordinat titik-titik 5 sudut Δ _ABC_ . Tentukan bayangan Δ _ABC_ oleh translasi b -1 l ! Gambarkan Δ _ABC_ beserta bayangannya!",
+        "jawaban": "A'(4,1), B'(7,-2), C'(3,-3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi dua titik sudut segitiga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan penerapan aturan translasi pada dua koordinat titik sudut yang berbeda dengan operasi bilangan bulat bertanda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $K(-4, 7)$, $L(3, 5)$, dan $M(-2, -3)$ adalah koordinat titik-titik sudut $\\Delta KLM$. Jika $\\Delta KLM$ ditranslasikan oleh $\\binom{6}{-8}$, maka koordinat bayangan titik $K$ dan titik $M$ berturut-turut adalah ...",
+      "jawaban_benar": "$K'(2, -1)$ dan $M'(4, -11)$",
+      "alasan_benar": "Bayangan titik $K(-4, 7)$ adalah $K'(-4 + 6, 7 + (-8)) = K'(2, -1)$. Bayangan titik $M(-2, -3)$ adalah $M'(-2 + 6, -3 + (-8)) = M'(4, -11)$.",
+      "distraktor": [
+        {
+          "teks": "$K'(-10, 15)$ dan $M'(-8, 5)$",
+          "alasan": "Siswa melakukan operasi pengurangan ($x - a, y - b$) alih-alih penjumlahan ($x + a, y + b$)."
+        },
+        {
+          "teks": "$K'(2, 15)$ dan $M'(4, 5)$",
+          "alasan": "Siswa salah tanda saat menjumlahkan komponen vertikal translasi, menganggap $-8$ sebagai $+8$."
+        },
+        {
+          "teks": "$K'(-10, -1)$ dan $M'(-8, -11)$",
+          "alasan": "Siswa salah tanda pada komponen horizontal, mengurangkan absis dengan $6$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bayangan titik $K(-4, 7)$ oleh translasi $\\binom{6}{-8}$.\n$x_{K'} = -4 + 6 = 2$\n$y_{K'} = 7 + (-8) = -1$\nDiperoleh $K'(2, -1)$.\n\nLangkah 2: Menentukan bayangan titik $M(-2, -3)$ oleh translasi $\\binom{6}{-8}$.\n$x_{M'} = -2 + 6 = 4$\n$y_{M'} = -3 + (-8) = -11$\nDiperoleh $M'(4, -11)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan titik A ( x, y ) oleh translasi b ab l adalah A' ( x+a, y+ b)"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "translasi berurutan titik berparameter",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa menganalisis dua pergeseran berurutan secara terbalik untuk menemukan nilai koordinat titik awal lalu mengevaluasi bentuk aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah titik $A(p, q)$ ditranslasikan berturut-turut oleh $T_1 = \\binom{-3}{7}$ kemudian dilanjutkan oleh $T_2 = \\binom{8}{-5}$ sehingga menghasilkan bayangan akhir $A''(9, 4)$. Nilai dari $2p - q$ adalah ...",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Translasi gabungan $T = T_1 + T_2 = \\binom{-3 + 8}{7 + (-5)} = \\binom{5}{2}$. Dari $A''(p + 5, q + 2) = (9, 4)$, didapat $p = 4$ dan $q = 2$. Maka $2p - q = 2(4) - 2 = 6$.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Siswa salah menghitung nilai ekspresi aljabar dengan menjumlahkan alih-alih mengurangkan ($2(4) + 2 = 10$)."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa tertukar memasukkan nilai $p$ dan $q$ ke bentuk aljabar sehingga menghitung $2(2) - 4 = 0$ atau sekadar menghitung $p - q = 4 - 2 = 2$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Siswa melakukan kesalahan tanda saat membalik operasi translasi sehingga memperoleh $p = -4$ dan $q = -2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung komponen translasi total.\n$T = T_1 + T_2 = \\binom{-3}{7} + \\binom{8}{-5} = \\binom{5}{2}$.\n\nLangkah 2: Menentukan nilai $p$ dan $q$ dari titik akhir $A''(9, 4)$.\n$p + 5 = 9 \\Rightarrow p = 4$\n$q + 2 = 4 \\Rightarrow q = 2$\n\nLangkah 3: Menghitung nilai $2p - q$.\n$2p - q = 2(4) - 2 = 8 - 2 = 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 159,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Translasi (pergeseran) adalah perubahan posisi suatu objek (titik, garis, atau bangun) dengan jarak dan arah tertentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan parameter translasi titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perumusan persamaan linear terpisah untuk absis dan ordinat guna menemukan nilai dua variabel kemudian menjumlahkannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(-2, 3a)$ digeser oleh translasi $\\binom{b + 1}{-4}$ sehingga menghasilkan bayangan $P'(5, 8)$. Nilai dari $a + b$ adalah ...",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Dari absis: $-2 + (b + 1) = 5 \\Rightarrow b - 1 = 5 \\Rightarrow b = 6$. Dari ordinat: $3a + (-4) = 8 \\Rightarrow 3a = 12 \\Rightarrow a = 4$. Maka $a + b = 4 + 6 = 10$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Siswa salah saat memindahkan tanda $-2$ pada persamaan absis sehingga mendapatkan $b = 2$ dan menghasilkan $a + b = 4 + 2 = 6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Siswa salah menyederhanakan ruas kiri absis sehingga mengira $b = 8$ lalu menjumlahkan dengan $a = 4$ menjadi $12$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa salah tanda saat memindahkan ruas pada ordinat sehingga menghitung $3a = 8 - 4 = 4$, lalu membulatkan nilai $a$ menjadi $1$ dan memperoleh $1 + 6 = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $b$ dari kesamaan absis.\n$x_{P'} = x_P + (b + 1)$\n$5 = -2 + b + 1$\n$5 = b - 1$\n$b = 6$\n\nLangkah 2: Menentukan nilai $a$ dari kesamaan ordinat.\n$y_{P'} = y_P + (-4)$\n$8 = 3a - 4$\n$3a = 12$\n$a = 4$\n\nLangkah 3: Menghitung nilai $a + b$.\n$a + b = 4 + 6 = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 165,
+        "bagian": "Latihan A",
+        "nomor": "7",
+        "teks": "Sebuah layang-layang _KLMN_ memiliki koordinat _K_ (8,6), _L_ (10,8), _M_ (12,6) dan _N_ (10,2). Jika layang-layang tersebut ditranslasikan 5 oleh - 1 e o , tentukan koordinat bayangannya dan gambarkan bayangannya pada bidang koordinat!",
+        "jawaban": "K'(13,5), L'(15,7), M'(17,5), N'(15,1)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi titik bangun datar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah: mengidentifikasi koordinat titik yang ditanyakan pada bangun datar lalu menghitung masing-masing bayangannya dengan translasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah jajargenjang $ABCD$ memiliki koordinat titik $A(-4, 1)$, $B(2, 1)$, $C(4, 5)$, dan $D(-2, 5)$. Jika jajargenjang tersebut ditranslasikan oleh $\\binom{-3}{4}$, maka koordinat bayangan titik $B$ dan $D$ berturut-turut adalah ...",
+      "jawaban_benar": "$B'(-1, 5)$ dan $D'(-5, 9)$",
+      "alasan_benar": "Bayangan titik dihitung dengan menjumlahkan koordinat awal dan komponen translasi: $B'(2 + (-3), 1 + 4) = B'(-1, 5)$ dan $D'(-2 + (-3), 5 + 4) = D'(-5, 9)$.",
+      "distraktor": [
+        {
+          "teks": "$B'(5, -3)$ dan $D'(1, 1)$",
+          "alasan": "Siswa mengurangkan koordinat titik awal dengan komponen translasi, bukan menjumlahkannya."
+        },
+        {
+          "teks": "$B'(-1, 5)$ dan $D'(-1, 9)$",
+          "alasan": "Siswa salah menjumlahkan bilangan bulat pada absis titik $D$, yaitu $-2 + (-3)$ dihitung $-1$."
+        },
+        {
+          "teks": "$B'(1, 5)$ dan $D'(-5, 9)$",
+          "alasan": "Siswa melakukan kesalahan tanda pada perhitungan absis titik $B$, yaitu $2 + (-3)$ dihitung $1$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat translasi titik, bayangan titik $(x, y)$ oleh translasi $\\binom{a}{b}$ adalah $(x + a, y + b)$.\n\n1. Menentukan bayangan titik $B(2, 1)$:\n$B'(2 + (-3), 1 + 4) = B'(-1, 5)$\n\n2. Menentukan bayangan titik $D(-2, 5)$:\n$D'(-2 + (-3), 5 + 4) = D'(-5, 9)$\n\nJadi, koordinat bayangan titik $B$ dan $D$ berturut-turut adalah $B'(-1, 5)$ dan $D'(-5, 9)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan titik A ( x, y ) oleh translasi b ab l adalah A' ( x+a, y+ b)"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi titik dua tahap aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menemukan nilai variabel parameter dari translasi pertama, menentukan titik baru dan vektor translasi kedua, lalu menghitung koordinat akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(m, -3)$ ditranslasikan oleh $\\binom{4}{n}$ sehingga menghasilkan bayangan $A'(2, 5)$. Jika titik $B(2m, n)$ ditranslasikan oleh $\\binom{-n}{m}$, maka koordinat bayangan titik $B'$ adalah ...",
+      "jawaban_benar": "$B'(-12, 6)$",
+      "alasan_benar": "Dari translasi titik $A$, diperoleh $m + 4 = 2 \\implies m = -2$ dan $-3 + n = 5 \\implies n = 8$. Maka titik $B(2(-2), 8) = B(-4, 8)$ dan translasinya adalah $\\binom{-8}{-2}$. Hasil bayangannya $B'(-4 + (-8), 8 + (-2)) = B'(-12, 6)$.",
+      "distraktor": [
+        {
+          "teks": "$B'(-12, 10)$",
+          "alasan": "Siswa salah melakukan operasi tanda pada ordinat: menghitung $8 - (-2) = 10$ alih-alih $8 + (-2)$."
+        },
+        {
+          "teks": "$B'(4, 6)$",
+          "alasan": "Siswa salah melakukan operasi pada absis: menghitung $-4 - (-8) = 4$ alih-alih $-4 + (-8)$."
+        },
+        {
+          "teks": "$B'(-4, 6)$",
+          "alasan": "Siswa lupa menggeser komponen absis titik $B$ dan hanya mentranslasikan komponen ordinatnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $m$ dan $n$.\nTitik $A(m, -3)$ oleh translasi $\\binom{4}{n}$ menghasilkan $A'(2, 5)$:\n$m + 4 = 2 \\iff m = 2 - 4 = -2$\n$-3 + n = 5 \\iff n = 5 + 3 = 8$\n\nLangkah 2: Menentukan koordinat titik $B$ dan vektor translasi barunya.\nTitik $B(2m, n) = B(2(-2), 8) = B(-4, 8)$\nTranslasi $\\binom{-n}{m} = \\binom{-8}{-2}$\n\nLangkah 3: Menentukan bayangan titik $B'$:\n$B'(-4 + (-8), 8 + (-2)) = B'(-12, 6)$\n\nJadi, koordinat bayangan titik $B'$ adalah $B'(-12, 6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 159,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Translasi (pergeseran) adalah perubahan posisi suatu objek (titik, garis, atau bangun) dengan jarak dan arah tertentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pergerakan translasi dua tahap",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah: menerjemahkan deskripsi arah gerak ke komponen translasi matriks pertama lalu mengakumulasikannya dengan translasi kedua.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah drone pemantau berada pada koordinat titik $P(-6, 9)$. Drone tersebut digerakkan melalui translasi tahap pertama sejauh $8$ satuan ke kanan dan $5$ satuan ke bawah, kemudian dilanjutkan dengan translasi tahap kedua oleh $\\binom{-4}{-7}$. Posisi akhir drone tersebut berada pada koordinat ...",
+      "jawaban_benar": "$(-2, -3)$",
+      "alasan_benar": "Translasi tahap pertama adalah $\\binom{8}{-5}$, sehingga posisi perantara adalah $(-6 + 8, 9 - 5) = (2, 4)$. Translasi tahap kedua oleh $\\binom{-4}{-7}$ menghasilkan posisi akhir $(2 + (-4), 4 + (-7)) = (-2, -3)$.",
+      "distraktor": [
+        {
+          "teks": "$(-2, 7)$",
+          "alasan": "Siswa menganggap kata 'ke bawah' bernilai positif $+5$ saat membentuk translasi tahap pertama."
+        },
+        {
+          "teks": "$(2, -3)$",
+          "alasan": "Siswa salah menghitung tanda pada absis akhir, menghitung $2 + (-4) = 2$."
+        },
+        {
+          "teks": "$(-10, -3)$",
+          "alasan": "Siswa salah menafsirkan arah pergeseran tahap pertama 'ke kanan' sebagai $-8$ satuan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan translasi total atau bertahap.\n- Pergeseran tahap pertama sejauh $8$ satuan ke kanan dan $5$ satuan ke bawah ditulis sebagai translasi $T_1 = \\binom{8}{-5}$.\n- Posisi setelah tahap pertama:\n$P'(-6 + 8, 9 + (-5)) = P'(2, 4)$\n\nLangkah 2: Menentukan posisi setelah translasi tahap kedua $T_2 = \\binom{-4}{-7}$:\n$P''(2 + (-4), 4 + (-7)) = P''(-2, -3)$\n\nJadi, posisi akhir drone tersebut berada pada koordinat $(-2, -3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "a satuan ke kanan jika a> 0 atau a satuan ke kiri jika a< 0."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "translasi titik puncak segitiga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis sifat geometri simetri segitiga sama kaki untuk menentukan koordinat titik asal sebelum menerapkan translasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga sama kaki $ABC$ memiliki alas yang sejajar sumbu-$X$ dengan koordinat ujung-ujung alasnya $A(1, 2)$ dan $B(7, 2)$. Jika titik puncak $C$ memiliki ordinat $6$ dan segitiga tersebut ditranslasikan oleh $\\binom{-5}{3}$, maka koordinat bayangan titik puncak $C'$ adalah ...",
+      "jawaban_benar": "$C'(-1, 9)$",
+      "alasan_benar": "Karena segitiga sama kaki dengan alas mendatar dari $x = 1$ hingga $x = 7$, absis puncak $C$ berada tepat di tengah alas: $x_C = \\frac{1 + 7}{2} = 4$. Jadi titik puncak adalah $C(4, 6)$. Ditranslasikan oleh $\\binom{-5}{3}$, diperoleh $C'(4 + (-5), 6 + 3) = C'(-1, 9)$.",
+      "distraktor": [
+        {
+          "teks": "$C'(9, 9)$",
+          "alasan": "Siswa salah operasi pengurangan pada absis: $4 - (-5) = 9$."
+        },
+        {
+          "teks": "$C'(-1, 3)$",
+          "alasan": "Siswa mengurangkan komponen vertikal alih-alih menjumlahkannya: $6 - 3 = 3$."
+        },
+        {
+          "teks": "$C'(2, 9)$",
+          "alasan": "Siswa keliru menggunakan absis titik $B$ ($x = 7$) sebagai absis puncak $C$, sehingga $7 + (-5) = 2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik puncak $C$.\nPada segitiga sama kaki dengan alas sejajar sumbu-$X$, sumbu simetri berada tepat di tengah-tengah kedua titik alas.\n$x_C = \\frac{x_A + x_B}{2} = \\frac{1 + 7}{2} = 4$\nKarena ordinat titik $C$ adalah $6$, maka koordinat titik puncak adalah $C(4, 6)$.\n\nLangkah 2: Menentukan bayangan titik puncak oleh translasi $\\binom{-5}{3}$:\n$x' = 4 + (-5) = -1$\n$y' = 6 + 3 = 9$\n\nDiperoleh koordinat bayangan $C'(-1, 9)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 162,
+        "bagian": "Contoh 3.2",
+        "nomor": "3.2",
+        "teks": "Tentukan hasil translasi garis lurus 2 x+ 3 y= 6 oleh 3 b -4 l !",
+        "jawaban": "2x + 3y = 0",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi garis lurus",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah penyelesaian: menentukan dua titik pada garis, mentranslasikan kedua titik, dan menyusun persamaan garis bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hasil translasi garis lurus $4x + 5y = 20$ oleh $\\binom{-1}{7}$ adalah ...",
+      "jawaban_benar": "$4x + 5y = 51$",
+      "alasan_benar": "Dua titik pada garis $4x + 5y = 20$ adalah $(5, 0)$ dan $(0, 4)$. Ditranslasikan oleh $\\binom{-1}{7}$ menjadi $(5-1, 0+7) = (4, 7)$ dan $(0-1, 4+7) = (-1, 11)$. Persamaan garis melalui $(4, 7)$ dan $(-1, 11)$ adalah $y - 7 = \\frac{11 - 7}{-1 - 4}(x - 4) \\iff y - 7 = -\\frac{4}{5}(x - 4) \\iff 5y - 35 = -4x + 16 \\iff 4x + 5y = 51$.",
+      "distraktor": [
+        {
+          "teks": "$4x + 5y = -11$",
+          "alasan": "Siswa salah memasukkan pergeseran tanpa membalik tanda operasi pada substitusi variabel: $4(x - 1) + 5(y + 7) = 20 \\iff 4x + 5y + 31 = 20 \\iff 4x + 5y = -11$."
+        },
+        {
+          "teks": "$4x + 5y = 20$",
+          "alasan": "Siswa mengira garis yang digeser memiliki persamaan yang sama persis tanpa mengubah konstanta."
+        },
+        {
+          "teks": "$5x + 4y = 51$",
+          "alasan": "Siswa tertukar menempatkan koefisien variabel $x$ dan $y$ saat menyusun persamaan garis bayangan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan dua titik sembarang pada garis $4x + 5y = 20$.\n- Jika $y = 0$, maka $4x = 20 \\implies x = 5$, sehingga diperoleh titik $(5, 0)$.\n- Jika $x = 0$, maka $5y = 20 \\implies y = 4$, sehingga diperoleh titik $(0, 4)$.\n\nLangkah 2: Translasikan kedua titik tersebut oleh $\\binom{-1}{7}$.\n- Titik $(5, 0) \\to (5 + (-1), 0 + 7) = (4, 7)$.\n- Titik $(0, 4) \\to (0 + (-1), 4 + 7) = (-1, 11)$.\n\nLangkah 3: Tentukan persamaan garis yang melalui titik $(4, 7)$ dan $(-1, 11)$.\n$$\\frac{y - y_1}{y_2 - y_1} = \\frac{x - x_1}{x_2 - x_1}$$\n$$\\frac{y - 7}{11 - 7} = \\frac{x - 4}{-1 - 4}$$\n$$\\frac{y - 7}{4} = \\frac{x - 4}{-5}$$\n$$-5(y - 7) = 4(x - 4)$$\n$$-5y + 35 = 4x - 16$$\n$$4x + 5y = 35 + 16$$\n$$4x + 5y = 51$$\n\nJadi, hasil translasi garis tersebut adalah $4x + 5y = 51$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-a-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 163,
+        "bagian": "Ayo Mencoba",
+        "nomor": "",
+        "teks": "Tentukan hasil translasi garis lurus 3 x- 2 y= 12 oleh - 4 b 3 l !",
+        "jawaban": "3x - 2y = -6",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "translasi garis lurus",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah penyelesaian: menentukan dua titik uji pada garis, mentranslasikan kedua titik, dan merumuskan kembali persamaan garis hasil pergeseran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hasil translasi garis lurus $5x - 7y = 35$ oleh $\\binom{2}{-1}$ adalah ...",
+      "jawaban_benar": "$5x - 7y = 52$",
+      "alasan_benar": "Dua titik pada garis $5x - 7y = 35$ adalah $(7, 0)$ dan $(0, -5)$. Ditranslasikan oleh $\\binom{2}{-1}$ menjadi $(7+2, 0-1) = (9, -1)$ dan $(0+2, -5-1) = (2, -6)$. Persamaan garis melalui $(9, -1)$ dan $(2, -6)$ adalah $y - (-1) = \\frac{-6 - (-1)}{2 - 9}(x - 9) \\iff y + 1 = \\frac{5}{7}(x - 9) \\iff 7y + 7 = 5x - 45 \\iff 5x - 7y = 52$.",
+      "distraktor": [
+        {
+          "teks": "$5x - 7y = 18$",
+          "alasan": "Siswa salah memasukkan pergeseran tanpa membalik tanda operasi pada substitusi variabel: $5(x + 2) - 7(y - 1) = 35 \\iff 5x - 7y + 17 = 35 \\iff 5x - 7y = 18$."
+        },
+        {
+          "teks": "$5x - 7y = 35$",
+          "alasan": "Siswa mengira translasi tidak mengubah nilai konstanta pada persamaan garis."
+        },
+        {
+          "teks": "$7x - 5y = 52$",
+          "alasan": "Siswa tertukar menempatkan koefisien $x$ dan $y$ pada persamaan garis akhir."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan dua titik sembarang pada garis $5x - 7y = 35$.\n- Jika $y = 0$, maka $5x = 35 \\implies x = 7$, didapat titik $(7, 0)$.\n- Jika $x = 0$, maka $-7y = 35 \\implies y = -5$, didapat titik $(0, -5)$.\n\nLangkah 2: Translasikan kedua titik tersebut oleh $\\binom{2}{-1}$.\n- Titik $(7, 0) \\to (7 + 2, 0 + (-1)) = (9, -1)$.\n- Titik $(0, -5) \\to (0 + 2, -5 + (-1)) = (2, -6)$.\n\nLangkah 3: Tentukan persamaan garis yang melalui titik $(9, -1)$ dan $(2, -6)$.\n$$\\frac{y - y_1}{y_2 - y_1} = \\frac{x - x_1}{x_2 - x_1}$$\n$$\\frac{y - (-1)}{-6 - (-1)} = \\frac{x - 9}{2 - 9}$$\n$$\\frac{y + 1}{-5} = \\frac{x - 9}{-7}$$\n$$-7(y + 1) = -5(x - 9)$$\n$$-7y - 7 = -5x + 45$$\n$$5x - 7y = 45 + 7$$\n$$5x - 7y = 52$$\n\nJadi, hasil translasi garis tersebut adalah $5x - 7y = 52$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

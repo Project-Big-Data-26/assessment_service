@@ -114,6 +114,12 @@ def read_config(path):
         raise ValueError("fallbackOn503 must be boolean")
     if config.get("fallbackOn503") and not fallbacks:
         raise ValueError("fallbackOn503 requires fallbackProviders")
+    training = config.get("empiricalFineTuning", {})
+    if (not isinstance(training, dict) or type(training.get("enabled", False)) is not bool
+            or type(training.get("epochs", 3)) is not int or not 1 <= training.get("epochs", 3) <= 12
+            or type(training.get("timeoutSeconds", 21600)) is not int
+            or not 60 <= training.get("timeoutSeconds", 21600) <= 43200):
+        raise ValueError("invalid empiricalFineTuning configuration")
     return config
 
 
@@ -126,6 +132,8 @@ def source_identity(name, batch):
 
 def mark_ready(name, batch):
     # Validate the complete handoff, not just the existence of its JSON files.
+    from app.services.exercise.workflow import require_validation
+    require_validation(exercise.paths(name, batch)["exercise"])
     exercise.stage_class(name, batch)
     document = {"schemaVersion": "extraction-ready-v1", "completedAt": timestamp(),
                 **source_identity(name, batch)}
@@ -134,11 +142,18 @@ def mark_ready(name, batch):
 
 
 def discover_jobs(config):
+    from app.services.exercise.workflow import validation_allowed
+    def manually_owned(base):
+        state = base / "reference_replenishment_state.json"
+        return state.exists() and load(state).get("validationOwner") in {"replenishment_runner", "codex_local_review"}
     jobs, problems = {}, []
     for entry in config.get("bootstrapJobs", []):
         if entry["class"] not in config["classes"]:
             raise ValueError("bootstrap class must be enabled")
         try:
+            base = exercise.paths(entry["class"], entry["batch"])["exercise"]
+            if manually_owned(base) or not validation_allowed(base):
+                continue
             identity = source_identity(entry["class"], entry["batch"])
             jobs[(identity["class"], identity["batch"])] = identity
         except (ValueError, OSError) as exc:
@@ -146,6 +161,9 @@ def discover_jobs(config):
     for name in config["classes"]:
         for marker in sorted((ROOT / "output/exercise" / name).glob("batch*/extraction_ready.json")):
             try:
+                if manually_owned(marker.parent) or not validation_allowed(marker.parent):
+                    jobs.pop((name, marker.parent.name), None)
+                    continue
                 ready = load(marker)
                 identity = source_identity(name, marker.parent.name)
                 if ready.get("schemaVersion") != "extraction-ready-v1" or any(
@@ -273,6 +291,9 @@ def validate_job(job, config, state, budget, directory):
     name, batch = job["class"], job["batch"]
     key = f"{name}/{batch}"
     p = exercise.paths(name, batch)
+    from app.services.exercise.workflow import validation_allowed
+    if not validation_allowed(p["exercise"]):
+        return {"status": "validation_pending", "apiCallsThisRun": 0}, budget
     identity = job_identity(job, config)
     previous = state.get(key, {})
     if previous.get("identity") == identity and previous.get("status") == "completed":
@@ -381,6 +402,12 @@ def validate_with_provider_failover(job, config, state, budget, directory, *, on
                 if not settings.api_key.strip() or not settings.live_enabled:
                     attempts.append({"provider": provider, "keySlot": key_slot, "status": "skipped_not_enabled", "apiCalls": 0})
                     continue
+                envelope_path = exercise.paths(job["class"], job["batch"])["exercise"] / "soal_exercise_db.json"
+                envelope = load(envelope_path) if envelope_path.exists() else {}
+                if provider != "gemini" and any(row.get("image_url") for row in envelope.get("items", [])):
+                    attempts.append({"provider": provider, "keySlot": key_slot,
+                                     "status": "skipped_unsupported_visual_input", "apiCalls": 0})
+                    continue
                 if budget <= 0:
                     break
                 try:
@@ -436,7 +463,7 @@ def validate_with_provider_failover(job, config, state, budget, directory, *, on
         time.sleep(delay)
         candidates = temporary_providers
         round_index += 1
-    if any(a["status"] != "skipped_not_enabled" for a in attempts):
+    if result is not None:
         result.update(providerAttempts=attempts, apiCallsThisRun=initial_budget - budget)
         return result, budget
     return {"status": "waiting_for_provider", "providerAttempts": attempts, "apiCallsThisRun": 0}, budget
@@ -577,10 +604,18 @@ def run(config, output):
             report["psychometrics"] = screen_assessments(config, output)
         except Exception as exc:
             report["psychometrics"] = {"status": "failed", "errorType": type(exc).__name__}
+        try:
+            from scripts.empirical_finetuning import run_feedback
+            report["fineTuning"] = run_feedback(config, report["psychometrics"], output / "fine_tuning", ROOT)
+        except Exception as exc:
+            report["fineTuning"] = {"status": "failed", "errorType": type(exc).__name__}
         report.update(finishedAt=timestamp(), remainingApiCalls=budget)
         report["success"] = (not problems and not report["waitingClasses"]
                              and all(j["status"] == "completed" for j in report["jobs"].values())
                              and report["psychometrics"]["status"] != "failed"
+                             and report["fineTuning"]["status"] != "failed"
+                             and all(a["status"] not in ("failed", "training_failed", "training_timeout")
+                                     for a in report["fineTuning"].get("assessments", []))
                              and all(a["status"] != "failed" for a in report["psychometrics"].get("assessments", [])))
         atomic_write(report, directory / "report.json")
         atomic_write(report, output / "latest.json")

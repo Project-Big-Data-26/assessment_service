@@ -849,6 +849,1170 @@
       "pembahasan": "Fungsi distribusi kumulatif $F(x)$ diperoleh dari integral fungsi densitas peluang $f(t)$ dari batas bawah hingga $x$:\n$$F(x) = \\int_{0}^{x} f(t)\\,dt$$\nUntuk selang $0 \\le x \\le 3$:\n$$F(x) = \\int_{0}^{x} \\frac{1}{9}t^2\\,dt = \\left[ \\frac{t^3}{27} \\right]_{0}^{x} = \\frac{x^3}{27} - 0 = \\frac{x^3}{27}$$\nJadi, untuk $0 \\le x \\le 3$, fungsi distribusi kumulatifnya adalah $F(x) = \\frac{x^3}{27}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51236606641a2933f50d3a6d",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang berbentuk kurva segitiga simetris:\n$$f(x) = \\begin{cases} c x, & 0 \\le x \\le 2 \\\\ c(4 - x), & 2 < x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai peluang bahwa simpangan nilai $X$ terhadap nilai tengah $2$ tidak lebih dari $1$ satuan, yaitu $P(|X - 2| \\le 1)$, adalah ....",
+        "jawaban": "$\\frac{3}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target medium; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<7)$.",
+      "jawaban_benar": "$\\frac{49}{64}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/64 dx=49/64=49/64.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{113}{64}$",
+          "alasan": "Nilai $\\frac{113}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{15}{64}$",
+          "alasan": "Nilai $- \\frac{15}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{177}{64}$",
+          "alasan": "Nilai $\\frac{177}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/64 dx=49/64=49/64.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5261bee5e95c7848caf86e7",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi peluang sepotong yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} ax, & 0 \\le x < 2 \\\\ b, & 2 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nAgar fungsi $f(x)$ kontinu pada interval $[0, 4]$ dan merupakan fungsi densitas peluang yang sah, nilai dari $P(1 \\le X \\le 3)$ adalah ....",
+        "jawaban": "$\\frac{7}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target medium; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<5)$.",
+      "jawaban_benar": "$\\frac{25}{64}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/64 dx=25/64=25/64.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{89}{64}$",
+          "alasan": "Nilai $\\frac{89}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{39}{64}$",
+          "alasan": "Nilai $- \\frac{39}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{153}{64}$",
+          "alasan": "Nilai $\\frac{153}{64}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/64 dx=25/64=25/64.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-e-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "182c767ef5cefdbb117f31d9",
+        "teks": "Dalam masa pembatasan kunjungan, suatu galeri seni hanya beroperasi selama 300 menit, yaitu mulai pukul 10.00 hingga pukul 15.00. Pengunjung tidak diperbolehkan berada di dalam galeri sebelum pukul 10.00 dan harus meninggalkan galeri paling lambat pukul 15.00. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam galeri (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan $f(x)=\\begin{cases}\\frac{1}{300}, & 0 \\le x \\le 300\\\\ 0, & x<0 \\text{ atau } x>300\\end{cases}$. Peluang seorang pengunjung berada di dalam galeri pada rentang waktu antara 60 dan 120 menit adalah ....",
+        "jawaban": "$\\frac{1}{5}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{112}{121}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{112}{121}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{121}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{56}{121}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{233}{242}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/242 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{112}{121}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/290c1d5f9a49100c10bfb12a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              11
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 11], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7dfa78fdb15269d6258ecb05",
+        "teks": "Waktu pengisian daya baterai sebuah perangkat hingga penuh dinyatakan sebagai variabel acak kontinu $T$ (dalam menit) dengan fungsi densitas peluang:\n$$f(t)=\\begin{cases}\\frac{1}{80}, & 0 \\le t \\le 80\\\\ 0, & \\text{untuk } t \\text{ lainnya}\\end{cases}$$\nPeluang pengisian daya berlangsung dalam rentang waktu antara 20 dan 60 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{51}{100}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{51}{100}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{49}{100}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{51}{200}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{151}{200}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 49/200 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{51}{100}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/eb0255b8e83dcc7177910d8e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              10
+            ],
+            [
+              "t",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 10], [\"t\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0642a5399d24647e2b391d8",
+        "teks": "Sebuah laboratorium komputer dibuka untuk sesi praktikum mandiri dengan durasi paling lama 6 jam. Misalkan $Y$ menyatakan waktu praktikum seorang mahasiswa (dalam jam) dengan fungsi densitas peluang $f(y) = \\frac{1}{6}$ untuk $0 \\le y \\le 6$ dan $f(y) = 0$ untuk nilai lainnya. Peluang seorang mahasiswa melakukan praktikum selama 4 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{48}{49}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{48}{49}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{49}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{24}{49}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{97}{98}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/98 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{48}{49}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/460f45db7fd335d5e51cf19f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              7
+            ],
+            [
+              "t",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 7], [\"t\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e289217c133d74a71e0c51f",
+        "teks": "Jika $X$ merupakan variabel acak kontinu dengan fungsi densitas peluang $f(x)$, maka untuk sembarang nilai konstanta real $c$, nilai dari $P(X = c)$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{33}{49}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{33}{49}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{49}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{33}{98}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 8/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{33}{49}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/0d85895f9a813b86a9ef5987.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              7
+            ],
+            [
+              "t",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 7], [\"t\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b75c05a5a8c69330f0d7f6ba",
+        "teks": "Diketahui $X$ adalah variabel acak kontinu dengan fungsi densitas peluang $f(x)$. Peluang bahwa $X$ berada pada selang $a$ hingga $b$, yaitu $P(a \\le X \\le b)$, secara matematis dinyatakan oleh ....",
+        "jawaban": "$\\int_{a}^{b} f(x)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{5}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{5}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7364b86637d3976171f7c9ee.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              24
+            ],
+            [
+              "t",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 24], [\"t\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62a5df3d2bc8178d429d3cc4",
+        "teks": "Sebuah wahana permainan buka selama 240 menit setiap sesi. Misalkan $X$ adalah variabel acak yang menyatakan lama waktu seorang pengunjung berada di wahana (dalam menit) dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{240}, & 0 \\le x \\le 240 \\\\ 0, & x < 0 \\text{ atau } x > 240 \\end{cases}$$\nPeluang seorang pengunjung berada di wahana tersebut pada rentang waktu antara 40 dan 160 menit adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{288}{289}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{288}{289}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{289}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{144}{289}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{577}{578}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/578 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{288}{289}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5dc714a3730c00eea99ce8a0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              17
+            ],
+            [
+              "t",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 17], [\"t\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2eec49fcbb25dc4c0ab62d7",
+        "teks": "Sebuah mesin pendingin beroperasi secara otomatis selama 120 menit dalam satu siklus kerja. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi kerja mesin (dalam menit) dengan fungsi densitas:\n$$f(x) = \\begin{cases} \\frac{1}{120}, & 0 \\le x \\le 120 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nPeluang mesin beroperasi dalam rentang waktu antara 45 menit dan 85 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{675}{676}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{675}{676}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{676}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{675}{1352}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1351}{1352}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/1352 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{675}{676}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/619ea906115f6a5d4c6340d1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              26
+            ],
+            [
+              "t",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 26], [\"t\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5634fed32896d5f329e0daf",
+        "teks": "Sebuah ruang laboratorium disewa maksimal selama 8 jam dalam sehari. Waktu penggunaan laboratorium dinyatakan oleh variabel acak kontinu $Y$ (dalam jam) dengan fungsi densitas:\n$$f(y) = \\begin{cases} \\frac{1}{8}, & 0 \\le y \\le 8 \\\\ 0, & \\text{untuk } y \\text{ lainnya} \\end{cases}$$\nPeluang laboratorium tersebut digunakan selama 6 jam atau lebih adalah ....",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{459}{484}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{459}{484}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{484}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{459}{968}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{943}{968}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 25/968 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{459}{484}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/2ec31d176ac0f0d0545a051a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              22
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 22], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb5088d052d6c0cc8656bc14",
+        "teks": "Perhitungan nilai peluang untuk suatu variabel acak kontinu tidak ditentukan berdasarkan nilai tunggal, melainkan dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas pada suatu interval nilai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{55}{64}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{55}{64}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{64}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{55}{128}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{119}{128}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/128 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{55}{64}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1b2ca3021ade84f0bffa9b9c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              8
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 8], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e200c6ab6c96fb6fb8849f6d",
+        "teks": "Fungsi distribusi peluang yang menggambarkan sebaran nilai dari suatu variabel acak kontinu secara matematis disebut sebagai ....",
+        "jawaban": "fungsi densitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{49}{625}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{49}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{576}{625}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{49}{1250}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{337}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 288/625 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{49}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/1585c68c46ee1fcc0c8944cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              25
+            ],
+            [
+              "t",
+              24
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 25], [\"t\", 24]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3c7127f12d07b1d99ea8671",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=2$ dan $x=6$, memiliki fungsi densitas peluang $f(x)=\\frac{x}{16}$. Nilai dari $P(X < 4)$ adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{16}{25}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{16}{25}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8}{25}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/50 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{16}{25}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5459e63b21558edad655327e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              5
+            ],
+            [
+              "t",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 5], [\"t\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ad111d49fd01dc2c1728a59",
+        "teks": "Seorang teknisi melakukan kalibrasi alat sensor dengan waktu pengerjaan yang tersebar merata dari 10 menit hingga 70 menit. Misalkan $X$ menyatakan waktu kalibrasi (dalam menit) dengan fungsi densitas peluang $f(x) = \\frac{1}{60}$ untuk $10 \\le x \\le 70$, dan $f(x)=0$ untuk nilai lainnya.\n\nBerdasarkan stimulus tersebut, tentukan peluang teknisi menyelesaikan kalibrasi dalam rentang waktu dari 25 menit hingga 55 menit.",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{119}{144}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{119}{144}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{144}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{119}{288}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{263}{288}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 25/288 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{119}{144}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/861210154bf84d4485a3e568.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              12
+            ],
+            [
+              "t",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 12], [\"t\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85544a0703175d962c47d08",
+        "teks": "Distribusi peluang dari suatu variabel acak kontinu tidak dapat disajikan dalam bentuk tabel distribusi peluang diskret karena ....",
+        "jawaban": "nilai-nilai variabel acak kontinu berada pada suatu selang yang tak terhingga banyaknya",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{16}{25}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{16}{25}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{8}{25}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/50 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{16}{25}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/64e914361b5fc8ae7b316125.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              10
+            ],
+            [
+              "t",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 10], [\"t\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a4e39430a826775cfa3c16",
+        "teks": "Pada grafik fungsi densitas peluang $f(x)$ dari suatu variabel acak kontinu $X$, luas daerah di bawah kurva yang dibatasi oleh garis $x = a$ dan $x = b$ serta sumbu-$x$ merepresentasikan ....",
+        "jawaban": "peluang variabel acak bernilai pada interval $a \\le X \\le b$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{8}{9}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{8}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{17}{18}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/18 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{8}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ee21d3618fc0470bb5e038ee.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "L",
+              6
+            ],
+            [
+              "t",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"L\", 6], [\"t\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "234a84a610c6e374bc05c1cc",
+        "teks": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=0$ dan $x=6$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{x+1}{24}$. Nilai dari $P(X < 2)$ adalah ....",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $13$; t = $2$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{165}{169}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{165}{169}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{169}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{165}{338}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{167}{169}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/169 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{165}{169}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a02771365039a94cba775a16",
+        "teks": "Seorang pekerja magang mencatat durasi fokus kerja harian yang tersebar secara merata antara 30 menit hingga 150 menit. Jika $X$ menyatakan durasi waktu fokus tersebut (dalam menit), peluang pekerja tersebut fokus dalam rentang 50 menit hingga 90 menit adalah ....",
+        "jawaban": "$\\frac{1}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $27$; t = $3$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{80}{81}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{80}{81}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{81}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{40}{81}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{161}{162}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/162 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{80}{81}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d21267402a9ac2e7a8dfc90d",
+        "teks": "Seorang atlet renang mencatat waktu latihan fisik tambahan yang tersebar merata dari 15 menit hingga 75 menit. Jika durasi latihan dinyatakan oleh variabel acak kontinu $X$, peluang atlet tersebut berlatih dalam rentang waktu antara 25 menit hingga 65 menit adalah ....",
+        "jawaban": "$\\frac{2}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $9$; t = $8$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{17}{81}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{17}{81}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{64}{81}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{17}{162}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{49}{81}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 32/81 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{17}{81}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0137326ab94e36014c3b54ce",
+        "teks": "Berdasarkan representasi grafisnya, fungsi peluang dari suatu variabel acak kontinu disajikan dalam bentuk ....",
+        "jawaban": "kurva kontinu tanpa titik-titik diskret",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $19$; t = $3$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{352}{361}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{352}{361}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{361}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{176}{361}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{713}{722}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/722 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{352}{361}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d08c7b3d19bef3d35fff9c40",
+        "teks": "Pada variabel acak kontinu, peluang suatu kejadian dalam suatu selang nilai tertentu dihitung berdasarkan ....",
+        "jawaban": "luas daerah di bawah kurva fungsi densitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $12$; t = $10$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{11}{36}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{11}{36}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{36}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{11}{72}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{47}{72}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 25/72 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{11}{36}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8f424773b3b47440d11deba",
+        "teks": "Seorang siswa mengikuti sesi bimbingan belajar mandiri selama 3 jam setiap sore, dari pukul 09.00—12.00. Ia mencatat waktu efektif belajar setiap hari dalam satuan menit. Berdasarkan pengamatan, waktu efektif tersebut tersebar merata dari 50 menit hingga 150 menit. Misalkan $X$ adalah variabel acak kontinu yang menyatakan lama waktu efektif belajar (dalam menit). Peluang bahwa siswa tersebut belajar efektif dalam rentang waktu dari 75 menit hingga 110 menit adalah ....",
+        "jawaban": "$\\frac{7}{20}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_density_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui L = $19$; t = $11$. Densitas X adalah $f(x)=kx$ pada $[0,L]$ dan nol selainnya. Tentukan $P(X>t)$ setelah menentukan k agar f menjadi densitas.",
+      "jawaban_benar": "$\\frac{240}{361}$",
+      "alasan_benar": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{240}{361}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{121}{361}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{120}{361}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{601}{722}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 121/722 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Normalisasi integral seluruh densitas, kemudian integralkan pada interval di atas t. Hasilnya $\\frac{240}{361}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-e-medium-bt01-042"
     }
   ]
 }

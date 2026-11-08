@@ -1,0 +1,398 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "D",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab D (Aturan Sinus) tipis: Rumus Sifat 3.5 hanya gambar, Contoh 3.16 dan Latihan D no.1-2, 6-8 berupa gambar atau teks pecahan rusak, dan acuan variasi pretest/Buku Siswa sudah dipakai di easy. Soal medium layak yang tidak kembar dengan easy hanya tersedia sekitar 11.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 158,
+        "bagian": "Contoh 3.16",
+        "nomor": "Contoh 3.16",
+        "teks": "Mereka berdiri terpisah sejauh 50 meter di tempat masing-masing. Bobi mengukur sebuah sudut elevasi sebesar 61° dari dasar tebing ke tebing titik tertinggi. Bobi juga mengukur besar sudut antara Anton dan dasar tebing, yaitu 72°. Anton mengukur sudut antara Bobi dan dasar tebing, yakni sebesar 38°.",
+        "jawaban": "sekitar 59,0983 meter"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tinggi tebing dari Aturan Sinus dan tangen",
+      "alasan_level": "tiga langkah: sudut ketiga, Aturan Sinus untuk jarak ke dasar tebing, lalu tangen sudut elevasi",
+      "stimulus": null,
+      "pertanyaan": "Dua orang pendaki, Anton ($A$) dan Bobi ($B$), berdiri terpisah sejauh 40 meter di tanah datar dan sama-sama melihat dasar tebing di titik $C$. Anton mengukur $\\angle CAB = 45^\\circ$ dan Bobi mengukur $\\angle ABC = 105^\\circ$. Bobi juga mengukur sudut elevasi puncak tebing dari titik $C$ sebesar $60^\\circ$ (diukur dari $B$). Tinggi tebing adalah ....",
+      "jawaban_benar": "$40 \\sqrt{6}$ m",
+      "alasan_benar": "$\\angle C = 30^\\circ$, $BC = \\frac{40 \\sin 45^\\circ}{\\sin 30^\\circ} = 40\\sqrt{2}$ m, tinggi $= BC \\tan 60^\\circ = 40\\sqrt{6}$ m",
+      "distraktor": [
+        {
+          "teks": "$40 \\sqrt{2}$ m",
+          "alasan": "lupa mengalikan dengan tangen sudut elevasi (berhenti di jarak $BC$)"
+        },
+        {
+          "teks": "$20 \\sqrt{6}$ m",
+          "alasan": "perbandingan Aturan Sinus terbalik: $BC = \\frac{AB \\sin C}{\\sin A}$ lalu dikalikan tangen"
+        },
+        {
+          "teks": "$\\frac{40 \\sqrt{6}}{3}$ m",
+          "alasan": "memakai $\\tan 30^\\circ$ padahal sudut elevasinya $60^\\circ$"
+        }
+      ],
+      "pembahasan": "Sudut $C = 180^\\circ - 45^\\circ - 105^\\circ = 30^\\circ$. $BC$ di depan $A$ dan $AB$ di depan $C$: $BC = 40\\sqrt{2}$ m. Tinggi $= BC \\tan 60^\\circ = 40\\sqrt{2}\\cdot\\sqrt{3} = 40\\sqrt{6}$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 158,
+        "bagian": "Contoh 3.16",
+        "nomor": "Contoh 3.16",
+        "teks": "Mereka berdiri terpisah sejauh 50 meter di tempat masing-masing. Bobi mengukur sebuah sudut elevasi sebesar 61° dari dasar tebing ke tebing titik tertinggi. Bobi juga mengukur besar sudut antara Anton dan dasar tebing, yaitu 72°. Anton mengukur sudut antara Bobi dan dasar tebing, yakni sebesar 38°.",
+        "jawaban": "sekitar 59,0983 meter"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tinggi tebing dari Aturan Sinus dan tangen",
+      "alasan_level": "tiga langkah: sudut ketiga, Aturan Sinus untuk jarak ke kaki menara, lalu tangen sudut elevasi",
+      "stimulus": null,
+      "pertanyaan": "Dua surveyor, Rini ($A$) dan Tomi ($B$), berdiri sejauh 30 m di lapangan datar untuk mengukur tinggi sebuah menara yang kakinya di titik $C$. Rini mengukur $\\angle CAB = 45^\\circ$ dan Tomi mengukur $\\angle ABC = 75^\\circ$. Dari titik $B$, sudut elevasi puncak menara adalah $30^\\circ$. Tinggi menara adalah ....",
+      "jawaban_benar": "$10 \\sqrt{2}$ m",
+      "alasan_benar": "$\\angle C = 60^\\circ$, $BC = \\frac{30 \\sin 45^\\circ}{\\sin 60^\\circ} = 10\\sqrt{6}$ m, tinggi $= 10\\sqrt{6} \\tan 30^\\circ = 10\\sqrt{2}$ m",
+      "distraktor": [
+        {
+          "teks": "$10 \\sqrt{6}$ m",
+          "alasan": "berhenti di jarak $BC$, lupa mengalikan tangen"
+        },
+        {
+          "teks": "$30 \\sqrt{2}$ m",
+          "alasan": "memakai $\\tan 60^\\circ$ padahal sudut elevasinya $30^\\circ$"
+        },
+        {
+          "teks": "$15 \\sqrt{2}$ m",
+          "alasan": "perbandingan Aturan Sinus terbalik untuk $BC$"
+        }
+      ],
+      "pembahasan": "Sudut $C = 60^\\circ$. $BC = \\frac{30 \\cdot \\frac{\\sqrt{2}}{2}}{\\frac{\\sqrt{3}}{2}} = 10\\sqrt{6}$ m. Tinggi $= BC \\tan 30^\\circ = 10\\sqrt{6}\\cdot\\frac{1}{\\sqrt{3}} = 10\\sqrt{2}$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 159,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Diberikan sebuah segitiga ABC dengan ∠ A = 45°, a = 7, dan b = 12.",
+        "jawaban": "Tidak ada segitiga yang memenuhi karena nilai sin B lebih dari 1"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak segitiga (kasus ambigu)",
+      "alasan_level": "menganalisis kasus: $\\sin B < 1$ memberi dua sudut $B$ (lancip dan tumpul), keduanya harus diuji jumlah sudutnya",
+      "stimulus": null,
+      "pertanyaan": "Diberikan segitiga $ABC$ dengan $\\angle A = 30^\\circ$, $a = 9$, dan $b = 12$. Banyak segitiga $ABC$ berbeda yang dapat dibentuk dengan data tersebut adalah ....",
+      "jawaban_benar": "2 segitiga",
+      "alasan_benar": "$\\sin B = \\frac{b \\sin A}{a} = \\frac{2}{3}$, ada $B \\approx 41,8^\\circ$ (lancip) dan $B \\approx 138,2^\\circ$ (tumpul); keduanya memenuhi $A + B < 180^\\circ$",
+      "distraktor": [
+        {
+          "teks": "0 segitiga",
+          "alasan": "mengira $\\sin B$ lebih dari 1 seperti pada kasus Paulina"
+        },
+        {
+          "teks": "1 segitiga",
+          "alasan": "hanya memakai sudut $B$ lancip dan lupa sudut tumpul dengan sinus yang sama"
+        },
+        {
+          "teks": "3 segitiga",
+          "alasan": "menghitung sudut lancip, tumpul, dan $90^\\circ$ sekaligus"
+        }
+      ],
+      "pembahasan": "$\\sin B = \\frac{12 \\cdot \\frac{1}{2}}{9} = \\frac{2}{3} < 1$. Sudut $B_1 \\approx 41,8^\\circ$ dan $B_2 = 180^\\circ - B_1 \\approx 138,2^\\circ$. Untuk $B_2$: $30^\\circ + 138,2^\\circ = 168,2^\\circ < 180^\\circ$, sehingga ada dua segitiga.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 159,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Diberikan sebuah segitiga ABC dengan ∠ A = 45°, a = 7, dan b = 12.",
+        "jawaban": "Tidak ada segitiga yang memenuhi karena nilai sin B lebih dari 1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kasus $\\sin B = 1$ lalu sudut ketiga",
+      "alasan_level": "tiga langkah: $\\sin B$ lewat Aturan Sinus, tentukan $B = 90^\\circ$, lalu sudut ketiga",
+      "stimulus": null,
+      "pertanyaan": "Diberikan segitiga $ABC$ dengan $\\angle A = 30^\\circ$, $a = 6$, dan $b = 12$. Besar sudut $C$ adalah ....",
+      "jawaban_benar": "$60^\\circ$",
+      "alasan_benar": "$\\sin B = \\frac{12 \\cdot \\frac{1}{2}}{6} = 1$ sehingga $B = 90^\\circ$ dan $C = 180^\\circ - 30^\\circ - 90^\\circ = 60^\\circ$",
+      "distraktor": [
+        {
+          "teks": "$30^\\circ$",
+          "alasan": "mengira $C = A$ karena segitiga dianggap sama kaki"
+        },
+        {
+          "teks": "$90^\\circ$",
+          "alasan": "memberikan sudut $B$, bukan sudut $C$"
+        },
+        {
+          "teks": "$120^\\circ$",
+          "alasan": "memakai $B = 30^\\circ$ sehingga $C = 180^\\circ - 30^\\circ - 30^\\circ$"
+        }
+      ],
+      "pembahasan": "$\\frac{\\sin B}{12} = \\frac{\\sin 30^\\circ}{6}$ sehingga $\\sin B = 1$ dan $B = 90^\\circ$. Maka $C = 180^\\circ - 30^\\circ - 90^\\circ = 60^\\circ$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dari eksplorasi tersebut, kamu telah menemukan hubungan antara nilai sinus sudut-sudut dalam segitiga dan panjang sisi-sisinya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan sisi dari perbandingan sudut",
+      "alasan_level": "menganalisis: besar sudut dicari dari perbandingan, sisi sebanding dengan sinus sudut, lalu keliling dipakai untuk mencari skala",
+      "stimulus": null,
+      "pertanyaan": "Besar sudut-sudut $A$, $B$, dan $C$ pada segitiga $ABC$ berbanding $1 : 2 : 3$. Jika keliling segitiga tersebut 24 cm, panjang sisi terpanjang adalah ....",
+      "jawaban_benar": "$24 - 8 \\sqrt{3}$ cm",
+      "alasan_benar": "sudut $30^\\circ, 60^\\circ, 90^\\circ$ sehingga $a : b : c = \\frac{1}{2} : \\frac{\\sqrt{3}}{2} : 1 = 1 : \\sqrt{3} : 2$; $c = \\frac{2 \\cdot 24}{3 + \\sqrt{3}} = 24 - 8\\sqrt{3}$ cm",
+      "distraktor": [
+        {
+          "teks": "$12$ cm",
+          "alasan": "mengira sisi sebanding dengan sudut ($c = \\frac{3}{6} \\cdot 24$), bukan dengan sinus sudut"
+        },
+        {
+          "teks": "$-12 + 12 \\sqrt{3}$ cm",
+          "alasan": "memberi panjang sisi tengah ($b$), bukan sisi terpanjang"
+        },
+        {
+          "teks": "$12 - 4 \\sqrt{3}$ cm",
+          "alasan": "memberi panjang sisi terpendek ($a$), bukan sisi terpanjang"
+        }
+      ],
+      "pembahasan": "$A = 30^\\circ$, $B = 60^\\circ$, $C = 90^\\circ$. Sisi sebanding dengan $\\sin A : \\sin B : \\sin C = 1 : \\sqrt{3} : 2$. Jumlah bagian $3 + \\sqrt{3}$, maka $c = \\frac{2}{3+\\sqrt{3}} \\cdot 24 = 24 - 8\\sqrt{3}$ cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Diberikan segitiga ABC dengan panjang sisi b = 4 dan c = 7. R adalah jari-jari lingkaran luar segitiga tersebut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jari-jari lingkaran luar setelah mencari sudut",
+      "alasan_level": "tiga langkah: sudut ketiga, sudut di hadapan sisi $a$, lalu $2R = \\frac{a}{\\sin A}$",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\angle B = 45^\\circ$, $\\angle C = 75^\\circ$, dan $a = 6$. Jika $R$ adalah jari-jari lingkaran luar segitiga tersebut, maka $R$ sama dengan ....",
+      "jawaban_benar": "$2 \\sqrt{3}$",
+      "alasan_benar": "$A = 180^\\circ - 45^\\circ - 75^\\circ = 60^\\circ$, $2R = \\frac{6}{\\sin 60^\\circ} = 4\\sqrt{3}$ sehingga $R = 2\\sqrt{3}$",
+      "distraktor": [
+        {
+          "teks": "$4 \\sqrt{3}$",
+          "alasan": "lupa membagi dua: $R = \\frac{a}{\\sin A}$"
+        },
+        {
+          "teks": "$3 \\sqrt{2}$",
+          "alasan": "memakai $\\sin B$ padahal $a$ berhadapan dengan sudut $A$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "memakai $\\cos A$ sebagai pengganti $\\sin A$"
+        }
+      ],
+      "pembahasan": "$A = 60^\\circ$. Aturan Sinus: $\\frac{a}{\\sin A} = 2R$, jadi $2R = \\frac{6}{\\sqrt{3}/2} = 4\\sqrt{3}$ dan $R = 2\\sqrt{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 158,
+        "kutipan": "Aturan Sinus sering digunakan untuk menyelesaikan permasalahan di sekitar kita."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "soal cerita keliling dengan sudut sama",
+      "alasan_level": "tiga langkah: sudut puncak dari jumlah sudut, Aturan Sinus untuk panjang kaki, lalu keliling",
+      "stimulus": null,
+      "pertanyaan": "Dua pos jaga $A$ dan $B$ berjarak 60 m. Sebuah menara $C$ terlihat dari kedua pos dengan $\\angle CAB = \\angle CBA = 30^\\circ$. Jika seorang petugas berjalan mengelilingi segitiga $ABC$ satu kali, jarak yang ditempuhnya adalah ....",
+      "jawaban_benar": "$60 + 40 \\sqrt{3}$ m",
+      "alasan_benar": "$\\angle C = 120^\\circ$, $AC = BC = \\frac{60 \\sin 30^\\circ}{\\sin 120^\\circ} = 20\\sqrt{3}$ m, keliling $= 60 + 40\\sqrt{3}$ m",
+      "distraktor": [
+        {
+          "teks": "$20 \\sqrt{3} + 60$ m",
+          "alasan": "hanya menambahkan satu kaki ($AC$) ke $AB$"
+        },
+        {
+          "teks": "$120$ m",
+          "alasan": "mengira $AC = BC = AB$ (segitiga sama sisi)"
+        },
+        {
+          "teks": "$60 + 120 \\sqrt{3}$ m",
+          "alasan": "perbandingan terbalik: kaki $= \\frac{AB \\sin C}{\\sin A} = 60\\sqrt{3}$"
+        }
+      ],
+      "pembahasan": "$\\angle C = 120^\\circ$. $\\frac{AC}{\\sin 30^\\circ} = \\frac{60}{\\sin 120^\\circ}$ sehingga $AC = BC = 20\\sqrt{3}$ m. Keliling $= 60 + 20\\sqrt{3} + 20\\sqrt{3} = 60 + 40\\sqrt{3}$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Diberikan segitiga ABC dengan panjang sisi b = 4 dan c = 7. R adalah jari-jari lingkaran luar segitiga tersebut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sinus sudut dan jari-jari lingkaran luar",
+      "alasan_level": "tiga langkah: $2R$ dari $a$ dan $\\sin A$, lalu $b$ dan $R$, lalu dijumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Pada segitiga $ABC$ diketahui $\\sin A = \\frac{2}{5}$, $\\sin B = \\frac{3}{5}$, dan $a = 8$. Jika $R$ adalah jari-jari lingkaran luar segitiga tersebut, nilai $b + R$ adalah ....",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "$2R = \\frac{8}{2/5} = 20$ sehingga $R = 10$; $b = 20 \\cdot \\frac{3}{5} = 12$; $b + R = 22$",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "memakai $2R = 20$ sebagai $R$: $12 + 20$"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "menghitung $a + b = 8 + 12$ tanpa jari-jari"
+        },
+        {
+          "teks": "$\\frac{46}{3}$",
+          "alasan": "perbandingan terbalik untuk $b$: $b = \\frac{16}{3}$, lalu ditambah $R = 10$"
+        }
+      ],
+      "pembahasan": "$\\frac{a}{\\sin A} = 2R = 20$, jadi $R = 10$. $b = 2R \\sin B = 12$. Maka $b + R = 22$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Jumlah besar sudut-sudut dalam segitiga adalah 180° sehingga"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "keliling segitiga sama kaki",
+      "alasan_level": "tiga langkah: sudut alas dari jumlah sudut, Aturan Sinus untuk panjang kaki, lalu keliling",
+      "stimulus": null,
+      "pertanyaan": "Segitiga $PQR$ sama kaki dengan $PQ = PR$, $\\angle P = 120^\\circ$, dan $QR = 12\\sqrt{3}$ cm. Keliling segitiga $PQR$ adalah ....",
+      "jawaban_benar": "$12 \\sqrt{3} + 24$ cm",
+      "alasan_benar": "$\\angle Q = \\angle R = 30^\\circ$, $PQ = \\frac{12\\sqrt{3} \\sin 30^\\circ}{\\sin 120^\\circ} = 12$ cm, keliling $= 24 + 12\\sqrt{3}$ cm",
+      "distraktor": [
+        {
+          "teks": "$12 + 12 \\sqrt{3}$ cm",
+          "alasan": "hanya menjumlahkan satu kaki dan alas"
+        },
+        {
+          "teks": "$12 \\sqrt{3} + 72$ cm",
+          "alasan": "perbandingan terbalik: kaki $= \\frac{QR \\sin P}{\\sin Q} = 36$"
+        },
+        {
+          "teks": "$24 \\sqrt{3}$ cm",
+          "alasan": "memakai kaki $= 6\\sqrt{3}$ (lupa membagi dengan $\\sin 120^\\circ$)"
+        }
+      ],
+      "pembahasan": "Sudut alas $= \\frac{180^\\circ - 120^\\circ}{2} = 30^\\circ$. $PQ = \\frac{QR \\sin R}{\\sin P} = 12$ cm. Keliling $= 12 + 12 + 12\\sqrt{3} = 24 + 12\\sqrt{3}$ cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 157,
+        "kutipan": "Dengan Aturan Sinus, kita memperoleh"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai terbesar pada kasus dua kemungkinan sudut",
+      "alasan_level": "menganalisis dua kemungkinan sudut $B$ (lancip dan tumpul), menghitung $c$ untuk tiap kasus, lalu memilih yang terbesar",
+      "stimulus": null,
+      "pertanyaan": "Diberikan segitiga $ABC$ dengan $\\angle A = 30^\\circ$, $a = 5$, dan $b = 5\\sqrt{3}$. Nilai terbesar yang mungkin untuk panjang sisi $c$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "$\\sin B = \\frac{\\sqrt{3}}{2}$ sehingga $B = 60^\\circ$ ($C = 90^\\circ$, $c = 10$) atau $B = 120^\\circ$ ($C = 30^\\circ$, $c = 5$); terbesar $10$",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "hanya memakai $B = 120^\\circ$, padahal $c = 5$ adalah nilai terkecil"
+        },
+        {
+          "teks": "$5\\sqrt{3}$",
+          "alasan": "mengira $c = b$"
+        },
+        {
+          "teks": "$10\\sqrt{3}$",
+          "alasan": "memakai $\\frac{b}{\\sin A} = 10\\sqrt{3}$ (yaitu $2R$) sebagai $c$"
+        }
+      ],
+      "pembahasan": "$B = 60^\\circ$: $C = 90^\\circ$, $c = \\frac{5 \\cdot 1}{1/2} = 10$. $B = 120^\\circ$: $C = 30^\\circ$, $c = 5$. Nilai terbesar adalah $10$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-d-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 160,
+        "kutipan": "Dia mengetahui bahwa nilai maksimum sinus adalah 1 sehingga dia bingung apakah perhitungannya salah atau ada alasan lain."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat keberadaan segitiga (parameter)",
+      "alasan_level": "menganalisis syarat $\\sin B \\le 1$ pada Aturan Sinus untuk mencari nilai bilangan bulat terkecil",
+      "stimulus": null,
+      "pertanyaan": "Diberikan segitiga $ABC$ dengan $\\angle A = 30^\\circ$ dan $b = 14$. Jika panjang sisi $a$ adalah bilangan bulat, nilai terkecil $a$ agar segitiga tersebut ada adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "$\\sin B = \\frac{14 \\cdot \\frac{1}{2}}{a} = \\frac{7}{a} \\le 1$ sehingga $a \\ge 7$; $a = 7$ memberi $B = 90^\\circ$ yang masih valid",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "tidak memeriksa: $a = 6$ memberi $\\sin B = \\frac{7}{6} > 1$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "memakai syarat $\\sin B < 1$ (batas $<$ bukan $\\le$)"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "mengira $a$ harus sama dengan $b$"
+        }
+      ],
+      "pembahasan": "$\\sin B = \\frac{b \\sin A}{a} = \\frac{7}{a}$. Syarat segitiga ada: $\\sin B \\le 1$, jadi $a \\ge 7$. Bilangan bulat terkecil adalah $7$.",
+      "catatan": null
+    }
+  ]
+}

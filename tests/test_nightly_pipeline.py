@@ -49,6 +49,15 @@ def test_only_completed_handoffs_are_discovered_and_mutation_blocks_bootstrap(wo
     assert not jobs and len(errors) == 1
 
 
+def test_manual_replenishment_owner_excludes_bootstrap_and_ready_marker(workspace):
+    _, p = workspace
+    ready_marker(p)
+    state = p["exercise"] / "reference_replenishment_state.json"
+    state.write_text(json.dumps({"validationOwner": "replenishment_runner"}), encoding="utf-8")
+    cfg = {**config(), "bootstrapJobs": [{"class": "kelas7", "batch": "batch01"}]}
+    assert nightly.discover_jobs(cfg) == ([], [])
+
+
 def test_marker_cannot_spoof_class_or_use_naive_timestamp(workspace):
     _, p = workspace
     ready_marker(p)

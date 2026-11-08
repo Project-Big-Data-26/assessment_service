@@ -849,6 +849,3546 @@
       "pembahasan": "Langkah 1: Tentukan turunan $f'(x)$ menggunakan sifat perkalian fungsi $(uv)' = u'v + uv'$:\nMisalkan $u = x^2 - 4x + 1 \\implies u' = 2x - 4$\nMisalkan $v = e^x \\implies v' = e^x$\n$$f'(x) = (2x - 4)e^x + (x^2 - 4x + 1)e^x$$\n\nLangkah 2: Sederhanakan bentuk turunan:\n$$f'(x) = (x^2 - 2x - 3)e^x$$\n\nLangkah 3: Faktorkan untuk menemukan absis titik stasioner saat $f'(x) = 0$:\n$$(x - 3)(x + 1)e^x = 0$$\nKarena $e^x > 0$ untuk seluruh $x \\in \\mathbb{R}$, maka:\n$$(x - 3)(x + 1) = 0 \\implies x = 3 \\quad \\text{atau} \\quad x = -1$$\nKarena $x_1 < x_2$, maka diperoleh $x_1 = -1$ dan $x_2 = 3$.\n\nLangkah 4: Hitung nilai fungsi di $x_1 = -1$:\n$$f(-1) = ((-1)^2 - 4(-1) + 1)e^{-1} = (1 + 4 + 1)e^{-1} = 6e^{-1}$$\n\nLangkah 5: Hitung nilai fungsi di $x_2 = 3$:\n$$f(3) = (3^2 - 4(3) + 1)e^3 = (9 - 12 + 1)e^3 = -2e^3$$\n\nLangkah 6: Hitung hasil kali nilai stasioner:\n$$f(x_1) \\cdot f(x_2) = (6e^{-1}) \\cdot (-2e^3) = -12e^{-1 + 3} = -12e^2$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c0e11dd0cd116a4c77b274d",
+        "teks": "Garis singgung kurva $f(x) = 2^{3x - 1}$ di titik yang berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai dari konstanta $c$ adalah ....",
+        "jawaban": "$4(1 - 3\\ln 2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=8 x^{3} + 5 x^{2} + 9 x + 7$. Tentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$255$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$24 x^{2} + 10 x + 9$. Pada x=3, nilainya 255.",
+      "distraktor": [
+        {
+          "teks": "$256$",
+          "alasan": "Pilihan $256$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $255$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$254$",
+          "alasan": "Pilihan $254$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $255$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$257$",
+          "alasan": "Pilihan $257$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $255$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$24 x^{2} + 10 x + 9$. Pada x=3, nilainya 255.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7cdb1368c86335ae52c71a88",
+        "teks": "Sebuah objek bergerak pada bidang Kartesius dengan posisi $(x(t), y(t))$ pada saat $t$ detik memenuhi persamaan $x(t) = 2t^2 - 2t + 1$ dan $y(t) = t^3 - t^2$. Kecepatan objek dirumuskan sebagai laju perubahan posisi $v(t) = \\sqrt{(x'(t))^2 + (y'(t))^2}$. Tentukan besar kecepatan objek tersebut pada saat $t = 2$ detik.",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=5 x^{3} + 7 x^{2} + 9 x + 4$. Tentukan $f^\\prime(-3)$.",
+      "jawaban_benar": "$102$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$15 x^{2} + 14 x + 9$. Pada x=-3, nilainya 102.",
+      "distraktor": [
+        {
+          "teks": "$103$",
+          "alasan": "Pilihan $103$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $102$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan $101$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $102$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Pilihan $104$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $102$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$15 x^{2} + 14 x + 9$. Pada x=-3, nilainya 102.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef8f5f168a548b54c370550f",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju $3\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $20\\text{ cm}$. Tentukan laju bertambahnya volume bola.",
+        "jawaban": "$4.800\\pi\\text{ cm}^3/\\text{detik}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=5 x^{3} + 9 x^{2} + 9 x + 2$. Tentukan $f^\\prime(-4)$.",
+      "jawaban_benar": "$177$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$15 x^{2} + 18 x + 9$. Pada x=-4, nilainya 177.",
+      "distraktor": [
+        {
+          "teks": "$178$",
+          "alasan": "Pilihan $178$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $177$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Pilihan $176$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $177$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$179$",
+          "alasan": "Pilihan $179$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $177$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$15 x^{2} + 18 x + 9$. Pada x=-4, nilainya 177.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec1da7c466456c4a2e11521",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\cos x}{1 + \\sin x}$.",
+        "jawaban": "$-\\dfrac{1}{1 + \\sin x}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=3 x^{3} + 4 x^{2} + 4 x + 7$. Tentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$9 x^{2} + 8 x + 4$. Pada x=4, nilainya 180.",
+      "distraktor": [
+        {
+          "teks": "$181$",
+          "alasan": "Pilihan $181$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $180$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$179$",
+          "alasan": "Pilihan $179$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $180$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$182$",
+          "alasan": "Pilihan $182$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $180$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$9 x^{2} + 8 x + 4$. Pada x=4, nilainya 180.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b716fabf7fc81e740bce1dd2",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\sin^3(4x)$.",
+        "jawaban": "$f'(x) = 12\\sin^2(4x)\\cos(4x)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=3 x^{3} + 2 x^{2} + 8 x + 7$. Tentukan $f^\\prime(2)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$9 x^{2} + 4 x + 8$. Pada x=2, nilainya 52.",
+      "distraktor": [
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan $53$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $52$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan $51$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $52$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$54$",
+          "alasan": "Pilihan $54$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $52$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$9 x^{2} + 4 x + 8$. Pada x=2, nilainya 52.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36220d2252bf3587f7f8afb2",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = t^2 e^{-t}$ untuk $t \\ge 0$. Waktu $t > 0$ saat kecepatan partikel bernilai nol adalah ....",
+        "jawaban": "$t = 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9 x^{3} + 8 x^{2} + 5 x + 6$. Tentukan $f^\\prime(1)$.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$27 x^{2} + 16 x + 5$. Pada x=1, nilainya 48.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan $49$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $48$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan $47$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $48$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan $50$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $48$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$27 x^{2} + 16 x + 5$. Pada x=1, nilainya 48.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bda51f6c5c050cfa20993201",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6x^3 - 8\\cos x + 15$.",
+        "jawaban": "$f'(x) = 18x^2 + 8\\sin x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=2 x^{3} + 8 x^{2} + 4 x + 7$. Tentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$234$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$6 x^{2} + 16 x + 4$. Pada x=5, nilainya 234.",
+      "distraktor": [
+        {
+          "teks": "$235$",
+          "alasan": "Pilihan $235$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $234$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$233$",
+          "alasan": "Pilihan $233$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $234$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$236$",
+          "alasan": "Pilihan $236$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $234$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$6 x^{2} + 16 x + 4$. Pada x=5, nilainya 234.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "289ee5542dd670aea81a2565",
+        "teks": "Sebuah balon udara berbentuk bola ditiup sehingga jari-jarinya bertambah dengan laju tetap $0{,}5\\text{ cm/detik}$. Pada saat jari-jari bola mencapai $10\\text{ cm}$, rasio laju pertambahan volume terhadap laju pertambahan luas permukaan balon tersebut adalah ....",
+        "jawaban": "$5\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9 x^{3} + 3 x^{2} + 4 x + 2$. Tentukan $f^\\prime(-2)$.",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$27 x^{2} + 6 x + 4$. Pada x=-2, nilainya 100.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan $101$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan $99$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Pilihan $102$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$27 x^{2} + 6 x + 4$. Pada x=-2, nilainya 100.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=4 x^{3} + 6 x^{2} + 9 x + 4$. Tentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$513$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$12 x^{2} + 12 x + 9$. Pada x=6, nilainya 513.",
+      "distraktor": [
+        {
+          "teks": "$514$",
+          "alasan": "Pilihan $514$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $513$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Pilihan $512$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $513$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$515$",
+          "alasan": "Pilihan $515$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $513$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$12 x^{2} + 12 x + 9$. Pada x=6, nilainya 513.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "208af5a70b0f419fe9347f50",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6\\csc x$.",
+        "jawaban": "$f'(x) = -6\\csc x \\cot x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=2 x^{3} + 3 x^{2} + 8 x + 2$. Tentukan $f^\\prime(-1)$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$6 x^{2} + 6 x + 8$. Pada x=-1, nilainya 8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$6 x^{2} + 6 x + 8$. Pada x=-1, nilainya 8.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ef936c70aca895b1f499a9a",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x+5}}$.",
+        "jawaban": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=4 x^{3} + 4 x^{2} + 5 x + 6$. Tentukan $f^\\prime(-1)$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$12 x^{2} + 8 x + 5$. Pada x=-1, nilainya 9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$12 x^{2} + 8 x + 5$. Pada x=-1, nilainya 9.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76f98b58f149967718e74346",
+        "teks": "Diketahui fungsi $f(x) = (x^2 - 4x + 1)e^x$. Jika $x_1$ dan $x_2$ adalah absis dari titik stasioner fungsi $f(x)$ dengan $x_1 < x_2$, maka nilai dari $f(x_1) \\cdot f(x_2)$ adalah ....",
+        "jawaban": "$-12e^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=7 x^{3} + 4 x^{2} + 2 x + 6$. Tentukan $f^\\prime(-3)$.",
+      "jawaban_benar": "$167$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$21 x^{2} + 8 x + 2$. Pada x=-3, nilainya 167.",
+      "distraktor": [
+        {
+          "teks": "$168$",
+          "alasan": "Pilihan $168$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $167$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Pilihan $166$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $167$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$169$",
+          "alasan": "Pilihan $169$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $167$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$21 x^{2} + 8 x + 2$. Pada x=-3, nilainya 167.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd9b5f746bf4c45852e53a1c",
+        "teks": "Tentukan turunan pertama dari fungsi $y = \\sqrt{\\dfrac{1}{(4x + 5)^5}}$.",
+        "jawaban": "$y' = -\\dfrac{10}{(4x + 5)^{7/2}}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=3 x^{3} + 6 x^{2} + 3 x + 2$. Tentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$399$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$9 x^{2} + 12 x + 3$. Pada x=6, nilainya 399.",
+      "distraktor": [
+        {
+          "teks": "$400$",
+          "alasan": "Pilihan $400$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $399$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$398$",
+          "alasan": "Pilihan $398$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $399$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$401$",
+          "alasan": "Pilihan $401$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $399$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$9 x^{2} + 12 x + 3$. Pada x=6, nilainya 399.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6c37eed0dbd46e18b912b1",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 5\\cos x - 3\\sin x$.",
+        "jawaban": "$f'(x) = -5\\sin x - 3\\cos x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=5 x^{3} + 8 x^{2} + 9 x + 2$. Tentukan $f^\\prime(0)$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$15 x^{2} + 16 x + 9$. Pada x=0, nilainya 9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$15 x^{2} + 16 x + 9$. Pada x=0, nilainya 9.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17b7da840219098e427a4fce",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju $6\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $25\\text{ cm}$. Tentukan laju bertambahnya luas permukaan bola.",
+        "jawaban": "$1.200\\pi\\text{ cm}^2/\\text{detik}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9 x^{3} + 7 x^{2} + 7 x + 4$. Tentukan $f^\\prime(-5)$.",
+      "jawaban_benar": "$612$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$27 x^{2} + 14 x + 7$. Pada x=-5, nilainya 612.",
+      "distraktor": [
+        {
+          "teks": "$613$",
+          "alasan": "Pilihan $613$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $612$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$611$",
+          "alasan": "Pilihan $611$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $612$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$614$",
+          "alasan": "Pilihan $614$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $612$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$27 x^{2} + 14 x + 7$. Pada x=-5, nilainya 612.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6c37eed0dbd46e18b912b1",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 5\\cos x - 3\\sin x$.",
+        "jawaban": "$f'(x) = -5\\sin x - 3\\cos x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=8 x^{3} + 6 x^{2} + 8 x + 7$. Tentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$440$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$24 x^{2} + 12 x + 8$. Pada x=4, nilainya 440.",
+      "distraktor": [
+        {
+          "teks": "$441$",
+          "alasan": "Pilihan $441$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $440$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$439$",
+          "alasan": "Pilihan $439$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $440$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$442$",
+          "alasan": "Pilihan $442$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $440$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$24 x^{2} + 12 x + 8$. Pada x=4, nilainya 440.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=6 x^{3} + 6 x^{2} + 2 x + 3$. Tentukan $f^\\prime(-4)$.",
+      "jawaban_benar": "$242$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$18 x^{2} + 12 x + 2$. Pada x=-4, nilainya 242.",
+      "distraktor": [
+        {
+          "teks": "$243$",
+          "alasan": "Pilihan $243$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $242$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$241$",
+          "alasan": "Pilihan $241$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $242$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$244$",
+          "alasan": "Pilihan $244$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $242$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$18 x^{2} + 12 x + 2$. Pada x=-4, nilainya 242.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "676d7a929fd298076ef0e5e5",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\cos x}{2 - \\sin x}$. Nilai dari $f'(0)$ adalah ....",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=3 x^{3} + 5 x^{2} + 3 x + 6$. Tentukan $f^\\prime(-3)$.",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$9 x^{2} + 10 x + 3$. Pada x=-3, nilainya 54.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan $55$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $54$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan $53$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $54$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Pilihan $56$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $54$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$9 x^{2} + 10 x + 3$. Pada x=-3, nilainya 54.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b716fabf7fc81e740bce1dd2",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\sin^3(4x)$.",
+        "jawaban": "$f'(x) = 12\\sin^2(4x)\\cos(4x)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9 x^{3} + 7 x^{2} + 8 x + 2$. Tentukan $f^\\prime(2)$.",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$27 x^{2} + 14 x + 8$. Pada x=2, nilainya 144.",
+      "distraktor": [
+        {
+          "teks": "$145$",
+          "alasan": "Pilihan $145$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $144$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$143$",
+          "alasan": "Pilihan $143$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $144$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$146$",
+          "alasan": "Pilihan $146$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $144$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$27 x^{2} + 14 x + 8$. Pada x=2, nilainya 144.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec1da7c466456c4a2e11521",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\cos x}{1 + \\sin x}$.",
+        "jawaban": "$-\\dfrac{1}{1 + \\sin x}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sifat_turunan",
+      "alasan_level": "Target hard; variasi konsep sifat turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=6 x^{3} + 7 x^{2} + 9 x + 6$. Tentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$353$",
+      "alasan_benar": "Aturan pangkat memberi f′(x)=$18 x^{2} + 14 x + 9$. Pada x=4, nilainya 353.",
+      "distraktor": [
+        {
+          "teks": "$354$",
+          "alasan": "Pilihan $354$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $353$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$352$",
+          "alasan": "Pilihan $352$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $353$. Periksa kembali langkah sifat turunan pada pembahasan."
+        },
+        {
+          "teks": "$355$",
+          "alasan": "Pilihan $355$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $353$. Periksa kembali langkah sifat turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pangkat memberi f′(x)=$18 x^{2} + 14 x + 9$. Pada x=4, nilainya 353.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-b-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08bac4c057a2ed7b7085bced",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 7e^x + 4x^3$.",
+        "jawaban": "$f'(x) = 7e^x + 12x^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+8)$ diketahui $f^\\prime(0)=56$ dan $f^\\prime(1)=146$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 150.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $150$."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $150$."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 150.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70a7adf8fc19999d9367baff",
+        "teks": "Diketahui $f(x)=4 x^{3} + 4 x^{2} + 5 x + 6$. Tentukan $f^\\prime(-1)$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=47$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$134$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 134.",
+      "distraktor": [
+        {
+          "teks": "$133$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $134$."
+        },
+        {
+          "teks": "$135$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $134$."
+        },
+        {
+          "teks": "$268$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 134.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06b666ebc60044a606a32888",
+        "teks": "Tentukan turunan pertama dari fungsi $y = (8x^2 + 7)\\cos x$.",
+        "jawaban": "$y' = 16x\\cos x - (8x^2 + 7)\\sin x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=28$ dan $f^\\prime(1)=138$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$236$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 236.",
+      "distraktor": [
+        {
+          "teks": "$235$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $236$."
+        },
+        {
+          "teks": "$237$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $236$."
+        },
+        {
+          "teks": "$472$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 236.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bda51f6c5c050cfa20993201",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6x^3 - 8\\cos x + 15$.",
+        "jawaban": "$f'(x) = 18x^2 + 8\\sin x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+5)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=86$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$146$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 146.",
+      "distraktor": [
+        {
+          "teks": "$145$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $146$."
+        },
+        {
+          "teks": "$147$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $146$."
+        },
+        {
+          "teks": "$292$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 146.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8467dd85c0a68e9523be678d",
+        "teks": "Diketahui fungsi $f(x) = (3x - 2)e^{2x}$. Tentukan nilai dari $f'(1)$.",
+        "jawaban": "$5e^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=90$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$200$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 200.",
+      "distraktor": [
+        {
+          "teks": "$199$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $200$."
+        },
+        {
+          "teks": "$201$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $200$."
+        },
+        {
+          "teks": "$400$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 200.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f64b83a421299039a1e19a5a",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{p + \\cos x}$ dengan parameter $p > 0$. Jika garis singgung kurva $y = f(x)$ pada absis $x = \\frac{\\pi}{2}$ memiliki gradien $\\frac{1}{4}$, tentukan nilai dari $f\\left(\\frac{\\pi}{3}\\right)$.",
+        "jawaban": "\\frac{\\sqrt{3}}{5}",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=21$ dan $f^\\prime(1)=112$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$256$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 256.",
+      "distraktor": [
+        {
+          "teks": "$255$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $256$."
+        },
+        {
+          "teks": "$257$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $256$."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 256.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f086006e683d5d1375965106",
+        "teks": "Diketahui fungsi $f(x) = \\cos^4(2x) - \\sin^4(2x)$. Jika turunan pertama $f'(x) = k \\sin(4x)$, maka nilai dari konstanta real $k$ adalah ....",
+        "jawaban": "$-4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+6)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=106$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$184$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 184.",
+      "distraktor": [
+        {
+          "teks": "$183$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $184$."
+        },
+        {
+          "teks": "$185$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $184$."
+        },
+        {
+          "teks": "$368$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 184.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "651ed6b499d3529032eb4699",
+        "teks": "Diketahui $f(x)=9 x^{3} + 3 x^{2} + 4 x + 2$. Tentukan $f^\\prime(-2)$.",
+        "jawaban": "$100$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=6$ dan $f^\\prime(1)=43$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$142$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 142.",
+      "distraktor": [
+        {
+          "teks": "$141$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $142$."
+        },
+        {
+          "teks": "$143$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $142$."
+        },
+        {
+          "teks": "$284$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 142.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd4a30704b78d7a5ccd21e2c",
+        "teks": "Diketahui $f(x)=3 x^{3} + 9 x^{2} + 4 x + 7$. Tentukan $f^\\prime(-3)$.",
+        "jawaban": "$31$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=6$ dan $f^\\prime(1)=48$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 168.",
+      "distraktor": [
+        {
+          "teks": "$167$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $168$."
+        },
+        {
+          "teks": "$169$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $168$."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 168.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb50f265a37b6f374865ecdf",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{a\\sin x + b}{\\cos x}$ dengan konstanta real $a$ dan $b$. Jika $f\\left(\\frac{\\pi}{3}\\right) = 2\\sqrt{3}$ dan $f'\\left(\\frac{\\pi}{3}\\right) = 8$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=51$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 84.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 84.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f6e7b27c2104b05d9332947c",
+        "teks": "Tentukan turunan pertama dari fungsi trigonometri $f(x) = 8 - 5\\sin(3x)$.",
+        "jawaban": "$f'(x) = -15\\cos(3x)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=4$ dan $f^\\prime(1)=22$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1380eb1d64035929b3add5f1",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju $5\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $40\\text{ cm}$. Tentukan laju bertambahnya luas permukaan bola.",
+        "jawaban": "$1.600\\pi\\text{ cm}^2/\\text{detik}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+2)$ diketahui $f^\\prime(0)=8$ dan $f^\\prime(1)=30$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 52.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=7$ dan $f^\\prime(1)=41$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$118$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=4; hasilnya 118.",
+      "distraktor": [
+        {
+          "teks": "$117$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $118$."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $118$."
+        },
+        {
+          "teks": "$236$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=4; hasilnya 118.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=9$ dan $f^\\prime(1)=69$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$258$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 258.",
+      "distraktor": [
+        {
+          "teks": "$257$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $258$."
+        },
+        {
+          "teks": "$259$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $258$."
+        },
+        {
+          "teks": "$516$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 258.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "370d5d17b3e83315ba853204",
+        "teks": "Diketahui $f(x)=8 x^{3} + 6 x^{2} + 8 x + 7$. Tentukan $f^\\prime(4)$.",
+        "jawaban": "$440$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=35$ dan $f^\\prime(1)=147$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$238$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 238.",
+      "distraktor": [
+        {
+          "teks": "$237$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $238$."
+        },
+        {
+          "teks": "$239$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $238$."
+        },
+        {
+          "teks": "$476$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 238.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70a7adf8fc19999d9367baff",
+        "teks": "Diketahui $f(x)=4 x^{3} + 4 x^{2} + 5 x + 6$. Tentukan $f^\\prime(-1)$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=70$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 130.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $130$."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $130$."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 130.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec1da7c466456c4a2e11521",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\cos x}{1 + \\sin x}$.",
+        "jawaban": "$-\\dfrac{1}{1 + \\sin x}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=42$ dan $f^\\prime(1)=88$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 88.",
+      "distraktor": [
+        {
+          "teks": "$87$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 88.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2632269da25eb6a5629598c",
+        "teks": "Diketahui kurva fungsi $f(x) = e^{2x} \\sin(kx)$ dengan konstanta $k > 0$. Jika garis singgung kurva di titik $(0, f(0))$ tegak lurus dengan garis $x + 5y - 10 = 0$, maka nilai dari $k$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=5$ dan $f^\\prime(1)=40$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 140.",
+      "distraktor": [
+        {
+          "teks": "$139$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $140$."
+        },
+        {
+          "teks": "$141$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $140$."
+        },
+        {
+          "teks": "$280$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 140.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ef936c70aca895b1f499a9a",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x+5}}$.",
+        "jawaban": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=61$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 130.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $130$."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $130$."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 130.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "890a6e667dd220cb09fba655",
+        "teks": "Diketahui $f(x)=2 x^{3} + 8 x^{2} + 4 x + 7$. Tentukan $f^\\prime(5)$.",
+        "jawaban": "$234$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+6)$ diketahui $f^\\prime(0)=18$ dan $f^\\prime(1)=69$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$132$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=5; hasilnya 132.",
+      "distraktor": [
+        {
+          "teks": "$131$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $132$."
+        },
+        {
+          "teks": "$133$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $132$."
+        },
+        {
+          "teks": "$264$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=5; hasilnya 132.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb8a4910c438e5af7195d8a5",
+        "teks": "Tentukan turunan pertama dari fungsi $y = (4x^2 + 7)\\sin x$.",
+        "jawaban": "$y' = 8x\\sin x + (4x^2 + 7)\\cos x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=8$ dan $f^\\prime(1)=34$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 56.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f1d7d469bad64e60f79dfef",
+        "teks": "Tentukan turunan pertama dari fungsi $y = 6^x$.",
+        "jawaban": "$y' = 6^x \\ln 6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=35$ dan $f^\\prime(1)=75$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$106$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=6; hasilnya 106.",
+      "distraktor": [
+        {
+          "teks": "$105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$212$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=6; hasilnya 106.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ef936c70aca895b1f499a9a",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x+5}}$.",
+        "jawaban": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+2)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=70$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$218$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=7. Turunkan sekali lagi lalu substitusi x=5; hasilnya 218.",
+      "distraktor": [
+        {
+          "teks": "$217$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$219$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$436$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=7. Turunkan sekali lagi lalu substitusi x=5; hasilnya 218.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/060dfb6226767c36417a42a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              14
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 14]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c38ead3266cd99c3bff687ef",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 4\\tan x - 7x$.",
+        "jawaban": "$f'(x) = 4\\sec^2 x - 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=56$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$128$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 128.",
+      "distraktor": [
+        {
+          "teks": "$127$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$129$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$256$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 128.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bda51f6c5c050cfa20993201",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6x^3 - 8\\cos x + 15$.",
+        "jawaban": "$f'(x) = 18x^2 + 8\\sin x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=37$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 168.",
+      "distraktor": [
+        {
+          "teks": "$167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 168.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "604dd5da8630c4cbcc519cd9",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{5x}$.",
+        "jawaban": "$y' = 5e^{5x}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=89$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$158$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 158.",
+      "distraktor": [
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$159$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$316$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 158.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/16126c811af8a70705eaa781.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              21
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 21]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "132a9293fff3fa662765d911",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x-3}}$.",
+        "jawaban": "$y' = \\dfrac{e^{\\sqrt{x-3}}}{2\\sqrt{x-3}}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=91$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$184$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=2. Turunkan sekali lagi lalu substitusi x=4; hasilnya 184.",
+      "distraktor": [
+        {
+          "teks": "$183$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$185$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$368$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=2. Turunkan sekali lagi lalu substitusi x=4; hasilnya 184.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62cdbc3f025fff6fa8c72ae9",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 5\\sec x$.",
+        "jawaban": "$f'(x) = 5\\sec x \\tan x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=91$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$154$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 154.",
+      "distraktor": [
+        {
+          "teks": "$153$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$308$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 154.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39f5610cb69ef08edb00c734",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 3\\cot x + 8$.",
+        "jawaban": "$f'(x) = -3\\csc^2 x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+2)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=45$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 96.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-069",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72aaa37f013024ede7050bc9",
+        "teks": "Tentukan turunan pertama dari fungsi $y = (7x^4 - 9)\\cos x$.",
+        "jawaban": "$y' = 28x^3\\cos x - (7x^4 - 9)\\sin x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=35$ dan $f^\\prime(1)=147$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$310$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=6; hasilnya 310.",
+      "distraktor": [
+        {
+          "teks": "$309$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$311$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$620$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=6; hasilnya 310.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-070",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b0b255b91709943bf4bc3400",
+        "teks": "Tentukan turunan pertama dari fungsi $y = 8\\sin x + 9x$.",
+        "jawaban": "$y' = 8\\cos x + 9$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=8$ dan $f^\\prime(1)=56$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 156.",
+      "distraktor": [
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$312$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 156.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-071",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5361583d1c5ce0770f927cd9",
+        "teks": "Tentukan turunan pertama dari fungsi $y = 7^{6x}$.",
+        "jawaban": "$y' = 6 \\cdot 7^{6x} \\ln 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=2$ dan $f^\\prime(1)=T_1$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$196$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 196.",
+      "distraktor": [
+        {
+          "teks": "$195$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$197$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$392$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 196.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-072",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ede2ef8b8daf4797c6333877.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              36
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 36]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "208af5a70b0f419fe9347f50",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6\\csc x$.",
+        "jawaban": "$f'(x) = -6\\csc x \\cot x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=18$ dan $f^\\prime(1)=54$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=3. Turunkan sekali lagi lalu substitusi x=4; hasilnya 78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=3. Turunkan sekali lagi lalu substitusi x=4; hasilnya 78.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-073",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed537dadc34c478443b5e685",
+        "teks": "Tentukan turunan pertama dari fungsi konstan $f(x) = -85$.",
+        "jawaban": "$f'(x) = 0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=32$ dan $f^\\prime(1)=135$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$268$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 268.",
+      "distraktor": [
+        {
+          "teks": "$267$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$269$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$536$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 268.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-074",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8cb71c140ecf2bee84970b4",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{5x^2}$.",
+        "jawaban": "$y' = 10x e^{5x^2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=36$ dan $f^\\prime(1)=108$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 180.",
+      "distraktor": [
+        {
+          "teks": "$179$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 180.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-075",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f6e7b27c2104b05d9332947c",
+        "teks": "Tentukan turunan pertama dari fungsi trigonometri $f(x) = 8 - 5\\sin(3x)$.",
+        "jawaban": "$f'(x) = -15\\cos(3x)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=9$ dan $f^\\prime(1)=33$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 90.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$180$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 90.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-076",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6c37eed0dbd46e18b912b1",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 5\\cos x - 3\\sin x$.",
+        "jawaban": "$f'(x) = -5\\sin x - 3\\cos x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=42$ dan $f^\\prime(1)=122$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$164$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 164.",
+      "distraktor": [
+        {
+          "teks": "$163$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$165$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$328$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 164.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-077",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08bac4c057a2ed7b7085bced",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 7e^x + 4x^3$.",
+        "jawaban": "$f'(x) = 7e^x + 12x^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=134$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$244$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=4; hasilnya 244.",
+      "distraktor": [
+        {
+          "teks": "$243$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$488$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=4; hasilnya 244.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-078",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8605f319114383dac4d15ef",
+        "teks": "Diketahui persamaan fungsi trigonometri $f(x) = 7 - 9\\sin\\left(\\frac{1}{5}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 10, x \\in \\mathbb{R}\\}$. Tentukan turunan pertama dari $f(x)$.",
+        "jawaban": "$f'(x) = -\\frac{9}{5}\\pi\\cos\\left(\\frac{1}{5}\\pi x\\right)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=20$ dan $f^\\prime(1)=96$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$274$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=6; hasilnya 274.",
+      "distraktor": [
+        {
+          "teks": "$273$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$275$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$548$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=6; hasilnya 274.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-079",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c709e8196743791669f2f03d",
+        "teks": "Tentukan turunan pertama dari fungsi $y = 7^{x^3 + 6}$.",
+        "jawaban": "$y' = 3x^2 \\cdot 7^{x^3 + 6} \\ln 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=36$ dan $f^\\prime(1)=138$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=3; hasilnya 192.",
+      "distraktor": [
+        {
+          "teks": "$191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$193$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=3; hasilnya 192.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-080",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c45a58d2916e3ce9c7ba1310",
+        "teks": "Diketahui persamaan fungsi trigonometri $f(x) = 6 - 8\\sin\\left(\\frac{1}{6}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 12, x \\in \\mathbb{R}\\}$. Jika $f'(x)$ bernilai nol pada $x = x_1$ dan $x = x_2$ dengan $x_1 < x_2$, tentukan nilai dari $x_1^2 + x_2^2$.",
+        "jawaban": "$90$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+6)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=46$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 100.",
+      "distraktor": [
+        {
+          "teks": "$99$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$200$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 100.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-081",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8508cff8bc07847bf4356d4",
+        "teks": "Sebuah partikel bergerak pada bidang datar sehingga posisinya pada saat $t$ detik dinyatakan oleh $(x(t), y(t))$ dengan $x(t) = 3t^2 - 5t$ dan $y(t) = 2t^3 - 9t^2 + 12t + 1$. Besar kecepatan partikel dinyatakan oleh $v(t) = \\sqrt{[x'(t)]^2 + [y'(t)]^2}$. Tentukan besar kecepatan partikel pada saat laju perubahan vertikalnya bernilai nol ($y'(t) = 0$) untuk waktu $t > 1$.",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=18$ dan $f^\\prime(1)=99$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 156.",
+      "distraktor": [
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$312$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 156.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-082",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4037c2f1fc116955b53416ca",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x - \\cos x}{\\sin x + \\cos x}$ terdefinisi pada interval $0 < x < \\pi$ dengan $x \\ne \\frac{3\\pi}{4}$. Jika nilai turunan pertama fungsi tersebut memenuhi $f'(x) = 4$, tentukan jumlah seluruh nilai $x$ yang memenuhi persamaan tersebut.",
+        "jawaban": "$\\dfrac{3\\pi}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=14$ dan $f^\\prime(1)=86$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$204$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 204.",
+      "distraktor": [
+        {
+          "teks": "$203$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$205$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$408$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 204.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-083",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48cca3fd6d4b86e8c890199d",
+        "teks": "Sebuah balon berbentuk bola dipompa sehingga jari-jarinya bertambah dengan laju konstan $1{,}5\\text{ cm/detik}$. Pada saat luas permukaan balon tersebut mencapai $64\\pi\\text{ cm}^2$, laju pertambahan volume balon tersebut adalah ....",
+        "jawaban": "$96\\pi\\text{ cm}^3/\\text{detik}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=53$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$62$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 62.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 62.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-084",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/16126c811af8a70705eaa781.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              21
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 21]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2632269da25eb6a5629598c",
+        "teks": "Diketahui kurva fungsi $f(x) = e^{2x} \\sin(kx)$ dengan konstanta $k > 0$. Jika garis singgung kurva di titik $(0, f(0))$ tegak lurus dengan garis $x + 5y - 10 = 0$, maka nilai dari $k$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=40$ dan $f^\\prime(1)=88$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 78.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-085",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "053abff837fc1b607ad5a461",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x - \\cos x}{e^x}$ terdefinisi pada interval tertutup $[0, 2\\pi]$. Jumlah seluruh nilai $x$ yang memenuhi $f'(x) = 0$ pada interval tersebut adalah ....",
+        "jawaban": "$2\\pi$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=39$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$234$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 234.",
+      "distraktor": [
+        {
+          "teks": "$233$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$235$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$468$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 234.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-086",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0f2627d0c6f760e58b6c52c8",
+        "teks": "Diketahui kurva fungsi $f(x) = x^2 e^{-x}$ memiliki dua titik stasioner $(x_1, y_1)$ dan $(x_2, y_2)$ dengan $x_1 < x_2$. Nilai dari $y_1 + y_2$ adalah ....",
+        "jawaban": "$\\dfrac{4}{e^2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=30$ dan $f^\\prime(1)=81$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 150.",
+      "distraktor": [
+        {
+          "teks": "$149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 150.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-087",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb50f265a37b6f374865ecdf",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{a\\sin x + b}{\\cos x}$ dengan konstanta real $a$ dan $b$. Jika $f\\left(\\frac{\\pi}{3}\\right) = 2\\sqrt{3}$ dan $f'\\left(\\frac{\\pi}{3}\\right) = 8$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+T_1)$ diketahui $f^\\prime(0)=8$ dan $f^\\prime(1)=34$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$92$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 92.",
+      "distraktor": [
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=2. Turunkan sekali lagi lalu substitusi x=6; hasilnya 92.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-088",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4f73214473e27d9a71942063",
+        "teks": "Diketahui persamaan fungsi trigonometri $f(x) = 9 - 8\\sin\\left(\\frac{1}{8}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 16, x \\in \\mathbb{R}\\}$. Jika $f'(x)$ bernilai nol pada $x = x_1$ dan $x = x_2$ dengan $x_1 < x_2$, tentukan nilai dari $x_1^2 + x_2^2$.",
+        "jawaban": "160",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Untuk $f(x)=(ax^2+bx)(x+2)$ diketahui $f^\\prime(0)=T_1$ dan $f^\\prime(1)=38$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=3; hasilnya 56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=3; hasilnya 56.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-089",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7cdb1368c86335ae52c71a88",
+        "teks": "Sebuah objek bergerak pada bidang Kartesius dengan posisi $(x(t), y(t))$ pada saat $t$ detik memenuhi persamaan $x(t) = 2t^2 - 2t + 1$ dan $y(t) = t^3 - t^2$. Kecepatan objek dirumuskan sebagai laju perubahan posisi $v(t) = \\sqrt{(x'(t))^2 + (y'(t))^2}$. Tentukan besar kecepatan objek tersebut pada saat $t = 2$ detik.",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=46$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 60.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-090"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=18$ dan $f^\\prime(1)=57$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$138$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 138.",
+      "distraktor": [
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$276$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 138.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-091"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f64b83a421299039a1e19a5a",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{p + \\cos x}$ dengan parameter $p > 0$. Jika garis singgung kurva $y = f(x)$ pada absis $x = \\frac{\\pi}{2}$ memiliki gradien $\\frac{1}{4}$, tentukan nilai dari $f\\left(\\frac{\\pi}{3}\\right)$.",
+        "jawaban": "\\frac{\\sqrt{3}}{5}",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+8)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=77$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$142$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 142.",
+      "distraktor": [
+        {
+          "teks": "$141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$143$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$284$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=2. Turunkan sekali lagi lalu substitusi x=5; hasilnya 142.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-092"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3dd2a47b47b4da04154d6cd1",
+        "teks": "Kurva suatu fungsi didefinisikan sebagai $y = (ax^2 + bx - 1)^3$. Garis singgung kurva di titik berabsis $x = 1$ sejajar dengan sumbu-$X$. Jika kurva tersebut melalui titik $(1, 8)$, tentukan nilai dari $b - a$.",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+5)$ diketahui $f^\\prime(0)=30$ dan $f^\\prime(1)=68$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$92$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 92.",
+      "distraktor": [
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 92.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-093"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "289ee5542dd670aea81a2565",
+        "teks": "Sebuah balon udara berbentuk bola ditiup sehingga jari-jarinya bertambah dengan laju tetap $0{,}5\\text{ cm/detik}$. Pada saat jari-jari bola mencapai $10\\text{ cm}$, rasio laju pertambahan volume terhadap laju pertambahan luas permukaan balon tersebut adalah ....",
+        "jawaban": "$5\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=21$ dan $f^\\prime(1)=53$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$86$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=5; hasilnya 86.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$172$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=7. Turunkan sekali lagi lalu substitusi x=5; hasilnya 86.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-094"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f086006e683d5d1375965106",
+        "teks": "Diketahui fungsi $f(x) = \\cos^4(2x) - \\sin^4(2x)$. Jika turunan pertama $f'(x) = k \\sin(4x)$, maka nilai dari konstanta real $k$ adalah ....",
+        "jawaban": "$-4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=42$ dan $f^\\prime(1)=156$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$312$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 312.",
+      "distraktor": [
+        {
+          "teks": "$311$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$313$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$624$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=6; hasilnya 312.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-095"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "999482c711446740d30617c6",
+        "teks": "Diketahui fungsi $g(x) = \\dfrac{\\tan x}{1 + \\tan x}$ untuk $x \\ne \\frac{\\pi}{2} + k\\pi$ dan $\\tan x \\ne -1$. Nilai dari $g'\\left(\\frac{\\pi}{4}\\right)$ adalah ....",
+        "jawaban": "$\\dfrac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+8)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=77$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$106$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 106.",
+      "distraktor": [
+        {
+          "teks": "$105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$212$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=3, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 106.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-096"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c0e11dd0cd116a4c77b274d",
+        "teks": "Garis singgung kurva $f(x) = 2^{3x - 1}$ di titik yang berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai dari konstanta $c$ adalah ....",
+        "jawaban": "$4(1 - 3\\ln 2)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=28$ dan $f^\\prime(1)=70$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 96.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-097"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48ada343256f6026049ca98b",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{2 + \\cos x}$ didefinisikan pada interval $[0, 2\\pi]$. Jika $x_1$ dan $x_2$ merupakan dua absis dari titik stasioner kurva $y = f(x)$ dengan $x_1 < x_2$, nilai dari $\\cos(x_1 - x_2)$ adalah ....",
+        "jawaban": "$-\\dfrac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=42$ dan $f^\\prime(1)=122$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$188$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 188.",
+      "distraktor": [
+        {
+          "teks": "$187$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$189$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$376$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=4, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 188.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-098"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "60185fed01d5f0d96c2c5d4c",
+        "teks": "Garis singgung kurva $f(x) = x e^{2 - x^2}$ pada titik yang berabsis $x = 1$ memotong sumbu-$X$ di titik $(p, 0)$ dan sumbu-$Y$ di titik $(0, q)$. Luas daerah segitiga yang dibatasi oleh garis singgung tersebut dan kedua sumbu koordinat adalah ....",
+        "jawaban": "$2e$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=73$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$136$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 136.",
+      "distraktor": [
+        {
+          "teks": "$135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$272$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 136.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-099"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76f98b58f149967718e74346",
+        "teks": "Diketahui fungsi $f(x) = (x^2 - 4x + 1)e^x$. Jika $x_1$ dan $x_2$ adalah absis dari titik stasioner fungsi $f(x)$ dengan $x_1 < x_2$, maka nilai dari $f(x_1) \\cdot f(x_2)$ adalah ....",
+        "jawaban": "$-12e^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=24$ dan $f^\\prime(1)=102$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 240.",
+      "distraktor": [
+        {
+          "teks": "$239$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$241$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$480$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi $f^\\prime(x)=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right)$. Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=5; hasilnya 240.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-b-hard-bt01-100"
     }
   ]
 }

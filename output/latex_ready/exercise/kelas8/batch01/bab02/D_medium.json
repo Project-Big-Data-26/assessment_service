@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "D",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-d-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak dua objek saling membelakangi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan posisi akhir masing-masing regu dengan Pythagoras lalu menjumlahkan jaraknya karena bergerak berlawanan arah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua regu pramuka, Regu Elang dan Regu Rajawali, berdiri di titik yang sama saling membelakangi. Regu Elang berjalan $28\\text{ m}$ lurus ke depan lalu berbelok $21\\text{ m}$ ke kanan. Pada saat yang sama, Regu Rajawali berjalan $40\\text{ m}$ lurus ke depan lalu berbelok $30\\text{ m}$ ke kanan. Berapakah jarak lurus antara Regu Elang dan Regu Rajawali pada posisi terakhir mereka?",
+      "jawaban_benar": "$85\\text{ m}$",
+      "alasan_benar": "Jarak Regu Elang dari titik awal adalah $\\sqrt{28^2 + 21^2} = \\sqrt{784 + 441} = \\sqrt{1.225} = 35\\text{ m}$. Jarak Regu Rajawali dari titik awal adalah $\\sqrt{40^2 + 30^2} = \\sqrt{1.600 + 900} = \\sqrt{2.500} = 50\\text{ m}$. Karena kedua regu bergerak saling membelakangi pada arah yang berlawanan dan sejajar, jarak total keduanya adalah $35 + 50 = 85\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$119\\text{ m}$",
+          "alasan": "Siswa menjumlahkan seluruh jarak tempuh tanpa menerapkan teorema Pythagoras: $28 + 21 + 40 + 30 = 119$."
+        },
+        {
+          "teks": "$75\\text{ m}$",
+          "alasan": "Siswa salah menghitung jarak regu Rajawali menjadi $40\\text{ m}$ bukan $50\\text{ m}$, sehingga $35 + 40 = 75$."
+        },
+        {
+          "teks": "$15\\text{ m}$",
+          "alasan": "Siswa mengurangkan kedua jarak posisi alih-alih menjumlahkannya: $50 - 35 = 15$."
+        }
+      ],
+      "pembahasan": "Posisi Regu Elang membentuk segitiga siku-siku dari titik awal:\n$d_1 = \\sqrt{28^2 + 21^2} = \\sqrt{784 + 441} = \\sqrt{1.225} = 35\\text{ m}$.\n\nPosisi Regu Rajawali juga membentuk segitiga siku-siku ke arah yang berlawanan:\n$d_2 = \\sqrt{40^2 + 30^2} = \\sqrt{1.600 + 900} = \\sqrt{2.500} = 50\\text{ m}$.\n\nKarena kedua lintasan memiliki rasio pergerakan yang sama ($\\frac{21}{28} = \\frac{30}{40} = \\frac{3}{4}$) dan bergerak saling membelakangi, kedua posisi akhir berada pada satu garis lurus melewati titik awal. Maka jarak keduanya adalah:\n$d = d_1 + d_2 = 35 + 50 = 85\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "jangkauan sinyal dua titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis keterhubungan sinyal dengan menghitung jarak hipotenusa dua titik ruang dan membandingkannya terhadap batas maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perangkat pemancar sinyal nirkabel hanya dapat terhubung pada jarak lurus maksimum $50\\text{ m}$. Pemancar tersebut dipasang di balkon lantai dua sebuah gedung pada ketinggian $14\\text{ m}$ dari tanah. Seorang pengguna laptop duduk di taman dengan jarak mendatar $48\\text{ m}$ dari dinding dasar gedung. Berapakah jarak lurus antara laptop dan pemancar sinyal, serta bagaimana status koneksinya?",
+      "jawaban_benar": "$50\\text{ m}$, dapat terhubung",
+      "alasan_benar": "Jarak lurus dihitung dengan teorema Pythagoras: $\\sqrt{14^2 + 48^2} = \\sqrt{196 + 2.304} = \\sqrt{2.500} = 50\\text{ m}$. Karena jaraknya tepat sama dengan batas maksimum $50\\text{ m}$, laptop masih dapat terhubung.",
+      "distraktor": [
+        {
+          "teks": "$50\\text{ m}$, tidak dapat terhubung",
+          "alasan": "Siswa benar menghitung jarak $50\\text{ m}$ namun salah memahami arti jarak maksimum sehingga menganggap nilai batas tidak termasuk jangkauan."
+        },
+        {
+          "teks": "$62\\text{ m}$, tidak dapat terhubung",
+          "alasan": "Siswa menjumlahkan tinggi balkon dan jarak mendatar ($14 + 48 = 62$) lalu menyimpulkan tidak terhubung."
+        },
+        {
+          "teks": "$46\\text{ m}$, dapat terhubung",
+          "alasan": "Siswa mengurangkan jarak mendatar dengan tinggi balkon ($48 - 14 = 34$) atau salah mengakar kuadratkan selisih nilai."
+        }
+      ],
+      "pembahasan": "Tinggi pemancar ($t$) = $14\\text{ m}$\nJarak mendatar ($s$) = $48\\text{ m}$\n\nJarak lurus ($r$):\n$r = \\sqrt{t^2 + s^2}$\n$r = \\sqrt{14^2 + 48^2}$\n$r = \\sqrt{196 + 2.304} = \\sqrt{2.500} = 50\\text{ m}$.\n\nKarena batas maksimum sinyal adalah $50\\text{ m}$ dan jarak sebenarnya adalah $50\\text{ m}$, perangkat laptop masih berada tepat pada jangkauan maksimum sehingga dapat terhubung.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": "Contoh 2.6",
+        "nomor": "2.6",
+        "teks": "Suatu hari Aldo melihat dua perahu, yaitu perahu wisata dan perahu nelayan, seperti yang ditunjukkan pada gambar. Jika kecepatan rata-rata kedua perahu untuk mendekati pantai adalah 30 km/jam, tentukan selisih waktu yang ditempuh kedua perahu tersebut untuk mendekati pantai.",
+        "jawaban": "20 menit",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "selisih waktu tempuh transportasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menghitung jarak sisi miring salah satu perahu dengan Pythagoras, lalu menghitung waktu tempuh kedua perahu dan mencari selisihnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas mercusuar mengamati dua buah kapal, yaitu Kapal X dan Kapal Y. Jarak lurus mercusuar ke Kapal X adalah $24\\text{ km}$. Jarak antara Kapal X dan Kapal Y adalah $18\\text{ km}$, dengan lintasan yang saling tegak lurus terhadap garis pandang mercusuar ke Kapal X. Jika kedua kapal melaju lurus menuju mercusuar dengan kecepatan rata-rata sama yaitu $60\\text{ km/jam}$, berapakah selisih waktu tempuh kedua kapal tersebut untuk mencapai mercusuar?",
+      "jawaban_benar": "$6\\text{ menit}$",
+      "alasan_benar": "Jarak mercusuar ke Kapal Y adalah $\\sqrt{24^2 + 18^2} = \\sqrt{576 + 324} = \\sqrt{900} = 30\\text{ km}$. Waktu tempuh Kapal X adalah $\\frac{24}{60}\\text{ jam} = 24\\text{ menit}$. Waktu tempuh Kapal Y adalah $\\frac{30}{60}\\text{ jam} = 30\\text{ menit}$. Selisih waktu tempuh adalah $30 - 24 = 6\\text{ menit}$.",
+      "distraktor": [
+        {
+          "teks": "$18\\text{ menit}$",
+          "alasan": "Siswa langsung membagi jarak antara kedua kapal dengan kecepatan: $\\frac{18}{60}\\text{ jam} = 18\\text{ menit}$."
+        },
+        {
+          "teks": "$12\\text{ menit}$",
+          "alasan": "Siswa salah menghitung jarak Kapal Y menjadi $36\\text{ km}$, sehingga selisih waktu menjadi $36 - 24 = 12\\text{ menit}$."
+        },
+        {
+          "teks": "$10\\text{ menit}$",
+          "alasan": "Siswa salah mengubah satuan jam ke menit atau salah menghitung selisih."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan jarak Kapal Y ke mercusuar ($d_Y$):\n$d_Y = \\sqrt{24^2 + 18^2} = \\sqrt{576 + 324} = \\sqrt{900} = 30\\text{ km}$.\n\nLangkah 2: Hitung waktu tempuh masing-masing kapal ($t = \\frac{d}{v}$):\n- Waktu Kapal X: $t_X = \\frac{24\\text{ km}}{60\\text{ km/jam}} = 0,4\\text{ jam} = 24\\text{ menit}$.\n- Waktu Kapal Y: $t_Y = \\frac{30\\text{ km}}{60\\text{ km/jam}} = 0,5\\text{ jam} = 30\\text{ menit}$.\n\nLangkah 3: Hitung selisih waktu tempuh:\n$\\Delta t = 30\\text{ menit} - 24\\text{ menit} = 6\\text{ menit}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 109,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "posisi kedua pesawat tempur tersebut berjarak 10 km dan 12 km dari radar. Tentukan jarak kedua pesawat diukur berdasarkan ketinggiannya."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak vertikal dua titik pada tiang",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan teorema Pythagoras dua kali untuk mencari dua ketinggian tegak, kemudian mengurangkan keduanya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua lampu sorot dipasang vertikal pada tiang pemancar yang berdiri tegak lurus di tanah datar. Seorang pengawas berdiri di tanah sejauh $12\\text{ m}$ dari dasar tiang. Jarak pandang lurus pengawas ke lampu sorot bawah adalah $13\\text{ m}$, sedangkan jarak pandang lurus pengawas ke lampu sorot atas adalah $15\\text{ m}$. Berapakah jarak antara kedua lampu sorot tersebut pada tiang pemancar?",
+      "jawaban_benar": "$4\\text{ m}$",
+      "alasan_benar": "Tinggi lampu bawah adalah $\\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = \\sqrt{25} = 5\\text{ m}$. Tinggi lampu atas adalah $\\sqrt{15^2 - 12^2} = \\sqrt{225 - 144} = \\sqrt{81} = 9\\text{ m}$. Jarak kedua lampu pada tiang adalah $9 - 5 = 4\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$2\\text{ m}$",
+          "alasan": "Siswa langsung mengurangkan kedua jarak pandang pengawas: $15 - 13 = 2\\text{ m}$."
+        },
+        {
+          "teks": "$3\\text{ m}$",
+          "alasan": "Siswa keliru menghitung akar dari $\\sqrt{81}$ sebagai $8$ bukan $9$, sehingga menghasilkan $8 - 5 = 3\\text{ m}$."
+        },
+        {
+          "teks": "$14\\text{ m}$",
+          "alasan": "Siswa menjumlahkan tinggi kedua lampu ($5 + 9 = 14\\text{ m}$) alih-alih mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung tinggi lampu bawah dari permukaan tanah ($h_1$):\n$h_1 = \\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = \\sqrt{25} = 5\\text{ m}$.\n\nLangkah 2: Hitung tinggi lampu atas dari permukaan tanah ($h_2$):\n$h_2 = \\sqrt{15^2 - 12^2} = \\sqrt{225 - 144} = \\sqrt{81} = 9\\text{ m}$.\n\nLangkah 3: Hitung jarak antara kedua lampu:\n$\\Delta h = h_2 - h_1 = 9 - 5 = 4\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 105,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap ruas garis yang tidak sejajar dengan sumbu- x maupun sumbu- y adalah hipotenusa dari segitiga siku-siku dari dua sisi yang sejajar dengan sumbu- x dan sumbu- y."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "keliling segitiga pada bidang kartesius",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan panjang sisi mendatar, tegak, hipotenusa via rumus Pythagoras pada kartesius, lalu menghitung keliling segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada bidang kartesius, terdapat segitiga siku-siku $PQR$ dengan koordinat titik sudut $P(-2, 1)$, $Q(6, 1)$, dan $R(6, 7)$. Berapakah keliling segitiga $PQR$ tersebut?",
+      "jawaban_benar": "$24\\text{ satuan}$",
+      "alasan_benar": "Panjang sisi mendatar $PQ = |6 - (-2)| = 8\\text{ satuan}$. Panjang sisi tegak $QR = |7 - 1| = 6\\text{ satuan}$. Panjang hipotenusa $PR = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10\\text{ satuan}$. Keliling segitiga $= 8 + 6 + 10 = 24\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$14\\text{ satuan}$",
+          "alasan": "Siswa hanya menjumlahkan dua sisi tegak mendatar tanpa hipotenusa: $8 + 6 = 14$."
+        },
+        {
+          "teks": "$20\\text{ satuan}$",
+          "alasan": "Siswa salah menghitung panjang $PQ$ menjadi $6 - 2 = 4$, lalu mencari hipotenusa $\\sqrt{4^2 + 6^2}$, atau salah menjumlahkan."
+        },
+        {
+          "teks": "$48\\text{ satuan}$",
+          "alasan": "Siswa menghitung dua kali luas segitiga ($8 \\times 6 = 48$) alih-alih keliling."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan panjang sisi yang sejajar sumbu koordinat:\n- Sisi sejajar sumbu-$x$ ($PQ$): $|6 - (-2)| = 8\\text{ satuan}$.\n- Sisi sejajar sumbu-$y$ ($QR$): $|7 - 1| = 6\\text{ satuan}$.\n\nLangkah 2: Menentukan panjang hipotenusa $PR$ menggunakan teorema Pythagoras:\n$PR = \\sqrt{PQ^2 + QR^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10\\text{ satuan}$.\n\nLangkah 3: Menghitung keliling segitiga $PQR$:\n$\\text{Keliling} = PQ + QR + PR = 8 + 6 + 10 = 24\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak akhir dua lintasan lurus berlawanan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan koordinat dua objek yang bergerak saling berlawanan arah lalu menerapkan teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua unit robot penjelajah, Robot A dan Robot B, mula-mula diletakkan di titik yang sama dengan posisi saling membelakangi. Robot A berjalan lurus ke depan sejauh $32\\text{ m}$, kemudian berbelok $90^\\circ$ ke arah kanannya sejauh $24\\text{ m}$. Pada waktu yang sama, Robot B berjalan lurus ke depan sejauh $40\\text{ m}$, kemudian berbelok $90^\\circ$ ke arah kanannya sejauh $30\\text{ m}$. Berapakah jarak lurus antara Robot A dan Robot B pada posisi terakhir?",
+      "jawaban_benar": "$90\\text{ m}$",
+      "alasan_benar": "Jarak lurus Robot A dari titik awal adalah $\\sqrt{32^2 + 24^2} = \\sqrt{1.024 + 576} = \\sqrt{1.600} = 40\\text{ m}$. Jarak lurus Robot B dari titik awal adalah $\\sqrt{40^2 + 30^2} = \\sqrt{1.600 + 900} = \\sqrt{2.500} = 50\\text{ m}$. Karena kedua robot bergerak ke arah berlawanan dengan rasio belokan yang tepat sama ($32 : 24 = 40 : 30 = 4 : 3$), lintasan gerak keduanya membentuk satu garis lurus berlawanan arah. Jarak keduanya adalah $40\\text{ m} + 50\\text{ m} = 90\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$126\\text{ m}$",
+          "alasan": "Menjumlahkan seluruh panjang lintasan tempuh kedua robot ($32 + 24 + 40 + 30$)."
+        },
+        {
+          "teks": "$10\\text{ m}$",
+          "alasan": "Mengurangkan jarak kedua robot dari titik awal bukannya menjumlahkan ($50 - 40$)."
+        },
+        {
+          "teks": "$70\\text{ m}$",
+          "alasan": "Menjumlahkan komponen sisi miring dengan cara menjumlahkan perpindahan langkah Robot B saja ($40 + 30$)."
+        }
+      ],
+      "pembahasan": "Posisi Robot A membentuk segitiga siku-siku dari titik awal:\n$d_A = \\sqrt{32^2 + 24^2} = \\sqrt{1.024 + 576} = \\sqrt{1.600} = 40\\text{ m}$.\n\nPosisi Robot B membentuk segitiga siku-siku dari titik awal:\n$d_B = \\sqrt{40^2 + 30^2} = \\sqrt{1.600 + 900} = \\sqrt{2.500} = 50\\text{ m}$.\n\nKarena orientasi awal saling membelakangi dan arah belok keduanya simetris (gradien lintasan sama), kedua posisi akhir berada pada satu garis lurus yang melewati titik awal.\nJarak total $= d_A + d_B = 40 + 50 = 90\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": "Contoh 2.6",
+        "nomor": "2.6",
+        "teks": "Suatu hari Aldo melihat dua perahu, yaitu perahu wisata dan perahu nelayan, seperti yang ditunjukkan pada gambar. Jika kecepatan rata-rata kedua perahu untuk mendekati pantai adalah 30 km/jam, tentukan selisih waktu yang ditempuh kedua perahu tersebut untuk mendekati pantai.",
+        "jawaban": "20 menit",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "selisih waktu tempuh dua armada",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan hipotenusa terlebih dahulu kemudian menghitung waktu tempuh masing-masing armada dan mencari selisihnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah menara kendali penerbangan mendeteksi dua helikopter, yaitu Helikopter A dan Helikopter B. Jarak lurus menara ke Helikopter A adalah $36\\text{ km}$. Posisi Helikopter B berada sedemikian rupa sehingga jarak antara Helikopter A dan Helikopter B adalah $48\\text{ km}$, serta garis hubung menara ke Helikopter A tegak lurus dengan garis hubung Helikopter A ke Helikopter B. Jika kedua helikopter terbang langsung menuju menara kendali dengan kecepatan tetap $120\\text{ km/jam}$, berapakah selisih waktu tempuh kedua helikopter tersebut?",
+      "jawaban_benar": "$12\\text{ menit}$",
+      "alasan_benar": "Jarak menara ke Helikopter B dihitung dengan Pythagoras: $\\sqrt{36^2 + 48^2} = \\sqrt{1.296 + 2.304} = \\sqrt{3.600} = 60\\text{ km}$. Waktu Helikopter B adalah $\\frac{60}{120}\\text{ jam} = 0{,}5\\text{ jam} = 30\\text{ menit}$. Waktu Helikopter A adalah $\\frac{36}{120}\\text{ jam} = 0{,}3\\text{ jam} = 18\\text{ menit}$. Selisih waktu keduanya adalah $30 - 18 = 12\\text{ menit}$.",
+      "distraktor": [
+        {
+          "teks": "$18\\text{ menit}$",
+          "alasan": "Hanya menghitung waktu tempuh Helikopter A menuju menara."
+        },
+        {
+          "teks": "$30\\text{ menit}$",
+          "alasan": "Hanya menghitung waktu tempuh Helikopter B menuju menara."
+        },
+        {
+          "teks": "$20\\text{ menit}$",
+          "alasan": "Menyalin jawaban pada contoh acuan tanpa menghitung dari data baru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung jarak Helikopter B ke menara kendali.\n$s_B = \\sqrt{36^2 + 48^2} = \\sqrt{1.296 + 2.304} = \\sqrt{3.600} = 60\\text{ km}$.\n\nLangkah 2: Menghitung waktu tempuh masing-masing helikopter.\n$t_A = \\frac{36\\text{ km}}{120\\text{ km/jam}} = 0{,}3\\text{ jam} = 0{,}3 \\times 60 = 18\\text{ menit}$.\n$t_B = \\frac{60\\text{ km}}{120\\text{ km/jam}} = 0{,}5\\text{ jam} = 0{,}5 \\times 60 = 30\\text{ menit}$.\n\nLangkah 3: Menghitung selisih waktu tempuh.\n$\\Delta t = 30\\text{ menit} - 18\\text{ menit} = 12\\text{ menit}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 104,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika Kalian berada 4 meter sebelah utara dan 3 meter sebelah timur dari benteng kalian. Benteng lawan kalian berada di 6 meter sebelah utara dan 8 meter sebelah timur dari benteng kalian. Bagaimanakah menentukan jarak kalian dengan benteng lawan kalian?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak posisi pemain ke markas lawan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan selisih koordinat posisi pemain dan benteng lawan dari titik acuan, dilanjutkan penerapan teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada permainan bentengan, titik tumpu benteng kita dijadikan acuan titik pangkal $(0, 0)$. Posisi Anda berada di $5\\text{ m}$ sebelah timur dan $8\\text{ m}$ sebelah utara dari benteng kita. Sementara itu, benteng lawan berada di $20\\text{ m}$ sebelah timur dan $28\\text{ m}$ sebelah utara dari benteng kita. Berapakah jarak lurus antara posisi Anda dan benteng lawan?",
+      "jawaban_benar": "$25\\text{ m}$",
+      "alasan_benar": "Selisih posisi arah timur adalah $20 - 5 = 15\\text{ m}$. Selisih posisi arah utara adalah $28 - 8 = 20\\text{ m}$. Jarak lurus dihitung dengan Pythagoras: $\\sqrt{15^2 + 20^2} = \\sqrt{225 + 400} = \\sqrt{625} = 25\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$35\\text{ m}$",
+          "alasan": "Menjumlahkan selisih jarak timur dan utara secara langsung ($15 + 20$)."
+        },
+        {
+          "teks": "$48\\text{ m}$",
+          "alasan": "Menjumlahkan koordinat benteng lawan secara langsung ($20 + 28$)."
+        },
+        {
+          "teks": "$20\\text{ m}$",
+          "alasan": "Hanya mengambil selisih komponen jarak ke arah utara saja."
+        }
+      ],
+      "pembahasan": "Posisi Anda $= (5, 8)$.\nPosisi benteng lawan $= (20, 28)$.\n\nKomponen horizontal (arah timur): $\\Delta x = 20 - 5 = 15\\text{ m}$.\nKomponen vertikal (arah utara): $\\Delta y = 28 - 8 = 20\\text{ m}$.\n\nJarak lurus $=\\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{15^2 + 20^2} = \\sqrt{225 + 400} = \\sqrt{625} = 25\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 106,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila ditarik garis dari titik (-5, 3) dan (3, -4) yang sejajar dengan sumbu- x dan sumbu-y, maka kita bisa melihat suatu segitiga siku-siku dengan panjang sisi tegaknya adalah 7 satuan dan 8 satuan. Sehingga, kita bisa menggunakan Teorema Pythagoras untuk menentukan jarak kedua titik tersebut."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "menentukan absis titik dari jarak kartesius",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis mundur rumus jarak dua titik dengan membedah komponen koordinat dan memilih solusi yang memenuhi syarat bernilai positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada bidang kartesius, diketahui titik $P(-3, 2)$ dan titik $Q(k, -10)$. Jika jarak antara titik $P$ dan titik $Q$ adalah $13\\text{ satuan}$ serta $k > 0$, berapakah nilai $k$?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Selisih koordinat $y$ adalah $|2 - (-10)| = 12$. Dengan rumus jarak, $(\\Delta x)^2 + 12^2 = 13^2 \\implies (\\Delta x)^2 + 144 = 169 \\implies (\\Delta x)^2 = 25$, sehingga $|k - (-3)| = 5$. Dari persamaan $|k + 3| = 5$, diperoleh $k + 3 = 5 \\implies k = 2$, atau $k + 3 = -5 \\implies k = -8$. Karena disyaratkan $k > 0$, maka $k = 2$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Salah mengoperasikan persamaan nilai mutlak dengan menjumlahkan $3 + 5$."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Memilih solusi negatif dari persamaan nilai mutlak tanpa memperhatikan syarat $k > 0$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Mengira nilai $k$ sama dengan selisih jarak horizontal ($\\Delta x = 5$)."
+        }
+      ],
+      "pembahasan": "Jarak titik $P(x_1, y_1)$ dan $Q(x_2, y_2)$ adalah:\n$d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$\n$13^2 = (k - (-3))^2 + (-10 - 2)^2$\n$169 = (k + 3)^2 + (-12)^2$\n$169 = (k + 3)^2 + 144$\n$(k + 3)^2 = 25$\n$k + 3 = \\pm 5$\n\nUntuk $k + 3 = 5 \\implies k = 2$.\nUntuk $k + 3 = -5 \\implies k = -8$.\n\nKarena disyaratkan $k > 0$, nilai $k$ yang memenuhi adalah $2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 109,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan gambar di atas, jarak kedua pesawat yang dimaksud adalah panjang CD . Untuk menentukan panjang CD , terlebih dahulu kita akan menentukan panjang BC dan BD."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "selisih ketinggian dua objek vertikal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan tinggi masing-masing objek dari segitiga siku-siku terpisah kemudian menghitung selisih tingginya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah drone pemantau, Drone A dan Drone B, melayang tepat di atas satu tiang sensor vertikal yang berdiri di tanah lapang. Seorang teknisi berada di tanah sejauh $15\\text{ m}$ dari dasar tiang sensor. Sensor mendeteksi bahwa jarak lurus antara posisi teknisi dan Drone A adalah $17\\text{ m}$, sedangkan jarak lurus antara teknisi dan Drone B adalah $25\\text{ m}$. Berapakah selisih ketinggian antara Drone A dan Drone B?",
+      "jawaban_benar": "$12\\text{ m}$",
+      "alasan_benar": "Tinggi Drone A dari tanah: $\\sqrt{17^2 - 15^2} = \\sqrt{289 - 225} = \\sqrt{64} = 8\\text{ m}$. Tinggi Drone B dari tanah: $\\sqrt{25^2 - 15^2} = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ m}$. Selisih ketinggian keduanya adalah $20 - 8 = 12\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$8\\text{ m}$",
+          "alasan": "Hanya mengurangkan jarak lurus teknisi ke kedua drone ($25 - 17$)."
+        },
+        {
+          "teks": "$28\\text{ m}$",
+          "alasan": "Menjumlahkan ketinggian kedua drone dari tanah ($20 + 8$)."
+        },
+        {
+          "teks": "$20\\text{ m}$",
+          "alasan": "Hanya menghitung ketinggian Drone B dari tanah tanpa mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung ketinggian Drone A ($h_A$).\n$h_A = \\sqrt{17^2 - 15^2} = \\sqrt{289 - 225} = \\sqrt{64} = 8\\text{ m}$.\n\nLangkah 2: Menghitung ketinggian Drone B ($h_B$).\n$h_B = \\sqrt{25^2 - 15^2} = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ m}$.\n\nLangkah 3: Menghitung selisih ketinggian.\n$\\Delta h = h_B - h_A = 20\\text{ m} - 8\\text{ m} = 12\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0111-soal-laihan-2-4-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "uji jangkauan dengar nirkabel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menghitung selisih tinggi, menghitung jarak lurus memakai Teorema Pythagoras, dan membandingkan hasil dengan batas jangkauan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas penyelamat pantai duduk di kursi menara pengawas. Sinyal pengeras suara petugas hanya dapat didengar dengan jelas oleh perenang pada jarak lurus maksimum $55\\text{ m}$. Posisi mendatar perenang berada sejauh $48\\text{ m}$ dari dasar menara, sedangkan posisi tempat duduk petugas berada di ketinggian $20\\text{ m}$ di atas permukaan air laut. Berdasarkan kondisi tersebut, apakah suara pengeras suara dapat didengar jelas oleh perenang?",
+      "jawaban_benar": "Dapat, karena jarak lurus keduanya $52\\text{ m}$",
+      "alasan_benar": "Jarak lurus dihitung dengan hipotenusa: $\\sqrt{48^2 + 20^2} = \\sqrt{2.304 + 400} = \\sqrt{2.704} = 52\\text{ m}$. Karena $52\\text{ m} \\le 55\\text{ m}$, suara dapat didengar jelas.",
+      "distraktor": [
+        {
+          "teks": "Tidak dapat, karena jarak lurus keduanya $68\\text{ m}$",
+          "alasan": "Siswa langsung menjumlahkan jarak mendatar dan tinggi tanpa Pythagoras: $48 + 20 = 68$."
+        },
+        {
+          "teks": "Dapat, karena jarak lurus keduanya $44\\text{ m}$",
+          "alasan": "Siswa keliru mengurangkan kuadrat kedua sisi di bawah akar: $\\sqrt{48^2 - 20^2} = \\sqrt{2.304 - 400} = \\sqrt{1.904} \\approx 43{,}63$ lalu dibulatkan ke 44."
+        },
+        {
+          "teks": "Tidak dapat, karena jarak lurus keduanya $56\\text{ m}$",
+          "alasan": "Siswa salah menghitung kuadrat $48^2$ atau salah menarik akar sehingga memperoleh $56\\text{ m}$ yang melebihi batas $55\\text{ m}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan jarak mendatar dan tegak.\nJarak mendatar $x = 48\\text{ m}$, tinggi $y = 20\\text{ m}$.\n\nLangkah 2: Hitung jarak lurus ($r$) menggunakan Teorema Pythagoras:\n$$r = \\sqrt{x^2 + y^2} = \\sqrt{48^2 + 20^2} = \\sqrt{2.304 + 400} = \\sqrt{2.704} = 52\\text{ m}$$\n\nLangkah 3: Bandingkan dengan jarak maksimum:\nKarena $52\\text{ m} < 55\\text{ m}$, maka suara petugas dapat didengar jelas oleh perenang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 108,
+        "bagian": "Contoh",
+        "nomor": "2.7",
+        "teks": "Dua pesawat sedang terbang melintasi kapal induk. Suatu radar yang berlokasi sejauh 9 km dari kapal induk mendeteksi bahwa posisi kedua pesawat tempur tersebut berjarak 10 km dan 12 km dari radar. Tentukan jarak kedua pesawat diukur berdasarkan ketinggiannya.",
+        "jawaban": "3,58 km",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "selisih jarak vertikal dua armada radar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan dua kali rumus Pythagoras untuk mencari tinggi masing-masing pesawat lalu mencari selisihnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua helikopter patroli sedang terbang tepat melintasi sebuah landasan helipad. Suatu radar pemantau yang berjarak $15\\text{ km}$ mendatar dari helipad mendeteksi jarak pandang lurus helikopter pertama adalah $17\\text{ km}$ dan jarak helikopter kedua adalah $25\\text{ km}$. Tentukan jarak antara kedua helikopter tersebut jika diukur berdasarkan ketinggiannya.",
+      "jawaban_benar": "$12\\text{ km}$",
+      "alasan_benar": "Ketinggian helikopter 1: $\\sqrt{17^2 - 15^2} = 8\\text{ km}$. Ketinggian helikopter 2: $\\sqrt{25^2 - 15^2} = 20\\text{ km}$. Selisih tinggi: $20 - 8 = 12\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$8\\text{ km}$",
+          "alasan": "Siswa langsung menghitung selisih jarak lurus kedua helikopter dari radar: $25 - 17 = 8\\text{ km}$."
+        },
+        {
+          "teks": "$14\\text{ km}$",
+          "alasan": "Siswa melakukan kesalahan perhitungan pada ketinggian helikopter kedua atau salah mengurangkan."
+        },
+        {
+          "teks": "$28\\text{ km}$",
+          "alasan": "Siswa menjumlahkan ketinggian kedua helikopter ($20 + 8 = 28\\text{ km}$) bukan mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung ketinggian helikopter pertama ($h_1$):\n$$h_1 = \\sqrt{17^2 - 15^2} = \\sqrt{289 - 225} = \\sqrt{64} = 8\\text{ km}$$\n\nLangkah 2: Menghitung ketinggian helikopter kedua ($h_2$):\n$$h_2 = \\sqrt{25^2 - 15^2} = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ km}$$\n\nLangkah 3: Menghitung selisih ketinggian kedua helikopter:\n$$\\Delta h = h_2 - h_1 = 20 - 8 = 12\\text{ km}$$\n\nJadi, jarak kedua helikopter diukur berdasarkan ketinggiannya adalah $12\\text{ km}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 108,
+        "bagian": "Contoh",
+        "nomor": "2.7",
+        "teks": "Dua pesawat sedang terbang melintasi kapal induk. Suatu radar yang berlokasi sejauh 9 km dari kapal induk mendeteksi bahwa posisi kedua pesawat tempur tersebut berjarak 10 km dan 12 km dari radar. Tentukan jarak kedua pesawat diukur berdasarkan ketinggiannya.",
+        "jawaban": "3,58 km",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "perbedaan ketinggian pesawat dari pemancar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan dua proses pengurangan kuadrat untuk menentukan ketinggian relatif objek sebelum dicari beda tingginya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah stasiun radar stasioner terletak sejauh $24\\text{ km}$ dari pelabuhan utama. Saat dua pesawat nirawak melintas vertikal di atas pelabuhan, radar mengukur jarak lurus ke pesawat A adalah $25\\text{ km}$ dan jarak lurus ke pesawat B adalah $30\\text{ km}$. Berapakah jarak tegak lurus antara kedua pesawat tersebut?",
+      "jawaban_benar": "$11\\text{ km}$",
+      "alasan_benar": "Ketinggian pesawat A: $\\sqrt{25^2 - 24^2} = 7\\text{ km}$. Ketinggian pesawat B: $\\sqrt{30^2 - 24^2} = 18\\text{ km}$. Jarak vertikal: $18 - 7 = 11\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$5\\text{ km}$",
+          "alasan": "Siswa langsung mengurangkan jarak sensor ke kedua pesawat: $30 - 25 = 5\\text{ km}$."
+        },
+        {
+          "teks": "$13\\text{ km}$",
+          "alasan": "Siswa keliru memakai tripel 5-12-13 untuk menghitung ketinggian pesawat B sehingga menduga tingginya 20 km ($20 - 7 = 13$)."
+        },
+        {
+          "teks": "$25\\text{ km}$",
+          "alasan": "Siswa menjumlahkan ketinggian kedua pesawat: $18 + 7 = 25\\text{ km}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung tinggi pesawat A ($t_A$):\n$$t_A = \\sqrt{25^2 - 24^2} = \\sqrt{625 - 576} = \\sqrt{49} = 7\\text{ km}$$\n\nLangkah 2: Menghitung tinggi pesawat B ($t_B$):\n$$t_B = \\sqrt{30^2 - 24^2} = \\sqrt{900 - 576} = \\sqrt{324} = 18\\text{ km}$$\n\nLangkah 3: Menentukan jarak tegak lurus antara kedua pesawat:\n$$\\Delta t = t_B - t_A = 18 - 7 = 11\\text{ km}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 106,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk mengukur panjang ruas garis yang menghubungkan dua titik pada bidang koordinat, kita dapat menggambar titik-titik tersebut. Setelah itu, kita menentukan panjang setiap ruas garis."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "absis titik koordinat berjarak tertentu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengharuskan siswa membalik rumus jarak titik koordinat kartesius untuk menemukan nilai absis yang belum diketahui dengan syarat tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada bidang koordinat kartesius, diketahui titik $P(a, -2)$ dan titik $Q(5, 6)$. Jika jarak antara titik $P$ dan titik $Q$ adalah $10\\text{ satuan}$ serta nilai $a < 5$, maka nilai $a$ yang memenuhi adalah ...",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Beda koordinat $y$: $6 - (-2) = 8$. Jarak kuadrat: $10^2 = 8^2 + (5 - a)^2 \\implies (5 - a)^2 = 36$. Karena $a < 5$, maka $5 - a = 6 \\implies a = -1$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Siswa mengambil akar positif $5 - a = -6$ atau $a - 5 = 6 \\implies a = 11$, yang melanggar syarat $a < 5$."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Siswa salah menghitung selisih koordinat $y$ sebagai $6 - 2 = 4$ sehingga $(5 - a)^2 = 100 - 16 = 84$ lalu mengira $a = -3$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa keliru dalam aljabar penyelesaian $5 - a = 6$ menjadi $a = 6 - 5 = 1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan rumus jarak dua titik pada bidang kartesius:\n$$d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$$\n$$10^2 = (5 - a)^2 + (6 - (-2))^2$$\n$$100 = (5 - a)^2 + 8^2$$\n\nLangkah 2: Selesaikan persamaan kuadrat:\n$$100 = (5 - a)^2 + 64$$\n$$(5 - a)^2 = 100 - 64 = 36$$\n$$5 - a = \\pm 6$$\n\nLangkah 3: Perhatikan syarat $a < 5$:\nJika $5 - a = 6$, diperoleh $a = 5 - 6 = -1$ (memenuhi karena $-1 < 5$).\nJika $5 - a = -6$, diperoleh $a = 5 + 6 = 11$ (tidak memenuhi karena $11 > 5$).\n\nJadi, nilai $a$ yang memenuhi adalah $-1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-d-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 104,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika Kalian berada 4 meter sebelah utara dan 3 meter sebelah timur dari benteng kalian. Benteng lawan kalian berada di 6 meter sebelah utara dan 8 meter sebelah timur dari benteng kalian. Bagaimanakah menentukan jarak kalian dengan benteng lawan kalian? Masalah ini bisa kalian selesaikan dengan menggunakan Teorema Pythagoras."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak relatif dua posisi permainan bentengan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemetaan posisi dari satu titik acuan bersama, penghitungan selisih koordinat horizontal dan vertikal, lalu penerapan teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada permainan bentengan, posisi markas sendiri dijadikan titik pangkal $(0, 0)$. Regu penjaga berada pada posisi $14\\text{ m}$ sebelah timur dan $3\\text{ m}$ sebelah utara markas sendiri. Sementara itu, markas lawan berada pada posisi $2\\text{ m}$ sebelah timur dan $19\\text{ m}$ sebelah utara markas sendiri. Berapakah jarak lurus antara posisi regu penjaga dengan markas lawan?",
+      "jawaban_benar": "$20\\text{ m}$",
+      "alasan_benar": "Selisih timur-barat $= |14 - 2| = 12\\text{ m}$. Selisih utara-selatan $= |19 - 3| = 16\\text{ m}$. Jarak lurus $= \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$28\\text{ m}$",
+          "alasan": "Siswa menjumlahkan selisih jarak horizontal dan vertikal tanpa Pythagoras: $12 + 16 = 28\\text{ m}$."
+        },
+        {
+          "teks": "$25\\text{ m}$",
+          "alasan": "Siswa salah menjumlahkan komponen koordinat menjadi $15$ dan $20$ atau salah hitung kuadrat."
+        },
+        {
+          "teks": "$15\\text{ m}$",
+          "alasan": "Siswa keliru menghitung selisih koordinat menjadi $9$ dan $12$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Nyatakan koordinat masing-masing lokasi dari titik acuan markas sendiri $(0, 0)$:\n- Posisi regu penjaga: $(14, 3)$\n- Posisi markas lawan: $(2, 19)$\n\nLangkah 2: Hitung selisih jarak mendatar (timur) dan tegak (utara):\n$$\\Delta x = |14 - 2| = 12\\text{ m}$$\n$$\\Delta y = |19 - 3| = 16\\text{ m}$$\n\nLangkah 3: Hitung jarak lurus dengan Teorema Pythagoras:\n$$\\text{Jarak} = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{12^2 + 16^2} = \\sqrt{144 + 256} = \\sqrt{400} = 20\\text{ m}$$\n\nJadi, jarak lurus regu penjaga ke markas lawan adalah $20\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

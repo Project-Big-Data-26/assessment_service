@@ -1,0 +1,250 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab D hanya p37-p39 dan easy+medium sudah memakai 32 soal dengan semua acuan siswa/pretest habis; akar bersarang, pangkat nol, dan notasi ilmiah di luar subbab D. Hard hanya memuat soal penalaran orisinal (evaluasi klaim, kesalahan rasionalisasi, perbandingan, parameter, perancangan) yang tidak kembar dengan easy/medium; sisanya akan menjadi nyaris kembar.",
+  "soal": [
+    {
+      "id": "kelas10-b01-d-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai ekspresi sekawan bersyarat",
+      "alasan_level": "memakai sekawan untuk mendapat $\\frac1x$ lalu menyadari $x^2+\\frac1{x^2}=(x+\\frac1x)^2-2$; penalaran aljabar, setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $x=\\sqrt{5}+2$. Nilai dari $x^{2}+\\dfrac{1}{x^{2}}$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "$\\frac1x=\\sqrt5-2$ (sekawan, hasil kali 1); $x+\\frac1x=2\\sqrt5$; $x^2+\\frac1{x^2}=20-2=18$",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "lupa mengurangi 2 pada $(x+\\frac1x)^2-2$"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "memakai $(x-\\frac1x)^2=16$ tanpa menambah 2"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "mengurangi 2 dari $(x-\\frac1x)^2=16$ (tanda 2 terbalik)"
+        }
+      ],
+      "pembahasan": "$\\frac1x=\\frac{1}{\\sqrt5+2}\\times\\frac{\\sqrt5-2}{\\sqrt5-2}=\\sqrt5-2$. Maka $x^2=9+4\\sqrt5$ dan $\\frac1{x^2}=9-4\\sqrt5$; jumlahnya $18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter agar hasil rasionalisasi berbentuk tertentu",
+      "alasan_level": "mencari bilangan bulat $a$ dari hasil rasionalisasi yang diketahui, membalik prosedur sekawan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $a$ bilangan bulat dengan $a>3$. Jika bentuk rasional dari $\\dfrac{12}{\\sqrt{a}-\\sqrt{3}}$ adalah $3\\sqrt{a}+3\\sqrt{3}$, nilai $a$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "hasil rasionalisasi $\\frac{12(\\sqrt a+\\sqrt3)}{a-3}$ sehingga $\\frac{12}{a-3}=3$ dan $a=7$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "menyamakan $a-3=4$ lalu lupa menambah 3"
+        },
+        {
+          "teks": "$15$",
+          "alasan": "menyamakan $a-3=12$ (lupa membagi 3)"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "memakai penyebut $a+3$ sehingga $\\frac{12}{a+3}=3$"
+        }
+      ],
+      "pembahasan": "$\\frac{12}{\\sqrt a-\\sqrt3}\\times\\frac{\\sqrt a+\\sqrt3}{\\sqrt a+\\sqrt3}=\\frac{12(\\sqrt a+\\sqrt3)}{a-3}$. Disamakan dengan $3(\\sqrt a+\\sqrt3)$: $\\frac{12}{a-3}=3$, $a=7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan merasionalkan",
+      "alasan_level": "mengevaluasi langkah penyelesaian dan menentukan letak serta alasan kesalahan pertama pada pemilihan sekawan",
+      "stimulus": "Langkah 1: $\\dfrac{6}{\\sqrt{5}-\\sqrt{2}}=\\dfrac{6}{\\sqrt{5}-\\sqrt{2}}\\times\\dfrac{\\sqrt{5}-\\sqrt{2}}{\\sqrt{5}-\\sqrt{2}}$\n\nLangkah 2: $=\\dfrac{6(\\sqrt{5}-\\sqrt{2})}{5-2}$\n\nLangkah 3: $=2(\\sqrt{5}-\\sqrt{2})$",
+      "pertanyaan": "Rani merasionalkan penyebut $\\dfrac{6}{\\sqrt{5}-\\sqrt{2}}$ dengan langkah berikut. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+      "jawaban_benar": "Kesalahan pertama ada pada Langkah 1, karena pengali seharusnya sekawan penyebut, yaitu $\\dfrac{\\sqrt5+\\sqrt2}{\\sqrt5+\\sqrt2}$",
+      "alasan_benar": "sekawan dari $\\sqrt5-\\sqrt2$ adalah $\\sqrt5+\\sqrt2$; mengalikan dengan bentuk yang sama tidak menghilangkan akar pada penyebut",
+      "distraktor": [
+        {
+          "teks": "Kesalahan pertama ada pada Langkah 2, karena penyebut seharusnya $5+2=7$",
+          "alasan": "Langkah 2 mengikuti Langkah 1 yang salah; pengali sekawan tetap menghasilkan $5-2$"
+        },
+        {
+          "teks": "Kesalahan pertama ada pada Langkah 3, karena $\\frac{6}{3}$ seharusnya $3$",
+          "alasan": "$\\frac63=2$ benar; kesalahan terjadi lebih awal"
+        },
+        {
+          "teks": "Kesalahan pertama ada pada Langkah 3, karena hasil harus dibagi 2 lagi",
+          "alasan": "pembagian tambahan tidak diperlukan; kesalahan terjadi lebih awal"
+        }
+      ],
+      "pembahasan": "Pengali yang benar adalah $\\frac{\\sqrt5+\\sqrt2}{\\sqrt5+\\sqrt2}$ sehingga $\\frac{6(\\sqrt5+\\sqrt2)}{5-2}=2(\\sqrt5+\\sqrt2)$. Pada Langkah 1, Rani mengalikan dengan bentuk yang sama sehingga penyebut $(\\sqrt5-\\sqrt2)^2=7-2\\sqrt{10}$ masih memuat akar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah teleskopik dengan sekawan",
+      "alasan_level": "menyadari bahwa setiap suku dirasionalkan menjadi selisih akar berurutan sehingga jumlah menyusut; perlu penalaran pola, bukan hitung langsung",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\dfrac{1}{\\sqrt{1}+\\sqrt{2}}+\\dfrac{1}{\\sqrt{2}+\\sqrt{3}}+\\dfrac{1}{\\sqrt{3}+\\sqrt{4}}+\\cdots+\\dfrac{1}{\\sqrt{48}+\\sqrt{49}}$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "tiap suku $\\frac{1}{\\sqrt k+\\sqrt{k+1}}=\\sqrt{k+1}-\\sqrt k$; jumlah menyusut menjadi $\\sqrt{49}-\\sqrt1=6$",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "menulis hasil $\\sqrt{49}=7$ tanpa mengurangi $\\sqrt1$"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "mengurangi 2 (bukan $\\sqrt1=1$) dari $\\sqrt{49}$ karena menganggap suku pertama dua kali"
+        },
+        {
+          "teks": "$24$",
+          "alasan": "mengira setiap pasangan suku menghasilkan $\\frac12$"
+        }
+      ],
+      "pembahasan": "Rasionalkan: $\\frac{1}{\\sqrt k+\\sqrt{k+1}}\\times\\frac{\\sqrt{k+1}-\\sqrt k}{\\sqrt{k+1}-\\sqrt k}=\\sqrt{k+1}-\\sqrt k$. Jumlah $(\\sqrt2-\\sqrt1)+(\\sqrt3-\\sqrt2)+\\cdots+(\\sqrt{49}-\\sqrt{48})=7-1=6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan bentuk akar tanpa kalkulator",
+      "alasan_level": "membandingkan selisih akar berurutan dengan menyadari bentuk sekawan $\\frac{1}{\\sqrt{n+1}+\\sqrt n}$ menurun; evaluasi tanpa kalkulator",
+      "stimulus": "Empat bilangan: $\\sqrt{8}-\\sqrt{7}$, $\\sqrt{9}-\\sqrt{8}$, $\\sqrt{10}-\\sqrt{9}$, dan $\\sqrt{11}-\\sqrt{10}$.",
+      "pertanyaan": "Di antara empat bilangan berikut, bilangan yang paling besar adalah ....",
+      "jawaban_benar": "$\\sqrt{8}-\\sqrt{7}$",
+      "alasan_benar": "$\\sqrt{n+1}-\\sqrt n=\\frac{1}{\\sqrt{n+1}+\\sqrt n}$; penyebut terkecil terjadi pada $n=7$, sehingga nilai terbesar",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{9}-\\sqrt{8}$",
+          "alasan": "mengira selisih membesar seiring radikan membesar"
+        },
+        {
+          "teks": "$\\sqrt{10}-\\sqrt{9}$",
+          "alasan": "mengira selisih membesar seiring radikan membesar"
+        },
+        {
+          "teks": "$\\sqrt{11}-\\sqrt{10}$",
+          "alasan": "memilih radikan terbesar tanpa merasionalkan"
+        }
+      ],
+      "pembahasan": "Tiap selisih sama dengan $\\frac{1}{\\sqrt{n+1}+\\sqrt n}$ untuk $n=7,8,9,10$. Penyebut paling kecil di $n=7$, jadi $\\sqrt8-\\sqrt7$ paling besar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "Untuk merasionalkan bentuk akar, maka yang dapat dilakukan adalah dengan mengalikannya dengan bentuk akar sekawannya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang bentuk akar bernilai bulat",
+      "alasan_level": "menalar syarat $\\frac{12}{\\sqrt n}$ bulat (n kuadrat sempurna dan akarnya pembagi 12) lalu membatasi $n\\le 100$",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan bulat positif $n\\le 100$ sehingga bentuk rasional dari $\\dfrac{12}{\\sqrt{n}}$ merupakan bilangan bulat adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "$\\frac{12}{\\sqrt n}=\\frac{12\\sqrt n}{n}$ bulat hanya jika $n=m^2$ dan $m$ pembagi 12 dengan $m\\le10$: $m=1,2,3,4,6$",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "menghitung semua kuadrat sempurna sampai 100"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "menyertakan $m=12$ ($n=144$) padahal melebihi 100"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "tidak menghitung $n=1$"
+        }
+      ],
+      "pembahasan": "Jika $n$ bukan kuadrat sempurna, $\\frac{12\\sqrt n}{n}$ tak rasional. Untuk $n=m^2$ nilainya $\\frac{12}{m}$, bulat bila $m\\mid12$. Dengan $m\\le10$: $m=1,2,3,4,6$ sehingga $n=1,4,9,16,36$ (5 nilai).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 37,
+        "kutipan": "Sifat-sifat eksponen juga dapat kamu gunakan untuk bentuk pangkat pecahan ini."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi pernyataan sifat pangkat pecahan",
+      "alasan_level": "menilai kebenaran empat pernyataan dengan sifat eksponen pecahan, perlu menjumlahkan/mengalikan pangkat dengan cermat dan menolak kesalahan umum",
+      "stimulus": null,
+      "pertanyaan": "Untuk $a>0$, pernyataan yang benar adalah ....",
+      "jawaban_benar": "$a^{\\frac23}\\times a^{\\frac12}=a^{\\frac76}$",
+      "alasan_benar": "perkalian basis sama menjumlahkan pangkat: $\\frac23+\\frac12=\\frac76$",
+      "distraktor": [
+        {
+          "teks": "$\\left(a^{\\frac12}\\right)^{\\frac13}=a^{\\frac56}$",
+          "alasan": "pangkat bertingkat dijumlahkan padahal dikalikan: yang benar $a^{\\frac16}$"
+        },
+        {
+          "teks": "$\\sqrt{a}+\\sqrt{a}=\\sqrt{2a}$",
+          "alasan": "$\\sqrt a+\\sqrt a=2\\sqrt a$, bukan $\\sqrt{2a}$ untuk $a>0$"
+        },
+        {
+          "teks": "$a^{\\frac12}\\div a^{\\frac13}=a^{\\frac13}$",
+          "alasan": "pangkat dikurangkan $\\frac12-\\frac13=\\frac16$, bukan $\\frac13$"
+        }
+      ],
+      "pembahasan": "Kebenaran: $a^{\\frac23}a^{\\frac12}=a^{\\frac76}$. Pilihan lain keliru: $(a^{1/2})^{1/3}=a^{1/6}$, $\\sqrt a+\\sqrt a=2\\sqrt a$, $a^{1/2}\\div a^{1/3}=a^{1/6}$.",
+      "catatan": null
+    }
+  ]
+}

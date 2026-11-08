@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 95,
+        "bagian": "Soal Latihan 2.2",
+        "nomor": "4",
+        "teks": "Kusen jendela yang berbentuk persegi panjang memiliki tinggi 40,8 cm dan panjang 30,6 cm, serta panjang salah satu diagonalnya 52,5 cm. Apakah kusen jendela benar-benar persegi panjang? Jelaskan.",
+        "jawaban": "Bukan persegi panjang karena 40,8^2 + 30,6^2 != 52,5^2",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "verifikasi bentuk kusen",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis kesikuan sudut bingkai berdasarkan perbandingan kuadrat diagonal dan jumlah kuadrat sisi tegak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bingkai lukisan berbentuk persegi panjang memiliki ukuran lebar $24\\text{ cm}$ dan panjang $45\\text{ cm}$. Setelah dilakukan pengukuran, diperoleh panjang salah satu diagonalnya adalah $51\\text{ cm}$. Apakah sudut pada sudut-sudut bingkai lukisan tersebut tepat membentuk siku-siku?",
+      "jawaban_benar": "Ya, tepat siku-siku karena $24^2 + 45^2 = 51^2$",
+      "alasan_benar": "Nilai $24^2 + 45^2 = 576 + 2025 = 2601$ dan $51^2 = 2601$, sehingga memenuhi kebalikan Teorema Pythagoras untuk segitiga siku-siku.",
+      "distraktor": [
+        {
+          "teks": "Tidak, karena $24^2 + 45^2 < 51^2$ sehingga membentuk sudut tumpul",
+          "alasan": "Siswa salah melakukan perhitungan kuadrat sisi-sisi tegak sehingga mengira hasilnya lebih kecil."
+        },
+        {
+          "teks": "Tidak, karena jumlah panjang kedua sisi tidak sama dengan diagonalnya ($24 + 45 \\neq 51$)",
+          "alasan": "Siswa salah konsep dengan menjumlahkan panjang sisi secara langsung tanpa mengkuadratkannya terlebih dahulu."
+        },
+        {
+          "teks": "Ya, karena nilai diagonal lebih panjang daripada masing-masing sisi tegaknya",
+          "alasan": "Siswa hanya menggunakan syarat ketaksamaan segitiga biasa tanpa menguji hubungan Pythagoras."
+        }
+      ],
+      "pembahasan": "Suatu bidang persegi panjang memiliki sudut siku-siku jika panjang sisi dan diagonalnya memenuhi kebalikan Teorema Pythagoras:\n$a^2 + b^2 = c^2$\nHitung kuadrat sisi-sisi tegak:\n$24^2 + 45^2 = 576 + 2025 = 2601$\nHitung kuadrat panjang diagonal:\n$51^2 = 2601$\nKarena $24^2 + 45^2 = 51^2 = 2601$, maka sudut yang dibentuk adalah tepat siku-siku.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0095-soal-laihan-2-2-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penerapan jarak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan tripel Pythagoras dalam konteks ketinggian objek dengan jarak mendatar dan garis pandang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah drone pemantau terbang diam di udara. Seorang pengamat berdiri pada jarak mendatar $16\\text{ meter}$ dari titik tepat di bawah drone di atas tanah. Jika jarak lurus antara posisi pengamat dan drone tersebut adalah $20\\text{ meter}$, maka tinggi drone dari permukaan tanah adalah ....",
+      "jawaban_benar": "$12\\text{ meter}$",
+      "alasan_benar": "Tinggi drone dihitung dengan $\\sqrt{20^2 - 16^2} = \\sqrt{400 - 256} = \\sqrt{144} = 12\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$4\\text{ meter}$",
+          "alasan": "Siswa langsung mengurangkan jarak lurus dengan jarak mendatar ($20 - 16 = 4$)."
+        },
+        {
+          "teks": "$14\\text{ meter}$",
+          "alasan": "Siswa salah menghitung selisih kuadrat atau salah penarikan akar kuadrat."
+        },
+        {
+          "teks": "$25,6\\text{ meter}$",
+          "alasan": "Siswa salah operasi dengan menjumlahkan kuadrat: $\\sqrt{20^2 + 16^2} = \\sqrt{656} \\approx 25,6$."
+        }
+      ],
+      "pembahasan": "Posisi drone, titik di bawah drone, dan pengamat membentuk segitiga siku-siku dengan hipotenusa adalah jarak pandang ($20\\text{ m}$) dan alas adalah jarak mendatar ($16\\text{ m}$).\n$\\text{Tinggi} = \\sqrt{20^2 - 16^2}\n= \\sqrt{400 - 256}\n= \\sqrt{144}\n= 12\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada gambar di atas diketahui bahwa segitiga siku-siku dengan panjang hipotenusa p 2 + q 2 dan panjang sisi siku-siku yang lain adalah p 2 - q 2 dan 2 pq ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "konstruksi aljabar tripel",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menghitung ketiga panjang sisi segitiga menggunakan rumus pembentuk tripel lalu menentukan kelilingnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga siku-siku dibentuk dari rumus pembentuk tripel Pythagoras menggunakan dua bilangan asli $p = 5$ dan $q = 2$. Panjang hipotenusa segitiga adalah $p^2 + q^2$, sedangkan kedua sisi siku-sikunya adalah $p^2 - q^2$ dan $2pq$. Keliling segitiga siku-siku yang terbentuk adalah ....",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Panjang sisi-sisinya adalah $21$, $20$, dan $29$, sehingga kelilingnya $21 + 20 + 29 = 70$.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Siswa hanya menjumlahkan dua sisi siku-siku ($21 + 20$) tanpa menambahkan sisi hipotenusa."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Siswa salah menghitung $p^2 - q^2$ menjadi $p^2 - q$ atau salah hitung aritmetika."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Siswa salah menghitung nilai $2pq = 2(5)(2)$ menjadi $24$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang sisi siku-siku pertama:\n$a = p^2 - q^2 = 5^2 - 2^2 = 25 - 4 = 21$\nLangkah 2: Hitung panjang sisi siku-siku kedua:\n$b = 2pq = 2 \\times 5 \\times 2 = 20$\nLangkah 3: Hitung hipotenusa:\n$c = p^2 + q^2 = 5^2 + 2^2 = 25 + 4 = 29$\nLangkah 4: Hitung keliling segitiga:\n$K = a + b + c = 21 + 20 + 29 = 70$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga, tiga bilangan a , b , c dengan a 1 b 1 c dikatakan tripel Pythagoras jika memenuhi hubungan persamaan c 2 = a 2 + b 2 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "variabel tripel pythagoras",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyusun persamaan kuadrat sederhana dari relasi tripel Pythagoras untuk mencari nilai suatu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui kelompok tiga bilangan asli $(3x, 36, 39)$ dengan $39$ merupakan bilangan terbesar. Jika ketiga bilangan tersebut membentuk tripel Pythagoras, maka nilai $x$ adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "$(3x)^2 + 36^2 = 39^2 \\implies 9x^2 + 1296 = 1521 \\implies 9x^2 = 225 \\implies x^2 = 25 \\implies x = 5$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Siswa hanya mencari panjang sisi $3x = 15$ tetapi lupa membaginya dengan $3$ untuk mendapatkan nilai $x$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Siswa berhenti pada perhitungan $x^2 = 25$ dan lupa menarik akar kuadrat."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa salah menghitung selisih kuadrat $1521 - 1296$ menjadi $81$ sehingga $x^2 = 9$ dan $x = 3$."
+        }
+      ],
+      "pembahasan": "Berdasarkan syarat tripel Pythagoras:\n$(3x)^2 + 36^2 = 39^2$\n$9x^2 + 1296 = 1521$\n$9x^2 = 1521 - 1296$\n$9x^2 = 225$\n$x^2 = \\frac{225}{9} = 25$\n$x = \\sqrt{25} = 5$.\nJadi, nilai $x$ adalah $5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 95,
+        "bagian": "Soal Latihan 2.2",
+        "nomor": "4",
+        "teks": "Kusen jendela yang berbentuk persegi panjang memiliki tinggi 40,8 cm dan panjang 30,6 cm, serta panjang salah satu diagonalnya 52,5 cm. Apakah kusen jendela benar-benar persegi panjang? Jelaskan.",
+        "jawaban": "Bukan, karena 40,8^2 + 30,6^2 != 52,5^2",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "verifikasi kesikuan bidang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pembuktian kuadrat dua sisi penyiku terhadap kuadrat diagonal untuk menyimpulkan kesikuan bidang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pintu lemari berbentuk persegi panjang memiliki ukuran lebar $33\\text{ cm}$ dan tinggi $56\\text{ cm}$, serta panjang salah satu diagonalnya setelah diukur adalah $65\\text{ cm}$. Apakah pintu lemari tersebut benar-benar berbentuk persegi panjang dengan sudut siku-siku sempurna?",
+      "jawaban_benar": "Ya, karena $33^2 + 56^2 = 65^2$",
+      "alasan_benar": "$33^2 + 56^2 = 1.089 + 3.136 = 4.225$, dan $65^2 = 4.225$. Karena nilainya sama, sudut yang terbentuk tepat siku-siku.",
+      "distraktor": [
+        {
+          "teks": "Tidak, karena $33^2 + 56^2 < 65^2$",
+          "alasan": "Siswa salah menjumlahkan hasil kuadrat sehingga mengira jumlahnya lebih kecil dari kuadrat diagonal."
+        },
+        {
+          "teks": "Tidak, karena $33^2 + 56^2 > 65^2$",
+          "alasan": "Siswa salah melakukan perhitungan aritmetika sehingga menyimpulkan jumlah kuadrat sisi tegak melebihi kuadrat sisi miring."
+        },
+        {
+          "teks": "Ya, karena $33 + 56 > 65$",
+          "alasan": "Siswa keliru menggunakan ketaksamaan segitiga biasa alih-alih kebalikan Teorema Pythagoras."
+        }
+      ],
+      "pembahasan": "Untuk membuktikan apakah sudut lemari tepat siku-siku, gunakan kebalikan Teorema Pythagoras:\n1. Hitung jumlah kuadrat sisi penyiku: $33^2 + 56^2 = 1.089 + 3.136 = 4.225$.\n2. Hitung kuadrat panjang diagonal: $65^2 = 4.225$.\nKarena $33^2 + 56^2 = 65^2$, maka bidang tersebut tepat memiliki sudut siku-siku sehingga benar-benar berbentuk persegi panjang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0095-soal-laihan-2-2-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penerapan tinggi tiang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan teorema Pythagoras dari pemodelan situasi nyata untuk menentukan ketinggian objek.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tiang pemancar sinyal ditegakkan tegak lurus di atas permukaan tanah datar. Kawat pancang dipasang dari puncak tiang ke sebuah patok di tanah. Jika panjang kawat pancang adalah $15\\text{ meter}$ dan jarak patok ke pangkal tiang adalah $9\\text{ meter}$, berapakah tinggi tiang pemancar sinyal tersebut?",
+      "jawaban_benar": "$12\\text{ meter}$",
+      "alasan_benar": "Tinggi tiang dihitung dengan $\\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$6\\text{ meter}$",
+          "alasan": "Siswa langsung mengurangkan panjang kawat dengan jarak patok ($15 - 9 = 6$)."
+        },
+        {
+          "teks": "$18\\text{ meter}$",
+          "alasan": "Siswa keliru menjumlahkan kuadrat kedua ukuran lalu memperkirakan akar kuadratnya."
+        },
+        {
+          "teks": "$24\\text{ meter}$",
+          "alasan": "Siswa menjumlahkan langsung panjang kawat dan jarak patok ($15 + 9 = 24$)."
+        }
+      ],
+      "pembahasan": "Kawat pancang, tiang, dan tanah membentuk segitiga siku-siku dengan kawat pancang sebagai hipotenusa ($c = 15\\text{ m}$) dan jarak mendatar sebagai salah satu sisi siku-siku ($a = 9\\text{ m}$).\nTinggi tiang ($b$):\n$b = \\sqrt{c^2 - a^2}$\n$b = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0095-soal-laihan-2-2-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "identifikasi tripel panjang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menguji hubungan kuadrat sisi terpanjang terhadap dua sisi lainnya pada kelompok ukuran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pak Haris memiliki beberapa set bilah kayu untuk membuat rangka penopang segitiga siku-siku. Di antara kelompok panjang bilah kayu berikut, manakah yang dapat membentuk segitiga siku-siku (tripel Pythagoras)?",
+      "jawaban_benar": "$9\\text{ cm}, 40\\text{ cm}, 41\\text{ cm}$",
+      "alasan_benar": "Memenuhi persamaan $9^2 + 40^2 = 81 + 1.600 = 1.681 = 41^2$.",
+      "distraktor": [
+        {
+          "teks": "$8\\text{ cm}, 14\\text{ cm}, 17\\text{ cm}$",
+          "alasan": "Bukan tripel Pythagoras karena $8^2 + 14^2 = 64 + 196 = 260 \\neq 17^2$ ($289$)."
+        },
+        {
+          "teks": "$10\\text{ cm}, 24\\text{ cm}, 28\\text{ cm}$",
+          "alasan": "Siswa mengira kelipatan dari tripel umum, padahal $10^2 + 24^2 = 100 + 576 = 676 = 26^2 \\neq 28^2$."
+        },
+        {
+          "teks": "$12\\text{ cm}, 15\\text{ cm}, 20\\text{ cm}$",
+          "alasan": "Bukan tripel Pythagoras karena $12^2 + 15^2 = 144 + 225 = 369 \\neq 20^2$ ($400$)."
+        }
+      ],
+      "pembahasan": "Kelompok tiga bilangan merupakan tripel Pythagoras jika kuadrat bilangan terbesar sama dengan jumlah kuadrat dua bilangan lainnya:\n- $9^2 + 40^2 = 81 + 1.600 = 1.681$\n- $41^2 = 1.681$\nKarena $9^2 + 40^2 = 41^2$, kelompok $9\\text{ cm}, 40\\text{ cm}, 41\\text{ cm}$ tepat membentuk segitiga siku-siku.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 93,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pilihlah sebarang bilangan ganjil yang dimisalkan sebagai panjang sisi terpendek dari suatu segitiga"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pembentukan tripel ganjil",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai sisi tegak lain menggunakan rumus khusus, kemudian menentukan sisi miring dan menjumlahkannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui aturan pembentukan tripel Pythagoras dengan sisi terpendek berupa bilangan ganjil $S$ menyatakan bahwa sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$. Jika dipilih $S = 9$, berapakah jumlah panjang sisi tegak lainnya ($M$) dan sisi miring segitiga tersebut?",
+      "jawaban_benar": "$81$",
+      "alasan_benar": "$M = \\frac{9^2 - 1}{2} = 40$, sisi miring $c = \\sqrt{9^2 + 40^2} = 41$, sehingga $M + c = 40 + 41 = 81$.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Siswa hanya mencari panjang hipotenusa tanpa menambahkan sisi $M$ sesuai pertanyaan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Siswa salah menghitung rumus $M$ menjadi $\\frac{(S - 1)^2}{2} = 32$, sehingga sisi miring $\\approx 33$ dan jumlahnya keliru."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Siswa menjumlahkan seluruh ketiga sisi segitiga ($9 + 40 + 41 = 90$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang sisi tegak $M$.\n$M = \\frac{9^2 - 1}{2} = \\frac{81 - 1}{2} = \\frac{80}{2} = 40$\n\nLangkah 2: Hitung hipotenusa $c$.\n$c = \\sqrt{S^2 + M^2} = \\sqrt{9^2 + 40^2} = \\sqrt{81 + 1.600} = \\sqrt{1.681} = 41$\n\nLangkah 3: Jumlahkan $M$ dan $c$.\n$M + c = 40 + 41 = 81$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga, tiga bilangan a , b , c dengan a 1 b 1 c dikatakan tripel Pythagoras jika memenuhi hubungan persamaan c 2 = a 2 + b 2 ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "keliling segitiga siku-siku",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis perbandingan tripel Pythagoras dengan luas segitiga untuk menentukan keliling segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panjang kedua sisi siku-siku sebuah segitiga memiliki perbandingan $7 : 24$. Jika luas segitiga tersebut adalah $336\\text{ cm}^2$, berapakah keliling segitiga tersebut?",
+      "jawaban_benar": "$112\\text{ cm}$",
+      "alasan_benar": "Faktor pengali $x = 2$, sehingga sisi-sisinya adalah $14\\text{ cm}$, $48\\text{ cm}$, dan hipotenusa $50\\text{ cm}$. Keliling $= 14 + 48 + 50 = 112\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$56\\text{ cm}$",
+          "alasan": "Siswa hanya menjumlahkan angka perbandingan tripel dasarnya ($7 + 24 + 25 = 56$)."
+        },
+        {
+          "teks": "$62\\text{ cm}$",
+          "alasan": "Siswa hanya menjumlahkan dua sisi penyiku sebenarnya ($14 + 48 = 62$) tanpa sisi miring."
+        },
+        {
+          "teks": "$224\\text{ cm}$",
+          "alasan": "Siswa lupa mengalikan $\\frac{1}{2}$ pada rumus luas segitiga sehingga nilai pengali menjadi dua kali lipat."
+        }
+      ],
+      "pembahasan": "Misalkan panjang kedua sisi siku-siku adalah $7x$ dan $24x$.\nLangkah 1: Tentukan nilai $x$ dari luas segitiga.\n$\\text{Luas} = \\frac{1}{2} \\times 7x \\times 24x = 336$\n$84x^2 = 336$\n$x^2 = 4 \\implies x = 2$.\n\nLangkah 2: Tentukan panjang sisi-sisi segitiga.\n- Sisi siku-siku 1: $7 \\times 2 = 14\\text{ cm}$\n- Sisi siku-siku 2: $24 \\times 2 = 48\\text{ cm}$\n- Hipotenusa: berdasarkan tripel Pythagoras $(7, 24, 25)$, panjangnya adalah $25 \\times 2 = 50\\text{ cm}$.\n\nLangkah 3: Hitung keliling segitiga.\n$\\text{Keliling} = 14 + 48 + 50 = 112\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": "Contoh 2.3",
+        "nomor": "1",
+        "teks": "Taman tersebut berbentuk segitiga, karena di rumahnya tempat kosong untuk taman berbentuk segitiga siku-siku, maka dia ingin membuktikan apakah taman di tempat yang ditemuinya itu juga berbentuk segitiga siku-siku atau bukan. Setelah diukur panjang sisi taman adalah 4 meter, 5 meter, dan 6 meter.",
+        "jawaban": "segitiga lancip",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "klasifikasi jenis segitiga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perbandingan kuadrat sisi terpanjang terhadap jumlah kuadrat dua sisi lainnya untuk menentukan klasifikasi segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebidang tanah kosong pembatas jalan berbentuk segitiga memiliki ukuran sisi berturut-turut $9\\text{ meter}$, $12\\text{ meter}$, dan $16\\text{ meter}$. Berdasarkan kebalikan Teorema Pythagoras, jenis segitiga yang terbentuk pada tanah tersebut adalah ....",
+      "jawaban_benar": "segitiga tumpul",
+      "alasan_benar": "$16^2 = 256 > 9^2 + 12^2 = 81 + 144 = 225$, sehingga membentuk segitiga tumpul.",
+      "distraktor": [
+        {
+          "teks": "segitiga siku-siku",
+          "alasan": "Keliru menganggap memenuhi perbandingan tripel $3 : 4 : 5$ tanpa memeriksa nilai kuadrat sisi terpanjang."
+        },
+        {
+          "teks": "segitiga lancip",
+          "alasan": "Terbalik menerapkan syarat segitiga lancip dengan kondisi $c^2 > a^2 + b^2$."
+        },
+        {
+          "teks": "segitiga sama sisi",
+          "alasan": "Keliru memahami kategori bentuk segitiga berdasarkan panjang ketiga sisinya yang berbeda."
+        }
+      ],
+      "pembahasan": "Tentukan sisi terpanjang: $c = 16\\text{ m}$, sisi lainnya $a = 9\\text{ m}$ dan $b = 12\\text{ m}$.\nHitung kuadrat sisi:\n$c^2 = 16^2 = 256$\n$a^2 + b^2 = 9^2 + 12^2 = 81 + 144 = 225$\nKarena $c^2 > a^2 + b^2$ ($256 > 225$), maka jenis segitiga yang terbentuk adalah segitiga tumpul.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "segitiga siku-siku dengan panjang hipotenusa p 2 + q 2 dan panjang sisi siku-siku yang lain adalah p 2 - q 2 dan 2 pq"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas segitiga rumus tripel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menghitung dua sisi penyiku segitiga dengan rumus aljabar tripel kemudian menentukan luas segitiga siku-siku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga siku-siku dibentuk menggunakan rumus tripel Pythagoras dari dua bilangan asli $p = 6$ dan $q = 2$. Jika sisi siku-siku segitiga tersebut berukuran $p^2 - q^2$ dan $2pq$ dalam satuan sentimeter, luas segitiga siku-siku tersebut adalah ....",
+      "jawaban_benar": "$384\\text{ cm}^2$",
+      "alasan_benar": "Alas $a = 6^2 - 2^2 = 32\\text{ cm}$, tinggi $b = 2(6)(2) = 24\\text{ cm}$, maka luas $= \\frac{1}{2} \\times 32 \\times 24 = 384\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$768\\text{ cm}^2$",
+          "alasan": "Lupa membagi dua hasil perkalian alas dan tinggi."
+        },
+        {
+          "teks": "$480\\text{ cm}^2$",
+          "alasan": "Mengalikan panjang sisi hipotenusa ($40\\text{ cm}$) dengan salah satu sisi tegak lalu dibagi dua."
+        },
+        {
+          "teks": "$192\\text{ cm}^2$",
+          "alasan": "Salah menghitung nilai $p^2 - q^2$ menjadi $16$ bukan $32$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan panjang kedua sisi siku-siku.\n$a = p^2 - q^2 = 6^2 - 2^2 = 36 - 4 = 32\\text{ cm}$\n$b = 2pq = 2 \\times 6 \\times 2 = 24\\text{ cm}$\n\nLangkah 2: Hitung luas segitiga siku-siku.\n$\\text{Luas} = \\frac{1}{2} \\times a \\times b = \\frac{1}{2} \\times 32 \\times 24 = 384\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Gunakan rumus M = S 2 - 1 / 2"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "inversi tripel sisi ganjil",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan rekonstruksi rumus pembentuk tripel dari nilai sisi tegak yang diketahui untuk mencari sisi terpendek ganjil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$. Jika pada suatu tripel Pythagoras yang terbentuk dengan cara ini diketahui nilai $M = 40$, berapakah nilai $S$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "$40 = \\frac{S^2 - 1}{2} \\implies S^2 - 1 = 80 \\implies S^2 = 81 \\implies S = 9$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Keliru mengira $S^2 - 1 = 48$ sehingga $S = 7$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Salah menambah rumus menjadi $S^2 + 1 = 80$ lalu dibulatkan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Menggunakan perkiraan tripel $5, 12, 13$ tanpa menghitung aljabar invers."
+        }
+      ],
+      "pembahasan": "Diketahui $M = 40$.\nSubstitusi ke dalam rumus Pak Ahmad:\n$40 = \\frac{S^2 - 1}{2}$\n$S^2 - 1 = 40 \\times 2$\n$S^2 - 1 = 80$\n$S^2 = 81$\n$S = \\sqrt{81} = 9$\n(Karena $S$ bilangan ganjil positif, maka $S = 9$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "tiga bilangan a , b , c dengan a < b < c dikatakan tripel Pythagoras jika memenuhi hubungan persamaan c 2 = a 2 + b 2"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan aljabar tripel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyusun persamaan kuadrat dari ekspresi aljabar sisi-sisi segitiga siku-siku untuk mencari nilai variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga bilangan $(x - 1)$, $x$, dan $(x + 1)$ dengan $x > 1$ membentuk tripel Pythagoras. Nilai $x$ yang memenuhi adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$(x-1)^2 + x^2 = (x+1)^2 \\implies x^2 - 2x + 1 + x^2 = x^2 + 2x + 1 \\implies x^2 - 4x = 0 \\implies x = 4$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Keliru menganggap $x$ adalah sisi terpendek yaitu $3$ pada tripel $3, 4, 5$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Keliru menganggap $x$ adalah sisi hipotenusa tripel $3, 4, 5$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Salah menyelesaikan persamaan kuadrat menjadi $x^2 - 6x = 0$."
+        }
+      ],
+      "pembahasan": "Sisi terpanjang adalah $(x + 1)$. Berdasarkan syarat tripel Pythagoras:\n$(x - 1)^2 + x^2 = (x + 1)^2$\n$(x^2 - 2x + 1) + x^2 = x^2 + 2x + 1$\n$2x^2 - 2x + 1 = x^2 + 2x + 1$\n$x^2 - 4x = 0$\n$x(x - 4) = 0$\nKarena $x > 1$, nilai yang memenuhi adalah $x = 4$ (membentuk tripel $3, 4, 5$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": "Contoh 2.3",
+        "nomor": "1",
+        "teks": "Setelah diukur panjang sisi taman adalah 4 meter, 5 meter, dan 6 meter.",
+        "jawaban": "bukan segitiga siku-siku",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "analisis bentuk segitiga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan kuadrat sisi, perbandingan nilai $c^2$ terhadap $(a^2 + b^2)$, dan penentuan jenis segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah terpal penutup atap tenda berbentuk segitiga memiliki panjang sisi-sisi berturut-turut $8\\text{ meter}$, $11\\text{ meter}$, dan $13\\text{ meter}$. Pak Danu ingin memastikan bentuk segitiga dari atap tersebut. Berdasarkan kebalikan Teorema Pythagoras, jenis segitiga pada atap tenda tersebut adalah ....",
+      "jawaban_benar": "segitiga lancip karena $13^2 < 8^2 + 11^2$",
+      "alasan_benar": "Sisi terpanjang $c = 13$, $c^2 = 169$. Jumlah kuadrat sisi lainnya $8^2 + 11^2 = 64 + 121 = 185$. Karena $169 < 185$ ($c^2 < a^2 + b^2$), maka segitiga lancip.",
+      "distraktor": [
+        {
+          "teks": "segitiga tumpul karena $13^2 < 8^2 + 11^2$",
+          "alasan": "Siswa salah memahami aturan, mengira $c^2 < a^2 + b^2$ adalah syarat segitiga tumpul."
+        },
+        {
+          "teks": "segitiga tumpul karena $13^2 > 8^2 + 11^2$",
+          "alasan": "Siswa salah menghitung hasil kuadrat atau penjumlahan sehingga mengira $c^2 > a^2 + b^2$."
+        },
+        {
+          "teks": "segitiga siku-siku karena $13^2 = 8^2 + 11^2$",
+          "alasan": "Siswa berasumsi salah satu sisi selalu memenuhi hubungan tripel Pythagoras tanpa memeriksa nilai kuadrat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan sisi terpanjang, yaitu $c = 13\\text{ m}$, sehingga $c^2 = 13^2 = 169$.\nLangkah 2: Hitung jumlah kuadrat dua sisi lainnya:\n$a^2 + b^2 = 8^2 + 11^2 = 64 + 121 = 185$.\nLangkah 3: Bandingkan nilai $c^2$ dengan $a^2 + b^2$:\nKarena $169 < 185$ ($c^2 < a^2 + b^2$), maka segitiga yang terbentuk adalah segitiga lancip.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0095-soal-laihan-2-2-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemilihan tripel kontekstual",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengujian kuadrat sisi-sisi terpanjang terhadap jumlah kuadrat sisi lainnya pada kelompok ukuran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang perajin kayu ingin merangkai tiga batang kayu penopang agar membentuk kerangka segitiga siku-siku. Di antara empat kelompok ukuran panjang kayu berikut, kelompok yang tepat memenuhi tripel Pythagoras adalah ....",
+      "jawaban_benar": "$11\\text{ cm}, 60\\text{ cm}, 61\\text{ cm}$",
+      "alasan_benar": "$11^2 + 60^2 = 121 + 3600 = 3721 = 61^2$, sehingga memenuhi tripel Pythagoras.",
+      "distraktor": [
+        {
+          "teks": "$10\\text{ cm}, 24\\text{ cm}, 25\\text{ cm}$",
+          "alasan": "Siswa mengira $10, 24, 25$ tripel Pythagoras, padahal $10^2 + 24^2 = 676 = 26^2 \\neq 25^2$ ($625$)."
+        },
+        {
+          "teks": "$12\\text{ cm}, 35\\text{ cm}, 38\\text{ cm}$",
+          "alasan": "Siswa salah mengingat pasangan tripel $12, 35, 37$, sehingga mengira $38$ adalah hipotenusa yang benar."
+        },
+        {
+          "teks": "$14\\text{ cm}, 48\\text{ cm}, 52\\text{ cm}$",
+          "alasan": "Siswa salah mengingat kelipatan tripel $7, 24, 25$ yang seharusnya $14, 48, 50$, bukan $52$."
+        }
+      ],
+      "pembahasan": "Untuk membentuk segitiga siku-siku, kelompok ukuran harus memenuhi $a^2 + b^2 = c^2$ dengan $c$ sisi terpanjang.\nUji kelompok $11\\text{ cm}, 60\\text{ cm}, 61\\text{ cm}$:\n$11^2 + 60^2 = 121 + 3600 = 3721$\n$61^2 = 3721$\nKarena $11^2 + 60^2 = 61^2$, kelompok ini merupakan tripel Pythagoras.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

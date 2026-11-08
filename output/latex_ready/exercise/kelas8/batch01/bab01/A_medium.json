@@ -1,0 +1,530 @@
+{
+  "book": "kelas8",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b01-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b01-p0029-ayo-berpikir-kreatif-a"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pasangan kartu nilai pangkat",
+      "alasan_level": "membandingkan nilai pangkat dua arah untuk beberapa pasangan lalu memilih yang terbesar",
+      "stimulus": "Dalam sebuah permainan kartu angka, 5 orang siswa mengambil satu kartu angka secara acak. Dimas mengambil kartu angka 2, Eka mengambil kartu angka 13, Fajar mengambil kartu angka 17, Gina mengambil kartu angka 21, dan Hadi mengambil kartu angka 9. Nilai sebuah pasangan adalah yang lebih besar di antara hasil angka pertama dipangkatkan angka kedua dan hasil angka kedua dipangkatkan angka pertama.",
+      "pertanyaan": "Siapa yang harus diajak berpasangan oleh Dimas agar pasangannya menghasilkan nilai terbesar?",
+      "jawaban_benar": "Gina",
+      "alasan_benar": "pasangan Dimas-Gina bernilai $2^{21}$ yang terbesar di antara semua pasangan Dimas",
+      "distraktor": [
+        {
+          "teks": "Fajar",
+          "alasan": "nilai terbesarnya hanya $2^{17}$, lebih kecil dari $2^{21}$"
+        },
+        {
+          "teks": "Eka",
+          "alasan": "nilai terbesarnya hanya $2^{13}$"
+        },
+        {
+          "teks": "Hadi",
+          "alasan": "nilai terbesarnya hanya $2^{9}$, dikira kartu 9 menghasilkan $9^{2}$ lebih besar"
+        }
+      ],
+      "pembahasan": "Pasangan Dimas (2) dengan kartu $k$ bernilai $\\max(2^{k}, k^{2})$. Untuk $k$ = 9, 13, 17, 21 nilainya $2^{9}, 2^{13}, 2^{17}, 2^{21}$ (karena $2^{k} > k^{2}$ untuk $k \\geq 5$). Terbesar $2^{21}$ yaitu dengan Gina.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b01-p0029-ayo-berpikir-kreatif-b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pasangan kartu nilai pangkat",
+      "alasan_level": "membandingkan $10^{k}$ dan $k^{10}$ untuk beberapa pasangan lalu memilih yang terkecil",
+      "stimulus": "Dalam sebuah permainan kartu angka, 5 orang siswa mengambil satu kartu angka secara acak. Rina mengambil kartu angka 10, Tono mengambil kartu angka 9, Umar mengambil kartu angka 11, Vera mengambil kartu angka 12, dan Wati mengambil kartu angka 13. Nilai sebuah pasangan adalah yang lebih besar di antara hasil angka pertama dipangkatkan angka kedua dan hasil angka kedua dipangkatkan angka pertama.",
+      "pertanyaan": "Siapa yang harus diajak berpasangan oleh Rina agar pasangannya menghasilkan nilai terkecil?",
+      "jawaban_benar": "Tono",
+      "alasan_benar": "pasangan Rina-Tono bernilai $9^{10} = 3.486.784.401$, sedangkan pasangan lain bernilai minimal $10^{11} = 100.000.000.000$",
+      "distraktor": [
+        {
+          "teks": "Umar",
+          "alasan": "nilai pasangannya $10^{11}$, jauh lebih besar dari $9^{10}$"
+        },
+        {
+          "teks": "Vera",
+          "alasan": "nilai pasangannya $10^{12}$"
+        },
+        {
+          "teks": "Wati",
+          "alasan": "nilai pasangannya $10^{13}$, terbesar di antara semuanya"
+        }
+      ],
+      "pembahasan": "Rina-Tono: $\\max(10^{9}, 9^{10}) = 9^{10} \\approx 3,5 \\times 10^{9}$. Rina-Umar: $10^{11}$, Rina-Vera: $10^{12}$, Rina-Wati: $10^{13}$. Terkecil adalah dengan Tono.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "bagian": "Ayo Berkomunikasi",
+        "nomor": "5",
+        "teks": "Tentukan bilangan mana yang lebih besar : 2022^2023 atau 2023^2022",
+        "jawaban": "$2022^{2023}$ lebih besar"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "perbandingan bilangan berpangkat",
+      "alasan_level": "menghitung dua bilangan berpangkat dengan pokok dan pangkat bertukar lalu membandingkannya",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang bilangan $7^{8}$ dan $8^{7}$ adalah ....",
+      "jawaban_benar": "$7^{8} > 8^{7}$",
+      "alasan_benar": "$7^{8} = 5.764.801$ sedangkan $8^{7} = 2.097.152$",
+      "distraktor": [
+        {
+          "teks": "$7^{8} < 8^{7}$",
+          "alasan": "mengira bilangan pokok yang lebih besar menghasilkan nilai lebih besar"
+        },
+        {
+          "teks": "$7^{8} = 8^{7}$",
+          "alasan": "mengira bahan yang sama (7, 8) menukar posisi menghasilkan nilai sama"
+        },
+        {
+          "teks": "$7^{8} \\times 8^{7} = 56^{15}$",
+          "alasan": "pangkat dijumlahkan dan bilangan pokok dikalikan padahal pokoknya berbeda"
+        }
+      ],
+      "pembahasan": "$7^{8} = 7^{4} \\times 7^{4} = 2401 \\times 2401 = 5.764.801$ dan $8^{7} = 8^{3} \\times 8^{3} \\times 8 = 512 \\times 512 \\times 8 = 2.097.152$, sehingga $7^{8} > 8^{7}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "9a",
+        "teks": "virus di desa x dapat membelah menjadi 2 virus setiap 1 menit, sementara virus di desa y dapat membelah menjadi 3 bagian setiap 2 menit. Tentukan banyak virus yang ada di desa x dan di desa y yang ada setelah 10 menit dan nyatakan dalam bentuk bilangan berpangkat.",
+        "jawaban": "$2^{10}$ dan $3^{5}$"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pertumbuhan pembelahan",
+      "alasan_level": "menyesuaikan pangkat dengan banyak selang pembelahan sebelum menuliskan bentuk pangkat",
+      "stimulus": null,
+      "pertanyaan": "Awalnya ada satu virus di desa x dan satu virus di desa y. Virus di desa x membelah menjadi 4 virus setiap menit, sementara virus di desa y membelah menjadi 6 bagian setiap 3 menit. Banyak virus di desa y setelah 15 menit, dinyatakan dalam bentuk bilangan berpangkat, adalah ....",
+      "jawaban_benar": "$6^{5}$",
+      "alasan_benar": "15 menit berisi $15 : 3 = 5$ kali pembelahan, tiap kali menjadi 6 kali lipat, sehingga $6^{5}$",
+      "distraktor": [
+        {
+          "teks": "$6^{15}$",
+          "alasan": "banyak menit dijadikan pangkat tanpa membagi dengan 3 menit"
+        },
+        {
+          "teks": "$5^{6}$",
+          "alasan": "bilangan pokok dan pangkat tertukar"
+        },
+        {
+          "teks": "$6^{45}$",
+          "alasan": "banyak menit dikalikan dengan selang pembelahan"
+        }
+      ],
+      "pembahasan": "Selang 3 menit sehingga dalam 15 menit terjadi 5 pembelahan. Tiap pembelahan menghasilkan 6 kali lipat: $6^{5}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "9a",
+        "teks": "virus di desa x dapat membelah menjadi 2 virus setiap 1 menit, sementara virus di desa y dapat membelah menjadi 3 bagian setiap 2 menit. Tentukan banyak virus yang ada di desa x dan di desa y yang ada setelah 10 menit dan nyatakan dalam bentuk bilangan berpangkat.",
+        "jawaban": "$2^{10}$ dan $3^{5}$"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan pertumbuhan",
+      "alasan_level": "membandingkan dua pertumbuhan dengan selang berbeda lalu menyamakan bilangan pokok untuk mencari perbandingan",
+      "stimulus": null,
+      "pertanyaan": "Dua wadah berisi jamur yang awalnya masing-masing satu jamur. Jamur di wadah A menjadi 2 kali lipat setiap jam, sementara jamur di wadah B menjadi 4 kali lipat setiap 3 jam. Setelah 12 jam, banyak jamur di wadah A adalah .... kali lipat banyak jamur di wadah B.",
+      "jawaban_benar": "16",
+      "alasan_benar": "A: $2^{12}$; B: $4^{4} = 2^{8}$; perbandingannya $2^{12} : 2^{8} = 2^{4} = 16$",
+      "distraktor": [
+        {
+          "teks": "256",
+          "alasan": "pangkat dikurangkan sebagai $2^{12-4}$ tanpa menyamakan bilangan pokok"
+        },
+        {
+          "teks": "4",
+          "alasan": "membandingkan hanya pangkat $12 : 3$"
+        },
+        {
+          "teks": "64",
+          "alasan": "banyak jamur B dihitung $4^{3}$ lalu dibandingkan dengan 4 pangkat 3 kali"
+        }
+      ],
+      "pembahasan": "A mengalami 12 kali penggandaan: $2^{12}$. B mengalami $12 : 3 = 4$ kali: $4^{4} = (2^{2})^{4} = 2^{8}$. Rasio $2^{12} : 2^{8} = 2^{4} = 16$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 42,
+        "bagian": "Contoh 1.6",
+        "nomor": "1",
+        "teks": "Sebuah Amuba memiliki diameter 5-3 cm, berapa cm diameter Amuba dalam bentuk desimal?",
+        "jawaban": "0,008"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pangkat negatif ke desimal",
+      "alasan_level": "mengubah pangkat negatif menjadi pecahan lalu desimal dengan penyebut bukan pangkat sepuluh",
+      "stimulus": null,
+      "pertanyaan": "Sebuah sel memiliki diameter $8^{-2}$ cm. Berapa cm diameter sel dalam bentuk desimal? Diameter sel adalah .... cm.",
+      "jawaban_benar": "0,015625",
+      "alasan_benar": "$8^{-2} = \\frac{1}{8^{2}} = \\frac{1}{64} = 0,015625$",
+      "distraktor": [
+        {
+          "teks": "0,15625",
+          "alasan": "salah menempatkan nol saat mengubah $\\frac{1}{64}$ ke desimal"
+        },
+        {
+          "teks": "0,0625",
+          "alasan": "pangkat 2 dikira dikalikan 8 sehingga penyebut 16"
+        },
+        {
+          "teks": "-64",
+          "alasan": "pangkat negatif dianggap menghasilkan bilangan negatif"
+        }
+      ],
+      "pembahasan": "$8^{-2} = \\frac{1}{64}$. Karena $\\frac{1}{64} = \\frac{15625}{1.000.000}$, hasilnya $0,015625$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "kutipan": "pembagian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan mengurangkan pangkat bilangan yang dibagi dengan pangkat bilangan yang membagi"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menyederhanakan dengan beberapa sifat",
+      "alasan_level": "memakai sifat perpangkatan, perkalian, dan pembagian sekaligus",
+      "stimulus": null,
+      "pertanyaan": "Bentuk paling sederhana dari $\\frac{(3^{4})^{2} \\times 3^{5}}{3^{9}}$ adalah ....",
+      "jawaban_benar": "$3^{4}$",
+      "alasan_benar": "$(3^{4})^{2} = 3^{8}$, $3^{8} \\times 3^{5} = 3^{13}$, lalu $\\frac{3^{13}}{3^{9}} = 3^{4}$",
+      "distraktor": [
+        {
+          "teks": "$3^{2}$",
+          "alasan": "$(3^{4})^{2}$ dihitung $3^{4+2} = 3^{6}$ lalu $3^{6+5-9}$"
+        },
+        {
+          "teks": "$3^{22}$",
+          "alasan": "pangkat penyebut ikut dijumlahkan, bukan dikurangkan"
+        },
+        {
+          "teks": "$3^{13}$",
+          "alasan": "penyebut $3^{9}$ tidak diperhitungkan"
+        }
+      ],
+      "pembahasan": "$(3^{4})^{2} = 3^{8}$; $3^{8} \\times 3^{5} = 3^{13}$; $\\frac{3^{13}}{3^{9}} = 3^{13-9} = 3^{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 38,
+        "kutipan": "setiap bilangan yang ada dalam kurung masing-masing dipangkatkan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pangkat pada perkalian dengan variabel",
+      "alasan_level": "memangkatkan koefisien dan variabel dalam kurung, lalu menjumlahkan pangkat variabel yang sama",
+      "stimulus": null,
+      "pertanyaan": "Bentuk sederhana dari $(2a^{3})^{4} \\times a^{2}$ adalah ....",
+      "jawaban_benar": "$16a^{14}$",
+      "alasan_benar": "$(2a^{3})^{4} = 2^{4}a^{12} = 16a^{12}$, lalu $16a^{12} \\times a^{2} = 16a^{14}$",
+      "distraktor": [
+        {
+          "teks": "$8a^{14}$",
+          "alasan": "koefisien dikalikan dengan pangkat, $2 \\times 4$"
+        },
+        {
+          "teks": "$2a^{14}$",
+          "alasan": "koefisien 2 tidak ikut dipangkatkan"
+        },
+        {
+          "teks": "$16a^{24}$",
+          "alasan": "pangkat variabel dikalikan, bukan dijumlahkan, pada perkalian akhir"
+        }
+      ],
+      "pembahasan": "$(2a^{3})^{4} = 2^{4} \\cdot a^{3 \\times 4} = 16a^{12}$. Kemudian $16a^{12} \\times a^{2} = 16a^{12+2} = 16a^{14}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 42,
+        "kutipan": "Nanometer adalah sebuah ukuran panjang"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pangkat negatif pada satuan ukuran",
+      "alasan_level": "mengubah satuan nano ke meter memakai pangkat negatif lalu ke desimal",
+      "stimulus": "Satu nanometer (nm) sama dengan $1 \\times 10^{-9}$ meter.",
+      "pertanyaan": "Sebuah partikel berukuran 45 nm. Ukuran partikel itu dalam meter dan bentuk desimal adalah .... meter.",
+      "jawaban_benar": "0,000000045",
+      "alasan_benar": "$45 \\times 10^{-9} = 45 \\times \\frac{1}{1.000.000.000} = 0,000000045$",
+      "distraktor": [
+        {
+          "teks": "0,00000045",
+          "alasan": "pangkat $-9$ dikira menggeser koma hanya 7 tempat"
+        },
+        {
+          "teks": "0,0000000045",
+          "alasan": "koma digeser 10 tempat karena angka 45 dihitung dua digit tambahan"
+        },
+        {
+          "teks": "0,000045",
+          "alasan": "memakai $10^{-6}$ (mikro) bukan $10^{-9}$"
+        }
+      ],
+      "pembahasan": "$45 \\times 10^{-9}$: koma pada 45 digeser 9 tempat ke kiri menjadi $0,000000045$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan pangkat dengan basis disamakan",
+      "alasan_level": "mengubah 9 menjadi $3^{2}$ agar bilangan pokok sama, lalu menyamakan pangkat",
+      "stimulus": null,
+      "pertanyaan": "Nilai $x$ yang memenuhi $9^{x} = 3^{10}$ adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "$9^{x} = (3^{2})^{x} = 3^{2x}$ sehingga $2x = 10$ dan $x = 5$",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "pangkat kedua ruas dianggap sama tanpa menyamakan bilangan pokok"
+        },
+        {
+          "teks": "20",
+          "alasan": "pangkat 10 dikalikan 2 bukan dibagi 2"
+        },
+        {
+          "teks": "3",
+          "alasan": "9 dibagi 3 dianggap nilai $x$"
+        }
+      ],
+      "pembahasan": "Tulis $9 = 3^{2}$ sehingga $(3^{2})^{x} = 3^{2x} = 3^{10}$. Pangkat sama: $2x = 10$, $x = 5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "kutipan": "perkalian dua bilangan berpangkat dengan bilangan pokok yang sama dapat disederhanakan dengan menjumlahkan pangkat dari kedua bilangan berpangkat"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan pangkat dengan basis disamakan",
+      "alasan_level": "menyederhanakan ruas kanan dengan sifat perkalian lalu menyamakan pangkat",
+      "stimulus": null,
+      "pertanyaan": "Nilai $x$ yang memenuhi $\\frac{5^{x}}{5^{3}} = 5^{4} \\times 5^{2}$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "ruas kanan $5^{4+2} = 5^{6}$, ruas kiri $5^{x-3}$ sehingga $x - 3 = 6$ dan $x = 9$",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "kedua ruas dijumlahkan menjadi $x + 3 = 6$"
+        },
+        {
+          "teks": "6",
+          "alasan": "pembagian oleh $5^{3}$ diabaikan"
+        },
+        {
+          "teks": "11",
+          "alasan": "ruas kanan dihitung $4 \\times 2 = 8$ lalu $x = 8 + 3$"
+        }
+      ],
+      "pembahasan": "$5^{4} \\times 5^{2} = 5^{6}$. Ruas kiri $5^{x-3}$. Maka $x - 3 = 6$, jadi $x = 9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "perbandingan bilangan berpangkat",
+      "alasan_level": "menyamakan pangkat ketiga bilangan dengan sifat perpangkatan lalu mengurutkan",
+      "stimulus": null,
+      "pertanyaan": "Urutan bilangan $2^{30}$, $3^{20}$, dan $5^{10}$ dari yang terkecil ke yang terbesar adalah ....",
+      "jawaban_benar": "$5^{10}$, $2^{30}$, $3^{20}$",
+      "alasan_benar": "$2^{30} = (2^{3})^{10} = 8^{10}$ dan $3^{20} = (3^{2})^{10} = 9^{10}$, sehingga dengan pangkat 10 yang sama: $5^{10} < 8^{10} < 9^{10}$",
+      "distraktor": [
+        {
+          "teks": "$2^{30}$, $3^{20}$, $5^{10}$",
+          "alasan": "mengurutkan hanya dari pangkat terbesar ke bilangan pokok terkecil"
+        },
+        {
+          "teks": "$3^{20}$, $2^{30}$, $5^{10}$",
+          "alasan": "urutan dari terbesar ke terkecil"
+        },
+        {
+          "teks": "$5^{10}$, $3^{20}$, $2^{30}$",
+          "alasan": "$3^{20}$ dikira lebih kecil karena $3 < 8$ tanpa menyamakan pangkat"
+        }
+      ],
+      "pembahasan": "Samakan pangkat 10: $2^{30} = 8^{10}$, $3^{20} = 9^{10}$. Bilangan pokok 5 < 8 < 9, jadi $5^{10} < 2^{30} < 3^{20}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "kutipan": "bilangan berpangkat yang dipangkatkan dapat disederhanakan dengan mengalikan pangkat dari bilangan tersebut"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "ukuran benda berpangkat",
+      "alasan_level": "volume kubus dengan rusuk berbentuk pangkat memakai sifat perpangkatan",
+      "stimulus": null,
+      "pertanyaan": "Panjang rusuk sebuah kubus adalah $4^{2}$ cm. Volume kubus tersebut adalah .... cm$^{3}$.",
+      "jawaban_benar": "4.096",
+      "alasan_benar": "volume $= (4^{2})^{3} = 4^{6} = 4.096$",
+      "distraktor": [
+        {
+          "teks": "1.024",
+          "alasan": "pangkat dijumlahkan, $4^{2+3} = 4^{5}$"
+        },
+        {
+          "teks": "65.536",
+          "alasan": "pangkat menjadi $2^{3} = 8$ sehingga $4^{8}$"
+        },
+        {
+          "teks": "96",
+          "alasan": "rusuk 16 dikalikan 6"
+        }
+      ],
+      "pembahasan": "Rusuk $= 4^{2} = 16$. Volume $= 16^{3} = (4^{2})^{3} = 4^{6} = 4.096$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "a n dinamakan bilangan berpangkat, a dinamakan bilangan pokok (basis), dan n disebut pangkat (eksponen)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pelipatan berulang",
+      "alasan_level": "memodelkan penggandaan tebal sebagai bilangan berpangkat lalu mengalikan dengan tebal awal",
+      "stimulus": null,
+      "pertanyaan": "Selembar kertas setebal 0,2 mm dilipat dua berulang kali, dan setiap lipatan menggandakan tebal lipatan. Setelah dilipat 8 kali, tebal lipatan kertas adalah .... mm.",
+      "jawaban_benar": "51,2",
+      "alasan_benar": "tebal $= 0,2 \\times 2^{8} = 0,2 \\times 256 = 51,2$ mm",
+      "distraktor": [
+        {
+          "teks": "25,6",
+          "alasan": "hanya menghitung 7 lipatan, $0,2 \\times 2^{7}$"
+        },
+        {
+          "teks": "102,4",
+          "alasan": "menghitung 9 lipatan, $0,2 \\times 2^{9}$"
+        },
+        {
+          "teks": "1,6",
+          "alasan": "tebal dikalikan banyak lipatan, $0,2 \\times 8$"
+        }
+      ],
+      "pembahasan": "Setiap lipatan menggandakan tebal: $0,2 \\times 2^{8} = 0,2 \\times 256 = 51,2$ mm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 43,
+        "kutipan": "Setelah kalian memahami bilangan berpangkat negatif, sekarang bagaimana kalau bilangan pecahan berpangkat"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pecahan berpangkat negatif",
+      "alasan_level": "mengubah pecahan berpangkat negatif ke pangkat positif lalu mengalikan dengan bilangan berpangkat lain",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\left(\\frac{3}{4}\\right)^{-2} \\times 3^{3}$ adalah ....",
+      "jawaban_benar": "48",
+      "alasan_benar": "$\\left(\\frac{3}{4}\\right)^{-2} = \\left(\\frac{4}{3}\\right)^{2} = \\frac{16}{9}$ dan $\\frac{16}{9} \\times 27 = 48$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{243}{16}$",
+          "alasan": "pangkat negatif diubah tanpa membalik pecahan, $\\frac{9}{16} \\times 27$"
+        },
+        {
+          "teks": "$\\frac{16}{9}$",
+          "alasan": "faktor $3^{3}$ terlupa dikalikan"
+        },
+        {
+          "teks": "36",
+          "alasan": "pecahan dibalik tetapi pangkatnya dihilangkan, $\\frac{4}{3} \\times 27$"
+        }
+      ],
+      "pembahasan": "$\\left(\\frac{3}{4}\\right)^{-2} = \\frac{4^{2}}{3^{2}} = \\frac{16}{9}$. Lalu $\\frac{16}{9} \\times 27 = 16 \\times 3 = 48$.",
+      "catatan": null
+    }
+  ]
+}

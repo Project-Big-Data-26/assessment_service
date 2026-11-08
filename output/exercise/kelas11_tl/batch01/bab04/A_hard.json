@@ -1,408 +1,3344 @@
 {
- "book": "kelas11_tl",
- "bab_no": 4,
- "subbab": "A",
- "level": "hard",
- "batch": 1,
- "skill_versi": "v1",
- "kapasitas_kurang": true,
- "alasan_kapasitas": "Acuan variasi habis di easy+medium dan materi subbab hanya menopang soal hard berupa evaluasi klaim, temukan kesalahan, dan rancangan sederhana; soal hitung langsung dibuang agar tidak setara medium.",
- "soal": [
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-001",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "evaluasi kapan panjang jumlah sama dengan jumlah panjang",
-   "alasan_level": "menganalisis tiap kandidat vektor terhadap syarat kesamaan panjang; setara medium atas",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
-   "jawaban_benar": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
-   "alasan_benar": "v = 2u searah dengan u: u+v = (9,-12), panjang 15 = 5 + 10",
-   "distraktor": [
+  "book": "kelas11_tl",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Acuan variasi habis di easy+medium dan materi subbab hanya menopang soal hard berupa evaluasi klaim, temukan kesalahan, dan rancangan sederhana; soal hitung langsung dibuang agar tidak setara medium.",
+  "soal": [
     {
-     "teks": "$\\mathbf{v} = \\langle -6, 8\\rangle$",
-     "alasan": "berlawanan arah dengan u: panjang jumlah 5, bukan 15"
+      "id": "kelas11_tl-b04-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi kapan panjang jumlah sama dengan jumlah panjang",
+      "alasan_level": "menganalisis tiap kandidat vektor terhadap syarat kesamaan panjang; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
+      "jawaban_benar": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
+      "alasan_benar": "v = 2u searah dengan u: u+v = (9,-12), panjang 15 = 5 + 10",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{v} = \\langle -6, 8\\rangle$",
+          "alasan": "berlawanan arah dengan u: panjang jumlah 5, bukan 15"
+        },
+        {
+          "teks": "$\\mathbf{v} = \\langle 4, 3\\rangle$",
+          "alasan": "dipilih karena panjangnya 5 sama dengan u, padahal tidak searah: panjang jumlah akar 50"
+        },
+        {
+          "teks": "$\\mathbf{v} = \\langle 3, 4\\rangle$",
+          "alasan": "komponen ditukar tanda: u+v = (6,0) berpanjang 6, bukan 10"
+        }
+      ],
+      "pembahasan": "Kesamaan terjadi hanya bila kedua vektor searah (v kelipatan positif u). $\\langle 6,-8\\rangle=2\\mathbf{u}$: $\\|\\mathbf{u}+\\mathbf{v}\\|=\\|\\langle 9,-12\\rangle\\|=15=5+10$. Untuk $\\langle -6,8\\rangle$ jumlahnya $\\langle -3,4\\rangle$ (5); $\\langle 4,3\\rangle$ memberi $\\langle 7,-1\\rangle$ ($\\sqrt{50}\\ne 10$); $\\langle 3,4\\rangle$ memberi $\\langle 6,0\\rangle$ (6).",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
+      }
     },
     {
-     "teks": "$\\mathbf{v} = \\langle 4, 3\\rangle$",
-     "alasan": "dipilih karena panjangnya 5 sama dengan u, padahal tidak searah: panjang jumlah akar 50"
+      "id": "kelas11_tl-b04-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi arah dua vektor sejajar dengan parameter",
+      "alasan_level": "menentukan syarat sejajar, lalu menilai arah tiap akar; evaluasi akar-akar setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{a} = \\langle k, 2\\rangle$ dan $\\mathbf{b} = \\langle 8, k\\rangle$. Kedua vektor sejajar bila $k^2 = 16$. Pernyataan yang benar mengenai $k$ adalah ....",
+      "jawaban_benar": "$k = 4$ membuat $\\mathbf{a}$ dan $\\mathbf{b}$ searah, $k = -4$ membuatnya berlawanan arah",
+      "alasan_benar": "k=4: a=(4,2), b=(8,4)=2a searah; k=-4: a=(-4,2), b=(8,-4)=-2a berlawanan",
+      "distraktor": [
+        {
+          "teks": "$k = 4$ membuat keduanya berlawanan arah, $k = -4$ membuatnya searah",
+          "alasan": "arah kedua akar tertukar"
+        },
+        {
+          "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya searah",
+          "alasan": "mengira sejajar selalu berarti searah"
+        },
+        {
+          "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya berlawanan arah",
+          "alasan": "mengira sejajar selalu berarti berlawanan arah"
+        }
+      ],
+      "pembahasan": "Sejajar berarti $\\mathbf{b}=c\\mathbf{a}$. Untuk $k=4$: $\\mathbf{a}=\\langle 4,2\\rangle$, $\\mathbf{b}=\\langle 8,4\\rangle=2\\mathbf{a}$ ($c>0$, searah). Untuk $k=-4$: $\\mathbf{a}=\\langle -4,2\\rangle$, $\\mathbf{b}=\\langle 8,-4\\rangle=-2\\mathbf{a}$ ($c<0$, berlawanan).",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
+      }
     },
     {
-     "teks": "$\\mathbf{v} = \\langle 3, 4\\rangle$",
-     "alasan": "komponen ditukar tanda: u+v = (6,0) berpanjang 6, bukan 10"
+      "id": "kelas11_tl-b04-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan langkah panjang vektor",
+      "alasan_level": "mengevaluasi penyelesaian siswa yang salah memakai jumlah komponen dan mencari dua akar yang benar",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
+      "jawaban_benar": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
+      "alasan_benar": "t^2 + (t+7)^2 = 169 menjadi t^2 + 7t - 60 = 0, akar 5 dan -12",
+      "distraktor": [
+        {
+          "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar hanya $5$",
+          "alasan": "mengabaikan akar negatif -12 yang juga memenuhi"
+        },
+        {
+          "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $12$ atau $-5$",
+          "alasan": "akar kuadrat salah tanda"
+        },
+        {
+          "teks": "benar, karena panjang vektor sama dengan jumlah kedua komponennya",
+          "alasan": "menganggap panjang vektor adalah jumlah komponen"
+        }
+      ],
+      "pembahasan": "Panjang $\\langle t,t+7\\rangle$ adalah $\\sqrt{t^2+(t+7)^2}$. Dari $2t^2+14t+49=169$ diperoleh $t^2+7t-60=0$, $(t-5)(t+12)=0$. Jadi $t=5$ atau $t=-12$; $t=3$ memberi $\\langle 3,10\\rangle$ berpanjang $\\sqrt{109}\\ne 13$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Panjang vektor dapat ditentukan dengan Rumus Jarak."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah salah resultan",
+      "alasan_level": "mengecek empat langkah penyelesaian siswa satu per satu untuk menemukan satu langkah yang salah",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+      "jawaban_benar": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+      "alasan_benar": "komponen kedua benar -2-5-3 = -10, hasil yang benar (13,-10)",
+      "distraktor": [
+        {
+          "teks": "Langkah 1: $2\\mathbf{a}$ seharusnya $\\langle 8,-1\\rangle$",
+          "alasan": "keliru: 2a = (8,-2) sudah benar"
+        },
+        {
+          "teks": "Langkah 2: $-\\mathbf{b}$ seharusnya $\\langle -2,5\\rangle$",
+          "alasan": "keliru: -b = (2,-5) sudah benar, lawan dari b"
+        },
+        {
+          "teks": "Langkah 3: komponen pertama seharusnya $8 - 2 + 3 = 9$",
+          "alasan": "keliru: -b memberi +2 sehingga 8+2+3 = 13 sudah benar"
+        }
+      ],
+      "pembahasan": "$2\\mathbf{a}=\\langle 8,-2\\rangle$ dan $-\\mathbf{b}=\\langle 2,-5\\rangle$ benar, komponen pertama $8+2+3=13$ benar. Komponen kedua seharusnya $-2-5+(-3)=-10$, sehingga hasil benar $\\langle 13,-10\\rangle$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 182,
+        "kutipan": "Secara umum, penjumlahan dua vektor dilakukan dengan menjumlahkan setiap komponennya."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua cara menentukan waktu menyeberang",
+      "alasan_level": "menilai dua penalaran (memakai kecepatan resultan vs komponen tegak lurus) lalu menghitung hanyutan; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai dengan kecepatan 4 m/s menyeberangi sungai selebar 120 m. Arus sungai 3 m/s sejajar tepi. Dina menghitung waktu menyeberang dengan $120 \\div 5$ karena kecepatan resultan perahu 5 m/s. Eka menghitung dengan $120 \\div 4$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 90 m sepanjang tepi",
+      "alasan_benar": "lebar sungai ditempuh oleh komponen tegak lurus 4 m/s: t = 120/4 = 30 s; hanyut = 3 x 30 = 90 m",
+      "distraktor": [
+        {
+          "teks": "Dina benar: waktu menyeberang 24 detik dan perahu terhanyut 72 m sepanjang tepi",
+          "alasan": "memakai kecepatan resultan untuk jarak tegak lurus tepi, padahal lebar sungai dilalui komponen 4 m/s"
+        },
+        {
+          "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 120 m sepanjang tepi",
+          "alasan": "waktu benar tetapi hanyutan disamakan dengan lebar sungai"
+        },
+        {
+          "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 150 m sepanjang tepi",
+          "alasan": "hanyutan dihitung dengan kecepatan resultan 5 x 30, padahal itu panjang lintasan"
+        }
+      ],
+      "pembahasan": "Jarak tegak lurus tepi (120 m) hanya dilalui komponen kecepatan perahu 4 m/s, jadi $t=120/4=30$ s. Selama itu arus menggeser $3\\cdot 30=90$ m. Resultan $\\langle 3,4\\rangle$ berbesar 5 m/s menempuh lintasan miring $5\\cdot 30=150$ m, bukan hanyutan.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 181,
+        "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim panjang kelipatan skalar",
+      "alasan_level": "mengevaluasi klaim umum dengan menguji tiap pasangan skalar-vektor untuk contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyimpulkan bahwa $\\|c\\mathbf{v}\\| = c\\,\\|\\mathbf{v}\\|$ berlaku untuk setiap skalar $c$ dan vektor $\\mathbf{v}$. Contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$c = -3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
+      "alasan_benar": "||cv|| = 39 sedangkan c||v|| = -3 x 13 = -39, tidak sama",
+      "distraktor": [
+        {
+          "teks": "$c = 3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
+          "alasan": "keduanya bernilai 39 sehingga klaim terpenuhi, bukan penyangkal"
+        },
+        {
+          "teks": "$c = 0$ dan $\\mathbf{v} = \\langle 5, 12\\rangle$",
+          "alasan": "keduanya bernilai 0 sehingga klaim terpenuhi"
+        },
+        {
+          "teks": "$c = 2$ dan $\\mathbf{v} = \\langle -6, 8\\rangle$",
+          "alasan": "keduanya bernilai 20 sehingga klaim terpenuhi; tanda komponen vektor bukan penyebab klaim gagal"
+        }
+      ],
+      "pembahasan": "Yang benar $\\|c\\mathbf{v}\\|=|c|\\,\\|\\mathbf{v}\\|$. Klaim hanya gagal bila $c<0$: $c=-3$, $\\mathbf{v}=\\langle 5,-12\\rangle$ memberi $\\|c\\mathbf{v}\\|=\\|\\langle -15,36\\rangle\\|=39$, sedangkan $c\\|\\mathbf{v}\\|=-39$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 187,
+        "kutipan": "Untuk lebih memahami penggunaan sifat-sifat tersebut, perhatikan contoh berikut!"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menilai kemungkinan panjang jumlah dua vektor",
+      "alasan_level": "menalar batas panjang jumlah dua vektor dari susunan pangkal-ujung dan menilai tiap kandidat",
+      "stimulus": null,
+      "pertanyaan": "Vektor $\\mathbf{u}$ berpanjang 5 dan vektor $\\mathbf{v}$ berpanjang 12, arah keduanya tidak diketahui. Nilai $\\|\\mathbf{u}+\\mathbf{v}\\|$ yang TIDAK mungkin terjadi adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "panjang jumlah paling besar 5+12 = 17 (searah) dan paling kecil 12-5 = 7 (berlawanan)",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "mungkin: berada di antara 7 dan 17 (sudut tertentu antara u dan v)"
+        },
+        {
+          "teks": "$13$",
+          "alasan": "mungkin: terjadi bila u dan v saling tegak lurus (akar 25+144)"
+        },
+        {
+          "teks": "$16$",
+          "alasan": "mungkin: berada di antara 7 dan 17"
+        }
+      ],
+      "pembahasan": "Menyambung pangkal $\\mathbf{v}$ pada ujung $\\mathbf{u}$, panjang jumlah berkisar dari $12-5=7$ (berlawanan arah) sampai $5+12=17$ (searah). Jadi $8$, $13$, $16$ mungkin, sedangkan $18>17$ tidak mungkin.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan jumlah panjang dan panjang jumlah perpindahan",
+      "alasan_level": "menilai dua cara hitung jarak dan menafsirkan arti masing-masing angka",
+      "stimulus": null,
+      "pertanyaan": "Seorang pelari bergerak dua tahap dengan perpindahan $\\langle 12, 5\\rangle$ m lalu $\\langle -12, 16\\rangle$ m. Andi menghitung jarak pelari dari titik awal dengan menjumlahkan panjang kedua perpindahan, sedangkan Budi menjumlahkan vektornya dulu lalu mencari panjangnya. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah panjang lintasan yang ditempuh",
+      "alasan_benar": "p1+p2 = (0,21) panjang 21; 13 + 20 = 33 adalah total jarak tempuh",
+      "distraktor": [
+        {
+          "teks": "Andi benar: jarak lurus dari titik awal 33 m, sedangkan 21 m adalah panjang lintasan yang ditempuh",
+          "alasan": "menukar arti jarak lurus (perpindahan) dengan jarak tempuh"
+        },
+        {
+          "teks": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah selisih panjang kedua perpindahan",
+          "alasan": "angka 33 bukan selisih; selisihnya 7, 33 adalah jumlah panjang"
+        },
+        {
+          "teks": "Keduanya benar karena jumlah panjang vektor selalu sama dengan panjang jumlah vektor",
+          "alasan": "mengira ||p1+p2|| = ||p1|| + ||p2|| selalu berlaku"
+        }
+      ],
+      "pembahasan": "Perpindahan total $\\langle 0,21\\rangle$ sehingga jarak lurus dari titik awal $=21$ m (cara Budi). Jumlah panjang $13+20=33$ m adalah panjang lintasan yang ditempuh, lebih besar karena kedua perpindahan tidak searah.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 180,
+        "kutipan": "Gerakan tersebut dapat digambarkan menjadi 9 ruas garis berarah."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menilai pernyataan hubungan dua vektor",
+      "alasan_level": "menguji setiap pernyataan tentang arah dan panjang terhadap hasil b = kelipatan skalar a",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4, -10\\rangle$ dan $\\mathbf{b} = \\langle -6, 15\\rangle$. Pernyataan yang benar mengenai kedua vektor tersebut adalah ....",
+      "jawaban_benar": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
+      "alasan_benar": "b = -3/2 a: skalar negatif membalik arah, panjang |-3/2| x ||a||",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{b}$ searah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
+          "alasan": "mengabaikan tanda negatif skalar sehingga arah dikira sama"
+        },
+        {
+          "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{9}{4}$ kali panjang $\\mathbf{a}$",
+          "alasan": "kuadrat skalar dipakai sebagai faktor panjang"
+        },
+        {
+          "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{2}{3}$ kali panjang $\\mathbf{a}$",
+          "alasan": "perbandingan terbalik: a dibagi b"
+        }
+      ],
+      "pembahasan": "$\\mathbf{b}=-\\frac32\\mathbf{a}$ karena $-\\frac32\\cdot4=-6$ dan $-\\frac32\\cdot(-10)=15$. Skalar negatif membalik arah dan $\\|\\mathbf{b}\\|=\\frac32\\|\\mathbf{a}\\|$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 184,
+        "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang kecepatan perahu dan arus memenuhi dua syarat",
+      "alasan_level": "memeriksa tiap rancangan terhadap dua syarat sekaligus (besar resultan dan perahu lebih cepat dari arus)",
+      "stimulus": null,
+      "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai. Kecepatan perahu (terhadap air) dan kecepatan arus sejajar tepi dipilih bilangan bulat dalam m/s, dengan arus tidak nol. Rancangan yang menghasilkan kecepatan resultan tepat 13 m/s dan perahu lebih cepat daripada arus adalah kecepatan perahu dan arus berturut-turut ....",
+      "jawaban_benar": "$12$ m/s dan $5$ m/s",
+      "alasan_benar": "12^2 + 5^2 = 169 = 13^2 dan 12 > 5",
+      "distraktor": [
+        {
+          "teks": "$5$ m/s dan $12$ m/s",
+          "alasan": "resultan 13 terpenuhi tetapi perahu lebih lambat daripada arus"
+        },
+        {
+          "teks": "$9$ m/s dan $4$ m/s",
+          "alasan": "perahu lebih cepat tetapi resultan akar 97, bukan 13"
+        },
+        {
+          "teks": "$13$ m/s dan $0$ m/s",
+          "alasan": "resultan 13 terpenuhi tetapi arus nol, melanggar syarat arus tidak nol"
+        }
+      ],
+      "pembahasan": "Resultan $\\langle v_a,v_p\\rangle$ berbesar $\\sqrt{v_a^2+v_p^2}=13$. Pasangan bulat positif: $(5,12)$ atau $(12,5)$; syarat perahu lebih cepat dari arus memilih perahu $12$, arus $5$. $(9,4)$ memberi $\\sqrt{97}$; $(13,0)$ ditolak karena arus nol.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 181,
+        "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal klaim vektor berpanjang sama",
+      "alasan_level": "mengevaluasi klaim dengan memeriksa tiap pasangan terhadap dua kriteria (panjang dan arah)",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyimpulkan bahwa dua vektor yang berpanjang sama pasti ekuivalen. Contoh penyangkal yang tepat adalah $\\mathbf{v} = \\langle 5, -12\\rangle$ dan ....",
+      "jawaban_benar": "$\\mathbf{w} = \\langle 12, 5\\rangle$",
+      "alasan_benar": "||w|| = 13 = ||v|| tetapi komponennya berbeda sehingga arahnya berbeda: tidak ekuivalen",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{w} = \\langle 5, -12\\rangle$ yang digambar dari titik pangkal lain",
+          "alasan": "panjang dan arahnya sama sehingga ekuivalen, bukan penyangkal"
+        },
+        {
+          "teks": "$\\mathbf{w} = \\langle 10, -24\\rangle$",
+          "alasan": "arah sama tetapi panjangnya 26, bukan 13; panjang tidak sama"
+        },
+        {
+          "teks": "$\\mathbf{w} = \\langle 6, -13\\rangle$",
+          "alasan": "panjangnya akar 205, bukan 13; panjang tidak sama"
+        }
+      ],
+      "pembahasan": "Ekuivalen menuntut panjang DAN arah sama (komponen sama). $\\|\\langle 12,5\\rangle\\|=13=\\|\\mathbf{v}\\|$ tetapi $\\langle 12,5\\rangle\\ne\\langle 5,-12\\rangle$. Pilihan lain: komponen sama (ekuivalen), atau panjang berbeda ($26$ dan $\\sqrt{205}$).",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 178,
+        "kutipan": "Karena PQ dan RS memiliki panjang dan arah sama, kita dapat menyimpulkan bahwa kedua vektor ini ekuivalen"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "penyangkal klaim ciri vektor satuan",
+      "alasan_level": "menguji tiap kandidat terhadap premis klaim (jumlah nilai mutlak 1) dan kesimpulannya (panjang 1)",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+      "alasan_benar": "|1/2|+|1/2| = 1 tetapi panjangnya akar(1/4+1/4) = akar(1/2), bukan 1",
+      "distraktor": [
+        {
+          "teks": "$\\left\\langle \\frac{3}{5}, \\frac{4}{5}\\right\\rangle$",
+          "alasan": "vektor satuan, tetapi |p|+|q| = 7/5 sehingga premis tidak terpenuhi"
+        },
+        {
+          "teks": "$\\langle 0, -1\\rangle$",
+          "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
+        },
+        {
+          "teks": "$\\langle 1, 0\\rangle$",
+          "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
+        }
+      ],
+      "pembahasan": "Vektor satuan bila $p^2+q^2=1$, bukan $|p|+|q|=1$. $\\langle\\frac12,\\frac12\\rangle$ memenuhi premis tetapi panjangnya $\\sqrt{1/2}\\ne1$. $\\langle\\frac35,\\frac45\\rangle$ satuan namun premisnya gagal; $\\langle 0,-1\\rangle$ dan $\\langle 1,0\\rangle$ memenuhi premis dan satuan.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 190,
+        "kutipan": "Kedua vektor ini disebut vektor satuan baku yang dapat digunakan untuk menuliskan sembarang vektor lainnya."
+      }
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c6ecfb5bb4af53a900eb35",
+        "teks": "Sebuah perahu diarahkan tegak lurus terhadap sungai dengan kecepatan 3 m/s, sedangkan arus sungai berkecepatan 2 m/s ke arah kiri. Kemudian kecepatan perahu dijadikan dua kali lipat dan arah arus sungai dibalik menjadi ke kanan dengan besar tetap. Dengan sumbu $x$ positif ke kanan dan sumbu $y$ positif searah gerak perahu, bentuk komponen kecepatan resultan yang baru dan besarnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 2, 6\\rangle$ dan $2\\sqrt{10}$ m/s",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(4, 7)$ dan v=$(8, 3)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$244$",
+      "alasan_benar": "u+v=(12,10); kuadrat panjangnya=(12)²+(10)²=244.",
+      "distraktor": [
+        {
+          "teks": "$245$",
+          "alasan": "Pilihan $245$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $244$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$243$",
+          "alasan": "Pilihan $243$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $244$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$246$",
+          "alasan": "Pilihan $246$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $244$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(12,10); kuadrat panjangnya=(12)²+(10)²=244.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb10d154baf1f17aa77204df",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+        "jawaban": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(5, -8)$ dan v=$(-1, 5)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "u+v=(4,-3); kuadrat panjangnya=(4)²+(-3)²=25.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(4,-3); kuadrat panjangnya=(4)²+(-3)²=25.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0957a122334080c6f9c7c3b0",
+        "teks": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
+        "jawaban": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(-2, 2)$ dan v=$(-6, -1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$65$",
+      "alasan_benar": "u+v=(-8,1); kuadrat panjangnya=(-8)²+(1)²=65.",
+      "distraktor": [
+        {
+          "teks": "$66$",
+          "alasan": "Pilihan $66$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $65$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan $64$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $65$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$67$",
+          "alasan": "Pilihan $67$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $65$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(-8,1); kuadrat panjangnya=(-8)²+(1)²=65.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb10d154baf1f17aa77204df",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+        "jawaban": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(4, 2)$ dan v=$(1, 1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "u+v=(5,3); kuadrat panjangnya=(5)²+(3)²=34.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(5,3); kuadrat panjangnya=(5)²+(3)²=34.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c6ecfb5bb4af53a900eb35",
+        "teks": "Sebuah perahu diarahkan tegak lurus terhadap sungai dengan kecepatan 3 m/s, sedangkan arus sungai berkecepatan 2 m/s ke arah kiri. Kemudian kecepatan perahu dijadikan dua kali lipat dan arah arus sungai dibalik menjadi ke kanan dengan besar tetap. Dengan sumbu $x$ positif ke kanan dan sumbu $y$ positif searah gerak perahu, bentuk komponen kecepatan resultan yang baru dan besarnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 2, 6\\rangle$ dan $2\\sqrt{10}$ m/s",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(3, 3)$ dan v=$(2, -8)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "u+v=(5,-5); kuadrat panjangnya=(5)²+(-5)²=50.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan $51$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $50$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan $49$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $50$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Pilihan $52$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $50$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(5,-5); kuadrat panjangnya=(5)²+(-5)²=50.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4dec44527fb0f4f2e89cf72",
+        "teks": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(4, -4)$ dan v=$(7, 5)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$122$",
+      "alasan_benar": "u+v=(11,1); kuadrat panjangnya=(11)²+(1)²=122.",
+      "distraktor": [
+        {
+          "teks": "$123$",
+          "alasan": "Pilihan $123$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $122$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan $121$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $122$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Pilihan $124$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $122$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(11,1); kuadrat panjangnya=(11)²+(1)²=122.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c6ecfb5bb4af53a900eb35",
+        "teks": "Sebuah perahu diarahkan tegak lurus terhadap sungai dengan kecepatan 3 m/s, sedangkan arus sungai berkecepatan 2 m/s ke arah kiri. Kemudian kecepatan perahu dijadikan dua kali lipat dan arah arus sungai dibalik menjadi ke kanan dengan besar tetap. Dengan sumbu $x$ positif ke kanan dan sumbu $y$ positif searah gerak perahu, bentuk komponen kecepatan resultan yang baru dan besarnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 2, 6\\rangle$ dan $2\\sqrt{10}$ m/s",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(-5, 5)$ dan v=$(-5, -5)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "u+v=(-10,0); kuadrat panjangnya=(-10)²+(0)²=100.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan $101$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan $99$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Pilihan $102$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $100$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(-10,0); kuadrat panjangnya=(-10)²+(0)²=100.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb10d154baf1f17aa77204df",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+        "jawaban": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(0, 1)$ dan v=$(0, 1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "u+v=(0,2); kuadrat panjangnya=(0)²+(2)²=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(0,2); kuadrat panjangnya=(0)²+(2)²=4.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cc56325773cb3952df81b91",
+        "teks": "Seorang pelari bergerak dua tahap dengan perpindahan $\\langle 12, 5\\rangle$ m lalu $\\langle -12, 16\\rangle$ m. Andi menghitung jarak pelari dari titik awal dengan menjumlahkan panjang kedua perpindahan, sedangkan Budi menjumlahkan vektornya dulu lalu mencari panjangnya. Pernyataan yang benar adalah ....",
+        "jawaban": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah panjang lintasan yang ditempuh",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(4, -8)$ dan v=$(4, -3)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$185$",
+      "alasan_benar": "u+v=(8,-11); kuadrat panjangnya=(8)²+(-11)²=185.",
+      "distraktor": [
+        {
+          "teks": "$186$",
+          "alasan": "Pilihan $186$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $185$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Pilihan $184$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $185$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$187$",
+          "alasan": "Pilihan $187$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $185$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(8,-11); kuadrat panjangnya=(8)²+(-11)²=185.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0957a122334080c6f9c7c3b0",
+        "teks": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
+        "jawaban": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(2, -8)$ dan v=$(6, -1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$145$",
+      "alasan_benar": "u+v=(8,-9); kuadrat panjangnya=(8)²+(-9)²=145.",
+      "distraktor": [
+        {
+          "teks": "$146$",
+          "alasan": "Pilihan $146$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $145$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Pilihan $144$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $145$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$147$",
+          "alasan": "Pilihan $147$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $145$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(8,-9); kuadrat panjangnya=(8)²+(-9)²=145.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cfa621118e49f56cb6459c2",
+        "teks": "Sebuah perahu diarahkan tegak lurus tepi sungai. Kecepatan perahu (terhadap air) dan kecepatan arus sejajar tepi dipilih bilangan bulat dalam m/s, dengan arus tidak nol. Rancangan yang menghasilkan kecepatan resultan tepat 13 m/s dan perahu lebih cepat daripada arus adalah kecepatan perahu dan arus berturut-turut ....",
+        "jawaban": "$12$ m/s dan $5$ m/s",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(6, -5)$ dan v=$(-8, -1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "u+v=(-2,-6); kuadrat panjangnya=(-2)²+(-6)²=40.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(-2,-6); kuadrat panjangnya=(-2)²+(-6)²=40.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4dec44527fb0f4f2e89cf72",
+        "teks": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(2, 0)$ dan v=$(-6, 8)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "u+v=(-4,8); kuadrat panjangnya=(-4)²+(8)²=80.",
+      "distraktor": [
+        {
+          "teks": "$81$",
+          "alasan": "Pilihan $81$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan $79$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Pilihan $82$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(-4,8); kuadrat panjangnya=(-4)²+(8)²=80.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4dec44527fb0f4f2e89cf72",
+        "teks": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(7, 4)$ dan v=$(-3, -8)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "u+v=(4,-4); kuadrat panjangnya=(4)²+(-4)²=32.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan $31$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(4,-4); kuadrat panjangnya=(4)²+(-4)²=32.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb10d154baf1f17aa77204df",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+        "jawaban": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "vektor_pada_bidang",
+      "alasan_level": "Target hard; variasi konsep vektor pada bidang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui vektor u=$(6, 3)$ dan v=$(-6, -1)$. Tentukan kuadrat panjang $u+v$.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "u+v=(0,2); kuadrat panjangnya=(0)²+(2)²=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah vektor pada bidang pada pembahasan."
+        }
+      ],
+      "pembahasan": "u+v=(0,2); kuadrat panjangnya=(0)²+(2)²=4.",
+      "catatan": "codex-replenishment:kelas11_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b04-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "208d27c6bfe3964d4a0a0357",
+        "teks": "Jika $\\mathbf{a} = \\langle 4, -3\\rangle$ dan $\\mathbf{b} = \\langle -6, 17\\rangle$, panjang vektor $3\\mathbf{a} + \\mathbf{b}$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 8 dan kuadrat panjang 34. Jika x>y, tentukan kuadrat panjang $v+$(6, 3)$$.",
+      "jawaban_benar": "$157$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(11)²+(6)²=157.",
+      "distraktor": [
+        {
+          "teks": "$156$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $157$."
+        },
+        {
+          "teks": "$158$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $157$."
+        },
+        {
+          "teks": "$314$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(11)²+(6)²=157.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "957b4b4168997e6b9ec24cef",
+        "teks": "Dua orang menarik sebuah peti dengan gaya yang sama besar, yaitu 40 N, tetapi arahnya saling berlawanan. Resultan kedua gaya pada peti tersebut adalah ....",
+        "jawaban": "vektor nol",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 25. Jika x>y, tentukan kuadrat panjang $v+$(2, 4)$$.",
+      "jawaban_benar": "$85$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(6)²+(7)²=85.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $85$."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $85$."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(6)²+(7)²=85.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd828064349dec3a713d7ebb",
+        "teks": "Misalkan $\\mathbf{p}$, $\\mathbf{q}$, dan $\\mathbf{r}$ secara berturut-turut merupakan ruas garis berarah dari $(9, 7)$ ke $(15, 3)$, dari $(-7, 9)$ ke $(-1, 13)$, dan dari $(12, -8)$ ke $(18, -4)$. Pasangan vektor yang ekuivalen adalah ....",
+        "jawaban": "$\\mathbf{q}$ dan $\\mathbf{r}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 11 dan kuadrat panjang 65. Jika x>y, tentukan kuadrat panjang $v+$(5, 7)$$.",
+      "jawaban_benar": "$265$",
+      "alasan_benar": "Dari x+y=11 dan x²+y²=65, diperoleh xy=28. Pilih x=7, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(11)²=265.",
+      "distraktor": [
+        {
+          "teks": "$264$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $265$."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $265$."
+        },
+        {
+          "teks": "$530$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=11 dan x²+y²=65, diperoleh xy=28. Pilih x=7, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(11)²=265.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a844849bebf56252b76de9",
+        "teks": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
+        "jawaban": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 9 dan kuadrat panjang 45. Jika x>y, tentukan kuadrat panjang $v+$(4, 6)$$.",
+      "jawaban_benar": "$181$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=45, diperoleh xy=18. Pilih x=6, y=3 sesuai syarat. Kuadrat panjang v+w=(10)²+(9)²=181.",
+      "distraktor": [
+        {
+          "teks": "$180$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $181$."
+        },
+        {
+          "teks": "$182$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $181$."
+        },
+        {
+          "teks": "$362$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=45, diperoleh xy=18. Pilih x=6, y=3 sesuai syarat. Kuadrat panjang v+w=(10)²+(9)²=181.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4dec44527fb0f4f2e89cf72",
+        "teks": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 29. Jika x>y, tentukan kuadrat panjang $v+$(3, 2)$$.",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(4)²=80.",
+      "distraktor": [
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $80$."
+        },
+        {
+          "teks": "$81$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $80$."
+        },
+        {
+          "teks": "$160$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(4)²=80.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "601468f5292930ad56745458",
+        "teks": "Diketahui vektor u=$(5, -8)$ dan v=$(-1, 5)$. Tentukan kuadrat panjang $u+v$.",
+        "jawaban": "$25$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 10 dan kuadrat panjang 52. Jika x>y, tentukan kuadrat panjang $v+$(4, 5)$$.",
+      "jawaban_benar": "$181$",
+      "alasan_benar": "Dari x+y=10 dan x²+y²=52, diperoleh xy=24. Pilih x=6, y=4 sesuai syarat. Kuadrat panjang v+w=(10)²+(9)²=181.",
+      "distraktor": [
+        {
+          "teks": "$180$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $181$."
+        },
+        {
+          "teks": "$182$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $181$."
+        },
+        {
+          "teks": "$362$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=10 dan x²+y²=52, diperoleh xy=24. Pilih x=6, y=4 sesuai syarat. Kuadrat panjang v+w=(10)²+(9)²=181.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6e961d718cdeb9c8b394ca56",
+        "teks": "Sebuah vektor memiliki titik pangkal $(-6, 4)$ dan titik ujung $(-6, 4)$. Nama dan bentuk komponen vektor tersebut adalah ....",
+        "jawaban": "vektor nol, $\\langle 0, 0\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 9 dan kuadrat panjang 53. Jika x>y, tentukan kuadrat panjang $v+$(7, 4)$$.",
+      "jawaban_benar": "$232$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(6)²=232.",
+      "distraktor": [
+        {
+          "teks": "$231$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $232$."
+        },
+        {
+          "teks": "$233$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $232$."
+        },
+        {
+          "teks": "$464$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(6)²=232.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3fb870d43a5b37e028a1f4ba",
+        "teks": "Diketahui $\\mathbf{u} = \\langle 3, 4\\rangle$ dan $\\mathbf{v} = \\langle 5, 12\\rangle$. Pernyataan yang benar mengenai panjang vektor-vektor tersebut adalah ....",
+        "jawaban": "$\\|\\mathbf{u}+\\mathbf{v}\\| < \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 5 dan kuadrat panjang 17. Jika x>y, tentukan kuadrat panjang $v+$(5, 5)$$.",
+      "jawaban_benar": "$117$",
+      "alasan_benar": "Dari x+y=5 dan x²+y²=17, diperoleh xy=4. Pilih x=4, y=1 sesuai syarat. Kuadrat panjang v+w=(9)²+(6)²=117.",
+      "distraktor": [
+        {
+          "teks": "$116$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $117$."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $117$."
+        },
+        {
+          "teks": "$234$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=5 dan x²+y²=17, diperoleh xy=4. Pilih x=4, y=1 sesuai syarat. Kuadrat panjang v+w=(9)²+(6)²=117.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0861ba6e3fcd841ef95204c4",
+        "teks": "Diketahui $\\mathbf{a} = 7\\mathbf{i} - 2\\mathbf{j}$ dan $\\mathbf{b} = -\\mathbf{i} + 4\\mathbf{j}$. Bentuk $2\\mathbf{a} - 3\\mathbf{b}$ dalam vektor-vektor satuan baku adalah ....",
+        "jawaban": "$17\\mathbf{i} - 16\\mathbf{j}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 4 dan kuadrat panjang 10. Jika x>y, tentukan kuadrat panjang $v+$(5, 6)$$.",
+      "jawaban_benar": "$113$",
+      "alasan_benar": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(8)²+(7)²=113.",
+      "distraktor": [
+        {
+          "teks": "$112$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $113$."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $113$."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(8)²+(7)²=113.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "16fe3e85dc90a7bfc522ea19",
+        "teks": "Diketahui vektor u=$(2, 0)$ dan v=$(-6, 8)$. Tentukan kuadrat panjang $u+v$.",
+        "jawaban": "$80$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 8 dan kuadrat panjang 34. Jika x>y, tentukan kuadrat panjang $v+$(2, 7)$$.",
+      "jawaban_benar": "$149$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(10)²=149.",
+      "distraktor": [
+        {
+          "teks": "$148$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $149$."
+        },
+        {
+          "teks": "$150$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $149$."
+        },
+        {
+          "teks": "$298$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(10)²=149.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "30632ea93f5dd64325e8769e",
+        "teks": "Diketahui vektor u=$(4, 2)$ dan v=$(1, 1)$. Tentukan kuadrat panjang $u+v$.",
+        "jawaban": "$34$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 25. Jika x>y, tentukan kuadrat panjang $v+$(4, 8)$$.",
+      "jawaban_benar": "$185$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(8)²+(11)²=185.",
+      "distraktor": [
+        {
+          "teks": "$184$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $185$."
+        },
+        {
+          "teks": "$186$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $185$."
+        },
+        {
+          "teks": "$370$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(8)²+(11)²=185.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a844849bebf56252b76de9",
+        "teks": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
+        "jawaban": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 25. Jika x>y, tentukan kuadrat panjang $v+$(3, 4)$$.",
+      "jawaban_benar": "$98$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(7)²=98.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $98$."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $98$."
+        },
+        {
+          "teks": "$196$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(7)²=98.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c6ecfb5bb4af53a900eb35",
+        "teks": "Sebuah perahu diarahkan tegak lurus terhadap sungai dengan kecepatan 3 m/s, sedangkan arus sungai berkecepatan 2 m/s ke arah kiri. Kemudian kecepatan perahu dijadikan dua kali lipat dan arah arus sungai dibalik menjadi ke kanan dengan besar tetap. Dengan sumbu $x$ positif ke kanan dan sumbu $y$ positif searah gerak perahu, bentuk komponen kecepatan resultan yang baru dan besarnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 2, 6\\rangle$ dan $2\\sqrt{10}$ m/s",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 5 dan kuadrat panjang 13. Jika x>y, tentukan kuadrat panjang $v+$(7, 2)$$.",
+      "jawaban_benar": "$116$",
+      "alasan_benar": "Dari x+y=5 dan x²+y²=13, diperoleh xy=6. Pilih x=3, y=2 sesuai syarat. Kuadrat panjang v+w=(10)²+(4)²=116.",
+      "distraktor": [
+        {
+          "teks": "$115$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $116$."
+        },
+        {
+          "teks": "$117$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $116$."
+        },
+        {
+          "teks": "$232$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=5 dan x²+y²=13, diperoleh xy=6. Pilih x=3, y=2 sesuai syarat. Kuadrat panjang v+w=(10)²+(4)²=116.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "21531b97faa99f7c146db57d",
+        "teks": "Diketahui vektor u=$(2, -8)$ dan v=$(6, -1)$. Tentukan kuadrat panjang $u+v$.",
+        "jawaban": "$145$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 4 dan kuadrat panjang 10. Jika x>y, tentukan kuadrat panjang $v+$(2, 2)$$.",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(5)²+(3)²=34.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $34$."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $34$."
+        },
+        {
+          "teks": "$68$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(5)²+(3)²=34.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b04-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bfbb4bf94ed941c2b75b0720",
+        "teks": "Vektor $\\langle 8, -9\\rangle$ dapat dituliskan ke dalam kombinasi vektor-vektor satuan baku $\\mathbf{i}$ dan $\\mathbf{j}$, yaitu ....",
+        "jawaban": "$8\\mathbf{i} - 9\\mathbf{j}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 20. Jika x>y, tentukan kuadrat panjang $v+$(4, 7)$$.",
+      "jawaban_benar": "$145$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=20, diperoleh xy=8. Pilih x=4, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(9)²=145.",
+      "distraktor": [
+        {
+          "teks": "$144$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$146$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$290$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=20, diperoleh xy=8. Pilih x=4, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(9)²=145.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ceeb06d3b7888abc449d7c6a",
+        "teks": "Sebuah vektor memiliki pangkal di $(-8, 3)$ dan ujung di $(4, 8)$. Bentuk komponen vektor tersebut dan panjangnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 12, 5\\rangle$ dan $13$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 74. Jika x>y, tentukan kuadrat panjang $v+$(2, 8)$$.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(9)²+(13)²=250.",
+      "distraktor": [
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(9)²+(13)²=250.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecf0ddfe936e6f1c5fdd619a",
+        "teks": "Ruas garis berarah $\\mathbf{w}$ berpangkal di $(7, -8)$ dan berujung di $(16, -20)$. Bentuk komponen $\\mathbf{w}$ dan panjangnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 9, -12\\rangle$ dan $15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 85. Jika x>y, tentukan kuadrat panjang $v+$(5, 8)$$.",
+      "jawaban_benar": "$340$",
+      "alasan_benar": "Dari x+y=13 dan x²+y²=85, diperoleh xy=42. Pilih x=7, y=6 sesuai syarat. Kuadrat panjang v+w=(12)²+(14)²=340.",
+      "distraktor": [
+        {
+          "teks": "$339$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$341$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$680$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=13 dan x²+y²=85, diperoleh xy=42. Pilih x=7, y=6 sesuai syarat. Kuadrat panjang v+w=(12)²+(14)²=340.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/95853df00eb2aad659aae7a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              13
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 13]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd828064349dec3a713d7ebb",
+        "teks": "Misalkan $\\mathbf{p}$, $\\mathbf{q}$, dan $\\mathbf{r}$ secara berturut-turut merupakan ruas garis berarah dari $(9, 7)$ ke $(15, 3)$, dari $(-7, 9)$ ke $(-1, 13)$, dan dari $(12, -8)$ ke $(18, -4)$. Pasangan vektor yang ekuivalen adalah ....",
+        "jawaban": "$\\mathbf{q}$ dan $\\mathbf{r}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 74. Jika x>y, tentukan kuadrat panjang $v+$(7, 7)$$.",
+      "jawaban_benar": "$340$",
+      "alasan_benar": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(14)²+(12)²=340.",
+      "distraktor": [
+        {
+          "teks": "$339$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$341$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$680$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(14)²+(12)²=340.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c56bc42772573b045128569c",
+        "teks": "Misalkan $\\mathbf{u}$ menggambarkan garis berarah dari titik $(-9, 8)$ ke titik $(15, 18)$, sedangkan $\\mathbf{v}$ menggambarkan garis berarah dari titik $(11, 12)$ ke titik $(35, 22)$. Pernyataan yang benar mengenai kedua ruas garis tersebut adalah ....",
+        "jawaban": "Keduanya ekuivalen dan panjang masing-masing 26",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 53. Jika x>y, tentukan kuadrat panjang $v+$(7, 6)$$.",
+      "jawaban_benar": "$260$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(8)²=260.",
+      "distraktor": [
+        {
+          "teks": "$259$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$261$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$520$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(8)²=260.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c396a57a4cd205493d9ecba",
+        "teks": "Dua drone bergerak pada bidang koordinat. Drone pertama terbang dari titik $(5, 9)$ ke titik $(17, 14)$, sedangkan drone kedua terbang dari titik $(-6, 8)$ ke titik $(6, 3)$. Kesimpulan yang tepat mengenai perpindahan kedua drone adalah ....",
+        "jawaban": "Panjang perpindahan sama, yaitu 13, tetapi tidak ekuivalen",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 41. Jika x>y, tentukan kuadrat panjang $v+$(4, 5)$$.",
+      "jawaban_benar": "$162$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=41, diperoleh xy=20. Pilih x=5, y=4 sesuai syarat. Kuadrat panjang v+w=(9)²+(9)²=162.",
+      "distraktor": [
+        {
+          "teks": "$161$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$163$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$324$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=41, diperoleh xy=20. Pilih x=5, y=4 sesuai syarat. Kuadrat panjang v+w=(9)²+(9)²=162.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8d5c026862d26ce4f73216a",
+        "teks": "Diberikan vektor $\\mathbf{v} = \\langle -8, 15\\rangle$. Berapakah panjang vektor $\\mathbf{v}$? Selanjutnya, tentukan vektor $\\mathbf{u}$ yang searah dengan vektor $\\mathbf{v}$, tetapi memiliki panjang 1 satuan. Jawabannya adalah ....",
+        "jawaban": "panjang $17$ dan $\\mathbf{u} = \\langle -\\frac{8}{17}, \\frac{15}{17}\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 26. Jika x>y, tentukan kuadrat panjang $v+$(4, 3)$$.",
+      "jawaban_benar": "$97$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(9)²+(4)²=97.",
+      "distraktor": [
+        {
+          "teks": "$96$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$194$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(9)²+(4)²=97.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a5b0b415ddee1d19d475264",
+        "teks": "Kecepatan angin pada suatu bidang koordinat dinyatakan oleh vektor $\\mathbf{w} = \\langle -7, 24\\rangle$ km/jam. Vektor yang searah dengan arah angin tersebut dan memiliki panjang 1 satuan adalah ....",
+        "jawaban": "$\\langle -\\frac{7}{25}, \\frac{24}{25}\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 41. Jika x>y, tentukan kuadrat panjang $v+$(6, 4)$$.",
+      "jawaban_benar": "$185$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=41, diperoleh xy=20. Pilih x=5, y=4 sesuai syarat. Kuadrat panjang v+w=(11)²+(8)²=185.",
+      "distraktor": [
+        {
+          "teks": "$184$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$186$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$370$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=41, diperoleh xy=20. Pilih x=5, y=4 sesuai syarat. Kuadrat panjang v+w=(11)²+(8)²=185.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dea603101c959100b0d65b2f",
+        "teks": "Jika $\\mathbf{v} = \\langle 9, 40\\rangle$, tentukan $\\|{-5}\\mathbf{v}\\|$.",
+        "jawaban": "$205$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 26. Jika x>y, tentukan kuadrat panjang $v+$(7, 8)$$.",
+      "jawaban_benar": "$225$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(12)²+(9)²=225.",
+      "distraktor": [
+        {
+          "teks": "$224$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$450$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(12)²+(9)²=225.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c150155fe43826ca36c7b5ec",
+        "teks": "Manakah besaran berikut yang merupakan vektor?",
+        "jawaban": "gaya sebesar 20 N ke arah kanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 89. Jika x>y, tentukan kuadrat panjang $v+$(3, 4)$$.",
+      "jawaban_benar": "$202$",
+      "alasan_benar": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(11)²+(9)²=202.",
+      "distraktor": [
+        {
+          "teks": "$201$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$203$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$404$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(11)²+(9)²=202.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-050",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/95853df00eb2aad659aae7a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              13
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 13]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "957b4b4168997e6b9ec24cef",
+        "teks": "Dua orang menarik sebuah peti dengan gaya yang sama besar, yaitu 40 N, tetapi arahnya saling berlawanan. Resultan kedua gaya pada peti tersebut adalah ....",
+        "jawaban": "vektor nol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 74. Jika x>y, tentukan kuadrat panjang $v+$(5, 6)$$.",
+      "jawaban_benar": "$265$",
+      "alasan_benar": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(12)²+(11)²=265.",
+      "distraktor": [
+        {
+          "teks": "$264$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$530$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(12)²+(11)²=265.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-051",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "90e14374a1671707e59a7b3e",
+        "teks": "Diketahui panjang vektor $\\mathbf{v}$ adalah 7 dan $c = -3$. Panjang vektor $c\\mathbf{v}$ adalah ....",
+        "jawaban": "$21$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 25. Jika x>y, tentukan kuadrat panjang $v+$(6, 2)$$.",
+      "jawaban_benar": "$125$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(10)²+(5)²=125.",
+      "distraktor": [
+        {
+          "teks": "$124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$250$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(10)²+(5)²=125.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-052",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6e961d718cdeb9c8b394ca56",
+        "teks": "Sebuah vektor memiliki titik pangkal $(-6, 4)$ dan titik ujung $(-6, 4)$. Nama dan bentuk komponen vektor tersebut adalah ....",
+        "jawaban": "vektor nol, $\\langle 0, 0\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 53. Jika x>y, tentukan kuadrat panjang $v+$(7, 8)$$.",
+      "jawaban_benar": "$296$",
+      "alasan_benar": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(10)²=296.",
+      "distraktor": [
+        {
+          "teks": "$295$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$297$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$592$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=9 dan x²+y²=53, diperoleh xy=14. Pilih x=7, y=2 sesuai syarat. Kuadrat panjang v+w=(14)²+(10)²=296.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-053",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bfd999aedab950bf6c3aa5b7",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 11, -6\\rangle$ dan $\\mathbf{b} = \\langle -4, 9\\rangle$. Hasil dari $\\mathbf{a} + \\mathbf{b}$ adalah ....",
+        "jawaban": "$\\langle 7, 3\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen 8 dan kuadrat panjang $T_1$. Jika x>y, tentukan kuadrat panjang $v+$(6, 8)$$.",
+      "jawaban_benar": "$244$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=40, diperoleh xy=12. Pilih x=6, y=2 sesuai syarat. Kuadrat panjang v+w=(12)²+(10)²=244.",
+      "distraktor": [
+        {
+          "teks": "$243$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$488$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=40, diperoleh xy=12. Pilih x=6, y=2 sesuai syarat. Kuadrat panjang v+w=(12)²+(10)²=244.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-054",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/dc7fb29dca5ef26a1021f56a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              40
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 40]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cbabbfd50bd77f1e218db230",
+        "teks": "Jika $\\mathbf{w} = \\langle 6, -7\\rangle$, maka $-3\\mathbf{w}$ adalah ....",
+        "jawaban": "$\\langle -18, 21\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 34. Jika x>y, tentukan kuadrat panjang $v+$(2, 6)$$.",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(9)²=130.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=34, diperoleh xy=15. Pilih x=5, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(9)²=130.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-055",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3191b971b22b2db1aa8a821",
+        "teks": "Vektor berikut yang merupakan vektor satuan adalah ....",
+        "jawaban": "$\\langle \\frac{5}{13}, \\frac{12}{13}\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 74. Jika x>y, tentukan kuadrat panjang $v+$(4, 4)$$.",
+      "jawaban_benar": "$202$",
+      "alasan_benar": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(11)²+(9)²=202.",
+      "distraktor": [
+        {
+          "teks": "$201$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$203$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$404$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=12 dan x²+y²=74, diperoleh xy=35. Pilih x=7, y=5 sesuai syarat. Kuadrat panjang v+w=(11)²+(9)²=202.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-056",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a34f5410a7296b8a9a819521",
+        "teks": "Vektor $\\mathbf{v} = \\langle 5, 9\\rangle$ berpangkal di titik $(3, -7)$. Titik ujung vektor $\\mathbf{v}$ adalah ....",
+        "jawaban": "$(8, 2)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 80. Jika x>y, tentukan kuadrat panjang $v+$(4, 3)$$.",
+      "jawaban_benar": "$193$",
+      "alasan_benar": "Dari x+y=12 dan x²+y²=80, diperoleh xy=32. Pilih x=8, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(7)²=193.",
+      "distraktor": [
+        {
+          "teks": "$192$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$194$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$386$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=12 dan x²+y²=80, diperoleh xy=32. Pilih x=8, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(7)²=193.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-057",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "baaf2be887fa6a8038067a5d",
+        "teks": "Vektor $\\mathbf{a} = \\langle 6, -2\\rangle$. Ruas garis berarah yang merepresentasikan vektor yang ekuivalen dengan $\\mathbf{a}$ adalah ruas garis ....",
+        "jawaban": "dari $(4, 9)$ ke $(10, 7)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 50. Jika x>y, tentukan kuadrat panjang $v+$(5, 2)$$.",
+      "jawaban_benar": "$153$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=50, diperoleh xy=7. Pilih x=7, y=1 sesuai syarat. Kuadrat panjang v+w=(12)²+(3)²=153.",
+      "distraktor": [
+        {
+          "teks": "$152$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$154$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$306$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=50, diperoleh xy=7. Pilih x=7, y=1 sesuai syarat. Kuadrat panjang v+w=(12)²+(3)²=153.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-058",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4056dc7fe37f2b0ca4cada24",
+        "teks": "Panjang vektor $24\\mathbf{i} - 7\\mathbf{j}$ adalah ....",
+        "jawaban": "$25$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 20. Jika x>y, tentukan kuadrat panjang $v+$(2, 5)$$.",
+      "jawaban_benar": "$85$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=20, diperoleh xy=8. Pilih x=4, y=2 sesuai syarat. Kuadrat panjang v+w=(6)²+(7)²=85.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=20, diperoleh xy=8. Pilih x=4, y=2 sesuai syarat. Kuadrat panjang v+w=(6)²+(7)²=85.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-059",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0ab4f5aeb53b1f6bacf8c786",
+        "teks": "Jika $\\mathbf{v}$ adalah vektor tak nol, maka vektor $-2\\mathbf{v}$ dibandingkan dengan $\\mathbf{v}$ memiliki ....",
+        "jawaban": "panjang dua kali lipat dan arah berlawanan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 89. Jika x>y, tentukan kuadrat panjang $v+$(7, 7)$$.",
+      "jawaban_benar": "$369$",
+      "alasan_benar": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(15)²+(12)²=369.",
+      "distraktor": [
+        {
+          "teks": "$368$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$370$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$738$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(15)²+(12)²=369.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-060",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/95853df00eb2aad659aae7a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              13
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 13]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a844849bebf56252b76de9",
+        "teks": "Diketahui $\\mathbf{u} = \\langle 3, -4\\rangle$. Vektor $\\mathbf{v}$ yang membuat $\\|\\mathbf{u}+\\mathbf{v}\\| = \\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|$ berlaku adalah ....",
+        "jawaban": "$\\mathbf{v} = \\langle 6, -8\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Vektor v=(x,y) mempunyai jumlah komponen $T_1$ dan kuadrat panjang 113. Jika x>y, tentukan kuadrat panjang $v+$(7, 2)$$.",
+      "jawaban_benar": "$306$",
+      "alasan_benar": "Dari x+y=15 dan x²+y²=113, diperoleh xy=56. Pilih x=8, y=7 sesuai syarat. Kuadrat panjang v+w=(15)²+(9)²=306.",
+      "distraktor": [
+        {
+          "teks": "$305$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$612$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=15 dan x²+y²=113, diperoleh xy=56. Pilih x=8, y=7 sesuai syarat. Kuadrat panjang v+w=(15)²+(9)²=306.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5b6c06254ec6ae2b707b232a",
+        "teks": "Diketahui $\\mathbf{a} = \\langle k, 2\\rangle$ dan $\\mathbf{b} = \\langle 8, k\\rangle$. Kedua vektor sejajar bila $k^2 = 16$. Pernyataan yang benar mengenai $k$ adalah ....",
+        "jawaban": "$k = 4$ membuat $\\mathbf{a}$ dan $\\mathbf{b}$ searah, $k = -4$ membuatnya berlawanan arah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 5 dan kuadrat panjang 17. Jika x>y, tentukan kuadrat panjang $v+$(3, 4)$$.",
+      "jawaban_benar": "$74$",
+      "alasan_benar": "Dari x+y=5 dan x²+y²=17, diperoleh xy=4. Pilih x=4, y=1 sesuai syarat. Kuadrat panjang v+w=(7)²+(5)²=74.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$148$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=5 dan x²+y²=17, diperoleh xy=4. Pilih x=4, y=1 sesuai syarat. Kuadrat panjang v+w=(7)²+(5)²=74.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0957a122334080c6f9c7c3b0",
+        "teks": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
+        "jawaban": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 10 dan kuadrat panjang 58. Jika x>y, tentukan kuadrat panjang $v+$(4, 4)$$.",
+      "jawaban_benar": "$170$",
+      "alasan_benar": "Dari x+y=10 dan x²+y²=58, diperoleh xy=21. Pilih x=7, y=3 sesuai syarat. Kuadrat panjang v+w=(11)²+(7)²=170.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$171$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=10 dan x²+y²=58, diperoleh xy=21. Pilih x=7, y=3 sesuai syarat. Kuadrat panjang v+w=(11)²+(7)²=170.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb10d154baf1f17aa77204df",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
+        "jawaban": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 6 dan kuadrat panjang 26. Jika x>y, tentukan kuadrat panjang $v+$(2, 7)$$.",
+      "jawaban_benar": "$113$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(7)²+(8)²=113.",
+      "distraktor": [
+        {
+          "teks": "$112$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(7)²+(8)²=113.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d78d5b9ce770a78c5bc09287",
+        "teks": "Sebuah perahu diarahkan tegak lurus tepi sungai dengan kecepatan 4 m/s menyeberangi sungai selebar 120 m. Arus sungai 3 m/s sejajar tepi. Dina menghitung waktu menyeberang dengan $120 \\div 5$ karena kecepatan resultan perahu 5 m/s. Eka menghitung dengan $120 \\div 4$. Pernyataan yang benar adalah ....",
+        "jawaban": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 90 m sepanjang tepi",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 6 dan kuadrat panjang 26. Jika x>y, tentukan kuadrat panjang $v+$(5, 5)$$.",
+      "jawaban_benar": "$136$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(10)²+(6)²=136.",
+      "distraktor": [
+        {
+          "teks": "$135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$272$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(10)²+(6)²=136.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d04e5b49b11deea822c55354",
+        "teks": "Seorang siswa menyimpulkan bahwa $\\|c\\mathbf{v}\\| = c\\,\\|\\mathbf{v}\\|$ berlaku untuk setiap skalar $c$ dan vektor $\\mathbf{v}$. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$c = -3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 8 dan kuadrat panjang 40. Jika x>y, tentukan kuadrat panjang $v+$(5, 8)$$.",
+      "jawaban_benar": "$221$",
+      "alasan_benar": "Dari x+y=8 dan x²+y²=40, diperoleh xy=12. Pilih x=6, y=2 sesuai syarat. Kuadrat panjang v+w=(11)²+(10)²=221.",
+      "distraktor": [
+        {
+          "teks": "$220$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$222$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$442$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=8 dan x²+y²=40, diperoleh xy=12. Pilih x=6, y=2 sesuai syarat. Kuadrat panjang v+w=(11)²+(10)²=221.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-066"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59befd588807f49eb8c0d18f",
+        "teks": "Vektor $\\mathbf{u}$ berpanjang 5 dan vektor $\\mathbf{v}$ berpanjang 12, arah keduanya tidak diketahui. Nilai $\\|\\mathbf{u}+\\mathbf{v}\\|$ yang TIDAK mungkin terjadi adalah ....",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 11 dan kuadrat panjang 61. Jika x>y, tentukan kuadrat panjang $v+$(7, 8)$$.",
+      "jawaban_benar": "$338$",
+      "alasan_benar": "Dari x+y=11 dan x²+y²=61, diperoleh xy=30. Pilih x=6, y=5 sesuai syarat. Kuadrat panjang v+w=(13)²+(13)²=338.",
+      "distraktor": [
+        {
+          "teks": "$337$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$339$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$676$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=11 dan x²+y²=61, diperoleh xy=30. Pilih x=6, y=5 sesuai syarat. Kuadrat panjang v+w=(13)²+(13)²=338.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-067"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cc56325773cb3952df81b91",
+        "teks": "Seorang pelari bergerak dua tahap dengan perpindahan $\\langle 12, 5\\rangle$ m lalu $\\langle -12, 16\\rangle$ m. Andi menghitung jarak pelari dari titik awal dengan menjumlahkan panjang kedua perpindahan, sedangkan Budi menjumlahkan vektornya dulu lalu mencari panjangnya. Pernyataan yang benar adalah ....",
+        "jawaban": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah panjang lintasan yang ditempuh",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 4 dan kuadrat panjang 10. Jika x>y, tentukan kuadrat panjang $v+$(2, 8)$$.",
+      "jawaban_benar": "$106$",
+      "alasan_benar": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(5)²+(9)²=106.",
+      "distraktor": [
+        {
+          "teks": "$105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$212$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(5)²+(9)²=106.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-068"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "16a95bcafb34a5600fcf21c4",
+        "teks": "Diketahui $\\mathbf{a} = \\langle 4, -10\\rangle$ dan $\\mathbf{b} = \\langle -6, 15\\rangle$. Pernyataan yang benar mengenai kedua vektor tersebut adalah ....",
+        "jawaban": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 29. Jika x>y, tentukan kuadrat panjang $v+$(3, 8)$$.",
+      "jawaban_benar": "$164$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(10)²=164.",
+      "distraktor": [
+        {
+          "teks": "$163$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$165$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$328$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(10)²=164.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-069"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cfa621118e49f56cb6459c2",
+        "teks": "Sebuah perahu diarahkan tegak lurus tepi sungai. Kecepatan perahu (terhadap air) dan kecepatan arus sejajar tepi dipilih bilangan bulat dalam m/s, dengan arus tidak nol. Rancangan yang menghasilkan kecepatan resultan tepat 13 m/s dan perahu lebih cepat daripada arus adalah kecepatan perahu dan arus berturut-turut ....",
+        "jawaban": "$12$ m/s dan $5$ m/s",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 10 dan kuadrat panjang 52. Jika x>y, tentukan kuadrat panjang $v+$(5, 8)$$.",
+      "jawaban_benar": "$265$",
+      "alasan_benar": "Dari x+y=10 dan x²+y²=52, diperoleh xy=24. Pilih x=6, y=4 sesuai syarat. Kuadrat panjang v+w=(11)²+(12)²=265.",
+      "distraktor": [
+        {
+          "teks": "$264$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$530$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=10 dan x²+y²=52, diperoleh xy=24. Pilih x=6, y=4 sesuai syarat. Kuadrat panjang v+w=(11)²+(12)²=265.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-070"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "271b9a1f9410b88c0df21966",
+        "teks": "Seorang siswa menyimpulkan bahwa dua vektor yang berpanjang sama pasti ekuivalen. Contoh penyangkal yang tepat adalah $\\mathbf{v} = \\langle 5, -12\\rangle$ dan ....",
+        "jawaban": "$\\mathbf{w} = \\langle 12, 5\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 4 dan kuadrat panjang 10. Jika x>y, tentukan kuadrat panjang $v+$(3, 5)$$.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(6)²+(6)²=72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=4 dan x²+y²=10, diperoleh xy=3. Pilih x=3, y=1 sesuai syarat. Kuadrat panjang v+w=(6)²+(6)²=72.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-071"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4dec44527fb0f4f2e89cf72",
+        "teks": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 11 dan kuadrat panjang 65. Jika x>y, tentukan kuadrat panjang $v+$(5, 5)$$.",
+      "jawaban_benar": "$225$",
+      "alasan_benar": "Dari x+y=11 dan x²+y²=65, diperoleh xy=28. Pilih x=7, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(9)²=225.",
+      "distraktor": [
+        {
+          "teks": "$224$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$450$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=11 dan x²+y²=65, diperoleh xy=28. Pilih x=7, y=4 sesuai syarat. Kuadrat panjang v+w=(12)²+(9)²=225.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-072"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3530e6fdc4b97b3eca3de3b9",
+        "teks": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 5 m/s. Untuk melakukannya, kamu mengarahkan perahu tegak lurus terhadap arah arus dengan kecepatan 12 m/s. Jika kecepatan keduanya tetap, perpindahan perahu terhadap tepi sungai setelah 10 detik adalah ....",
+        "jawaban": "$130$ m",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 25. Jika x>y, tentukan kuadrat panjang $v+$(3, 8)$$.",
+      "jawaban_benar": "$170$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(11)²=170.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$171$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=25, diperoleh xy=12. Pilih x=4, y=3 sesuai syarat. Kuadrat panjang v+w=(7)²+(11)²=170.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-073"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0861ba6e3fcd841ef95204c4",
+        "teks": "Diketahui $\\mathbf{a} = 7\\mathbf{i} - 2\\mathbf{j}$ dan $\\mathbf{b} = -\\mathbf{i} + 4\\mathbf{j}$. Bentuk $2\\mathbf{a} - 3\\mathbf{b}$ dalam vektor-vektor satuan baku adalah ....",
+        "jawaban": "$17\\mathbf{i} - 16\\mathbf{j}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 11 dan kuadrat panjang 61. Jika x>y, tentukan kuadrat panjang $v+$(4, 8)$$.",
+      "jawaban_benar": "$269$",
+      "alasan_benar": "Dari x+y=11 dan x²+y²=61, diperoleh xy=30. Pilih x=6, y=5 sesuai syarat. Kuadrat panjang v+w=(10)²+(13)²=269.",
+      "distraktor": [
+        {
+          "teks": "$268$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$538$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=11 dan x²+y²=61, diperoleh xy=30. Pilih x=6, y=5 sesuai syarat. Kuadrat panjang v+w=(10)²+(13)²=269.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-074"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31bc08c67b6a6283f25f8bee",
+        "teks": "Sebuah drone diarahkan terbang lurus ke utara dengan kecepatan 8 m/s, sedangkan angin berembus tegak lurus ke timur dengan kecepatan 15 m/s. Besar kecepatan gerak drone terhadap tanah adalah ....",
+        "jawaban": "$17$ m/s",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 13 dan kuadrat panjang 85. Jika x>y, tentukan kuadrat panjang $v+$(3, 4)$$.",
+      "jawaban_benar": "$200$",
+      "alasan_benar": "Dari x+y=13 dan x²+y²=85, diperoleh xy=42. Pilih x=7, y=6 sesuai syarat. Kuadrat panjang v+w=(10)²+(10)²=200.",
+      "distraktor": [
+        {
+          "teks": "$199$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$201$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$400$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=13 dan x²+y²=85, diperoleh xy=42. Pilih x=7, y=6 sesuai syarat. Kuadrat panjang v+w=(10)²+(10)²=200.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-075"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "208d27c6bfe3964d4a0a0357",
+        "teks": "Jika $\\mathbf{a} = \\langle 4, -3\\rangle$ dan $\\mathbf{b} = \\langle -6, 17\\rangle$, panjang vektor $3\\mathbf{a} + \\mathbf{b}$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 29. Jika x>y, tentukan kuadrat panjang $v+$(3, 5)$$.",
+      "jawaban_benar": "$113$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(7)²=113.",
+      "distraktor": [
+        {
+          "teks": "$112$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=29, diperoleh xy=10. Pilih x=5, y=2 sesuai syarat. Kuadrat panjang v+w=(8)²+(7)²=113.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-076"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c6ecfb5bb4af53a900eb35",
+        "teks": "Sebuah perahu diarahkan tegak lurus terhadap sungai dengan kecepatan 3 m/s, sedangkan arus sungai berkecepatan 2 m/s ke arah kiri. Kemudian kecepatan perahu dijadikan dua kali lipat dan arah arus sungai dibalik menjadi ke kanan dengan besar tetap. Dengan sumbu $x$ positif ke kanan dan sumbu $y$ positif searah gerak perahu, bentuk komponen kecepatan resultan yang baru dan besarnya berturut-turut adalah ....",
+        "jawaban": "$\\langle 2, 6\\rangle$ dan $2\\sqrt{10}$ m/s",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 6 dan kuadrat panjang 26. Jika x>y, tentukan kuadrat panjang $v+$(6, 6)$$.",
+      "jawaban_benar": "$170$",
+      "alasan_benar": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(11)²+(7)²=170.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$171$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$340$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=6 dan x²+y²=26, diperoleh xy=5. Pilih x=5, y=1 sesuai syarat. Kuadrat panjang v+w=(11)²+(7)²=170.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-077"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1f753c60c0db72c7f7151896",
+        "teks": "Vektor $\\mathbf{p}$ berpangkal di $A(2, -3)$ dan berujung di $B(7, 1)$. Vektor $\\mathbf{q}$ berpangkal di $C(-4, 5)$ dan ekuivalen dengan $\\mathbf{p}$. Koordinat titik ujung vektor $\\mathbf{q}$ adalah ....",
+        "jawaban": "$(1, 9)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 11 dan kuadrat panjang 73. Jika x>y, tentukan kuadrat panjang $v+$(7, 7)$$.",
+      "jawaban_benar": "$325$",
+      "alasan_benar": "Dari x+y=11 dan x²+y²=73, diperoleh xy=24. Pilih x=8, y=3 sesuai syarat. Kuadrat panjang v+w=(15)²+(10)²=325.",
+      "distraktor": [
+        {
+          "teks": "$324$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$326$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$650$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=11 dan x²+y²=73, diperoleh xy=24. Pilih x=8, y=3 sesuai syarat. Kuadrat panjang v+w=(15)²+(10)²=325.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-078"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cac13c195f97ee413c832764",
+        "teks": "Jika $\\mathbf{v} = \\langle 9, -12\\rangle$, maka $-4\\mathbf{v}$ dan $\\|{-4}\\mathbf{v}\\|$ berturut-turut adalah ....",
+        "jawaban": "$\\langle -36, 48\\rangle$ dan $60$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 7 dan kuadrat panjang 37. Jika x>y, tentukan kuadrat panjang $v+$(7, 8)$$.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Dari x+y=7 dan x²+y²=37, diperoleh xy=6. Pilih x=6, y=1 sesuai syarat. Kuadrat panjang v+w=(13)²+(9)²=250.",
+      "distraktor": [
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=7 dan x²+y²=37, diperoleh xy=6. Pilih x=6, y=1 sesuai syarat. Kuadrat panjang v+w=(13)²+(9)²=250.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-079"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a74715b85bfba8b27030a90",
+        "teks": "Vektor $\\mathbf{v} = \\langle k, 24\\rangle$ berpangkal di titik asal dan memiliki panjang 25. Jika titik ujung $\\mathbf{v}$ berada di kuadran II, nilai $k$ adalah ....",
+        "jawaban": "$-7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_vektor_rekonstruksi_norma",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Vektor v=(x,y) mempunyai jumlah komponen 13 dan kuadrat panjang 89. Jika x>y, tentukan kuadrat panjang $v+$(5, 5)$$.",
+      "jawaban_benar": "$269$",
+      "alasan_benar": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(13)²+(10)²=269.",
+      "distraktor": [
+        {
+          "teks": "$268$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$538$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dari x+y=13 dan x²+y²=89, diperoleh xy=40. Pilih x=8, y=5 sesuai syarat. Kuadrat panjang v+w=(13)²+(10)²=269.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b04-a-hard-bt01-080"
     }
-   ],
-   "pembahasan": "Kesamaan terjadi hanya bila kedua vektor searah (v kelipatan positif u). $\\langle 6,-8\\rangle=2\\mathbf{u}$: $\\|\\mathbf{u}+\\mathbf{v}\\|=\\|\\langle 9,-12\\rangle\\|=15=5+10$. Untuk $\\langle -6,8\\rangle$ jumlahnya $\\langle -3,4\\rangle$ (5); $\\langle 4,3\\rangle$ memberi $\\langle 7,-1\\rangle$ ($\\sqrt{50}\\ne 10$); $\\langle 3,4\\rangle$ memberi $\\langle 6,0\\rangle$ (6).",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 184,
-    "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-002",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "evaluasi arah dua vektor sejajar dengan parameter",
-   "alasan_level": "menentukan syarat sejajar, lalu menilai arah tiap akar; evaluasi akar-akar setara medium atas",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle k, 2\\rangle$ dan $\\mathbf{b} = \\langle 8, k\\rangle$. Kedua vektor sejajar bila $k^2 = 16$. Pernyataan yang benar mengenai $k$ adalah ....",
-   "jawaban_benar": "$k = 4$ membuat $\\mathbf{a}$ dan $\\mathbf{b}$ searah, $k = -4$ membuatnya berlawanan arah",
-   "alasan_benar": "k=4: a=(4,2), b=(8,4)=2a searah; k=-4: a=(-4,2), b=(8,-4)=-2a berlawanan",
-   "distraktor": [
-    {
-     "teks": "$k = 4$ membuat keduanya berlawanan arah, $k = -4$ membuatnya searah",
-     "alasan": "arah kedua akar tertukar"
-    },
-    {
-     "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya searah",
-     "alasan": "mengira sejajar selalu berarti searah"
-    },
-    {
-     "teks": "$k = 4$ dan $k = -4$ sama-sama membuat keduanya berlawanan arah",
-     "alasan": "mengira sejajar selalu berarti berlawanan arah"
-    }
-   ],
-   "pembahasan": "Sejajar berarti $\\mathbf{b}=c\\mathbf{a}$. Untuk $k=4$: $\\mathbf{a}=\\langle 4,2\\rangle$, $\\mathbf{b}=\\langle 8,4\\rangle=2\\mathbf{a}$ ($c>0$, searah). Untuk $k=-4$: $\\mathbf{a}=\\langle -4,2\\rangle$, $\\mathbf{b}=\\langle 8,-4\\rangle=-2\\mathbf{a}$ ($c<0$, berlawanan).",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 184,
-    "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-003",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "menemukan kesalahan langkah panjang vektor",
-   "alasan_level": "mengevaluasi penyelesaian siswa yang salah memakai jumlah komponen dan mencari dua akar yang benar",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa menyelesaikan soal \"vektor $\\mathbf{v} = \\langle t, t+7\\rangle$ memiliki panjang 13\" dengan menulis $t + (t+7) = 13$, sehingga $t = 3$. Penilaian yang tepat atas jawaban siswa tersebut adalah ....",
-   "jawaban_benar": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $5$ atau $-12$",
-   "alasan_benar": "t^2 + (t+7)^2 = 169 menjadi t^2 + 7t - 60 = 0, akar 5 dan -12",
-   "distraktor": [
-    {
-     "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar hanya $5$",
-     "alasan": "mengabaikan akar negatif -12 yang juga memenuhi"
-    },
-    {
-     "teks": "salah, karena panjang bukan jumlah komponen; nilai $t$ yang benar adalah $12$ atau $-5$",
-     "alasan": "akar kuadrat salah tanda"
-    },
-    {
-     "teks": "benar, karena panjang vektor sama dengan jumlah kedua komponennya",
-     "alasan": "menganggap panjang vektor adalah jumlah komponen"
-    }
-   ],
-   "pembahasan": "Panjang $\\langle t,t+7\\rangle$ adalah $\\sqrt{t^2+(t+7)^2}$. Dari $2t^2+14t+49=169$ diperoleh $t^2+7t-60=0$, $(t-5)(t+12)=0$. Jadi $t=5$ atau $t=-12$; $t=3$ memberi $\\langle 3,10\\rangle$ berpanjang $\\sqrt{109}\\ne 13$.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 178,
-    "kutipan": "Panjang vektor dapat ditentukan dengan Rumus Jarak."
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-004",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "menemukan langkah salah resultan",
-   "alasan_level": "mengecek empat langkah penyelesaian siswa satu per satu untuk menemukan satu langkah yang salah",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4,-1\\rangle$, $\\mathbf{b} = \\langle -2,5\\rangle$, dan $\\mathbf{c} = \\langle 3,-3\\rangle$. Seorang siswa menghitung $2\\mathbf{a} - \\mathbf{b} + \\mathbf{c}$ sebagai berikut.\n\nLangkah 1: $2\\mathbf{a} = \\langle 8,-2\\rangle$.\nLangkah 2: $-\\mathbf{b} = \\langle 2,-5\\rangle$.\nLangkah 3: komponen pertama $= 8 + 2 + 3 = 13$.\nLangkah 4: komponen kedua $= -2 + (-5) + 3 = -4$.\n\nHasil siswa: $\\langle 13,-4\\rangle$. Kesalahan pertama terjadi pada ....",
-   "jawaban_benar": "Langkah 4: komponen kedua $\\mathbf{c}$ adalah $-3$, bukan $+3$",
-   "alasan_benar": "komponen kedua benar -2-5-3 = -10, hasil yang benar (13,-10)",
-   "distraktor": [
-    {
-     "teks": "Langkah 1: $2\\mathbf{a}$ seharusnya $\\langle 8,-1\\rangle$",
-     "alasan": "keliru: 2a = (8,-2) sudah benar"
-    },
-    {
-     "teks": "Langkah 2: $-\\mathbf{b}$ seharusnya $\\langle -2,5\\rangle$",
-     "alasan": "keliru: -b = (2,-5) sudah benar, lawan dari b"
-    },
-    {
-     "teks": "Langkah 3: komponen pertama seharusnya $8 - 2 + 3 = 9$",
-     "alasan": "keliru: -b memberi +2 sehingga 8+2+3 = 13 sudah benar"
-    }
-   ],
-   "pembahasan": "$2\\mathbf{a}=\\langle 8,-2\\rangle$ dan $-\\mathbf{b}=\\langle 2,-5\\rangle$ benar, komponen pertama $8+2+3=13$ benar. Komponen kedua seharusnya $-2-5+(-3)=-10$, sehingga hasil benar $\\langle 13,-10\\rangle$.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 182,
-    "kutipan": "Secara umum, penjumlahan dua vektor dilakukan dengan menjumlahkan setiap komponennya."
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-005",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "membandingkan dua cara menentukan waktu menyeberang",
-   "alasan_level": "menilai dua penalaran (memakai kecepatan resultan vs komponen tegak lurus) lalu menghitung hanyutan; setara medium atas",
-   "stimulus": null,
-   "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai dengan kecepatan 4 m/s menyeberangi sungai selebar 120 m. Arus sungai 3 m/s sejajar tepi. Dina menghitung waktu menyeberang dengan $120 \\div 5$ karena kecepatan resultan perahu 5 m/s. Eka menghitung dengan $120 \\div 4$. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 90 m sepanjang tepi",
-   "alasan_benar": "lebar sungai ditempuh oleh komponen tegak lurus 4 m/s: t = 120/4 = 30 s; hanyut = 3 x 30 = 90 m",
-   "distraktor": [
-    {
-     "teks": "Dina benar: waktu menyeberang 24 detik dan perahu terhanyut 72 m sepanjang tepi",
-     "alasan": "memakai kecepatan resultan untuk jarak tegak lurus tepi, padahal lebar sungai dilalui komponen 4 m/s"
-    },
-    {
-     "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 120 m sepanjang tepi",
-     "alasan": "waktu benar tetapi hanyutan disamakan dengan lebar sungai"
-    },
-    {
-     "teks": "Eka benar: waktu menyeberang 30 detik dan perahu terhanyut 150 m sepanjang tepi",
-     "alasan": "hanyutan dihitung dengan kecepatan resultan 5 x 30, padahal itu panjang lintasan"
-    }
-   ],
-   "pembahasan": "Jarak tegak lurus tepi (120 m) hanya dilalui komponen kecepatan perahu 4 m/s, jadi $t=120/4=30$ s. Selama itu arus menggeser $3\\cdot 30=90$ m. Resultan $\\langle 3,4\\rangle$ berbesar 5 m/s menempuh lintasan miring $5\\cdot 30=150$ m, bukan hanyutan.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 181,
-    "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-006",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 3,
-   "jenis_soal": "contoh penyangkal klaim panjang kelipatan skalar",
-   "alasan_level": "mengevaluasi klaim umum dengan menguji tiap pasangan skalar-vektor untuk contoh penyangkal",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa menyimpulkan bahwa $\\|c\\mathbf{v}\\| = c\\,\\|\\mathbf{v}\\|$ berlaku untuk setiap skalar $c$ dan vektor $\\mathbf{v}$. Contoh penyangkal klaim tersebut adalah ....",
-   "jawaban_benar": "$c = -3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
-   "alasan_benar": "||cv|| = 39 sedangkan c||v|| = -3 x 13 = -39, tidak sama",
-   "distraktor": [
-    {
-     "teks": "$c = 3$ dan $\\mathbf{v} = \\langle 5, -12\\rangle$",
-     "alasan": "keduanya bernilai 39 sehingga klaim terpenuhi, bukan penyangkal"
-    },
-    {
-     "teks": "$c = 0$ dan $\\mathbf{v} = \\langle 5, 12\\rangle$",
-     "alasan": "keduanya bernilai 0 sehingga klaim terpenuhi"
-    },
-    {
-     "teks": "$c = 2$ dan $\\mathbf{v} = \\langle -6, 8\\rangle$",
-     "alasan": "keduanya bernilai 20 sehingga klaim terpenuhi; tanda komponen vektor bukan penyebab klaim gagal"
-    }
-   ],
-   "pembahasan": "Yang benar $\\|c\\mathbf{v}\\|=|c|\\,\\|\\mathbf{v}\\|$. Klaim hanya gagal bila $c<0$: $c=-3$, $\\mathbf{v}=\\langle 5,-12\\rangle$ memberi $\\|c\\mathbf{v}\\|=\\|\\langle -15,36\\rangle\\|=39$, sedangkan $c\\|\\mathbf{v}\\|=-39$.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 187,
-    "kutipan": "Untuk lebih memahami penggunaan sifat-sifat tersebut, perhatikan contoh berikut!"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-007",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "menilai kemungkinan panjang jumlah dua vektor",
-   "alasan_level": "menalar batas panjang jumlah dua vektor dari susunan pangkal-ujung dan menilai tiap kandidat",
-   "stimulus": null,
-   "pertanyaan": "Vektor $\\mathbf{u}$ berpanjang 5 dan vektor $\\mathbf{v}$ berpanjang 12, arah keduanya tidak diketahui. Nilai $\\|\\mathbf{u}+\\mathbf{v}\\|$ yang TIDAK mungkin terjadi adalah ....",
-   "jawaban_benar": "$18$",
-   "alasan_benar": "panjang jumlah paling besar 5+12 = 17 (searah) dan paling kecil 12-5 = 7 (berlawanan)",
-   "distraktor": [
-    {
-     "teks": "$8$",
-     "alasan": "mungkin: berada di antara 7 dan 17 (sudut tertentu antara u dan v)"
-    },
-    {
-     "teks": "$13$",
-     "alasan": "mungkin: terjadi bila u dan v saling tegak lurus (akar 25+144)"
-    },
-    {
-     "teks": "$16$",
-     "alasan": "mungkin: berada di antara 7 dan 17"
-    }
-   ],
-   "pembahasan": "Menyambung pangkal $\\mathbf{v}$ pada ujung $\\mathbf{u}$, panjang jumlah berkisar dari $12-5=7$ (berlawanan arah) sampai $5+12=17$ (searah). Jadi $8$, $13$, $16$ mungkin, sedangkan $18>17$ tidak mungkin.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 184,
-    "kutipan": "pangkal sebuah vektor berimpit dengan titik ujung vektor lainnya, seperti yang ditunjukkan pada Gambar 4.11"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-008",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "membandingkan jumlah panjang dan panjang jumlah perpindahan",
-   "alasan_level": "menilai dua cara hitung jarak dan menafsirkan arti masing-masing angka",
-   "stimulus": null,
-   "pertanyaan": "Seorang pelari bergerak dua tahap dengan perpindahan $\\langle 12, 5\\rangle$ m lalu $\\langle -12, 16\\rangle$ m. Andi menghitung jarak pelari dari titik awal dengan menjumlahkan panjang kedua perpindahan, sedangkan Budi menjumlahkan vektornya dulu lalu mencari panjangnya. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah panjang lintasan yang ditempuh",
-   "alasan_benar": "p1+p2 = (0,21) panjang 21; 13 + 20 = 33 adalah total jarak tempuh",
-   "distraktor": [
-    {
-     "teks": "Andi benar: jarak lurus dari titik awal 33 m, sedangkan 21 m adalah panjang lintasan yang ditempuh",
-     "alasan": "menukar arti jarak lurus (perpindahan) dengan jarak tempuh"
-    },
-    {
-     "teks": "Budi benar: jarak lurus dari titik awal 21 m, sedangkan 33 m adalah selisih panjang kedua perpindahan",
-     "alasan": "angka 33 bukan selisih; selisihnya 7, 33 adalah jumlah panjang"
-    },
-    {
-     "teks": "Keduanya benar karena jumlah panjang vektor selalu sama dengan panjang jumlah vektor",
-     "alasan": "mengira ||p1+p2|| = ||p1|| + ||p2|| selalu berlaku"
-    }
-   ],
-   "pembahasan": "Perpindahan total $\\langle 0,21\\rangle$ sehingga jarak lurus dari titik awal $=21$ m (cara Budi). Jumlah panjang $13+20=33$ m adalah panjang lintasan yang ditempuh, lebih besar karena kedua perpindahan tidak searah.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 180,
-    "kutipan": "Gerakan tersebut dapat digambarkan menjadi 9 ruas garis berarah."
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-009",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "menilai pernyataan hubungan dua vektor",
-   "alasan_level": "menguji setiap pernyataan tentang arah dan panjang terhadap hasil b = kelipatan skalar a",
-   "stimulus": null,
-   "pertanyaan": "Diketahui $\\mathbf{a} = \\langle 4, -10\\rangle$ dan $\\mathbf{b} = \\langle -6, 15\\rangle$. Pernyataan yang benar mengenai kedua vektor tersebut adalah ....",
-   "jawaban_benar": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
-   "alasan_benar": "b = -3/2 a: skalar negatif membalik arah, panjang |-3/2| x ||a||",
-   "distraktor": [
-    {
-     "teks": "$\\mathbf{b}$ searah dengan $\\mathbf{a}$ dan panjangnya $\\frac{3}{2}$ kali panjang $\\mathbf{a}$",
-     "alasan": "mengabaikan tanda negatif skalar sehingga arah dikira sama"
-    },
-    {
-     "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{9}{4}$ kali panjang $\\mathbf{a}$",
-     "alasan": "kuadrat skalar dipakai sebagai faktor panjang"
-    },
-    {
-     "teks": "$\\mathbf{b}$ berlawanan arah dengan $\\mathbf{a}$ dan panjangnya $\\frac{2}{3}$ kali panjang $\\mathbf{a}$",
-     "alasan": "perbandingan terbalik: a dibagi b"
-    }
-   ],
-   "pembahasan": "$\\mathbf{b}=-\\frac32\\mathbf{a}$ karena $-\\frac32\\cdot4=-6$ dan $-\\frac32\\cdot(-10)=15$. Skalar negatif membalik arah dan $\\|\\mathbf{b}\\|=\\frac32\\|\\mathbf{a}\\|$.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 184,
-    "kutipan": "sedangkan jika c negatif, arahnya berlawanan dengan v"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-010",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 4,
-   "jenis_soal": "merancang kecepatan perahu dan arus memenuhi dua syarat",
-   "alasan_level": "memeriksa tiap rancangan terhadap dua syarat sekaligus (besar resultan dan perahu lebih cepat dari arus)",
-   "stimulus": null,
-   "pertanyaan": "Sebuah perahu diarahkan tegak lurus tepi sungai. Kecepatan perahu (terhadap air) dan kecepatan arus sejajar tepi dipilih bilangan bulat dalam m/s, dengan arus tidak nol. Rancangan yang menghasilkan kecepatan resultan tepat 13 m/s dan perahu lebih cepat daripada arus adalah kecepatan perahu dan arus berturut-turut ....",
-   "jawaban_benar": "$12$ m/s dan $5$ m/s",
-   "alasan_benar": "12^2 + 5^2 = 169 = 13^2 dan 12 > 5",
-   "distraktor": [
-    {
-     "teks": "$5$ m/s dan $12$ m/s",
-     "alasan": "resultan 13 terpenuhi tetapi perahu lebih lambat daripada arus"
-    },
-    {
-     "teks": "$9$ m/s dan $4$ m/s",
-     "alasan": "perahu lebih cepat tetapi resultan akar 97, bukan 13"
-    },
-    {
-     "teks": "$13$ m/s dan $0$ m/s",
-     "alasan": "resultan 13 terpenuhi tetapi arus nol, melanggar syarat arus tidak nol"
-    }
-   ],
-   "pembahasan": "Resultan $\\langle v_a,v_p\\rangle$ berbesar $\\sqrt{v_a^2+v_p^2}=13$. Pasangan bulat positif: $(5,12)$ atau $(12,5)$; syarat perahu lebih cepat dari arus memilih perahu $12$, arus $5$. $(9,4)$ memberi $\\sqrt{97}$; $(13,0)$ ditolak karena arus nol.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 181,
-    "kutipan": "Misalkan kamu akan menyeberangi sebuah sungai dengan kecepatan arus 1 m/s."
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-011",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 3,
-   "jenis_soal": "contoh penyangkal klaim vektor berpanjang sama",
-   "alasan_level": "mengevaluasi klaim dengan memeriksa tiap pasangan terhadap dua kriteria (panjang dan arah)",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa menyimpulkan bahwa dua vektor yang berpanjang sama pasti ekuivalen. Contoh penyangkal yang tepat adalah $\\mathbf{v} = \\langle 5, -12\\rangle$ dan ....",
-   "jawaban_benar": "$\\mathbf{w} = \\langle 12, 5\\rangle$",
-   "alasan_benar": "||w|| = 13 = ||v|| tetapi komponennya berbeda sehingga arahnya berbeda: tidak ekuivalen",
-   "distraktor": [
-    {
-     "teks": "$\\mathbf{w} = \\langle 5, -12\\rangle$ yang digambar dari titik pangkal lain",
-     "alasan": "panjang dan arahnya sama sehingga ekuivalen, bukan penyangkal"
-    },
-    {
-     "teks": "$\\mathbf{w} = \\langle 10, -24\\rangle$",
-     "alasan": "arah sama tetapi panjangnya 26, bukan 13; panjang tidak sama"
-    },
-    {
-     "teks": "$\\mathbf{w} = \\langle 6, -13\\rangle$",
-     "alasan": "panjangnya akar 205, bukan 13; panjang tidak sama"
-    }
-   ],
-   "pembahasan": "Ekuivalen menuntut panjang DAN arah sama (komponen sama). $\\|\\langle 12,5\\rangle\\|=13=\\|\\mathbf{v}\\|$ tetapi $\\langle 12,5\\rangle\\ne\\langle 5,-12\\rangle$. Pilihan lain: komponen sama (ekuivalen), atau panjang berbeda ($26$ dan $\\sqrt{205}$).",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 178,
-    "kutipan": "Karena PQ dan RS memiliki panjang dan arah sama, kita dapat menyimpulkan bahwa kedua vektor ini ekuivalen"
-   }
-  },
-  {
-   "id": "kelas11_tl-b04-a-hard-bt01-012",
-   "tipe_generate": "orisinal",
-   "cognitive_c": "C5",
-   "jumlah_langkah": 3,
-   "jenis_soal": "penyangkal klaim ciri vektor satuan",
-   "alasan_level": "menguji tiap kandidat terhadap premis klaim (jumlah nilai mutlak 1) dan kesimpulannya (panjang 1)",
-   "stimulus": null,
-   "pertanyaan": "Seorang siswa menyimpulkan bahwa vektor $\\langle p, q\\rangle$ yang memenuhi $|p| + |q| = 1$ pasti merupakan vektor satuan. Contoh penyangkal klaim tersebut adalah ....",
-   "jawaban_benar": "$\\left\\langle \\frac{1}{2}, \\frac{1}{2}\\right\\rangle$",
-   "alasan_benar": "|1/2|+|1/2| = 1 tetapi panjangnya akar(1/4+1/4) = akar(1/2), bukan 1",
-   "distraktor": [
-    {
-     "teks": "$\\left\\langle \\frac{3}{5}, \\frac{4}{5}\\right\\rangle$",
-     "alasan": "vektor satuan, tetapi |p|+|q| = 7/5 sehingga premis tidak terpenuhi"
-    },
-    {
-     "teks": "$\\langle 0, -1\\rangle$",
-     "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
-    },
-    {
-     "teks": "$\\langle 1, 0\\rangle$",
-     "alasan": "|p|+|q| = 1 dan panjangnya 1, sehingga klaim terpenuhi"
-    }
-   ],
-   "pembahasan": "Vektor satuan bila $p^2+q^2=1$, bukan $|p|+|q|=1$. $\\langle\\frac12,\\frac12\\rangle$ memenuhi premis tetapi panjangnya $\\sqrt{1/2}\\ne1$. $\\langle\\frac35,\\frac45\\rangle$ satuan namun premisnya gagal; $\\langle 0,-1\\rangle$ dan $\\langle 1,0\\rangle$ memenuhi premis dan satuan.",
-   "catatan": null,
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 190,
-    "kutipan": "Kedua vektor ini disebut vektor satuan baku yang dapat digunakan untuk menuliskan sembarang vektor lainnya."
-   }
-  }
- ]
+  ]
 }

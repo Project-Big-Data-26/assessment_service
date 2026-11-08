@@ -1,0 +1,1 @@
+Catatan pending pada JSON aset dipertahankan sebagai status awal renderer. Hasil pemeriksaan lokal terkini ada pada assets_validation_results.json dan codex_local_review.json. Tidak ada klaim validasi gambar AI independen.

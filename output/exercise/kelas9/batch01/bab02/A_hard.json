@@ -639,6 +639,2071 @@
       "pembahasan": "Langkah 1: Menentukan hubungan antarunsur pada bangun ruang Platonic:\n- Setiap sisi adalah segitiga, maka $2R = 3S \\implies R = \\frac{3S}{2}$.\n- Setiap titik sudut mempertemukan 4 rusuk, maka $2R = 4T \\implies T = \\frac{R}{2} = \\frac{3S}{4}$.\n\nLangkah 2: Menghitung banyak sisi, rusuk, dan titik sudut menggunakan rumus Euler $S + T - R = 2$:\n$$S + \\frac{3S}{4} - \\frac{3S}{2} = 2$$\n$$\\frac{4S + 3S - 6S}{4} = 2$$\n$$\\frac{S}{4} = 2 \\implies S = 8$$\nBanyak rusuk $R = \\frac{3(8)}{2} = 12$ dan titik sudut $T = 6$ (bangun tersebut adalah oktahedron beraturan).\n\nLangkah 3: Menentukan banyak rusuk sambungan/lipatan yang dipertahankan:\nAgar $S = 8$ sisi tetap saling terhubung menjadi satu pola jaring-jaring tanpa terpisah dan tanpa lingkaran tertutup, banyak rusuk lipatan yang dipertahankan tepat sebanyak $S - 1 = 8 - 1 = 7$ rusuk.\n\nLangkah 4: Menghitung banyak rusuk yang harus digunting:\n$$\\text{Banyak rusuk digunting} = R - (S - 1) = 12 - 7 = 5\\text{ rusuk}.$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a7c3e067f252a076180ce0",
+        "teks": "Sebuah kemasan berbentuk balok memiliki ukuran panjang $8\\text{ cm}$, lebar $5\\text{ cm}$, dan tinggi $3\\text{ cm}$. Kardus tersebut digunting sepanjang beberapa rusuknya hingga membentang rata menjadi jaring-jaring berbentuk salib pada bidang datar. Pola jaring-jaring tersebut terdiri dari empat bidang berurutan secara vertikal (sisi alas $8\\text{ cm} \\times 5\\text{ cm}$, sisi depan $8\\text{ cm} \\times 3\\text{ cm}$, sisi atas $8\\text{ cm} \\times 5\\text{ cm}$, dan sisi belakang $8\\text{ cm} \\times 3\\text{ cm}$) serta dua bidang sisi samping ($5\\text{ cm} \\times 3\\text{ cm}$) yang masing-masing menempel di sisi kiri dan kanan sisi alas sepanjang rusuk $5\\text{ cm}$. Keliling terluar dari bentangan jaring-jaring balok tersebut adalah ....",
+        "jawaban": "$60\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-6. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9745993c2e4daabb1fc216c",
+        "teks": "Sebuah jaring-jaring tabung tanpa tutup terdiri atas satu persegi panjang sebagai selimut dan satu lingkaran sebagai alas. Luas persegi panjang tersebut adalah $440\\text{ cm}^2$ dan memiliki lebar (tinggi tabung) $10\\text{ cm}$. Jika tabung tersebut diubah menjadi tabung tertutup dengan jari-jari alas baru dua kali jari-jari semula dan tinggi tabung baru setengah dari tinggi semula, maka luas total seluruh jaring-jaring tabung yang baru adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$1.672\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f69cceadf48934c6b9b192de",
+        "teks": "Sebuah bangun ruang polihedron memiliki banyak rusuk ($R$) tiga kali lipat dari banyak sisinya ($S$), sehingga $R = 3S$. Jika banyak titik sudutnya adalah $26$, banyak sisi ($S$) dari bangun ruang tersebut adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "95490d7821fb111604b2ad46",
+        "teks": "Sebuah jaring-jaring prisma tegak memiliki dua sisi alas kongruen berbentuk trapesium sama kaki dan empat sisi tegak berbentuk persegi panjang. Pada trapesium alas, panjang sisi-sisi sejajarnya berturut-turut adalah $10\\text{ cm}$ dan $22\\text{ cm}$, serta jarak antara kedua sisi sejajar tersebut adalah $8\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, maka luas total seluruh bidang datar pada jaring-jaring prisma tersebut adalah ....",
+        "jawaban": "$1.036\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 154 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=154, sehingga n=14 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=154, sehingga n=14 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=56.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2defbab2007db1c7b7c8360c",
+        "teks": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 130 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=130, sehingga n=13 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=52.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=130, sehingga n=13 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d18c4ff16c50959e398ab74e",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki kongruen sebagai sisi tegak. Bangun ruang yang terbentuk dari rangkaian jaring-jaring tersebut adalah ....",
+        "jawaban": "limas segi empat",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 88 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=88, sehingga n=11 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=44.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=88, sehingga n=11 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=44.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e66d5f78387daa2e87158084",
+        "teks": "Sebuah bangun ruang polihedron memiliki $18$ buah rusuk ($R = 18$). Diketahui perbandingan banyak sisi ($S$) dan banyak titik sudut ($T$) pada polihedron tersebut memenuhi $S : T = 2 : 3$. Banyak sisi ($S$) pada bangun polihedron tersebut adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 18 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=18, sehingga n=6 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=18, sehingga n=6 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "778b6599f591bbfd71a12c18",
+        "teks": "Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 208 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=208, sehingga n=16 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=64.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=208, sehingga n=16 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=64.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dcb104b4f40b13d56b631eb1",
+        "teks": "Sebuah jaring-jaring prisma tegak segitiga siku-siku terdiri atas dua buah segitiga siku-siku kongruen (panjang sisi siku-sikunya $6\\text{ cm}$ dan $8\\text{ cm}$) serta tiga buah persegi panjang sebagai sisi tegak. Jika luas total hamparan jaring-jaring tersebut adalah $384\\text{ cm}^2$, berapakah tinggi prisma yang akan terbentuk?",
+        "jawaban": "$14\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 70 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=70, sehingga n=10 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=70, sehingga n=10 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6dfb28aff9439e6641ca6601",
+        "teks": "Sebuah tabung tertutup memiliki jari-jari alas $14\\text{ cm}$ dan tinggi $10\\text{ cm}$. Jika tabung tersebut dibelah sepanjang rusuk lengkung dan salah satu garis tingginya sehingga membentuk jaring-jaring datar, berapa keliling dari bidang persegi panjang yang membentuk selimut tabung tersebut? (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$196\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 108 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=108, sehingga n=12 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=48.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=108, sehingga n=12 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=48.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0bbd5b12f8d4e39ba10fe9",
+        "teks": "Sebuah wadah kaleng tanpa tutup berbentuk tabung memiliki diameter alas $14\\text{ cm}$ dan tinggi $15\\text{ cm}$. Jika kaleng tersebut dibuka dan direbahkan menjadi jaring-jaring pada bidang datar, luas total jaring-jaring wadah kaleng tersebut adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$814\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 180 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=180, sehingga n=15 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=180, sehingga n=15 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5fd90735532ec90d0faa45c",
+        "teks": "Kelompok bangun ruang berikut yang seluruh anggotanya merupakan bangun ruang sisi lengkung adalah ....",
+        "jawaban": "tabung, kerucut, dan bola",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 28 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=28, sehingga n=7 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=28.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=28, sehingga n=7 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2defbab2007db1c7b7c8360c",
+        "teks": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 54 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=54, sehingga n=9 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=54, sehingga n=9 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d18c4ff16c50959e398ab74e",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki kongruen sebagai sisi tegak. Bangun ruang yang terbentuk dari rangkaian jaring-jaring tersebut adalah ....",
+        "jawaban": "limas segi empat",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 40 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=40, sehingga n=8 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=40, sehingga n=8 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf258cd2808361870bb9ea73",
+        "teks": "Bangun ruang yang seluruh permukaannya dibatasi oleh poligon (bidang banyak) disebut ....",
+        "jawaban": "polihedron",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 10 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=10, sehingga n=5 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=10, sehingga n=5 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2d78a1e4b393088e3c968e4",
+        "teks": "Gabungan dari beberapa bangun datar yang dapat dilipat dan disusun sedemikian rupa sehingga membentuk suatu bangun ruang tiga dimensi dinamakan ....",
+        "jawaban": "jaring-jaring",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 1 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 49. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$112$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $112$.",
+      "distraktor": [
+        {
+          "teks": "$113$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $112$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "125bd84fffa37f84039d106c",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas dua daerah lingkaran yang kongruen serta sebuah daerah persegi panjang. Bangun ruang yang dibentuk dari jaring-jaring tersebut adalah ....",
+        "jawaban": "tabung",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 116. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$252$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $252$.",
+      "distraktor": [
+        {
+          "teks": "$253$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$254$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $252$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a4ca144587280ad93c1adac",
+        "teks": "Benda kemasan kaleng biskuit memiliki alas dan tutup berbentuk lingkaran yang berukuran sama serta sisi lengkung tegak. Kemasan tersebut termasuk ke dalam kelompok bangun ruang ....",
+        "jawaban": "tabung",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 138. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$308$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $308$.",
+      "distraktor": [
+        {
+          "teks": "$309$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$310$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $308$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf258cd2808361870bb9ea73",
+        "teks": "Bangun ruang yang seluruh permukaannya dibatasi oleh poligon (bidang banyak) disebut ....",
+        "jawaban": "polihedron",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 7 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 81. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $156$.",
+      "distraktor": [
+        {
+          "teks": "$157$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$155$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$158$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $156$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "abb203a67f18994c386df5dc",
+        "teks": "Suatu polihedron memiliki $6$ sisi dan $8$ titik sudut. Berdasarkan rumus polihedron Euler $S + T - R = 2$, banyak rusuk ($R$) pada polihedron tersebut adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 6 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 134. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$288$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $288$.",
+      "distraktor": [
+        {
+          "teks": "$289$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$287$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$290$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $288$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3aa97a4f3b4d4796333366b3",
+        "teks": "Bangun ruang yang semua sisinya dibatasi oleh poligon beraturan yang sama persis dinamakan ....",
+        "jawaban": "bangun ruang Platonic",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 3 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 140. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$330$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $330$.",
+      "distraktor": [
+        {
+          "teks": "$331$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$329$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$332$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $330$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f4d9897f530791df728e08c0",
+        "teks": "Sebuah polihedron memiliki $5$ sisi dan $8$ rusuk. Berdasarkan rumus polihedron Euler $S + T - R = 2$, banyak titik sudut ($T$) pada bangun tersebut adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 98. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$224$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $224$.",
+      "distraktor": [
+        {
+          "teks": "$225$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$223$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$226$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $224$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d18c4ff16c50959e398ab74e",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki kongruen sebagai sisi tegak. Bangun ruang yang terbentuk dari rangkaian jaring-jaring tersebut adalah ....",
+        "jawaban": "limas segi empat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai 6 prisma dan 6 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut $T_1$. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$270$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $270$.",
+      "distraktor": [
+        {
+          "teks": "$271$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$269$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$272$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $270$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/6710d815a38661f750e78e74.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              126
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 126]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0ad964b8d0c3d9f9291153f",
+        "teks": "Pada rumus polihedron Euler $S + T - R = 2$, variabel $R$ menyatakan ....",
+        "jawaban": "banyak rusuk bangun ruang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 78. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $168$.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $168$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cf1a9978dac9b11b214b74bc",
+        "teks": "Sebuah jaring-jaring bangun ruang tersusun atas dua daerah segitiga yang kongruen dan tiga daerah persegi panjang. Bangun ruang yang dihasilkan dari jaring-jaring tersebut adalah ....",
+        "jawaban": "prisma segitiga",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 6 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 84. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $168$.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $168$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f034bcb66941b605328cf002",
+        "teks": "Benda-benda di sekitar kita seperti caping petani dan corong minyak menyerupai bentuk bangun ruang ....",
+        "jawaban": "kerucut",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 3 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 107. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$243$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $243$.",
+      "distraktor": [
+        {
+          "teks": "$244$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $243$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d97efcf2f778cd7c625123f",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas sebuah daerah lingkaran dan sebuah daerah juring lingkaran. Bangun ruang yang dapat dibentuk dari jaring-jaring tersebut adalah ....",
+        "jawaban": "kerucut",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 4 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 68. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$128$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $128$.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$127$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$130$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $128$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5fd90735532ec90d0faa45c",
+        "teks": "Kelompok bangun ruang berikut yang seluruh anggotanya merupakan bangun ruang sisi lengkung adalah ....",
+        "jawaban": "tabung, kerucut, dan bola",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 3 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 77. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$162$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $162$.",
+      "distraktor": [
+        {
+          "teks": "$163$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$161$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$164$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $162$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "75a51439abbf0e00d22e3af2",
+        "teks": "Suatu polihedron memiliki $7$ sisi dan $10$ titik sudut. Berdasarkan rumus polihedron Euler $S + T - R = 2$, banyak rusuk ($R$) pada polihedron tersebut adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai 5 prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut $T_1$. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$275$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $275$.",
+      "distraktor": [
+        {
+          "teks": "$276$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$274$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$277$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $275$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/0608b9aec5f8ed89e439d6d5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              125
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 125]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aa1b09b18eaf7846e6bfd4a1",
+        "teks": "Bola merupakan bangun ruang yang tidak dapat dibentuk dari jaring-jaring bidang datar sempurna karena ....",
+        "jawaban": "seluruh permukaannya berupa bidang lengkung",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai 2 prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut $T_1$. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $100$.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $100$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/934cdcd39957735e419c72c6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              46
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 46]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94e57cad51342d7bf94f5f07",
+        "teks": "Empat siswa mendiskusikan kemungkinan pembuatan jaring-jaring bidang datar untuk bola sempurna berdiameter $10\\text{ cm}$. Berikut argumen mereka:\n\n- Andi: Bola dapat dibuat jaring-jaring datarnya persis tanpa distorsi menggunakan gabungan beberapa juring lingkaran sempurna.\n- Budi: Jaring-jaring bola bidang datar sempurna secara matematis tidak dapat dibuat karena kelengkungan permukaan bola berdimensi ganda (kurvatur positif) yang akan robek atau bertumpuk jika dipaksa datar.\n- Citra: Jaring-jaring bola selalu dapat dibuat datar sempurna asalkan bola dipotong menjadi minimal 6 bagian persegi panjang identik.\n- Dedi: Bola sama seperti tabung, sehingga jika dibelah satu rusuk lengkungnya akan langsung terbentang menjadi satu daerah persegi panjang utuh.\n\nArgumen yang paling tepat secara geometris adalah ....",
+        "jawaban": "Budi",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 124. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$300$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $300$.",
+      "distraktor": [
+        {
+          "teks": "$301$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$299$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$302$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $300$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e010bb505ed90e4abc0267a",
+        "teks": "Sebuah jaring-jaring kubus dibentangkan pada bidang koordinat petak persegi sebagai berikut:\n- Kotak P berada di baris 1, kolom 2\n- Kotak Q berada di baris 2, kolom 1\n- Kotak R berada di baris 2, kolom 2\n- Kotak S berada di baris 2, kolom 3\n- Kotak T berada di baris 2, kolom 4\n- Kotak U berada di baris 3, kolom 2\n\nBerdasarkan stimulus letak petak jaring-jaring kubus tersebut, jika kotak R dijadikan sebagai sisi alas kubus, maka pasangan sisi yang saling berhadapan sejajar secara tepat adalah ....",
+        "jawaban": "P berhadapan dengan U, Q berhadapan dengan S, dan R berhadapan dengan T",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 103. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$220$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $220$.",
+      "distraktor": [
+        {
+          "teks": "$221$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$219$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$222$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $220$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c722c9c67220e3710f20f5e",
+        "teks": "Empat orang siswa mengemukakan syarat agar suatu rangkaian bidang datar dapat disebut sebagai jaring-jaring bangun ruang tertutup:\n- Arya: Rangkaian bidang datar harus memiliki luas total yang sama dengan luas permukaan bangun ruang, tanpa memedulikan susunan sisinya.\n- Bima: Rangkaian bidang datar harus terdiri atas bangun-bangun datar pembentuk bangun ruang tersebut yang saling terhubung pada rusuknya dan bila dilipat tepat menutup seluruh bangun ruang tanpa ada bagian yang tumpang tindih atau berlubang.\n- Citra: Setiap bangun datar penyusun jaring-jaring harus memiliki bentuk dan ukuran yang sepenuhnya kongruen satu sama lain.\n- Dedi: Jumlah rusuk batas luar pada bentangan bidang datar harus tepat sama dengan dua kali banyak rusuk pada bangun ruang tiga dimensinya.\n\nBerdasarkan definisi matematis jaring-jaring bangun ruang, pernyataan siswa manakah yang tepat?",
+        "jawaban": "Bima",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 1 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 41. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$85$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $85$.",
+      "distraktor": [
+        {
+          "teks": "$86$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $85$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a14afd636934b771e6fbdda0",
+        "teks": "Bola merupakan bangun ruang sisi lengkung yang tidak dapat dibentangkan menjadi jaring-jaring datar sempurna tanpa adanya distorsi (robekan, kerutan, atau regangan). Alasan matematis paling mendasar yang menjelaskan fenomena tersebut adalah ....",
+        "jawaban": "permukaan bola memiliki kelengkungan ganda (kelengkungan Gauss positif) di setiap titiknya sehingga tidak dapat dihamparkan rata ke bidang datar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 138. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$306$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $306$.",
+      "distraktor": [
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$305$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$308$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $306$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7648ac12e4045e0dfa09ee59",
+        "teks": "Sebuah tim desainer kemasan menguji kriteria teknis agar suatu pola lembaran karton datar dapat dinyatakan sah sebagai jaring-jaring sebuah bangun ruang tertutup. Evaluasilah pernyataan berikut dan tentukan mana kriteria yang paling tepat dan esensial secara matematis!",
+        "jawaban": "Pola harus merupakan satu kesatuan bidang datar yang terhubung pada rusuk-rusuknya serta dapat dilipat tepat menutupi seluruh ruang tanpa ada bagian yang saling tumpang tindih atau berlubang.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Sebuah kelompok mempunyai $T_1$ prisma dan 1 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 39. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $84$.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $84$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-050",
+      "gambar": [
+        "exercise_assets/kelas9/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "60d20096514abf630233badb",
+        "teks": "Sebuah bangun ruang Platonic tersusun dari sejumlah bidang sisi ($S$) yang semuanya berupa segi lima beraturan yang kongruen. Diketahui pada setiap titik sudut bangun tersebut bertemu tepat $3$ buah rusuk. Berdasarkan rumus polihedron Euler $S + T - R = 2$, berapakah banyak titik sudut ($T$) pada bangun ruang Platonic tersebut?",
+        "jawaban": "20",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 7 prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 43. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$75$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $75$.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $75$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8a8b6f54ef4470b669f4b66f",
+        "teks": "Sebuah kerucut memiliki jari-jari lingkaran alas $r$ dan panjang garis pelukis $s$. Ketika kerucut dibuka menjadi jaring-jaring pada bidang datar, selimutnya membentuk juring lingkaran dengan sudut pusat $\\theta$. Jika diinginkan selimut kerucut tersebut membentuk tepat setengah lingkaran (sudut pusat juring $\\theta = 180^\\circ$), rasio antara jari-jari alas ($r$) dan garis pelukis ($s$) yang harus dipenuhi adalah ....",
+        "jawaban": "$1 : 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 5 prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 82. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$190$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $190$.",
+      "distraktor": [
+        {
+          "teks": "$191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$189$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $190$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dcb104b4f40b13d56b631eb1",
+        "teks": "Sebuah jaring-jaring prisma tegak segitiga siku-siku terdiri atas dua buah segitiga siku-siku kongruen (panjang sisi siku-sikunya $6\\text{ cm}$ dan $8\\text{ cm}$) serta tiga buah persegi panjang sebagai sisi tegak. Jika luas total hamparan jaring-jaring tersebut adalah $384\\text{ cm}^2$, berapakah tinggi prisma yang akan terbentuk?",
+        "jawaban": "$14\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 4 prisma dan 4 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 52. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $100$.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $100$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1c199e8f9bc1762064838798",
+        "teks": "Sebuah limas segi-$n$ dan sebuah prisma segi-$m$ memiliki selisih banyak rusuk sebesar $4$ buah, dengan rusuk prisma lebih banyak. Jika jumlah seluruh titik sudut dari kedua bangun ruang tersebut adalah $20$ buah, maka jumlah seluruh bidang sisi dari kedua bangun ruang tersebut adalah ....",
+        "jawaban": "16",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 2 prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 30. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9745993c2e4daabb1fc216c",
+        "teks": "Sebuah jaring-jaring tabung tanpa tutup terdiri atas satu persegi panjang sebagai selimut dan satu lingkaran sebagai alas. Luas persegi panjang tersebut adalah $440\\text{ cm}^2$ dan memiliki lebar (tinggi tabung) $10\\text{ cm}$. Jika tabung tersebut diubah menjadi tabung tertutup dengan jari-jari alas baru dua kali jari-jari semula dan tinggi tabung baru setengah dari tinggi semula, maka luas total seluruh jaring-jaring tabung yang baru adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$1.672\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 2 prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 30. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $48$.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $48$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f85f0142d7bd0be8c0e038e5",
+        "teks": "Dua buah bangun ruang polihedron cembung, yaitu $P_1$ dan $P_2$, masing-masing memenuhi rumus polihedron Euler $S + T - R = 2$. Pada polihedron $P_1$, banyak rusuknya sama dengan dua kali banyak sisinya ($R_1 = 2S_1$) dan memiliki $10$ titik sudut ($T_1 = 10$). Polihedron $P_2$ memiliki banyak rusuk yang sama dengan polihedron $P_1$ ($R_2 = R_1$), serta banyak titik sudutnya sama dengan dua kali banyak sisinya ($T_2 = 2S_2$). Jumlah seluruh bidang sisi dari kedua bangun ruang tersebut ($S_1 + S_2$) adalah ....",
+        "jawaban": "14",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 6 prisma dan 2 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 86. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$198$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $198$.",
+      "distraktor": [
+        {
+          "teks": "$199$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$197$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$200$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $198$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cf9df0ab9f6227d002109915",
+        "teks": "Sebuah jaring-jaring limas tegak beraturan tersusun dari satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki yang kongruen sebagai sisi tegak. Luas daerah alas persegi pada jaring-jaring tersebut adalah $144\\text{ cm}^2$. Jika tinggi masing-masing segitiga sisi tegak pada jaring-jaring tersebut adalah $8\\text{ cm}$, maka panjang kawat minimal yang diperlukan untuk membuat kerangka bangun ruang limas tersebut adalah ....",
+        "jawaban": "$88\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 3 prisma dan 4 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 59. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$119$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $119$.",
+      "distraktor": [
+        {
+          "teks": "$120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$121$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $119$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "95490d7821fb111604b2ad46",
+        "teks": "Sebuah jaring-jaring prisma tegak memiliki dua sisi alas kongruen berbentuk trapesium sama kaki dan empat sisi tegak berbentuk persegi panjang. Pada trapesium alas, panjang sisi-sisi sejajarnya berturut-turut adalah $10\\text{ cm}$ dan $22\\text{ cm}$, serta jarak antara kedua sisi sejajar tersebut adalah $8\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, maka luas total seluruh bidang datar pada jaring-jaring prisma tersebut adalah ....",
+        "jawaban": "$1.036\\text{ cm}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 5 prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 115. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $250$.",
+      "distraktor": [
+        {
+          "teks": "$251$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$249$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$252$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $250$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a7c3e067f252a076180ce0",
+        "teks": "Sebuah kemasan berbentuk balok memiliki ukuran panjang $8\\text{ cm}$, lebar $5\\text{ cm}$, dan tinggi $3\\text{ cm}$. Kardus tersebut digunting sepanjang beberapa rusuknya hingga membentang rata menjadi jaring-jaring berbentuk salib pada bidang datar. Pola jaring-jaring tersebut terdiri dari empat bidang berurutan secara vertikal (sisi alas $8\\text{ cm} \\times 5\\text{ cm}$, sisi depan $8\\text{ cm} \\times 3\\text{ cm}$, sisi atas $8\\text{ cm} \\times 5\\text{ cm}$, dan sisi belakang $8\\text{ cm} \\times 3\\text{ cm}$) serta dua bidang sisi samping ($5\\text{ cm} \\times 3\\text{ cm}$) yang masing-masing menempel di sisi kiri dan kanan sisi alas sepanjang rusuk $5\\text{ cm}$. Keliling terluar dari bentangan jaring-jaring balok tersebut adalah ....",
+        "jawaban": "$60\\text{ cm}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 5 prisma dan 5 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 85. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$175$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $175$.",
+      "distraktor": [
+        {
+          "teks": "$176$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$174$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $175$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5763b1962cb1bff961a7e9d6",
+        "teks": "Sebuah bangun ruang Platonic tertutup memiliki sejumlah sisi ($S$) yang seluruhnya berupa segitiga sama sisi kongruen. Pada setiap titik sudut bangun tersebut bertemu tepat $4$ buah rusuk. Jika bangun ruang tersebut hendak dibuka dan dibentangkan di atas meja menjadi sebuah jaring-jaring bidang datar yang utuh dan saling terhubung tanpa terputus, banyak rusuk dari bangun ruang tersebut yang harus digunting adalah ....",
+        "jawaban": "5 rusuk",
+        "snapshot": "runs/exercise_sessions_3/references/kelas9.json",
+        "source_sha256": "5a9865f06007404cfaec239fc2b182902b7d9d442d0d57273f4bbd22d65f14cd"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_klasifikasi_jaring_balik",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kelompok mempunyai 4 prisma dan 6 limas. Semua alasnya segi-n dengan n yang sama. Jumlah seluruh bidang sisi bangun-bangun tersebut 134. Berapa jumlah seluruh rusuknya? Bangun dihitung terpisah, tidak saling ditempel.",
+      "jawaban_benar": "$288$",
+      "alasan_benar": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $288$.",
+      "distraktor": [
+        {
+          "teks": "$289$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$287$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$290$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Prisma segi-n memiliki n+2 bidang sisi dan 3n rusuk; limas segi-n memiliki n+1 bidang sisi dan 2n rusuk. Gunakan jumlah sisi untuk menentukan n, lalu jumlahkan rusuk seluruh bangun Hasilnya $288$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas9-b02-a-hard-bt01-060"
     }
   ]
 }

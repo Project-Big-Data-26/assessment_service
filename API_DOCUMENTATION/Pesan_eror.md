@@ -1,0 +1,1719 @@
+# Audit Soal `db_nolla_staging`
+
+Dibuat: 2026-11-03 18:28
+
+- **Total soal:** 8841
+- **Total soal yatim (tidak ada subbabnya):** 0
+- **Bab yang pretest-nya belum aman:** 44 dari 80
+- **Level subbab yang quiz-nya belum aman:** 541 dari 813
+
+Aturan:
+- Pretest: tiap bab prasyarat punya ≥1 soal hard di subbab terakhirnya, dan tiap subbab di bab ini punya ≥1 soal easy, medium, dan hard.
+- Quiz: per subbab per level, butuh soal yang belum dimunculkan sebanyak SD 10 / SMP 15 / SMA 20.
+- Label `aman Nx` = berapa kali bisa dibuat dengan soal baru (1/2/3/3+).
+
+## Kelas 1 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Ayo Membilang sampai dengan 10** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan → easy 0, medium 0, hard 0
+    - Subbab 2: Membandingkan Banyak Benda → easy 0, medium 0, hard 2
+    - Subbab 3: Menghitung Maju dan Mundur → easy 0, medium 0, hard 0
+    - Subbab 4: Pasangan Bilangan → easy 1, medium 0, hard 1
+  - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Membandingkan Banyak Benda — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+  - Subbab 3: Menghitung Maju dan Mundur — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Pasangan Bilangan — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 2: Penjumlahan sampai dengan 10** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Cerita Penjumlahan → easy 1, medium 0, hard 1
+    - Subbab 2: Berbagai Cara Melakukan Penjumlahan → easy 0, medium 0, hard 0
+    - Subbab 3: Soal Cerita Penjumlahan → easy 1, medium 0, hard 1
+  - Subbab 1: Cerita Penjumlahan — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Berbagai Cara Melakukan Penjumlahan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Soal Cerita Penjumlahan — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 3: Pengurangan sampai dengan 10** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Cerita Pengurangan → easy 2, medium 0, hard 0
+    - Subbab 2: Berbagai Cara Melakukan Pengurangan → easy 0, medium 0, hard 0
+    - Subbab 3: Hubungan Penjumlahan dan Pengurangan → easy 2, medium 0, hard 0
+    - Subbab 4: Soal Cerita Pengurangan → easy 0, medium 1, hard 1
+  - Subbab 1: Cerita Pengurangan — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Berbagai Cara Melakukan Pengurangan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Hubungan Penjumlahan dan Pengurangan — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Soal Cerita Pengurangan — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 4: Mengenal Bentuk** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Mendeskripsikan Benda Berdasarkan Bentuk → easy 1, medium 0, hard 1
+    - Subbab 2: Mengelompokkan Benda → easy 0, medium 1, hard 1
+    - Subbab 3: Menyusun dan Mengurai Bentuk Bangun → easy 1, medium 0, hard 1
+  - Subbab 1: Mendeskripsikan Benda Berdasarkan Bentuk — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Mengelompokkan Benda — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Menyusun dan Mengurai Bentuk Bangun — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 5: Ayo Membilang sampai dengan 20** — 8 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan → easy 2, medium 2, hard 0
+    - Subbab 2: Menghitung Maju dan Mundur → easy 2, medium 2, hard 0
+    - Subbab 3: Nilai Tempat → easy 0, medium 0, hard 0
+    - Subbab 4: Membandingkan Bilangan → easy 0, medium 0, hard 0
+  - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan — 4 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Menghitung Maju dan Mundur — 4 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Nilai Tempat — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Membandingkan Bilangan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 6: Penjumlahan dan Pengurangan sampai dengan 20** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Mengenal Konsep Lebih dari, Kurang dari, dan Selisih → easy 0, medium 1, hard 1
+    - Subbab 2: Penjumlahan yang Hasilnya kurang dari 20 → easy 0, medium 2, hard 0
+    - Subbab 3: Pengurangan yang Hasilnya Kurang dari 20 → easy 0, medium 2, hard 0
+    - Prasyarat Ayo Membilang sampai dengan 20 (Kelas 1 SD): subbab terakhir "Membandingkan Bilangan" → hard 0
+  - Subbab 1: Mengenal Konsep Lebih dari, Kurang dari, dan Selisih — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Penjumlahan yang Hasilnya kurang dari 20 — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Pengurangan yang Hasilnya Kurang dari 20 — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 7: Mengukur Panjang Benda** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Membandingkan dan Mengurutkan Panjang Benda → easy 0, medium 2, hard 0
+    - Subbab 2: Mengukur Panjang Benda → easy 1, medium 1, hard 0
+  - Subbab 1: Membandingkan dan Mengurutkan Panjang Benda — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Mengukur Panjang Benda — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 8: Mengenal Diagram** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Mengelompokkan Data → easy 0, medium 0, hard 2
+    - Subbab 2: Diagram Gambar → easy 0, medium 0, hard 0
+  - Subbab 1: Mengelompokkan Data — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+  - Subbab 2: Diagram Gambar — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+
+## Kelas 2 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Ayo Membilang sampai dengan 50** — 8 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan sampai dengan 50 → easy 2, medium 0, hard 0
+    - Subbab 3: Membandingkan Dua Bilangan atau Lebih → easy 0, medium 0, hard 2
+    - Prasyarat Ayo Membilang sampai dengan 20 (Kelas 1 SD): subbab terakhir "Membandingkan Bilangan" → hard 0
+  - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan sampai dengan 50 — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Nilai Tempat — 4 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+  - Subbab 3: Membandingkan Dua Bilangan atau Lebih — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+- **Bab 2: Penjumlahan dan Pengurangan** — 10 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Berbagai Cara Melakukan Penjumlahan → easy 2, medium 2, hard 0
+    - Subbab 3: Soal Cerita Penjumlahan dan Pengurangan → easy 0, medium 1, hard 1
+    - Prasyarat Penjumlahan dan Pengurangan sampai dengan 20 (Kelas 1 SD): subbab terakhir "Pengurangan yang Hasilnya Kurang dari 20" → hard 0
+  - Subbab 1: Berbagai Cara Melakukan Penjumlahan — 4 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Berbagai Cara Melakukan Pengurangan — 4 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Soal Cerita Penjumlahan dan Pengurangan — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 3: Bentuk di Sekitar Kita** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Bangun Datar → easy 2, medium 0, hard 0
+    - Subbab 2: Mengurai dan Menyusun Bangun Datar → easy 1, medium 0, hard 1
+    - Subbab 3: Bangun Ruang → easy 1, medium 0, hard 1
+  - Subbab 1: Bangun Datar — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Mengurai dan Menyusun Bangun Datar — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Bangun Ruang — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 4: Posisi Benda dan Pola di Sekitar Kita** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Posisi Benda → easy 2, medium 0, hard 0
+    - Subbab 2: Pola → easy 1, medium 1, hard 0
+  - Subbab 1: Posisi Benda — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Pola — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 5: Pecahan** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Setengah dari Benda Utuh → easy 0, medium 1, hard 1
+    - Subbab 2: Setengah dari Kumpulan Benda → easy 0, medium 2, hard 0
+    - Subbab 3: Seperempat dari Benda Utuh → easy 2, medium 0, hard 0
+  - Subbab 1: Setengah dari Benda Utuh — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Setengah dari Kumpulan Benda — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Seperempat dari Benda Utuh — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 6: Pengukuran** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Berat → easy 1, medium 0, hard 1
+    - Subbab 2: Waktu → easy 0, medium 1, hard 1
+  - Subbab 1: Berat — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Waktu — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 7: Ayo Membilang sampai dengan 100** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan sampai dengan 100 → easy 1, medium 0, hard 1
+    - Subbab 2: Membandingkan Bilangan → easy 0, medium 3, hard 1
+  - Subbab 1: Menghitung, Membaca, dan Menulis Bilangan sampai dengan 100 — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Membandingkan Bilangan — 4 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 3 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 8: Berbagai Diagram** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Diagram Turus → easy 2, medium 0, hard 0
+    - Subbab 2: Diagram Gambar → easy 2, medium 0, hard 2
+    - Prasyarat Mengenal Diagram (Kelas 1 SD): subbab terakhir "Diagram Gambar" → hard 0
+  - Subbab 1: Diagram Turus — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Diagram Gambar — 4 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+
+## Kelas 3 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Bilangan Cacah sampai 1.000** — 14 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Bilangan dan Lambang Bilangan Cacah sampai 1.000 → easy 1, medium 1, hard 0
+    - Subbab 2: Nilai Tempat Bilangan Cacah sampai 1.000 → easy 1, medium 1, hard 0
+    - Subbab 3: Membandingkan dan Mengurutkan Bilangan Cacah sampai 1.000 → easy 1, medium 0, hard 1
+    - Subbab 4: Penjumlahan Bilangan Cacah sampai 100 → easy 2, medium 0, hard 0
+    - Subbab 5: Pengurangan Bilangan Cacah sampai 100 → easy 2, medium 0, hard 0
+    - Subbab 6: Perkalian Bilangan Cacah sampai 100 → easy 1, medium 1, hard 0
+    - Subbab 7: Pembagian Bilangan Cacah sampai 100 → easy 0, medium 1, hard 1
+  - Subbab 1: Bilangan dan Lambang Bilangan Cacah sampai 1.000 — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Nilai Tempat Bilangan Cacah sampai 1.000 — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Membandingkan dan Mengurutkan Bilangan Cacah sampai 1.000 — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 4: Penjumlahan Bilangan Cacah sampai 100 — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 5: Pengurangan Bilangan Cacah sampai 100 — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 6: Perkalian Bilangan Cacah sampai 100 — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 7: Pembagian Bilangan Cacah sampai 100 — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 2: Kalimat Matematika** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Kalimat Matematika Berkaitan dengan Penjumlahan Bilangan Cacah → easy 0, medium 2, hard 0
+    - Subbab 2: Kalimat Matematika Berkaitan dengan Pengurangan Bilangan Cacah → easy 0, medium 2, hard 0
+  - Subbab 1: Kalimat Matematika Berkaitan dengan Penjumlahan Bilangan Cacah — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Kalimat Matematika Berkaitan dengan Pengurangan Bilangan Cacah — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 3: Pengukuran Panjang dan Berat** — 8 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Pengukuran Panjang dengan Satuan Baku → easy 0, medium 1, hard 1
+    - Subbab 2: Hubungan Antarsatuan Baku Panjang → easy 1, medium 0, hard 1
+    - Subbab 3: Pengukuran Berat dengan Satuan Baku → easy 0, medium 1, hard 1
+    - Subbab 4: Hubungan Antarsatuan Baku Berat → easy 0, medium 1, hard 1
+    - Prasyarat Mengukur Panjang Benda (Kelas 1 SD): subbab terakhir "Mengukur Panjang Benda" → hard 0
+  - Subbab 1: Pengukuran Panjang dengan Satuan Baku — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Hubungan Antarsatuan Baku Panjang — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Pengukuran Berat dengan Satuan Baku — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 4: Hubungan Antarsatuan Baku Berat — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 4: Unsur-Unsur Bangun Datar** — 6 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Sisi Pada Bangun Datar → easy 2, medium 0, hard 0
+    - Subbab 2: Sudut Pada Bidang Datar → easy 2, medium 0, hard 0
+    - Subbab 3: Garis-Garis Tegak Lurus dan Garis-Garis Sejajar → easy 0, medium 0, hard 2
+  - Subbab 1: Sisi Pada Bangun Datar — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Sudut Pada Bidang Datar — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Garis-Garis Tegak Lurus dan Garis-Garis Sejajar — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+- **Bab 5: Penyajian Data dalam Tabel** — 4 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Mengurutkan dan Membandingkan Data → easy 1, medium 1, hard 0
+    - Subbab 2: Menyajikan Data dalam Bentuk Tabel → easy 1, medium 0, hard 1
+  - Subbab 1: Mengurutkan dan Membandingkan Data — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Menyajikan Data dalam Bentuk Tabel — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+
+## Kelas 4 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Bilangan Cacah sampai 10.000** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Membaca dan Menulis Bilangan Cacah sampai 10.000 → easy 0, medium 0, hard 0
+    - Subbab 2: Menentukan dan Menggunakan Nilai Tempat Bilangan Cacah sampai 10.000 → easy 0, medium 0, hard 0
+    - Subbab 3: Membandingkan dan Mengurutkan Bilangan Cacah sampai 10.000 → easy 0, medium 0, hard 0
+    - Subbab 4: Komposisi dan Dekomposisi Bilangan Cacah sampai 10.000 → easy 0, medium 0, hard 0
+    - Subbab 5: Penjumlahan Bilangan Cacah sampai 1.000 → easy 0, medium 0, hard 0
+    - Subbab 6: Pengurangan Bilangan Cacah sampai 1.000 → easy 0, medium 0, hard 0
+    - Subbab 7: Perkalian Bilangan Cacah Sampai 100 → easy 0, medium 0, hard 0
+    - Subbab 8: Pembagian Bilangan Cacah Sampai 100 → easy 0, medium 0, hard 0
+    - Subbab 9: Faktor dan Kelipatan → easy 2, medium 0, hard 0
+  - Subbab 1: Membaca dan Menulis Bilangan Cacah sampai 10.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Menentukan dan Menggunakan Nilai Tempat Bilangan Cacah sampai 10.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Membandingkan dan Mengurutkan Bilangan Cacah sampai 10.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Komposisi dan Dekomposisi Bilangan Cacah sampai 10.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 5: Penjumlahan Bilangan Cacah sampai 1.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 6: Pengurangan Bilangan Cacah sampai 1.000 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 7: Perkalian Bilangan Cacah Sampai 100 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 8: Pembagian Bilangan Cacah Sampai 100 — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 9: Faktor dan Kelipatan — 2 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 2: Pecahan** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Pecahan dengan Pembilang Satu → easy 0, medium 0, hard 0
+    - Subbab 2: Pecahan dengan Penyebut Sama → easy 0, medium 0, hard 0
+    - Subbab 3: Pecahan Senilai → easy 0, medium 0, hard 0
+    - Subbab 4: Pecahan Desimal Persepuluhan dan Perseratusan → easy 0, medium 0, hard 0
+    - Subbab 5: Menghubungkan Pecahan Desimal Perseratusan dengan Konsep Persen → easy 1, medium 1, hard 0
+    - Prasyarat Pecahan (Kelas 2 SD): subbab terakhir "Seperempat dari Benda Utuh" → hard 0
+    - Prasyarat Bilangan Cacah sampai 10.000 (Kelas 4 SD): subbab terakhir "Faktor dan Kelipatan" → hard 0
+  - Subbab 1: Pecahan dengan Pembilang Satu — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Pecahan dengan Penyebut Sama — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Pecahan Senilai — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Pecahan Desimal Persepuluhan dan Perseratusan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 5: Menghubungkan Pecahan Desimal Perseratusan dengan Konsep Persen — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 3: Pola Gambar dan Pola Bilangan** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Pola Gambar → easy 0, medium 0, hard 0
+    - Subbab 2: Pola Bilangan → easy 1, medium 1, hard 0
+    - Prasyarat Posisi Benda dan Pola di Sekitar Kita (Kelas 2 SD): subbab terakhir "Pola" → hard 0
+    - Prasyarat Bilangan Cacah sampai 10.000 (Kelas 4 SD): subbab terakhir "Faktor dan Kelipatan" → hard 0
+  - Subbab 1: Pola Gambar — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Pola Bilangan — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 4: Pengukuran Luas dan Volume** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Pengukuran Luas → easy 0, medium 0, hard 0
+    - Subbab 2: Pengukuran Volume → easy 0, medium 2, hard 0
+    - Prasyarat Bilangan Cacah sampai 10.000 (Kelas 4 SD): subbab terakhir "Faktor dan Kelipatan" → hard 0
+  - Subbab 1: Pengukuran Luas — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Pengukuran Volume — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 5: Bangun Datar** — 2 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Ciri-Ciri Bangun Datar → easy 0, medium 0, hard 0
+    - Subbab 2: Komposisi dan Dekomposisi Bangun Datar → easy 1, medium 1, hard 0
+  - Subbab 1: Ciri-Ciri Bangun Datar — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Komposisi dan Dekomposisi Bangun Datar — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 6: Piktogram dan Diagram Batang** — 0 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Piktogram → easy 0, medium 0, hard 0
+    - Subbab 2: Diagram Batang → easy 0, medium 0, hard 0
+  - Subbab 1: Piktogram — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Diagram Batang — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+
+## Kelas 5 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Bilangan Cacah Sampai 100.000** — 128 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Bilangan Cacah sampai 10.000 (Kelas 4 SD): subbab terakhir "Faktor dan Kelipatan" → hard 0
+  - Subbab 1: Membaca dan Menulis Bilangan Cacah Sampai 100.000 dan Menentukan Nilai Tempatnya — 32 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 9 — quiz ⚠️ belum aman
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 2: Membandingkan dan Mengurutkan Bilangan Cacah Sampai 100.000 — 32 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz aman 1x
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 3: Komposisi dan Dekomposisi Bilangan Sampai 100.000 — 32 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 13 — quiz aman 1x
+    - Hard: 12 — quiz aman 1x
+  - Subbab 4: Operasi Hitung pada Bilangan Cacah Sampai 100.000 — 32 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 12 — quiz aman 1x
+    - Hard: 13 — quiz aman 1x
+- **Bab 2: KPK dan FPB** — 160 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Bilangan Cacah sampai 10.000 (Kelas 4 SD): subbab terakhir "Faktor dan Kelipatan" → hard 0
+  - Subbab 1: Kelipatan — 32 soal
+    - Easy: 19 — quiz aman 1x
+    - Medium: 8 — quiz ⚠️ belum aman
+    - Hard: 5 — quiz ⚠️ belum aman
+  - Subbab 2: Kelipatan Persekutuan — 32 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Faktor — 32 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 8 — quiz ⚠️ belum aman
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 4: Faktor Persekutuan — 32 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz aman 1x
+    - Hard: 10 — quiz aman 1x
+  - Subbab 5: Menentukan KPK dan FPB dengan Menggunakan Faktor Prima — 32 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 12 — quiz aman 1x
+    - Hard: 15 — quiz aman 1x
+- **Bab 3: Bilangan Pecahan** — 96 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Pecahan (Kelas 4 SD): subbab terakhir "Menghubungkan Pecahan Desimal Perseratusan dengan Konsep Persen" → hard 0
+  - Subbab 1: Membandingkan dan Mengurutkan Pecahan — 32 soal
+    - Easy: 10 — quiz aman 1x
+    - Medium: 13 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+    - Tanpa level: 1 — tidak bisa dipakai
+  - Subbab 2: Penjumlahan Bilangan Pecahan — 32 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 11 — quiz aman 1x
+    - Hard: 12 — quiz aman 1x
+  - Subbab 3: Pengurangan Bilangan Pecahan — 32 soal
+    - Easy: 10 — quiz aman 1x
+    - Medium: 14 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+- **Bab 4: Keliling Bangun Datar** — 134 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Bangun Datar (Kelas 4 SD): subbab terakhir "Komposisi dan Dekomposisi Bangun Datar" → hard 0
+  - Subbab 1: Apakah Keliling Bangun Datar Itu? — 26 soal
+    - Easy: 10 — quiz aman 1x
+    - Medium: 12 — quiz aman 1x
+    - Hard: 4 — quiz ⚠️ belum aman
+  - Subbab 2: Keliling Segitiga — 26 soal
+    - Easy: 14 — quiz aman 1x
+    - Medium: 9 — quiz ⚠️ belum aman
+    - Hard: 3 — quiz ⚠️ belum aman
+  - Subbab 3: Keliling Segi Empat — 28 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 4: Keliling Segi Banyak — 27 soal
+    - Easy: 11 — quiz aman 1x
+    - Medium: 9 — quiz ⚠️ belum aman
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 5: Keliling Bangun Gabungan — 27 soal
+    - Easy: 3 — quiz ⚠️ belum aman
+    - Medium: 5 — quiz ⚠️ belum aman
+    - Hard: 19 — quiz aman 1x
+- **Bab 5: Luas Daerah Bangun Datar** — 119 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Pengukuran Luas dan Volume (Kelas 4 SD): subbab terakhir "Pengukuran Volume" → hard 0
+  - Subbab 1: Konsep Luas Daerah Bangun Datar — 32 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 13 — quiz aman 1x
+    - Hard: 3 — quiz ⚠️ belum aman
+    - Tanpa level: 1 — tidak bisa dipakai
+  - Subbab 2: Luas Daerah Bangun Datar — 30 soal
+    - Easy: 11 — quiz aman 1x
+    - Medium: 12 — quiz aman 1x
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 3: Luas Daerah Bangun Gabungan — 30 soal
+    - Easy: 3 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 11 — quiz aman 1x
+  - Subbab 4: Hubungan Keliling dan Luas Daerah Bangun Datar — 27 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 7 — quiz ⚠️ belum aman
+    - Hard: 15 — quiz aman 1x
+- **Bab 6: Sudut** — 103 soal
+  - Pretest: aman 2x
+  - Subbab 1: Sudut Siku-Siku — 22 soal
+    - Easy: 11 — quiz aman 1x
+    - Medium: 7 — quiz ⚠️ belum aman
+    - Hard: 4 — quiz ⚠️ belum aman
+  - Subbab 2: Pengertian Sudut — 26 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 12 — quiz aman 1x
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 3: Mengukur dan Membandingkan Sudut — 30 soal
+    - Easy: 3 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 12 — quiz aman 1x
+  - Subbab 4: Melukis Sudut — 25 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 9 — quiz ⚠️ belum aman
+    - Hard: 8 — quiz ⚠️ belum aman
+- **Bab 7: Membandingkan Ciri-Ciri Bangun Datar** — 58 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Bangun Datar (Kelas 4 SD): subbab terakhir "Komposisi dan Dekomposisi Bangun Datar" → hard 0
+  - Subbab 1: Membandingkan Ciri-Ciri Segitiga — 29 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 11 — quiz aman 1x
+    - Hard: 10 — quiz aman 1x
+  - Subbab 2: Membandingkan Ciri-Ciri Segi Empat — 29 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 12 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+- **Bab 8: Data** — 61 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 3: Diagram Batang → easy 0, medium 0, hard 0
+    - Prasyarat Piktogram dan Diagram Batang (Kelas 4 SD): subbab terakhir "Diagram Batang" → hard 0
+  - Subbab 1: Mengumpulkan Data — 32 soal
+    - Easy: 12 — quiz aman 1x
+    - Medium: 15 — quiz aman 1x
+    - Hard: 5 — quiz ⚠️ belum aman
+  - Subbab 2: Piktogram — 29 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 13 — quiz aman 1x
+    - Hard: 11 — quiz aman 1x
+  - Subbab 3: Diagram Batang — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+- **Bab 9: Bilangan Cacah Sampai 1.000.000** — 95 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Membaca dan Menulis Bilangan Cacah Sampai 1.000.000 dan Menentukan Nilai Tempatnya — 32 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 12 — quiz aman 1x
+    - Hard: 5 — quiz ⚠️ belum aman
+  - Subbab 2: Mengurutkan dan Membandingkan Bilangan Sampai 1.000.000 — 31 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 13 — quiz aman 1x
+    - Hard: 11 — quiz aman 1x
+  - Subbab 3: Komposisi dan Dekomposisi Bilangan Sampai 1.000.000 — 32 soal
+    - Easy: 6 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 11 — quiz aman 1x
+
+## Kelas 6 SD
+
+_Minimal soal per quiz: 10_
+
+- **Bab 1: Pecahan dan Desimal** — 96 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Perkalian Pecahan — 32 soal
+    - Easy: 10 — quiz aman 1x
+    - Medium: 12 — quiz aman 1x
+    - Hard: 10 — quiz aman 1x
+  - Subbab 2: Pembagian Pecahan — 32 soal
+    - Easy: 11 — quiz aman 1x
+    - Medium: 12 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Bilangan Desimal — 32 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+- **Bab 2: Rasio** — 64 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Konsep Rasio → easy 0, medium 0, hard 0
+  - Subbab 1: Konsep Rasio — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Konsep Kesamaan Rasio — 32 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz aman 1x
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 3: Penerapan Rasio — 32 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 9 — quiz ⚠️ belum aman
+    - Hard: 14 — quiz aman 1x
+- **Bab 3: Kubus dan Balok** — 92 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Posisi Benda dan Pola di Sekitar Kita (Kelas 2 SD): subbab terakhir "Pola" → hard 0
+    - Prasyarat Bangun Datar (Kelas 4 SD): subbab terakhir "Komposisi dan Dekomposisi Bangun Datar" → hard 0
+  - Subbab 1: Mengonstruksi dan Mengurai — 32 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 10 — quiz aman 1x
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 2: Visualisasi Spasial — 28 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 4 — quiz ⚠️ belum aman
+    - Hard: 15 — quiz aman 1x
+  - Subbab 3: Lokasi — 32 soal
+    - Easy: 3 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 2x
+    - Hard: 6 — quiz ⚠️ belum aman
+- **Bab 4: Peluang** — 64 soal
+  - Pretest: aman 3x
+  - Subbab 1: Skala Peluang — 32 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 11 — quiz aman 1x
+    - Hard: 4 — quiz ⚠️ belum aman
+  - Subbab 2: Membandingkan Peluang Kejadian — 32 soal
+    - Easy: 3 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 14 — quiz aman 1x
+
+## Kelas 7 SMP
+
+_Minimal soal per quiz: 15_
+
+- **Bab 1: Bilangan Bulat** — 136 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Memahami Bilangan Bulat — 42 soal
+    - Easy: 24 — quiz aman 1x
+    - Medium: 11 — quiz ⚠️ belum aman
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 2: Operasi Hitung Bilangan Bulat — 47 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 22 — quiz aman 1x
+    - Hard: 18 — quiz aman 1x
+  - Subbab 3: Faktor Bilangan Bulat — 47 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 20 — quiz aman 1x
+    - Hard: 16 — quiz aman 1x
+- **Bab 2: Bilangan Rasional** — 133 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Di Antara Dua Bilangan Bulat — 43 soal
+    - Easy: 19 — quiz aman 1x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 2: Membandingkan Bilangan Rasional — 43 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 21 — quiz aman 1x
+    - Hard: 12 — quiz ⚠️ belum aman
+  - Subbab 3: Operasi Hitung Bilangan Rasional — 47 soal
+    - Easy: 13 — quiz ⚠️ belum aman
+    - Medium: 19 — quiz aman 1x
+    - Hard: 15 — quiz aman 1x
+- **Bab 3: Rasio** — 173 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Konsep Rasio — 79 soal
+    - Easy: 34 — quiz aman 2x
+    - Medium: 25 — quiz aman 1x
+    - Hard: 20 — quiz aman 1x
+  - Subbab 2: Skala — 47 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 18 — quiz aman 1x
+    - Hard: 13 — quiz ⚠️ belum aman
+  - Subbab 3: Laju Perubahan Satuan — 47 soal
+    - Easy: 6 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 1x
+    - Hard: 18 — quiz aman 1x
+- **Bab 4: Bentuk Aljabar** — 138 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Unsur-Unsur Bentuk Aljabar — 44 soal
+    - Easy: 20 — quiz aman 1x
+    - Medium: 16 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 2: Sifat-Sifat dan Operasi Aljabar — 47 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 21 — quiz aman 1x
+    - Hard: 10 — quiz ⚠️ belum aman
+  - Subbab 3: Pemodelan dengan Bentuk Aljabar — 47 soal
+    - Easy: 6 — quiz ⚠️ belum aman
+    - Medium: 19 — quiz aman 1x
+    - Hard: 22 — quiz aman 1x
+- **Bab 5: Kesebangunan** — 99 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Hubungan Antar Sudut — 30 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 5 — quiz ⚠️ belum aman
+  - Subbab 2: Arti Kesebangunan — 32 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 14 — quiz ⚠️ belum aman
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 3: Kesebangunan pada Segitiga — 37 soal
+    - Easy: 8 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 14 — quiz ⚠️ belum aman
+- **Bab 6: Data dan Diagram** — 267 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 6: Memilih Diagram yang Tepat → easy 1, medium 1, hard 0
+    - Prasyarat Data (Kelas 5 SD): subbab terakhir "Diagram Batang" → hard 0
+  - Subbab 1: Investigasi Statistika — 47 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 1x
+    - Hard: 10 — quiz ⚠️ belum aman
+  - Subbab 2: Macam-Macam Data — 47 soal
+    - Easy: 23 — quiz aman 1x
+    - Medium: 15 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Diagram dalam Statistika — 47 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz aman 1x
+    - Hard: 16 — quiz aman 1x
+  - Subbab 4: Diagram Batang — 77 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 29 — quiz aman 1x
+    - Hard: 31 — quiz aman 2x
+  - Subbab 5: Diagram Lingkaran — 47 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 21 — quiz aman 1x
+    - Hard: 15 — quiz aman 1x
+  - Subbab 6: Memilih Diagram yang Tepat — 2 soal
+    - Easy: 1 — quiz ⚠️ belum aman
+    - Medium: 1 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+
+## Kelas 8 SMP
+
+_Minimal soal per quiz: 15_
+
+- **Bab 1: Bilangan Berpangkat** — 140 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Bilangan Berpangkat Bulat — 47 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 17 — quiz aman 1x
+    - Hard: 15 — quiz aman 1x
+  - Subbab 2: Bilangan Bentuk Akar — 47 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 34 — quiz aman 2x
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 3: Penulisan Bentuk Baku — 46 soal
+    - Easy: 21 — quiz aman 1x
+    - Medium: 5 — quiz ⚠️ belum aman
+    - Hard: 20 — quiz aman 1x
+- **Bab 2: Teorema Pythagoras** — 235 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Menemukan Konsep Pythagoras — 47 soal
+    - Easy: 20 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 7 — quiz ⚠️ belum aman
+  - Subbab 2: Tripel Pythagoras — 47 soal
+    - Easy: 18 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Segitiga Istimewa — 47 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 17 — quiz aman 1x
+  - Subbab 4: Penerapan Teorema Pythagoras — 47 soal
+    - Easy: 4 — quiz ⚠️ belum aman
+    - Medium: 26 — quiz aman 1x
+    - Hard: 17 — quiz aman 1x
+  - Subbab 5: Rumus Jarak (Pengayaan) — 47 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 22 — quiz aman 1x
+- **Bab 3: Persamaan Linier dan Pertidaksamaan Linier Satu Variabel** — 188 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Memahami Konsep Persamaan Linier Satu Variabel — 47 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 14 — quiz ⚠️ belum aman
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 2: Menyelesaikan Persamaan Linier Satu Variabel — 47 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 29 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Menemukan Konsep Pertidaksamaan Linier Satu Variabel — 47 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 17 — quiz aman 1x
+    - Hard: 14 — quiz ⚠️ belum aman
+  - Subbab 4: Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel — 47 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 21 — quiz aman 1x
+- **Bab 4: Relasi dan Fungsi** — 140 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Memahami Relasi — 47 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 23 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 2: Memahami Fungsi — 47 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 19 — quiz aman 1x
+  - Subbab 3: Korespondensi Satu-satu (Pengayaan) — 46 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 17 — quiz aman 1x
+    - Hard: 13 — quiz ⚠️ belum aman
+- **Bab 5: Persamaan Garis Lurus** — 94 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Grafik Persamaan Garis Lurus — 47 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 10 — quiz ⚠️ belum aman
+  - Subbab 2: Pengertian Kemiringan — 47 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz aman 1x
+    - Hard: 18 — quiz aman 1x
+- **Bab 6: Statistika** — 94 soal
+  - Pretest: ⚠️ belum aman
+    - Prasyarat Data dan Diagram (Kelas 7 SMP): subbab terakhir "Memilih Diagram yang Tepat" → hard 0
+  - Subbab 1: Pemusatan Data — 47 soal
+    - Easy: 18 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 2: Penyebaran Data — 47 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 21 — quiz aman 1x
+
+## Kelas 9 SMP
+
+_Minimal soal per quiz: 15_
+
+- **Bab 1: Sistem Persamaan Linear Dua Variabel** — 94 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Persamaan Linear Dua Variabel — 47 soal
+    - Easy: 16 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 2: Sistem Persamaan Linear Dua Variabel — 47 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz aman 1x
+    - Hard: 18 — quiz aman 1x
+- **Bab 2: Bangun Ruang** — 235 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 4: Lingkaran → easy 0, medium 0, hard 0
+    - Prasyarat Pengukuran Luas dan Volume (Kelas 4 SD): subbab terakhir "Pengukuran Volume" → hard 0
+  - Subbab 1: Klasifikasi Bangun Ruang dan Jaring-Jaring — 47 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 12 — quiz ⚠️ belum aman
+  - Subbab 2: Luas Permukaan Bangun Ruang Sisi Datar — 47 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 15 — quiz aman 1x
+    - Hard: 15 — quiz aman 1x
+  - Subbab 3: Volume Bangun Ruang Sisi Datar — 47 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 23 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 4: Lingkaran — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 5: Luas Permukaan Bangun Ruang Sisi Lengkung — 47 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz aman 1x
+    - Hard: 18 — quiz aman 1x
+  - Subbab 6: Volume Bangun Ruang Sisi Lengkung — 47 soal
+    - Easy: 7 — quiz ⚠️ belum aman
+    - Medium: 20 — quiz aman 1x
+    - Hard: 20 — quiz aman 1x
+- **Bab 3: Transformasi Geometri** — 234 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Translasi (Pergeseran) — 47 soal
+    - Easy: 15 — quiz aman 1x
+    - Medium: 23 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 2: Refleksi (Pencerminan) — 47 soal
+    - Easy: 19 — quiz aman 1x
+    - Medium: 17 — quiz aman 1x
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 3: Rotasi (Perputaran) — 47 soal
+    - Easy: 19 — quiz aman 1x
+    - Medium: 17 — quiz aman 1x
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 4: Kekongruenan — 47 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 19 — quiz aman 1x
+    - Hard: 16 — quiz aman 1x
+  - Subbab 5: Dilatasi — 46 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz aman 1x
+    - Hard: 20 — quiz aman 1x
+- **Bab 4: Peluang dan Pemilihan Sampel** — 188 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Peluang — 47 soal
+    - Easy: 17 — quiz aman 1x
+    - Medium: 22 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 2: Peluang Empiris — 47 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 21 — quiz aman 1x
+    - Hard: 17 — quiz aman 1x
+  - Subbab 3: Frekuensi Harapan — 47 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 22 — quiz aman 1x
+    - Hard: 16 — quiz aman 1x
+  - Subbab 4: Pemilihan Sampel — 47 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 10 — quiz ⚠️ belum aman
+    - Hard: 15 — quiz aman 1x
+
+## Kelas 10 SMA
+
+_Minimal soal per quiz: 20_
+
+- **Bab 1: Eksponen** — 226 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Definisi Eksponen — 62 soal
+    - Easy: 38 — quiz aman 1x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 2: Sifat-Sifat Eksponen — 61 soal
+    - Easy: 17 — quiz ⚠️ belum aman
+    - Medium: 31 — quiz aman 1x
+    - Hard: 13 — quiz ⚠️ belum aman
+  - Subbab 3: Fungsi Eksponensial — 58 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 20 — quiz aman 1x
+  - Subbab 4: Bentuk Akar — 45 soal
+    - Easy: 6 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 21 — quiz aman 1x
+- **Bab 2: Barisan dan Deret** — 43 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Barisan → easy 0, medium 0, hard 0
+    - Subbab 2: Deret → easy 0, medium 0, hard 0
+  - Subbab 1: Barisan — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Deret — 0 soal ⚠️ belum ada soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Bunga — 43 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 14 — quiz ⚠️ belum aman
+- **Bab 3: Perbandingan Trigonometri** — 124 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Perbandingan Trigonometri — 62 soal
+    - Easy: 24 — quiz aman 1x
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 20 — quiz aman 1x
+  - Subbab 2: Pemanfaatan Perbandingan Trigonometri — 62 soal
+    - Easy: 16 — quiz ⚠️ belum aman
+    - Medium: 30 — quiz aman 1x
+    - Hard: 16 — quiz ⚠️ belum aman
+- **Bab 4: Sistem Persamaan dan Pertidaksamaan Linear** — 106 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Sistem Persamaan Linear — 54 soal
+    - Easy: 18 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz ⚠️ belum aman
+    - Hard: 19 — quiz ⚠️ belum aman
+  - Subbab 2: Sistem Pertidaksamaan Linear — 52 soal
+    - Easy: 15 — quiz ⚠️ belum aman
+    - Medium: 24 — quiz aman 1x
+    - Hard: 13 — quiz ⚠️ belum aman
+- **Bab 5: Persamaan dan Fungsi Kuadrat** — 124 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Persamaan Kuadrat — 62 soal
+    - Easy: 20 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 22 — quiz aman 1x
+  - Subbab 2: Fungsi Kuadrat — 62 soal
+    - Easy: 17 — quiz ⚠️ belum aman
+    - Medium: 30 — quiz aman 1x
+    - Hard: 15 — quiz ⚠️ belum aman
+- **Bab 6: Representasi dan Interpretasi Data** — 150 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Representasi Data — 42 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 8 — quiz ⚠️ belum aman
+    - Hard: 12 — quiz ⚠️ belum aman
+  - Subbab 2: Statistik Deskriptif — 62 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 37 — quiz aman 1x
+    - Hard: 15 — quiz ⚠️ belum aman
+  - Subbab 3: Representasi Data Lanjutan — 46 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 15 — quiz ⚠️ belum aman
+    - Hard: 17 — quiz ⚠️ belum aman
+- **Bab 7: Peluang** — 186 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Distribusi Peluang — 62 soal
+    - Easy: 18 — quiz ⚠️ belum aman
+    - Medium: 26 — quiz aman 1x
+    - Hard: 18 — quiz ⚠️ belum aman
+  - Subbab 2: Aturan Penjumlahan — 62 soal
+    - Easy: 17 — quiz ⚠️ belum aman
+    - Medium: 29 — quiz aman 1x
+    - Hard: 16 — quiz ⚠️ belum aman
+  - Subbab 3: Aturan Perkalian — 62 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 21 — quiz aman 1x
+    - Hard: 19 — quiz ⚠️ belum aman
+
+## Kelas 11 SMA (Lanjut)
+
+_Minimal soal per quiz: 20_
+
+- **Bab 1: Matriks** — 274 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Jenis-Jenis Matriks — 52 soal
+    - Easy: 24 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 2: Kesamaan Dua Matriks — 52 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 1x
+    - Hard: 17 — quiz ⚠️ belum aman
+  - Subbab 3: Penjumlahan dan Pengurangan Antarmatriks — 54 soal
+    - Easy: 13 — quiz ⚠️ belum aman
+    - Medium: 31 — quiz aman 1x
+    - Hard: 10 — quiz ⚠️ belum aman
+  - Subbab 4: Perkalian Matriks — 60 soal
+    - Easy: 20 — quiz aman 1x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 27 — quiz aman 1x
+  - Subbab 5: Determinan Matriks dan Invers Matriks — 56 soal
+    - Easy: 13 — quiz ⚠️ belum aman
+    - Medium: 21 — quiz aman 1x
+    - Hard: 22 — quiz aman 1x
+- **Bab 2: Polinomial** — 266 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Polinomial dan Fungsi Polinomial — 51 soal
+    - Easy: 21 — quiz aman 1x
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 11 — quiz ⚠️ belum aman
+  - Subbab 2: Penjumlahan, Pengurangan, dan Perkalian Polinomial — 58 soal
+    - Easy: 19 — quiz ⚠️ belum aman
+    - Medium: 29 — quiz aman 1x
+    - Hard: 10 — quiz ⚠️ belum aman
+  - Subbab 3: Pembagian Polinomial — 59 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 27 — quiz aman 1x
+  - Subbab 4: Faktor dan Pembuat Nol Polinomial — 53 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 20 — quiz aman 1x
+    - Hard: 23 — quiz aman 1x
+  - Subbab 5: Identitas Polinomial — 45 soal
+    - Easy: 19 — quiz ⚠️ belum aman
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 7 — quiz ⚠️ belum aman
+- **Bab 3: Fungsi Trigonometri** — 240 soal
+  - Pretest: aman 2x
+  - Subbab 1: Fungsi Trigonometri dan Lingkaran Satuan — 55 soal
+    - Easy: 29 — quiz aman 1x
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 8 — quiz ⚠️ belum aman
+  - Subbab 2: Grafik Fungsi Trigonometri — 46 soal
+    - Easy: 17 — quiz ⚠️ belum aman
+    - Medium: 11 — quiz ⚠️ belum aman
+    - Hard: 18 — quiz ⚠️ belum aman
+  - Subbab 3: Identitas Trigonometri — 43 soal
+    - Easy: 21 — quiz aman 1x
+    - Medium: 16 — quiz ⚠️ belum aman
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 4: Aturan Sinus — 43 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 1x
+    - Hard: 15 — quiz ⚠️ belum aman
+  - Subbab 5: Aturan Kosinus — 53 soal
+    - Easy: 2 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 23 — quiz aman 1x
+- **Bab 4: Vektor** — 161 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Vektor pada Bidang — 54 soal
+    - Easy: 21 — quiz aman 1x
+    - Medium: 27 — quiz aman 1x
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 2: Hasil Kali Titik — 57 soal
+    - Easy: 16 — quiz ⚠️ belum aman
+    - Medium: 22 — quiz aman 1x
+    - Hard: 19 — quiz ⚠️ belum aman
+  - Subbab 3: Pembuktian Geometris — 50 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 16 — quiz ⚠️ belum aman
+    - Hard: 23 — quiz aman 1x
+- **Bab 5: Transformasi Geometri** — 172 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Transformasi pada Bidang Kartesius — 54 soal
+    - Easy: 15 — quiz ⚠️ belum aman
+    - Medium: 23 — quiz aman 1x
+    - Hard: 16 — quiz ⚠️ belum aman
+  - Subbab 2: Kaitan Matriks dengan Transformasi — 56 soal
+    - Easy: 23 — quiz aman 1x
+    - Medium: 24 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 3: Komposisi Transformasi dengan Matriks — 62 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 22 — quiz aman 1x
+    - Hard: 26 — quiz aman 1x
+- **Bab 6: Fungsi dan Pemodelannya** — 126 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 3: Fungsi Non-aljabar → easy 0, medium 2, hard 0
+  - Subbab 1: Fungsi Logaritma — 62 soal
+    - Easy: 22 — quiz aman 1x
+    - Medium: 21 — quiz aman 1x
+    - Hard: 19 — quiz ⚠️ belum aman
+  - Subbab 2: Fungsi Aljabar — 62 soal
+    - Easy: 16 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 18 — quiz ⚠️ belum aman
+  - Subbab 3: Fungsi Non-aljabar — 2 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 2 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+
+## Kelas 11 SMA (Umum)
+
+_Minimal soal per quiz: 20_
+
+- **Bab 1: Komposisi Fungsi dan Fungsi Invers** — 182 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Fungsi — 58 soal
+    - Easy: 23 — quiz aman 1x
+    - Medium: 22 — quiz aman 1x
+    - Hard: 13 — quiz ⚠️ belum aman
+  - Subbab 2: Komposisi Fungsi — 62 soal
+    - Easy: 20 — quiz aman 1x
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 23 — quiz aman 1x
+  - Subbab 3: Fungsi Invers — 62 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 31 — quiz aman 1x
+    - Hard: 17 — quiz ⚠️ belum aman
+- **Bab 2: Lingkaran** — 176 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Lingkaran dan Busur Lingkaran — 62 soal
+    - Easy: 25 — quiz aman 1x
+    - Medium: 25 — quiz aman 1x
+    - Hard: 12 — quiz ⚠️ belum aman
+  - Subbab 2: Lingkaran dan Garis Singgung — 61 soal
+    - Easy: 16 — quiz ⚠️ belum aman
+    - Medium: 22 — quiz aman 1x
+    - Hard: 23 — quiz aman 1x
+  - Subbab 3: Lingkaran dan Tali Busur — 53 soal
+    - Easy: 18 — quiz ⚠️ belum aman
+    - Medium: 27 — quiz aman 1x
+    - Hard: 8 — quiz ⚠️ belum aman
+- **Bab 3: Statistika** — 166 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Diagram Pencar atau Diagram Scatter — 62 soal
+    - Easy: 33 — quiz aman 1x
+    - Medium: 20 — quiz aman 1x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 2: Regresi Linear — 60 soal
+    - Easy: 6 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 26 — quiz aman 1x
+  - Subbab 3: Analisis Korelasi — 44 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz ⚠️ belum aman
+    - Hard: 15 — quiz ⚠️ belum aman
+
+## Kelas 12 SMA (Lanjut)
+
+_Minimal soal per quiz: 20_
+
+- **Bab 1: Lingkaran, Elips, dan Garis Singgung Lingkaran** — 293 soal
+  - Pretest: aman 1x
+  - Subbab 1: Lingkaran — 109 soal
+    - Easy: 58 — quiz aman 2x
+    - Medium: 42 — quiz aman 2x
+    - Hard: 9 — quiz ⚠️ belum aman
+  - Subbab 2: Elips — 62 soal
+    - Easy: 36 — quiz aman 1x
+    - Medium: 25 — quiz aman 1x
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Kedudukan Titik dan Garis terhadap Lingkaran — 61 soal
+    - Easy: 50 — quiz aman 2x
+    - Medium: 10 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 4: Persamaan Garis Singgung Lingkaran — 61 soal
+    - Easy: 42 — quiz aman 2x
+    - Medium: 18 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+- **Bab 2: Turunan Fungsi** — 248 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Definisi Turunan Fungsi → easy 48, medium 14, hard 0
+    - Subbab 3: Aplikasi Turunan Fungsi → easy 38, medium 24, hard 0
+  - Subbab 1: Definisi Turunan Fungsi — 62 soal
+    - Easy: 48 — quiz aman 2x
+    - Medium: 14 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Sifat-Sifat Turunan Fungsi — 62 soal
+    - Easy: 50 — quiz aman 2x
+    - Medium: 11 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 3: Aplikasi Turunan Fungsi — 62 soal
+    - Easy: 38 — quiz aman 1x
+    - Medium: 24 — quiz aman 1x
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu — 62 soal
+    - Easy: 33 — quiz aman 1x
+    - Medium: 26 — quiz aman 1x
+    - Hard: 3 — quiz ⚠️ belum aman
+- **Bab 3: Integral** — 176 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 2: Integral Tentu → easy 48, medium 13, hard 0
+  - Subbab 1: Integral Tak Tentu — 60 soal
+    - Easy: 46 — quiz aman 2x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 2: Integral Tentu — 61 soal
+    - Easy: 48 — quiz aman 2x
+    - Medium: 13 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Penerapan Integral — 55 soal
+    - Easy: 37 — quiz aman 1x
+    - Medium: 16 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+- **Bab 4: Analisis Data dan Peluang** — 426 soal
+  - Pretest: ⚠️ belum aman
+    - Subbab 1: Variabel Acak → easy 45, medium 14, hard 0
+    - Subbab 2: Variabel Acak Diskret → easy 50, medium 10, hard 0
+    - Subbab 3: Variabel Acak Kontinu → easy 57, medium 5, hard 0
+    - Subbab 6: Distribusi Binomial → easy 5, medium 0, hard 1
+    - Subbab 7: Distribusi Normal → easy 0, medium 0, hard 2
+  - Subbab 1: Variabel Acak — 59 soal
+    - Easy: 45 — quiz aman 2x
+    - Medium: 14 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 2: Variabel Acak Diskret — 60 soal
+    - Easy: 50 — quiz aman 2x
+    - Medium: 10 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 3: Variabel Acak Kontinu — 62 soal
+    - Easy: 57 — quiz aman 2x
+    - Medium: 5 — quiz ⚠️ belum aman
+    - Hard: 0 — quiz ⚠️ belum aman
+  - Subbab 4: Fungsi Peluang — 61 soal
+    - Easy: 44 — quiz aman 2x
+    - Medium: 16 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 5: Fungsi Densitas Peluang — 62 soal
+    - Easy: 42 — quiz aman 2x
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+  - Subbab 6: Distribusi Binomial — 60 soal
+    - Easy: 5 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 1 — quiz ⚠️ belum aman
+    - Tanpa level: 54 — tidak bisa dipakai
+  - Subbab 7: Distribusi Normal — 62 soal
+    - Easy: 0 — quiz ⚠️ belum aman
+    - Medium: 0 — quiz ⚠️ belum aman
+    - Hard: 2 — quiz ⚠️ belum aman
+    - Tanpa level: 60 — tidak bisa dipakai
+
+## Kelas 12 SMA (Umum)
+
+_Minimal soal per quiz: 20_
+
+- **Bab 1: Barisan dan Deret** — 283 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Barisan — 121 soal
+    - Easy: 46 — quiz aman 2x
+    - Medium: 46 — quiz aman 2x
+    - Hard: 29 — quiz aman 1x
+  - Subbab 2: Deret — 119 soal
+    - Easy: 30 — quiz aman 1x
+    - Medium: 51 — quiz aman 2x
+    - Hard: 38 — quiz aman 1x
+  - Subbab 3: Bunga Tunggal — 43 soal
+    - Easy: 14 — quiz ⚠️ belum aman
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 10 — quiz ⚠️ belum aman
+- **Bab 2: Investasi dan Pinjaman** — 333 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Suku Bunga Tunggal — 41 soal
+    - Easy: 23 — quiz aman 1x
+    - Medium: 12 — quiz ⚠️ belum aman
+    - Hard: 6 — quiz ⚠️ belum aman
+  - Subbab 2: Investasi Bunga Majemuk — 57 soal
+    - Easy: 31 — quiz aman 1x
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 6 — quiz ⚠️ belum aman
+    - Tanpa level: 1 — tidak bisa dipakai
+  - Subbab 3: Investasi Anuitas — 58 soal
+    - Easy: 15 — quiz ⚠️ belum aman
+    - Medium: 20 — quiz aman 1x
+    - Hard: 23 — quiz aman 1x
+  - Subbab 4: Pinjaman Bunga Majemuk — 56 soal
+    - Easy: 12 — quiz ⚠️ belum aman
+    - Medium: 17 — quiz ⚠️ belum aman
+    - Hard: 27 — quiz aman 1x
+  - Subbab 5: Pinjaman dengan Anuitas — 62 soal
+    - Easy: 11 — quiz ⚠️ belum aman
+    - Medium: 29 — quiz aman 1x
+    - Hard: 22 — quiz aman 1x
+  - Subbab 6: Parameter Investasi dan Pinjaman — 59 soal
+    - Easy: 9 — quiz ⚠️ belum aman
+    - Medium: 35 — quiz aman 1x
+    - Hard: 15 — quiz ⚠️ belum aman
+- **Bab 3: Kaidah Pencacahan** — 242 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Aturan Pengisian Tempat — 56 soal
+    - Easy: 27 — quiz aman 1x
+    - Medium: 16 — quiz ⚠️ belum aman
+    - Hard: 13 — quiz ⚠️ belum aman
+  - Subbab 2: Permutasi — 62 soal
+    - Easy: 21 — quiz aman 1x
+    - Medium: 19 — quiz ⚠️ belum aman
+    - Hard: 22 — quiz aman 1x
+  - Subbab 3: Kombinasi — 62 soal
+    - Easy: 15 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 19 — quiz ⚠️ belum aman
+  - Subbab 4: Penerapan Permutasi dan Kombinasi — 62 soal
+    - Easy: 10 — quiz ⚠️ belum aman
+    - Medium: 35 — quiz aman 1x
+    - Hard: 17 — quiz ⚠️ belum aman
+- **Bab 4: Peluang** — 124 soal
+  - Pretest: aman 3+x
+  - Subbab 1: Peluang Suatu Kejadian — 62 soal
+    - Easy: 23 — quiz aman 1x
+    - Medium: 22 — quiz aman 1x
+    - Hard: 17 — quiz ⚠️ belum aman
+  - Subbab 2: Peluang Kejadian Majemuk — 62 soal
+    - Easy: 13 — quiz ⚠️ belum aman
+    - Medium: 28 — quiz aman 1x
+    - Hard: 21 — quiz aman 1x
+
+# Hasil Audit: yang sudah aman
+
+## Kelas 1 SD
+
+_Belum ada yang aman._
+
+## Kelas 2 SD
+
+_Belum ada yang aman._
+
+## Kelas 3 SD
+
+_Belum ada yang aman._
+
+## Kelas 4 SD
+
+_Belum ada yang aman._
+
+## Kelas 5 SD
+
+- **Bilangan Cacah Sampai 100.000** — pretest ⚠️ belum aman
+  - Membaca dan Menulis Bilangan Cacah Sampai 100.000 dan Menentukan Nilai Tempatnya: easy 1x
+  - Membandingkan dan Mengurutkan Bilangan Cacah Sampai 100.000: medium 1x
+  - Komposisi dan Dekomposisi Bilangan Sampai 100.000: medium 1x, hard 1x
+  - Operasi Hitung pada Bilangan Cacah Sampai 100.000: medium 1x, hard 1x
+- **KPK dan FPB** — pretest ⚠️ belum aman
+  - Kelipatan: easy 1x
+  - Kelipatan Persekutuan: medium 1x
+  - Faktor: easy 1x
+  - Faktor Persekutuan: medium 1x, hard 1x
+  - Menentukan KPK dan FPB dengan Menggunakan Faktor Prima: medium 1x, hard 1x
+- **Bilangan Pecahan** — pretest ⚠️ belum aman
+  - Membandingkan dan Mengurutkan Pecahan: easy 1x, medium 1x
+  - Penjumlahan Bilangan Pecahan: medium 1x, hard 1x
+  - Pengurangan Bilangan Pecahan: easy 1x, medium 1x
+- **Keliling Bangun Datar** — pretest ⚠️ belum aman
+  - Apakah Keliling Bangun Datar Itu?: easy 1x, medium 1x
+  - Keliling Segitiga: easy 1x
+  - Keliling Segi Empat: medium 1x
+  - Keliling Segi Banyak: easy 1x
+  - Keliling Bangun Gabungan: hard 1x
+- **Luas Daerah Bangun Datar** — pretest ⚠️ belum aman
+  - Konsep Luas Daerah Bangun Datar: easy 1x, medium 1x
+  - Luas Daerah Bangun Datar: easy 1x, medium 1x
+  - Luas Daerah Bangun Gabungan: medium 1x, hard 1x
+  - Hubungan Keliling dan Luas Daerah Bangun Datar: hard 1x
+- **Sudut** — pretest ✅ aman 2x
+  - Sudut Siku-Siku: easy 1x
+  - Pengertian Sudut: medium 1x
+  - Mengukur dan Membandingkan Sudut: medium 1x, hard 1x
+- **Membandingkan Ciri-Ciri Bangun Datar** — pretest ⚠️ belum aman
+  - Membandingkan Ciri-Ciri Segitiga: medium 1x, hard 1x
+  - Membandingkan Ciri-Ciri Segi Empat: medium 1x
+- **Data** — pretest ⚠️ belum aman
+  - Mengumpulkan Data: easy 1x, medium 1x
+  - Piktogram: medium 1x, hard 1x
+- **Bilangan Cacah Sampai 1.000.000** — pretest ✅ aman 3+x
+  - Membaca dan Menulis Bilangan Cacah Sampai 1.000.000 dan Menentukan Nilai Tempatnya: easy 1x, medium 1x
+  - Mengurutkan dan Membandingkan Bilangan Sampai 1.000.000: medium 1x, hard 1x
+  - Komposisi dan Dekomposisi Bilangan Sampai 1.000.000: medium 1x, hard 1x
+
+## Kelas 6 SD
+
+- **Pecahan dan Desimal** — pretest ✅ aman 3+x
+  - Perkalian Pecahan: easy 1x, medium 1x, hard 1x
+  - Pembagian Pecahan: easy 1x, medium 1x
+  - Bilangan Desimal: medium 1x
+- **Rasio** — pretest ⚠️ belum aman
+  - Konsep Kesamaan Rasio: medium 1x
+  - Penerapan Rasio: hard 1x
+- **Kubus dan Balok** — pretest ⚠️ belum aman
+  - Mengonstruksi dan Mengurai: easy 1x, medium 1x
+  - Visualisasi Spasial: hard 1x
+  - Lokasi: medium 2x
+- **Peluang** — pretest ✅ aman 3x
+  - Skala Peluang: easy 1x, medium 1x
+  - Membandingkan Peluang Kejadian: medium 1x, hard 1x
+
+## Kelas 7 SMP
+
+- **Bilangan Bulat** — pretest ✅ aman 3+x
+  - Memahami Bilangan Bulat: easy 1x
+  - Operasi Hitung Bilangan Bulat: medium 1x, hard 1x
+  - Faktor Bilangan Bulat: medium 1x, hard 1x
+- **Bilangan Rasional** — pretest ✅ aman 3+x
+  - Di Antara Dua Bilangan Bulat: easy 1x
+  - Membandingkan Bilangan Rasional: medium 1x
+  - Operasi Hitung Bilangan Rasional: medium 1x, hard 1x
+- **Rasio** — pretest ✅ aman 3+x
+  - Konsep Rasio: easy 2x, medium 1x, hard 1x
+  - Skala: easy 1x, medium 1x
+  - Laju Perubahan Satuan: medium 1x, hard 1x
+- **Bentuk Aljabar** — pretest ✅ aman 3+x
+  - Unsur-Unsur Bentuk Aljabar: easy 1x, medium 1x
+  - Sifat-Sifat dan Operasi Aljabar: easy 1x, medium 1x
+  - Pemodelan dengan Bentuk Aljabar: medium 1x, hard 1x
+- **Kesebangunan** — pretest ✅ aman 3+x
+  - Kesebangunan pada Segitiga: medium 1x
+- **Data dan Diagram** — pretest ⚠️ belum aman
+  - Investigasi Statistika: medium 1x
+  - Macam-Macam Data: easy 1x, medium 1x
+  - Diagram dalam Statistika: medium 1x, hard 1x
+  - Diagram Batang: easy 1x, medium 1x, hard 2x
+  - Diagram Lingkaran: medium 1x, hard 1x
+
+## Kelas 8 SMP
+
+- **Bilangan Berpangkat** — pretest ✅ aman 3+x
+  - Bilangan Berpangkat Bulat: easy 1x, medium 1x, hard 1x
+  - Bilangan Bentuk Akar: medium 2x
+  - Penulisan Bentuk Baku: easy 1x, hard 1x
+- **Teorema Pythagoras** — pretest ✅ aman 3+x
+  - Menemukan Konsep Pythagoras: easy 1x, medium 1x
+  - Tripel Pythagoras: easy 1x, medium 1x
+  - Segitiga Istimewa: easy 1x, hard 1x
+  - Penerapan Teorema Pythagoras: medium 1x, hard 1x
+  - Rumus Jarak (Pengayaan): medium 1x, hard 1x
+- **Persamaan Linier dan Pertidaksamaan Linier Satu Variabel** — pretest ✅ aman 3+x
+  - Memahami Konsep Persamaan Linier Satu Variabel: easy 1x
+  - Menyelesaikan Persamaan Linier Satu Variabel: medium 1x
+  - Menemukan Konsep Pertidaksamaan Linier Satu Variabel: easy 1x, medium 1x
+  - Menyelesaikan Masalah terkait Pertidaksamaan Linier Satu Variabel: medium 1x, hard 1x
+- **Relasi dan Fungsi** — pretest ✅ aman 3+x
+  - Memahami Relasi: easy 1x, medium 1x
+  - Memahami Fungsi: medium 1x, hard 1x
+  - Korespondensi Satu-satu (Pengayaan): easy 1x, medium 1x
+- **Persamaan Garis Lurus** — pretest ✅ aman 3+x
+  - Grafik Persamaan Garis Lurus: easy 1x, medium 1x
+  - Pengertian Kemiringan: medium 1x, hard 1x
+- **Statistika** — pretest ⚠️ belum aman
+  - Pemusatan Data: easy 1x, medium 1x
+  - Penyebaran Data: medium 1x, hard 1x
+
+## Kelas 9 SMP
+
+- **Sistem Persamaan Linear Dua Variabel** — pretest ✅ aman 3+x
+  - Persamaan Linear Dua Variabel: easy 1x, medium 1x
+  - Sistem Persamaan Linear Dua Variabel: medium 1x, hard 1x
+- **Bangun Ruang** — pretest ⚠️ belum aman
+  - Klasifikasi Bangun Ruang dan Jaring-Jaring: easy 1x
+  - Luas Permukaan Bangun Ruang Sisi Datar: easy 1x, medium 1x, hard 1x
+  - Volume Bangun Ruang Sisi Datar: easy 1x, medium 1x
+  - Luas Permukaan Bangun Ruang Sisi Lengkung: medium 1x, hard 1x
+  - Volume Bangun Ruang Sisi Lengkung: medium 1x, hard 1x
+- **Transformasi Geometri** — pretest ✅ aman 3+x
+  - Translasi (Pergeseran): easy 1x, medium 1x
+  - Refleksi (Pencerminan): easy 1x, medium 1x
+  - Rotasi (Perputaran): easy 1x, medium 1x
+  - Kekongruenan: medium 1x, hard 1x
+  - Dilatasi: medium 1x, hard 1x
+- **Peluang dan Pemilihan Sampel** — pretest ✅ aman 3+x
+  - Peluang: easy 1x, medium 1x
+  - Peluang Empiris: medium 1x, hard 1x
+  - Frekuensi Harapan: medium 1x, hard 1x
+  - Pemilihan Sampel: easy 1x, hard 1x
+
+## Kelas 10 SMA
+
+- **Eksponen** — pretest ✅ aman 3+x
+  - Definisi Eksponen: easy 1x
+  - Sifat-Sifat Eksponen: medium 1x
+  - Fungsi Eksponensial: medium 1x, hard 1x
+  - Bentuk Akar: hard 1x
+- **Perbandingan Trigonometri** — pretest ✅ aman 3+x
+  - Perbandingan Trigonometri: easy 1x, hard 1x
+  - Pemanfaatan Perbandingan Trigonometri: medium 1x
+- **Sistem Persamaan dan Pertidaksamaan Linear** — pretest ✅ aman 3+x
+  - Sistem Pertidaksamaan Linear: medium 1x
+- **Persamaan dan Fungsi Kuadrat** — pretest ✅ aman 3+x
+  - Persamaan Kuadrat: easy 1x, medium 1x, hard 1x
+  - Fungsi Kuadrat: medium 1x
+- **Representasi dan Interpretasi Data** — pretest ✅ aman 3+x
+  - Representasi Data: easy 1x
+  - Statistik Deskriptif: medium 1x
+- **Peluang** — pretest ✅ aman 3+x
+  - Distribusi Peluang: medium 1x
+  - Aturan Penjumlahan: medium 1x
+  - Aturan Perkalian: easy 1x, medium 1x
+
+## Kelas 11 SMA (Lanjut)
+
+- **Matriks** — pretest ✅ aman 3+x
+  - Jenis-Jenis Matriks: easy 1x, medium 1x
+  - Kesamaan Dua Matriks: medium 1x
+  - Penjumlahan dan Pengurangan Antarmatriks: medium 1x
+  - Perkalian Matriks: easy 1x, hard 1x
+  - Determinan Matriks dan Invers Matriks: medium 1x, hard 1x
+- **Polinomial** — pretest ✅ aman 3+x
+  - Polinomial dan Fungsi Polinomial: easy 1x
+  - Penjumlahan, Pengurangan, dan Perkalian Polinomial: medium 1x
+  - Pembagian Polinomial: hard 1x
+  - Faktor dan Pembuat Nol Polinomial: medium 1x, hard 1x
+- **Fungsi Trigonometri** — pretest ✅ aman 2x
+  - Fungsi Trigonometri dan Lingkaran Satuan: easy 1x
+  - Identitas Trigonometri: easy 1x
+  - Aturan Sinus: medium 1x
+  - Aturan Kosinus: medium 1x, hard 1x
+- **Vektor** — pretest ✅ aman 3+x
+  - Vektor pada Bidang: easy 1x, medium 1x
+  - Hasil Kali Titik: medium 1x
+  - Pembuktian Geometris: hard 1x
+- **Transformasi Geometri** — pretest ✅ aman 3+x
+  - Transformasi pada Bidang Kartesius: medium 1x
+  - Kaitan Matriks dengan Transformasi: easy 1x, medium 1x
+  - Komposisi Transformasi dengan Matriks: medium 1x, hard 1x
+- **Fungsi dan Pemodelannya** — pretest ⚠️ belum aman
+  - Fungsi Logaritma: easy 1x, medium 1x
+  - Fungsi Aljabar: medium 1x
+
+## Kelas 11 SMA (Umum)
+
+- **Komposisi Fungsi dan Fungsi Invers** — pretest ✅ aman 3+x
+  - Fungsi: easy 1x, medium 1x
+  - Komposisi Fungsi: easy 1x, hard 1x
+  - Fungsi Invers: medium 1x
+- **Lingkaran** — pretest ✅ aman 3+x
+  - Lingkaran dan Busur Lingkaran: easy 1x, medium 1x
+  - Lingkaran dan Garis Singgung: medium 1x, hard 1x
+  - Lingkaran dan Tali Busur: medium 1x
+- **Statistika** — pretest ✅ aman 3+x
+  - Diagram Pencar atau Diagram Scatter: easy 1x, medium 1x
+  - Regresi Linear: medium 1x, hard 1x
+
+## Kelas 12 SMA (Lanjut)
+
+- **Lingkaran, Elips, dan Garis Singgung Lingkaran** — pretest ✅ aman 1x
+  - Lingkaran: easy 2x, medium 2x
+  - Elips: easy 1x, medium 1x
+  - Kedudukan Titik dan Garis terhadap Lingkaran: easy 2x
+  - Persamaan Garis Singgung Lingkaran: easy 2x
+- **Turunan Fungsi** — pretest ⚠️ belum aman
+  - Definisi Turunan Fungsi: easy 2x
+  - Sifat-Sifat Turunan Fungsi: easy 2x
+  - Aplikasi Turunan Fungsi: easy 1x, medium 1x
+  - Aplikasi Turunan Fungsi di Berbagai Bidang Ilmu: easy 1x, medium 1x
+- **Integral** — pretest ⚠️ belum aman
+  - Integral Tak Tentu: easy 2x
+  - Integral Tentu: easy 2x
+  - Penerapan Integral: easy 1x
+- **Analisis Data dan Peluang** — pretest ⚠️ belum aman
+  - Variabel Acak: easy 2x
+  - Variabel Acak Diskret: easy 2x
+  - Variabel Acak Kontinu: easy 2x
+  - Fungsi Peluang: easy 2x
+  - Fungsi Densitas Peluang: easy 2x
+
+## Kelas 12 SMA (Umum)
+
+- **Barisan dan Deret** — pretest ✅ aman 3+x
+  - Barisan: easy 2x, medium 2x, hard 1x
+  - Deret: easy 1x, medium 2x, hard 1x
+- **Investasi dan Pinjaman** — pretest ✅ aman 3+x
+  - Suku Bunga Tunggal: easy 1x
+  - Investasi Bunga Majemuk: easy 1x
+  - Investasi Anuitas: medium 1x, hard 1x
+  - Pinjaman Bunga Majemuk: hard 1x
+  - Pinjaman dengan Anuitas: medium 1x, hard 1x
+  - Parameter Investasi dan Pinjaman: medium 1x
+- **Kaidah Pencacahan** — pretest ✅ aman 3+x
+  - Aturan Pengisian Tempat: easy 1x
+  - Permutasi: easy 1x, hard 1x
+  - Kombinasi: medium 1x
+  - Penerapan Permutasi dan Kombinasi: medium 1x
+- **Peluang** — pretest ✅ aman 3+x
+  - Peluang Suatu Kejadian: easy 1x, medium 1x
+  - Peluang Kejadian Majemuk: medium 1x, hard 1x

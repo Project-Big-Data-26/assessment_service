@@ -429,6 +429,1524 @@
       "pembahasan": "Hitung jarak tiap bagian melalui titik wajib. Bagian pertama: 3 langkah ke kanan dan 3 ke atas, jadi 6 langkah. Bagian kedua: 2 langkah ke kanan dan 3 ke atas, jadi 5 langkah. Jarak terpendek seluruhnya 6 + 5 = 11 langkah. Jadi klaim Rina benar.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811c22c6cea6e2630e82507a",
+        "teks": "Dari (B,4), sebuah jalur bergerak 3 langkah ke kanan, 2 langkah ke bawah, lalu 1 langkah ke kiri. Apakah jalur itu mencapai (D,2)?",
+        "jawaban": "Ya, jalur mencapai (D,2)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target hard; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(5, 2)$ ke $(10, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 5 petak dan tegak 2 petak. Minimum jumlah langkah = 7.",
+      "catatan": "codex-replenishment:kelas6-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811c22c6cea6e2630e82507a",
+        "teks": "Dari (B,4), sebuah jalur bergerak 3 langkah ke kanan, 2 langkah ke bawah, lalu 1 langkah ke kiri. Apakah jalur itu mencapai (D,2)?",
+        "jawaban": "Ya, jalur mencapai (D,2)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target hard; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(2, 6)$ ke $(4, 11)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perpindahan mendatar 2 petak dan tegak 5 petak. Minimum jumlah langkah = 7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 2 petak dan tegak 5 petak. Minimum jumlah langkah = 7.",
+      "catatan": "codex-replenishment:kelas6-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "513edfbcba1baf4ff4e88dd6",
+        "teks": "Dari (B,6) ke (F,2), jalur hanya boleh mendatar atau tegak. Nia mengusulkan 4 langkah ke kanan lalu 4 langkah ke bawah. Bayu mengusulkan 2 langkah ke kanan, 4 langkah ke bawah, lalu 2 langkah ke kanan. Pernyataan mana yang benar?",
+        "jawaban": "Kedua jalur mencapai tujuan dan sama-sama terpendek.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target hard; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(3, 3)$ ke $(6, 7)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perpindahan mendatar 3 petak dan tegak 4 petak. Minimum jumlah langkah = 7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 3 petak dan tegak 4 petak. Minimum jumlah langkah = 7.",
+      "catatan": "codex-replenishment:kelas6-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46aa1950e1d8d33e522cba41",
+        "teks": "Dari (A,1) ke (D,3), seseorang hanya boleh bergerak ke kanan atau ke atas. Berapa banyak rute terpendek yang berbeda?",
+        "jawaban": "10 rute",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "lokasi_pada_petak",
+      "alasan_level": "Target hard; variasi konsep lokasi pada petak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 2)$ ke $(6, 6)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Perpindahan mendatar 5 petak dan tegak 4 petak. Minimum jumlah langkah = 9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah lokasi pada petak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perpindahan mendatar 5 petak dan tegak 4 petak. Minimum jumlah langkah = 9.",
+      "catatan": "codex-replenishment:kelas6-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b03-c-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "542029f34543889fae556158",
+        "teks": "Pada denah berpetak, sebuah bidak berpindah dari $(2, 4)$ ke $(6, 9)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 8 langkah kanan, 5 atas, 4 kiri, 2 bawah, lalu tiba di (7,6). Dari titik awal yang sama ia harus mencapai (10,12) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,3), jadi titik awal (3,3). Selisih koordinat menuju tujuan baru (7,9); semua positif, total minimum 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,3), jadi titik awal (3,3). Selisih koordinat menuju tujuan baru (7,9); semua positif, total minimum 16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "71a2c49617829324957be30f",
+        "teks": "Sebuah titik berada di (C,4). Titik itu berpindah 3 kolom ke kanan dan 2 baris ke bawah. Di mana posisi akhirnya?",
+        "jawaban": "(F,2)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 4 atas, 2 kiri, 1 bawah, lalu tiba di (12,6). Dari titik awal yang sama ia harus mencapai (19,14) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Gerak bersih perjalanan awal (7,3), jadi titik awal (5,3). Selisih koordinat menuju tujuan baru (14,11); semua positif, total minimum 25.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (7,3), jadi titik awal (5,3). Selisih koordinat menuju tujuan baru (14,11); semua positif, total minimum 25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "704590257a22f41dbf962035",
+        "teks": "Tentukan jarak antara titik (B,7) dan (G,2) pada sistem berpetak.",
+        "jawaban": "5 langkah ke kanan dan 5 langkah ke bawah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, 8 atas, 4 kiri, 6 bawah, lalu tiba di (3,5). Dari titik awal yang sama ia harus mencapai (6,10) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,2), jadi titik awal (2,3). Selisih koordinat menuju tujuan baru (4,7); semua positif, total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,2), jadi titik awal (2,3). Selisih koordinat menuju tujuan baru (4,7); semua positif, total minimum 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6c938a20e3547b32ac7b6da",
+        "teks": "Dari titik (C,8) ke titik (H,2), berapa jarak mendatar dan vertikalnya?",
+        "jawaban": "5 langkah ke kanan dan 6 langkah ke bawah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, 7 atas, 4 kiri, 1 bawah, lalu tiba di (6,11). Dari titik awal yang sama ia harus mencapai (9,17) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,6), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (4,12); semua positif, total minimum 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,6), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (4,12); semua positif, total minimum 16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec672ebb4b34bd8dc39daf60",
+        "teks": "Pesan bergerak dari (A,1) ke (E,5), hanya mendatar atau tegak, dan wajib melewati (C,3). Berapa langkah minimal yang diperlukan?",
+        "jawaban": "8 langkah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, 6 atas, 2 kiri, 3 bawah, lalu tiba di (8,4). Dari titik awal yang sama ia harus mencapai (14,13) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,3), jadi titik awal (4,1). Selisih koordinat menuju tujuan baru (10,12); semua positif, total minimum 22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,3), jadi titik awal (4,1). Selisih koordinat menuju tujuan baru (10,12); semua positif, total minimum 22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53b969d831bceafcb2850906",
+        "teks": "Pada peta kelas, Rani duduk di kursi (C,2). Dito duduk 4 deret di sebelah kanan Rani dan satu baris tepat di belakangnya. Di posisi mana Dito duduk?",
+        "jawaban": "(G,3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, 4 atas, 2 kiri, 2 bawah, lalu tiba di (7,6). Dari titik awal yang sama ia harus mencapai (11,13) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,2), jadi titik awal (4,4). Selisih koordinat menuju tujuan baru (7,9); semua positif, total minimum 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,2), jadi titik awal (4,4). Selisih koordinat menuju tujuan baru (7,9); semua positif, total minimum 16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "427fc2e0a5f126f55aa8b1a1",
+        "teks": "Pada denah berpetak, sebuah bidak berpindah dari $(1, 2)$ ke $(6, 6)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, 4 atas, 2 kiri, 3 bawah, lalu tiba di (6,5). Dari titik awal yang sama ia harus mencapai (10,11) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,1), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (7,7); semua positif, total minimum 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,1), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (7,7); semua positif, total minimum 14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "df454800afa8021c75abd127",
+        "teks": "Tentukan jarak antara titik (A,9) dan (E,2) pada sistem berpetak.",
+        "jawaban": "4 langkah ke kanan dan 7 langkah ke bawah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, 4 atas, 3 kiri, 1 bawah, lalu tiba di (4,8). Dari titik awal yang sama ia harus mencapai (11,17) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Gerak bersih perjalanan awal (2,3), jadi titik awal (2,5). Selisih koordinat menuju tujuan baru (9,12); semua positif, total minimum 21.",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $21$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $21$."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (2,3), jadi titik awal (2,5). Selisih koordinat menuju tujuan baru (9,12); semua positif, total minimum 21.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f562bb6dcbd3085b6899e2d",
+        "teks": "Pada peta kelas, Kinan duduk di kursi (C,6). Jika Angga duduk pada 3 deret di sebelah kanan deretan Kinan dan baris yang letaknya persis di belakang barisan Kinan, tuliskan posisi Angga dalam bentuk pasangan huruf dan bilangan.",
+        "jawaban": "(F,7)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 7 langkah kanan, 4 atas, 4 kiri, 2 bawah, lalu tiba di (4,6). Dari titik awal yang sama ia harus mencapai (9,15) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,2), jadi titik awal (1,4). Selisih koordinat menuju tujuan baru (8,11); semua positif, total minimum 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,2), jadi titik awal (1,4). Selisih koordinat menuju tujuan baru (8,11); semua positif, total minimum 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dbe37a5a09cf90f900f0ed14",
+        "teks": "Pada sistem berpetak, sebuah pesan dikirim dari (C,8) ke (H,3) melalui jalur terpendek. Berapa langkah yang ditempuh?",
+        "jawaban": "10 langkah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 8 langkah kanan, 5 atas, 7 kiri, 4 bawah, lalu tiba di (4,6). Dari titik awal yang sama ia harus mencapai (5,8) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,1), jadi titik awal (3,5). Selisih koordinat menuju tujuan baru (2,3); semua positif, total minimum 5.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,1), jadi titik awal (3,5). Selisih koordinat menuju tujuan baru (2,3); semua positif, total minimum 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "965ad3773b76696cd3155e43",
+        "teks": "Pada sistem berpetak, berapa langkah mendatar dan vertikal dari (B,2) ke (G,6)?",
+        "jawaban": "5 langkah ke kanan dan 4 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 7 atas, $T_1$ kiri, 6 bawah, lalu tiba di (7,6). Dari titik awal yang sama ia harus mencapai (14,9) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,1), jadi titik awal (3,5). Selisih koordinat menuju tujuan baru (11,4); semua positif, total minimum 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,1), jadi titik awal (3,5). Selisih koordinat menuju tujuan baru (11,4); semua positif, total minimum 15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53b969d831bceafcb2850906",
+        "teks": "Pada peta kelas, Rani duduk di kursi (C,2). Dito duduk 4 deret di sebelah kanan Rani dan satu baris tepat di belakangnya. Di posisi mana Dito duduk?",
+        "jawaban": "(G,3)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, $T_1$ atas, 2 kiri, 1 bawah, lalu tiba di (7,4). Dari titik awal yang sama ia harus mencapai (12,6) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,2), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (9,4); semua positif, total minimum 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,2), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (9,4); semua positif, total minimum 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "da761a1d5fc58b6f282a2590",
+        "teks": "Seekor semut berada di (A,1) pada kertas berpetak. Semut berjalan menuju (D,5). Berapa langkah mendatar dan vertikal yang ditempuhnya?",
+        "jawaban": "3 langkah ke kanan dan 4 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, $T_1$ atas, 5 kiri, 3 bawah, lalu tiba di (2,5). Dari titik awal yang sama ia harus mencapai (9,13) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,1), jadi titik awal (1,4). Selisih koordinat menuju tujuan baru (8,9); semua positif, total minimum 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,1), jadi titik awal (1,4). Selisih koordinat menuju tujuan baru (8,9); semua positif, total minimum 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb9e3f5859e2737fd3ec0cd3",
+        "teks": "Dalam sistem berpetak, garis vertikal dinamai dengan apa?",
+        "jawaban": "Huruf",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 4 atas, $T_1$ kiri, 1 bawah, lalu tiba di (9,5). Dari titik awal yang sama ia harus mencapai (14,9) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Gerak bersih perjalanan awal (6,3), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (11,7); semua positif, total minimum 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (6,3), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (11,7); semua positif, total minimum 18.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06d324aba1d674420a7846e3",
+        "teks": "Pada sistem berpetak, titik P berada di (B,4) dan titik Q di (F,4). Berapa jarak mendatar antara P dan Q?",
+        "jawaban": "4 langkah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 4 langkah kanan, $T_1$ atas, 3 kiri, 1 bawah, lalu tiba di (6,9). Dari titik awal yang sama ia harus mencapai (7,11) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,4), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (2,6); semua positif, total minimum 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,4), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (2,6); semua positif, total minimum 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dae42b6cc0708ef81dffa2d3",
+        "teks": "Tentukan jarak antara titik (B,1) dan (H,4) pada sistem berpetak.",
+        "jawaban": "6 langkah ke kanan dan 3 langkah ke atas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, 7 atas, 5 kiri, $T_1$ bawah, lalu tiba di (4,5). Dari titik awal yang sama ia harus mencapai (11,10) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,4), jadi titik awal (3,1). Selisih koordinat menuju tujuan baru (8,9); semua positif, total minimum 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,4), jadi titik awal (3,1). Selisih koordinat menuju tujuan baru (8,9); semua positif, total minimum 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6c938a20e3547b32ac7b6da",
+        "teks": "Dari titik (C,8) ke titik (H,2), berapa jarak mendatar dan vertikalnya?",
+        "jawaban": "5 langkah ke kanan dan 6 langkah ke bawah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, $T_1$ atas, 3 kiri, 4 bawah, lalu tiba di (8,4). Dari titik awal yang sama ia harus mencapai (9,10) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,1), jadi titik awal (5,3). Selisih koordinat menuju tujuan baru (4,7); semua positif, total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,1), jadi titik awal (5,3). Selisih koordinat menuju tujuan baru (4,7); semua positif, total minimum 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "133205b94586585bf62acff2",
+        "teks": "Pada peta kelas, Kinan duduk di kursi (C,4). Angga duduk 4 deret di sebelah kanan Kinan dan satu baris tepat di belakangnya. Tuliskan posisi Angga.",
+        "jawaban": "(G,5)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 5 langkah kanan, $T_1$ atas, 2 kiri, 2 bawah, lalu tiba di (4,4). Dari titik awal yang sama ia harus mencapai (11,7) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,1), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (10,4); semua positif, total minimum 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,1), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (10,4); semua positif, total minimum 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e54e6f6b121761440703b8c",
+        "teks": "Pada sistem berpetak, titik berada di perpotongan garis C dan garis 5. Bagaimana lokasi titik itu ditulis?",
+        "jawaban": "(C,5)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak $T_1$ langkah kanan, 7 atas, 1 kiri, 3 bawah, lalu tiba di (6,8). Dari titik awal yang sama ia harus mencapai (7,10) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,4), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (4,6); semua positif, total minimum 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,4), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (4,6); semua positif, total minimum 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/d684a89ca2687aeaa2a6dc94.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              4
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 4]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "99575e17bc2981050a1e0ebc",
+        "teks": "Dari (A,2) ke (D,5), hanya boleh bergerak mendatar atau tegak. Berapa langkah paling sedikit untuk sampai?",
+        "jawaban": "6 langkah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 7 langkah kanan, 7 atas, 1 kiri, $T_1$ bawah, lalu tiba di (11,7). Dari titik awal yang sama ia harus mencapai (14,13) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Gerak bersih perjalanan awal (6,2), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (9,8); semua positif, total minimum 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (6,2), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (9,8); semua positif, total minimum 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "def7792d57ffe685b51f5e98",
+        "teks": "Sebuah kubus berada di (H,4) dan harus mencapai (E,7). Kubus tidak boleh diangkat dan setiap rebahan memindahkannya satu petak. Raka berkata kubus perlu direbahkan 5 kali. Manakah penilaian yang benar?",
+        "jawaban": "Klaim Raka salah; kubus perlu direbahkan 6 kali.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak $T_1$ langkah kanan, 6 atas, 4 kiri, 2 bawah, lalu tiba di (6,8). Dari titik awal yang sama ia harus mencapai (10,10) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,4), jadi titik awal (5,4). Selisih koordinat menuju tujuan baru (5,6); semua positif, total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,4), jadi titik awal (5,4). Selisih koordinat menuju tujuan baru (5,6); semua positif, total minimum 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e34b85af1ad6884926023be",
+        "teks": "Dari (B,2) ke (F,6), Lani mengusulkan rute 4 langkah ke kanan lalu 4 langkah ke atas. Dodi mengusulkan rute 3 langkah ke kanan, 4 langkah ke atas, lalu 1 langkah ke kanan. Manakah kesimpulan yang tepat?",
+        "jawaban": "Kedua rute mencapai tujuan dan sama-sama menempuh 8 langkah.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, 3 atas, 3 kiri, 2 bawah, lalu tiba di ($T_1$,6). Dari titik awal yang sama ia harus mencapai (12,11) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Gerak bersih perjalanan awal (3,1), jadi titik awal (2,5). Selisih koordinat menuju tujuan baru (10,6); semua positif, total minimum 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (3,1), jadi titik awal (2,5). Selisih koordinat menuju tujuan baru (10,6); semua positif, total minimum 16.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec672ebb4b34bd8dc39daf60",
+        "teks": "Pesan bergerak dari (A,1) ke (E,5), hanya mendatar atau tegak, dan wajib melewati (C,3). Berapa langkah minimal yang diperlukan?",
+        "jawaban": "8 langkah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak $T_1$ langkah kanan, 8 atas, 1 kiri, 1 bawah, lalu tiba di (7,9). Dari titik awal yang sama ia harus mencapai (13,12) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,7), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (10,10); semua positif, total minimum 20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,7), jadi titik awal (3,2). Selisih koordinat menuju tujuan baru (10,10); semua positif, total minimum 20.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46aa1950e1d8d33e522cba41",
+        "teks": "Dari (A,1) ke (D,3), seseorang hanya boleh bergerak ke kanan atau ke atas. Berapa banyak rute terpendek yang berbeda?",
+        "jawaban": "10 rute",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 7 atas, 8 kiri, 1 bawah, lalu tiba di (2,9). Dari titik awal yang sama ia harus mencapai (6,12) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,6), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (5,9); semua positif, total minimum 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,6), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (5,9); semua positif, total minimum 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff62500944ddb8a851c181bf",
+        "teks": "Dari (C,4) ke (H,9), Rudi berkata jaraknya 5 langkah ke kanan dan 5 langkah ke atas. Sita berkata jaraknya 5 langkah ke kanan dan 5 langkah ke bawah. Siapa yang benar?",
+        "jawaban": "Rudi saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 8 langkah kanan, 7 atas, 4 kiri, 6 bawah, lalu tiba di (5,4). Dari titik awal yang sama ia harus mencapai (10,7) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,1), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (9,4); semua positif, total minimum 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,1), jadi titik awal (1,3). Selisih koordinat menuju tujuan baru (9,4); semua positif, total minimum 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "513edfbcba1baf4ff4e88dd6",
+        "teks": "Dari (B,6) ke (F,2), jalur hanya boleh mendatar atau tegak. Nia mengusulkan 4 langkah ke kanan lalu 4 langkah ke bawah. Bayu mengusulkan 2 langkah ke kanan, 4 langkah ke bawah, lalu 2 langkah ke kanan. Pernyataan mana yang benar?",
+        "jawaban": "Kedua jalur mencapai tujuan dan sama-sama terpendek.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 8 atas, 4 kiri, 7 bawah, lalu tiba di (8,5). Dari titik awal yang sama ia harus mencapai (15,7) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Gerak bersih perjalanan awal (5,1), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (12,3); semua positif, total minimum 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (5,1), jadi titik awal (3,4). Selisih koordinat menuju tujuan baru (12,3); semua positif, total minimum 15.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14a4e2a90a1590c73a8c2ca8",
+        "teks": "Dari (A,1) ke (C,3), seseorang hanya boleh bergerak ke kanan atau ke atas dan wajib melewati (B,2). Berapa banyak rute terpendek yang berbeda?",
+        "jawaban": "4 rute",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 4 langkah kanan, 4 atas, 2 kiri, 3 bawah, lalu tiba di (6,5). Dari titik awal yang sama ia harus mencapai (10,11) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Gerak bersih perjalanan awal (2,1), jadi titik awal (4,4). Selisih koordinat menuju tujuan baru (6,7); semua positif, total minimum 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (2,1), jadi titik awal (4,4). Selisih koordinat menuju tujuan baru (6,7); semua positif, total minimum 13.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb0e995021a09e61bbc7c887",
+        "teks": "Dari (D,8) ke (H,3), jarak yang benar adalah 4 langkah ke kanan dan 5 langkah ke bawah. Raka mengklaim jaraknya 4 langkah ke kanan dan 5 langkah ke atas. Bagaimana penilaian yang tepat?",
+        "jawaban": "Klaim Raka salah; jaraknya 4 langkah ke kanan dan 5 langkah ke bawah.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 9 langkah kanan, 4 atas, 8 kiri, 2 bawah, lalu tiba di (6,7). Dari titik awal yang sama ia harus mencapai (10,11) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,2), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (5,6); semua positif, total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,2), jadi titik awal (5,5). Selisih koordinat menuju tujuan baru (5,6); semua positif, total minimum 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bcc0b55373df4a81d886c33c",
+        "teks": "Pada sistem berpetak, sebuah pesan bergerak dari (A,2) ke (F,8) melalui (D,5). Jarak dihitung sebagai jumlah langkah mendatar dan tegak. Rina berkata jarak terpendek seluruh perjalanan adalah 11 langkah. Apakah klaim Rina benar?",
+        "jawaban": "Klaim Rina benar; jarak terpendeknya 11 langkah.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 6 langkah kanan, 7 atas, 2 kiri, 1 bawah, lalu tiba di (8,9). Dari titik awal yang sama ia harus mencapai (13,13) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Gerak bersih perjalanan awal (4,6), jadi titik awal (4,3). Selisih koordinat menuju tujuan baru (9,10); semua positif, total minimum 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (4,6), jadi titik awal (4,3). Selisih koordinat menuju tujuan baru (9,10); semua positif, total minimum 19.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "704590257a22f41dbf962035",
+        "teks": "Tentukan jarak antara titik (B,7) dan (G,2) pada sistem berpetak.",
+        "jawaban": "5 langkah ke kanan dan 5 langkah ke bawah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_lokasi_balik_jalur",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Pada kisi, setiap langkah ke kanan menambah x dan ke atas menambah y. Dari titik awal yang belum diketahui, Rani bergerak 8 langkah kanan, 3 atas, 7 kiri, 1 bawah, lalu tiba di (5,3). Dari titik awal yang sama ia harus mencapai (9,8) dengan hanya langkah kanan dan atas. Berapa jumlah langkah paling sedikit?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Gerak bersih perjalanan awal (1,2), jadi titik awal (4,1). Selisih koordinat menuju tujuan baru (5,7); semua positif, total minimum 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Gerak bersih perjalanan awal (1,2), jadi titik awal (4,1). Selisih koordinat menuju tujuan baru (5,7); semua positif, total minimum 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b03-c-hard-bt01-044"
     }
   ]
 }

@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.1",
+        "teks": "Sebuah kotak berisi 5 bola merah dan 6 bola putih seperti yang ditunjukkan pada Gambar 4.4. Diambil sebanyak 4 bola satu per satu tanpa pengembalian. Jika Z menyatakan banyaknya bola putih yang terambil, tentukan nilai z yang mungkin dari variabel acak Z .",
+        "jawaban": "{0, 1, 2, 3, 4}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak pengambilan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis komposisi objek dan batas pengambilan untuk menentukan seluruh nilai variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi 3 bola merah dan 7 bola putih. Dari kantong tersebut diambil 5 bola sekaligus secara acak tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola merah yang terambil, himpunan semua nilai $z$ yang mungkin untuk variabel acak $Z$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2, 3\\}$",
+      "alasan_benar": "Total bola merah hanya ada 3 dan bola putih ada 7, sehingga pada pengambilan 5 bola, banyaknya bola merah yang terambil paling sedikit 0 (semua 5 putih) dan paling banyak 3 (semua merah terambil), menghasilkan nilai {0, 1, 2, 3}.",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Mengira bola merah pasti terambil minimal 1 butir padahal bola putih cukup untuk diambil kelimanya."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5\\}$",
+          "alasan": "Mengabaikan batas ketersediaan bola merah yang hanya berjumlah 3 dan menganggap nilai bisa mencapai jumlah pengambilan (5)."
+        },
+        {
+          "teks": "$\\{0, 1, 2\\}$",
+          "alasan": "Salah menghitung batas maksimum bola merah yang terambil kurang satu."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Jumlah bola merah = 3\n- Jumlah bola putih = 7\n- Banyak bola yang diambil = 5\n\nKarena jumlah bola putih (7) lebih banyak dari jumlah bola yang diambil (5), kasus terambil 0 bola merah mungkin terjadi (yaitu jika kelima bola yang terambil semuanya putih).\nBatas maksimum bola merah yang dapat terambil dibatasi oleh total bola merah yang tersedia, yaitu 3 butir.\n\nDengan demikian, kemungkinan banyak bola merah yang terambil adalah 0, 1, 2, atau 3.\nJadi, himpunan semua nilai $z$ yang mungkin adalah $\\{0, 1, 2, 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Contoh Soal",
+        "nomor": "4.2",
+        "teks": "Pak Bambang dan istrinya merencanakan memiliki dua anak. Jika variabel Y menyatakan banyaknya anak perempuan, tentukan semua nilai y yang mungkin dari variabel acak Y .",
+        "jawaban": "{0, 1, 2}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "variabel acak selisih kelahiran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan ruang sampel 3 anak dan penghitungan selisih mutlak frekuensi dua kategori.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah keluarga merencanakan memiliki 3 orang anak. Asumsikan peluang kelahiran anak laki-laki dan perempuan sama pada setiap kelahiran. Jika variabel acak $W$ menyatakan selisih mutlak antara banyaknya anak laki-laki dan banyaknya anak perempuan, tentukan himpunan semua nilai $w$ yang mungkin dari variabel acak $W$.",
+      "jawaban_benar": "$\\{1, 3\\}$",
+      "alasan_benar": "Kombinasi banyak anak (L, P) yang mungkin dari 3 anak adalah (3, 0), (2, 1), (1, 2), dan (0, 3) dengan selisih mutlak berturut-turut |3 - 0| = 3 dan |2 - 1| = 1.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Mengira selisih dapat bernilai genap termasuk 0 padahal total 3 anak ganjil sehingga selisih selalu ganjil."
+        },
+        {
+          "teks": "$\\{0, 1, 2\\}$",
+          "alasan": "Menyalin pola nilai acuan dan mengasumsikan nilai mulai dari 0 sampai n-1."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Memasukkan nilai selisih 2 yang secara kombinasi mustahil terbentuk dari total 3 anak."
+        }
+      ],
+      "pembahasan": "Ruang sampel untuk jenis kelamin dari 3 kelahiran berurutan:\n$S = \\{LLL, LLP, LPL, LPP, PLL, PLP, PPL, PPP\\}$\n\nBanyak kemungkinan susunan (laki-laki, perempuan):\n1. 3 laki-laki dan 0 perempuan: selisih mutlak $|3 - 0| = 3$\n2. 2 laki-laki dan 1 perempuan: selisih mutlak $|2 - 1| = 1$\n3. 1 laki-laki dan 2 perempuan: selisih mutlak $|1 - 2| = 1$\n4. 0 laki-laki dan 3 perempuan: selisih mutlak $|0 - 3| = 3$\n\nNilai-nilai unik selisih mutlak yang diperoleh adalah 1 dan 3.\nJadi, himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah $\\{1, 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ruang sampel adalah himpunan dari semua hasil yang mungkin terjadi dalam suatu percobaan acak."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyak anggota prapeta variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penelusuran pasangan titik sampel pada dua dadu yang memenuhi nilai hasil kali tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilemparkan bersamaan satu kali. Jika variabel acak $X$ menyatakan hasil kali kedua mata dadu yang muncul, banyaknya elemen dalam ruang sampel yang memetakan nilai $X = 12$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Pasangan mata dadu (dadu 1, dadu 2) yang hasil kalinya 12 adalah (2, 6), (3, 4), (4, 3), dan (6, 2).",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Hanya menghitung pasangan tak berurutan {2, 6} dan {3, 4} tanpa memperhatikan urutan dadu."
+        },
+        {
+          "teks": "3",
+          "alasan": "Lupa menghitung salah satu pasangan kebalikan seperti (4, 3)."
+        },
+        {
+          "teks": "6",
+          "alasan": "Menyertakan pasangan pembagi 12 yang tidak terdapat pada mata dadu seperti (1, 12) dan (12, 1)."
+        }
+      ],
+      "pembahasan": "Mata dadu yang mungkin pada setiap dadu adalah $\\{1, 2, 3, 4, 5, 6\\}$.\nVariabel acak $X(a, b) = a \\times b = 12$.\n\nPasangan $(a, b)$ yang memenuhi:\n1. $(2, 6) \\rightarrow 2 \\times 6 = 12$\n2. $(3, 4) \\rightarrow 3 \\times 4 = 12$\n3. $(4, 3) \\rightarrow 4 \\times 3 = 12$\n4. $(6, 2) \\rightarrow 6 \\times 2 = 12$\n\nPasangan $(1, 12)$ tidak mungkin karena angka dadu maksimal 6.\nJadi, banyaknya elemen dalam ruang sampel yang menghasilkan nilai $X = 12$ adalah 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "himpunan nilai variabel acak bersyarat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis rentang nilai jumlah dua dadu lalu menyaring elemen yang memenuhi kriteria bilangan prima.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilemparkan secara bersamaan satu kali. Misalkan variabel acak $K$ didefinisikan sebagai jumlah kedua mata dadu HANYA jika jumlah tersebut merupakan bilangan prima, dan tidak terdefinisi untuk kondisi lainnya. Himpunan semua nilai yang mungkin dari variabel acak $K$ adalah ....",
+      "jawaban_benar": "$\\{2, 3, 5, 7, 11\\}$",
+      "alasan_benar": "Jumlah dua mata dadu bernilai antara 2 hingga 12, dan bilangan prima dalam rentang tersebut adalah 2, 3, 5, 7, dan 11.",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3, 5, 7, 11\\}$",
+          "alasan": "Memasukkan 1 sebagai bilangan prima."
+        },
+        {
+          "teks": "$\\{3, 5, 7, 11\\}$",
+          "alasan": "Mengira jumlah terkecil prima adalah 3, lupa bahwa pasangan (1, 1) berjumlah 2 yang juga merupakan bilangan prima."
+        },
+        {
+          "teks": "$\\{2, 3, 5, 7, 9, 11\\}$",
+          "alasan": "Memasukkan 9 sebagai bilangan prima padahal 9 bilangan komposit (dapat dibagi 3)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan batas nilai jumlah mata dadu dari dua dadu bersisi enam.\nNilai minimum: $1 + 1 = 2$\nNilai maksimum: $6 + 6 = 12$\nRentang kemungkinan jumlah: $\\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\\}$.\n\nLangkah 2: Memilih bilangan prima dari rentang [2, 12].\nBilangan prima yang berada di antara 2 dan 12 adalah 2, 3, 5, 7, dan 11.\n\nLangkah 3: Memastikan setiap nilai prima tersebut dapat terbentuk dari pelemparan dua dadu:\n- 2 didapat dari $(1, 1)$\n- 3 didapat dari $(1, 2), (2, 1)$\n- 5 didapat dari $(1, 4), (2, 3), (3, 2), (4, 1)$\n- 7 didapat dari $(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)$\n- 11 didapat dari $(5, 6), (6, 5)$\n\nJadi, himpunan semua nilai yang mungkin dari variabel acak $K$ adalah $\\{2, 3, 5, 7, 11\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan nilai variabel acak kartu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mendaftar kombinasi pengambilan kartu tanpa pengembalian dan menghitung jumlah nilai tiap pasangan hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari sebuah kotak yang berisi 4 kartu bernomor 1, 2, 3, dan 4, diambil 2 kartu secara acak sekaligus. Jika variabel acak $X$ menyatakan jumlah kedua angka pada kartu yang terambil, tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+      "jawaban_benar": "$\\{3, 4, 5, 6, 7\\}$",
+      "alasan_benar": "Kombinasi dua kartu yang terambil adalah {1,2}, {1,3}, {1,4}, {2,3}, {2,4}, dan {3,4} dengan jumlah berturut-turut 3, 4, 5, 5, 6, dan 7.",
+      "distraktor": [
+        {
+          "teks": "$\\{2, 3, 4, 5, 6, 7, 8\\}$",
+          "alasan": "Memasukkan jumlah kartu kembar seperti (1, 1) dan (4, 4) padahal kartu diambil sekaligus tanpa pengembalian."
+        },
+        {
+          "teks": "$\\{3, 4, 5, 6\\}$",
+          "alasan": "Lupa menghitung kemungkinan pasangan kartu bernomor tertinggi {3, 4} yang berjumlah 7."
+        },
+        {
+          "teks": "$\\{3, 5, 7\\}$",
+          "alasan": "Hanya menghitung jumlah yang bernilai ganjil dan melewatkan jumlah genap 4 dan 6."
+        }
+      ],
+      "pembahasan": "Pengambilan 2 kartu sekaligus dari 4 kartu yang berbeda $\\{1, 2, 3, 4\\}$ memiliki ruang sampel sebanyak $\\binom{4}{2} = 6$ anggota:\n1. Kartu $\\{1, 2\\} \\rightarrow x = 1 + 2 = 3$\n2. Kartu $\\{1, 3\\} \\rightarrow x = 1 + 3 = 4$\n3. Kartu $\\{1, 4\\} \\rightarrow x = 1 + 4 = 5$\n4. Kartu $\\{2, 3\\} \\rightarrow x = 2 + 3 = 5$\n5. Kartu $\\{2, 4\\} \\rightarrow x = 2 + 4 = 6$\n6. Kartu $\\{3, 4\\} \\rightarrow x = 3 + 4 = 7$\n\nNilai unik yang dihasilkan untuk variabel acak $X$ adalah 3, 4, 5, 6, dan 7.\nJadi, himpunan nilai $x$ yang mungkin adalah $\\{3, 4, 5, 6, 7\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak hipergeometrik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan nilai minimum dan maksimum variabel acak tanpa pengembalian dengan ketersediaan barang terbatas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari 8 unit laptop yang dikirim ke gudang, terdapat 5 unit dalam kondisi rusak dan 3 unit dalam kondisi baik. Sebuah kantor membeli 4 unit laptop secara acak sekaligus dari gudang tersebut. Jika variabel acak $X$ menyatakan banyaknya laptop rusak yang diterima kantor, himpunan semua nilai $x$ yang mungkin adalah ....",
+      "jawaban_benar": "$\\{1, 2, 3, 4\\}$",
+      "alasan_benar": "Karena laptop baik hanya 3 unit, dari 4 laptop yang diambil minimal harus ada 1 unit rusak ($4 - 3 = 1$). Maksimal laptop rusak yang terambil adalah 4 unit karena stok laptop rusak ada 5 unit. Jadi, nilai $x$ yang mungkin adalah 1, 2, 3, 4.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Mengabaikan batas ketersediaan laptop baik yang hanya berjumlah 3 unit sehingga menganggap 0 laptop rusak mungkin terjadi."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Mengira laptop rusak yang terambil paling banyak 3 mengikuti batas ketersediaan laptop baik."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Memakai himpunan nilai variabel acak dari jumlah laptop baik alih-alih laptop rusak."
+        }
+      ],
+      "pembahasan": "Kondisi awal:\n- Total laptop $= 8$\n- Rusak $= 5$\n- Baik $= 3$\n\nBanyak laptop yang diambil $= 4$ unit.\n- Nilai minimum laptop rusak yang terambil: jika semua laptop baik terambil (3 unit), sisanya harus rusak, yaitu $4 - 3 = 1$ unit.\n- Nilai maksimum laptop rusak yang terambil: seluruh 4 unit yang diambil dapat berupa laptop rusak karena persediaan rusak ada 5 unit ($4 \\le 5$).\n\nMaka nilai variabel acak $X$ yang mungkin adalah $\\{1, 2, 3, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": "Contoh Soal 4.1",
+        "nomor": "4.1",
+        "teks": "Sekeping uang logam seimbang seperti pada Gambar 4.3, dilempar tiga kali. Jika X menyatakan banyaknya sisi angka yang muncul, tentukan semua nilai x yang mungkin dari variabel acak X .",
+        "jawaban": "{0, 1, 2, 3}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak selisih mutlak koin",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan selisih mutlak frekuensi dua kejadian pada ruang sampel pelemparan koin berulang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping uang logam seimbang dilempar sebanyak 4 kali berturut-turut. Jika variabel acak $W$ menyatakan selisih mutlak antara banyaknya sisi angka dan banyaknya sisi gambar yang muncul, himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah ....",
+      "jawaban_benar": "$\\{0, 2, 4\\}$",
+      "alasan_benar": "Kombinasi (angka, gambar) yang mungkin dari 4 lemparan adalah (4,0), (3,1), (2,2), (1,3), dan (0,4). Selisih mutlaknya masing-masing adalah $|4-0|=4$, $|3-1|=2$, $|2-2|=0$, $|1-3|=2$, dan $|0-4|=4$, sehingga menghasilkan himpunan nilai {0, 2, 4}.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Menganggap semua bilangan cacah dari 0 sampai 4 dapat muncul sebagai selisih, padahal selisih pada 4 lemparan selalu bilangan genap."
+        },
+        {
+          "teks": "$\\{2, 4\\}$",
+          "alasan": "Lupa memperhitungkan kejadian saat muncul 2 angka dan 2 gambar yang menghasilkan selisih 0."
+        },
+        {
+          "teks": "$\\{-4, -2, 0, 2, 4\\}$",
+          "alasan": "Menghitung selisih bertanda tanpa menerapkan operasi nilai mutlak."
+        }
+      ],
+      "pembahasan": "Pelemparan koin 4 kali menghasilkan pasangan banyak sisi Angka ($A$) dan Gambar ($G$) dengan $A + G = 4$:\n1. 4 Angka, 0 Gambar: $|4 - 0| = 4$\n2. 3 Angka, 1 Gambar: $|3 - 1| = 2$\n3. 2 Angka, 2 Gambar: $|2 - 2| = 0$\n4. 1 Angka, 3 Gambar: $|1 - 3| = 2$\n5. 0 Angka, 4 Gambar: $|0 - 4| = 4$\n\nHimpunan semua nilai $w$ yang mungkin adalah $\\{0, 2, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak selisih uji mutu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan pengurangan bertanda antara dua kategori hasil uji pada sejumlah objek.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas pengendali mutu memeriksa 4 unit lampu LED. Setiap lampu dikategorikan 'layak' atau 'rusak'. Misalkan variabel acak $Y$ didefinisikan sebagai banyaknya lampu layak dikurangi banyaknya lampu rusak. Himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$ adalah ....",
+      "jawaban_benar": "$\\{-4, -2, 0, 2, 4\\}$",
+      "alasan_benar": "Pasangan (layak, rusak) dari 4 unit yang diperiksa adalah (0,4), (1,3), (2,2), (3,1), dan (4,0). Hasil pengurangannya adalah 0-4=-4, 1-3=-2, 2-2=0, 3-1=2, dan 4-0=4.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Hanya menghitung banyaknya lampu layak tanpa mengurangkan dengan banyaknya lampu rusak."
+        },
+        {
+          "teks": "$\\{0, 2, 4\\}$",
+          "alasan": "Menggunakan nilai mutlak dari selisih sehingga nilai-nilai negatif terabaikan."
+        },
+        {
+          "teks": "$\\{-4, -3, -2, -1, 0, 1, 2, 3, 4\\}$",
+          "alasan": "Menuliskan seluruh bilangan bulat di antara rentang tanpa menyadari selisih selalu bernilai genap karena total lampu genap (4)."
+        }
+      ],
+      "pembahasan": "Banyak lampu yang diperiksa $= 4$.\nMisalkan $L =$ banyak lampu layak dan $R =$ banyak lampu rusak, maka $L + R = 4$ dan $Y = L - R$.\n\nKemungkinan pasangan $(L, R)$ dan nilai $y$:\n- $L = 0, R = 4 \\implies y = 0 - 4 = -4$\n- $L = 1, R = 3 \\implies y = 1 - 3 = -2$\n- $L = 2, R = 2 \\implies y = 2 - 2 = 0$\n- $L = 3, R = 1 \\implies y = 3 - 1 = 2$\n- $L = 4, R = 0 \\implies y = 4 - 0 = 4$\n\nJadi, himpunan semua nilai $y$ yang mungkin adalah $\\{-4, -2, 0, 2, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyak anggota prapeta selisih mata dadu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung banyaknya elemen ruang sampel pelemparan dua dadu yang memetakan ke nilai variabel acak tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersama-sama sekali. Didefinisikan variabel acak $X$ sebagai selisih positif antara mata dadu pertama dan mata dadu kedua. Banyaknya titik sampel dalam ruang sampel yang dipetakan ke nilai $X = 3$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "Pasangan mata dadu $(d_1, d_2)$ dengan $|d_1 - d_2| = 3$ adalah (1, 4), (4, 1), (2, 5), (5, 2), (3, 6), dan (6, 3), totalnya ada 6 titik sampel.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Hanya menghitung pasangan tanpa memperhatikan urutan dadu, yaitu (1, 4), (2, 5), dan (3, 6)."
+        },
+        {
+          "teks": "4",
+          "alasan": "Tertukar dengan pasangan mata dadu yang selisih positifnya 2 atau salah mencacah titik sampel."
+        },
+        {
+          "teks": "8",
+          "alasan": "Memasukkan pasangan yang jumlahnya 3 atau salah menambah titik sampel di luar batas 1 sampai 6."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua dadu memiliki $6 \\times 6 = 36$ anggota.\nVariabel acak $X = |d_1 - d_2|$.\nUntuk mencari prapeta dari $X = 3$, cari pasangan $(d_1, d_2)$ dengan $|d_1 - d_2| = 3$:\n- $d_1 - d_2 = 3 \\implies (4, 1), (5, 2), (6, 3)$\n- $d_2 - d_1 = 3 \\implies (1, 4), (2, 5), (3, 6)$\n\nTotal titik sampel yang dipetakan ke $X = 3$ adalah $3 + 3 = 6$ anggota.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak skor koin",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hasil pemetaan setiap elemen ruang sampel ke bilangan real melalui aturan penskoran linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua keping uang logam seimbang dilempar secara bersamaan sekali. Sisi koin terdiri dari Angka ($A$) dan Gambar ($G$). Didefinisikan suatu variabel acak $S$ yang memberikan skor untuk setiap hasil pelemparan: setiap sisi Angka yang muncul diberi skor $+3$, dan setiap sisi Gambar yang muncul diberi skor $-2$. Himpunan semua nilai $s$ yang mungkin dari variabel acak $S$ adalah ....",
+      "jawaban_benar": "$\\{-4, 1, 6\\}$",
+      "alasan_benar": "Elemen ruang sampel adalah {GG, GA, AG, AA}. Skor masing-masing: GG = 2(-2) = -4; GA dan AG = 3 + (-2) = 1; AA = 2(3) = 6.",
+      "distraktor": [
+        {
+          "teks": "$\\{-2, 1, 3\\}$",
+          "alasan": "Salah menghitung skor saat kedua koin kembar (GG dianggap -2 dan AA dianggap 3)."
+        },
+        {
+          "teks": "$\\{-4, 0, 6\\}$",
+          "alasan": "Salah menjumlahkan skor $3 + (-2)$ menjadi 0 alih-alih 1."
+        },
+        {
+          "teks": "$\\{-4, -1, 1, 6\\}$",
+          "alasan": "Membedakan hasil AG dan GA sebagai nilai yang berlawanan tanda padahal keduanya menghasilkan skor sama yaitu 1."
+        }
+      ],
+      "pembahasan": "Ruang sampel dari pelemparan 2 keping uang logam:\n$S = \\{AA, AG, GA, GG\\}$\n\nAturan fungsi variabel acak $S$:\n- Skor $A = +3$\n- Skor $G = -2$\n\nEvaluasi setiap titik sampel:\n1. Hasil $GG$: $2 \\times (-2) = -4$\n2. Hasil $AG$ dan $GA$: $1 \\times 3 + 1 \\times (-2) = 1$\n3. Hasil $AA$: $2 \\times 3 = 6$\n\nJadi, himpunan semua nilai $s$ yang mungkin dari variabel acak $S$ adalah $\\{-4, 1, 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak cacat tanpa pengembalian",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan batas minimum dan maksimum unit tergores yang dapat terambil dari populasi terbatas tanpa pengembalian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari 9 unit sepeda motor yang dikirim oleh pabrik ke sebuah diler, sebanyak 6 unit mengalami cacat cat bodi dan sisanya dalam kondisi mulus. Diler tersebut memilih 5 unit secara acak untuk dipajang di ruang pamer. Jika variabel acak $X$ menyatakan banyaknya sepeda motor dengan cacat cat bodi yang terpilih, himpunan semua nilai $x$ yang mungkin untuk variabel acak $X$ adalah ....",
+      "jawaban_benar": "$\\{2, 3, 4, 5\\}$",
+      "alasan_benar": "Banyak motor mulus hanya ada $9 - 6 = 3$ unit, sehingga dari 5 unit terpilih paling sedikit memuat $5 - 3 = 2$ unit cacat, dan paling banyak $\\min(5, 6) = 5$ unit cacat.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5\\}$",
+          "alasan": "Mengabaikan batas ketersediaan motor mulus sehingga menganggap nilai 0 dan 1 cacat mungkin terjadi padahal motor mulus hanya 3 unit."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4, 5\\}$",
+          "alasan": "Salah menghitung batas bawah terambilnya motor cacat, mengira nilai 1 masih dapat dicapai."
+        },
+        {
+          "teks": "$\\{2, 3, 4, 5, 6\\}$",
+          "alasan": "Memasukkan nilai 6 padahal motor yang diambil secara keseluruhan hanya 5 unit."
+        }
+      ],
+      "pembahasan": "Diketahui total motor $N = 9$, motor cacat $K = 6$, dan motor mulus $N - K = 3$. Diambil sebanyak $n = 5$ unit.\nNilai minimum dari $X$ terjadi jika seluruh motor mulus terambil:\n$x_{\\min} = 5 - 3 = 2$.\nNilai maksimum dari $X$ dibatasi oleh jumlah sampel yang diambil:\n$x_{\\max} = \\min(5, 6) = 5$.\nJadi, himpunan nilai $x$ yang mungkin adalah $\\{2, 3, 4, 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.1",
+        "teks": "Sebuah kotak berisi 5 bola merah dan 6 bola putih seperti yang ditunjukkan pada Gambar 4.4. Diambil sebanyak 4 bola satu per satu tanpa pengembalian. Jika Z menyatakan banyaknya bola putih yang terambil, tentukan nilai z yang mungkin dari variabel acak Z .",
+        "jawaban": "{0, 1, 2, 3, 4}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak bola tanpa pengembalian",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menganalisis batas bawah dan batas atas pengambilan bola putih berdasarkan ketersediaan bola merah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak memuat 3 bola merah dan 8 bola putih. Dari dalam kotak tersebut diambil sebanyak 6 bola satu per satu tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola putih yang terambil, himpunan semua kemungkinan nilai $z$ dari variabel acak $Z$ adalah ....",
+      "jawaban_benar": "$\\{3, 4, 5, 6\\}$",
+      "alasan_benar": "Jika semua 3 bola merah terambil, bola putih minimal terambil $6 - 3 = 3$ buah, dan bola putih maksimal yang dapat diambil adalah 6 buah.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5, 6\\}$",
+          "alasan": "Mengasumsikan bola putih bisa bernilai 0, 1, atau 2 padahal bola merah hanya tersedia 3 butir."
+        },
+        {
+          "teks": "$\\{3, 4, 5, 6, 7, 8\\}$",
+          "alasan": "Memasukkan total kapasitas bola putih (hingga 8) padahal pengambilan hanya dilakukan sebanyak 6 kali."
+        },
+        {
+          "teks": "$\\{2, 3, 4, 5, 6\\}$",
+          "alasan": "Salah menghitung batas bawah pengambilan dengan mengurangkan 6 - 4 alih-alih 6 - 3."
+        }
+      ],
+      "pembahasan": "Banyak bola merah = 3 dan bola putih = 8. Pengambilan dilakukan sebanyak 6 bola tanpa pengembalian.\nNilai $Z$ menyatakan banyaknya bola putih yang terambil.\nBatas bawah $Z$ terjadi saat bola non-putih (merah) terambil maksimal, yaitu 3 bola merah. Sisa $6 - 3 = 3$ bola harus putih, sehingga $z_{\\min} = 3$.\nBatas atas $Z$ adalah saat semua bola yang terambil putih, yaitu $z_{\\max} = 6$.\nJadi, nilai-nilai yang mungkin untuk variabel acak $Z$ adalah $\\{3, 4, 5, 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyak prapeta variabel acak kuadrat selisih",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan relasi fungsi kuadrat selisih mata dadu terhadap ruang sampel pelemparan dua dadu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersama-sama sekali. Misalkan $(a, b)$ menyatakan pasangan mata dadu yang muncul. Didefinisikan variabel acak $Y$ sebagai $Y(a, b) = (a - b)^2$. Banyaknya elemen dalam ruang sampel yang menghasilkan nilai $Y = 4$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "Kondisi $(a - b)^2 = 4$ terpenuhi jika $|a - b| = 2$, yang memiliki 8 pasangan mata dadu pada ruang sampel.",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "Hanya menghitung pasangan dengan $a > b$ dan mengabaikan urutan sebaliknya ($b > a$)."
+        },
+        {
+          "teks": "6",
+          "alasan": "Salah mendata pasangan selisih 2 atau keliru mengira hanya ada 3 pasang unik yang dibalik."
+        },
+        {
+          "teks": "10",
+          "alasan": "Keliru menjumlahkan dengan pasangan yang menghasilkan selisih 1 atau 4."
+        }
+      ],
+      "pembahasan": "Diketahui variabel acak $Y(a, b) = (a - b)^2$. Dicari banyak pasangan $(a, b)$ dengan $1 \\le a, b \\le 6$ sedemikian sehingga $(a - b)^2 = 4$.\n$(a - b)^2 = 4 \\iff a - b = 2$ atau $a - b = -2$.\nUntuk $a - b = 2$:\n$(3, 1), (4, 2), (5, 3), (6, 4)$ $\\rightarrow$ ada 4 elemen.\nUntuk $a - b = -2$:\n$(1, 3), (2, 4), (3, 5), (4, 6)$ $\\rightarrow$ ada 4 elemen.\nTotal elemen ruang sampel yang menghasilkan nilai $Y = 4$ adalah $4 + 4 = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ruang sampel adalah himpunan dari semua hasil yang mungkin terjadi dalam suatu percobaan acak. Dari percobaan pada Ayo Berdiskusi di atas, kita memperoleh ruang sampel berikut: S = {(1, 1),(1, 2),(1, 3),(1, 4),(1, 5),(1, 6),(2, 1),(2, 2),(2, 3), …,(6, 6)}"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyak prapeta variabel acak maksimum dadu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pendaftaran hasil pelemparan dua dadu yang menghasilkan nilai fungsi maksimum tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Misalkan $(a, b)$ adalah pasangan mata dadu yang muncul. Suatu variabel acak $M$ didefinisikan sebagai nilai terbesar di antara kedua mata dadu tersebut, yaitu $M(a, b) = \\max(a, b)$. Banyaknya anggota ruang sampel yang dipetakan ke nilai $M = 5$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "Pasangan $(a, b)$ dengan $\\max(a, b) = 5$ terdiri atas 5 pasangan di mana dadu pertama bernilai 5 dan 4 pasangan lain di mana dadu kedua bernilai 5.",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "Hanya menghitung pasangan dengan mata dadu pertama bernilai 5, melupakan ketika dadu kedua bernilai 5."
+        },
+        {
+          "teks": "10",
+          "alasan": "Menghitung pasangan $(5, 5)$ dua kali pada saat menjumlahkan baris dan kolom."
+        },
+        {
+          "teks": "8",
+          "alasan": "Lupa menyertakan pasangan mata dadu kembar $(5, 5)$."
+        }
+      ],
+      "pembahasan": "Nilai variabel acak $M(a, b) = \\max(a, b) = 5$ tercapai apabila sekurang-kurangnya satu mata dadu bernilai 5 dan mata dadu lainnya bernilai $\\le 5$.\nPasangan tersebut adalah:\n- Dadu pertama bernilai 5: $(5, 1), (5, 2), (5, 3), (5, 4), (5, 5)$ (5 pasangan)\n- Dadu kedua bernilai 5 (dengan dadu pertama bukan 5): $(1, 5), (2, 5), (3, 5), (4, 5)$ (4 pasangan)\nTotal pasangan yang memenuhi adalah $5 + 4 = 9$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "himpunan nilai variabel acak selisih kartu prima",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa menganalisis seluruh kombinasi pengambilan dua kartu dari himpunan prima satu digit dan menghitung selisih positifnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong memuat 4 kartu bertuliskan bilangan prima satu digit, yaitu 2, 3, 5, dan 7. Dua kartu diambil secara acak sekaligus dari kantong tersebut. Jika variabel acak $D$ menyatakan selisih positif antara kedua angka pada kartu yang terambil, himpunan semua nilai yang mungkin untuk variabel acak $D$ adalah ....",
+      "jawaban_benar": "$\\{1, 2, 3, 4, 5\\}$",
+      "alasan_benar": "Selisih positif dari setiap pasangan dua kartu yang mungkin menghasilkan nilai 1, 2, 3, 4, dan 5.",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Lupa memperhitungkan pasangan kartu 2 dan 7 yang menghasilkan selisih 5."
+        },
+        {
+          "teks": "$\\{2, 3, 4, 5\\}$",
+          "alasan": "Lupa memperhitungkan pasangan kartu 2 dan 3 yang menghasilkan selisih 1."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5\\}$",
+          "alasan": "Memasukkan nilai 0 padahal kedua kartu diambil sekaligus sehingga tidak mungkin menghasilkan kartu bernomor sama."
+        }
+      ],
+      "pembahasan": "Kombinasi pengambilan 2 kartu dari 4 kartu $\\{2, 3, 5, 7\\}$ berjumlah $\\binom{4}{2} = 6$ pasang:\n1. Kartu $(2, 3) \\rightarrow D = |2 - 3| = 1$\n2. Kartu $(2, 5) \\rightarrow D = |2 - 5| = 3$\n3. Kartu $(2, 7) \\rightarrow D = |2 - 7| = 5$\n4. Kartu $(3, 5) \\rightarrow D = |3 - 5| = 2$\n5. Kartu $(3, 7) \\rightarrow D = |3 - 7| = 4$\n6. Kartu $(5, 7) \\rightarrow D = |5 - 7| = 2$\nHimpunan nilai unik dari variabel acak $D$ adalah $\\{1, 2, 3, 4, 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": "Contoh Soal",
+        "nomor": "4.1",
+        "teks": "Sekeping uang logam seimbang seperti pada Gambar 4.3, dilempar tiga kali. Jika X menyatakan banyaknya sisi angka yang muncul, tentukan semua nilai x yang mungkin dari variabel acak X .",
+        "jawaban": "{0, 1, 2, 3}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak berbobot",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan nilai dasar kemunculan sisi koin lalu mentransformasikan setiap hasil menjadi skor berbobot.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping uang logam seimbang dilempar sebanyak 3 kali berturut-turut. Pada setiap lemparan, kemunculan sisi angka ($A$) diberi skor 2, sedangkan kemunculan sisi gambar ($G$) diberi skor $-1$. Jika variabel acak $X$ menyatakan total skor dari ketiga lemparan tersebut, tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+      "jawaban_benar": "$\\{-3, 0, 3, 6\\}$",
+      "alasan_benar": "Banyaknya sisi angka yang muncul dapat bernilai 0, 1, 2, atau 3. Untuk 0 angka (3 gambar), skornya $3(-1) = -3$. Untuk 1 angka (2 gambar), skornya $1(2) + 2(-1) = 0$. Untuk 2 angka (1 gambar), skornya $2(2) + 1(-1) = 3$. Untuk 3 angka (0 gambar), skornya $3(2) = 6$. Jadi, himpunan nilai yang mungkin adalah $\\{-3, 0, 3, 6\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{-1, 0, 1, 2\\}$",
+          "alasan": "Hanya menghitung skor seolah-olah tiap kejadian berdiri sendiri atau membagi nilai secara keliru."
+        },
+        {
+          "teks": "$\\{-3, -1, 1, 3\\}$",
+          "alasan": "Menggunakan selisih banyaknya sisi angka dan gambar, bukan menerapkan bobot skor yang diberikan."
+        },
+        {
+          "teks": "$\\{0, 2, 4, 6\\}$",
+          "alasan": "Hanya menghitung kontribusi skor sisi angka dan mengabaikan pengurangan skor dari sisi gambar."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan koin 3 kali menghasilkan banyaknya sisi angka $k \\in \\{0, 1, 2, 3\\}$ dan sisi gambar $3 - k$.\nTotal skor ditentukan oleh rumus:\n$$X = 2k + (-1)(3 - k) = 3k - 3$$\n- Untuk $k = 0$: $X = 3(0) - 3 = -3$\n- Untuk $k = 1$: $X = 3(1) - 3 = 0$\n- Untuk $k = 2$: $X = 3(2) - 3 = 3$\n- Untuk $k = 3$: $X = 3(3) - 3 = 6$\n\nDengan demikian, himpunan semua nilai $x$ yang mungkin adalah $\\{-3, 0, 3, 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Contoh Soal",
+        "nomor": "4.2",
+        "teks": "Pak Bambang dan istrinya merencanakan memiliki dua anak. Jika variabel Y menyatakan banyaknya anak perempuan, tentukan semua nilai y yang mungkin dari variabel acak Y .",
+        "jawaban": "{0, 1, 2}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak perkalian",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa mengidentifikasi kombinasi jenis kelamin kelahiran anak lalu menghitung hasil kali kedua kuantitas tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pak Hendra dan istrinya merencanakan memiliki 3 orang anak. Asumsikan peluang lahir anak laki-laki dan perempuan sama pada setiap kelahiran. Jika variabel acak $Y$ didefinisikan sebagai hasil kali antara banyaknya anak laki-laki dan banyaknya anak perempuan yang lahir, tentukan himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$.",
+      "jawaban_benar": "$\\{0, 2\\}$",
+      "alasan_benar": "Kombinasi pasangan (banyak anak laki-laki, banyak anak perempuan) yang mungkin dari total 3 anak adalah (3, 0), (2, 1), (1, 2), dan (0, 3). Hasil kalinya berturut-turut adalah $3 \\times 0 = 0$, $2 \\times 1 = 2$, $1 \\times 2 = 2$, dan $0 \\times 3 = 0$. Jadi, nilai unik yang mungkin adalah $\\{0, 2\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2\\}$",
+          "alasan": "Mengira ada kombinasi yang menghasilkan nilai perkalian 1 padahal jumlah anak adalah 3."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Menuliskan himpunan banyaknya anak salah satu jenis kelamin, bukan hasil kalinya."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Mengabaikan kasus di mana semua anak memiliki jenis kelamin sama yang menghasilkan nilai 0."
+        }
+      ],
+      "pembahasan": "Misalkan $L$ menyatakan banyaknya anak laki-laki dan $P$ banyaknya anak perempuan. Karena total ada 3 anak, maka $P = 3 - L$, dengan $L \\in \\{0, 1, 2, 3\\}$.\nVariabel acak $Y = L \\times P$:\n- Jika $L = 0$, maka $P = 3 \\rightarrow Y = 0 \\times 3 = 0$\n- Jika $L = 1$, maka $P = 2 \\rightarrow Y = 1 \\times 2 = 2$\n- Jika $L = 2$, maka $P = 1 \\rightarrow Y = 2 \\times 1 = 2$\n- Jika $L = 3$, maka $P = 0 \\rightarrow Y = 3 \\times 0 = 0$\n\nJadi, himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$ adalah $\\{0, 2\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak kuadrat cacat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung kemungkinan banyaknya barang tidak memenuhi syarat lalu memetakan ke kuadrat nilai tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang apoteker menguji 4 sampel tablet obat untuk mengetahui kelayakan fisiknya. Setiap tablet dikategorikan sebagai 'memenuhi syarat' atau 'cacat'. Jika variabel acak $X$ menyatakan kuadrat dari banyaknya tablet yang cacat, tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+      "jawaban_benar": "$\\{0, 1, 4, 9, 16\\}$",
+      "alasan_benar": "Banyak tablet cacat dari 4 sampel yang diuji dapat bernilai 0, 1, 2, 3, atau 4. Kuadrat dari nilai-nilai tersebut adalah $0^2=0$, $1^2=1$, $2^2=4$, $3^2=9$, dan $4^2=16$, sehingga himpunannya adalah $\\{0, 1, 4, 9, 16\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 4, 9, 16\\}$",
+          "alasan": "Lupa menyertakan nilai 0 saat tidak ada satupun tablet yang cacat."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Hanya menuliskan banyaknya tablet cacat tanpa menguadratkannya sesuai definisi variabel acak."
+        },
+        {
+          "teks": "$\\{0, 2, 4, 6, 8\\}$",
+          "alasan": "Mengalikan banyaknya tablet cacat dengan 2 alih-alih menguadratkannya."
+        }
+      ],
+      "pembahasan": "Banyaknya tablet cacat yang mungkin ditemukan dari 4 tablet yang diperiksa adalah $k \\in \\{0, 1, 2, 3, 4\\}$.\nKarena variabel acak $X$ didefinisikan sebagai kuadrat dari banyaknya tablet cacat ($X = k^2$), maka nilai-nilai $x$ yang mungkin adalah:\n- $k = 0 \\rightarrow x = 0^2 = 0$\n- $k = 1 \\rightarrow x = 1^2 = 1$\n- $k = 2 \\rightarrow x = 2^2 = 4$\n- $k = 3 \\rightarrow x = 3^2 = 9$\n- $k = 4 \\rightarrow x = 4^2 = 16$\n\nJadi, himpunan semua nilai yang mungkin adalah $\\{0, 1, 4, 9, 16\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "banyak titik sampel prapeta modulo",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hasil kali mata dadu pada ruang sampel berukuran 36 dan mengidentifikasi titik sampel dengan sisa bagi tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Misalkan variabel acak $T$ menyatakan sisa pembagian hasil kali kedua mata dadu oleh 5. Banyaknya titik sampel dalam ruang sampel yang dipetakan ke nilai $T = 0$ adalah ....",
+      "jawaban_benar": "11",
+      "alasan_benar": "Nilai $T = 0$ berarti hasil kali kedua mata dadu habis dibagi 5. Karena 5 adalah bilangan prima, setidaknya salah satu dadu harus memunculkan angka 5. Ada 6 pasangan dengan dadu pertama 5 dan 6 pasangan dengan dadu kedua 5, dikurangi pasangan (5, 5) yang terhitung dua kali, sehingga totalnya $6 + 6 - 1 = 11$.",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "Menjumlahkan pasangan bermata 5 pada kedua dadu ($6 + 6$) tanpa mengeliminasi irisan pasangan (5, 5)."
+        },
+        {
+          "teks": "10",
+          "alasan": "Menghitung pasangan tanpa mengikutsertakan pasangan mata dadu kembar (5, 5)."
+        },
+        {
+          "teks": "6",
+          "alasan": "Hanya menghitung jika angka 5 muncul pada salah satu dadu saja."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua buah dadu memiliki $n(S) = 6 \\times 6 = 36$ titik sampel berpasangan $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$.\nVariabel acak $T = (a \\times b) \\pmod 5$.\nNilai $T = 0$ terjadi jika dan hanya jika $a \\times b$ kelipatan 5.\nKarena 5 adalah bilangan prima, $a \\times b$ habis dibagi 5 jika $a = 5$ atau $b = 5$.\n- Pasangan dengan $a = 5$: $(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6)$ $\\rightarrow$ 6 anggota.\n- Pasangan dengan $b = 5$: $(1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5)$ $\\rightarrow$ 6 anggota.\n- Irisan kedua himpunan adalah $(5, 5)$ $\\rightarrow$ 1 anggota.\n\nBanyak titik sampel yang dipetakan ke $T = 0$ adalah:\n$$n(T = 0) = 6 + 6 - 1 = 11$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "himpunan nilai variabel acak gabungan warna dan nomor",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengharuskan pemilahan ruang sampel berdasarkan kesamaan atribut warna sebelum menentukan jumlah angka yang tertera.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong memuat 3 kelereng merah bernomor 1, 2, 3 dan 2 kelereng hijau bernomor 1, 2. Dua kelereng diambil sekaligus secara acak. Variabel acak $V$ bernilai 0 jika kedua kelereng yang terambil berlainan warna, dan bernilai sama dengan jumlah nomor pada kedua kelereng jika warnanya sama. Himpunan semua nilai yang mungkin dari variabel acak $V$ adalah ....",
+      "jawaban_benar": "$\\{0, 3, 4, 5\\}$",
+      "alasan_benar": "Jika warna berbeda, nilainya 0. Jika sama-sama merah, pasangan nomor yang mungkin adalah {1, 2}, {1, 3}, {2, 3} dengan jumlah 3, 4, 5. Jika sama-sama hijau, pasangannya adalah {1, 2} dengan jumlah 3. Menggabungkan seluruh nilai yang mungkin menghasilkan himpunan {0, 3, 4, 5}.",
+      "distraktor": [
+        {
+          "teks": "$\\{3, 4, 5\\}$",
+          "alasan": "Lupa menyertakan nilai 0 untuk kejadian pengambilan dua kelereng yang berbeda warna."
+        },
+        {
+          "teks": "$\\{0, 2, 3, 4, 5\\}$",
+          "alasan": "Menyertakan nilai 2 seolah-olah satu kelereng bernomor 1 bisa berpasangan dengan dirinya sendiri pada warna yang sama."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5\\}$",
+          "alasan": "Mencantumkan seluruh kemungkinan angka nomor kelereng tanpa memperhatikan aturan penjumlahan saat warna sama."
+        }
+      ],
+      "pembahasan": "Dua kelereng diambil sekaligus dari kantong yang berisi kelereng merah $\\{M_1, M_2, M_3\\}$ dan hijau $\\{H_1, H_2\\}$.\n1. Jika terambil kelereng berlainan warna (satu merah dan satu hijau):\n   Nilai $V = 0$.\n2. Jika terambil kelereng berwarna sama:\n   - Keduanya merah: kemungkinan pasangan adalah $\\{M_1, M_2\\}$ bernilai $1 + 2 = 3$; $\\{M_1, M_3\\}$ bernilai $1 + 3 = 4$; $\\{M_2, M_3\\}$ bernilai $2 + 3 = 5$.\n   - Keduanya hijau: kemungkinan pasangan hanya $\\{H_1, H_2\\}$ bernilai $1 + 2 = 3$.\n\nDengan demikian, nilai-nilai yang mungkin dari variabel acak $V$ adalah 0, 3, 4, dan 5.\nHimpunan nilainya dituliskan $\\{0, 3, 4, 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

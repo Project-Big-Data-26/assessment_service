@@ -1,506 +1,2930 @@
 {
- "book": "kelas10",
- "bab_no": 6,
- "subbab": "C",
- "level": "medium",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 224,
-    "bagian": "Ayo, Mencoba",
-    "nomor": "2",
-    "teks": "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?",
-    "jawaban": "Karena 750 melebihi batas atas Q3 + 1,5 x IQR dari data tersebut"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "pencilan dari data mentah",
-   "alasan_level": "mengurutkan data mentah, menentukan Q1 dan Q3 dengan aturan letak, lalu menghitung batas pencilan dan memeriksa data",
-   "stimulus": "Tagihan air bulanan (dalam ribu rupiah) dari 10 rumah di sebuah gang, belum terurut: 85, 92, 88, 90, 95, 89, 310, 91, 87, 94.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
-   "pertanyaan": "Data yang tergolong pencilan beserta batas atas pencilannya adalah ....",
-   "jawaban_benar": "310 ribu rupiah, batas atas 103",
-   "alasan_benar": "Terurut: 85, 87, 88, 89, 90, 91, 92, 94, 95, 310. n/4 = 2,5 sehingga Q1 = data ke-3 = 88; 3n/4 = 7,5 sehingga Q3 = data ke-8 = 94. IQR = 6, batas atas = 94 + 9 = 103, batas bawah = 79. Hanya 310 di luar batas.",
-   "distraktor": [
+  "book": "kelas10",
+  "bab_no": 6,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "310 ribu rupiah, batas atas 100",
-     "alasan": "memakai Q3 + IQR tanpa faktor 1,5"
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 224,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "2",
+        "teks": "Mengapa angka 750 kWh dapat dianggap sebagai pencilan?",
+        "jawaban": "Karena 750 melebihi batas atas Q3 + 1,5 x IQR dari data tersebut"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pencilan dari data mentah",
+      "alasan_level": "mengurutkan data mentah, menentukan Q1 dan Q3 dengan aturan letak, lalu menghitung batas pencilan dan memeriksa data",
+      "stimulus": "Tagihan air bulanan (dalam ribu rupiah) dari 10 rumah di sebuah gang, belum terurut: 85, 92, 88, 90, 95, 89, 310, 91, 87, 94.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+      "pertanyaan": "Data yang tergolong pencilan beserta batas atas pencilannya adalah ....",
+      "jawaban_benar": "310 ribu rupiah, batas atas 103",
+      "alasan_benar": "Terurut: 85, 87, 88, 89, 90, 91, 92, 94, 95, 310. n/4 = 2,5 sehingga Q1 = data ke-3 = 88; 3n/4 = 7,5 sehingga Q3 = data ke-8 = 94. IQR = 6, batas atas = 94 + 9 = 103, batas bawah = 79. Hanya 310 di luar batas.",
+      "distraktor": [
+        {
+          "teks": "310 ribu rupiah, batas atas 100",
+          "alasan": "memakai Q3 + IQR tanpa faktor 1,5"
+        },
+        {
+          "teks": "Tidak ada pencilan, batas atas 431,5",
+          "alasan": "memakai jangkauan (310 - 85) sebagai IQR"
+        },
+        {
+          "teks": "95 ribu rupiah, batas atas 94",
+          "alasan": "menganggap data di atas Q3 sebagai pencilan tanpa faktor 1,5 x IQR"
+        }
+      ],
+      "pembahasan": "Urutkan data, Q1 = 88, Q3 = 94, IQR = 6, batas atas = 94 + 1,5 x 6 = 103 dan batas bawah = 79. Hanya 310 yang melebihi 103.",
+      "id": "kelas10-b06-c-medium-bt01-001",
+      "catatan": null
     },
     {
-     "teks": "Tidak ada pencilan, batas atas 431,5",
-     "alasan": "memakai jangkauan (310 - 85) sebagai IQR"
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 225,
+        "bagian": "Contoh",
+        "nomor": "-",
+        "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua dataset, kota mana yang memiliki produksi energi yang lebih konsisten? Jelaskan alasanmu.",
+        "jawaban": "Kota B (turbin angin), karena IQR dan range-nya lebih kecil"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bandingkan konsistensi dari data mentah (IQR vs jangkauan)",
+      "alasan_level": "menghitung Q1 dan Q3 dua kumpulan data mentah, membandingkan IQR, dan menyadari jangkauan memberi kesimpulan berlawanan",
+      "stimulus": "Daya tahan baterai (dalam jam) dua merek, X dan Y, diuji pada 10 baterai masing-masing (belum terurut).\n\n- Merek X: 14, 12, 13, 15, 13, 12, 14, 13, 28, 14\n- Merek Y: 9, 16, 11, 18, 13, 10, 17, 12, 15, 14\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+      "pertanyaan": "Merek yang daya tahannya lebih konsisten menurut IQR, beserta IQR-nya, adalah ....",
+      "jawaban_benar": "Merek X, IQR = 1 jam",
+      "alasan_benar": "Merek X terurut: 12, 12, 13, 13, 13, 14, 14, 14, 15, 28 sehingga Q1 = 13 dan Q3 = 14 (IQR 1). Merek Y terurut: 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 sehingga Q1 = 11 dan Q3 = 16 (IQR 5). IQR X lebih kecil.",
+      "distraktor": [
+        {
+          "teks": "Merek Y, IQR = 5 jam",
+          "alasan": "memilih berdasarkan jangkauan (X: 16, Y: 9) dan menganggap IQR kecil berarti kurang konsisten"
+        },
+        {
+          "teks": "Merek X, IQR = 2 jam",
+          "alasan": "mengambil Q1 dari data ke-2 (12) bukan data ke-3"
+        },
+        {
+          "teks": "Merek Y, IQR = 9 jam",
+          "alasan": "memakai jangkauan Y sebagai IQR"
+        }
+      ],
+      "pembahasan": "n = 10: Q1 = data ke-3, Q3 = data ke-8. IQR X = 14 - 13 = 1, IQR Y = 16 - 11 = 5. IQR tidak terpengaruh nilai 28, jadi X lebih konsisten.",
+      "id": "kelas10-b06-c-medium-bt01-002",
+      "catatan": null
     },
     {
-     "teks": "95 ribu rupiah, batas atas 94",
-     "alasan": "menganggap data di atas Q3 sebagai pencilan tanpa faktor 1,5 x IQR"
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 236,
+        "bagian": "Latihan 6.5",
+        "nomor": "1",
+        "teks": "Apakah terdapat korelasi antara jumlah jam pelatihan dan akurasi model? Jelaskan.",
+        "jawaban": "Ya, korelasi positif kuat (makin banyak jam pelatihan, akurasi makin tinggi)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "titik menyimpang pada diagram pencar",
+      "alasan_level": "mengurutkan pasangan data menurut x, menemukan arah kecenderungan, lalu menandai pasangan yang melanggar pola",
+      "stimulus": "Seorang petani mencatat banyak pupuk (kg, sumbu x) dan hasil panen (kuintal, sumbu y) pada 10 petak, belum terurut menurut x.\n\n| Pupuk (kg) | 2 | 5 | 3 | 8 | 1 | 6 | 4 | 9 | 7 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hasil panen (kuintal) | 26 | 35 | 29 | 28 | 23 | 38 | 32 | 47 | 41 | 50 |",
+      "pertanyaan": "Jika pasangan data itu digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
+      "jawaban_benar": "Korelasi positif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+      "alasan_benar": "Setelah diurutkan menurut x, y naik 3 kuintal setiap tambahan 1 kg pupuk (23, 26, 29, 32, 35, 38, 41, 47, 50) kecuali pada x = 8 yang hasilnya 28 (seharusnya sekitar 44).",
+      "distraktor": [
+        {
+          "teks": "Korelasi negatif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+          "alasan": "salah arah: satu titik rendah dianggap mewakili tren menurun"
+        },
+        {
+          "teks": "Tidak ada korelasi, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+          "alasan": "satu titik menyimpang dianggap membuat seluruh titik acak"
+        },
+        {
+          "teks": "Korelasi positif, dan petak dengan pupuk 10 kg dan hasil 50 kuintal menyimpang dari pola",
+          "alasan": "menandai titik terbesar sebagai menyimpang padahal masih tepat pada pola"
+        }
+      ],
+      "pembahasan": "Urutkan menurut x: hasil panen naik tetap 3 kuintal per kg pupuk, kecuali x = 8 (28 kuintal, jauh di bawah 44). Arah naik berarti korelasi positif.",
+      "id": "kelas10-b06-c-medium-bt01-003",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 227,
+        "bagian": "Ayo, Mencoba",
+        "nomor": "2",
+        "teks": "Berdasarkan rentang interkuartil, konsumsi energi rumah tangga mana yang lebih konsisten?",
+        "jawaban": "Rumah A (IQR 5, Rumah B IQR 6)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "selisih IQR dua kelompok",
+      "alasan_level": "mengurutkan dua kumpulan 12 data mentah, mencari Q1 dan Q3 dengan rata-rata dua data, lalu mengurangkan kedua IQR",
+      "stimulus": "Waktu pengantaran (dalam menit) pesanan oleh dua kurir, A dan B, pada 12 pengantaran masing-masing (belum terurut).\n\n- Kurir A: 32, 45, 38, 41, 36, 50, 44, 39, 47, 42, 35, 40\n- Kurir B: 30, 52, 38, 44, 58, 35, 48, 41, 55, 33, 46, 50\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+      "pertanyaan": "Selisih IQR kedua kurir (IQR yang lebih besar dikurangi IQR yang lebih kecil) adalah ....",
+      "jawaban_benar": "7 menit",
+      "alasan_benar": "A terurut: 32, 35, 36, 38, 39, 40, 41, 42, 44, 45, 47, 50 sehingga Q1 = (36 + 38)/2 = 37, Q3 = (44 + 45)/2 = 44,5, IQR 7,5. B terurut: 30, 33, 35, 38, 41, 44, 46, 48, 50, 52, 55, 58 sehingga Q1 = (35 + 38)/2 = 36,5, Q3 = (50 + 52)/2 = 51, IQR 14,5. Selisih 7.",
+      "distraktor": [
+        {
+          "teks": "10 menit",
+          "alasan": "mengurangkan jangkauan kedua kurir (28 - 18), bukan IQR"
+        },
+        {
+          "teks": "6,5 menit",
+          "alasan": "mengurangkan Q3 kedua kurir (51 - 44,5), bukan IQR"
+        },
+        {
+          "teks": "14,5 menit",
+          "alasan": "hanya menyebut IQR kurir B tanpa dikurangi IQR kurir A"
+        }
+      ],
+      "pembahasan": "n = 12: n/4 = 3 dan 3n/4 = 9 (bulat). IQR A = 44,5 - 37 = 7,5; IQR B = 51 - 36,5 = 14,5; selisih = 7.",
+      "id": "kelas10-b06-c-medium-bt01-004",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 237,
+        "bagian": "Latihan 6.5",
+        "nomor": "2",
+        "teks": "Apakah selebriti yang lebih sering memposting mendapatkan lebih banyak pengikut baru?",
+        "jawaban": "Ya, korelasi positif: makin sering memposting, pengikut baru makin banyak"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tafsir korelasi dari rata-rata dua kelompok",
+      "alasan_level": "memilah pasangan data ke dua kelompok menurut x, menghitung dua rata-rata, lalu menyimpulkan arah korelasi",
+      "stimulus": "Sebuah toko mencatat banyak iklan yang dipasang per minggu (sumbu x) dan banyak pengunjung baru per minggu (sumbu y) selama 10 minggu.\n\n| Iklan per minggu | 3 | 6 | 1 | 8 | 4 | 2 | 7 | 3 | 9 | 5 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Pengunjung baru | 210 | 330 | 150 | 410 | 250 | 190 | 380 | 230 | 460 | 300 |",
+      "pertanyaan": "Pasangan data dengan 3 iklan atau kurang dibandingkan dengan pasangan data dengan 6 iklan atau lebih. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "korelasi positif; rata-rata pengunjung baru: 195 untuk 3 iklan atau kurang dan 395 untuk 6 iklan atau lebih",
+      "alasan_benar": "Iklan 3 atau kurang: 210, 150, 190, 230 dengan rata-rata 780/4 = 195. Iklan 6 atau lebih: 330, 410, 380, 460 dengan rata-rata 1.580/4 = 395. Rata-rata naik saat iklan bertambah.",
+      "distraktor": [
+        {
+          "teks": "korelasi negatif; rata-rata pengunjung baru: 395 untuk 3 iklan atau kurang dan 195 untuk 6 iklan atau lebih",
+          "alasan": "menukar dua kelompok sehingga arah korelasi terbalik"
+        },
+        {
+          "teks": "korelasi positif; rata-rata pengunjung baru: 780 untuk 3 iklan atau kurang dan 1.580 untuk 6 iklan atau lebih",
+          "alasan": "memakai jumlah, bukan rata-rata"
+        },
+        {
+          "teks": "tidak ada korelasi; rata-rata pengunjung baru: 195 untuk 3 iklan atau kurang dan 395 untuk 6 iklan atau lebih",
+          "alasan": "menghitung rata-rata benar tetapi mengabaikan kenaikan yang konsisten"
+        }
+      ],
+      "pembahasan": "Rata-rata 4 pasangan dengan x <= 3 adalah 195 dan dengan x >= 6 adalah 395; makin banyak iklan, makin banyak pengunjung: korelasi positif.",
+      "id": "kelas10-b06-c-medium-bt01-005",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 228,
+        "bagian": "Latihan 6.4",
+        "nomor": "3a",
+        "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua kumpulan data di atas, model mana yang umumnya memerlukan waktu lebih sedikit untuk pelatihan?",
+        "jawaban": "Model Q (median 4,8 lebih kecil dari median P 5,3)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "median dan IQR dua kelompok bersamaan",
+      "alasan_level": "menghitung median dan IQR dua kumpulan data mentah lalu menimbang dua ukuran yang memberi kesan berbeda",
+      "stimulus": "Waktu respons (dalam milidetik) dua server, P dan Q, pada 10 permintaan masing-masing (belum terurut).\n\n- Server P: 30, 55, 36, 33, 48, 35, 45, 52, 37, 38\n- Server Q: 41, 46, 36, 44, 39, 42, 38, 45, 43, 40\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+      "pertanyaan": "Pernyataan yang benar tentang kedua server adalah ....",
+      "jawaban_benar": "median P (37,5) lebih rendah daripada median Q (41,5), tetapi IQR P (13) lebih besar daripada IQR Q (5); P umumnya lebih cepat namun kurang konsisten",
+      "alasan_benar": "P terurut: 30, 33, 35, 36, 37, 38, 45, 48, 52, 55: median = (37 + 38)/2 = 37,5; Q1 = 35, Q3 = 48, IQR = 13. Q terurut: 36, 38, 39, 40, 41, 42, 43, 44, 45, 46: median = (41 + 42)/2 = 41,5; Q1 = 39, Q3 = 44, IQR = 5.",
+      "distraktor": [
+        {
+          "teks": "median Q (37,5) lebih rendah daripada median P (41,5), tetapi IQR Q (13) lebih besar daripada IQR P (5); Q umumnya lebih cepat namun kurang konsisten",
+          "alasan": "menukar nama server pada seluruh hasil hitungan"
+        },
+        {
+          "teks": "median P (37,5) lebih rendah daripada median Q (41,5) dan IQR P (5) lebih kecil daripada IQR Q (13); P umumnya lebih cepat dan lebih konsisten",
+          "alasan": "menukar nilai IQR kedua server"
+        },
+        {
+          "teks": "median P (37) lebih rendah daripada median Q (41), tetapi IQR P (13) lebih besar daripada IQR Q (5); P umumnya lebih cepat namun kurang konsisten",
+          "alasan": "mengambil data ke-5 saja sebagai median tanpa merata-ratakan dengan data ke-6"
+        }
+      ],
+      "pembahasan": "n = 10: median = rata-rata data ke-5 dan ke-6; Q1 = data ke-3; Q3 = data ke-8. P: median 37,5, IQR 48 - 35 = 13. Q: median 41,5, IQR 44 - 39 = 5.",
+      "id": "kelas10-b06-c-medium-bt01-006",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 222,
+        "kutipan": "Diagram ini menampilkan data berdasarkan lima ukuran data yaitu: nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan nilai maksimum."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "mencocokkan data dengan lima ukuran",
+      "alasan_level": "menghitung lima ukuran pada empat kumpulan data lalu memilih yang cocok dengan ringkasan",
+      "stimulus": "Diagram kotak garis suatu kumpulan 10 data memiliki nilai minimum 12, Q1 = 18, median (Q2) = 25, Q3 = 31, dan nilai maksimum 44.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
+      "pertanyaan": "Kumpulan 10 data terurut yang sesuai dengan diagram kotak garis itu adalah ....",
+      "jawaban_benar": "12, 15, 18, 22, 24, 26, 29, 31, 38, 44",
+      "alasan_benar": "n = 10: Q1 = data ke-3 = 18, median = (24 + 26)/2 = 25, Q3 = data ke-8 = 31, minimum 12, maksimum 44.",
+      "distraktor": [
+        {
+          "teks": "12, 15, 18, 22, 26, 28, 29, 31, 38, 44",
+          "alasan": "median = (26 + 28)/2 = 27, bukan 25"
+        },
+        {
+          "teks": "12, 15, 18, 22, 24, 26, 29, 34, 38, 44",
+          "alasan": "Q3 = data ke-8 = 34, bukan 31"
+        },
+        {
+          "teks": "12, 15, 18, 22, 24, 26, 29, 31, 38, 40",
+          "alasan": "nilai maksimum 40, bukan 44"
+        }
+      ],
+      "pembahasan": "Periksa kelima ukuran tiap pilihan. Hanya pilihan benar yang memberi 12, 18, 25, 31, 44.",
+      "id": "kelas10-b06-c-medium-bt01-007",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 221,
+        "kutipan": "Atau dapat dikatakan bahwa di antara Q1 dan Q2 terdapat 25% data."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bagian 25% data paling rapat",
+      "alasan_level": "membandingkan lebar empat bagian yang masing-masing memuat 25% data lalu menghitung banyak data di bagian terpilih",
+      "stimulus": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.",
+      "pertanyaan": "Bagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
+      "jawaban_benar": "antara 45 dan 50, yaitu 20 siswa",
+      "alasan_benar": "Lebar keempat bagian: 20 ke 45 = 25, 45 ke 50 = 5, 50 ke 68 = 18, 68 ke 78 = 10. Terkecil 5 (antara Q1 dan Q2), memuat 25% x 80 = 20 siswa.",
+      "distraktor": [
+        {
+          "teks": "antara 68 dan 78, yaitu 20 siswa",
+          "alasan": "menganggap kumis atas (lebar 10) paling sempit padahal lebar 5 lebih kecil"
+        },
+        {
+          "teks": "antara 20 dan 45, yaitu 20 siswa",
+          "alasan": "memilih bagian terlebar (25) sebagai yang paling rapat"
+        },
+        {
+          "teks": "antara 45 dan 50, yaitu 40 siswa",
+          "alasan": "mengira bagian itu memuat 50% data"
+        }
+      ],
+      "pembahasan": "Tiap bagian antar-ukuran memuat 25% data (20 siswa). Bagian dengan selisih terkecil (5) paling rapat: antara Q1 dan Q2.",
+      "id": "kelas10-b06-c-medium-bt01-008",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 222,
+        "kutipan": "Biasanya lebih dari 1,5 kali IQR di atas Q3 atau di bawah Q1."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pencilan dengan nilai di batas",
+      "alasan_level": "menghitung dua batas pencilan dari Q1 dan Q3 lalu memeriksa enam nilai ekstrem, termasuk dua yang tepat di batas",
+      "stimulus": "Dari data nilai sebuah tes diperoleh Q1 = 40 dan Q3 = 52. Tiga nilai terendah adalah 15, 22, 30 dan tiga nilai tertinggi adalah 66, 70, 74.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+      "pertanyaan": "Nilai yang tergolong pencilan adalah ....",
+      "jawaban_benar": "15 dan 74",
+      "alasan_benar": "IQR = 12; batas bawah = 40 - 18 = 22 dan batas atas = 52 + 18 = 70. Pencilan harus kurang dari 22 atau lebih dari 70: hanya 15 dan 74 (22 dan 70 tepat di batas, bukan pencilan).",
+      "distraktor": [
+        {
+          "teks": "74 saja",
+          "alasan": "hanya memeriksa batas atas dan lupa batas bawah"
+        },
+        {
+          "teks": "15, 22, 70, dan 74",
+          "alasan": "menganggap nilai tepat di batas (22 dan 70) sebagai pencilan padahal harus kurang atau lebih dari batas"
+        },
+        {
+          "teks": "15, 22, 66, 70, dan 74",
+          "alasan": "memakai Q1 - IQR dan Q3 + IQR (batas 28 dan 64) tanpa faktor 1,5"
+        }
+      ],
+      "pembahasan": "Batas wajar 22 sampai 70. Nilai 22 dan 70 masih di dalam batas, sehingga pencilan hanya 15 dan 74.",
+      "id": "kelas10-b06-c-medium-bt01-009",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 222,
+        "kutipan": "IQR dihitung dengan cara IQR = Q3 - Q1"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai terbesar yang bukan pencilan",
+      "alasan_level": "menghitung batas atas pencilan lalu menerjemahkannya menjadi bilangan bulat terbesar yang masih wajar",
+      "stimulus": "Pada data waktu tempuh (menit) diperoleh Q1 = 49, median = 55, dan Q3 = 62. Seorang peserta baru akan menambahkan satu data bilangan bulat dan nilai Q1 dan Q3 dianggap tidak berubah.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+      "pertanyaan": "Bilangan bulat terbesar yang masih bukan pencilan adalah ....",
+      "jawaban_benar": "81",
+      "alasan_benar": "IQR = 62 - 49 = 13; batas atas = 62 + 1,5 x 13 = 81,5. Bilangan bulat terbesar yang tidak lebih dari 81,5 adalah 81.",
+      "distraktor": [
+        {
+          "teks": "82",
+          "alasan": "membulatkan batas atas 81,5 ke atas, padahal 82 > 81,5 sudah pencilan"
+        },
+        {
+          "teks": "75",
+          "alasan": "memakai Q3 + IQR tanpa faktor 1,5"
+        },
+        {
+          "teks": "72",
+          "alasan": "memakai IQR = Q3 - median = 7 sehingga batas atas 72,5"
+        }
+      ],
+      "pembahasan": "Batas atas = 81,5. Data bulat yang lebih dari 81,5 adalah pencilan, jadi 81 adalah yang terbesar yang bukan pencilan.",
+      "id": "kelas10-b06-c-medium-bt01-010",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 222,
+        "kutipan": "Pencilan, adalah data yang letaknya jauh dari data-data lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dampak membuang pencilan",
+      "alasan_level": "membandingkan jangkauan dan median sebelum dan sesudah pencilan dibuang, termasuk menghitung ulang median untuk n genap",
+      "stimulus": "Waktu pengerjaan (menit) 11 peserta, sudah terurut: 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 95. Data 95 adalah pencilan dan dibuang dari kumpulan data.",
+      "pertanyaan": "Setelah data 95 dibuang, jangkauan (maksimum - minimum) berkurang sebesar .... dan median yang baru adalah ....",
+      "jawaban_benar": "47 dan 43,5",
+      "alasan_benar": "Jangkauan semula 95 - 38 = 57, sekarang 48 - 38 = 10, berkurang 47. Sekarang ada 10 data sehingga median = (43 + 44)/2 = 43,5.",
+      "distraktor": [
+        {
+          "teks": "47 dan 44",
+          "alasan": "tidak menghitung ulang median; memakai median 11 data"
+        },
+        {
+          "teks": "10 dan 43,5",
+          "alasan": "menyebut jangkauan baru sebagai besar pengurangan"
+        },
+        {
+          "teks": "57 dan 43,5",
+          "alasan": "menyebut jangkauan lama sebagai besar pengurangan"
+        }
+      ],
+      "pembahasan": "Jangkauan turun dari 57 menjadi 10 (berkurang 47). Dengan 10 data, median = rata-rata data ke-5 dan ke-6 = 43,5.",
+      "id": "kelas10-b06-c-medium-bt01-011",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 221,
+        "kutipan": "Atau dapat dikatakan bahwa di antara Q1 dan Q2 terdapat 25% data."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menghitung banyak data dari persentase kuartil",
+      "alasan_level": "mengubah letak kuartil pada dua kelompok menjadi persentase lalu banyak siswa, dan menjumlahkannya",
+      "stimulus": "Nilai ulangan dua kelas diringkas dengan diagram kotak garis.\n\n- Kelas A (32 siswa): minimum 45, Q1 = 70, Q2 = 78, Q3 = 85, maksimum 98.\n- Kelas B (40 siswa): minimum 30, Q1 = 48, Q2 = 58, Q3 = 70, maksimum 92.",
+      "pertanyaan": "Banyak siswa kelas A yang nilainya antara 70 dan nilai maksimum, ditambah banyak siswa kelas B yang nilainya antara 70 dan nilai maksimum, adalah ....",
+      "jawaban_benar": "34 siswa",
+      "alasan_benar": "Kelas A: 70 adalah Q1, dari Q1 sampai maksimum ada 75% x 32 = 24 siswa. Kelas B: 70 adalah Q3, dari Q3 sampai maksimum ada 25% x 40 = 10 siswa. Jumlah 34.",
+      "distraktor": [
+        {
+          "teks": "54 siswa",
+          "alasan": "mengira 70 adalah Q1 pada kedua kelas (75% dari tiap kelas)"
+        },
+        {
+          "teks": "26 siswa",
+          "alasan": "mengira kelas A hanya 50% data di atas 70 (menganggap 70 sebagai Q2)"
+        },
+        {
+          "teks": "18 siswa",
+          "alasan": "mengira kelas A hanya 25% data di atas 70 (menganggap 70 sebagai Q3)"
+        }
+      ],
+      "pembahasan": "Kelas A: 75% x 32 = 24. Kelas B: 25% x 40 = 10. Total 34.",
+      "id": "kelas10-b06-c-medium-bt01-012",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 232,
+        "kutipan": "Pada korelasi positif kuat, titik-titik data pada Scatter Plot cenderung sangat dekat dan menyerupai garis linear."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan kekuatan korelasi",
+      "alasan_level": "menelaah dua kumpulan pasangan data untuk menilai kedekatan titik pada garis lurus lalu membandingkan kekuatan korelasi",
+      "stimulus": "Dua kelompok pasangan data (x, y) memiliki nilai x yang sama.\n\n| x | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| y kelompok P | 5 | 7 | 9 | 11 | 13 | 15 |\n| y kelompok Q | 8 | 6 | 14 | 9 | 15 | 12 |",
+      "pertanyaan": "Jika kedua kelompok digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
+      "jawaban_benar": "keduanya berkorelasi positif, tetapi korelasi P lebih kuat karena titik-titiknya tepat pada satu garis lurus",
+      "alasan_benar": "Pada P, y selalu naik 2 setiap x naik 1 (y = 2x + 3), sehingga semua titik segaris. Pada Q, y cenderung naik tetapi titik-titiknya menyebar (misalnya turun dari 8 ke 6 dan dari 14 ke 9).",
+      "distraktor": [
+        {
+          "teks": "keduanya berkorelasi positif dan sama kuat karena nilai x-nya sama",
+          "alasan": "mengira kekuatan korelasi hanya ditentukan nilai x"
+        },
+        {
+          "teks": "korelasi Q lebih kuat daripada P karena nilai y Q lebih bervariasi",
+          "alasan": "mengira variasi nilai y yang besar berarti korelasi kuat"
+        },
+        {
+          "teks": "P berkorelasi positif sedangkan Q berkorelasi negatif karena y Q beberapa kali turun",
+          "alasan": "menganggap penurunan sesekali sebagai arah korelasi negatif padahal kecenderungan keseluruhan naik"
+        }
+      ],
+      "pembahasan": "Korelasi kuat berarti titik sangat dekat pada garis lurus. P tepat pada garis y = 2x + 3 (kuat), Q naik secara kasar dengan sebaran besar (positif, tetapi lebih lemah).",
+      "id": "kelas10-b06-c-medium-bt01-013",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 221,
+        "kutipan": "Tapi jika hasil baginya bukan merupakan bilangan bulat, bulatkanlah hasilnya ke atas, maka Q3 terletak di urutan sesuai hasil pembulatan."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "IQR dan banyak pencilan data mentah ganjil",
+      "alasan_level": "mengurutkan 15 data, mencari Q1 dan Q3 dengan pembulatan ke atas, menghitung IQR lalu menghitung banyak data di luar batas",
+      "stimulus": "Lama latihan (dalam menit) 15 atlet, belum terurut: 52, 48, 55, 50, 49, 30, 53, 51, 50, 46, 54, 49, 88, 47, 52.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
+      "pertanyaan": "IQR data tersebut dan banyak pencilannya berturut-turut adalah ....",
+      "jawaban_benar": "IQR = 5 dan 2 pencilan",
+      "alasan_benar": "Terurut: 30, 46, 47, 48, 49, 49, 50, 50, 51, 52, 52, 53, 54, 55, 88. n/4 = 3,75 sehingga Q1 = data ke-4 = 48; 3n/4 = 11,25 sehingga Q3 = data ke-12 = 53. IQR = 5; batas = 40,5 dan 60,5. Data di luar batas: 30 dan 88.",
+      "distraktor": [
+        {
+          "teks": "IQR = 5 dan 1 pencilan",
+          "alasan": "hanya memeriksa batas atas (88) dan lupa data 30 di bawah batas bawah"
+        },
+        {
+          "teks": "IQR = 4 dan 2 pencilan",
+          "alasan": "membulatkan Q3 ke bawah sehingga memakai data ke-11 (52) dan Q1 data ke-4"
+        },
+        {
+          "teks": "IQR = 58 dan 0 pencilan",
+          "alasan": "memakai jangkauan (88 - 30) sebagai IQR sehingga batas pencilan menjadi sangat lebar"
+        }
+      ],
+      "pembahasan": "Q1 = 48, Q3 = 53, IQR = 5. Batas wajar 40,5 sampai 60,5. Data 30 dan 88 berada di luar batas: 2 pencilan.",
+      "id": "kelas10-b06-c-medium-bt01-014",
+      "variasi_cara": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811605df7bcde9fede8ac95e",
+        "teks": "Dinas pemadam kebakaran mencatat 8 kebakaran gedung. Tabel berikut memuat banyak unit mobil pemadam yang dikirim dan kerugian (dalam juta rupiah). Titik-titik pada diagram pencar data ini hampir membentuk garis lurus naik.\n\n|Unit dikirim|Kerugian (juta rupiah)|\n|---|---|\n|2|40|\n|3|55|\n|4|90|\n|6|120|\n|7|150|\n|9|210|\n|10|230|\n|12|300|\n\nSeorang pejabat menyimpulkan: \"Makin banyak unit dikirim, makin besar kerugian. Jadi mengurangi jumlah unit yang dikirim akan menurunkan kerugian.\" Penilaian yang paling tepat terhadap kesimpulan itu adalah ....",
+        "jawaban": "Tidak sah, karena data hanya menunjukkan korelasi positif; kebakaran yang lebih besar mungkin memerlukan lebih banyak unit sekaligus merugikan lebih banyak",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 25, 13, 19, 7, 13. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Nilai terbesar 25 dan terkecil 7. Jangkauan = 25 - 7 = 18.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 25 dan terkecil 7. Jangkauan = 25 - 7 = 18.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811605df7bcde9fede8ac95e",
+        "teks": "Dinas pemadam kebakaran mencatat 8 kebakaran gedung. Tabel berikut memuat banyak unit mobil pemadam yang dikirim dan kerugian (dalam juta rupiah). Titik-titik pada diagram pencar data ini hampir membentuk garis lurus naik.\n\n|Unit dikirim|Kerugian (juta rupiah)|\n|---|---|\n|2|40|\n|3|55|\n|4|90|\n|6|120|\n|7|150|\n|9|210|\n|10|230|\n|12|300|\n\nSeorang pejabat menyimpulkan: \"Makin banyak unit dikirim, makin besar kerugian. Jadi mengurangi jumlah unit yang dikirim akan menurunkan kerugian.\" Penilaian yang paling tepat terhadap kesimpulan itu adalah ....",
+        "jawaban": "Tidak sah, karena data hanya menunjukkan korelasi positif; kebakaran yang lebih besar mungkin memerlukan lebih banyak unit sekaligus merugikan lebih banyak",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 9, 10, 8, 8, 7. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Nilai terbesar 10 dan terkecil 7. Jangkauan = 10 - 7 = 3.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 10 dan terkecil 7. Jangkauan = 10 - 7 = 3.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca536ce962d173e8bc5b7cef",
+        "teks": "Dua warung, X dan Y, mencatat penjualan harian (dalam bungkus) selama 10 hari. Data sudah terurut.\n\n- Warung X: 39, 40, 41, 42, 43, 44, 45, 46, 47, 48\n- Warung Y: 33, 35, 36, 37, 38, 39, 41, 44, 50, 52\n\nWarung yang penjualan mediannya lebih tinggi, beserta nilai mediannya, adalah ....",
+        "jawaban": "Warung X, median 43,5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 23, 17, 20, 26, 20. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Nilai terbesar 26 dan terkecil 17. Jangkauan = 26 - 17 = 9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 26 dan terkecil 17. Jangkauan = 26 - 17 = 9.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e470ad897bda41dd309366e1",
+        "teks": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.\n\nBagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
+        "jawaban": "antara 45 dan 50, yaitu 20 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 15, 13, 12, 14, 13. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Nilai terbesar 15 dan terkecil 12. Jangkauan = 15 - 12 = 3.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 15 dan terkecil 12. Jangkauan = 15 - 12 = 3.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2145c5f3fb1bd1cd67ad6790",
+        "teks": "Pada data waktu tempuh (menit) diperoleh Q1 = 49, median = 55, dan Q3 = 62. Seorang peserta baru akan menambahkan satu data bilangan bulat dan nilai Q1 dan Q3 dianggap tidak berubah.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nBilangan bulat terbesar yang masih bukan pencilan adalah ....",
+        "jawaban": "81",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 37, 32, 27, 32, 42. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Nilai terbesar 42 dan terkecil 27. Jangkauan = 42 - 27 = 15.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 42 dan terkecil 27. Jangkauan = 42 - 27 = 15.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2145c5f3fb1bd1cd67ad6790",
+        "teks": "Pada data waktu tempuh (menit) diperoleh Q1 = 49, median = 55, dan Q3 = 62. Seorang peserta baru akan menambahkan satu data bilangan bulat dan nilai Q1 dan Q3 dianggap tidak berubah.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nBilangan bulat terbesar yang masih bukan pencilan adalah ....",
+        "jawaban": "81",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jangkauan",
+      "alasan_level": "Target medium; variasi konsep jangkauan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data pengukuran lima benda adalah 25, 37, 19, 31, 25. Berapakah jangkauan data tersebut?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Nilai terbesar 37 dan terkecil 19. Jangkauan = 37 - 19 = 18.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah jangkauan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai terbesar 37 dan terkecil 19. Jangkauan = 37 - 19 = 18.",
+      "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5aefaeb77b0b7f30d740e93",
+        "teks": "Delapan siswa dicatat nomor sepatu (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Nomor sepatu | 38 | 40 | 39 | 41 | 37 | 42 | 40 | 39 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai matematika | 78 | 65 | 90 | 85 | 72 | 70 | 88 | 68 |\n\nPernyataan yang paling sesuai dengan diagram pencar dari data itu adalah ....",
+        "jawaban": "Tidak ada korelasi antara nomor sepatu dan nilai matematika",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=8, median=13, Q3=20. Setiap nilai x diubah menjadi y=48-2x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 22; IQR baru 2(20-8)=24. Jumlah 46.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 22; IQR baru 2(20-8)=24. Jumlah 46.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e470ad897bda41dd309366e1",
+        "teks": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.\n\nBagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
+        "jawaban": "antara 45 dan 50, yaitu 20 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=9, median=11, Q3=16. Setiap nilai x diubah menjadi y=37-5x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -18; IQR baru 5(16-9)=35. Jumlah 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -18; IQR baru 5(16-9)=35. Jumlah 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d2ff3e685fd23d5553785976",
+        "teks": "Ringkasan lima ukuran data nilai ujian: minimum 15, Q1 = 28, Q2 = 35, Q3 = 47, maksimum 60.\n\nJangkauan interkuartil (IQR) data nilai itu adalah ....",
+        "jawaban": "19",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=5, median=8, Q3=16. Setiap nilai x diubah menjadi y=58-2x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 42; IQR baru 2(16-5)=22. Jumlah 64.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 42; IQR baru 2(16-5)=22. Jumlah 64.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3940da5ffd185176bda0260",
+        "teks": "Waktu tunggu (dalam menit) delapan pelanggan di sebuah loket: 14, 12, 15, 13, 16, 14, 2, 15. Dari data ini diperoleh Q1 = 12,5 dan Q3 = 15. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nData yang tergolong pencilan adalah ....",
+        "jawaban": "2 menit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=4, median=9, Q3=17. Setiap nilai x diubah menjadi y=52-5x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 7; IQR baru 5(17-4)=65. Jumlah 72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 7; IQR baru 5(17-4)=65. Jumlah 72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ee8cf3141a0ba72644d25d3",
+        "teks": "Seorang petani mencatat banyak pupuk (kg, sumbu x) dan hasil panen (kuintal, sumbu y) pada 10 petak, belum terurut menurut x.\n\n| Pupuk (kg) | 2 | 5 | 3 | 8 | 1 | 6 | 4 | 9 | 7 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hasil panen (kuintal) | 26 | 35 | 29 | 28 | 23 | 38 | 32 | 47 | 41 | 50 |\n\nJika pasangan data itu digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
+        "jawaban": "Korelasi positif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=6, median=15, Q3=23. Setiap nilai x diubah menjadi y=32-4x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -28; IQR baru 4(23-6)=68. Jumlah 40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -28; IQR baru 4(23-6)=68. Jumlah 40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed786506fc4a4b3aba00bce3",
+        "teks": "Banyak pengunjung harian sebuah perpustakaan selama 40 hari diringkas sebagai berikut: nilai minimum 12, Q1 = 20, Q2 = 26, Q3 = 33, dan nilai maksimum 41.\n\nPersentase hari yang banyak pengunjungnya terletak antara 20 dan 41 adalah ....",
+        "jawaban": "75%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=10, median=17, Q3=22. Setiap nilai x diubah menjadi y=60-4x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -8; IQR baru 4(22-10)=48. Jumlah 40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -8; IQR baru 4(22-10)=48. Jumlah 40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78af3c7d12b2592f37cae577",
+        "teks": "Sebuah kecamatan mencatat banyak sampah mingguan (dalam kg) dari 10 RT. Dari data terurut diperoleh Q1 = 44 kg dan Q3 = 47 kg, sedangkan satu RT mencatat 95 kg. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nBatas atas yang dipakai untuk menentukan pencilan pada data sampah itu adalah ....",
+        "jawaban": "51,5 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{77}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{77}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{79}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{75}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{77}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6b02151d172229edc16d024e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              6
+            ],
+            [
+              "Q3",
+              19
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 6], [\"Q3\", 19]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3940da5ffd185176bda0260",
+        "teks": "Waktu tunggu (dalam menit) delapan pelanggan di sebuah loket: 14, 12, 15, 13, 16, 14, 2, 15. Dari data ini diperoleh Q1 = 12,5 dan Q3 = 15. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nData yang tergolong pencilan adalah ....",
+        "jawaban": "2 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{55}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{55}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{57}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{53}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{55}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6c0c4084ce0fec457cf7221c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              5
+            ],
+            [
+              "Q3",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 5], [\"Q3\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed786506fc4a4b3aba00bce3",
+        "teks": "Banyak pengunjung harian sebuah perpustakaan selama 40 hari diringkas sebagai berikut: nilai minimum 12, Q1 = 20, Q2 = 26, Q3 = 33, dan nilai maksimum 41.\n\nPersentase hari yang banyak pengunjungnya terletak antara 20 dan 41 adalah ....",
+        "jawaban": "75%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{27}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{27}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/05696bd1d49b540d5bfcc478.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              6
+            ],
+            [
+              "Q3",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 6], [\"Q3\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca536ce962d173e8bc5b7cef",
+        "teks": "Dua warung, X dan Y, mencatat penjualan harian (dalam bungkus) selama 10 hari. Data sudah terurut.\n\n- Warung X: 39, 40, 41, 42, 43, 44, 45, 46, 47, 48\n- Warung Y: 33, 35, 36, 37, 38, 39, 41, 44, 50, 52\n\nWarung yang penjualan mediannya lebih tinggi, beserta nilai mediannya, adalah ....",
+        "jawaban": "Warung X, median 43,5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/af84b14540884ad0d810e8e1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              8
+            ],
+            [
+              "Q3",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 8], [\"Q3\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d6a30fb131aab76d84567443",
+        "teks": "Waktu tempuh (dalam menit) dua rute bus, P dan Q, selama 8 hari. Data sudah terurut.\n\n- Rute P: 24, 25, 26, 27, 28, 29, 30, 31\n- Rute Q: 21, 22, 24, 27, 28, 30, 33, 35\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nRute yang waktu tempuhnya lebih konsisten menurut IQR, beserta IQR-nya, adalah ....",
+        "jawaban": "Rute P, IQR = 4 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{83}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{83}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{85}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{81}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{83}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/84913614a75a1975ec26d85a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              9
+            ],
+            [
+              "Q3",
+              22
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 9], [\"Q3\", 22]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5bc9d80b04bcf569881db40",
+        "teks": "Banyak roti (dalam ratusan buah) yang dihasilkan dua pabrik selama sebulan diringkas sebagai berikut.\n\n| Ukuran | Pabrik A | Pabrik B |\n|---|---|---|\n| Minimum | 40 | 48 |\n| Q1 | 52 | 56 |\n| Median (Q2) | 60 | 62 |\n| Q3 | 72 | 68 |\n| Maksimum | 85 | 76 |\n\nKesimpulan yang benar tentang kedua pabrik adalah ....",
+        "jawaban": "Pabrik B memiliki median lebih tinggi dan IQR lebih kecil sehingga lebih konsisten",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/1224687bf0b96a07b9bf3ae1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              6
+            ],
+            [
+              "Q3",
+              18
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 6], [\"Q3\", 18]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e04f77a1842dbe30c6f0a2ae",
+        "teks": "Waktu muat halaman (dalam detik) dua aplikasi, X dan Y, dari 7 percobaan (belum terurut).\n\n- Aplikasi X: 2,4; 2,1; 2,6; 2,2; 2,5; 2,3; 2,0\n- Aplikasi Y: 2,8; 1,9; 2,0; 1,7; 3,0; 1,8; 2,2\n\nAplikasi yang umumnya memuat halaman lebih cepat berdasarkan mediannya, beserta mediannya, adalah ....",
+        "jawaban": "Aplikasi Y, median 2,0 detik",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{59}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{59}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{57}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{59}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/ce2254d78656e2d2d6c4ab36.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              7
+            ],
+            [
+              "Q3",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 7], [\"Q3\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8aa02844cee59bb226bdc0c4",
+        "teks": "Volume isi botol (dalam mL) yang dihasilkan dua mesin pengisi, A dan B, dari 6 botol masing-masing. Data sudah terurut.\n\n- Mesin A: 498, 499, 500, 500, 501, 502\n- Mesin B: 495, 497, 500, 501, 503, 506\n\nMesin yang isinya lebih seragam berdasarkan jangkauan (maksimum - minimum), beserta jangkauannya, adalah ....",
+        "jawaban": "Mesin A, jangkauan 4 mL",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/0071dc756d5b107059bde230.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              11
+            ],
+            [
+              "Q3",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 11], [\"Q3\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20d9832d8df84e5aad86410d",
+        "teks": "Delapan siswa dicatat lama bermain gim per hari (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Jam bermain gim per hari | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai ulangan | 92 | 88 | 85 | 79 | 74 | 71 | 65 | 60 |\n\nJika pasangan data itu digambar sebagai diagram pencar, jenis korelasinya adalah ....",
+        "jawaban": "Korelasi negatif kuat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{75}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{75}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{77}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{73}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{75}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/9d41d8064be2b8dd84e8beab.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              5
+            ],
+            [
+              "Q3",
+              18
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 5], [\"Q3\", 18]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2bc1d6b559c52a1249334e04",
+        "teks": "Seorang pedagang mencatat suhu udara (sumbu x) dan banyak es teh terjual (sumbu y) selama 8 hari.\n\n| Suhu udara (derajat Celsius) | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 |\n|---|---|---|---|---|---|---|---|---|\n| Es teh terjual (gelas) | 40 | 46 | 50 | 58 | 63 | 69 | 75 | 80 |\n\nJenis korelasi antara suhu udara dan penjualan es teh adalah ....",
+        "jawaban": "Korelasi positif kuat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{63}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{63}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{61}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{63}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/100bee8132bcb8e6b2075ac5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              4
+            ],
+            [
+              "Q3",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 4], [\"Q3\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5aefaeb77b0b7f30d740e93",
+        "teks": "Delapan siswa dicatat nomor sepatu (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Nomor sepatu | 38 | 40 | 39 | 41 | 37 | 42 | 40 | 39 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai matematika | 78 | 65 | 90 | 85 | 72 | 70 | 88 | 68 |\n\nPernyataan yang paling sesuai dengan diagram pencar dari data itu adalah ....",
+        "jawaban": "Tidak ada korelasi antara nomor sepatu dan nilai matematika",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{87}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{87}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{89}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{85}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{87}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/8fa898a690106eeaa8e313fe.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              11
+            ],
+            [
+              "Q3",
+              24
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 11], [\"Q3\", 24]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f63f28192908112e80e17fe",
+        "teks": "Waktu pengerjaan (dalam menit) 12 peserta lomba yang diurutkan: 3, 40, 41, 42, 43, 44, 44, 45, 46, 47, 48, 95. Dari data ini diperoleh Q1 = 41,5 dan Q3 = 46,5. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nBanyak peserta yang waktu pengerjaannya tergolong pencilan adalah ....",
+        "jawaban": "2 peserta",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{47}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{47}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{49}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{45}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{47}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/77e8d521214ed3d3c6ee739b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              6
+            ],
+            [
+              "Q3",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 6], [\"Q3\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9dd11e975ace9a4a2619f8d7",
+        "teks": "Ukuran berikut yang BUKAN salah satu dari lima ukuran data yang dipakai untuk menggambar diagram kotak garis (box plot) adalah ....",
+        "jawaban": "Modus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $25$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $25$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a31ba8abf3a832f27ea5c1f1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              10
+            ],
+            [
+              "Q3",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 10], [\"Q3\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d2ff3e685fd23d5553785976",
+        "teks": "Ringkasan lima ukuran data nilai ujian: minimum 15, Q1 = 28, Q2 = 35, Q3 = 47, maksimum 60.\n\nJangkauan interkuartil (IQR) data nilai itu adalah ....",
+        "jawaban": "19",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{71}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{71}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{73}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{69}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{71}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/37c7bedbe94f9c3756722b57.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              8
+            ],
+            [
+              "Q3",
+              19
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 8], [\"Q3\", 19]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76965c63e95b2159e4909856",
+        "teks": "Data terurut (n = 12): 12, 15, 17, 18, 21, 23, 24, 27, 29, 30, 34, 38.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nNilai Q1 dan Q3 data tersebut berturut-turut adalah ....",
+        "jawaban": "Q1 = 17,5 dan Q3 = 29,5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/f7293dde923bf9ecaaaf7df6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              11
+            ],
+            [
+              "Q3",
+              21
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 11], [\"Q3\", 21]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "995d639ef24eb82b0d9636f9",
+        "teks": "Dari 48 nilai terurut diperoleh Q1 = 15, Q2 = 22, dan Q3 = 31.\n\nBanyak nilai yang terletak di antara Q1 dan Q3 adalah ....",
+        "jawaban": "24 nilai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{19}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{19}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{19}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a1ee66a2de2180b2ccabfbd9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              2
+            ],
+            [
+              "Q3",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 2], [\"Q3\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "544f79697cae660c5d2a166c",
+        "teks": "Menurut aturan pada diagram kotak garis, sebuah data disebut pencilan jika ....",
+        "jawaban": "kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/8c24cb7b9f2e485a5af47821.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              3
+            ],
+            [
+              "Q3",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 3], [\"Q3\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28c858216e29f141b250f190",
+        "teks": "Situasi berikut yang menunjukkan korelasi negatif adalah ....",
+        "jawaban": "makin lama sebuah motor dipakai berkeliling, makin sedikit bensin yang tersisa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/55dda4311ff47d31dca934f1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              3
+            ],
+            [
+              "Q3",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 3], [\"Q3\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25b34427765f0d3daccc8387",
+        "teks": "Di sebuah kota, data bulanan menunjukkan korelasi positif yang kuat antara banyak es krim yang terjual dan banyak kunjungan ke kolam renang.\n\nKesimpulan yang paling tepat dari data itu adalah ....",
+        "jawaban": "kedua hal cenderung naik bersama, tetapi korelasi saja tidak membuktikan satu menyebabkan yang lain",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $32$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $32$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/f0ed8af4545adc4a050bfdbf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              2
+            ],
+            [
+              "Q3",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 2], [\"Q3\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "88ace5b1d48596b9b668189f",
+        "teks": "| Siswa | Jam belajar | Nilai |\n|---|---|---|\n| Andi | 2 | 60 |\n| Budi | 5 | 78 |\n| Dina | 3 | 72 |\n| Eka | 6 | 85 |\n\nPada diagram pencar, sumbu x menunjukkan jam belajar dan sumbu y menunjukkan nilai.\n\nKoordinat titik yang mewakili Dina adalah ....",
+        "jawaban": "(3, 72)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $10$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $10$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/74f34ce69a8d8652342d59d1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Q1",
+              5
+            ],
+            [
+              "Q3",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"Q1\", 5], [\"Q3\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "811605df7bcde9fede8ac95e",
+        "teks": "Dinas pemadam kebakaran mencatat 8 kebakaran gedung. Tabel berikut memuat banyak unit mobil pemadam yang dikirim dan kerugian (dalam juta rupiah). Titik-titik pada diagram pencar data ini hampir membentuk garis lurus naik.\n\n|Unit dikirim|Kerugian (juta rupiah)|\n|---|---|\n|2|40|\n|3|55|\n|4|90|\n|6|120|\n|7|150|\n|9|210|\n|10|230|\n|12|300|\n\nSeorang pejabat menyimpulkan: \"Makin banyak unit dikirim, makin besar kerugian. Jadi mengurangi jumlah unit yang dikirim akan menurunkan kerugian.\" Penilaian yang paling tepat terhadap kesimpulan itu adalah ....",
+        "jawaban": "Tidak sah, karena data hanya menunjukkan korelasi positif; kebakaran yang lebih besar mungkin memerlukan lebih banyak unit sekaligus merugikan lebih banyak",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $8$; Q3 = $16$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2bb535007d0539b4c25a7053",
+        "teks": "Gaji bulanan (juta rupiah) 11 karyawan sebuah kantor kecil: 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 40.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nData 40 tergolong pencilan dan dibuang, sehingga tersisa 10 data. Pernyataan yang benar tentang perubahan ukuran data setelah pembuangan adalah ....",
+        "jawaban": "Rata-rata turun lebih dari 3 juta, median turun 0,5 juta, dan IQR tidak berubah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $2$; Q3 = $6$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "99e7191c7621ef2cd7a2b473",
+        "teks": "Seorang siswa mengerjakan data 12 nilai berikut: 12, 15, 15, 18, 20, 22, 25, 27, 30, 31, 35, 60.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nLangkah 1: data sudah terurut dan n = 12.\nLangkah 2: n/4 = 3 (bulat), sehingga Q1 = rata-rata data ke-3 dan ke-4 = 16,5.\nLangkah 3: 3n/4 = 9, sehingga Q3 = data ke-9 = 30.\nLangkah 4: IQR = 30 - 16,5 = 13,5; batas atas = 30 + 1,5 x 13,5 = 50,25; jadi 60 adalah pencilan.\n\nLangkah pertama yang mengandung kesalahan dan batas atas pencilan yang benar adalah ....",
+        "jawaban": "Langkah 3; Q3 seharusnya 30,5 sehingga batas atas yang benar 51,5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $8$; Q3 = $13$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{41}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{41}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{41}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0944d67813f31bcce7058103",
+        "teks": "Aturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nSebuah kumpulan 9 bilangan bulat terurut harus memenuhi: minimum 10, Q1 = 14, median = 20, Q3 = 26, maksimum 60, dan tepat satu data yang tergolong pencilan.\n\nKumpulan data yang memenuhi semua syarat itu adalah ....",
+        "jawaban": "10, 12, 14, 17, 20, 23, 26, 31, 60",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $3$; Q3 = $11$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $23$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $23$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c2afef3e0754dbf82210049f",
+        "teks": "Nilai ulangan dua kelas yang masing-masing terdiri dari 40 siswa diringkas sebagai berikut.\n\n|Ukuran|Kelas A|Kelas B|\n|---|---|---|\n|Minimum|40|45|\n|Q1|55|65|\n|Median|62|72|\n|Q3|70|85|\n|Maksimum|95|90|\n\nPada tiap kelas, 25% data terletak di bawah Q1, 25% di antara Q1 dan median, 25% di antara median dan Q3, dan 25% di atas Q3.\n\nPernyataan yang benar berdasarkan ringkasan itu adalah ....",
+        "jawaban": "Paling sedikit 75% siswa kelas B mendapat nilai di atas median kelas A",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $3$; Q3 = $13$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3fe7ba5c50a44dce65f6f179",
+        "teks": "Sebuah tim peneliti sekolah memilih diagram untuk empat tujuan. Pilihan dibatasi pada diagram pencar (untuk pasangan dua variabel) dan diagram kotak garis (untuk sebaran satu variabel):\n\n(a) Melihat apakah makin lama jam belajar siswa makin tinggi nilainya, dengan tiap siswa dicatat jam belajar dan nilainya: diagram pencar.\n(b) Membandingkan sebaran uang saku siswa kelas X dan kelas XI (satu variabel, dua kelompok): diagram pencar.\n(c) Memeriksa apakah ada tagihan listrik yang tergolong pencilan pada satu kumpulan data tagihan: diagram kotak garis.\n(d) Mencari satu pasangan data (tinggi, berat) yang menyimpang dari pola hubungan seluruh pasangan lain: diagram kotak garis.\n\nPenilaian yang tepat terhadap keempat pilihan itu adalah ....",
+        "jawaban": "Pilihan (b) dan (d) keliru, sedangkan (a) dan (c) sudah tepat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $4$; Q3 = $16$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $34$.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$68$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $34$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4caebcacd1a9ef40b28cd40a",
+        "teks": "Sepuluh pasangan data (x, y) dicatat sebagai berikut.\n\n|x|y|\n|---|---|\n|1|3|\n|2|5|\n|3|7|\n|4|9|\n|5|11|\n|6|13|\n|7|15|\n|8|17|\n|9|19|\n|10|3|\n\nPernyataan yang paling tepat tentang diagram pencar data itu adalah ....",
+        "jawaban": "Sembilan titik pertama segaris naik; titik (10, 3) melemahkan korelasi tetapi arahnya tetap positif",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $7$; Q3 = $19$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $37$.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $37$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "412045d8792f854c2df86512",
+        "teks": "Data waktu tunggu (menit) 10 pelanggan: 21, 22, 24, 25, 27, 28, 30, 31, 33, 35.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nDua pelanggan baru ditambahkan, keduanya dengan waktu tunggu v menit (v bilangan bulat, lebih besar dari 35). Nilai v terkecil sehingga data v tergolong pencilan pada kumpulan 12 data yang baru adalah ....",
+        "jawaban": "49",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $10$; Q3 = $23$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{85}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{85}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{87}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{83}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{85}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "91056e352007b7c1e65c9879",
+        "teks": "Nilai ujian 12 siswa kelas A dan 12 siswa kelas B (terurut).\nKelas A: 52, 70, 72, 73, 74, 75, 76, 77, 78, 80, 81, 83\nKelas B: 52, 60, 66, 72, 75, 79, 82, 85, 88, 91, 94, 97\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nSeorang siswa di tiap kelas memperoleh nilai 52. Pernyataan yang benar mengenai nilai 52 itu, beserta batas bawah pencilan tiap kelas, adalah ....",
+        "jawaban": "Pencilan di kelas A (batas bawah 62,75), bukan pencilan di kelas B (batas bawah 38,25)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $12$; Q3 = $17$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{49}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{49}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{51}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{49}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7dd9746024ed01c5b0e597c7",
+        "teks": "Tabel berikut memuat lama belajar per pekan (jam) dan nilai ujian 8 siswa dari dua kelompok kemampuan yang berbeda.\n\n|Jam belajar|Nilai|Kelompok|\n|---|---|---|\n|1|80|Kelompok I|\n|2|82|Kelompok I|\n|3|84|Kelompok I|\n|4|86|Kelompok I|\n|6|40|Kelompok II|\n|7|42|Kelompok II|\n|8|44|Kelompok II|\n|9|46|Kelompok II|\n\nPernyataan yang paling tepat tentang korelasi pada data itu adalah ....",
+        "jawaban": "Korelasi seluruh data negatif, tetapi di dalam tiap kelompok positif; kesimpulan \"belajar lebih lama menurunkan nilai\" tidak dibenarkan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $5$; Q3 = $18$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{75}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{75}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{77}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{73}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{75}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "671d8cf39f93451c9327a27a",
+        "teks": "Tagihan air bulanan (dalam ribu rupiah) dari 10 rumah di sebuah gang, belum terurut: 85, 92, 88, 90, 95, 89, 310, 91, 87, 94.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nData yang tergolong pencilan beserta batas atas pencilannya adalah ....",
+        "jawaban": "310 ribu rupiah, batas atas 103",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $12$; Q3 = $19$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{59}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{59}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{57}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{59}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "21fd1fc4c1d7fcbdaba7746c",
+        "teks": "Daya tahan baterai (dalam jam) dua merek, X dan Y, diuji pada 10 baterai masing-masing (belum terurut).\n\n- Merek X: 14, 12, 13, 15, 13, 12, 14, 13, 28, 14\n- Merek Y: 9, 16, 11, 18, 13, 10, 17, 12, 15, 14\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nMerek yang daya tahannya lebih konsisten menurut IQR, beserta IQR-nya, adalah ....",
+        "jawaban": "Merek X, IQR = 1 jam",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $11$; Q3 = $14$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{37}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{37}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{39}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{35}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{37}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ee8cf3141a0ba72644d25d3",
+        "teks": "Seorang petani mencatat banyak pupuk (kg, sumbu x) dan hasil panen (kuintal, sumbu y) pada 10 petak, belum terurut menurut x.\n\n| Pupuk (kg) | 2 | 5 | 3 | 8 | 1 | 6 | 4 | 9 | 7 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hasil panen (kuintal) | 26 | 35 | 29 | 28 | 23 | 38 | 32 | 47 | 41 | 50 |\n\nJika pasangan data itu digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
+        "jawaban": "Korelasi positif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $7$; Q3 = $14$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{49}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{49}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{51}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{49}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "acbed8b1a0dcc82d8e04d344",
+        "teks": "Waktu pengantaran (dalam menit) pesanan oleh dua kurir, A dan B, pada 12 pengantaran masing-masing (belum terurut).\n\n- Kurir A: 32, 45, 38, 41, 36, 50, 44, 39, 47, 42, 35, 40\n- Kurir B: 30, 52, 38, 44, 58, 35, 48, 41, 55, 33, 46, 50\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nSelisih IQR kedua kurir (IQR yang lebih besar dikurangi IQR yang lebih kecil) adalah ....",
+        "jawaban": "7 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $9$; Q3 = $18$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{63}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{63}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{61}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$63$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{63}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "996d81fe3c937edea79e4bc3",
+        "teks": "Sebuah toko mencatat banyak iklan yang dipasang per minggu (sumbu x) dan banyak pengunjung baru per minggu (sumbu y) selama 10 minggu.\n\n| Iklan per minggu | 3 | 6 | 1 | 8 | 4 | 2 | 7 | 3 | 9 | 5 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Pengunjung baru | 210 | 330 | 150 | 410 | 250 | 190 | 380 | 230 | 460 | 300 |\n\nPasangan data dengan 3 iklan atau kurang dibandingkan dengan pasangan data dengan 6 iklan atau lebih. Pernyataan yang benar adalah ....",
+        "jawaban": "korelasi positif; rata-rata pengunjung baru: 195 untuk 3 iklan atau kurang dan 395 untuk 6 iklan atau lebih",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $12$; Q3 = $23$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{79}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{79}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{81}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{77}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{79}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74148212f22581522bd66c6c",
+        "teks": "Waktu respons (dalam milidetik) dua server, P dan Q, pada 10 permintaan masing-masing (belum terurut).\n\n- Server P: 30, 55, 36, 33, 48, 35, 45, 52, 37, 38\n- Server Q: 41, 46, 36, 44, 39, 42, 38, 45, 43, 40\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nPernyataan yang benar tentang kedua server adalah ....",
+        "jawaban": "median P (37,5) lebih rendah daripada median Q (41,5), tetapi IQR P (13) lebih besar daripada IQR Q (5); P umumnya lebih cepat namun kurang konsisten",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $9$; Q3 = $11$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7eb283aab17c8353892fb11",
+        "teks": "Diagram kotak garis suatu kumpulan 10 data memiliki nilai minimum 12, Q1 = 18, median (Q2) = 25, Q3 = 31, dan nilai maksimum 44.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.\n\nKumpulan 10 data terurut yang sesuai dengan diagram kotak garis itu adalah ....",
+        "jawaban": "12, 15, 18, 22, 24, 26, 29, 31, 38, 44",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $9$; Q3 = $12$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{33}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{33}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{35}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{33}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e470ad897bda41dd309366e1",
+        "teks": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.\n\nBagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
+        "jawaban": "antara 45 dan 50, yaitu 20 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $6$; Q3 = $13$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{47}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{47}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{49}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{45}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{47}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e412a399035770cc4c7ff91b",
+        "teks": "Dari data nilai sebuah tes diperoleh Q1 = 40 dan Q3 = 52. Tiga nilai terendah adalah 15, 22, 30 dan tiga nilai tertinggi adalah 66, 70, 74.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nNilai yang tergolong pencilan adalah ....",
+        "jawaban": "15 dan 74",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $2$; Q3 = $8$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2145c5f3fb1bd1cd67ad6790",
+        "teks": "Pada data waktu tempuh (menit) diperoleh Q1 = 49, median = 55, dan Q3 = 62. Seorang peserta baru akan menambahkan satu data bilangan bulat dan nilai Q1 dan Q3 dianggap tidak berubah.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nBilangan bulat terbesar yang masih bukan pencilan adalah ....",
+        "jawaban": "81",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_spread_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui Q1 = $11$; Q3 = $20$. Kuartil pertama $Q1$ dan kuartil ketiga $Q3$ diberikan. Menurut aturan $1,5$ kali jangkauan antarkuartil, berapa pagar atas pencilan?",
+      "jawaban_benar": "$\\frac{67}{2}$",
+      "alasan_benar": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{67}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{69}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{65}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$67$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung jangkauan antarkuartil, kemudian tambahkan satu setengah kalinya pada kuartil ketiga. Hasilnya $\\frac{67}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-c-medium-bt01-066"
     }
-   ],
-   "pembahasan": "Urutkan data, Q1 = 88, Q3 = 94, IQR = 6, batas atas = 94 + 1,5 x 6 = 103 dan batas bawah = 79. Hanya 310 yang melebihi 103.",
-   "id": "kelas10-b06-c-medium-bt01-001",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 225,
-    "bagian": "Contoh",
-    "nomor": "-",
-    "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua dataset, kota mana yang memiliki produksi energi yang lebih konsisten? Jelaskan alasanmu.",
-    "jawaban": "Kota B (turbin angin), karena IQR dan range-nya lebih kecil"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "bandingkan konsistensi dari data mentah (IQR vs jangkauan)",
-   "alasan_level": "menghitung Q1 dan Q3 dua kumpulan data mentah, membandingkan IQR, dan menyadari jangkauan memberi kesimpulan berlawanan",
-   "stimulus": "Daya tahan baterai (dalam jam) dua merek, X dan Y, diuji pada 10 baterai masing-masing (belum terurut).\n\n- Merek X: 14, 12, 13, 15, 13, 12, 14, 13, 28, 14\n- Merek Y: 9, 16, 11, 18, 13, 10, 17, 12, 15, 14\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
-   "pertanyaan": "Merek yang daya tahannya lebih konsisten menurut IQR, beserta IQR-nya, adalah ....",
-   "jawaban_benar": "Merek X, IQR = 1 jam",
-   "alasan_benar": "Merek X terurut: 12, 12, 13, 13, 13, 14, 14, 14, 15, 28 sehingga Q1 = 13 dan Q3 = 14 (IQR 1). Merek Y terurut: 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 sehingga Q1 = 11 dan Q3 = 16 (IQR 5). IQR X lebih kecil.",
-   "distraktor": [
-    {
-     "teks": "Merek Y, IQR = 5 jam",
-     "alasan": "memilih berdasarkan jangkauan (X: 16, Y: 9) dan menganggap IQR kecil berarti kurang konsisten"
-    },
-    {
-     "teks": "Merek X, IQR = 2 jam",
-     "alasan": "mengambil Q1 dari data ke-2 (12) bukan data ke-3"
-    },
-    {
-     "teks": "Merek Y, IQR = 9 jam",
-     "alasan": "memakai jangkauan Y sebagai IQR"
-    }
-   ],
-   "pembahasan": "n = 10: Q1 = data ke-3, Q3 = data ke-8. IQR X = 14 - 13 = 1, IQR Y = 16 - 11 = 5. IQR tidak terpengaruh nilai 28, jadi X lebih konsisten.",
-   "id": "kelas10-b06-c-medium-bt01-002",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 236,
-    "bagian": "Latihan 6.5",
-    "nomor": "1",
-    "teks": "Apakah terdapat korelasi antara jumlah jam pelatihan dan akurasi model? Jelaskan.",
-    "jawaban": "Ya, korelasi positif kuat (makin banyak jam pelatihan, akurasi makin tinggi)"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "titik menyimpang pada diagram pencar",
-   "alasan_level": "mengurutkan pasangan data menurut x, menemukan arah kecenderungan, lalu menandai pasangan yang melanggar pola",
-   "stimulus": "Seorang petani mencatat banyak pupuk (kg, sumbu x) dan hasil panen (kuintal, sumbu y) pada 10 petak, belum terurut menurut x.\n\n| Pupuk (kg) | 2 | 5 | 3 | 8 | 1 | 6 | 4 | 9 | 7 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hasil panen (kuintal) | 26 | 35 | 29 | 28 | 23 | 38 | 32 | 47 | 41 | 50 |",
-   "pertanyaan": "Jika pasangan data itu digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
-   "jawaban_benar": "Korelasi positif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
-   "alasan_benar": "Setelah diurutkan menurut x, y naik 3 kuintal setiap tambahan 1 kg pupuk (23, 26, 29, 32, 35, 38, 41, 47, 50) kecuali pada x = 8 yang hasilnya 28 (seharusnya sekitar 44).",
-   "distraktor": [
-    {
-     "teks": "Korelasi negatif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
-     "alasan": "salah arah: satu titik rendah dianggap mewakili tren menurun"
-    },
-    {
-     "teks": "Tidak ada korelasi, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
-     "alasan": "satu titik menyimpang dianggap membuat seluruh titik acak"
-    },
-    {
-     "teks": "Korelasi positif, dan petak dengan pupuk 10 kg dan hasil 50 kuintal menyimpang dari pola",
-     "alasan": "menandai titik terbesar sebagai menyimpang padahal masih tepat pada pola"
-    }
-   ],
-   "pembahasan": "Urutkan menurut x: hasil panen naik tetap 3 kuintal per kg pupuk, kecuali x = 8 (28 kuintal, jauh di bawah 44). Arah naik berarti korelasi positif.",
-   "id": "kelas10-b06-c-medium-bt01-003",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 227,
-    "bagian": "Ayo, Mencoba",
-    "nomor": "2",
-    "teks": "Berdasarkan rentang interkuartil, konsumsi energi rumah tangga mana yang lebih konsisten?",
-    "jawaban": "Rumah A (IQR 5, Rumah B IQR 6)"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "selisih IQR dua kelompok",
-   "alasan_level": "mengurutkan dua kumpulan 12 data mentah, mencari Q1 dan Q3 dengan rata-rata dua data, lalu mengurangkan kedua IQR",
-   "stimulus": "Waktu pengantaran (dalam menit) pesanan oleh dua kurir, A dan B, pada 12 pengantaran masing-masing (belum terurut).\n\n- Kurir A: 32, 45, 38, 41, 36, 50, 44, 39, 47, 42, 35, 40\n- Kurir B: 30, 52, 38, 44, 58, 35, 48, 41, 55, 33, 46, 50\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
-   "pertanyaan": "Selisih IQR kedua kurir (IQR yang lebih besar dikurangi IQR yang lebih kecil) adalah ....",
-   "jawaban_benar": "7 menit",
-   "alasan_benar": "A terurut: 32, 35, 36, 38, 39, 40, 41, 42, 44, 45, 47, 50 sehingga Q1 = (36 + 38)/2 = 37, Q3 = (44 + 45)/2 = 44,5, IQR 7,5. B terurut: 30, 33, 35, 38, 41, 44, 46, 48, 50, 52, 55, 58 sehingga Q1 = (35 + 38)/2 = 36,5, Q3 = (50 + 52)/2 = 51, IQR 14,5. Selisih 7.",
-   "distraktor": [
-    {
-     "teks": "10 menit",
-     "alasan": "mengurangkan jangkauan kedua kurir (28 - 18), bukan IQR"
-    },
-    {
-     "teks": "6,5 menit",
-     "alasan": "mengurangkan Q3 kedua kurir (51 - 44,5), bukan IQR"
-    },
-    {
-     "teks": "14,5 menit",
-     "alasan": "hanya menyebut IQR kurir B tanpa dikurangi IQR kurir A"
-    }
-   ],
-   "pembahasan": "n = 12: n/4 = 3 dan 3n/4 = 9 (bulat). IQR A = 44,5 - 37 = 7,5; IQR B = 51 - 36,5 = 14,5; selisih = 7.",
-   "id": "kelas10-b06-c-medium-bt01-004",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 237,
-    "bagian": "Latihan 6.5",
-    "nomor": "2",
-    "teks": "Apakah selebriti yang lebih sering memposting mendapatkan lebih banyak pengikut baru?",
-    "jawaban": "Ya, korelasi positif: makin sering memposting, pengikut baru makin banyak"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "tafsir korelasi dari rata-rata dua kelompok",
-   "alasan_level": "memilah pasangan data ke dua kelompok menurut x, menghitung dua rata-rata, lalu menyimpulkan arah korelasi",
-   "stimulus": "Sebuah toko mencatat banyak iklan yang dipasang per minggu (sumbu x) dan banyak pengunjung baru per minggu (sumbu y) selama 10 minggu.\n\n| Iklan per minggu | 3 | 6 | 1 | 8 | 4 | 2 | 7 | 3 | 9 | 5 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Pengunjung baru | 210 | 330 | 150 | 410 | 250 | 190 | 380 | 230 | 460 | 300 |",
-   "pertanyaan": "Pasangan data dengan 3 iklan atau kurang dibandingkan dengan pasangan data dengan 6 iklan atau lebih. Pernyataan yang benar adalah ....",
-   "jawaban_benar": "korelasi positif; rata-rata pengunjung baru: 195 untuk 3 iklan atau kurang dan 395 untuk 6 iklan atau lebih",
-   "alasan_benar": "Iklan 3 atau kurang: 210, 150, 190, 230 dengan rata-rata 780/4 = 195. Iklan 6 atau lebih: 330, 410, 380, 460 dengan rata-rata 1.580/4 = 395. Rata-rata naik saat iklan bertambah.",
-   "distraktor": [
-    {
-     "teks": "korelasi negatif; rata-rata pengunjung baru: 395 untuk 3 iklan atau kurang dan 195 untuk 6 iklan atau lebih",
-     "alasan": "menukar dua kelompok sehingga arah korelasi terbalik"
-    },
-    {
-     "teks": "korelasi positif; rata-rata pengunjung baru: 780 untuk 3 iklan atau kurang dan 1.580 untuk 6 iklan atau lebih",
-     "alasan": "memakai jumlah, bukan rata-rata"
-    },
-    {
-     "teks": "tidak ada korelasi; rata-rata pengunjung baru: 195 untuk 3 iklan atau kurang dan 395 untuk 6 iklan atau lebih",
-     "alasan": "menghitung rata-rata benar tetapi mengabaikan kenaikan yang konsisten"
-    }
-   ],
-   "pembahasan": "Rata-rata 4 pasangan dengan x <= 3 adalah 195 dan dengan x >= 6 adalah 395; makin banyak iklan, makin banyak pengunjung: korelasi positif.",
-   "id": "kelas10-b06-c-medium-bt01-005",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 228,
-    "bagian": "Latihan 6.4",
-    "nomor": "3a",
-    "teks": "Berdasarkan Diagram Box-and-Whisker dari kedua kumpulan data di atas, model mana yang umumnya memerlukan waktu lebih sedikit untuk pelatihan?",
-    "jawaban": "Model Q (median 4,8 lebih kecil dari median P 5,3)"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "median dan IQR dua kelompok bersamaan",
-   "alasan_level": "menghitung median dan IQR dua kumpulan data mentah lalu menimbang dua ukuran yang memberi kesan berbeda",
-   "stimulus": "Waktu respons (dalam milidetik) dua server, P dan Q, pada 10 permintaan masing-masing (belum terurut).\n\n- Server P: 30, 55, 36, 33, 48, 35, 45, 52, 37, 38\n- Server Q: 41, 46, 36, 44, 39, 42, 38, 45, 43, 40\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
-   "pertanyaan": "Pernyataan yang benar tentang kedua server adalah ....",
-   "jawaban_benar": "median P (37,5) lebih rendah daripada median Q (41,5), tetapi IQR P (13) lebih besar daripada IQR Q (5); P umumnya lebih cepat namun kurang konsisten",
-   "alasan_benar": "P terurut: 30, 33, 35, 36, 37, 38, 45, 48, 52, 55: median = (37 + 38)/2 = 37,5; Q1 = 35, Q3 = 48, IQR = 13. Q terurut: 36, 38, 39, 40, 41, 42, 43, 44, 45, 46: median = (41 + 42)/2 = 41,5; Q1 = 39, Q3 = 44, IQR = 5.",
-   "distraktor": [
-    {
-     "teks": "median Q (37,5) lebih rendah daripada median P (41,5), tetapi IQR Q (13) lebih besar daripada IQR P (5); Q umumnya lebih cepat namun kurang konsisten",
-     "alasan": "menukar nama server pada seluruh hasil hitungan"
-    },
-    {
-     "teks": "median P (37,5) lebih rendah daripada median Q (41,5) dan IQR P (5) lebih kecil daripada IQR Q (13); P umumnya lebih cepat dan lebih konsisten",
-     "alasan": "menukar nilai IQR kedua server"
-    },
-    {
-     "teks": "median P (37) lebih rendah daripada median Q (41), tetapi IQR P (13) lebih besar daripada IQR Q (5); P umumnya lebih cepat namun kurang konsisten",
-     "alasan": "mengambil data ke-5 saja sebagai median tanpa merata-ratakan dengan data ke-6"
-    }
-   ],
-   "pembahasan": "n = 10: median = rata-rata data ke-5 dan ke-6; Q1 = data ke-3; Q3 = data ke-8. P: median 37,5, IQR 48 - 35 = 13. Q: median 41,5, IQR 44 - 39 = 5.",
-   "id": "kelas10-b06-c-medium-bt01-006",
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 222,
-    "kutipan": "Diagram ini menampilkan data berdasarkan lima ukuran data yaitu: nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan nilai maksimum."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "mencocokkan data dengan lima ukuran",
-   "alasan_level": "menghitung lima ukuran pada empat kumpulan data lalu memilih yang cocok dengan ringkasan",
-   "stimulus": "Diagram kotak garis suatu kumpulan 10 data memiliki nilai minimum 12, Q1 = 18, median (Q2) = 25, Q3 = 31, dan nilai maksimum 44.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu.",
-   "pertanyaan": "Kumpulan 10 data terurut yang sesuai dengan diagram kotak garis itu adalah ....",
-   "jawaban_benar": "12, 15, 18, 22, 24, 26, 29, 31, 38, 44",
-   "alasan_benar": "n = 10: Q1 = data ke-3 = 18, median = (24 + 26)/2 = 25, Q3 = data ke-8 = 31, minimum 12, maksimum 44.",
-   "distraktor": [
-    {
-     "teks": "12, 15, 18, 22, 26, 28, 29, 31, 38, 44",
-     "alasan": "median = (26 + 28)/2 = 27, bukan 25"
-    },
-    {
-     "teks": "12, 15, 18, 22, 24, 26, 29, 34, 38, 44",
-     "alasan": "Q3 = data ke-8 = 34, bukan 31"
-    },
-    {
-     "teks": "12, 15, 18, 22, 24, 26, 29, 31, 38, 40",
-     "alasan": "nilai maksimum 40, bukan 44"
-    }
-   ],
-   "pembahasan": "Periksa kelima ukuran tiap pilihan. Hanya pilihan benar yang memberi 12, 18, 25, 31, 44.",
-   "id": "kelas10-b06-c-medium-bt01-007",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 221,
-    "kutipan": "Atau dapat dikatakan bahwa di antara Q1 dan Q2 terdapat 25% data."
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "bagian 25% data paling rapat",
-   "alasan_level": "membandingkan lebar empat bagian yang masing-masing memuat 25% data lalu menghitung banyak data di bagian terpilih",
-   "stimulus": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.",
-   "pertanyaan": "Bagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
-   "jawaban_benar": "antara 45 dan 50, yaitu 20 siswa",
-   "alasan_benar": "Lebar keempat bagian: 20 ke 45 = 25, 45 ke 50 = 5, 50 ke 68 = 18, 68 ke 78 = 10. Terkecil 5 (antara Q1 dan Q2), memuat 25% x 80 = 20 siswa.",
-   "distraktor": [
-    {
-     "teks": "antara 68 dan 78, yaitu 20 siswa",
-     "alasan": "menganggap kumis atas (lebar 10) paling sempit padahal lebar 5 lebih kecil"
-    },
-    {
-     "teks": "antara 20 dan 45, yaitu 20 siswa",
-     "alasan": "memilih bagian terlebar (25) sebagai yang paling rapat"
-    },
-    {
-     "teks": "antara 45 dan 50, yaitu 40 siswa",
-     "alasan": "mengira bagian itu memuat 50% data"
-    }
-   ],
-   "pembahasan": "Tiap bagian antar-ukuran memuat 25% data (20 siswa). Bagian dengan selisih terkecil (5) paling rapat: antara Q1 dan Q2.",
-   "id": "kelas10-b06-c-medium-bt01-008",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 222,
-    "kutipan": "Biasanya lebih dari 1,5 kali IQR di atas Q3 atau di bawah Q1."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "pencilan dengan nilai di batas",
-   "alasan_level": "menghitung dua batas pencilan dari Q1 dan Q3 lalu memeriksa enam nilai ekstrem, termasuk dua yang tepat di batas",
-   "stimulus": "Dari data nilai sebuah tes diperoleh Q1 = 40 dan Q3 = 52. Tiga nilai terendah adalah 15, 22, 30 dan tiga nilai tertinggi adalah 66, 70, 74.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
-   "pertanyaan": "Nilai yang tergolong pencilan adalah ....",
-   "jawaban_benar": "15 dan 74",
-   "alasan_benar": "IQR = 12; batas bawah = 40 - 18 = 22 dan batas atas = 52 + 18 = 70. Pencilan harus kurang dari 22 atau lebih dari 70: hanya 15 dan 74 (22 dan 70 tepat di batas, bukan pencilan).",
-   "distraktor": [
-    {
-     "teks": "74 saja",
-     "alasan": "hanya memeriksa batas atas dan lupa batas bawah"
-    },
-    {
-     "teks": "15, 22, 70, dan 74",
-     "alasan": "menganggap nilai tepat di batas (22 dan 70) sebagai pencilan padahal harus kurang atau lebih dari batas"
-    },
-    {
-     "teks": "15, 22, 66, 70, dan 74",
-     "alasan": "memakai Q1 - IQR dan Q3 + IQR (batas 28 dan 64) tanpa faktor 1,5"
-    }
-   ],
-   "pembahasan": "Batas wajar 22 sampai 70. Nilai 22 dan 70 masih di dalam batas, sehingga pencilan hanya 15 dan 74.",
-   "id": "kelas10-b06-c-medium-bt01-009",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 222,
-    "kutipan": "IQR dihitung dengan cara IQR = Q3 - Q1"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "nilai terbesar yang bukan pencilan",
-   "alasan_level": "menghitung batas atas pencilan lalu menerjemahkannya menjadi bilangan bulat terbesar yang masih wajar",
-   "stimulus": "Pada data waktu tempuh (menit) diperoleh Q1 = 49, median = 55, dan Q3 = 62. Seorang peserta baru akan menambahkan satu data bilangan bulat dan nilai Q1 dan Q3 dianggap tidak berubah.\n\nPencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
-   "pertanyaan": "Bilangan bulat terbesar yang masih bukan pencilan adalah ....",
-   "jawaban_benar": "81",
-   "alasan_benar": "IQR = 62 - 49 = 13; batas atas = 62 + 1,5 x 13 = 81,5. Bilangan bulat terbesar yang tidak lebih dari 81,5 adalah 81.",
-   "distraktor": [
-    {
-     "teks": "82",
-     "alasan": "membulatkan batas atas 81,5 ke atas, padahal 82 > 81,5 sudah pencilan"
-    },
-    {
-     "teks": "75",
-     "alasan": "memakai Q3 + IQR tanpa faktor 1,5"
-    },
-    {
-     "teks": "72",
-     "alasan": "memakai IQR = Q3 - median = 7 sehingga batas atas 72,5"
-    }
-   ],
-   "pembahasan": "Batas atas = 81,5. Data bulat yang lebih dari 81,5 adalah pencilan, jadi 81 adalah yang terbesar yang bukan pencilan.",
-   "id": "kelas10-b06-c-medium-bt01-010",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 222,
-    "kutipan": "Pencilan, adalah data yang letaknya jauh dari data-data lainnya."
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "dampak membuang pencilan",
-   "alasan_level": "membandingkan jangkauan dan median sebelum dan sesudah pencilan dibuang, termasuk menghitung ulang median untuk n genap",
-   "stimulus": "Waktu pengerjaan (menit) 11 peserta, sudah terurut: 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 95. Data 95 adalah pencilan dan dibuang dari kumpulan data.",
-   "pertanyaan": "Setelah data 95 dibuang, jangkauan (maksimum - minimum) berkurang sebesar .... dan median yang baru adalah ....",
-   "jawaban_benar": "47 dan 43,5",
-   "alasan_benar": "Jangkauan semula 95 - 38 = 57, sekarang 48 - 38 = 10, berkurang 47. Sekarang ada 10 data sehingga median = (43 + 44)/2 = 43,5.",
-   "distraktor": [
-    {
-     "teks": "47 dan 44",
-     "alasan": "tidak menghitung ulang median; memakai median 11 data"
-    },
-    {
-     "teks": "10 dan 43,5",
-     "alasan": "menyebut jangkauan baru sebagai besar pengurangan"
-    },
-    {
-     "teks": "57 dan 43,5",
-     "alasan": "menyebut jangkauan lama sebagai besar pengurangan"
-    }
-   ],
-   "pembahasan": "Jangkauan turun dari 57 menjadi 10 (berkurang 47). Dengan 10 data, median = rata-rata data ke-5 dan ke-6 = 43,5.",
-   "id": "kelas10-b06-c-medium-bt01-011",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 221,
-    "kutipan": "Atau dapat dikatakan bahwa di antara Q1 dan Q2 terdapat 25% data."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "menghitung banyak data dari persentase kuartil",
-   "alasan_level": "mengubah letak kuartil pada dua kelompok menjadi persentase lalu banyak siswa, dan menjumlahkannya",
-   "stimulus": "Nilai ulangan dua kelas diringkas dengan diagram kotak garis.\n\n- Kelas A (32 siswa): minimum 45, Q1 = 70, Q2 = 78, Q3 = 85, maksimum 98.\n- Kelas B (40 siswa): minimum 30, Q1 = 48, Q2 = 58, Q3 = 70, maksimum 92.",
-   "pertanyaan": "Banyak siswa kelas A yang nilainya antara 70 dan nilai maksimum, ditambah banyak siswa kelas B yang nilainya antara 70 dan nilai maksimum, adalah ....",
-   "jawaban_benar": "34 siswa",
-   "alasan_benar": "Kelas A: 70 adalah Q1, dari Q1 sampai maksimum ada 75% x 32 = 24 siswa. Kelas B: 70 adalah Q3, dari Q3 sampai maksimum ada 25% x 40 = 10 siswa. Jumlah 34.",
-   "distraktor": [
-    {
-     "teks": "54 siswa",
-     "alasan": "mengira 70 adalah Q1 pada kedua kelas (75% dari tiap kelas)"
-    },
-    {
-     "teks": "26 siswa",
-     "alasan": "mengira kelas A hanya 50% data di atas 70 (menganggap 70 sebagai Q2)"
-    },
-    {
-     "teks": "18 siswa",
-     "alasan": "mengira kelas A hanya 25% data di atas 70 (menganggap 70 sebagai Q3)"
-    }
-   ],
-   "pembahasan": "Kelas A: 75% x 32 = 24. Kelas B: 25% x 40 = 10. Total 34.",
-   "id": "kelas10-b06-c-medium-bt01-012",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 232,
-    "kutipan": "Pada korelasi positif kuat, titik-titik data pada Scatter Plot cenderung sangat dekat dan menyerupai garis linear."
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "membandingkan kekuatan korelasi",
-   "alasan_level": "menelaah dua kumpulan pasangan data untuk menilai kedekatan titik pada garis lurus lalu membandingkan kekuatan korelasi",
-   "stimulus": "Dua kelompok pasangan data (x, y) memiliki nilai x yang sama.\n\n| x | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| y kelompok P | 5 | 7 | 9 | 11 | 13 | 15 |\n| y kelompok Q | 8 | 6 | 14 | 9 | 15 | 12 |",
-   "pertanyaan": "Jika kedua kelompok digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
-   "jawaban_benar": "keduanya berkorelasi positif, tetapi korelasi P lebih kuat karena titik-titiknya tepat pada satu garis lurus",
-   "alasan_benar": "Pada P, y selalu naik 2 setiap x naik 1 (y = 2x + 3), sehingga semua titik segaris. Pada Q, y cenderung naik tetapi titik-titiknya menyebar (misalnya turun dari 8 ke 6 dan dari 14 ke 9).",
-   "distraktor": [
-    {
-     "teks": "keduanya berkorelasi positif dan sama kuat karena nilai x-nya sama",
-     "alasan": "mengira kekuatan korelasi hanya ditentukan nilai x"
-    },
-    {
-     "teks": "korelasi Q lebih kuat daripada P karena nilai y Q lebih bervariasi",
-     "alasan": "mengira variasi nilai y yang besar berarti korelasi kuat"
-    },
-    {
-     "teks": "P berkorelasi positif sedangkan Q berkorelasi negatif karena y Q beberapa kali turun",
-     "alasan": "menganggap penurunan sesekali sebagai arah korelasi negatif padahal kecenderungan keseluruhan naik"
-    }
-   ],
-   "pembahasan": "Korelasi kuat berarti titik sangat dekat pada garis lurus. P tepat pada garis y = 2x + 3 (kuat), Q naik secara kasar dengan sebaran besar (positif, tetapi lebih lemah).",
-   "id": "kelas10-b06-c-medium-bt01-013",
-   "variasi_cara": null,
-   "catatan": null
-  },
-  {
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 221,
-    "kutipan": "Tapi jika hasil baginya bukan merupakan bilangan bulat, bulatkanlah hasilnya ke atas, maka Q3 terletak di urutan sesuai hasil pembulatan."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "IQR dan banyak pencilan data mentah ganjil",
-   "alasan_level": "mengurutkan 15 data, mencari Q1 dan Q3 dengan pembulatan ke atas, menghitung IQR lalu menghitung banyak data di luar batas",
-   "stimulus": "Lama latihan (dalam menit) 15 atlet, belum terurut: 52, 48, 55, 50, 49, 30, 53, 51, 50, 46, 54, 49, 88, 47, 52.\n\nAturan letak kuartil: dengan n data terurut, hitung n/4 untuk Q1, n/2 untuk Q2, dan 3n/4 untuk Q3. Jika hasilnya bilangan bulat m, kuartil = rata-rata data ke-m dan ke-(m + 1); jika tidak bulat, bulatkan ke atas lalu ambil data pada urutan itu. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.",
-   "pertanyaan": "IQR data tersebut dan banyak pencilannya berturut-turut adalah ....",
-   "jawaban_benar": "IQR = 5 dan 2 pencilan",
-   "alasan_benar": "Terurut: 30, 46, 47, 48, 49, 49, 50, 50, 51, 52, 52, 53, 54, 55, 88. n/4 = 3,75 sehingga Q1 = data ke-4 = 48; 3n/4 = 11,25 sehingga Q3 = data ke-12 = 53. IQR = 5; batas = 40,5 dan 60,5. Data di luar batas: 30 dan 88.",
-   "distraktor": [
-    {
-     "teks": "IQR = 5 dan 1 pencilan",
-     "alasan": "hanya memeriksa batas atas (88) dan lupa data 30 di bawah batas bawah"
-    },
-    {
-     "teks": "IQR = 4 dan 2 pencilan",
-     "alasan": "membulatkan Q3 ke bawah sehingga memakai data ke-11 (52) dan Q1 data ke-4"
-    },
-    {
-     "teks": "IQR = 58 dan 0 pencilan",
-     "alasan": "memakai jangkauan (88 - 30) sebagai IQR sehingga batas pencilan menjadi sangat lebar"
-    }
-   ],
-   "pembahasan": "Q1 = 48, Q3 = 53, IQR = 5. Batas wajar 40,5 sampai 60,5. Data 30 dan 88 berada di luar batas: 2 pencilan.",
-   "id": "kelas10-b06-c-medium-bt01-014",
-   "variasi_cara": null,
-   "catatan": null
-  }
- ],
- "kapasitas_kurang": true,
- "alasan_kapasitas": "Acuan siswa teks di subbab C (box plot dan diagram pencar) sudah dipakai di easy dan sebagian besar soal Latihan 6.4/6.5 bergambar atau jawabannya subjektif; soal medium yang tidak kembar dengan easy (data mentah, pencilan, perbandingan kelompok, tafsir diagram pencar) hanya cukup sekitar 14, sisanya hanya akan berupa soal nyaris kembar sehingga tidak dipaksa."
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Acuan siswa teks di subbab C (box plot dan diagram pencar) sudah dipakai di easy dan sebagian besar soal Latihan 6.4/6.5 bergambar atau jawabannya subjektif; soal medium yang tidak kembar dengan easy (data mentah, pencilan, perbandingan kelompok, tafsir diagram pencar) hanya cukup sekitar 14, sisanya hanya akan berupa soal nyaris kembar sehingga tidak dipaksa."
 }

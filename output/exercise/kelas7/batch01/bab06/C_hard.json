@@ -639,6 +639,1399 @@
       "pembahasan": "Langkah 1: Hitung total produksi tiap mesin:\n- Mesin 1: $180 + 20 = 200\\text{ potong}$\n- Mesin 2: $240 + 10 = 250\\text{ potong}$\n- Mesin 3: $285 + 15 = 300\\text{ potong}$\n- Mesin 4: $171 + 9 = 180\\text{ potong}$\n\nLangkah 2: Uji kriteria 1 (total produksi $\\ge 200\\text{ potong}$):\nMesin 1, 2, dan 3 lolos kriteria 1, sedangkan Mesin 4 gugur karena total produksi hanya $180\\text{ potong}$.\n\nLangkah 3: Hitung persentase produk cacat terhadap total produksi:\n- Mesin 1: $\\frac{20}{200} \\times 100\\% = 10\\%$\n- Mesin 2: $\\frac{10}{250} \\times 100\\% = 4\\%$\n- Mesin 3: $\\frac{15}{300} \\times 100\\% = 5\\%$\n\nLangkah 4: Uji kriteria 2 (persentase cacat $\\le 5\\%$):\n- Mesin 1 gugur karena $10\\% > 5\\%$.\n- Mesin 2 lolos karena $4\\% \\le 5\\%$.\n- Mesin 3 lolos karena $5\\% \\le 5\\%$.\n\nJadi, mesin yang memenuhi kedua kriteria kelayakan adalah Mesin 2 dan Mesin 3.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f15322b158a3f3ec8d9bc207",
+        "teks": "| Jenis Buku | Jumlah Peminjaman (eksemplar) |\n|---|---|\n| Komik | 38 |\n| Novel | 24 |\n| Ensiklopedia | 12 |\n| Sains | 16 |\n\nBerdasarkan data peminjaman buku perpustakaan di atas, berapakah banyak buku ensiklopedia yang dipinjam?",
+        "jawaban": "12 eksemplar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=53, dan C=47. Sebanyak 10 anggota A pindah ke B, lalu C menerima 3 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a51ec8891af5c5423f5305c0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              78
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 78]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2794b43072445074cc23146",
+        "teks": "| Kios | Bibit Mangga (batang) | Bibit Jeruk (batang) |\n|---|---|---|\n| Mawar | 45 | 30 |\n| Melati | 60 | 55 |\n| Kenanga | 35 | 40 |\n\nBerdasarkan data penjualan bibit tanaman buah di tiga kios tersebut, kios manakah yang menjual bibit mangga paling banyak?",
+        "jawaban": "Kios Melati",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=43, dan C=17. Sebanyak 10 anggota A pindah ke B, lalu C menerima 9 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $32$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $32$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/fb04970b8e4e4ef3d9378202.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              31
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 31]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "38678289caf15aa2c31915d0",
+        "teks": "| Ekstrakurikuler | Jumlah Siswa |\n|---|---|\n| Futsal | 32 |\n| Basket | 28 |\n| Pramuka | 40 |\n| Teater | 14 |\n\nBerdasarkan data kegiatan ekstrakurikuler di atas, kegiatan ekstrakurikuler apakah yang paling banyak diikuti siswa?",
+        "jawaban": "Pramuka",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=50, dan C=40. Sebanyak 10 anggota A pindah ke B, lalu C menerima 2 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/ca16cc54968454e36766c95e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              68
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 68]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "996881f77796bc1ac7561e40",
+        "teks": "Komponen pada diagram yang berfungsi memberi keterangan mengenai nama kategori atau besaran besaran pada sumbu horizontal dan vertikal disebut ....",
+        "jawaban": "label sumbu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=26, dan C=43. Sebanyak 10 anggota A pindah ke B, lalu C menerima 10 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/84530892a54e3d8df2df2255.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              58
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 58]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff4fc24bc83b31e1ea669e29",
+        "teks": "Pada diagram batang rangkap, komponen yang digunakan untuk membedakan arti warna atau arsiran dari dua kumpulan data yang berbeda disebut ....",
+        "jawaban": "legenda",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=30, B=$T_1$, dan C=30. Sebanyak 8 anggota A pindah ke B, lalu C menerima 9 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/c2c74d3d5dc3b2934a0580b4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              35
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 35]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea1debb06f6d25d0706cedbd",
+        "teks": "| Tahun | Hasil Panen Padi (ton) |\n|---|---|\n| 2020 | 140 |\n| 2021 | 165 |\n| 2022 | 190 |\n| 2023 | 210 |\n\nBerdasarkan tabel diagram hasil panen di atas, berapakah hasil panen padi pada tahun 2022?",
+        "jawaban": "190 ton",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=50, dan C=23. Sebanyak 4 anggota A pindah ke B, lalu C menerima 10 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $34$.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $34$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/af5bcb5801d1448bb5825796.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              71
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 71]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8df4e41535a2ed3cd574d418",
+        "teks": "| Cabang | Peminjam Laptop | Peminjam Tablet |\n|---|---|---|\n| Cabang Barat | 75 | 45 |\n| Cabang Tengah | 90 | 60 |\n| Cabang Timur | 50 | 35 |\n\nBerdasarkan data di atas, berapa unit lebih banyakkah peminjam laptop di Cabang Barat dibandingkan di Cabang Timur?",
+        "jawaban": "25 unit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=35, dan C=16. Sebanyak 4 anggota A pindah ke B, lalu C menerima 10 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $36$.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/462736cc4e47b9a5e3c8eb1a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              66
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 66]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "27305bbd3b0d1fe3bf6b5547",
+        "teks": "| Minuman Favorit | Jumlah Pemilih |\n|---|---|\n| Jus Jeruk | 15 |\n| Teh Manis | 25 |\n| Susu Cokelat | 18 |\n| Air Mineral | 12 |\n\nBerdasarkan tabel frekuensi di atas, berapakah jumlah seluruh pemilih yang disurvei?",
+        "jawaban": "70 orang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=36, dan C=17. Sebanyak 12 anggota A pindah ke B, lalu C menerima 9 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $22$.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $22$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/dc7fb29dca5ef26a1021f56a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              40
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 40]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2209ee844f3bc385869cd8b8",
+        "teks": "Kegunaan utama penyajian data menggunakan diagram batang rangkap (_double bar graph_) adalah untuk ....",
+        "jawaban": "membandingkan dua kumpulan data secara berdampingan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=39, dan C=45. Sebanyak 12 anggota A pindah ke B, lalu C menerima 3 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $7$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a0d5f2764ac07ce5a0ab47cb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              56
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 56]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa95c592323a477ffe567e4b",
+        "teks": "Pada pembuatan sumbu vertikal diagram batang yang benar, aturan penskalaan nilai yang tepat adalah ....",
+        "jawaban": "jarak antarskalanilai konsisten dan dimulai dari angka nol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=35, dan C=19. Sebanyak 3 anggota A pindah ke B, lalu C menerima 8 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $43$.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $43$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a79c5f2c11a979444d9ebcd8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              73
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 73]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28d8018026e058b67fe501cb",
+        "teks": "| Tahun | Pengunjung (orang) |\n|---|---|\n| 2020 | 350 |\n| 2021 | 450 |\n| 2022 | 600 |\n| 2023 | 750 |\n\nBerdasarkan data jumlah pengunjung museum di atas, berapakah selisih jumlah pengunjung antara tahun 2021 dan tahun 2022?",
+        "jawaban": "150 orang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=59, dan C=21. Sebanyak 4 anggota A pindah ke B, lalu C menerima 2 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $41$.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $41$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/7ea315a2a0e86bc29bb97505.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              26
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 26]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0af8ded0ce4b51ae054cef99",
+        "teks": "| Jenis Buah | Penjualan (kg) |\n|---|---|\n| Apel | 48 |\n| Jeruk | 35 |\n| Mangga | 27 |\n| Pisang | 19 |\n\nBerdasarkan data penjualan buah di toko buah pada tabel di atas, berapakah selisih banyaknya penjualan apel dan mangga?",
+        "jawaban": "21 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=61, dan C=53. Sebanyak 11 anggota A pindah ke B, lalu C menerima 8 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $25$.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $25$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/84530892a54e3d8df2df2255.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              58
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 58]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "021176a1f33aeefc48a99dfe",
+        "teks": "| Bulan | Pemakaian Listrik (kWh) |\n|---|---|\n| Januari | 85 |\n| Februari | 92 |\n| Maret | 78 |\n| April | 95 |\n\nBerdasarkan data pemakaian listrik rumah tangga di atas, pada bulan apakah pemakaian listrik tercatat tepat sebesar 78 kWh?",
+        "jawaban": "Maret",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=24, dan C=58. Sebanyak 9 anggota A pindah ke B, lalu C menerima 3 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/462736cc4e47b9a5e3c8eb1a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              66
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 66]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0b05a2eb67f06c607e3da6a2",
+        "teks": "Berdasarkan kaidah membaca diagram dalam statistika, hal paling awal yang harus diperhatikan agar dapat memahami informasi yang disajikan adalah ....",
+        "jawaban": "judul diagram dan keterangan pada setiap sumbu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=38, dan C=57. Sebanyak 8 anggota A pindah ke B, lalu C menerima 11 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $26$.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $26$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/db30e1aec49f165c4c3912cf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              80
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 80]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec758cf367d3a4ea4d377725",
+        "teks": "Keunggulan utama penyajian data numerik dalam bentuk diagram dibandingkan dengan teks narasi paragraf adalah ....",
+        "jawaban": "data lebih mudah dan cepat dipahami secara visual",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=62, dan C=24. Sebanyak 7 anggota A pindah ke B, lalu C menerima 8 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $37$.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $37$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/af95235df3c6ec52e84ae3ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              43
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 43]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0ccd5d96521708e2466701fd",
+        "teks": "| Peserta | Skor Hasil Tes | Tinggi Batang pada Diagram |\n|---|---|---|\n| Anita | 60 | $4\\text{ cm}$ |\n| Bima | 90 | $10\\text{ cm}$ |\n\nSebuah diagram batang menyajikan skor tes dua peserta seperti pada tabel di atas. Seorang pengamat mengklaim: \"Kemampuan Bima adalah $2{,}5$ kali lipat kemampuan Anita karena batangnya $2{,}5$ kali lebih tinggi ($10\\text{ cm} : 4\\text{ cm}$).\" Evaluasi yang tepat terhadap klaim tersebut adalah ....",
+        "jawaban": "Salah, karena diagram tidak dimulai dari angka $0$, perbandingan kemampuan sebenarnya adalah $\\frac{90}{60} = 1{,}5$ kali lipat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diagram mencatat kelompok A=$T_1$, B=35, dan C=50. Sebanyak 11 anggota A pindah ke B, lalu C menerima 2 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $10$.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $10$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas7/batch01/assets/a982500596a99f0449160f61.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              53
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 53]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51fa81d855aac02a1c701bc8",
+        "teks": "| Nama Pegawai | Jumlah Penjualan (unit) | Tinggi Batang (cm) |\n|---|---|---|\n| Pak Rahmat | 50 | 6 |\n| Bu Sinta | 70 | 14 |\n\nPada pembuatan diagram batang penjualan, pembuat diagram sengaja memotong sumbu vertikal (tidak dimulai dari 0) namun tetap menjaga skala berjarak konsisten. Akibatnya, tinggi batang yang tergambar tercantum pada tabel di atas. Berdasarkan data tersebut, sumbu vertikal diagram dimulai dari angka ....",
+        "jawaban": "35",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=71, B=49, dan C=20. Sebanyak 8 anggota A pindah ke B, lalu C menerima 11 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $32$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $32$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b4bae2788ff56c5ff0765347",
+        "teks": "| Komoditas | Gudang P (ton) | Gudang Q (ton) |\n|---|---|---|\n| Beras | 48 | 32 |\n| Jagung | 36 | 44 |\n\nBerdasarkan diagram perbandingan stok komoditas di atas, pemilik ingin menambahkan stok beras hanya pada Gudang Q sedemikian rupa sehingga perbandingan total stok beras (Gudang P + Gudang Q) terhadap total stok jagung (Gudang P + Gudang Q) menjadi tepat $3 : 2$. Berapa ton beras yang harus ditambahkan ke Gudang Q?",
+        "jawaban": "40 ton",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=33, B=24, dan C=22. Sebanyak 8 anggota A pindah ke B, lalu C menerima 6 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $7$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "028cf3ecd38c65f92220823f",
+        "teks": "| Bulan | Konsumsi Listrik (kWh) |\n|---|---|\n| Juli | 320 |\n| Agustus | 365 |\n| September | 340 |\n| Oktober | 390 |\n| November | 385 |\n| Desember | 350 |\n\nSebuah kantor cabang mendapatkan jatah kuota listrik hemat dari kantor pusat sebesar $350\\text{ kWh}$ per bulan. Jika konsumsi bulanan melebihi jatah tersebut, kantor cabang harus membayar denda kelebihan sebesar $\\text{Rp}1.500$ per $\\text{kWh}$ kelebihan.\n\nBerdasarkan diagram konsumsi listrik tersebut, total denda kelebihan kuota listrik yang harus dibayar kantor cabang selama periode Juli hingga Desember adalah ....",
+        "jawaban": "$\\text{Rp}135.000$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=55, B=24, dan C=18. Sebanyak 7 anggota A pindah ke B, lalu C menerima 4 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $26$.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $26$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c741a786902024a8f390ffeb",
+        "teks": "| Divisi | Target Produksi (unit) | Realisasi Produksi (unit) |\n|---|---|---|\n| Divisi A | 200 | 250 |\n| Divisi B | 150 | 180 |\n| Divisi C | 250 | 290 |\n| Divisi D | 100 | 130 |\n\nManajer pabrik membaca diagram batang rangkap target dan realisasi produksi empat divisi di atas.\n\nBerdasarkan data diagram batang rangkap tersebut, divisi yang berhasil mencatatkan persentase kelebihan produksi terbesar di atas targetnya adalah ....",
+        "jawaban": "Divisi D",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=25, B=56, dan C=24. Sebanyak 8 anggota A pindah ke B, lalu C menerima 5 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $47$.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $47$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "415c07bb7bc07d8ee7f5c0f8",
+        "teks": "| Karyawan | Perolehan Bonus (juta rupiah) | Tinggi Batang pada Diagram | |\n|---|---|---|\n| Hendra | 12 | $4\\text{ cm}$ |\n| Irwan | 15 | $10\\text{ cm}$ |\n| Joko | 18 | $16\\text{ cm}$ |\n\nSeorang manajer menyajikan diagram batang perolehan bonus tiga karyawan dengan data pada tabel. Manajer mengklaim bahwa kinerja Irwan $2,5$ kali lipat lebih baik daripada Hendra karena tinggi batang Irwan $2,5$ kali tinggi batang Hendra ($10\\text{ cm}$ dibanding $4\\text{ cm}$). Evaluasilah kelemahan penyajian diagram batang tersebut!",
+        "jawaban": "Diagram salah karena skala vertikal tidak dimulai dari $0$ melainkan dari $10\\text{ juta rupiah}$, sehingga membesar-besarkan perbedaan data secara visual.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=46, B=48, dan C=34. Sebanyak 7 anggota A pindah ke B, lalu C menerima 3 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d9fb12f26b8668c47b01c6d",
+        "teks": "Pada sebuah diagram batang peminjaman buku perpustakaan, garis-garis skala pada sumbu vertikal berjarak konsisten dan dimulai dari angka $0$, tetapi label angkanya terhapus. Kategori Novel berada tepat pada garis skala ke-4 dengan nilai peminjaman $48\\text{ buku}$. Dua kategori lainnya adalah Komik pada garis skala ke-7 dan Ensiklopedia pada garis skala ke-$n$. Jika rata-rata peminjaman ketiga jenis buku tersebut adalah $80\\text{ buku}$, pada garis skala ke berapakah letak ujung batang Ensiklopedia ($n$)?",
+        "jawaban": "Garis skala ke-9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=30, B=43, dan C=36. Sebanyak 8 anggota A pindah ke B, lalu C menerima 2 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $29$.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $29$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c5ef90d493c720c25d63a5f",
+        "teks": "| Tahun | Jumlah Pengunjung (orang) |\n|---|---|\n| 2020 | 12.000 |\n| 2021 | 15.500 |\n| 2022 | 19.000 |\n| 2023 | 22.500 |\n\nBerdasarkan diagram pertumbuhan pengunjung tempat rekreasi pada tabel, pengelola menemukan bahwa jumlah pengunjung bertambah dengan pola konstan setiap tahun. Mulai tahun 2024, pengelola menargetkan penambahan tahunan menjadi $1,5$ kali lipat dari pola penambahan tahunan sebelumnya. Jika target tersebut konsisten tercapai pada tahun 2024 dan 2025, berapakah total gabungan jumlah pengunjung pada tahun 2024 dan 2025?",
+        "jawaban": "$60.750\\text{ orang}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=52, B=25, dan C=36. Sebanyak 5 anggota A pindah ke B, lalu C menerima 4 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76b44a0d0e9f7cf3ae1fe375",
+        "teks": "| Kurir | Pengiriman Berhasil (paket) | Pengiriman Gagal (paket) |\n|---|---|---|\n| Kurir A | 85 | 15 |\n| Kurir B | 95 | 20 |\n| Kurir C | 75 | 5 |\n| Kurir D | 110 | 30 |\n\nSebuah perusahaan logistik menyajikan data kinerja empat kurir melalui diagram batang rangkap seperti pada tabel. Perusahaan memberikan insentif $\\text{Rp}4.000$ untuk setiap paket yang berhasil dikirim, tetapi memotong denda $\\text{Rp}8.000$ untuk setiap paket yang gagal dikirim. Kurir yang memperoleh penghasilan bersih (insentif dikurangi denda) tertinggi berhak mendapat bonus bulanan. Kurir manakah yang berhak memperoleh bonus tersebut beserta besar penghasilan bersihnya?",
+        "jawaban": "Kurir C dengan penghasilan bersih $\\text{Rp}260.000$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=50, B=62, dan C=60. Sebanyak 11 anggota A pindah ke B, lalu C menerima 8 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $34$.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $34$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f0211b4edc5d6670d5a95133",
+        "teks": "Seorang siswa merancang diagram batang pada kertas berpetak. Tinggi vertikal yang tersedia adalah $20\\text{ petak}$. Data nilai frekuensi tertinggi yang harus digambar adalah $340\\text{ unit}$. Sumbu vertikal harus dimulai dari angka $0$, dan nilai tiap petak harus konsisten menggunakan bilangan bulat kelipatan $5$ ($5, 10, 15, 20, \\dots$). Tentukan nilai skala terkecil per petak yang dapat dipilih agar seluruh data termuat, serta tinggi batang yang terbentuk jika digunakan untuk menggambar data bernilai $270\\text{ unit}$!",
+        "jawaban": "$20\\text{ unit per petak dan tinggi batang }13,5\\text{ petak}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=63, B=51, dan C=43. Sebanyak 5 anggota A pindah ke B, lalu C menerima 3 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $12$.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $12$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3bcb5738499d8722afd3c917",
+        "teks": "| Tahun | Sampah Terolah (ton) |\n|---|---|\n| 2020 | 180 |\n| 2021 | 225 |\n| 2022 | 270 |\n| 2023 | 315 |\n\nBerdasarkan diagram batang pengolahan sampah di sebuah fasilitas daur ulang pada tabel di atas, volume sampah yang terolah mengalami pertumbuhan tetap tiap tahun. Jika pola pertumbuhan ini terus berlanjut dan kapasitas maksimum fasilitas tersebut adalah $420\\text{ ton}$ per tahun, pada tahun keberapakah volume sampah yang masuk mulai melampaui kapasitas maksimum fasilitas?",
+        "jawaban": "2026",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=47, B=34, dan C=57. Sebanyak 5 anggota A pindah ke B, lalu C menerima 4 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $22$.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $22$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a1504c9cb9e65626895c757d",
+        "teks": "| Kelompok | Tinggi Batang pada Garis Kisi |\n|---|---|\n| Kelompok P | Garis kisi ke-4 |\n| Kelompok Q | Garis kisi ke-7 |\n| Kelompok R | Garis kisi ke-10 |\n\nSebuah diagram batang digambar dengan sumbu vertikal dimulai dari $0$ dan jarak antarsetiap garis kisi skala konsisten sebesar $k\\text{ peserta}$. Jika jumlah peserta pada Kelompok P dan Kelompok Q digabungkan menghasilkan $88\\text{ peserta}$, berapakah selisih banyaknya peserta antara Kelompok R dan Kelompok P?",
+        "jawaban": "48 peserta",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=64, B=36, dan C=43. Sebanyak 5 anggota A pindah ke B, lalu C menerima 7 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f09031431dd53283c3bcc736",
+        "teks": "| Stan | Modal (ratus ribu rupiah) | Pendapatan (ratus ribu rupiah) |\n|---|---|---|\n| Stan 1 | 20 | 28 |\n| Stan 2 | 25 | 36 |\n| Stan 3 | 40 | 54 |\n| Stan 4 | 50 | 66 |\n\nSebuah diagram batang rangkap menyajikan data modal dan pendapatan dari empat stan pada bazar kewirausahaan sekolah seperti tabel di atas. Berdasarkan data tersebut, stan manakah yang memperoleh persentase keuntungan (terhadap modal) paling tinggi?",
+        "jawaban": "Stan 2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=25, B=41, dan C=47. Sebanyak 6 anggota A pindah ke B, lalu C menerima 5 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $33$.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $33$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1acbb80cb6429f264c5ebcc1",
+        "teks": "| Unit Usaha | Biaya Operasional (juta rupiah) | Pendapatan (juta rupiah) |\n|---|---|---|\n| Unit P | 40 | 56 |\n| Unit Q | 60 | 78 |\n| Unit R | 50 | 70 |\n| Unit S | 80 | 108 |\n\nSebuah koperasi menyajikan data biaya operasional dan pendapatan dari empat unit usahanya dalam diagram batang rangkap sebagaimana tercantum pada tabel di atas. Manajemen koperasi menetapkan bahwa suatu unit usaha berhak mendapat predikat \"Sangat Baik\" jika memenuhi dua kriteria sekaligus:\n1. Memperoleh laba bersih (pendapatan dikurangi biaya operasional) minimal $\\text{Rp}18.000.000,00$, dan\n2. Menghasilkan persentase laba terhadap biaya operasional minimal $35\\%$.\n\nBerdasarkan kriteria evaluasi tersebut, unit usaha yang berhak memperoleh predikat \"Sangat Baik\" adalah ....",
+        "jawaban": "Unit R dan Unit S",
+        "snapshot": "runs/exercise_sessions_3/references/kelas7.json",
+        "source_sha256": "25282d209b05b13980685594d17b7e5b642fd6ee0c73b7fd8f894c7f56532dfe"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_diagram_urut_ulang",
+      "alasan_level": "Menggabungkan kendala, menilai kemungkinan atau membalik informasi sebelum menentukan kuantitas akhir.",
+      "stimulus": null,
+      "pertanyaan": "Diagram mencatat kelompok A=48, B=48, dan C=20. Sebanyak 6 anggota A pindah ke B, lalu C menerima 6 anggota baru. Setelah semua perubahan, berapa selisih kelompok terbanyak dan tersedikit?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $28$.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Perbarui ketiga frekuensi, tentukan kembali kelompok terbesar dan terkecil karena urutan dapat berubah, lalu cari selisihnya Hasilnya $28$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas7-b06-c-hard-bt01-044"
     }
   ]
 }

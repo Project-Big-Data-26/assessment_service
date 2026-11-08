@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "menentukan nilai variabel acak",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya mendaftar semua kemungkinan nilai kemunculan tanpa perhitungan probabilitas rumit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah percobaan melambungkan 3 keping uang logam seimbang secara bersamaan. Jika variabel acak $Y$ menyatakan banyaknya sisi gambar yang muncul, maka himpunan semua nilai yang mungkin dari variabel acak $Y$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2, 3\\}$",
+      "alasan_benar": "Kemungkinan sisi gambar yang muncul pada 3 keping uang logam adalah tidak ada yang muncul (0), satu keping (1), dua keping (2), atau ketiganya (3).",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Mengabaikan kemungkinan tidak ada sisi gambar yang muncul sama sekali (semua angka / 0 gambar)."
+        },
+        {
+          "teks": "$\\{0, 1, 2\\}$",
+          "alasan": "Mengabaikan kemungkinan ketiga keping uang logam seluruhnya menghasilkan sisi gambar."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Menyertakan nilai 4 padahal uang logam yang dilempar hanya ada 3 keping."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan 3 keping uang logam memiliki 8 elemen. Variabel acak $Y$ menyatakan banyaknya sisi gambar. Nilai terkecil adalah saat muncul AAA ($Y = 0$) dan terbesar saat muncul GGG ($Y = 3$). Jadi, nilai-nilai yang mungkin dari $Y$ adalah $\\{0, 1, 2, 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya berupa bilangan bulat."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "karakteristik variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi dan ciri-ciri dasar variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pernyataan berikut yang merupakan salah satu ciri utama dari variabel acak diskret adalah ....",
+      "jawaban_benar": "Nilai-nilainya diperoleh dari hasil membilang atau menghitung",
+      "alasan_benar": "Berdasarkan Buku Siswa halaman 248, salah satu ciri variabel acak diskret adalah nilainya diperoleh dari hasil menghitung atau membilang.",
+      "distraktor": [
+        {
+          "teks": "Nilai-nilainya selalu berupa bilangan pecahan kontinu dalam suatu selang",
+          "alasan": "Ciri tersebut merupakan ciri variabel acak kontinu, bukan diskret."
+        },
+        {
+          "teks": "Nilai-nilainya diperoleh secara khusus melalui alat ukur seperti meteran atau timbangan",
+          "alasan": "Hasil pengukuran dengan alat ukur menghasilkan variabel kontinu."
+        },
+        {
+          "teks": "Grafik representasi nilainya membentuk kurva mulus tanpa jeda pada garis bilangan",
+          "alasan": "Representasi variabel acak diskret berupa titik-titik terpisah pada garis bilangan, bukan kurva mulus kontinu."
+        }
+      ],
+      "pembahasan": "Berdasarkan ciri-ciri variabel acak diskret pada Buku Siswa halaman 248: (1) Nilainya diperoleh dari hasil menghitung atau membilang; (2) Nilainya berupa bilangan bulat; (3) Hasilnya dapat direpresentasikan berupa titik-titik terpisah pada garis bilangan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat total peluang diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung satu nilai peluang yang belum diketahui dengan prinsip bahwa total peluang bernilai 1.",
+      "stimulus": "| $x$ | 1 | 2 | 3 | 4 |\n| :--- | :---: | :---: | :---: | :---: |\n| $P(X = x)$ | $\\frac{1}{6}$ | $\\frac{1}{3}$ | $k$ | $\\frac{1}{4}$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan distribusi peluang untuk variabel acak diskret $X$. Nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Total seluruh peluang harus sama dengan 1, sehingga $k = 1 - (\\frac{1}{6} + \\frac{1}{3} + \\frac{1}{4}) = 1 - \\frac{9}{12} = \\frac{3}{12} = \\frac{1}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Siswa salah menjumlahkan pecahan $\\frac{1}{6} + \\frac{2}{6} = \\frac{3}{6}$, lalu langsung mengurangi $1 - \\frac{5}{6}$ tanpa memperhitungkan penyebut persekutuan yang benar."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Siswa salah hitung pembilang saat menyamakan penyebut menjadi per-12 (misal mengira jumlah peluang lainnya adalah $\\frac{11}{12}$)."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Siswa hanya menjumlahkan peluang yang diketahui ($\\frac{9}{12} = \\frac{3}{4}$) dan lupa mengurangkannya dari 1."
+        }
+      ],
+      "pembahasan": "Pada variabel acak diskret, jumlah seluruh peluang harus bernilai 1:\n$$\\sum P(X = x) = 1$$\n$$\\frac{1}{6} + \\frac{1}{3} + k + \\frac{1}{4} = 1$$\nSamakan penyebut ke 12:\n$$\\frac{2}{12} + \\frac{4}{12} + k + \\frac{3}{12} = 1$$\n$$\\frac{9}{12} + k = 1$$\n$$k = 1 - \\frac{9}{12} = \\frac{3}{12} = \\frac{1}{4}$$\nJadi, nilai $k = \\frac{1}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "rentang nilai variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan pasangan nomor kartu yang mungkin terambil lalu mendaftar selisih positifnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi empat keping kartu bernomor 1, 2, 3, dan 4. Dua keping kartu diambil sekaligus secara acak. Jika variabel acak $T$ menyatakan selisih positif antara kedua nomor kartu yang terambil, nilai-nilai yang mungkin untuk variabel acak $T$ adalah ....",
+      "jawaban_benar": "$\\{1, 2, 3\\}$",
+      "alasan_benar": "Pasangan kartu yang mungkin diambil adalah (1, 2), (1, 3), (1, 4), (2, 3), (2, 4), dan (3, 4). Selisih positifnya masing-masing adalah $|1-2|=1$, $|1-3|=2$, $|1-4|=3$, $|2-3|=1$, $|2-4|=2$, dan $|3-4|=1$. Himpunan nilai yang mungkin untuk $T$ adalah {1, 2, 3}.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Mengira kartu yang sama dapat terambil dua kali sehingga selisih bernilai 0, padahal pengambilan dilakukan sekaligus."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Memasukkan angka 4 sebagai nilai selisih, padahal selisih terbesar hanya 4 - 1 = 3."
+        },
+        {
+          "teks": "$\\{2, 3, 4\\}$",
+          "alasan": "Melewatkan selisih bernilai 1 dari pasangan bilangan yang berurutan."
+        }
+      ],
+      "pembahasan": "Dua kartu diambil sekaligus dari $\\{1, 2, 3, 4\\}$. Kemungkinan pasangan nomor yang terambil:\n- $(1, 2) \\Rightarrow |1 - 2| = 1$\n- $(1, 3) \\Rightarrow |1 - 3| = 2$\n- $(1, 4) \\Rightarrow |1 - 4| = 3$\n- $(2, 3) \\Rightarrow |2 - 3| = 1$\n- $(2, 4) \\Rightarrow |2 - 4| = 2$\n- $(3, 4) \\Rightarrow |3 - 4| = 1$\n\nNilai-nilai unik dari selisih positif $T$ adalah $\\{1, 2, 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0252-latihan-soal-variabel-acak-diskret-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "identifikasi variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menguji pemahaman konseptual untuk mengenali data hasil membilang/menghitung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berikut disajikan beberapa besaran dalam suatu pengamatan. Besaran yang tergolong sebagai variabel acak diskret adalah ....",
+      "jawaban_benar": "Banyaknya panggilan telepon yang masuk ke sentra layanan dalam kurun waktu satu hari",
+      "alasan_benar": "Banyaknya panggilan telepon diperoleh dari hasil membilang/menghitung dan nilainya berupa bilangan bulat non-negatif terpisah (0, 1, 2, ...).",
+      "distraktor": [
+        {
+          "teks": "Waktu yang dibutuhkan pelari untuk menyelesaikan lari maraton",
+          "alasan": "Waktu merupakan variabel kontinu karena diperoleh dari hasil pengukuran dan nilainya berada dalam interval bilangan real."
+        },
+        {
+          "teks": "Volume curah hujan harian yang tertampung di stasiun klimatologi",
+          "alasan": "Volume merupakan variabel kontinu karena diperoleh dari hasil pengukuran fisik."
+        },
+        {
+          "teks": "Tinggi badan siswa yang mendaftar seleksi tim basket sekolah",
+          "alasan": "Tinggi badan merupakan variabel kontinu karena diperoleh dari hasil pengukuran."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret memiliki nilai yang diperoleh dari hasil membilang atau menghitung (countable) serta berupa bilangan bulat terpisah.\n- Waktu lari, volume air hujan, dan tinggi badan diperoleh dari hasil pengukuran, sehingga tergolong variabel acak kontinu.\n- Banyaknya panggilan telepon diperoleh dari hasil membilang (0, 1, 2, 3, ...), sehingga merupakan variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasilnya dapat direpresentasikan berupa titik-titik terpisah pada garis bilangan."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "representasi variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali ciri visual representasi variabel acak diskret pada garis bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan ciri-cirinya, representasi dari nilai-nilai variabel acak diskret pada garis bilangan berupa ....",
+      "jawaban_benar": "titik-titik terpisah",
+      "alasan_benar": "Berdasarkan materi Buku Siswa halaman 248, nilai-nilai variabel acak diskret direpresentasikan sebagai titik-titik terpisah pada garis bilangan.",
+      "distraktor": [
+        {
+          "teks": "ruas garis kontinu",
+          "alasan": "Ruas garis kontinu merepresentasikan interval nilai pada variabel acak kontinu."
+        },
+        {
+          "teks": "daerah arsiran bidang",
+          "alasan": "Daerah arsiran bidang merupakan representasi peluang gabungan atau daerah himpunan penyelesaian pertidaksamaan."
+        },
+        {
+          "teks": "garis lurus tak terputus",
+          "alasan": "Garis lurus tak terputus merupakan representasi fungsi linear kontinu."
+        }
+      ],
+      "pembahasan": "Salah satu ciri utama variabel acak diskret adalah nilainya berupa bilangan diskret yang terpisah satu sama lain. Oleh karena itu, jika digambarkan pada garis bilangan, representasinya berbentuk titik-titik terpisah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat peluang variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung peluang satu nilai dengan memanfaatkan sifat total peluang sama dengan 1.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $Y$ hanya memiliki tiga nilai yang mungkin, yaitu 1, 2, dan 3. Jika diketahui $P(Y = 1) = 0{,}25$ dan $P(Y = 2) = 0{,}40$, maka nilai $P(Y = 3)$ adalah ....",
+      "jawaban_benar": "$0{,}35$",
+      "alasan_benar": "Total seluruh peluang dari variabel acak diskret harus sama dengan 1, sehingga P(Y = 3) = 1 - (0,25 + 0,40) = 1 - 0,65 = 0,35.",
+      "distraktor": [
+        {
+          "teks": "$0{,}65$",
+          "alasan": "Hanya menjumlahkan P(Y = 1) + P(Y = 2) tanpa mengurangkannya dari 1."
+        },
+        {
+          "teks": "$0{,}45$",
+          "alasan": "Melakukan kesalahan hitung pengurangan 1 - 0,65."
+        },
+        {
+          "teks": "$0{,}30$",
+          "alasan": "Melakukan kesalahan aritmetika saat menghitung selisih."
+        }
+      ],
+      "pembahasan": "Jumlah seluruh peluang untuk semua nilai variabel acak diskret sama dengan 1:\n$$\\sum P(Y = y) = 1$$\n$$P(Y = 1) + P(Y = 2) + P(Y = 3) = 1$$\n$$0{,}25 + 0{,}40 + P(Y = 3) = 1$$\n$$0{,}65 + P(Y = 3) = 1$$\n$$P(Y = 3) = 1 - 0{,}65 = 0{,}35$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X merupakan variabel acak diskret karena hasilnya berupa bilangan diskret yang dapat dihitung satu per satu dengan peluang terdefinisi.",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "himpunan nilai variabel acak",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan penentuan kemungkinan nilai yang muncul dari suatu percobaan sederhana dengan 1 langkah pengamatan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa mengerjakan 2 butir soal kuis pilihan ganda secara acak. Misalkan variabel acak $K$ menyatakan banyaknya butir soal yang dijawab dengan salah. Nilai-nilai yang mungkin untuk variabel acak $K$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2\\}$",
+      "alasan_benar": "Siswa dapat menjawab benar semua (salah 0), menjawab salah 1 butir, atau menjawab salah kedua butir soal (salah 2).",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2\\}$",
+          "alasan": "Lupa memperhitungkan kemungkinan siswa tidak membuat kesalahan sama sekali ($K = 0$)."
+        },
+        {
+          "teks": "$\\{0, 1\\}$",
+          "alasan": "Lupa memperhitungkan kemungkinan siswa salah pada kedua butir soal sekaligus ($K = 2$)."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3\\}$",
+          "alasan": "Mengira ada 3 butir soal sehingga nilai maksimum salah adalah 3."
+        }
+      ],
+      "pembahasan": "Karena jumlah soal yang dikerjakan hanya 2 butir, kemungkinan banyaknya jawaban salah yang diperoleh siswa adalah tidak ada yang salah (0), satu soal salah (1), atau kedua soal salah (2). Jadi, himpunan nilai yang mungkin dari $K$ adalah $\\{0, 1, 2\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.2",
+        "teks": "Pada Contoh Soal 4.3, tunjukkan bahwa Z = X - Y adalah suatu variabel acak diskret.",
+        "jawaban": "Z = X - Y merupakan variabel acak diskret karena hasilnya berupa bilangan diskret yang dapat dihitung satu per satu dengan peluang terdefinisi.",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "operasi variabel acak diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah: mendaftar pasangan hasil dari dua himpunan kartu, lalu menghitung selisihnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kotak I berisi dua kartu bernomor 4 dan 6. Kotak II berisi dua kartu bernomor 1 dan 2. Dari masing-masing kotak diambil satu kartu secara acak. Jika variabel acak $X$ menyatakan nomor kartu yang terambil dari kotak I dan $Y$ menyatakan nomor kartu yang terambil dari kotak II, maka himpunan semua nilai yang mungkin dari variabel acak $Z = X - Y$ adalah ....",
+      "jawaban_benar": "$\\{2, 3, 4, 5\\}$",
+      "alasan_benar": "Kemungkinan nilai selisih $X - Y$ adalah $4 - 2 = 2$, $4 - 1 = 3$, $6 - 2 = 4$, dan $6 - 1 = 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\{3, 5\\}$",
+          "alasan": "Hanya menghitung selisih ketika kartu dari kotak II bernomor 1 ($4 - 1$ dan $6 - 1$)."
+        },
+        {
+          "teks": "$\\{2, 4\\}$",
+          "alasan": "Hanya menghitung selisih ketika kartu dari kotak II bernomor 2 ($4 - 2$ dan $6 - 2$)."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Keliru dalam mengurangkan angka kartu dan menganggap rentang selisih berurutan mulai dari 1."
+        }
+      ],
+      "pembahasan": "Nilai-nilai yang mungkin untuk $X$ adalah $\\{4, 6\\}$ dan untuk $Y$ adalah $\\{1, 2\\}$. Pasangan $(X, Y)$ beserta selisihnya $Z = X - Y$:\n- Untuk $X = 4$: $4 - 1 = 3$ dan $4 - 2 = 2$.\n- Untuk $X = 6$: $6 - 1 = 5$ dan $6 - 2 = 4$.\nDengan demikian, himpunan semua nilai yang mungkin untuk $Z$ adalah $\\{2, 3, 4, 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi dasar variabel acak diskret secara langsung dari buku teks dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak yang memiliki ruang sampel berupa himpunan berhingga (*finite*) atau tak berhingga (*infinite*) yang nilainya dapat dihitung satu per satu (*countable*) disebut ....",
+      "jawaban_benar": "variabel acak diskret",
+      "alasan_benar": "Sesuai Definisi 4.2 pada buku teks, variabel acak yang nilainya countable disebut variabel acak diskret.",
+      "distraktor": [
+        {
+          "teks": "variabel acak kontinu",
+          "alasan": "Variabel acak kontinu memiliki nilai tak terhitung (uncountable) yang dinyatakan dalam selang bilangan real."
+        },
+        {
+          "teks": "variabel acak campuran",
+          "alasan": "Istilah pengacau yang bukan merupakan definisi variabel acak bernilai countable."
+        },
+        {
+          "teks": "variabel acak bebas",
+          "alasan": "Terkecoh dengan konsep independensi antara dua kejadian atau dua variabel acak."
+        }
+      ],
+      "pembahasan": "Berdasarkan Definisi 4.2 pada buku teks: jika ruang sampel dari variabel acak $X$ merupakan himpunan berhingga (*finite*) atau himpunan tak berhingga (*infinite*) yang dapat dihitung satu per satu (*countable*), maka $X$ disebut variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dalam ruang sampel tersebut, “A” menyatakan sisi angka dan “G” menyatakan sisi gambar yang muncul. Setiap elemen dalam ruang sampel menunjukkan urutan hasil dari dua pelemparan. Variabel X menyatakan banyaknya sisi angka (A) yang muncul."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang nilai variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menentukan titik sampel kejadian dan menghitung nilai peluangnya dengan rumus peluang dasar dalam 2 langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua keping uang logam seimbang dilempar bersamaan sebanyak satu kali. Jika variabel acak $X$ menyatakan banyaknya sisi angka yang muncul, maka nilai peluang $P(X = 0)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Ruang sampel memiliki 4 anggota dan kejadian $X = 0$ hanya memiliki 1 titik sampel yaitu (G, G), sehingga peluangnya $\\frac{1}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Menyamakan dengan peluang muncul 1 sisi angka ($P(X = 1) = \\frac{2}{4}$)."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Menghitung peluang komplemen yaitu munculnya paling sedikit satu sisi angka ($P(X \\ge 1)$)."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Menganggap ada 3 kemungkinan nilai variabel acak $\\{0, 1, 2\\}$ dan setiap nilai berpeluang sama."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua keping uang logam adalah $S = \\{AA, AG, GA, GG\\}$ dengan $n(S) = 4$.\nVariabel acak $X$ menyatakan banyak sisi angka yang muncul. Kejadian $X = 0$ berarti tidak ada angka yang muncul sama sekali, yaitu kejadian munculnya sisi gambar pada kedua keping, yaitu $\\{GG\\}$ sehingga $n(X = 0) = 1$.\nPeluang kemunculannya adalah:\n$$P(X = 0) = \\frac{n(X = 0)}{n(S)} = \\frac{1}{4}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0252-latihan-soal-variabel-acak-diskret-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "identifikasi variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memeriksa definisi variabel diskret berdasarkan data hasil membilang dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan beberapa contoh data hasil pengukuran atau penghitungan berikut. Fenomena yang menghasilkan variabel acak diskret adalah ....",
+      "jawaban_benar": "banyaknya kendaraan yang melintasi gerbang tol dalam kurun waktu satu jam",
+      "alasan_benar": "Banyaknya kendaraan diperoleh melalui proses mencacah atau membilang dan bernilai bilangan bulat non-negatif sehingga merupakan variabel acak diskret.",
+      "distraktor": [
+        {
+          "teks": "waktu yang dibutuhkan pelari cepat untuk menempuh jarak 100 meter",
+          "alasan": "Waktu tempuh merupakan data kontinu hasil pengukuran pada skala bilangan real."
+        },
+        {
+          "teks": "volume bahan bakar yang diisikan ke dalam tangki kendaraan bermotor",
+          "alasan": "Volume merupakan variabel kontinu karena diperoleh dari proses pengukuran cairan."
+        },
+        {
+          "teks": "suhu udara harian rata-rata yang dicatat oleh stasiun klimatologi",
+          "alasan": "Suhu adalah besaran kontinu yang nilainya berada pada suatu interval kontinu."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret memiliki nilai yang diperoleh melalui proses membilang (mencacah) dan nilainya berupa bilangan bulat terpisah. Banyaknya kendaraan melintasi gerbang tol merupakan hasil hitungan bilangan bulat non-negatif $(0, 1, 2, \\dots)$, sedangkan waktu, volume, dan suhu diperoleh dari pengukuran yang menghasilkan nilai kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": "Contoh Soal",
+        "nomor": "4.3",
+        "teks": "Pada permainan papan angka berputar, seperti pada Gambar 4.7, setiap papan diputar satu kali. Misalkan variabel acak X menyatakan angka terpilih dari papan A. Variabel acak Y menyatakan angka terpilih dari papan B. Tunjukkan bahwa Z = X + Y adalah variabel acak diskret.",
+        "jawaban": "Z = X + Y merupakan variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "operasi variabel acak diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengevaluasi penjumlahan dua variabel acak untuk mendapatkan nilai ekstrem minimum dalam dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Papan putar I memiliki kemungkinan angka terpilih $\\{5, 9\\}$ dan papan putar II memiliki kemungkinan angka terpilih $\\{4, 8\\}$. Setiap papan diputar satu kali. Jika variabel acak $X$ menyatakan angka dari papan I dan variabel acak $Y$ menyatakan angka dari papan II, maka nilai minimum dari variabel acak $Z = X + Y$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "Nilai terkecil $X$ adalah 5 dan nilai terkecil $Y$ adalah 4, sehingga nilai minimum $Z = 5 + 4 = 9$.",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "Mengambil nilai terkecil dari salah satu papan saja tanpa menjumlahkannya."
+        },
+        {
+          "teks": "13",
+          "alasan": "Mengambil kombinasi nilai tengah $5 + 8$ atau $9 + 4$."
+        },
+        {
+          "teks": "17",
+          "alasan": "Menghitung nilai maksimum $9 + 8 = 17$ alih-alih nilai minimum."
+        }
+      ],
+      "pembahasan": "Nilai-nilai yang mungkin untuk $X$ adalah $\\{5, 9\\}$ dan untuk $Y$ adalah $\\{4, 8\\}$. Nilai dari $Z = X + Y$ adalah:\n- $5 + 4 = 9$\n- $5 + 8 = 13$\n- $9 + 4 = 13$\n- $9 + 8 = 17$\nNilai terkecil (minimum) dari $Z$ adalah 9.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.2",
+        "teks": "Pada Contoh Soal 4.3, tunjukkan bahwa Z = X - Y adalah suatu variabel acak diskret.",
+        "jawaban": "Z = X - Y merupakan variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "karakteristik variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memahami sifat operasi selisih dua variabel acak diskret yang menghasilkan variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak $X$ menyatakan banyaknya gol tim tuan rumah dan variabel acak $Y$ menyatakan banyaknya gol tim tamu dalam sebuah pertandingan bola. Kedua variabel tersebut merupakan variabel acak diskret. Jika didefinisikan variabel baru $W = X - Y$ yang menyatakan selisih gol kedua tim, maka variabel $W$ merupakan ....",
+      "jawaban_benar": "variabel acak diskret",
+      "alasan_benar": "Selisih dari dua variabel acak diskret menghasilkan nilai berupa bilangan bulat yang terhitung satu per satu sehingga tetap merupakan variabel acak diskret.",
+      "distraktor": [
+        {
+          "teks": "variabel acak kontinu",
+          "alasan": "Keliru mengira operasi pengurangan membuat himpunan nilai menjadi kontinu."
+        },
+        {
+          "teks": "bukan variabel acak",
+          "alasan": "Mengira hasil selisih yang bisa bernilai negatif bukan merupakan variabel acak."
+        },
+        {
+          "teks": "variabel acak tak terdefinisi",
+          "alasan": "Menganggap pengurangan dua kejadian acak tidak menghasilkan variabel acak yang sah."
+        }
+      ],
+      "pembahasan": "Variabel $X$ dan $Y$ bernilai bilangan bulat non-negatif. Selisih $W = X - Y$ menghasilkan bilangan bulat ($\\{\\dots, -2, -1, 0, 1, 2, \\dots\\}$) yang nilainya terpisah pada garis bilangan dan dapat dihitung satu per satu (*countable*). Berdasarkan Definisi 4.2, variabel $W$ adalah variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat total peluang diskret",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat jumlah seluruh peluang sama dengan 1 melalui satu pengurangan sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak diskret $Z$ hanya memiliki empat kemungkinan nilai, yaitu 1, 2, 3, dan 4. Jika diketahui $P(Z = 1) = \\frac{1}{8}$, $P(Z = 2) = \\frac{3}{8}$, dan $P(Z = 3) = \\frac{2}{8}$, maka nilai dari $P(Z = 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{2}{8}$",
+      "alasan_benar": "Total seluruh peluang harus 1, sehingga $P(Z = 4) = 1 - \\left(\\frac{1}{8} + \\frac{3}{8} + \\frac{2}{8}\\right) = \\frac{2}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Salah menjumlahkan peluang yang diketahui menjadi $\\frac{7}{8}$."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Salah menghitung sisa pecahan dari 1."
+        },
+        {
+          "teks": "$\\frac{6}{8}$",
+          "alasan": "Hanya menjumlahkan ketiga peluang yang diketahui tanpa mengurangkan dari 1."
+        }
+      ],
+      "pembahasan": "Jumlah seluruh peluang untuk semua nilai variabel acak diskret adalah 1:\n$$P(Z = 1) + P(Z = 2) + P(Z = 3) + P(Z = 4) = 1$$\n$$\\frac{1}{8} + \\frac{3}{8} + \\frac{2}{8} + P(Z = 4) = 1$$\n$$\\frac{6}{8} + P(Z = 4) = 1$$\n$$P(Z = 4) = 1 - \\frac{6}{8} = \\frac{2}{8}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 252,
+        "bagian": "Latihan Soal Variabel Acak Diskret",
+        "nomor": "1",
+        "teks": "Manakah dari variabel acak berikut yang merupakan variabel acak diskret? Berikan tanda pada kolom B atau S.",
+        "jawaban": "Jumlah penduduk perempuan di kota B",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "identifikasi variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah pemahaman konsep untuk membedakan data hasil membilang dari data kontinu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Di antara variabel acak berikut, manakah yang merupakan variabel acak diskret?",
+      "jawaban_benar": "Banyaknya siswa yang lulus ujian matematika di suatu kelas",
+      "alasan_benar": "Banyaknya siswa diperoleh dari proses membilang atau menghitung sehingga nilainya berupa bilangan bulat diskret.",
+      "distraktor": [
+        {
+          "teks": "Waktu tempuh pelari maraton menuju garis finis",
+          "alasan": "Waktu merupakan variabel acak kontinu karena diperoleh melalui pengukuran pada suatu selang bilangan real."
+        },
+        {
+          "teks": "Volume air mineral dalam sebuah botol kemasan",
+          "alasan": "Volume merupakan variabel acak kontinu hasil pengukuran besaran fluida."
+        },
+        {
+          "teks": "Suhu udara ruangan kelas yang diukur setiap jam",
+          "alasan": "Suhu merupakan variabel acak kontinu yang nilainya berada pada interval kontinu."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret adalah variabel yang nilainya diperoleh dari hasil menghitung/membilang dan berupa bilangan bulat terpisah. Banyaknya siswa yang lulus diperoleh dengan membilang (0, 1, 2, ...), sehingga merupakan variabel acak diskret. Waktu, volume, dan suhu merupakan hasil pengukuran yang tergolong variabel acak kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X adalah variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "himpunan nilai variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengidentifikasi semua kemungkinan nilai diskret dari proses pengambilan tanpa pengembalian dalam dua langkah sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi 4 bola merah dan 2 bola putih. Dari kantong tersebut diambil 2 bola sekaligus secara acak. Jika variabel acak $B$ menyatakan banyaknya bola putih yang terambil, maka himpunan semua nilai yang mungkin untuk $B$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2\\}$",
+      "alasan_benar": "Bola putih yang terambil dapat berupa 0 bola (keduanya merah), 1 bola (satu merah satu putih), atau 2 bola (keduanya putih).",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2\\}$",
+          "alasan": "Siswa mengabaikan kemungkinan tidak ada bola putih yang terambil sama sekali (keduanya bola merah)."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Siswa keliru memasukkan jumlah bola merah ke dalam kemungkinan nilai bola putih."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Siswa mengira nilai variabel acak dihitung mulai dari 1 dan melebihi jumlah bola yang diambil."
+        }
+      ],
+      "pembahasan": "Banyak bola yang diambil adalah 2 bola. Di dalam kantong terdapat 2 bola putih dan 4 bola merah. Kemungkinan terambilnya bola putih adalah:\n- 0 bola putih (keduanya bola merah),\n- 1 bola putih (1 putih dan 1 merah),\n- 2 bola putih (keduanya bola putih).\nJadi, nilai-nilai yang mungkin untuk $B$ adalah $\\{0, 1, 2\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": "Contoh Soal",
+        "nomor": "4.3",
+        "teks": "Pada permainan papan angka berputar, seperti pada Gambar 4.7, setiap papan diputar satu kali. Misalkan variabel acak X menyatakan angka terpilih dari papan A. Variabel acak Y menyatakan angka terpilih dari papan B. Tunjukkan bahwa Z = X + Y adalah variabel acak diskret.",
+        "jawaban": "Z = X + Y adalah variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai ekstrem variabel acak",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah penjumlahan nilai minimum dari dua variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua roda putar angka diputar masing-masing satu kali. Roda pertama menghasilkan kemungkinan angka $X \\in \\{10, 20\\}$ dan roda kedua menghasilkan kemungkinan angka $Y \\in \\{30, 50\\}$. Jika variabel acak $W = X + Y$ menyatakan jumlah angka yang diperoleh, maka nilai terkecil dari $W$ adalah ....",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Nilai terkecil diperoleh dengan menjumlahkan nilai minimum dari $X$ dan $Y$, yaitu $10 + 30 = 40$.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Siswa hanya mengambil nilai minimum dari roda kedua tanpa menjumlahkannya dengan nilai minimum roda pertama."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Siswa menjumlahkan $20 + 30$ bukan pasangan nilai terkecil."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Siswa menghitung nilai terbesar ($20 + 50$) alih-alih nilai terkecil."
+        }
+      ],
+      "pembahasan": "Nilai yang mungkin dari $X$ adalah 10 atau 20, dan nilai yang mungkin dari $Y$ adalah 30 atau 50. Nilai $W = X + Y$ yang mungkin adalah:\n- $10 + 30 = 40$\n- $10 + 50 = 60$\n- $20 + 30 = 50$\n- $20 + 50 = 70$\nNilai terkecil dari $W$ adalah 40.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya berupa bilangan bulat."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "karakteristik variabel acak diskret",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali salah satu ciri utama dari variabel acak diskret dari teks materi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan ciri-cirinya, nilai yang dihasilkan oleh suatu variabel acak diskret selalu berupa ....",
+      "jawaban_benar": "bilangan bulat",
+      "alasan_benar": "Sesuai ciri variabel acak diskret pada buku teks, nilainya berupa bilangan bulat.",
+      "distraktor": [
+        {
+          "teks": "bilangan irasional",
+          "alasan": "Variabel acak diskret berasal dari hasil hitungan sehingga tidak berupa bilangan irasional."
+        },
+        {
+          "teks": "seluruh bilangan real pada suatu interval",
+          "alasan": "Karakteristik seluruh bilangan real pada interval adalah ciri dari variabel acak kontinu."
+        },
+        {
+          "teks": "bilangan pecahan tak hingga",
+          "alasan": "Nilai variabel acak diskret adalah diskret dan terpisah berupa bilangan bulat, bukan bilangan pecahan tak hingga."
+        }
+      ],
+      "pembahasan": "Berdasarkan buku siswa, ciri-ciri variabel acak diskret antara lain: nilainya diperoleh dari hasil menghitung atau membilang, nilainya berupa bilangan bulat, dan hasilnya dapat direpresentasikan berupa titik-titik terpisah pada garis bilangan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 252,
+        "bagian": "Latihan Soal Variabel Acak Diskret",
+        "nomor": "1",
+        "teks": "Manakah dari variabel acak berikut yang merupakan variabel acak diskret? Berikan tanda pada kolom B atau S .",
+        "jawaban": "Jumlah penduduk perempuan di kota B",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "klasifikasi variabel acak",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan pemahaman langsung satu langkah untuk membedakan data cacahan diskret dari data kontinu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu survei peternakan, petugas mengumpulkan sejumlah data pengukuran dan pencatatan. Di antara parameter berikut, data yang merepresentasikan variabel acak diskret adalah ....",
+      "jawaban_benar": "banyaknya sapi betina di peternakan",
+      "alasan_benar": "Banyaknya sapi betina diperoleh melalui proses membilang atau menghitung sehingga nilainya berupa bilangan bulat dan merupakan variabel acak diskret.",
+      "distraktor": [
+        {
+          "teks": "volume susu sapi segar yang diproduksi",
+          "alasan": "Siswa keliru menganggap volume cairan sebagai variabel acak diskret, padahal diperoleh dari hasil pengukuran (kontinu)."
+        },
+        {
+          "teks": "luas area kandang yang digunakan",
+          "alasan": "Siswa keliru mengira ukuran luas wilayah dapat dihitung satu per satu, padahal merupakan besaran kontinu."
+        },
+        {
+          "teks": "kadar lemak pada susu per liter",
+          "alasan": "Siswa salah membedakan persentase kadar nutrisi hasil uji laboratorium yang bersifat kontinu dengan variabel diskret."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret memiliki ciri nilainya diperoleh dari hasil menghitung/membilang dan berupa bilangan bulat (cacah). Dari keempat opsi:\n- Volume susu, luas area kandang, dan kadar lemak diperoleh melalui hasil pengukuran dengan alat ukur sehingga nilainya berada pada interval kontinu (variabel kontinu).\n- Banyaknya sapi betina diperoleh dari hasil membilang satu per satu (0, 1, 2, 3, ...) sehingga merupakan variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

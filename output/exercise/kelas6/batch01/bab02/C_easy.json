@@ -429,6 +429,814 @@
       "pembahasan": "Ubah 3 jam menjadi 180 menit. Rasio Sinta terhadap Dodi adalah 180 : 45. Bagi kedua bilangan dengan 45, hasilnya 4 : 1.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b89bfbdcfb1baf1f99043ce5",
+        "teks": "Berapa hari dalam 6 minggu?",
+        "jawaban": "42 hari",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "penerapan_rasio",
+      "alasan_level": "Target easy; variasi konsep penerapan rasio. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Rasio bibit mawar terhadap melati adalah 15:11. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Jumlah bagian rasio 26. Tiap bagian bernilai 3. Bibit mawar 15×3=45.",
+      "distraktor": [
+        {
+          "teks": "$46$",
+          "alasan": "Pilihan $46$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan $44$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan $47$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $45$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah bagian rasio 26. Tiap bagian bernilai 3. Bibit mawar 15×3=45.",
+      "catatan": "codex-replenishment:kelas6-b02-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-c-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0c7e69a7989759e06ebf7ee",
+        "teks": "Rasio bibit bunga dan bibit sayur yang terjual adalah 6 : 7. Berapa rasio bibit bunga terhadap seluruh bibit yang terjual?",
+        "jawaban": "6 : 13",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "penerapan_rasio",
+      "alasan_level": "Target easy; variasi konsep penerapan rasio. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Rasio bibit mawar terhadap melati adalah 9:10. Jika jumlah seluruh bibit 76, berapa banyak bibit mawar?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Jumlah bagian rasio 19. Tiap bagian bernilai 4. Bibit mawar 9×4=36.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah penerapan rasio pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah bagian rasio 19. Tiap bagian bernilai 4. Bibit mawar 9×4=36.",
+      "catatan": "codex-replenishment:kelas6-b02-C-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-c-easy-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a5e10e75edda51a0858e43e",
+        "teks": "Di kebun, rasio tanaman bunga terhadap tanaman sayur adalah 7 : 8. Berapa rasio tanaman bunga terhadap seluruh tanaman?",
+        "jawaban": "7 : 15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$20000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $20000$.",
+      "distraktor": [
+        {
+          "teks": "$20001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $20000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/bd06edb5836e209912c00490.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "22"
+            ],
+            [
+              "H",
+              "440000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"22\"], [\"H\", \"440000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c469f84033f5a762ee930b59",
+        "teks": "Di kelas ada 12 siswa perempuan dan 18 siswa laki-laki. Berapa rasio siswa perempuan terhadap siswa laki-laki dalam bentuk paling sederhana?",
+        "jawaban": "2 : 3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$15000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$.",
+      "distraktor": [
+        {
+          "teks": "$15001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/54ab15bba6af53766927261c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "21"
+            ],
+            [
+              "H",
+              "315000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"21\"], [\"H\", \"315000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61376daa64e4a306f046dbd8",
+        "teks": "Rani belajar selama 2 jam. Berapa menit lama Rani belajar?",
+        "jawaban": "120 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$8000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "distraktor": [
+        {
+          "teks": "$8001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/429c9f27604a2a458a77d91c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "25"
+            ],
+            [
+              "H",
+              "200000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"25\"], [\"H\", \"200000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0c7e69a7989759e06ebf7ee",
+        "teks": "Rasio bibit bunga dan bibit sayur yang terjual adalah 6 : 7. Berapa rasio bibit bunga terhadap seluruh bibit yang terjual?",
+        "jawaban": "6 : 13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$3000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$.",
+      "distraktor": [
+        {
+          "teks": "$3001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $3000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/1d54755e249c6ad2d675fcdd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "8"
+            ],
+            [
+              "H",
+              "24000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"8\"], [\"H\", \"24000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9c1b0dbd4b17c73a7ffb7ee",
+        "teks": "Jumlah bibit mawar dan melati di sebuah toko adalah 117. Rasio bibit mawar terhadap bibit melati adalah 5 : 8. Berapa banyak bibit masing-masing jenis?",
+        "jawaban": "Mawar 45 bibit dan melati 72 bibit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$8000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "distraktor": [
+        {
+          "teks": "$8001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/ac1ed8c49fb71eeb66e5e1d2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "22"
+            ],
+            [
+              "H",
+              "176000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"22\"], [\"H\", \"176000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "238f4d78e1143f8fe197f070",
+        "teks": "Dina menempuh jarak 3 km dalam waktu 40 menit dengan kecepatan tetap. Berapa waktu yang diperlukan untuk menempuh 12 km?",
+        "jawaban": "160 menit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$18000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$.",
+      "distraktor": [
+        {
+          "teks": "$18001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/3f3d69e2f44b695e8baaf399.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "3"
+            ],
+            [
+              "H",
+              "54000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"3\"], [\"H\", \"54000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f4242836bce8f53dbc758234",
+        "teks": "Dengan kecepatan tetap, Bima menempuh 2 km dalam 45 menit. Berapa jarak yang ditempuhnya selama 3 jam?",
+        "jawaban": "8 km",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$15000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$.",
+      "distraktor": [
+        {
+          "teks": "$15001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $15000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/a37bfdc50902f099d18fd683.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "6"
+            ],
+            [
+              "H",
+              "90000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"6\"], [\"H\", \"90000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b89bfbdcfb1baf1f99043ce5",
+        "teks": "Berapa hari dalam 6 minggu?",
+        "jawaban": "42 hari",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$10000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $10000$.",
+      "distraktor": [
+        {
+          "teks": "$10001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $10000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/411b977efc81266a65e7130c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "26"
+            ],
+            [
+              "H",
+              "260000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"26\"], [\"H\", \"260000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2010b8e36d984411aa76ac2",
+        "teks": "Total bibit tanaman hias dan tanaman obat yang terjual sebanyak 144 bibit. Rasio tanaman hias terhadap tanaman obat adalah 7 : 5. Berapa banyak bibit masing-masing jenis?",
+        "jawaban": "Tanaman hias 84 bibit dan tanaman obat 60 bibit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel gambar. Paket berisi $N$ barang berharga $H$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$4000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $4000$.",
+      "distraktor": [
+        {
+          "teks": "$4001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $4000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/71be716b89a5c0adcb00d9d9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "N",
+              "13"
+            ],
+            [
+              "H",
+              "52000"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"N\", \"13\"], [\"H\", \"52000\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87c52f4a137a69cbc108a1d7",
+        "teks": "Sinta membaca selama 3 jam dan Dodi membaca selama 45 menit. Berapa rasio lama membaca Sinta terhadap Dodi dalam bentuk paling sederhana?",
+        "jawaban": "4 : 1",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Paket berisi ${15}$ barang berharga ${180000}$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$12000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$.",
+      "distraktor": [
+        {
+          "teks": "$12001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $12000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7815d8afc5d8cb1dda1ad68f",
+        "teks": "Jumlah peserta lomba 650 orang, terdiri atas siswa dan guru. Rasio siswa terhadap guru adalah 7 : 6. Raka berkata ada 350 siswa. Apakah hitungan Raka benar? Pilih jumlah siswa yang benar.",
+        "jawaban": "350 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Paket berisi ${31}$ barang berharga ${341000}$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$11000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$.",
+      "distraktor": [
+        {
+          "teks": "$11001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $11000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54925e686a1cf5a1754c6bfb",
+        "teks": "Masa panen tanaman A adalah 8 minggu. Masa panen tanaman B adalah 2 tahun. Gunakan 1 tahun = 52 minggu.\n\nDito menyatakan rasio masa panen tanaman A terhadap tanaman B adalah 1 : 13. Apakah pernyataan itu benar? Pilih rasio paling sederhana yang tepat.",
+        "jawaban": "1 : 13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Paket berisi ${3}$ barang berharga ${54000}$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$18000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$.",
+      "distraktor": [
+        {
+          "teks": "$18001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $18000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "342bc6d2fc6c75bcf967f09d",
+        "teks": "Di toko, rasio pot kaktus terhadap pot lidah mertua harus 3 : 5. Semua pot dihitung satu per satu.\n\nManakah catatan jumlah pot yang memenuhi rasio tersebut dan memiliki total paling banyak 96 pot?",
+        "jawaban": "Kaktus 36 pot dan lidah mertua 60 pot",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Paket berisi ${18}$ barang berharga ${144000}$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$8000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "distraktor": [
+        {
+          "teks": "$8001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $8000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65dbfd8bd0f86ddae0a90f36",
+        "teks": "Di kelompok seni, setiap anak memilih tepat satu kegiatan. Rasio anak yang memilih melukis terhadap seluruh anak adalah 2 : 7. Rasio anak yang memilih musik terhadap seluruh anak adalah 3 : 7. Jumlah anak paling banyak 70.\n\nCatatan mana yang mungkin benar dan memiliki jumlah anak paling banyak?",
+        "jawaban": "20 anak melukis, 30 anak memilih musik, dan 20 anak memilih kegiatan lain",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "s6_penerapan_rasio",
+      "alasan_level": "Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.",
+      "stimulus": null,
+      "pertanyaan": "Paket berisi ${24}$ barang berharga ${312000}$ rupiah. Berapa harga satu barang?",
+      "jawaban_benar": "$13000$",
+      "alasan_benar": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $13000$.",
+      "distraktor": [
+        {
+          "teks": "$13001$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12999$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bagi harga paket dengan banyak barang Perhitungan dengan data tersebut memberi $13000$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b02-c-easy-bt01-026"
     }
   ]
 }
