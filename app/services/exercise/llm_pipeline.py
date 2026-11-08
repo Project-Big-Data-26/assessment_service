@@ -13,10 +13,10 @@ import json
 from dataclasses import dataclass, field
 from typing import List
 
-from app.llm.ninerouter import NineRouterClient
+from app.llm.ninerouter import NineRouterClient, NineRouterError
 from app.services.exercise import config as C
 from app.services.exercise.llm_generate import GenerateError, Job, _short, _write, generate
-from app.services.exercise.llm_verify import verifikasi_buta
+from app.services.exercise.llm_verify import cek_butuh_gambar, verifikasi_buta
 from app.services.exercise.refs import soal_text
 from app.services.exercise.schema import ExerciseFile
 from app.services.exercise.validate import validate_file
@@ -72,6 +72,27 @@ def _buang(job: Job, ids: List[str], solver_path: str) -> List[str]:
     return umpan
 
 
+def _buang_hiasan(job: Job, ids: List[str]) -> List[str]:
+    """Buang soal bergambar yang tetap benar tanpa gambar (gambar hanya hiasan); kembalikan umpan balik."""
+    data = _muat(job.path)
+    umpan = [f"{_short(soal_text(s.stimulus, s.pertanyaan), 110)} -> DITOLAK: solver tetap menjawab benar TANPA gambar. "
+             f"Tulis soal yang data kuncinya (angka, jumlah, label, posisi) HANYA ada di gambar, jangan diulang di teks."
+             for s in data.soal if s.id in ids]
+    sisa = [s.model_copy(update={"id": f"{job.id_prefix}{i:03d}"})
+            for i, s in enumerate([x for x in data.soal if x.id not in ids], 1)]
+    _write(job, data.generator or "", sisa)
+    return umpan
+
+
+def _sidecar_bersih(job: Job, model: str) -> None:
+    """Tulis .tanpagambar.json untuk soal yang tersisa: semuanya sudah dinyatakan butuh gambar (tidak ada yang ditandai)."""
+    data = _muat(job.path)
+    out = job.path[:-len(".json")] + ".tanpagambar.json"
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump({"model": model, "tanpa_gambar_cocok": [], "butuh_gambar": [s.id for s in data.soal]}, f,
+                  ensure_ascii=False, indent=2)
+
+
 def kerjakan_slot(job: Job, client: NineRouterClient, solver_model: str, *, maks_perbaikan: int = 2,
                   progress=print) -> SlotResult:
     kuota = C.KUOTA_GAMBAR_MAKS if job.gambar else C.KUOTA_PER_LEVEL[get_book(job.book).jenjang]
@@ -93,6 +114,20 @@ def kerjakan_slot(job: Job, client: NineRouterClient, solver_model: str, *, maks
                                   tok_in, tok_out, round(seconds, 1))
             bermasalah = ver.tidak_cocok + ver.tidak_terjawab
             progress(f"  ronde {ronde + 1}: {ver.cocok}/{ver.total} cocok, bermasalah {len(bermasalah)}")
+            if not bermasalah and job.gambar:
+                try:
+                    cek = cek_butuh_gambar(job.path, client, solver_model, progress=progress)
+                except (NineRouterError, ValueError) as exc:
+                    return SlotResult(job.path, STATUS_GAGAL, ver.total, kuota, ronde, dibuang,
+                                      [f"cek 'tanpa gambar' gagal sementara: {str(exc)[:120]}; jalankan ulang"],
+                                      tok_in, tok_out, round(seconds, 1))
+                if cek.tanpa_gambar_cocok:
+                    progress(f"  ronde {ronde + 1}: {len(cek.tanpa_gambar_cocok)} soal tidak butuh gambar, dibuang")
+                    dibuang += len(cek.tanpa_gambar_cocok)
+                    umpan = _buang_hiasan(job, cek.tanpa_gambar_cocok)
+                    if ronde == maks_perbaikan:
+                        break
+                    continue
             if not bermasalah:
                 _data, errors, _w = validate_file(job.path, partial=False)
                 status = STATUS_GAGAL if errors else (STATUS_SELESAI if ver.total >= kuota else STATUS_KURANG)
@@ -107,7 +142,23 @@ def kerjakan_slot(job: Job, client: NineRouterClient, solver_model: str, *, maks
         if not sisa.soal:
             return SlotResult(job.path, STATUS_GAGAL, 0, kuota, maks_perbaikan, dibuang,
                               ["semua soal dibuang solver"], tok_in, tok_out, round(seconds, 1))
-        if not job.gambar:
+        if job.gambar:
+            # soal yang tersisa belum tentu sudah dicek 'tanpa gambar' pada ronde terakhir: cek, buang yang hiasan
+            try:
+                cek = cek_butuh_gambar(job.path, client, solver_model, progress=progress)
+            except (NineRouterError, ValueError) as exc:
+                return SlotResult(job.path, STATUS_GAGAL, len(sisa.soal), kuota, maks_perbaikan, dibuang,
+                                  [f"cek 'tanpa gambar' gagal sementara: {str(exc)[:120]}"], tok_in, tok_out,
+                                  round(seconds, 1))
+            if cek.tanpa_gambar_cocok:
+                dibuang += len(cek.tanpa_gambar_cocok)
+                _buang_hiasan(job, cek.tanpa_gambar_cocok)
+            sisa = _muat(job.path)
+            if not sisa.soal:
+                return SlotResult(job.path, STATUS_GAGAL, 0, kuota, maks_perbaikan, dibuang,
+                                  ["semua soal bergambar dibuang"], tok_in, tok_out, round(seconds, 1))
+            _sidecar_bersih(job, solver_model)
+        else:
             _write(job, sisa.generator or "", sisa.soal, kapasitas_kurang=len(sisa.soal) < kuota,
                    alasan=(f"{dibuang} soal dibuang karena tidak cocok dengan solver independen setelah "
                            f"{maks_perbaikan} perbaikan otomatis") if len(sisa.soal) < kuota else None)
