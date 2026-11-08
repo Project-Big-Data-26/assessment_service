@@ -8,7 +8,7 @@
   "generator": "9router:ag/gemini-3.8-flash",
   "bergambar": false,
   "kapasitas_kurang": true,
-  "alasan_kapasitas": "4 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "alasan_kapasitas": "generator otomatis hanya memperoleh 13 soal lolos validator setelah 7 putaran; belum ditinjau apakah bahan subbab memang tidak cukup",
   "soal": [
     {
       "id": "kelas11-b02-b-hard-bt01-001",
@@ -54,90 +54,6 @@
     },
     {
       "id": "kelas11-b02-b-hard-bt01-002",
-      "tipe_generate": "variasi",
-      "variasi_cara": "konteks",
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 84,
-        "bagian": "Latihan 2.2",
-        "nomor": "10",
-        "teks": "KL, LM, MN , dan NK adalah garis-garis singgung pada lingkaran O. Segiempat KLMN disebut segiempat garis singgung. Buktikan : LK + MN = LM LM + NK NK",
-        "jawaban": "LK + MN = LM + NK",
-        "kutipan": null
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "evaluasi teorema segiempat garis singgung",
-      "jumlah_langkah": 4,
-      "alasan_level": "Siswa harus mengevaluasi kelayakan geometris sebuah segiempat konveks menjadi segiempat tali busur sekaligus segiempat garis singgung dengan memvalidasi Teorema Pitot.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Sebuah lahan berbentuk trapesium sama kaki $PQRS$ dengan $PQ \\parallel SR$ dirancang sebagai segiempat garis singgung (semua sisinya menyinggung lingkaran di dalamnya). Jika panjang sisi sejajar berturut-turut adalah $PQ = 32\\text{ m}$ dan $SR = 18\\text{ m}$, serta tinggi trapesium tersebut sama dengan diameter lingkaran di dalamnya, berapakah panjang jari-jari lingkaran tersebut?",
-      "jawaban_benar": "$12\\text{ m}$",
-      "alasan_benar": "Berdasarkan Teorema Pitot pada trapesium sama kaki, $PQ + SR = PS + QR \\implies 32 + 18 = 2 \\cdot PS \\implies PS = 25\\text{ m}$. Proyeksi alas pada segitiga siku-siku tinggi trapesium adalah $\\frac{32 - 18}{2} = 7\\text{ m}$. Tinggi trapesium $t = \\sqrt{25^2 - 7^2} = 24\\text{ m}$. Karena tinggi sama dengan diameter lingkaran, maka jari-jari $r = \\frac{24}{2} = 12\\text{ m}$.",
-      "distraktor": [
-        {
-          "teks": "$24\\text{ m}$",
-          "alasan": "Siswa menjawab diameter trapesium/lingkaran tanpa membaginya dengan 2 untuk memperoleh jari-jari."
-        },
-        {
-          "teks": "$25\\text{ m}$",
-          "alasan": "Siswa menganggap panjang sisi miring sama dengan nilai jari-jari lingkaran."
-        },
-        {
-          "teks": "$14\\text{ m}$",
-          "alasan": "Siswa salah menghitung panjang sisi miring atau salah menerapkan pengurangan proyeksi alas."
-        }
-      ],
-      "pembahasan": "Berdasarkan Teorema Pitot, pada segiempat garis singgung berlaku jumlah sisi yang berhadapan adalah sama:\n$PQ + SR = PS + QR$\n\nKarena trapesium sama kaki, $PS = QR$, sehingga:\n$32 + 18 = 2 \\cdot PS \\iff 50 = 2 \\cdot PS \\iff PS = 25\\text{ m}$.\n\nTarik garis tinggi dari titik $S$ dan $R$ tegak lurus ke $PQ$. Panjang alas segitiga siku-siku di tepi trapesium adalah:\n$x = \\frac{PQ - SR}{2} = \\frac{32 - 18}{2} = 7\\text{ m}$.\n\nDengan Teorema Pythagoras, tinggi trapesium ($t$):\n$t = \\sqrt{PS^2 - x^2} = \\sqrt{25^2 - 7^2} = \\sqrt{625 - 49} = \\sqrt{576} = 24\\text{ m}$.\n\nKarena lingkaran bersinggungan dengan kedua sisi sejajar, tinggi trapesium sama dengan diameter lingkaran ($2r = t$):\n$r = \\frac{24}{2} = 12\\text{ m}$.",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-003",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 80,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
-        "kutipan": "Dari sebuah titik di luar lingkaran dapat dibuat sebanyak _______ buah garis singgung yang panjangnya _____________."
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "perhitungan luas layang-layang garis singgung",
-      "jumlah_langkah": 5,
-      "alasan_level": "Memerlukan pemodelan tali busur hubung titik singgung melalui luas segitiga dan relasi Pythagoras untuk mengonstruksi panjang ruas garis.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Dari titik $P$ di luar lingkaran berpusat di $O$, dibuat dua garis singgung $PA$ dan $PB$ yang menyentuh lingkaran di titik $A$ dan $B$. Jika panjang ruas garis penghubung titik singgung $AB = 9{,}6\\text{ cm}$ dan panjang $OP = 10\\text{ cm}$, berapakah luas layang-layang garis singgung $OAPB$?",
-      "jawaban_benar": "$48\\text{ cm}^2$",
-      "alasan_benar": "Ruas garis $OP$ membagi tali busur $AB$ menjadi dua sama panjang dan tegak lurus di titik $M$, sehingga $AM = 4{,}8\\text{ cm}$. Pada segitiga siku-siku $OAP$, $AM$ merupakan garis tinggi ke hipotenusa $OP$. Maka luas $\\triangle OAP = \\frac{1}{2} \\cdot OP \\cdot AM = \\frac{1}{2} \\cdot 10 \\cdot 4{,}8 = 24\\text{ cm}^2$. Luas layang-layang $OAPB = 2 \\cdot \\text{Luas } \\triangle OAP = 2 \\cdot 24 = 48\\text{ cm}^2$.",
-      "distraktor": [
-        {
-          "teks": "$24\\text{ cm}^2$",
-          "alasan": "Siswa hanya menghitung luas satu segitiga siku-siku $OAP$, lupa mengalikan dua untuk seluruh layang-layang."
-        },
-        {
-          "teks": "$96\\text{ cm}^2$",
-          "alasan": "Siswa langsung mengalikan $OP \\times AB$ tanpa membaginya dengan dua pada rumus luas layang-layang."
-        },
-        {
-          "teks": "$60\\text{ cm}^2$",
-          "alasan": "Siswa keliru mengasumsikan jari-jari lingkaran bernilai $6\\text{ cm}$ dan mengalikan $\\frac{1}{2} \\times 10 \\times 12$."
-        }
-      ],
-      "pembahasan": "Pada layang-layang garis singgung $OAPB$, kedua diagonalnya adalah $OP$ dan $AB$ yang saling berpotongan tegak lurus.\n\nPanjang diagonal pertama: $d_1 = OP = 10\\text{ cm}$.\nPanjang diagonal kedua: $d_2 = AB = 9{,}6\\text{ cm}$.\n\nLuas layang-layang yang kedua diagonalnya saling tegak lurus diberikan oleh:\n$\\text{Luas} = \\frac{1}{2} \\times d_1 \\times d_2 = \\frac{1}{2} \\times 10 \\times 9{,}6 = 48\\text{ cm}^2$.",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-004",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -179,7 +95,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-005",
+      "id": "kelas11-b02-b-hard-bt01-003",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -221,7 +137,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-006",
+      "id": "kelas11-b02-b-hard-bt01-004",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -263,7 +179,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-007",
+      "id": "kelas11-b02-b-hard-bt01-005",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -305,7 +221,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-008",
+      "id": "kelas11-b02-b-hard-bt01-006",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -347,7 +263,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-009",
+      "id": "kelas11-b02-b-hard-bt01-007",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -389,7 +305,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-010",
+      "id": "kelas11-b02-b-hard-bt01-008",
       "tipe_generate": "variasi",
       "variasi_cara": "angka",
       "acuan": {
@@ -431,49 +347,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-011",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 80,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
-        "kutipan": "Dari sebuah titik di luar lingkaran dapat dibuat sebanyak _______ buah garis singgung yang panjangnya _____________."
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "rekonstruksi jari-jari segitiga singgung",
-      "jumlah_langkah": 4,
-      "alasan_level": "Memerlukan analisis relasi keliling segitiga yang dibentuk oleh garis singgung ketiga terhadap panjang garis singgung utama untuk merekonstruksi jari-jari lingkaran.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Dari sebuah titik $P$ di luar lingkaran yang berpusat di $O$, dibuat dua garis singgung $PA$ dan $PB$ yang menyentuh lingkaran masing-masing di titik $A$ dan $B$. Sebuah garis singgung ketiga ditarik menyinggung lingkaran di titik $T$ (terletak di antara busur minor $AB$) serta memotong ruas garis $PA$ di titik $K$ dan $PB$ di titik $L$. Jika keliling segitiga $PKL$ adalah $48\\text{ cm}$ dan jarak titik pusat $O$ ke titik $P$ adalah $25\\text{ cm}$, berapakah panjang jari-jari lingkaran tersebut?",
-      "jawaban_benar": "$7\\text{ cm}$",
-      "alasan_benar": "Keliling $\\triangle PKL = PK + KL + LP = PK + KT + TL + LP = (PK + KA) + (PL + LB) = PA + PB = 2 PA$. Karena kelilingnya $48\\text{ cm}$, maka $PA = 24\\text{ cm}$. Jari-jari lingkaran $r = OA = \\sqrt{OP^2 - PA^2} = \\sqrt{25^2 - 24^2} = \\sqrt{49} = 7\\text{ cm}$.",
-      "distraktor": [
-        {
-          "teks": "$12\\text{ cm}$",
-          "alasan": "Siswa mengira panjang $PA$ sama dengan setengah jari-jari atau salah mengidentifikasi perbandingan sisi segitiga."
-        },
-        {
-          "teks": "$9\\text{ cm}$",
-          "alasan": "Siswa salah mengurangkan kuadrat pada teorema Pythagoras, menghitung $25 - 16 = 9$ tanpa mengakar selisih kuadrat."
-        },
-        {
-          "teks": "$14\\text{ cm}$",
-          "alasan": "Siswa menghitung panjang diameter lingkaran bukan panjang jari-jari lingkaran."
-        }
-      ],
-      "pembahasan": "Garis singgung dari satu titik ke lingkaran sama panjang:\n$KA = KT$ dan $LB = LT$, serta $PA = PB$.\n\nKeliling segitiga $PKL$:\n$K_{\\triangle PKL} = PK + KL + LP$\n$K_{\\triangle PKL} = PK + (KT + TL) + LP = (PK + KA) + (LP + LB) = PA + PB = 2PA$.\n\nDiketahui keliling $\\triangle PKL = 48\\text{ cm}$, maka:\n$2PA = 48 \\implies PA = 24\\text{ cm}$.\n\nKarena garis singgung tegak lurus jari-jari di titik singgung ($OA \\perp PA$), berlaku teorema Pythagoras pada $\\triangle OAP$:\n$r = OA = \\sqrt{OP^2 - PA^2} = \\sqrt{25^2 - 24^2} = \\sqrt{625 - 576} = \\sqrt{49} = 7\\text{ cm}$.",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-012",
+      "id": "kelas11-b02-b-hard-bt01-009",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -515,7 +389,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-013",
+      "id": "kelas11-b02-b-hard-bt01-010",
       "tipe_generate": "variasi",
       "variasi_cara": "konteks",
       "acuan": {
@@ -557,91 +431,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-014",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 85,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
-        "kutipan": "Dari satu titik di luar lingkaran, dapat dibentuk dua garis singgung yang sama panjang."
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "keliling segitiga garis singgung terpotong",
-      "jumlah_langkah": 4,
-      "alasan_level": "Memerlukan penalaran pembuktian dekomposisi ruas garis singgung untuk mengevaluasi keliling segitiga sembarang yang menyinggung lingkaran.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Dari sebuah titik $P$ di luar lingkaran yang berpusat di $O$, dibuat dua garis singgung yang menyentuh lingkaran di titik $A$ dan $B$ dengan panjang ruas garis singgung $PA = 18\\text{ cm}$. Garis singgung ketiga ditarik memotong ruas garis $PA$ di titik $Q$, memotong ruas garis $PB$ di titik $R$, serta menyinggung busur minor lingkaran di titik $T$. Berapakah keliling segitiga $PQR$?",
-      "jawaban_benar": "$36\\text{ cm}$",
-      "alasan_benar": "Berdasarkan sifat garis singgung dari titik luar, ruas garis $QA = QT$ dan $RB = RT$. Maka keliling $\\triangle PQR = PQ + QR + RP = PQ + (QT + TR) + RP = (PQ + QA) + (RP + RB) = PA + PB = 18 + 18 = 36\\text{ cm}$.",
-      "distraktor": [
-        {
-          "teks": "$18\\text{ cm}$",
-          "alasan": "Hanya menggunakan panjang satu ruas garis singgung $PA$ tanpa memperhitungkan kedua batas singgung."
-        },
-        {
-          "teks": "$27\\text{ cm}$",
-          "alasan": "Mengasumsikan keliling segitiga adalah $1,5$ kali panjang garis singgung utama."
-        },
-        {
-          "teks": "$54\\text{ cm}$",
-          "alasan": "Mengalikan panjang ruas garis singgung $PA$ dengan 3 karena menganggap ketiga sisi segitiga sama dengan panjang garis singgung."
-        }
-      ],
-      "pembahasan": "Berdasarkan sifat garis singgung lingkaran:\n1. Garis singgung dari titik $P$ memiliki panjang yang sama: $PA = PB = 18\\text{ cm}$.\n2. Garis singgung ketiga menyentuh lingkaran di $T$ dan dipotong oleh garis $PA$ di $Q$ serta $PB$ di $R$. Dari titik luar $Q$, panjang garis singgung ke lingkaran adalah $QA = QT$.\n3. Dari titik luar $R$, panjang garis singgung ke lingkaran adalah $RB = RT$.\n4. Keliling $\\triangle PQR$ dapat diuraikan:\n$$\\text{Keliling } \\triangle PQR = PQ + QR + RP$$\n$$\\text{Keliling } = PQ + (QT + TR) + RP$$\nSubstitusikan $QT = QA$ dan $TR = RB$:\n$$\\text{Keliling } = (PQ + QA) + (RB + RP) = PA + PB$$\n$$\\text{Keliling } = 18\\text{ cm} + 18\\text{ cm} = 36\\text{ cm}$$",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-015",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 83,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
-        "kutipan": "Selain garis singgung persekutuan luar, ada juga garis singgung persekutuan dalam."
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "rekonstruksi parameter garis singgung ganda",
-      "jumlah_langkah": 5,
-      "alasan_level": "Memerlukan pemecahan persamaan aljabar dari rumus garis singgung persekutuan dalam untuk menemukan parameter jari-jari, kemudian menghitung garis singgung persekutuan luar.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Jarak titik pusat dua buah lingkaran adalah $65\\text{ cm}$. Jari-jari lingkaran besar adalah $R = (5x + 3)\\text{ cm}$ dan lingkaran kecil adalah $r = (3x + 1)\\text{ cm}$. Jika panjang garis singgung persekutuan dalam kedua lingkaran tersebut adalah $25\\text{ cm}$, berapakah panjang garis singgung persekutuan luar kedua lingkaran tersebut?",
-      "jawaban_benar": "$63\\text{ cm}$",
-      "alasan_benar": "Dari $g = \\sqrt{d^2 - (R + r)^2}$, diperoleh $R + r = \\sqrt{65^2 - 25^2} = 60$. Persamaan $(5x + 3) + (3x + 1) = 60$ menghasilkan $x = 7$, sehingga $R = 38\\text{ cm}$ dan $r = 22\\text{ cm}$. Selisih jari-jari $R - r = 16\\text{ cm}$, maka panjang garis singgung persekutuan luar adalah $s = \\sqrt{65^2 - 16^2} = 63\\text{ cm}$.",
-      "distraktor": [
-        {
-          "teks": "$60\\text{ cm}$",
-          "alasan": "Keliru menganggap panjang garis singgung persekutuan luar sama dengan jumlah jari-jari $(R + r) = 60$."
-        },
-        {
-          "teks": "$56\\text{ cm}$",
-          "alasan": "Kesalahan menentukan nilai $x$ atau salah saat menghitung selisih kuadrat $65^2 - 16^2$."
-        },
-        {
-          "teks": "$48\\text{ cm}$",
-          "alasan": "Keliru menggunakan rumus garis singgung luar dengan mengurangkan $R + r$ bukan $R - r$."
-        }
-      ],
-      "pembahasan": "Langkah 1: Menentukan jumlah jari-jari $(R + r)$ dari garis singgung persekutuan dalam ($g$):\n$$g = \\sqrt{d^2 - (R + r)^2}$$\n$$25 = \\sqrt{65^2 - (R + r)^2} \\implies (R + r)^2 = 4.225 - 625 = 3.600$$\n$$R + r = 60\\text{ cm}$$\n\nLangkah 2: Menentukan nilai $x$:\n$$(5x + 3) + (3x + 1) = 60$$\n$$8x + 4 = 60 \\implies 8x = 56 \\implies x = 7$$\n\nLangkah 3: Menghitung jari-jari masing-masing lingkaran:\n$$R = 5(7) + 3 = 38\\text{ cm}$$\n$$r = 3(7) + 1 = 22\\text{ cm}$$\n\nLangkah 4: Menentukan selisih jari-jari:\n$$R - r = 38 - 22 = 16\\text{ cm}$$\n\nLangkah 5: Menghitung panjang garis singgung persekutuan luar ($s$):\n$$s = \\sqrt{d^2 - (R - r)^2} = \\sqrt{65^2 - 16^2} = \\sqrt{4.225 - 256} = \\sqrt{3.969} = 63\\text{ cm}$$",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-016",
+      "id": "kelas11-b02-b-hard-bt01-011",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -683,7 +473,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-017",
+      "id": "kelas11-b02-b-hard-bt01-012",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
@@ -725,49 +515,7 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas11-b02-b-hard-bt01-018",
-      "tipe_generate": "variasi",
-      "variasi_cara": "konteks",
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 84,
-        "bagian": "Ayo Berpikir Kritis",
-        "nomor": "10",
-        "teks": "KL, LM, MN , dan NK adalah garis-garis singgung pada lingkaran O. Segiempat KLMN disebut segiempat garis singgung. Buktikan : LK + MN = LM LM + NK NK",
-        "jawaban": "LK + MN = LM + NK",
-        "kutipan": null
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "rekonstruksi keliling segiempat garis singgung",
-      "jumlah_langkah": 4,
-      "alasan_level": "Memerlukan evaluasi Teorema Pitot pada segiempat garis singgung melalui persamaan aljabar untuk merekonstruksi ukuran seluruh sisi dan kelilingnya.",
-      "stimulus": null,
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Sebuah panel hiasan dinding berbentuk segiempat $ABCD$ dibuat sedemikian rupa sehingga keempat sisinya menyinggung sebuah ornamen lingkaran di dalamnya (segiempat garis singgung). Panjang sisi-sisi panel tersebut dinyatakan dalam variabel $x$, yaitu $AB = (3x - 1)\\text{ cm}$, $BC = (2x + 7)\\text{ cm}$, $CD = (4x - 6)\\text{ cm}$, dan $DA = (3x + 4)\\text{ cm}$. Keliling panel hiasan tersebut adalah ....",
-      "jawaban_benar": "$112\\text{ cm}$",
-      "alasan_benar": "Berdasarkan Teorema Pitot, jumlah panjang dua sisi yang saling berhadapan pada segiempat garis singgung adalah sama, sehingga $(3x - 1) + (4x - 6) = (2x + 7) + (3x + 4) \\implies 7x - 7 = 5x + 11 \\implies 2x = 18 \\implies x = 9$. Keliling panel adalah $2 \\times (7(9) - 7) = 112\\text{ cm}$.",
-      "distraktor": [
-        {
-          "teks": "$56\\text{ cm}$",
-          "alasan": "Siswa hanya menghitung jumlah panjang dari satu pasang sisi berhadapan saja ($AB + CD$) dan lupa mengalikannya dengan dua untuk memperoleh keliling penuh."
-        },
-        {
-          "teks": "$104\\text{ cm}$",
-          "alasan": "Siswa salah menjumlahkan bentuk aljabar dengan menyamakan dua sisi yang bersebelahan ($AB + BC = CD + DA$) sehingga menghasilkan nilai $x$ yang keliru."
-        },
-        {
-          "teks": "$126\\text{ cm}$",
-          "alasan": "Siswa melakukan kesalahan perhitungan tanda negatif saat memindahkan ruas konstanta ($7x - 7 = 5x + 11$ dianggap menghasilkan $2x = 20 \\implies x = 10$) sebelum menghitung keliling."
-        }
-      ],
-      "pembahasan": "Berdasarkan Teorema Pitot, pada segiempat garis singgung berlaku bahwa jumlah panjang sisi-sisi yang saling berhadapan adalah sama:\n$$AB + CD = BC + DA$$\n\nSubstitusikan nilai sisi yang diketahui:\n$$(3x - 1) + (4x - 6) = (2x + 7) + (3x + 4)$$\n$$7x - 7 = 5x + 11$$\n$$7x - 5x = 11 + 7$$\n$$2x = 18$$\n$$x = 9$$\n\nHitung panjang masing-masing sisi segiempat:\n- $AB = 3(9) - 1 = 26\\text{ cm}$\n- $BC = 2(9) + 7 = 25\\text{ cm}$\n- $CD = 4(9) - 6 = 30\\text{ cm}$\n- $DA = 3(9) + 4 = 31\\text{ cm}$\n\nKeliling segiempat $ABCD$ adalah:\n$$K = AB + BC + CD + DA = 26 + 25 + 30 + 31 = 112\\text{ cm}$$",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b02-b-hard-bt01-019",
+      "id": "kelas11-b02-b-hard-bt01-013",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {

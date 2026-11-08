@@ -8,7 +8,7 @@
   "generator": "9router:ag/gemini-3.8-flash",
   "bergambar": false,
   "kapasitas_kurang": true,
-  "alasan_kapasitas": "11 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "alasan_kapasitas": "generator otomatis hanya memperoleh 17 soal lolos validator setelah 7 putaran; belum ditinjau apakah bahan subbab memang tidak cukup",
   "soal": [
     {
       "id": "kelas11-b03-b-hard-bt01-001",
@@ -684,48 +684,6 @@
     },
     {
       "id": "kelas11-b03-b-hard-bt01-017",
-      "tipe_generate": "orisinal",
-      "variasi_cara": null,
-      "acuan": {
-        "sumber": "siswa",
-        "id": null,
-        "halaman": 119,
-        "bagian": null,
-        "nomor": null,
-        "teks": null,
-        "jawaban": null,
-        "kutipan": "Oleh karena garis regresi linearnya adalah yˆ = a + bx dan titik ( x , y ) dilalui garis tersebut maka dapat disubstitusikan sehingga menjadi:"
-      },
-      "cognitive_c": "C5",
-      "jenis_soal": "estimasi nilai hilang dan intersep",
-      "jumlah_langkah": 5,
-      "alasan_level": "Memerlukan pemecahan masalah bertahap dari gradien kuadrat terkecil untuk mengonstruksi data yang hilang dan menentukan intersep regresi.",
-      "stimulus": "| Data ke- | $x$ | $y$ |\n|---|---|---|\n| 1 | $2$ | $3$ |\n| 2 | $4$ | $7$ |\n| 3 | $6$ | $8$ |\n| 4 | $8$ | $p$ |",
-      "gambar": [],
-      "deskripsi_gambar": null,
-      "pertanyaan": "Sebuah eksperimen menghasilkan $4$ pasangan data $(x, y)$ seperti tercantum pada tabel di atas. Jika diketahui bahwa garis regresi kuadrat terkecil dari data tersebut memiliki gradien kemiringan $b = 1,4$, maka nilai $p$ dan nilai intersep sumbu $y$ ($a$) dari persamaan regresi tersebut adalah...",
-      "jawaban_benar": "$p = 12$ dan $a = 0,5$",
-      "alasan_benar": "Nilai $SS_{xx} = 20$, $SS_{xy} = -8 + 3p$. Dari $b = SS_{xy}/SS_{xx} = 1,4$, diperoleh $p = 12$. Rata-rata $\\bar{x} = 5$ dan $\\bar{y} = 7,5$, sehingga $a = \\bar{y} - b\\bar{x} = 7,5 - 1,4(5) = 0,5$.",
-      "distraktor": [
-        {
-          "teks": "$p = 10$ dan $a = 1,0$",
-          "alasan": "Siswa salah menghitung persamaan pembilang gradien sehingga memperoleh p = 10."
-        },
-        {
-          "teks": "$p = 12$ dan $a = 1,4$",
-          "alasan": "Siswa keliru menganggap nilai intersep sama dengan nilai kemiringan b."
-        },
-        {
-          "teks": "$p = 14$ dan $a = -0,2$",
-          "alasan": "Siswa salah menggunakan rumus jumlah kuadrat silang variabel."
-        }
-      ],
-      "pembahasan": "Langkah 1: Menghitung rata-rata variabel independen ($\\bar{x}$):\n$$\\bar{x} = \\frac{2 + 4 + 6 + 8}{4} = \\frac{20}{4} = 5$$\n\nLangkah 2: Menghitung $SS_{xx}$:\n$$SS_{xx} = (2-5)^2 + (4-5)^2 + (6-5)^2 + (8-5)^2 = (-3)^2 + (-1)^2 + 1^2 + 3^2 = 9 + 1 + 1 + 9 = 20$$\n\nLangkah 3: Menghitung $SS_{xy}$ dan mencari nilai $p$:\n$$SS_{xy} = \\sum_{i=1}^4 (x_i - \\bar{x})y_i = (-3)(3) + (-1)(7) + (1)(8) + (3)(p) = -9 - 7 + 8 + 3p = -8 + 3p$$\nKarena gradien $b = 1,4$:\n$$b = \\frac{SS_{xy}}{SS_{xx}} \\implies 1,4 = \\frac{-8 + 3p}{20}$$\n$$-8 + 3p = 28 \\implies 3p = 36 \\implies p = 12$$\n\nLangkah 4: Menghitung rata-rata variabel dependen ($\\bar{y}$):\n$$\\bar{y} = \\frac{3 + 7 + 8 + 12}{4} = \\frac{30}{4} = 7,5$$\n\nLangkah 5: Menghitung intersep $a$:\n$$a = \\bar{y} - b\\bar{x} = 7,5 - (1,4)(5) = 7,5 - 7,0 = 0,5$$\n\nJadi, diperoleh nilai $p = 12$ dan $a = 0,5$.",
-      "catatan": null,
-      "dipaksa_kuota": false
-    },
-    {
-      "id": "kelas11-b03-b-hard-bt01-018",
       "tipe_generate": "orisinal",
       "variasi_cara": null,
       "acuan": {
